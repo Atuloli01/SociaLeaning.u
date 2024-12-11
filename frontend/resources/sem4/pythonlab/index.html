@@ -1,0 +1,1865 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python lab</title>
+    <link rel="icon" href="../../../public/logo/favicon_io/favicon.ico">
+    <link rel="stylesheet" href="../../../public/style.css">
+    <link rel="stylesheet" id="highlightStylesheet"
+        href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/tomorrow-night-blue.min.css">
+    <style>
+        .wh {
+            border: 1px solid rgba(0, 0, 0, 0.466);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="navbar" class="grad">
+        <div class="back">
+            <a href="../../../index.html"><img src="../../../public/back.svg" alt=""></a>
+        </div>
+        <div>
+            <h2>Python lab</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Python lab</h1>
+        <div class="wh">
+            <h2>Conditional and Looping Programs</h2>
+            <div class='code'>
+                <div class='dotc'></div>
+                <button class="ac">
+                    Program to print numbers from 1 to n, n should be entered by the user
+                </button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-python">
+n = int(input("Enter last number : "))
+i = 1
+while(i&lt;=n):
+    print(i)
+    i+=1
+                        </code>
+                </pre>
+                </div>
+            </div>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Program to check whether a number is even or odd</button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-python">
+num = int(input("Enter a number : "))
+if(num%2==0):
+    print("Entered number is even.")
+else:
+    print("Entered number is odd.")
+
+# Using a function 
+def checkNum(a):
+    if a%2==0:
+        print("Number is even")
+    else:
+        print("Number is odd")
+        
+n = int(input("Enter a number : "))
+checkNum(n)
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class='code'>
+                <div class='dotc'></div>
+                <button class="ac">
+                    Program to print even number from 1 to 50
+                </button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-python">
+for i in range(2,50,2):
+    print(i)
+                        </code>
+                </pre>
+                </div>
+            </div>
+            <div class='code'>
+                <div class='dotc'></div>
+                <button class="ac">
+                    Program to print sum of n natural number using while loop
+                </button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-python">
+n = int(input("Enter a natural number : "))
+i = 1
+sum = 0
+while(i&lt;=n):
+ sum+=i
+ i=i+1
+print("The sum is = ", str(sum))
+                        </code>
+                </pre>
+                </div>
+            </div>
+            <div class='code'>
+                <div class='dotc'></div>
+                <button class="ac">
+                    Program to print sum of n natural number using for loop
+                </button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-python">
+n = int(input("Enter a natural number : "))
+sum = 0
+for i in range(1,n+1):
+    sum+=i
+print("The sum is = ", str(sum))
+                        </code>
+                </pre>
+                </div>
+            </div>
+            <div class='code'>
+                <div class='dotc'></div>
+                <button class="ac">
+                    Program to find the sum of two matrix using for loop
+                </button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-python">
+mat1 = [[1,2],[3,4]]
+mat2 = [[2,3],[4,4]]
+sum = [[0,0],[0,0]]
+#sum = [[0 for _ in range(len(mat1[0]))] for _ in range(len(mat1))] we can also do this
+
+for i in range(len(mat1)):
+    for j in range(len(mat1[0])):
+        sum[i][j] = mat1[i][j] + mat2[i][j]
+
+print(sum)
+                        </code>
+                </pre>
+                </div>
+            </div>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Program to get the marks of 5 subjects from the user, calculate the average marks
+                    scored, and determine the corresponding grade based on the average marks as follows: A for 91-100, B
+                    for 81-90, C for 71-80, D for 61-70, E for 51-60, and F for &lt;=50.</button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-python">
+print("Enter marks of 5 subjects:")
+sum_marks=[]
+for i in range(5):
+    sum_marks.append(int(input()))
+    
+avg = sum(sum_marks) / len(sum_marks) # len function give length of the list
+
+if (avg>91) and (avg<=100): # if 91 < avg <=100:
+    print("Grade = A")
+elif 81 < avg <= 91:
+    print("Grade = B")
+elif 71 < avg <= 81:
+    print("Grade = C")
+elif 61 < avg <= 71:
+    print("Grade = D")
+elif 51 < avg <= 61:
+    print("Grade = E")
+else:
+    print("Grade = F")
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class='code'>
+                <div class='dotc'></div>
+                <button class="ac">
+                    Program to check whether a character entered by the user is an upper case or lower case letter.
+                </button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-python">
+ch = input("Enter a character:")
+if 'a' <= ch <= 'z':
+    print("Entered character is lower case letter")
+elif 'A' <= ch <= 'Z':
+    print("Enter character is upper case letter")
+else:
+    print("Entered character is not an Alphabet")
+                        </code>
+                </pre>
+                </div>
+            </div>
+            <div class='code'>
+                <div class='dotc'></div>
+                <button class="ac">
+                    Write a program that asks the user to enter a number. If the entered number is greater than or
+                    equal to 100, check whether the number is even or odd. If the number is less than 100, it will
+                    not check whether the number is even or odd, but will only print a message that the number is
+                    less than 100.
+                </button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-python">
+# Program to check if a number is even or odd, or less than 100
+
+# Ask the user to enter a number
+number = int(input("Enter a number: "))
+
+# Check if the number is greater than or equal to 100
+if number >= 100:
+    # Check if the number is even or odd
+    if number % 2 == 0:
+        print(f"The number {number} is even.")
+    else:
+        print(f"The number {number} is odd.")
+else:
+    # Print message if the number is less than 100
+    print("The number is less than 100.")
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="wh">
+            <h3>// & ** Operator in Python</h3>
+
+            <p>The <strong>//</strong> and <strong>**</strong> operators are special operators in Python that serve
+                different
+                purposes.</p>
+
+            <ul>
+                <li><strong>// Operator:</strong> The double-slash (<strong>//</strong>) operator is the floor
+                    division
+                    operator. It performs division and returns the integer part of the result, discarding any
+                    fractional
+                    remainder.</li>
+                <li><strong>** Operator:</strong> The double-asterisk (<strong>**</stro>) operator is the
+                        exponentiation
+                        operator. It raises the left operand to the power of the right operand. For example,
+                        <strong>2**3</strong> equals 8 (2 raised to the power of 3).
+                </li>
+            </ul>
+
+            <p>Examples of using these operators:</p>
+            <pre>
+                <code class="language-python">
+# Floor division (//) example
+result_floor_division = 10 // 3 # Result: 3
+
+# Exponentiation (**) example
+result_exponentiation = 2 ** 4 # Result: 16
+                </code>
+            </pre>
+            <div class='code'>
+                <div class='dotc'></div>
+                <button class="ac">
+                    Program to compute distance between two points provided by the user
+                </button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-python">
+import math #so that we can use math.sqrt function
+
+x1 = int(input("Enter x1 of first coordinate : "))
+y1 = int(input("Enter y1 of first coodinate : "))
+x2 = int(input("Enter x2 of second coordinate : "))
+y2 = int(input("Enter y2 of second coordinate : "))
+
+ans = math.sqrt((x2 - x1)**2 + (y2 - y1)**2)
+print("The distance is = ", str(ans))
+                        </code>
+                </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>String Programs</h2>
+            <div class="wh">
+                <p>
+                    <strong>Create a string "hello world" and perform the following opeations:</strong>
+                <ol>
+                    <li>Print the complete string </li>
+                    <li>Print the character from third to fifth</li>
+                    <li>Print the first character of the string</li>
+                    <li>Print the string's 3rd character</li>
+                    <li>Print the string twenty times</li>
+                    <li>Create another string text and concatinate with previous one</li>
+                </ol>
+                </p>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <button class="ac">
+                        code
+                    </button>
+                    <div class="panel">
+                        <pre>
+                            <code class="language-python">
+str1 = "hello world"
+
+#printing complete string
+print(str1[0:]) # Output: hello world
+
+#printing the character from third to fith
+print(str1[2:5]) # Output: llo
+
+#printing the first charcter of the string
+print(str1[0]) # Output: h
+
+#printing the string's 3rd character
+print(str1[3]) # Output: l
+
+#printing the string twenty times
+print(str1 * 20) # Output: hello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello worldhello world
+
+#create another string test and concatinate with previous one
+test = "hi"
+str1 = str1 + test
+print(str1) # Output: hello worldhi
+                            </code>
+                    </pre>
+                    </div>
+                </div>
+            </div>
+            <div class='code'>
+                <div class='dotc'></div>
+                <button class="ac">
+                    Program to change the given string to a new string where the first and last characters have been
+                    exchanged.
+                </button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-python">
+def swapFirstLast(str):
+    first_char = str[0]
+    last_char = str[-1]
+    newStr = last_char + str[1:-1] + first_char
+    return newStr
+
+myStr = "menance"
+
+print(swapFirstLast(myStr))
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class='code'>
+                <div class='dotc'></div>
+                <button class="ac">
+                    Write a Python program to find the middle element of the string passed to the function. If there is
+                    no middle element, return control flow using the 'return' statement
+                </button>
+                <div class="panel">
+                    <pre>
+                    <code class="language-python">
+def find_middle_element(s):
+    length = len(s)
+    if length % 2 == 1:  # If the length of the string is odd
+        middle_index = length // 2
+        middle_element = s[middle_index]
+        print("Middle element is:", middle_element)
+    else:
+        print("No middle element")
+        return  # Return control flow when there is no middle element
+
+string1 = "PASSED"
+string2 = "REDPYTHON"
+
+find_middle_element(string1)
+find_middle_element(string2)
+                    </code>
+                </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>List Programs</h2>
+            <div class="wh">
+                <h3>Create a list containing the following items: 556, "Mothi", 84, 96, 84, 75, 84 and name it student,
+                    and
+                    perform the following operations:</h3>
+                <ol>
+                    <li>Access 0<sub>th</sub> element</li>
+                    <li>Access 0<sub>th</sub> to 1<sup>st</sup> element</li>
+                    <li>Access 2<sub>nd</sub> to end of list elements</li>
+                    <li>Access starting to ending elements</li>
+                    <li>Access last index value</li>
+                    <li>Access elements in reverse order</li>
+                </ol>
+                <p>Note: all the string slicing operation can be applied on list also.</p>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <button class="ac">Code</button>
+                    <div class="panel">
+                        <pre>
+                        <code class="language-python">
+mylist = [556, "Mothi", 84, 96, 84, 75, 84]
+
+#Access 0th element
+print(mylist[0])
+
+#Access 0th to first element
+print(mylist[0:2])
+
+#Access 2nd to end of the list
+print(mylist[1:])
+
+#Accessing starting to ending element
+print(mylist[:])
+
+#Access last index value
+print(mylist[-1])
+
+#Access element in reverse order
+print(mylist[::-1])
+                        </code>
+                    </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac"> Program that calculates the sum of all elements in a list</button>
+                <div class="panel">
+                    <pre>
+                            <code class="language-python">
+# Define a list of numbers
+numbers = [10, 20, 30, 40, 50]
+
+# Method 1: Using a for loop (no built-in sum() function)
+total_sum_iterative = 0
+for num in numbers:
+    total_sum_iterative += num
+
+# Method 2: Using the sum() function
+total_sum_builtin = sum(numbers)
+
+# Print the sums calculated by both methods
+print("Sum of all elements using iterative approach:", total_sum_iterative)
+print("Sum of all elements using built-in sum() function:", total_sum_builtin)
+                            </code>
+                        </pre>
+                </div>
+            </div>
+            <div class='code'>
+                <div class='dotc'></div>
+                <button class="ac">
+                    Finding smallest and largest number in a list
+                </button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-python">
+myList = [22, 54, 2, 54, 33, 44]
+smallest = largest = myList[0]
+
+for num in myList:
+    if num < smallest:
+        smallest = num
+    if num > largest:
+        largest = num
+
+print("Largest is =", largest)
+print("Smallest is =", smallest)
+                        </code>
+                </pre>
+                </div>
+            </div>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Program to remove duplicates from a list</button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-python">
+# Define a list with duplicates
+numbers = [10, 20, 30, 20, 40, 50, 10]
+
+# Create an empty list to store unique elements
+unique_numbers = []
+
+# Loop through the original list
+for num in numbers:
+    # Check if the element is not already in the unique list
+    if num not in unique_numbers:
+        # Add the element to the unique list
+        unique_numbers.append(num)
+
+# Print the list without duplicates
+print("List without duplicates:", unique_numbers)
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Program to reverse a list without using any built-in functions</button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-python">
+# Define a list
+numbers = [10, 20, 30, 40, 50]
+
+# Initialize an empty list to store the reversed elements
+reversed_numbers = []
+
+# Calculate the index of the last element in the original list
+last_index = len(numbers) - 1
+
+# Loop through the original list and add elements to the reversed list in reverse order
+while last_index >= 0:
+    reversed_numbers.append(numbers[last_index])
+    last_index -= 1
+
+# Print the reversed list
+print("Original List:", numbers)
+print("Reversed List:", reversed_numbers)
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Program that sorts the list of integers in ascending order without using any built-in
+                    functions.</button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-python">
+# Define a list of integers
+numbers = [9, 5, 2, 7, 1, 3]
+
+# Implementing a simple bubble sort algorithm
+def bubble_sort(arr):
+    n = len(arr)
+    # Traverse through all elements in the list
+    for i in range(n):
+        # Last i elements are already in place, so we don't need to check them again
+        for j in range(0, n-i-1):
+            # Swap if the element found is greater than the next element
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+
+# Call the bubble_sort function with the list of numbers
+bubble_sort(numbers)
+
+# Print the sorted list
+print("Sorted List:", numbers)
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Tuple Programs</h2>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Program to find the length of a tuple without using built-in functions</button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-python">
+# Define a tuple
+my_tuple = (10, 20, 30, 40, 50)
+
+# Function to calculate the length of the tuple
+def tuple_length(t):
+    count = 0
+    for element in t:  # Using 'element' instead of '_'
+        count += 1
+    return count
+
+# Call the function and print the length of the tuple
+length = tuple_length(my_tuple)
+print("Length of the tuple:", length)
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Function to concatenate two tuples</button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-python">
+# Define two tuples
+tuple1 = (1, 2, 3)
+tuple2 = (4, 5, 6)
+
+# Function to concatenate two tuples
+def concatenate_tuples(t1, t2):
+    result = []
+    for element in t1:
+        result.append(element)
+    for element in t2:
+        result.append(element)
+    return tuple(result)
+
+# Call the function and print the concatenated tuple
+concatenated_tuple = concatenate_tuples(tuple1, tuple2)
+print("Concatenated Tuple:", concatenated_tuple)
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Program to find the index of an element in a tuple</button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-python">
+# Define a tuple
+my_tuple = (10, 20, 30, 40, 50)
+
+# Function to find the index of an element in the tuple
+def find_index(t, element):
+    for i in range(len(t)):
+        if t[i] == element:
+            return i
+    return -1  # Return -1 if the element is not found
+
+# Call the function and print the index of the element
+element = 30
+index = find_index(my_tuple, element)
+if index != -1:
+    print(f"The index of {element} is {index}")
+else:
+    print(f"{element} is not in the tuple")
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Program to count the occurrences of an element in a tuple</button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-python">
+# Define a tuple
+my_tuple = (10, 20, 30, 40, 50, 30, 20, 30)
+
+# Function to count the occurrences of an element in the tuple
+def count_occurrences(t, element):
+    count = 0
+    for item in t:
+        if item == element:
+            count += 1
+    return count
+
+# Call the function and print the count of the element
+element = 30
+count = count_occurrences(my_tuple, element)
+print(f"The element {element} occurs {count} times in the tuple.")
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Program to check if two tuples have any elements in common</button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-python">
+# Define two tuples
+tuple1 = (1, 2, 3, 4, 5)
+tuple2 = (5, 6, 7, 8, 9)
+
+# Function to check if two tuples have any elements in common
+def have_common_elements(t1, t2):
+    for element in t1:
+        if element in t2:
+            return True
+    return False
+
+# Call the function and print the result
+result = have_common_elements(tuple1, tuple2)
+if result:
+    print("The tuples have common elements.")
+else:
+    print("The tuples do not have any common elements.")
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Set Programs</h2>
+            <div class="wh">
+                <h3>Set operations</h3>
+                <ul>
+                    <li>Union (| or union()): Combines elements from two sets, including elements that are present in
+                        either
+                        or both sets, without duplicates.</li>
+                    <li>Intersection (& or intersection()): Finds common elements between two sets, i.e., elements that
+                        are
+                        present in both sets.</li>
+                    <li>Difference (- or difference()): Finds elements that are present in the first set but not in the
+                        second set. <br> Formula &rarr; set1 - (set1
+                        &Intersection; set2)</li>
+                    <li>Symmetric Difference (^ or symmetric_difference()): Finds elements that are present in either of
+                        the
+                        sets but not in both sets (excludes common elements). <br> Formula &rarr; (set1 &Union; set2) -
+                        (set1
+                        &Intersection; set2)</li>
+                </ul>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <button class="ac">
+                        Program to demonstrate the use of union, intersection, difference and symmetric difference
+                        operations.
+                    </button>
+                    <div class="panel">
+                        <pre>
+                            <code class="language-python">
+set1 = {1, 2, 3, 4}
+set2 = {3, 4, 5, 6}
+
+# Union
+print(set1 | set2)  # Output: {1, 2, 3, 4, 5, 6}
+print(set1.union(set2))  # Output: {1, 2, 3, 4, 5, 6}
+
+# Intersection
+print(set1 & set2)  # Output: {3, 4}
+print(set1.intersection(set2))  # Output: {3, 4}
+
+# Difference
+print(set1 - set2)  # Output: {1, 2}
+print(set1.difference(set2))  # Output: {1, 2}
+
+# Symmetric Difference
+print(set1 ^ set2)  # Output: {1, 2, 5, 6}
+print(set1.symmetric_difference(set2))  # Output: {1, 2, 5, 6}
+                            </code>
+                    </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Program to check if two sets have any elements in common</button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-python">
+# Define two sets
+set1 = {1, 2, 3, 4}
+set2 = {3, 4, 5, 6}
+
+# Function to check if two sets have any elements in common
+def check_common_elements(set_a, set_b):
+    # Use the intersection operation to find common elements
+    common_elements = set_a.intersection(set_b)
+    # Alternatively, we can use the '&' operator for intersection: common_elements = set_a & set_b
+    if common_elements:
+        return True
+    else:
+        return False
+
+# Call the function and print the result
+if check_common_elements(set1, set2):
+    print("The sets have common elements.")
+else:
+    print("The sets do not have any common elements.")
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Dictionary Programs</h2>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Program to iterate over a dictionary and print each key-value pair</button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-python">
+# Define a dictionary
+my_dict = {
+    'name': 'Alice',
+    'age': 25,
+    'city': 'New York'
+}
+
+# Function to iterate over the dictionary and print key-value pairs
+def print_key_value_pairs(d):
+    for key in d:
+        print(f"Key: {key}, Value: {d[key]}")
+
+# Call the function with the dictionary
+print_key_value_pairs(my_dict)
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Program to merge two dictionaries</button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-python">
+# Define two dictionaries
+dict1 = {'a': 1, 'b': 2, 'c': 3}
+dict2 = {'d': 4, 'e': 5, 'f': 6}
+
+# Function to merge two dictionaries
+def merge_dicts(d1, d2):
+    merged_dict = {}
+    
+    # Add key-value pairs from the first dictionary
+    for key in d1:
+        merged_dict[key] = d1[key]
+    
+    # Add key-value pairs from the second dictionary
+    for key in d2:
+        merged_dict[key] = d2[key]
+    
+    return merged_dict
+
+# Call the function and print the merged dictionary
+merged_dict = merge_dicts(dict1, dict2)
+print("Merged Dictionary:", merged_dict)
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Program to find the keys corresponding to the maximum and minimum values in a
+                    dictionary</button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-python">
+# Define a dictionary
+my_dict = {'a': 10, 'b': 5, 'c': 20, 'd': 15}
+
+# Function to find keys corresponding to max and min values in a dictionary
+def find_max_min_keys(d):
+    max_key = None
+    max_val = float('-inf')  # Initialize max_val to negative infinity
+    min_key = None
+    min_val = float('inf')   # Initialize min_val to positive infinity
+
+    # Iterate over the dictionary to find max and min values
+    for key, value in d.items():
+        if value > max_val:
+            max_val = value
+            max_key = key
+        if value < min_val:
+            min_val = value
+            min_key = key
+    
+    return max_key, min_key
+
+# Call the function and print the keys
+max_key, min_key = find_max_min_keys(my_dict)
+print("Key corresponding to max value:", max_key)
+print("Key corresponding to min value:", min_key)
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Program to create a function that checks if a key exists in a dictionary</button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-python">
+# Define a dictionary
+my_dict = {'a': 10, 'b': 20, 'c': 30}
+
+# Function to check if a key exists in a dictionary
+def check_key_exists(d, key):
+    if key in d:
+        return True
+    else:
+        return False
+
+# Call the function with a key to check
+key_to_check = 'b'
+if check_key_exists(my_dict, key_to_check):
+    print(f"The key '{key_to_check}' exists in the dictionary.")
+else:
+    print(f"The key '{key_to_check}' does not exist in the dictionary.")
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="wh">
+                <div class="code">
+                    <div class="dotc"></div>
+                    <button class="ac">Program to sort a dictionary by its values in ascending order</button>
+                    <div class="panel">
+                        <pre>
+                            <code class="language-python">
+# Define a dictionary
+my_dict = {'a': 10, 'b': 5, 'c': 20, 'd': 15}
+
+# Function to sort a dictionary by values in ascending order
+def sort_dict_by_values(d):
+    # Convert the dictionary items to a list of tuples
+    items = list(d.items())
+
+    # Bubble sort to sort the list of tuples by values
+    n = len(items)
+    for i in range(n):
+        for j in range(0, n-i-1):
+            if items[j][1] > items[j+1][1]:
+                items[j], items[j+1] = items[j+1], items[j]
+
+    # Convert the sorted list of tuples back to a dictionary
+    sorted_dict = dict(items)
+    return sorted_dict
+
+# Call the function to sort the dictionary
+sorted_dict = sort_dict_by_values(my_dict)
+
+# Print the sorted dictionary
+print("Sorted Dictionary (Ascending Order):", sorted_dict)
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+                <p> When you use my_dict.items(), it returns a view object that provides a way to access the key-value
+                    pairs
+                    of the dictionary as tuples. These tuples are then added as items to a list, creating a list of
+                    tuples
+                    where each tuple represents a key-value pair from the dictionary.
+                    <br>
+                    For example, if my_dict = {'a': 10, 'b': 5, 'c': 20, 'd': 15}, then list(my_dict.items()) would
+                    result
+                    in:
+                <pre>
+                        <code class="language-python">
+[('a', 10), ('b', 5), ('c', 20), ('d', 15)]
+                        </code>
+                    </pre>
+                </p>
+            </div>
+        </div>
+        
+        <div class="wh">
+            <h2>Function Programs</h2>
+            <div class='code'>
+                <div class='dotc'></div>
+                <button class="ac">
+                    Program to check if a year is leap or not.
+                </button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-python">
+# Leap year condition:
+# 1. If the year is divisible by 4,
+# 2. But not divisible by 100,
+# 3. Unless the year is also divisible by 400.
+
+def is_leap_year(year):
+    if (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0):
+        return True
+    else:
+        return False
+
+year = int(input("Enter a year: "))
+if is_leap_year(year):
+    print(f"{year} is a leap year.")
+else:
+    print(f"{year} is not a leap year.")
+                        </code>
+                </pre>
+                </div>
+            </div>
+            <div class='code'>
+                <div class='dotc'></div>
+                <button class="ac">
+                    Program to create a calculator and perform basic operations based on user input. The menu should be
+                    continuously available to the user
+                </button>
+                <div class="panel">
+                    <pre>
+                    <code class="language-python">
+def calc(a, b, op):
+    if op == 1:
+        print("Addition is =", a + b)
+    elif op == 2:
+        print("Subtraction is =", a - b)
+    elif op == 3:
+        print("Multiplication is =", a * b)
+    elif op == 4:
+        if b == 0:
+            print("Division cannot be performed")
+            return
+        print("Division is =", a / b)
+    else:
+        print("Enter a correct operation")
+
+# Main program loop
+while True:
+    # Get user input for numbers and operation choice
+    a = int(input("Enter the first number: "))
+    b = int(input("Enter the second number: "))
+    op = int(input("\nEnter '1' for addition\n'2' for subtraction\n'3' for multiplication\n'4' for division\n'0' to exit: "))
+
+    # Perform calculation based on user input
+    if op == 0:
+        print("Exiting...")
+        break  # Exit the loop
+    else:
+        calc(a, b, op)
+                    </code>
+                </pre>
+                </div>
+            </div>
+            <div class='code'>
+                <div class='dotc'></div>
+                <button class="ac">
+                    Program to implement a simple calculator that performs basic mathematical operations. It takes three
+                    inputs from the user: first, the user is asked to enter two numbers, and then the user is prompted
+                    to enter an operator based on which arithmetic operation is performed.
+                </button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-python">
+# Function to perform addition
+def add(x, y):
+    return x + y
+
+# Function to perform subtraction
+def subtract(x, y):
+    return x - y
+
+# Function to perform multiplication
+def multiply(x, y):
+    return x * y
+
+# Function to perform division
+def divide(x, y):
+    if y == 0:
+        return "Error! Division by zero."
+    else:
+        return x / y
+
+print("Simple Calculator")
+print("Enter two numbers:")
+num1 = float(input("Enter first number: "))
+num2 = float(input("Enter second number: "))
+
+print("Available operations:")
+print("1. Addition (+)")
+print("2. Subtraction (-)")
+print("3. Multiplication (*)")
+print("4. Division (/)")
+
+operator = input("Enter operator (e.g., +, -, *, /): ")
+
+if operator == '+':
+    print("Result:", add(num1, num2))
+elif operator == '-':
+    print("Result:", subtract(num1, num2))
+elif operator == '*':
+    print("Result:", multiply(num1, num2))
+elif operator == '/':
+    print("Result:", divide(num1, num2))
+else:
+    print("Invalid operator! Please enter a valid operator.")
+                        </code>
+                </pre>
+                </div>
+            </div>
+            <div class='code'>
+                <div class='dotc'></div>
+                <button class="ac">
+                    Program to check whether a number is prime or not
+                </button>
+                <div class="panel">
+                    <pre>
+                            <code class="language-python">
+import math
+a = int(input("Enter a number : "))
+
+def checkIsPrime(num):
+    if num < 2:
+        return False
+    else:
+        for i in range(2, int(math.sqrt(num))):
+            if(num % i == 0):
+                return False
+    return True
+
+if checkIsPrime(a):
+    print("The number is prime")
+else:
+    print("The number is not prime")
+                            </code>
+                    </pre>
+                </div>
+            </div>
+            <div class='code'>
+                <div class='dotc'></div>
+                <button class="ac">
+                    Python program that prints prime numbers within a given range
+                </button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-python">
+import math
+
+def checkIsPrime(num):
+    if num < 2:
+        return False
+    else:
+        for i in range(2, int(math.sqrt(num))): #ultimate optimization
+            if(num % i == 0):
+                return False
+    return True
+
+def printPrime(x, y):
+    for i in range(x+1, y-1):
+        if(checkIsPrime(i)):
+            print(i)
+    
+lowerRange = int(input("Enter lower range : "))
+upperRange = int(input("Enter upper range : "))
+
+printPrime(lowerRange, upperRange)
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class='code'>
+                <div class='dotc'></div>
+                <button class="ac">
+                    Write a program by defining a function to calculate the mean and median of any array of numbers.
+                </button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-python">
+muNumbers = [22, 33, 44, 55, 4, 3]
+
+def meanAndMedian(arr):
+    # Calculate the mean manually
+    sum_values = 0
+    for num in arr:
+        sum_values += num
+    mean_value = sum_values / len(arr)
+
+    # Sort the array manually
+    arr.sort()
+
+    # Calculate the median manually
+    n = len(arr)
+    if n % 2 == 0:  # For even number of elements
+        median_value = (arr[(n // 2) - 1] + arr[n // 2]) / 2
+    else:  # For odd number of elements
+        median_value = arr[n // 2]
+
+    return mean_value, median_value
+
+mean, median = meanAndMedian(muNumbers)
+
+print("Mean =", mean, "and Median =", median)
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class='code'>
+                <div class='dotc'></div>
+                <button class="ac">
+                    Program to calculate the square of the number using the anonymous function.
+                </button>
+                <div class="panel">
+                    <pre>
+                            <code class="language-python">
+num = int(input("Enter a number: "))
+square = lambda x: x * x
+print(f"The square of {num} is {square(num)}")
+                            </code>
+                        </pre>
+                </div>
+            </div>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">
+                    Function to print the length of the string
+                </button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-python">
+def calculate_string_length(input_string):
+    length = 0
+    for char in input_string:
+        length += 1
+    return length
+
+# Test the function
+input_string = "Hello, world!"
+length = calculate_string_length(input_string)
+print(f"The length of the string '{input_string}' is {length}.")
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Program to find factorial of a number</button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-python">
+def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n-1)
+
+# Test the function
+num = int(input("Enter a number: "))
+result = factorial(num)
+print(f"The factorial of {num} is {result}.")
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Pattern Programs</h2>
+            <div class="wh">
+                <h3>WAP to print the following pattern
+                    <br>1
+                    <br>2 2
+                    <br>3 3 3
+                    <br>4 4 4 4
+                    <br>5 5 5 5 5
+                </h3>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <button class="ac">
+                        code
+                    </button>
+                    <div class="panel">
+                        <pre>
+                            <code class="language-python">
+    # These both loop can print the pattern
+    
+    for i in range(5):
+        for j in range(i+1):
+            print(i+1, end=' ')
+        print()
+        
+    for i in range(1,6):
+        for j in range(0,i):
+                print(i, end=' ')
+        print()
+                            </code>
+                    </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="wh">
+                <h3>
+                    WAP to print the following pattern
+                </h3>
+                <pre>
+                    <code>
+            *
+         *  *
+      *  *  *
+   *  *  *  *
+*  *  *  *  *
+                    </code>
+                </pre>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <button class="ac">
+                        code
+                    </button>
+                    <div class="panel">
+                        <pre>
+                                <code class="language-python">
+    n = 5
+    for i in range(n):
+        for j in range(n-i-1):
+            print(" ", end='')
+        for k in range(i+1):
+            print("*", end='')
+        print()
+                                </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Module Programs</h2>
+            <div class="wh">
+                <h3>Program to create basic calculator using module</h3>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <button class="ac">
+                        calculatorModule.py file code
+                    </button>
+                    <div class="panel">
+                        <pre>
+                    <code class="language-python">
+def addition(x, y):
+    return x + y
+
+def subtract(x, y):
+    return x - y
+
+def multiply(x, y):
+    return x * y
+
+def divide(x, y):
+    if y == 0:
+        return "Error! Division by zero."
+    return x / y
+                    </code>
+                </pre>
+                    </div>
+                </div>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <button class="ac">
+                        myFile.py file code
+                    </button>
+                    <div class="panel">
+                        <pre>
+                    <code class="language-python">
+import calculatorModule
+
+def getValues():
+    num1 = int(input("Enter first number: "))
+    num2 = int(input("Enter second number: "))
+    return num1, num2
+
+while True:
+    operator = int(input("** MENU ** \n1. For addition \n2. For subtraction \n3. For multiplication \n4. For division \n5. Exit: "))
+
+    if operator in [1, 2, 3, 4]:
+        num1, num2 = getValues()
+
+        if operator == 1:
+            print(f"The addition is = {calculatorModule.addition(num1, num2)}")
+        elif operator == 2:
+            print(f"The subtraction is = {calculatorModule.subtract(num1, num2)}")
+        elif operator == 3:
+            print(f"The multiplication is = {calculatorModule.multiply(num1, num2)}")
+        elif operator == 4:
+            print(f"The division is = {calculatorModule.divide(num1, num2)}")
+    elif operator == 5:
+        break
+    else:
+        print("Wrong selection")
+                    </code>
+                </pre>
+                    </div>
+                </div>
+                <p><strong>Explanation of the in Keyword</strong></p>
+                <ul>
+                    <li>In Python, the in keyword is used to check if a value exists within a sequence (such as a list,
+                        tuple, string, etc.). It returns True if the value is found in the sequence and False otherwise.
+                    </li>
+                    <li>In the context of the provided code, the in keyword is used to check if the user has entered a
+                        valid operator choice:
+                        <pre>
+                            <code class="language-python">
+if operator in [1, 2, 3, 4]:
+                            </code>
+                        </pre>
+                        This line checks whether the value of operator is one of the elements in the list [1, 2, 3, 4].
+                        If operator is 1, 2, 3, or 4, the condition evaluates to True, and the code inside the if block
+                        is executed. If the value of operator is not in the list, the condition evaluates to False, and
+                        the else block is executed, prompting the user that the selection is wrong.
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>File Handling Programs</h2>
+            <div class='code'>
+                <div class='dotc'></div>
+                <button class="ac">
+                    Create a txt file intern.txt and ask the user to write a single line of text by user input
+                </button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-python">
+f1 = open("new.txt", "w")
+f1.write(input("Enter a line : "))
+f1.close()
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class='code'>
+                <div class='dotc'></div>
+                <button class="ac">
+                    Create a text file named myfile.txt and ask the user to write three separate lines using three input
+                    statements.
+                </button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-python">
+f = open("myfile.txt", "w")
+
+line1 = input("Enter the first line: ")
+line2 = input("Enter the second line: ")
+line3 = input("Enter the third line: ")
+
+lines = [line1 + "\n", line2 + "\n", line3 + "\n"]
+f.writelines(lines)
+
+f.close()
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class='code'>
+                <div class='dotc'></div>
+                <button class="ac">
+                    Write a program to read the content of both files created in the above programs and merge the
+                    content into merge.txt.
+                </button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-python">
+# Open intern.txt and read its content
+f1 = open("intern.txt", "r")
+intern_content = f1.read()
+f1.close()
+
+# Open myfile.txt and read its content
+f2 = open("myfile.txt", "r")
+myfile_content = f2.read()
+f2.close()
+
+# Merge the contents into merge.txt
+merge_file = open("merge.txt", "w")
+merge_file.write(intern_content)
+merge_file.write("\n")  # Add a new line between contents
+merge_file.write(myfile_content)
+merge_file.close()
+
+print("Contents from intern.txt and myfile.txt have been merged into merge.txt")
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class='code'>
+                <div class='dotc'></div>
+                <button class="ac">
+                    Count the total number of uppercase and lowercase and digit used in merge.txt
+                </button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-python">
+# Open merge.txt and read its content
+merge_file = open("merge.txt", "r")
+merge_content = merge_file.read()
+merge_file.close()
+
+# Initialize counters
+uppercase_count = 0
+lowercase_count = 0
+digit_count = 0
+
+# Iterate through each character in the content
+for char in merge_content:
+    # Check for uppercase letters
+    if 'A' <= char <= 'Z':
+        uppercase_count += 1
+    # Check for lowercase letters
+    elif 'a' <= char <= 'z':
+        lowercase_count += 1
+    # Check for digits
+    elif '0' <= char <= '9':
+        digit_count += 1
+
+# Print the counts
+print("Total Uppercase Letters:", uppercase_count)
+print("Total Lowercase Letters:", lowercase_count)
+print("Total Digits:", digit_count)
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Numpy Programs</h2>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Create an array using numpy</button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-python">
+import numpy as np
+
+# Define a list of numbers
+numbers = [1, 2, 3, 4, 5, 6]
+
+# Create a NumPy array from the list of numbers
+array = np.array(numbers)
+
+print("NumPy array:", array)
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Create an array of 10 random integers using numpy</button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-python">
+import numpy as np
+
+# Create an array of 10 random integers between 0 and 100
+random_integers = np.random.randint(0, 100, size=10)
+
+print("Array of 10 random integers:", random_integers)
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Create a NumPy array with elements from 10 to 20</button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-python">
+import numpy as np
+
+array = np.arange(10, 21)
+
+print("NumPy array:", array)
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Create a one-dimensional NumPy array and convert it into 3*3 matrix</button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-python">
+import numpy as np
+
+# Create a one-dimensional NumPy array with 9 elements
+one_d_array = np.arange(1, 10)
+
+# Reshape the array into a 3x3 matrix
+matrix = one_d_array.reshape(3, 3)
+
+print("One-dimensional array:", one_d_array)
+print("3x3 matrix:\n", matrix)
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Create a NumPy array and then convert all the even numbers with 0.</button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-python">
+import numpy as np
+
+# Create a NumPy array with elements from 1 to 10
+array = np.arange(1, 11)
+
+# Replace all even numbers with 0
+for i in array:
+    if array[i]%2==0:
+        array[i] = 0
+
+print("Modified array:", array)
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="wh">
+                <h3>Perform the following slicing:</h3>
+                <p>Input:</p>
+                <pre>
+                    <code class="language-python">
+ 1   2   3   4
+ 5   6   7   8
+ 9  10  11  12
+13  14  15  16
+                    </code>
+                </pre>
+                <p>Output:</p>
+                <pre>
+                    <code class="language-python">
+ 6   7
+10  11
+14  15
+                    </code>
+                </pre>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <button class="ac">Code</button>
+                    <div class="panel">
+                        <pre>
+                            <code class="language-python">
+import numpy as np
+arr1 = np.arrange(1, 17).reshape(4, 4)
+arr2 = arr1[1:,1:3]
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac"> Progrm to show the difference between a NumPy array and a Python list</button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-python">
+import numpy as np
+
+# Difference 1: Type
+# --------------------
+# Python list
+py_list = [1, 2, 3, 4, 5]
+print(f"Type of py_list: {type(py_list)}")  # The type of py_list is <class 'list'>
+
+# NumPy array
+np_array = np.array([1, 2, 3, 4, 5])
+print(f"Type of np_array: {type(np_array)}")  # The type of np_array is <class 'numpy.ndarray'>
+
+# Difference 2: Element-wise Operations
+# -------------------------------------
+# Element-wise addition
+
+py_list_add=[]
+# Python list - element-wise addition requires a loop
+for i in range(len(py_list)):
+    py_list_add.append(py_list[i] + 1)
+print(f"Python list after addition: {py_list_add}")  # Python list after addition: [2, 3, 4, 5, 6]
+
+# NumPy array - element-wise addition is vectorized
+np_array_add = np_array + 1
+print(f"NumPy array after addition: {np_array_add}")  # NumPy array after addition: [2 3 4 5 6]
+
+# Element-wise multiplication
+
+# Python list - element-wise multiplication requires a loop
+py_list_mul = []
+for i in range(len(py_list)):
+    py_list_mul.append(2*py_list[i])
+print(f"Python list after multiplication: {py_list_mul}")  # Python list after multiplication: [2, 4, 6, 8, 10]
+
+# NumPy array - element-wise multiplication is vectorized
+np_array_mul = np_array * 2
+print(f"NumPy array after multiplication: {np_array_mul}")  # NumPy array after multiplication: [ 2  4  6  8 10]
+
+# Difference 3: Slicing
+# ---------------------
+# Python list - slicing returns a new list
+py_list_slice = py_list[1:4]
+print(f"Python list slice (1:4): {py_list_slice}")  # Python list slice (1:4): [2, 3, 4]
+
+# NumPy array - slicing returns a view of the original array (no data copy)
+np_array_slice = np_array[1:4]
+print(f"NumPy array slice (1:4): {np_array_slice}")  # NumPy array slice (1:4): [2 3 4]
+
+# Difference 4: Data Types
+# ------------------------
+# Python list - can store elements of different data types
+py_list_mixed = [1, "two", 3.0]
+print(f"Python list with mixed types: {py_list_mixed}")  # Python list with mixed types: [1, 'two', 3.0]
+
+# NumPy array - all elements must be of the same data type
+np_array_mixed = np.array([1, 2, 3.0])
+print(f"NumPy array with mixed types: {np_array_mixed}")  # NumPy array with mixed types: [1. 2. 3.]
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Pandas Program</h2>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Program to convert Pandas series to list</button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-python">
+import pandas as pd
+
+# Create a pandas Series
+data = [10, 20, 30, 40, 50]
+series = pd.Series(data)
+
+# Convert the pandas Series to a Python list
+list_from_series = series.tolist()
+
+# Print the Python list
+print("Python List from Pandas Series:")
+print(list_from_series)
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Program to perform addition, subtraction, multiplication, and division on two pandas
+                    Series</button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-python">
+import pandas as pd
+
+# Create two pandas Series using lists without labels
+data1 = [10, 20, 30]
+data2 = [5, 15, 25]
+
+series1 = pd.Series(data1)
+series2 = pd.Series(data2)
+
+# Addition
+addition = series1 + series2
+print("Addition:")
+print(addition)
+
+# Subtraction
+subtraction = series1 - series2
+print("\nSubtraction:")
+print(subtraction)
+
+# Multiplication
+multiplication = series1 * series2
+print("\nMultiplication:")
+print(multiplication)
+
+# Division
+division = series1 / series2
+print("\nDivision:")
+print(division)
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Program to convert numpy array to pandas series</button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-python">
+import numpy as np
+import pandas as pd
+
+# Create a NumPy array
+numpy_array = np.array([10, 20, 30, 40, 50])
+
+# Convert the NumPy array to a pandas Series
+series_from_numpy = pd.Series(numpy_array)
+
+# Print the pandas Series
+print("Pandas Series from NumPy array:")
+print(series_from_numpy)
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Write a program to create and display a DataFrame from a dictionary with index
+                    labels.</button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-python">
+import pandas as pd
+
+# Create a dictionary with index labels
+data = {'Name': ['Alice', 'Bob', 'Charlie', 'David', 'Emily'],
+        'Age': [25, 30, 35, 40, 45],
+        'City': ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Dallas']}
+index_labels = ['A', 'B', 'C', 'D', 'E']
+
+# Create a pandas DataFrame with index labels
+df = pd.DataFrame(data, index=index_labels)
+
+# Display the pandas DataFrame
+print("Pandas DataFrame with Index Labels:")
+print(df)
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Using the 'dirtydata.csv' file, fix the bad dataset. Bad data could include empty
+                    cells, data in the wrong format, duplicate data, and incorrect data.</button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-python">
+import pandas as pd
+
+# Load the CSV file into a pandas DataFrame
+df = pd.read_csv('dirtydata.csv')
+
+# Remove rows with empty cells
+df.dropna(inplace=True)
+
+# Remove rows with data in wrong format in the 'Age' column
+df = df[pd.to_numeric(df['Age'], errors='coerce').notnull()]
+
+# Remove duplicate rows
+df.drop_duplicates(inplace=True)
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Using pandas, remove duplicate data from the file 'dirtydata.csv'</button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-python">
+import pandas as pd
+
+# Load the CSV file into a pandas DataFrame
+df = pd.read_csv('dirtydata.csv')
+
+# Display the original data
+print("Original Data:")
+print(df)
+
+# Remove duplicate rows based on all columns
+df.drop_duplicates(inplace=True)
+
+# Display the cleaned data
+print("\nCleaned Data (After Removing Duplicates):")
+print(df)
+
+# Save the cleaned DataFrame back to the same CSV file
+df.to_csv('dirtydata.csv', index=False)
+print("\nCleaned data (without duplicates) saved back to 'dirtydata.csv'")
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <!-- program to show all kind of arguments of function -->
+        <!--
+    <div class="wh">
+        <div class='code'>
+            <div class='dotc'></div>
+            <button class="ac">
+
+            </button>
+            <div class="panel">
+                <pre>
+                    <code class="language-python">
+                    </code>
+                </pre>
+            </div>
+        </div>
+    </div>
+-->
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+        <script src="../../../public/main.js"></script>
+</body>
+
+</html>

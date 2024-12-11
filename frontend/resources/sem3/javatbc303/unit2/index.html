@@ -1,0 +1,1430 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Packages / Exception handling</title>
+    <link rel="stylesheet" href="../../../../public/style.css">
+    <link rel="icon" href="../../../../public/logo/favicon_io/favicon.ico">
+    <link rel="stylesheet" id="highlightStylesheet"
+        href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/tomorrow-night-blue.min.css">
+</head>
+
+<body class="bg-c">
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">back</a>
+        <a href="#pack" class="link">Packages</a>
+        <a href="#t1" class="link">Exceptions in Java</a>
+        <a href="#t2" class="link">Exception Handling</a>
+        <a href="#t3" class="link">Exception Hierarchy in Java</a>
+        <a href="#t4" class="link">Try & Catch blocks</a>
+        <a href="#t7" class="link">finally block</a>
+        <a href="#t5" class="link">"throw" keyword</a>
+        <a href="#t6" class="link">"throws" keyword</a>
+        <a href="#tpyq" class="link">Previous Year Questions</a>
+        <div class="botbut">
+            <a href="../unit3/index.html" class="link">Next Topic &rarr;</a>
+            <a href="../unit1/index.html" class="link">&larr; Previous Topic</a>
+        </div>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Packages / Exception handling</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Packages / Exception handling</h1>
+        <div id="pack" class="wh">
+            <h2>Packages in Java</h2>
+            <ul>
+                <li>Packages are used for organizing and sharing code in Java.</li>
+                <li>The 'package' keyword is used to define a package in Java.</li>
+                <li>The 'import' keyword is used to import a package into an existing Java file.</li>
+                <li>Packages promote code reusability and maintainability.</li>
+                <li>Packages can store classes, interfaces, and subpackages.</li>
+                <li>Packages are used for grouping classes.</li>
+            </ul>
+            <p><b>Packages in Java can be classified as:</b></p>
+            <ul>
+                <li><b>Internal packages (predefined packages):</b> Also known as predefined packages, these are
+                    built-in packages in Java.</li>
+                <li><b>External packages (user-defined packages):</b> These packages are created by the user to organize
+                    their code.</li>
+            </ul>
+            <p><b>Some commonly user predefined packages in Java include:</b></p>
+            <ul>
+                <li><b>java.lang.*:</b> The java package is the main package and serves as the default package. The lang
+                    package is a subpackage.</li>
+                <li><b>java.util.*:</b> Contains useful utilities, such as the Scanner class.</li>
+                <li><b>java.io.*:</b> Used for handling input and output streams.</li>
+                <li><b>java.awt.* (Abstract Window Toolkit):</b> Used for creating graphical user interfaces.</li>
+                <li><b>java.awt.event.*:</b> This is a sub-subpackage under java.awt that contains classes for handling
+                    events in GUI applications.</li>
+                <li><b>java.sql.*:</b> Provides classes for database connectivity.</li>
+                <li><b>java.net.*:</b> Used for network connectivity.</li>
+                <li><b>javax.swing.*:</b> Provides classes for building GUIs using Swing components.</li>
+            </ul>
+            <div class="in">
+                <h3>Inside java package</h3>
+                <img src="../../images/javapackage.svg" alt="" class="wb">
+                <p><b>Note: When using the "import java.awt.*" statement, it will include only the classes from the
+                        specified package, not its subpackages. To include classes from a subpackage, you must import it
+                        explicitly. For example: to include classes from the "java.awt.event" subpackage, you should use
+                        the statement "import java.awt.event.</b></p>
+                <p>That's why java.* won't include everything because there are no classes directly inside the java
+                    package; instead, it contains subpackages. In Java, packages are used to organize and structure
+                    code. The java package serves as the root package for many core Java libraries, and it houses
+                    various subpackages, each responsible for specific functionalities or components.
+                <ul>
+                    <li>For instance, you will find subpackages like java.util, java.io, java.awt, java.sql, and more
+                        within the java package. These subpackages, in turn, contain classes, interfaces, and other
+                        resources related to their respective domains. To access the classes within these subpackages,
+                        you must import them explicitly in your code using statements like import java.util.* or import
+                        java.awt.*, as the wildcard * includes all classes from the specified subpackage.</li>
+                </ul>
+                </p>
+            </div>
+            <div class="in">
+                <h3>Term "import static"</h3>
+                <p>Syntax &darr;</p>
+                <pre>
+                    <code>
+import static java.lang.System.*;
+                    </code>
+                </pre>
+                <p>Example &darr;</p>
+                <pre>
+                    <code>
+import static java.lang.System.*;
+
+// Incorrect usage:
+// import static java.util.*; // This is not allowed
+
+class Test {
+    public static void main(String[] args) {
+        out.println("Hello World"); // No need to use the keyword 'System' every time
+        out.println("How are you???");
+    }
+}
+                    </code>
+                </pre>
+                <p>Explanation:
+                <ul>
+                    <li>The term "import static" in Java allows you to access static members (fields and methods) of a
+                        class directly without specifying the class name each time. In the example provided, we use
+                        import static for the <b>'java.lang.System'</b> class. This means that we can directly access
+                        the static members of the 'System' class without having to prefix them with 'System.'.</li>
+                    <li>However, it's important to note that import static doesn't work with wildcard imports like
+                        <b>'import static java.util.*;'</b>. You can only use import static for specific classes and
+                        their static members.
+                    </li>
+                    <li>In the example, when out.println(...) is used, we no longer need to use the keyword System
+                        because of the import static. This feature can improve code readability when dealing with
+                        frequently used static members.</li>
+                    <li>In Java, when you want to import and use static members from a class using the import static
+                        feature, it's essential to specify the class name followed by a '.*' wildcard. This combination,
+                        <b>'import static some.package.SomeClass.*'</b>, allows you to import and make available all
+                        static members (fields and methods) of the specified class within your code. Omitting the '.*'
+                        part when using import static will result in the import statement not functioning as intended,
+                        and you won't be able to access the static members without referencing the class explicitly in
+                        your code.
+                    </li>
+                </ul>
+                </p>
+            </div>
+            <div class="in">
+                <h3>Creating our own Package in Java</h3>
+                <ul>
+                    <li>Creating a package in Java is a straightforward process, but effectively using it may require
+                        some understanding. Let's take a simple class and transform it into a package.</li>
+                </ul>
+                <pre>
+                    <code>
+class Shape {
+    void color() {
+        System.out.println("Coloring the shape");
+    }
+    void cal_area() {
+        System.out.println("Calculating area.");
+    }
+
+    void cal_square() {
+        System.out.println("Calculating square");
+    }
+}
+                    </code>
+                </pre>
+                <ul>
+                    <li>If we want to reuse the color(), cal_area(), and cal_square() methods without duplicating the
+                        code every time, we can achieve this using a package. To convert the file into a package, we
+                        make the following changes:</li>
+                </ul>
+                <pre>
+                    <code>
+// Shape.java file
+package group;
+
+public class Shape {
+    public void color() {
+        System.out.println("Coloring the shape");
+    }
+    public void cal_area() {
+        System.out.println("Calculating area.");
+    }
+    public void cal_square() {
+        System.out.println("Calculating square");
+    }
+}
+                    </code>
+                </pre>
+                <ul>
+                    <li>When creating a package, you can use any name following Java's naming conventions, typically
+                        using lowercase letters and adhering to a reverse domain naming scheme to avoid naming
+                        conflicts.</li>
+                    <li>Classes and methods inside a package should generally be declared as either public or protected.
+                        The 'default' access modifier is limited to use within the same package, allowing classes to
+                        access each other without being explicitly declared as public or protected. Additionally,
+                        protected members (fields and methods) can be accessed by subclasses both within and outside the
+                        package, regardless of whether direct inheritance is involved.</li>
+                </ul>
+                <p>Now that we have created our package file, let's use it:</p>
+                <ul>
+                    <li>Open your terminal and navigate to the folder where the package file is located.</li>
+                    <li>Run the following command:</li>
+                </ul>
+                <pre>
+    <code>
+javac -d . filename.java
+    </code>
+</pre>
+                <ul>
+                    <li>The above command will create a package folder instead of generating a .class file.</li>
+                    <li>The dot (.) specifies that the package will be created in the current directory.</li>
+                    <li>the -d option to specify the destination directory where the compiled .class files for the
+                        package should be placed.</li>
+                    <li>Make sure that the package and the class in which are you going to import the package should be in same directory.</li>
+                    <li>Now, you can use it as follows:</li>
+                </ul>
+                <pre>
+                    <code>
+// Test.java file where we will import our package and use the methods
+import group.Shape.*;
+
+class Test
+{
+    public static void main(String[] args)
+    {
+        // To avoid path errors, use the following
+        group.Shape obj = new group.Shape();
+        // Shape obj = new Shape(); // This might result in an error
+        obj.color();
+        obj.cal_area();
+        obj.cal_square();
+    }
+}
+                </code>
+            </pre>
+            </div>
+        </div>
+        <div id="t1" class="wh">
+            <h2>Exceptions in Java</h2>
+            <p>
+                In Java, exceptions are events that occur during the execution of a program that disrupt the normal flow
+                of instructions. Exceptions can occur for various reasons, such as division by zero, trying to access an
+                array element that doesn't exist, or attempting to open a file that doesn't exist.
+                <br>
+                In Java, exceptions are a vital concept used to manage and handle runtime errors gracefully. They play a
+                crucial role in achieving the goal of a robust programming language. Let's delve deeper into the world
+                of exceptions:
+            </p>
+            <ul>
+                <li><strong>Runtime Error Management:</strong> Exceptions are primarily used to tackle runtime errors.
+                    These errors can occur during program execution and might disrupt the normal flow of the
+                    application.</li>
+                <li><strong>Robust Language:</strong> Java's exception handling mechanism is one of the reasons it's
+                    considered a robust language. It allows programs to continue running smoothly even in the presence
+                    of errors.</li>
+                <li><strong>Flow Control:</strong> Exception handling helps maintain the flow of a program. It ensures
+                    that the program doesn't terminate abruptly when errors occur but instead gracefully handles them.
+                </li>
+                <li><strong>General Errors:</strong> In a broader sense, exceptions represent various types of runtime
+                    errors, making it easier to identify and address issues.</li>
+            </ul>
+        </div>
+
+        <div id="t2" class="wh">
+            <h2>Exception Handling</h2>
+            <p>
+                Exception handling is a fundamental aspect of Java programming that empowers developers to deal with
+                runtime errors systematically. Java provides built-in support for exception handling, making it easier
+                to write robust and reliable code. Here's a closer look at exception handling in Java:
+            </p>
+            <ul>
+                <li><strong>Automatic Handling:</strong> Java has a built-in mechanism for handling exceptions. When an
+                    exception occurs, Java automatically looks for an appropriate handler to manage the situation.</li>
+                <li><strong>Example:</strong> Consider this example where an attempt to divide by zero results in an
+                    exception. Java's automatic handling ensures that the program doesn't crash but rather reports the
+                    issue.</li>
+            </ul>
+            <pre>
+                <code>
+int x = 10; 
+int ans = x / 0; // Automatically handled by Java
+String s1 = null; // also an exception
+                </code>
+            </pre>
+            <ul>
+                <li><strong>Preventing Abnormal Termination:</strong> Exception handling prevents programs from
+                    abnormally terminating due to runtime errors. This is especially crucial when creating software, as
+                    unhandled exceptions can lead to unpredictable outcomes, including system crashes.</li>
+                <li><strong>Essential OOP Feature:</strong> Exception handling is a fundamental feature of
+                    object-oriented programming (OOP). It allows developers to encapsulate error-handling logic and
+                    maintain clean and modular code.</li>
+                <li><strong>Respective Handlers:</strong> In Java, exceptions are handled by methods or classes
+                    specifically designed for that purpose. These handlers determine how different types of errors are
+                    managed and what error messages to display.</li>
+            </ul>
+        </div>
+        <div id="t3" class="wh">
+            <h2>Exception Hierarchy in Java</h2>
+
+            <p>In Java, exceptions are organized into a hierarchy of classes through inheritance. The
+                <strong>java.lang.Throwable</strong> class serves as the root of this hierarchy.
+            </p>
+            <img src="../../images/exceptioninjava.svg" alt="" class="wb">
+            <h3>Throwable (Root Class)</h3>
+            <p>The <strong>Throwable</strong> class is the root class of the exception hierarchy in Java. It has two
+                main
+                subclasses:</p>
+
+            <div class="in">
+                <h3>Error</h3>
+                <p><strong>Error</strong> represents serious, unrecoverable system-level errors, often caused by the JVM
+                    or
+                    underlying hardware. Developers usually don't handle these exceptions, and they typically lead to
+                    program termination.</p>
+                <ul>
+                    <li><strong>StackOverflowError:</strong> Occurs when the call stack (method call history) exceeds
+                        its
+                        limit.</li>
+                    <li><strong>OutOfMemoryError:</strong> Indicates that the JVM has exhausted available memory.</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Exception</h3>
+                <p><strong>Exception</strong> represents exceptions that can be caught and handled by application code.
+                    <br>
+                    In Java, exceptions are classified into two main categories: checked exceptions and unchecked
+                    exceptions.
+                    These distinctions help developers handle and manage exceptions effectively in their code.
+                </p>
+                <div class="wh">
+                    <h3>Checked Exceptions</h3>
+                    <ul>
+                        <li><strong>Definition:</strong> Checked exceptions, also known as compile-time exceptions, are
+                            exceptions that the Java compiler mandates to be caught or declared in the code. This means
+                            that if
+                            a method can potentially throw a checked exception, it must be either caught using a
+                            try-catch block
+                            or declared using the 'throws' keyword in the method signature.</li>
+                        <li><strong>Examples:</strong> Common checked exceptions include 'IOException',
+                            'FileNotFoundException',
+                            and 'SQLException'. These exceptions typically occur in situations where external resources
+                            or
+                            external systems are involved, and the developer needs to handle potential issues
+                            gracefully.</li>
+                        <li><strong>Handling:</strong> Developers are required to handle checked exceptions explicitly
+                            in their
+                            code, either by using try-catch blocks to catch and process the exception or by declaring
+                            the
+                            exception using 'throws' in the method signature.</li>
+                    </ul>
+
+                    <h3>Unchecked Exceptions</h3>
+                    <ul>
+                        <li><strong>Definition:</strong> Unchecked exceptions, also known as runtime exceptions, are
+                            exceptions
+                            that do not require explicit handling using try-catch blocks or 'throws' declarations. These
+                            exceptions can be caught and handled, but it's not mandatory by the compiler.</li>
+                        <li><strong>Examples:</strong> Common unchecked exceptions include 'NullPointerException',
+                            'ArrayIndexOutOfBoundsException', and 'ArithmeticException'. These exceptions usually result
+                            from
+                            programming errors or invalid operations and are not related to external factors.</li>
+                        <li><strong>Handling:</strong> While unchecked exceptions can be caught and handled if desired,
+                            developers are not required to do so. It is often recommended to address the root cause of
+                            these
+                            exceptions during development and not rely solely on catching them in code.</li>
+                    </ul>
+
+                    <p>Understanding the difference between checked and unchecked exceptions is crucial for effective
+                        exception
+                        handling in Java. Checked exceptions help ensure that developers handle potential issues that
+                        may arise
+                        when interacting with external resources, while unchecked exceptions primarily address
+                        programming
+                        errors and invalid operations.</p>
+                </div>
+            </div>
+
+            <p>The <b>Throwable</b> class, along with its subclasses <b>Error</b> and
+                <b>Exception</b>, forms the foundation of Java's exception handling system. Developers can create
+                their custom exceptions by extending the <b>Exception</b> class or one of its subclasses.
+            </p>
+
+            <p>When handling exceptions in Java, it's essential to catch specific exceptions based on the situation,
+                which allows for more precise error handling and recovery.</p>
+        </div>
+
+        <div id="t4" class="wh">
+            <h2>Try & Catch Blocks in Exception Handling</h2>
+            <p>
+                Exception handling in Java involves several essential keywords, including try, catch, finally, throw,
+                and throws. Let's dive into the details of how these keywords play a crucial role in managing
+                exceptions:
+            </p>
+            <ul>
+                <li><strong>Keywords Overview:</strong> Exception handling in Java is facilitated by specific keywords:
+                    <ul>
+                        <li>try</li>
+                        <li>catch</li>
+                        <li>finally</li>
+                        <li>throw</li>
+                        <li>throws</li>
+                    </ul>
+                    These keywords allow programmers to handle exceptions manually, providing more control over the
+                    error-handling process.
+                </li>
+                <li><strong>Optionality of Keywords:</strong> Among these keywords, finally, throw, and throws are
+                    optional. You can choose to use them based on the specific requirements of your code.
+                    <ul>
+                        <li>finally: This block contains code that executes regardless of whether an exception occurs.
+                            It's often used for cleanup operations.</li>
+                        <li>throw: It's used to explicitly throw an exception within your code when certain conditions
+                            are met.</li>
+                        <li>throws: This keyword is used in method declarations to indicate that the method may throw a
+                            particular type of exception. It's particularly useful when defining custom exception
+                            classes.</li>
+                    </ul>
+                </li>
+                <li><strong>Levels of Exception Handling:</strong> Exception handling can be categorized into different
+                    levels:
+                    <ul>
+                        <li><strong>Level 1:</strong> At this level, Java's default error-handling mechanisms come into
+                            play. The JVM handles these exceptions without programmer intervention.</li>
+                        <li><strong>Level 2:</strong> The try and catch blocks are used by programmers to handle
+                            exceptions more specifically. It allows developers to define their own logic for dealing
+                            with exceptions.</li>
+                        <li><strong>Level 3:</strong> Finally, throw, and throws come into play at this level. The
+                            finally block ensures essential cleanup code is executed, throw is used to explicitly raise
+                            exceptions, and throws is employed for specifying potential exceptions that a method may
+                            throw.</li>
+                    </ul>
+                </li>
+                <li><strong>Effectiveness of Try, Catch, and Throws:</strong> In practice, approximately 90% of
+                    exceptions are effectively handled using try, catch, and throws blocks. These mechanisms offer a
+                    robust approach to exception management.</li>
+                <li><strong>Best Practice:</strong> Handling exceptions with 'throws' is considered a best practice,
+                    especially in situations where a programmer possesses in-depth knowledge of Java. It allows for more
+                    precise and controlled exception handling, particularly when dealing with user-defined exceptions.
+                </li>
+                <li><strong>Usage of 'throws':</strong> The 'throws' keyword is primarily used for declaring
+                    user-defined exceptions in method signatures. It indicates that a method may throw specific types of
+                    exceptions, providing valuable information to other developers using the method.</li>
+            </ul>
+            <div class="in">
+                <h3>Handling Exceptions by the User Using Try and Catch Blocks</h3>
+                <p>Example &darr;</p>
+                <pre>
+                    <code>
+import java.util.Scanner;
+
+class Exp {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int v1, v2, ans;
+        System.out.println("Enter two numbers: ");
+        v1 = sc.nextInt();
+        v2 = sc.nextInt();
+
+        ans = v1 / v2;
+        System.out.println(ans);
+    }
+}
+                    </code>
+                </pre>
+                <ul>
+                    <li>In the above code, when we provide v2 = 0, we will get a 'DivideByZero' error, which is
+                        correctly handled by Java.</li>
+                    <li>As we can see, the program is correct, but when v2 = 0, the code after that won't get executed
+                        because Java doesn't handle it, and that's why it gets terminated.</li>
+                    <li>Now, if we want to handle it by the user, we will use the try-catch block.
+                        <ul>
+                            <li>Try block: Used for handling exceptions by the user. In the try block, we put the code
+                                that might generate an exception. If an exception is generated by the try block, it
+                                switches to the catch block, which is the exception handler.</li>
+                        </ul>
+                    </li>
+                    <li>If we are not sure which part will give an exception, then put the whole code inside the try
+                        block. Only the content that might generate an exception will be part of the try block, not any
+                        method.</li>
+                </ul>
+                <pre>
+                    <code>
+import java.util.Scanner;
+
+class Exp {
+    public static void main(String[] args) {
+        try {
+            Scanner sc = new Scanner(System.in);
+            int v1, v2, ans;
+            System.out.println("Enter two numbers: ");
+            v1 = sc.nextInt();
+            v2 = sc.nextInt();
+            ans = v1 / v2;
+            System.out.println(ans);
+        } catch (Exception e) {
+            System.out.println("Error: " + e);
+        }
+    }
+}
+                </code>
+            </pre>
+                <ul>
+                    <li>Remember, try without catch won't work.</li>
+                    <li>If we want to find which line caused the error and get its name, we can do the following:</li>
+                </ul>
+                <pre>
+                    <code>
+catch (Exception e) {
+    System.out.println("Error occurred at line: " + e.getStackTrace()[0].getLineNumber());
+    System.out.println("Error message: " + e.getMessage());
+}
+// This provides full details about the error.
+                </code>
+            </pre>
+
+            </div>
+            <div class="in">
+                <h3>Try with Multiple Catch Blocks</h3>
+                <pre>
+                    <code>
+import java.util.Scanner;
+
+class Exp {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int v1, v2, ans;
+        System.out.println("Enter two numbers: ");
+        v1 = sc.nextInt();
+        v2 = sc.nextInt();
+        try {
+            ans = v1 / v2;
+            System.out.println(ans);
+        }
+        catch (InputMismatchException e1) {
+            System.out.println("Exception due to wrong input datatype");
+        }
+        catch (ArithmeticException e2) {
+            System.out.println("Exception due to dividing by zero");
+        }
+        catch (Exception e) { // Default, if we don't exactly know what can be the exception.
+            System.out.println("Error: " + e);
+        }
+    }
+}
+                    </code>
+                </pre>
+                <ul>
+                    <li>We can even put a try block inside another try block.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Multiple Try with Multiple Catch</h3>
+                <p>Exception handling in Java is a critical aspect of ensuring that your programs can gracefully handle
+                    unexpected situations. Java provides several mechanisms for handling exceptions, including:</p>
+                <ul>
+                    <li>Automatic handling by the Java Virtual Machine (JVM)</li>
+                    <li>Using the <strong>try/catch</strong> block</li>
+                    <li>Using <strong>try</strong> with multiple <strong>catch</strong> blocks</li>
+                </ul>
+                <p>When dealing with exceptions, <strong>try</strong> and <strong>catch</strong> blocks serve two main
+                    objectives:</p>
+                <ol>
+                    <li>Provide user-defined error messages for better diagnostics.</li>
+                    <li>Allow the continuation of code execution even in the presence of exceptions. This ensures that
+                        other parts of the code can still run.</li>
+                </ol>
+
+                <p>There is no strict limitation on the number of <strong>try</strong> and <strong>catch</strong> blocks
+                    you can
+                    use in your code. However, it's essential to consider code complexity as it may increase with a
+                    higher number of exception-handling blocks.</p>
+
+                <h3>Continuation of Program:</h3>
+                <ul>
+                    <li>Continuation of program flow is achieved using multiple <strong>try</strong> and
+                        <strong>catch</strong>
+                        blocks.
+                    </li>
+                    <li>This approach is particularly useful when you know the class names of the exceptions you expect
+                        to handle.</li>
+                    <li>Deciding how many <strong>try</strong> and <strong>catch</strong> blocks to use can be based on
+                        grouping
+                        the code into logical sections. Here are three common groups:</li>
+                    <ul>
+                        <li>Input processing</li>
+                        <li>Calculation</li>
+                        <li>Display</li>
+                    </ul>
+                    <p>Both the input and calculation sections have a higher chance of encountering exceptions, so it's
+                        beneficial to place separate <strong>try</strong> and <strong>catch</strong> blocks for each
+                        group.</p>
+                </ul>
+
+                <h4>Example:</h4>
+                <pre>
+        <code>
+import java.util.*;
+
+class ExceptionHandlingExample {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int v1 = 0, v2 = 0, ans = 0, sub = 0;
+        System.out.println("Enter two numbers: ");
+        try { // input
+            v1 = sc.nextInt();
+            v2 = sc.nextInt();
+        } catch (InputMismatchException e1) {
+            System.out.println("Error due to wrong input");
+        }
+
+        try { // calculation
+            ans = v1 / v2;
+            System.out.println("Division Result: " + ans);
+        } catch (ArithmeticException e2) {
+            System.out.println("Error due to division by zero");
+        }
+
+        try { // independent calculation
+            sub = v1 - v2;
+            System.out.println("Subtraction Result: " + sub);
+        } catch (ArithmeticException e3) {
+            System.out.println("Error due to subtraction");
+        }
+    }
+}
+        </code>
+    </pre>
+
+                <ul>
+                    <li>It's a good practice to declare all variables before the first <strong>try</strong> block to
+                        ensure
+                        they have a broader scope.</li>
+                    <li>If you don't know the specific exception class name, you can use the generic
+                        <strong>Exception</strong> class to catch and handle exceptions.
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Nested Try-Catch Blocks in Java</h3>
+                <p>In Java, when dealing with complex situations that involve multiple layers of exception handling,
+                    nested `try` and `catch` blocks can be employed. These blocks allow for a finer level of detail in
+                    handling exceptions at different levels of your code.</p>
+
+                <h3>Understanding Nested Try-Catch Blocks:</h3>
+                <p>Nested `try` and `catch` blocks involve placing one or more `try` blocks inside another. This
+                    approach is useful when certain operations within a `try` block can themselves trigger exceptions
+                    that need to be handled separately.</p>
+
+                <h4>Example:</h4>
+                <pre>
+                    <code>
+try {
+    // Outer try block
+    // Perform some operations
+    try {
+        // Inner try block
+        // Perform more specific operations
+    } catch (SpecificException e) {
+        // Handle the specific exception from the inner block
+    }
+    // Continue with operations
+} catch (GeneralException e) {
+    // Handle a more general exception from the outer block
+}
+                    </code>
+                </pre>
+
+                <p>In the example above, the outer `try` block handles more general exceptions, while the inner `try`
+                    block handles exceptions specific to its operations. This way, you can provide specialized
+                    error-handling for different parts of your code.</p>
+
+                <h4>Nesting for Specificity:</h4>
+                <p>The key benefit of nested `try` and `catch` blocks is the ability to address specific exceptions
+                    without affecting the entire code block. It allows you to provide more specific error-handling
+                    strategies at different levels of your code.</p>
+
+                <h4>Caution:</h4>
+                <p>While nesting can be powerful for precise error handling, it can also make your code more complex.
+                    It's essential to strike a balance between specificity and code readability. Avoid excessive
+                    nesting, which can lead to code that's challenging to maintain.</p>
+
+                <h4>Best Practices:</h4>
+                <ul>
+                    <li>Use nested `try` and `catch` blocks when there's a genuine need to handle exceptions at
+                        different levels with varying levels of detail.</li>
+                    <li>Keep your code organized and maintainable by providing clear comments and documentation.</li>
+                    <li>Avoid deeply nested blocks when possible; instead, break down your code into smaller, more
+                        manageable functions or methods.</li>
+                </ul>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <button class='ac'>Example program </button>
+                    <div class='panel'>
+                        <pre>
+                            <code>
+import java.util.Scanner;
+
+public class NestedTryCatchExample {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int v1, v2, ans, sub; 
+
+        try {
+            System.out.println("Enter two numbers: ");
+            v1 = sc.nextInt();
+            v2 = sc.nextInt();
+
+            try {
+                ans = v1 / v2;
+                System.out.println("Division Result: " + ans);
+            } catch (ArithmeticException e2) {
+                System.out.println("Error: Division by zero is not allowed.");
+            }
+
+            try {
+                sub = v1 - v2;
+                System.out.println("Subtraction Result: " + sub);
+            } catch (ArithmeticException e3) {
+                System.out.println("Error: Subtraction operation resulted in an error.");
+            }
+        } catch (java.util.InputMismatchException e1) {
+            System.out.println("Error: Invalid input. Please enter valid numbers.");
+        }
+    }
+}
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="t7" class="wh">
+            <h2>finally Block</h2>
+            <ul>
+                <li><strong>Optional:</strong> The <strong>finally</strong> block is an optional part of Java's
+                    exception
+                    handling mechanism.</li>
+                <li><strong>Mandatory Execution:</strong> It contains code that needs to be executed regardless of
+                    whether an exception was thrown or not. This makes it suitable for tasks like resource cleanup,
+                    closing files, or releasing system resources.</li>
+                <li><strong>Always a Part of Try and Catch Blocks:</strong> The <strong>finally</strong> block should
+                    always
+                    be associated with a <strong>try</strong> and <strong>catch</strong> block. It ensures that the code
+                    within
+                    the <strong>finally</strong> block is executed after the <strong>try</strong> block, and potentially
+                    the
+                    <strong>catch</strong> block, no matter what happens in the preceding code.
+                </li>
+                <li><strong>Cannot Be Used Without Try and Catch:</strong> You cannot use the <strong>finally</strong>
+                    block
+                    on its own; it must be used in conjunction with a <strong>try</strong> and <strong>catch</strong>
+                    block.
+                </li>
+            </ul>
+            <p><strong>Syntax:</strong></p>
+            <pre>
+                <code>
+try {
+    // Code that may throw exceptions
+}
+catch (Exception e) {
+    // Exception handling code
+}
+finally {
+    // Code that always executes, whether or not an exception was thrown
+}
+                </code>
+            </pre>
+
+        </div>
+        <div id="t5" class="wh">
+            <h2>Understanding the "throw" Keyword in Java</h2>
+            <ul>
+                <li>In Java, the "throw" keyword is a mechanism used to create and raise custom exceptions during
+                    program execution.</li>
+                <li>User-Defined Exceptions (UDEs) are exceptions that programmers create to handle specific conditions
+                    or situations within their code.</li>
+                <li>While Java provides built-in exceptions for common error scenarios (e.g.,
+                    ArrayIndexOutOfBoundsException or InputMismatchException), the "throw" keyword allows developers to
+                    define and signal custom exceptions tailored to their application's requirements.</li>
+                <li>For example, consider a situation where age verification is needed in a program. If a condition like
+                    "age < 18" is met, the programmer can use the "throw" keyword to raise a custom exception,
+                        specifying how this condition should be handled within the code.</li>
+                <li>Similarly, if a program encounters an unexpected odd result that doesn't cause a runtime error but
+                    needs special attention, the "throw" keyword can be employed to create a custom exception and define
+                    how this unique situation should be managed.</li>
+                <li>Essentially, the "throw" statement is used to communicate exceptional conditions or custom-defined
+                    situations within the program, enabling developers to implement specific handling procedures for
+                    these scenarios.</li>
+            </ul>
+            <div class="in">
+                <h3>Handling the 'Divide by Zero' Exception Using the "throw" Keyword without Try-Catch Blocks</h3>
+                <pre>
+                    <code>
+import java.util.*;
+
+class Test
+{
+    public static void main(String[] args)
+    {
+        int ans = 0;
+        int v1 = 10;
+        int v2 = 0;
+        if(v2 == 0)
+        {
+            throw new ArithmeticException("Division by zero is not allowed.");
+            // Alternatively, you can create an ArithmeticException object and then throw it:
+            // ArithmeticException obj = new ArithmeticException("Division by zero is not allowed.");
+            // throw obj;
+        }
+        else 
+        {
+            ans = v1 / v2;
+        }
+        System.out.println(ans);
+    }
+}
+                </code>
+            </pre>
+                <p>In the example above, we used the concept of anonymous objects.</p>
+                <ul>
+                    <li>Note: "throw" keyword is not used for predefined exception although the program will work but we
+                        should not use it, it should only we used for custom exceptions or user defined exceptions.</li>
+                </ul>
+                <pre>
+                    <code>
+class A
+{
+    public void sum(int v1)
+    {
+        System.out.println(v1 + 10);
+    }
+}
+public static void main(String[] args) 
+{
+    (new A()).sum(5);
+    // This is similar to the following:
+    // A obj = new A();
+    // obj.sum(5);
+}
+                </code>
+            </pre>
+            </div>
+            <div class="in">
+                <h3>Throwing Unchecked Exceptions</h3>
+                <ul>
+                    <li>We know that exceptions are of two types:
+                        <ol>
+                            <li>Checked</li>
+                            <li>Unchecked</li>
+                        </ol>
+                        Now, which one to create?? Although "throw" can handle both unchecked and checked exception but
+                        is better to use it for unchecked.
+                    </li>
+                    <li>If we want to throw a checked exception, then we know that we extend the Exception class.</li>
+                    <li>Now, for unchecked exceptions, we extend the RuntimeException class.</li>
+                </ul>
+                <h3>Steps to Create and Throw Our Custom Exception</h3>
+                <ol>
+                    <li>Inherit from the "RuntimeException" or "Exception" class to create our custom exception class.
+                    </li>
+                    <li>Create a constructor for the custom exception class.</li>
+                </ol>
+                <pre>
+                    <code>
+// Step 1: Inheriting from RuntimeException class to create our custom exception class
+class YoungerAgeException extends RuntimeException {
+    // Step 2: Creating a constructor that takes a custom error message
+    YoungerAgeException(String msg) {
+        super(msg);
+    }
+}
+
+class Test {
+    public static void main(String[] args) {
+        int age = 16;
+        if (age < 18) {
+            throw new YoungerAgeException("You are not eligible to vote");
+        } else {
+            System.out.println("Please vote");
+        }
+        System.out.println("Hello"); // This message won't print if the exception is generated, which means the program will terminate abnormally.
+    }
+}
+                    </code>
+                </pre>
+                <ul>
+                    <li>Remember: Still, the program will terminate abnormally if age < 18. So, if we want to
+                            successfully execute our program, then we must use try and catch block.</li>
+                    <li>So using "throw," we are creating an exception object, but the handling will be done by the try
+                        and catch block.</li>
+                    <li>To correct it, we must use a try and catch block.</li>
+                </ul>
+                <pre>
+                    <code>
+class YoungerAgeException extends RuntimeException {
+    YoungerAgeException(String msg) {
+        super(msg);
+    }
+}
+
+class Test {
+    public static void main(String[] args) {
+        int age = 16;
+        try {
+            if (age < 18) {
+                throw new YoungerAgeException("You are not eligible to vote");
+            } else {
+                System.out.println("Please vote");
+            }
+        } catch (YoungerAgeException e) {
+            System.out.println(e);
+        }
+        System.out.println("Hello"); // Now this will run
+    }
+}
+                </code>
+            </pre>
+                <p>Another Example: If a number is even, throw a custom exception.</p>
+                <pre>
+                <code>
+class MyException extends Exception { // We could also extend RuntimeException here
+    MyException(String str) {
+        super(str);
+    }
+}
+
+class Test {
+    public static void main(String[] args) {
+        int n1 = 10;
+        try {
+            if (n1 % 2 == 0) {
+                throw new MyException("Number is even.");
+            } else {
+                System.out.println("Nothing is wrong");
+            }
+        } catch (MyException e) {
+            System.out.println(e);
+        }
+    }
+}
+                </code>
+            </pre>
+                <ul>
+                    <li>Remember: we can't write any statement after throw, otherwise it will provide unreachable
+                        statement error.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Understanding the 'super' Keyword in Java</h3>
+                <p><strong>Definition of the 'super' Keyword:</strong></p>
+
+                <p>In Java, the 'super' keyword is a special word used to refer to the <em>superclass</em> or the
+                    <em>parent
+                        class</em> of the current class. It helps you access members (like variables or methods) from
+                    the
+                    superclass, especially when there are similarly named members in both the superclass and the
+                    subclass.
+                    The 'super' keyword is primarily used to handle conflicts and interact with superclass members in an
+                    inheritance hierarchy.
+                </p>
+
+                <p><strong>Simple Example for Beginners:</strong></p>
+
+                <p>Let's illustrate the 'super' keyword with a straightforward example involving two classes: a
+                    superclass
+                    called <strong>Animal</strong> and a subclass called <strong>Dog</strong>. We'll show how 'super'
+                    can be
+                    used to
+                    access the constructor and method of the superclass.</p>
+
+                <pre>
+                <code>
+&lt;!-- Superclass -->
+class Animal {
+    String name;
+
+    Animal(String name) {
+        this.name = name;
+    }
+
+    void sound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+&lt;!-- Subclass -->
+class Dog extends Animal {
+    String breed;
+
+    Dog(String name, String breed) {
+        &lt;!-- Using 'super' to call the superclass constructor -->
+        super(name);
+        this.breed = breed;
+    }
+
+    void sound() {
+        &lt;!-- Using 'super' to call the superclass method -->
+        super.sound();
+        System.out.println("Dog barks");
+    }
+}
+
+&lt;!-- Main Program -->
+public class Main {
+    public static void main(String[] args) {
+        Dog myDog = new Dog("Buddy", "Labrador");
+        System.out.println("Name: " + myDog.name);
+        System.out.println("Breed: " + myDog.breed);
+        myDog.sound();
+    }
+}
+            </code>
+        </pre>
+
+                <p>In this example, 'super' is used within the <strong>Dog</strong> constructor to call the constructor
+                    of
+                    the
+                    <strong>Animal</strong> superclass, passing the <strong>name</strong> parameter. It's also used
+                    within the
+                    <strong>sound</strong> method of the <strong>Dog</strong> class to call the <strong>sound</strong>
+                    method of the
+                    <strong>Animal</strong> class before adding specific behavior for the <strong>Dog</strong> class.
+                </p>
+
+                <p>When you run this program, it demonstrates how 'super' allows you to use and extend functionality
+                    from
+                    the superclass when creating subclasses, promoting code reusability and organization in
+                    object-oriented
+                    programming.</p>
+            </div>
+        </div>
+        <div id="t6" class="wh">
+            <h2>throws keyword</h2>
+            <ul>
+                <li><strong>Proper Definition:</strong> The 'throws' keyword is used to indicate exceptions that may
+                    occur in a program. It gives information to the caller method that there may occur an exception
+                    so it is better for the caller method to provide the exception handling code so that normal flow can
+                    be maintained. For example, we know that the 'public static void main()' function might throw
+                    'ArrayIndexOutOfBoundsException' and 'NullPointerException'.</li>
+                <li><strong>'throws' Usage:</strong> 'throws' is used along with a method when we are defining it.</li>
+                <li><strong>Benefits:</strong> It makes our exception handling easier.</li>
+                <li><strong>Usage with Any Method:</strong> It can be used with any method, including 'main'.</li>
+                <li><strong>Usage in the Thread Class:</strong> It is also used in the 'Thread' class (we will learn
+                    more about this later).
+                    <br><code>Thread.sleep(1000);</code> might throw 'IOException'. If we use this, we will get an error
+                    because Java gives warnings before many classes and suggests good exception handling practices. So,
+                    only those who are familiar with exception handling should use these classes.
+                </li>
+                <li><strong>Remember: </strong> "throws" is always used in case of checked exception only.</li>
+            </ul>
+            <p><strong>Syntax:</strong></p>
+            <pre>
+    <code>
+public void myMethod() throws ExceptionType1, ExceptionType2 
+{
+    // Method body
+}
+    </code>
+</pre>
+            <ul>
+                <li><strong>Expertise and Diagnosis:</strong> If we do not specify all the exception classes, it
+                    indicates that we may not be experts, and our error diagnosis skills may be weak.</li>
+                <li><strong>Efficiency in Searching:</strong> Mentioning all the exception classes helps save time in
+                    Java error handling.</li>
+            </ul>
+            <pre>
+                <code>
+public void myMethod() throws Exception // Parent class; mentioning this may consume more memory.
+{
+    // Method implementation
+}
+                </code>
+            </pre>
+            <h3>Understanding Thread.sleep and Exception Handling in Java (Next topic)</h3>
+            <p>
+                The <b>Thread.sleep</b> method is used to intentionally introduce a pause or delay in the
+                execution of a Java program. When this method is called, the program suspends its execution for the
+                specified duration in milliseconds.
+                Importantly, during this pause, the program does not perform any tasks and does not continue from where
+                it left off immediately. This behavior necessitates proper exception handling because
+                <b>Thread.sleep</b> can throw an <b>InterruptedException</b> when interrupted during the
+                sleep period. Exception handling is essential to ensure the program's stability and graceful response to
+                interruptions.
+            </p>
+            <pre>
+                <code>
+class Test {
+    public static void main(String[] args) {
+        System.out.println("Welcome to the use of Throws statement");
+        int n = 10;
+        System.out.println(n);
+        Thread.sleep(5000); // this will throw InterruptedException
+        int j = 20;
+        System.out.println(j);
+    }
+}
+                </code>
+            </pre>
+            <ul>
+                <li>
+                    The above code snippet demonstrates the use of <b>Thread.sleep</b> without specifying an exception
+                    in the method signature.
+                    This requires a <b>try-catch</b> block to handle the potential <b>InterruptedException</b> that can
+                    be thrown by <b>Thread.sleep</b>.
+                </li>
+            </ul>
+            <pre>
+                <code>
+class Test {
+    public static void main(String[] args) {
+        System.out.println("Welcome to the use of Throws statement");
+        int n = 10;
+        System.out.println(n);
+        try {
+            Thread.sleep(5000); // this will throw InterruptedException
+        } catch (InterruptedException e) {
+            System.out.println(e);
+        }
+        int j = 20;
+        System.out.println(j);
+    }
+}
+                </code>
+            </pre>
+
+            <ul>
+                <li>
+                    To simplify the code, we can use the <b>throws</b> keyword in the method signature to declare
+                    that <b>main</b> method can throw <b>InterruptedException</b>.
+                    This eliminates the need for a <b>try-catch</b> block within the <b>main</b> method.
+                </li>
+            </ul>
+
+            <pre>
+                <code>
+class Test {
+    public static void main(String[] args) throws InterruptedException {
+        System.out.println("Welcome to the use of Throws statement");
+        int n = 10;
+        System.out.println(n);
+        Thread.sleep(5000); // this will throw InterruptedException
+        int j = 20;
+        System.out.println(j);
+    }
+}
+                </code>
+            </pre>
+
+            <ul>
+                <li>
+                    Using the <b>throws</b> keyword in the method signature is particularly useful when there are
+                    multiple instances of <b>Thread.sleep</b>.
+                    It simplifies the code and improves readability.
+                </li>
+            </ul>
+
+            <p>
+                In summary, using the <b>throws</b> keyword in the method signature can make your code cleaner and
+                more concise when dealing with <b>Thread.sleep</b>.
+                It simplifies exception handling and is especially beneficial when you have multiple
+                <b>Thread.sleep</b> calls in your code.
+            </p>
+
+            <div class='code'>
+                <div class='dotc'></div>
+                <button class='ac'>Another example code</button>
+                <div class='panel'>
+                    <pre>
+                        <code>
+class MyException extends Exception {
+    public MyException(String message) {
+        super(message);
+    }
+}
+
+class Test {
+    // This method declares that it may throw a custom exception.
+    public void divide(int numerator, int denominator) throws MyException {
+        if (denominator == 0) {
+            // Simulate a custom exception (for demonstration purposes).
+            throw new MyException("Division by zero is not allowed.");
+        }
+        int result = numerator / denominator;
+        System.out.println("Result: " + result);
+    }
+
+    public static void main(String[] args) {
+        Test myObj = new Test();
+        try {
+            myObj.divide(10, 0);
+        } catch (MyException e) {
+            System.out.println("Caught an exception: " + e.getMessage());
+        }
+    }
+}
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>throw vs. throws</h3>
+                <ol>
+                    <li>
+                        <ul>
+                            <li><strong>throw:</strong> The 'throw' keyword is used to explicitly throw an exception
+                                object
+                                within a method. This means that when a specific exceptional condition is encountered
+                                within the
+                                method, you can use 'throw' to create and throw an exception object, indicating that
+                                something
+                                has gone wrong.
+                                <br><strong>Example:</strong>
+                                <pre>
+                                    <code>
+void m1() {
+    throw new ArithmeticException();
+}
+                                    </code>
+                                </pre>
+                                In this example, we throw an 'ArithmeticException' explicitly, signaling that an
+                                arithmetic
+                                error has occurred.
+                            </li>
+                            <li><strong>throws:</strong> The 'throws' keyword, on the other hand, is used in a method's
+                                signature to declare that the method may potentially throw one or more specific
+                                exceptions. This
+                                declaration allows the method to pass the responsibility of handling these exceptions to
+                                its
+                                caller. When a method is declared with 'throws,' it means that the method is warning the
+                                caller
+                                that it might encounter certain exceptions during execution, and the caller needs to
+                                handle
+                                them.
+                                <br><strong>Example:</strong>
+                                <pre>
+                                    <code>
+void m1() throws ArithmeticException {
+    // Method code
+}
+                                    </code>
+                                </pre>
+                                Here, 'throws' indicates that this method may throw an 'ArithmeticException,' and it's
+                                the
+                                caller's responsibility to handle it if necessary.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li><strong>throw:</strong> The 'throw' keyword is always used inside the method body to
+                                explicitly
+                                throw an exception. It is typically used when an exceptional condition is detected
+                                within the
+                                method, and you want to trigger an exception immediately.
+                            </li>
+                            <li><strong>throws:</strong> In contrast, the 'throws' keyword is always used in the
+                                method's
+                                signature to declare exceptions that the method might propagate to the caller. It
+                                doesn't create
+                                or throw exception instances within the method but rather specifies the potential
+                                exceptions the
+                                method can raise.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li><strong>throw:</strong> With 'throw,' you can throw only one exception at a time. Each
+                                'throw'
+                                statement is responsible for throwing a specific exception.
+                                <br><strong>Example:</strong>
+                                <pre>
+                                    <code>
+throw new ArithmeticException();
+                                    </code>
+                                </pre>
+                                This line throws an 'ArithmeticException.'
+                            </li>
+                            <li><strong>throws:</strong> With 'throws,' you can declare and handle multiple exceptions
+                                simultaneously. This is especially useful when a method can potentially encounter
+                                different
+                                types of exceptions.
+                                <br><strong>Example:</strong>
+                                <pre>
+                                    <code>
+void m1() throws ArithmeticException, ArrayIndexOutOfBoundsException {
+    // Method code
+}
+                                    </code>
+                                </pre>
+                                Here, the 'throws' keyword declares that 'm1' may throw either an 'ArithmeticException'
+                                or an
+                                'ArrayIndexOutOfBoundsException.'
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <ul>
+                            <li><strong>throw:</strong> The 'throw' keyword is followed by an instance of an exception
+                                class,
+                                indicating that you are creating and throwing a specific exception object. This allows
+                                you to
+                                customize the exception with details about the error.
+                            </li>
+                            <li><strong>throws:</strong> In contrast, the 'throws' keyword is followed by the names of
+                                exception
+                                classes. It doesn't create or throw exception instances directly but rather informs the
+                                caller
+                                of the potential exceptions that may be thrown by the method. The caller is then
+                                responsible for
+                                handling these exceptions as needed.
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Programs</h2>
+            <div class='code'>
+                <div class='dotc'></div>
+                <button class='ac'>Program to demonstrate the use of InputMismatchException & NumberFormatException.
+                    (try and catch)</button>
+                <div class='panel'>
+                    <pre>
+                        <code>
+import java.util.InputMismatchException;
+import java.util.Scanner;
+
+class Test {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int num1 = 0;
+        int num2 = 0;
+        
+        try {
+            System.out.println("Enter first number: ");
+            num1 = sc.nextInt();
+            
+            System.out.println("Enter second number: ");
+            num2 = sc.nextInt();
+        } catch (InputMismatchException e) {
+            System.out.println("InputMismatchException: " + e.getMessage());
+            // Clear the invalid input
+            sc.next();
+        }
+
+        try {
+            String str = "123Human";
+            int num3 = Integer.parseInt(str);
+        } catch (NumberFormatException e) {
+            System.out.println("NumberFormatException: " + e.getMessage());
+        }
+
+        // Rest of your code
+        int sum = num1 + num2;
+        System.out.println("Sum: " + sum);
+    }
+}
+
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="content-box" id="tpyq">
+        <h2>Previous Year Questions</h2>
+        <div class="in">
+            <h3>Illustrate the usage of throw and throws by using suitable example.</h3>
+        </div>
+        <div class="in">
+            <h3>Define Exceptions in Java. Write a Java code to show the imiplementation of
+                ArrayIndexOutOfBoundsExceptions and ArithmeticException.</h3>
+        </div>
+        <div class="in">
+            <h3>State the difference between import and static import. Explain by using an example.</h3>
+        </div>
+        <div class="in">
+            <h3>Define Arrays in Java and its classification. Write a programme to show the Exception
+                ArrayIndexOutOfBoundsException.</h3>
+        </div>
+        <div class="in">
+            <h3>Define Exception Explain the use of try and multiple catch in Java. Illustrate the difference between
+                throw and throws in Java.</h3>
+        </div>
+        <div class="in">
+            <h3>Define Packages. Name any five inbuilt packages in Java. Design a package called Shape and it contains
+                Rectangle, square and Circle class. Write a programme to illustrate this.</h3>
+        </div>
+        <div class="in">
+            <h3>Describe packages in Java. State the benefits of using packages in Java. Write a program to create
+                package shape and add the following (as given below) in the package.</h3>
+            <pre>
+                <code>
++---------------------+
+|  Interface: Test    |
+|---------------------|
+|  Area(int l, int b) |
++---------------------+ 
+
++---------------------+
+|  Class: Rectangle   |
+|---------------------|
+|  Area(int l, int b) |
++---------------------+ 
+                </code>
+            </pre>
+            <h3>The above package must contain interface Test and Class Rectangle.</h3>
+        </div>
+    </div>
+    <div class="content-box">
+        <p>Reference</p>
+        <ul>
+            <li><a href="https://youtu.be/vldtYXFmZSc?si=Gf0eBrI_9X1saJlb" target="_blank" class="ba">Throw keyword
+                    &neArr;</a></li>
+            <li><a href="https://www.youtube.com/playlist?list=PLqleLpAMfxGARB5Xa4Baa0lpRlUvZVJH8" target="_blank"
+                    class="ba">Multithreading playlist &neArr;</a></li>
+        </ul>
+    </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="../../../../public/main.js"></script>
+</body>
+
+</html>

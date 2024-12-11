@@ -1,0 +1,870 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Propositional Logic</title>
+    <link rel="stylesheet" href="../../../../public/style.css">
+    <link rel="icon" href="../../../../public/logo/favicon_io/favicon.ico">
+    <style>
+
+        .part10>div {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            border: 2px solid black;
+            margin: 3px 0;
+            border-radius: 5px;
+        }
+
+        .part10>div div {
+            text-align: center;
+            margin: 3px;
+            padding: 5px;
+            background-color: rgba(248, 248, 248, 0.37);
+        }
+    </style>
+</head>
+
+<body class="bg-c">
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../../Mathematical Foundation of Compuer Science/index.html" class="home">Back</a>
+        <a href="#t1" class="link">Propositional or sentence</a>
+        <a href="#t2" class="link">Questions on propositional logic</a>
+        <a href="#t3" class="link">Conditional statement</a>
+        <a href="#t4" class="link">Bi-conditional statement</a>
+        <a href="#t5" class="link">Converse, Inverse and Contrapositive of Conditinal statement</a>
+        <a href="#t6" class="link">Algebra of preposition</a>
+        <a href="#t7" class="link">Normal form</a>
+        <div class="botbut">
+            <a href="../Algebraic_structure/index.html" class="link">&larr; Previous Topic</a>
+        </div>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Propositional Logic</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Propositional Logic</h1>
+        <div class="in">
+            <h1><a href="https://www.youtube.com/watch?v=7S6jHzi8vkk&list=PLU6SqdYcYsfKqtoZ2uDwgMya5m_x6cbOG&index=12"
+                    target="_blank">&ocir; Full Youtube Playlist &ocir;</a></h1>
+        </div>
+        <div id="t1" class="wh">
+            <h2>Propositional or Sentence</h2>
+            <ul>
+                <li>
+                    An expression consisiting of some symbols, letters and words is called a sentence it is true or
+                    false.
+                </li>
+                <li>For example :
+                    <ul>
+                        <li>Jaipur is capital of Rajasthan. &rarr; yes it is true statement.</li>
+                        <li>2 + 3 = 5 &rarr; true statment</li>
+                        <li>9 &lt; 6 &rarr; false statement</li>
+                        <li>Mumbai is in America. &rarr; false statement</li>
+                        <li>"Wish you happy life" is not a proposition because truth or false is not certain.</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="in">
+                <h3>Truth Value</h3>
+                <ul>
+                    <li>If any proposition is true then its truth value is denoted by T and if the proposition is false
+                        then its truth value is denoted by F.</li>
+                    <li>Example
+                        <ul>
+                            <li>1 is less than 3 &rarr; T</li>
+                            <li>14 is odd number &rarr; F</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Type of proposition</h3>
+                <ol>
+                    <li><b>Simple Proposition &rarr; </b> The proposition having one subject and one predicate
+                        (property) is called a simple proposition.
+                        <ul>
+                            <li>Example
+                                <ul>
+                                    <li>this flower is pink.</li>
+                                    <li>Every even number is divisible by 2.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+
+                    <li><b>Compound Proposition &rarr; </b> Two or more simple proposition when combined by various
+                        connectivities into a single composite sentence is called compound proposition.
+                        <ul>
+                            <li>Example
+                                <ul>
+                                    <li>The earath is round and revolves around the sun.</li>
+                                    <li>A triangle is equilateral if its three sides are equal.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            <div class="in">
+                <h3>Loginal Connectives</h3>
+                <p>How two sentence are connected.</p>
+                <ul>
+                    <li>The particular workds and symbols used to join tow or more proposition into a single composite
+                        form or compound proposition are called logical connectives.</li>
+                </ul>
+                <div class="part3">
+                    <div>
+                        <div>
+                            <p><b>Logical connectives words</b></p>
+                        </div>
+                        <div>
+                            <p><b>Symbol</b></p>
+                        </div>
+                        <div>
+                            <p><b>Uses</b></p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p>And/conjunction/join</p>
+                        </div>
+                        <div>
+                            <p>&and;</p>
+                        </div>
+                        <div>
+                            <p>p &and; q</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p>or/disjunction/meet</p>
+                        </div>
+                        <div>
+                            <p>&or;</p>
+                        </div>
+                        <div>
+                            <p>p &or; q</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p>Negation</p>
+                        </div>
+                        <div>
+                            <p>- or ~</p>
+                        </div>
+                        <div>
+                            <p>~p</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p>Equivalent</p>
+                        </div>
+                        <div>
+                            <p>&harr;</p>
+                        </div>
+                        <div>
+                            <p>p &harr; q</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p>Conditional "if ... then .... "</p>
+                        </div>
+                        <div>
+                            <p>&rArr;</p>
+                        </div>
+                        <div>
+                            <p>p &rArr; q</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p>Biconditional "if and only if"(iff)</p>
+                        </div>
+                        <div>
+                            <p>&hArr;</p>
+                        </div>
+                        <div>
+                            <p>p &hArr; q</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="in">
+                <h3>Basic Logical Operation</h3>
+                <div class="wh">
+                    <p><b>1. Conjunction</b>: Any two proposition can be combined by the word "And" to form a compound
+                        proposition said to be the conjunction.</p>
+                    <div class="in">
+                        <p><b>Truth table</b></p>
+                        <div class="part3" style="width: 60vw;">
+                            <div>
+                                <div>
+                                    <p>p</p>
+                                </div>
+                                <div>
+                                    <p>q</p>
+                                </div>
+                                <div>
+                                    <p>p &and; q</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <p>T</p>
+                                </div>
+                                <div>
+                                    <p>T</p>
+                                </div>
+                                <div>
+                                    <p>T</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <p>T</p>
+                                </div>
+                                <div>
+                                    <p>F</p>
+                                </div>
+                                <div>
+                                    <p>F</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <p>F</p>
+                                </div>
+                                <div>
+                                    <p>T</p>
+                                </div>
+                                <div>
+                                    <p>F</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <p>F</p>
+                                </div>
+                                <div>
+                                    <p>F</p>
+                                </div>
+                                <div>
+                                    <p>F</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <p>A short trick would be treat 'T' as 1 and 'F' as 0 and answer will be multiplication of both. T
+                        &and; F = F as 1 * 0 = 0</p>
+                    <ul>
+                        <li>Example
+                            <ul>
+                                <li>Delhi is in India and 2 + 2 = 4 &rarr; T</li>
+                                <li>Delhi is in India and 2 + 2 = 5 &rarr; F</li>
+                                <li>Delhi is in Russia and 2 + 2 = 4 &rarr; F</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="wh">
+                    <p><b>2. Disjunction</b>: Any two proposition can be combined by the word "or" to form a compound
+                        proposition said to be the disjunction.</p>
+                    <div class="in">
+                        <p><b>Truth table</b></p>
+                        <div class="part3" style="width: 60vw;">
+                            <div>
+                                <div>
+                                    <p>p</p>
+                                </div>
+                                <div>
+                                    <p>q</p>
+                                </div>
+                                <div>
+                                    <p>p &or; q</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <p>T</p>
+                                </div>
+                                <div>
+                                    <p>T</p>
+                                </div>
+                                <div>
+                                    <p>T</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <p>T</p>
+                                </div>
+                                <div>
+                                    <p>F</p>
+                                </div>
+                                <div>
+                                    <p>T</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <p>F</p>
+                                </div>
+                                <div>
+                                    <p>T</p>
+                                </div>
+                                <div>
+                                    <p>T</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <p>F</p>
+                                </div>
+                                <div>
+                                    <p>F</p>
+                                </div>
+                                <div>
+                                    <p>F</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <ul>
+                        <li>Example
+                            <ul>
+                                <li>Delhi is in India or 2 + 2 = 4 &rarr; T</li>
+                                <li>Delhi is in India or 2 + 2 = 5 &rarr; T</li>
+                                <li>Delhi is in Russia or 2 + 2 = 4 &rarr; T</li>
+                                <li>Delhi is in Russia or 2 + 2 = 6 &rarr; F</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="wh">
+                    <p><b>3. Negation </b>: The negatiion proposition of any given proposition p is the proposition
+                        whose truth value is opposite to p.</p>
+                    <div class="in">
+                        <p><b>Truth table</b></p>
+                        <div class="part2" style="width: 50vw;">
+                            <div>
+                                <div>
+                                    <p>p</p>
+                                </div>
+                                <div>
+                                    <p>~p</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <p>T</p>
+                                </div>
+                                <div>
+                                    <p>F</p>
+                                </div>
+                            </div>
+                            <div>
+                                <div>
+                                    <p>F</p>
+                                </div>
+                                <div>
+                                    <p>T</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <ul>
+                        <li>Example
+                            <ul>
+                                <li>p &equiv; "This flower is pink."</li>
+                                <li>~p &equiv; "This flower is not pink."</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Tautologies and contradiction</h3>
+                <p>A proposition is said to be an tautologies if it contain only 'T' in last column of truth table and
+                    if it contain only 'F' in last column of truth table then it is called contradiction.</p>
+            </div>
+            <div class="in">
+                <h3>Contingency</h3>
+                <p>A preposition what is neither tautolgy nor contradiction.</p>
+            </div>
+        </div>
+        <div id="t2" class="wh">
+            <h2>Questions</h2>
+            <div class="in">
+                <p><b>1.</b> Show that the following proposition is tautologies {(P &or; ~Q) &and; (~P &or; ~Q)} &or; Q
+                </p>
+                <div class="wh">
+                    <p><b>Solution :</b></p>
+                    <div class="part10">
+                        <div>
+                            <div>
+                                <p><b>P</b></p>
+                            </div>
+                            <div>
+                                <p><b>Q</b></p>
+                            </div>
+                            <div>
+                                <p><b>~P</b></p>
+                            </div>
+                            <div>
+                                <p><b>~Q</b></p>
+                            </div>
+                            <div>
+                                <p><b>E = P &or; ~Q</b></p>
+                            </div>
+                            <div>
+                                <p><b>G = ~P &or; ~Q</b></p>
+                            </div>
+                            <div>
+                                <p><b>E &and; G</b></p>
+                            </div>
+                            <div>
+                                <p><b>(E &and; G) &or; Q</b></p>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <p>T</p>
+                            </div>
+                            <div>
+                                <p>T</p>
+                            </div>
+                            <div>
+                                <p>F</p>
+                            </div>
+                            <div>
+                                <p>F</p>
+                            </div>
+                            <div>
+                                <p>T</p>
+                            </div>
+                            <div>
+                                <p>F</p>
+                            </div>
+                            <div>
+                                <p>F</p>
+                            </div>
+                            <div>
+                                <p>T</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <p>T</p>
+                            </div>
+                            <div>
+                                <p>F</p>
+                            </div>
+                            <div>
+                                <p>F</p>
+                            </div>
+                            <div>
+                                <p>T</p>
+                            </div>
+                            <div>
+                                <p>T</p>
+                            </div>
+                            <div>
+                                <p>T</p>
+                            </div>
+                            <div>
+                                <p>T</p>
+                            </div>
+                            <div>
+                                <p>T</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <p>F</p>
+                            </div>
+                            <div>
+                                <p>T</p>
+                            </div>
+                            <div>
+                                <p>T</p>
+                            </div>
+                            <div>
+                                <p>F</p>
+                            </div>
+                            <div>
+                                <p>F</p>
+                            </div>
+                            <div>
+                                <p>T</p>
+                            </div>
+                            <div>
+                                <p>F</p>
+                            </div>
+                            <div>
+                                <p>T</p>
+                            </div>
+                        </div>
+                        <div>
+                            <div>
+                                <p>F</p>
+                            </div>
+                            <div>
+                                <p>F</p>
+                            </div>
+                            <div>
+                                <p>T</p>
+                            </div>
+                            <div>
+                                <p>T</p>
+                            </div>
+                            <div>
+                                <p>T</p>
+                            </div>
+                            <div>
+                                <p>T</p>
+                            </div>
+                            <div>
+                                <p>T</p>
+                            </div>
+                            <div>
+                                <p>T</p>
+                            </div>
+                        </div>
+                    </div>
+                    <p>Its tautologies as answer column is all 'T'.</p>
+                </div>
+            </div>
+            <div class="in">
+                <p><b>2.</b> Prove that the proposition p &or; ~ (q &or; r) and (p &or; ~q) &or; ~r are equivalent.</p>
+                <div class="wh">
+                    <p><b>Hint :</b> As this have 3 variables so the possible combination would be 2<sup>3</sup> = 8</p>
+                </div>
+            </div>
+            <div class="in">
+                <p><b>3.</b> Determine whether the following proposition is contradiction or a tautolgy.
+                    <br> (p &or; q)&and;(p &or; ~q)&and;(~p &or; q)&and;(~p &or; ~q)
+                </p>
+            </div>
+            <div class="in">
+                <p><b>4.</b> Determine whether the following is tautology or contradiction.
+                    <br>Q &or; (P &and; ~Q) &or; (~P &or; ~Q)
+                </p>
+            </div>
+        </div>
+        <div id="t3" class="wh">
+            <h2>Conditional Statement</h2>
+            <ul>
+                <li>Many statements are of the form "if p then q" such statement are said to be the conditional
+                    statement and denoted by p &rArr; q or p &rarr; q.</li>
+            </ul>
+            <div class="in">
+                <h3>Truth Table</h3>
+
+                <div class="part3" style="width: 60vw; text-align: center;">
+                    <div>
+                        <div>
+                            <p>p</p>
+                        </div>
+                        <div>
+                            <p>q</p>
+                        </div>
+                        <div>
+                            <p>p &rarr; q</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p>T</p>
+                        </div>
+                        <div>
+                            <p>T</p>
+                        </div>
+                        <div>
+                            <p>T</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p>F</p>
+                        </div>
+                        <div>
+                            <p>F</p>
+                        </div>
+                        <div>
+                            <p>T</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p>T</p>
+                        </div>
+                        <div>
+                            <p>F</p>
+                        </div>
+                        <div>
+                            <p>F</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p>F</p>
+                        </div>
+                        <div>
+                            <p>T</p>
+                        </div>
+                        <div>
+                            <p>T</p>
+                        </div>
+                    </div>
+                </div>
+                <p>Hint : where ever p is F then p&rarr;q will be T, and where p is T and q is also T then only p&rarr;q
+                    will be T.</p>
+            </div>
+        </div>
+        <div id="t4" class="wh">
+            <h2>Biconditional Statement</h2>
+            <ul>
+                <li>A statement "p if and only if q" such statement are said to be bi-conditional statement and denoted
+                    by p &hArr; q or p &xharr; q</li>
+            </ul>
+            <div class="in">
+                <h3>Truth Table</h3>
+                <div class="part3" style="width: 60vw; text-align: center;">
+                    <div>
+                        <div>
+                            <p>p</p>
+                        </div>
+                        <div>
+                            <p>q</p>
+                        </div>
+                        <div>
+                            <p>p &xharr; q</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p>T</p>
+                        </div>
+                        <div>
+                            <p>T</p>
+                        </div>
+                        <div>
+                            <p>T</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p>F</p>
+                        </div>
+                        <div>
+                            <p>F</p>
+                        </div>
+                        <div>
+                            <p>T</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p>T</p>
+                        </div>
+                        <div>
+                            <p>F</p>
+                        </div>
+                        <div>
+                            <p>F</p>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <p>F</p>
+                        </div>
+                        <div>
+                            <p>T</p>
+                        </div>
+                        <div>
+                            <p>F</p>
+                        </div>
+                    </div>
+                </div>
+                <p>Hint : only in T T and F F case the output is T.</p>
+            </div>
+        </div>
+        <div id="t5" class="wh">
+            <h2>Converse, Inverse and Contrapositive of Conditinal statement</h2>
+            <div class="in">
+                <h3>1. Converse of conditional statement</h3>
+                <ul>
+                    <li>Let p &rarr; q be a conditional statement then q &rarr; p is called its converse.</li>
+                    <li>Example : If X is a labourer then he is poor.</li>
+                    <li><u>Its converse</u> &rarr; If X is poor then he is labourer.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>2. Inverse of conditional statement</h3>
+                <ul>
+                    <li>Let p &rarr; q be a conditional statement then ~p &rarr; ~q is called its inverse.</li>
+                    <li>Example : If Harsa read book then he will get knowledge.</li>
+                    <li><u>Its inverse</u> &rarr; If Harsa not read book then he will not get knowledge.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>3. Contrapositive of conditional statement</h3>
+                <ul>
+                    <li>Let p &rarr; q be a conditional statement then ~q &rarr; ~p is called contrapositive.</li>
+                    <li>Example : If f(x) is differentiable then it is continuous.</li>
+                    <li><u>Its contrapositive</u> &rarr; If f(x) is not continuous then it is not differentiable.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Questions</h2>
+            <div class="in">
+                <p><b>1.</b> Show that (p &and; q) &rarr; (p &or; q) is a tautolgy. </p>
+            </div>
+            <div class="in">
+                <p><b>2.</b> Is the formula tautolgy p &rarr; (p &and; (q &rarr; p)) </p>
+            </div>
+            <div class="in">
+                <p><b>3.</b> Prove that following is tautology or not <b> (p &or; q &or; r) &harr; [(((p &rarr; q)&rarr;
+                        q)&rarr; r)&rarr; r] </b></p>
+            </div>
+            <div class="in">
+                <p><b>4.</b> show that p &rArr; (q&rArr;r) &equiv; (p &and; q) &rArr; r</b></p>
+            </div>
+        </div>
+        <div id="t6" class="wh">
+            <h2>Algebra of preposition</h2>          
+            <ul>
+                <li>These are useful to simplify expression.</li>
+            </ul>  
+            <div class="in">
+                <ol>
+                    <li>Idempotent law
+                        <ul>
+                            <li>p &and; p &hArr; p and p &or; p &hArr; p</li>
+                        </ul>
+                    </li>
+                    <li>Associative law
+                        <ul>
+                            <li>(p &or; q) &or; r = p &or; (q &or; r)
+                                <br>and (p &and; q) &and; r = p &and; (q &and; r)
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Commutative law
+                        <ul>
+                            <li>p &and; q &hArr; q &and; p and p &or; q &hArr; q &or; p</li>
+                        </ul>
+                    </li>
+                    <li>Distributive law
+                        <ul>
+                            <li>p &or; (q &and; r) = (p &or; q) &and; (p &or; r)</li>
+                            <li>p &and; (q &or; r) = (p &and; q) &or; (p &and; r)</li>
+                        </ul>
+                    </li>
+                    <li>De-Morgan law
+                        <ul>
+                            <li>~(p &and; q) &hArr; ~p &or; ~q
+                                and ~(p &or; q) &hArr; ~p &and; ~q
+                            </li>
+                        </ul>
+                    </li>
+                    <li>p &rarr; q &hArr; ~p &or; q</li>
+                </ol>
+            </div>
+        </div>
+        <div id="t7" class="wh">
+            <h2>Normal Form</h2>
+            <ul>
+                <li>When there are big big statement then their truth tables become very large. So, by using normal form
+                    we can convert them into small statements.</li>
+                <li>There are two type of normal form
+                    <ol>
+                        <li>Conjunction Normal Form.</li>
+                        <li>Disjunction Normal Form.</li>
+                    </ol>
+                </li>
+            </ul>
+            <div class="in">
+                <h3>Normal Form</h3>
+                <ul>
+                    <li>Let A(p1, p2, p3, ...., pn) be a statement formula then the construction of truth table may not
+                        be practical always.
+                        <br>So, we consider alternate procedure known as reduction to normal form.
+                    </li>
+                </ul>
+                <div class="wh">
+                    <p><b>1. Disconjunction Normal Form : </b> A statement form which consists of disjunction(or)
+                        between conjunction(and) is called DBF.
+                        <br>Example : (1) (p &and; q) <b>&or;</b> r
+                        <br>(2) (p &and; ~q) <b>&or;</b> (~p &and; r) <b>&or;</b> (r &and; ~q)
+                    </p>
+                    <div class="in">
+                        <ul>
+                            <li>Example : Obtain the DNF of the form (p &rarr; q) &and; (~p &and; q)</li>
+                            <li>Solution :
+                                <br> we know that
+                                <br> p &rarr; q &hArr; ~p &or; q
+                                <br>So, (~p &or; q) &and; (~p &and; q)
+                                <br>Apply distributive law
+                                <br>(~p &and; ~p &and; q) &or; (q &and; ~p &and; q)
+                                <br> &rArr; (~p &and; q) &or; (q &and; ~p)
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="wh">
+                    <p><b>2. Conjunction Normal Form : </b> A statement form which consists of conjunction between
+                        disjunction is called CNF.
+                        <br>Example : (i) p <b>&and;</b> q (ii) (~p &or; q) &and; (~p &or; r)
+                    </p>
+                    <div class="in">
+                        <ul>
+                            <li>Example : Obtain CNF of the form (p &and; q) &or; (~p &and; q &and; r)</li>
+                            <li>Solution : (p &and; q) &or; (~p &and; q &and; r)
+                                <br> using distibutive law
+                                <br> (p &or; (~p &and; q &and; r)) &and; (q &or; (~p &and; q &and; r))
+                                <br>[(p &or; ~p) &and; (p &or; q) &and; (p &or; r)] &and; [(q &or; ~p) &and; (q &or; q)
+                                &and; (q &or; r)]
+                                <br>&rArr; (p &or; q) &and; (p &or; r) &and; [(q &or; ~p) &and; q &and; (q &or; r)]
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="wh">
+                    <p><b>Questions</b></p>
+                    <ul>
+                        <li>Obtain DNF of p &or; (~p &rarr; (q &or; (q &rarr; ~r)))</li>
+                        <li>Obtain CNF of (p &rarr; q) &and; (q &or; (p &and; r)))</li>
+                        <li>Find CNF of p &and; (p &rarr; q)</li>
+                        <li>Obtain CNF of (~p &rarr; r) &and; (q &harr; p)
+                            <br> (q &harr; p) becomes ((q &rarr; p) &and; (p &rarr; q)
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="../../../../public/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Computer Programming and Control Systems</title>
+    <link rel="stylesheet" href="../../../../public/style.css">
+    <link rel="icon" href="../../../../public/logo/favicon_io/favicon.ico">
+</head>
+
+<body class="bg-c">
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">back</a>
+        <a href="#t1" class="link">Refresher</a>
+        <a href="#t2" class="link">Assembly Language</a>
+        <a href="#t3" class="link">Control Memory</a>
+        <a href="#t4" class="link">Address Sequencing</a>
+        <a href="#t5" class="link">Design of Control Unit</a>
+        <a href="#tpyq" class="link">Previous Year Questions</a>
+        <div class="botbut">
+            <a href="../unit3/index.html" class="link">Next Topic &rarr;</a>
+            <a href="../unit1/index.html" class="link">&larr; Previous Topic</a>
+        </div>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Computer Programming and Control Systems</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Computer Programming and Control Systems</h1>
+        <div id="t1" class="wh">
+            <h2>Refresher</h2>
+            <p>Before learning Assembly Language we should know about all the mnemonics used in different types
+                instructions.</p>
+            <ul>
+                <li>Assembly language &rarr; Assembly language is a low-level programming language that is specific to a
+                    particular computer architecture or processor. </li>
+                <li>There are many different types of assembly languages, each tailored to a specific CPU architecture
+                    or family of processors. Here are a few notable types of assembly languages:
+                    <ul>
+                        <li>x86 Assembly Language: This is one of the most widely used assembly languages and is
+                            associated with the Intel x86 architecture and its variants, including 32-bit and 64-bit
+                            versions. It's used in PCs and many other systems.</li>
+                        <li>ARM Assembly Language: ARM is a popular architecture used in various devices, including
+                            smartphones, tablets, embedded systems, and more. ARM assembly language is specific to
+                            ARM-based processors.</li>
+                        <li>Intel 8085 Assembly Language: Associated with the Intel 8085 microprocessor</li>
+                    </ul>
+                </li>
+            </ul>
+            <p>The following instruction that we are going to learn are of 8085 processor architecture and we are
+                going to program in intel 8085 assembly language.</p>
+            <div class="in">
+                <h3>Memory reference instructions</h3>
+                <p>These are useful in order to perform operations on operand which are located in the main memory.</p>
+                <ul>
+                    <li><b>AND</b> &rarr; perform AND operation on memory word and accumulator. But directly we can't
+                        perform AND operation on memory word, so we have to transfer the content of memory word into
+                        data register. And in the next CP, AND operation will be performed on DR and AC (accumulator).
+                        <br>DR &larr; M[AR]
+                        <br>AC &larr; AC &and; DR, SC &larr; 0
+                    </li>
+                    <li><b>ADD</b> &rarr; Add he content of AC to memory word but we can't perform ADD operation
+                        directly with memory word because ALU only works wih DR and accumulator.
+                        <br>DR &larr; M[AR]
+                        <br>AC &larr; AC + DR, E &larr; C<sub>out</sub>, SC &larr; 0
+                        <br>If there is any output carry it will be transfered to flip-flop E.
+                    </li>
+                    <li><b>LDA</b> &rarr; Load Memory word to Accumulator, but from the bus there is no connection to
+                        the accumulator (Bus output doesn't connect to the input of the accumulator) that's why we have
+                        to transfer memory word content to DR and from the DR we can transfer content to the AC.
+                        <br>DR &larr; M[AR]
+                        <br>AC &larr; DR, SC &larr; 0
+                    </li>
+                    <li><b>STA</b> &rarr; Store Accumulator into memory.
+                        <br>M[AR] &larr; AC
+                    </li>
+                    <li><b>BUN</b> &rarr; Branch Unconditionaly (Jump Unconditionally). So without checking any
+                        condition, if we go from one statement to another statement.
+                        <br>PC &rarr; AR, AC &larr; 0
+                    </li>
+                    <li><b>BSA</b> &rarr; Branch and save Return address
+                        <br>M[AR] &larr; PC, AR &larr; AR + 1
+                    </li>
+                    <li><b>ISZ &rarr; </b> Increment and Skip if zero. If we need to increment the content of the memory
+                        and skip the next instruction if the memory word is 0.
+                        <br>
+                        Problem - Memory has only two control inputs: 1- Write and 2- Read. Therefore, we can't directly
+                        perform a read operation on the memory. First, we have to transfer the memory word to the Data
+                        Register (DR). Then, in the next control cycle (CP), we increment the DR. Afterward, in the next
+                        CP, we load the DR content back into memory. Now, we can check whether the DR content is zero or
+                        not. If it is zero, then we skip the next instruction by incrementing the program counter value.
+                        <br>DR &larr; M[AR]
+                        <br>DR &larr; DR + 1
+                        <br>M[AR] &larr; DR
+                        if(DR = 0) then PC &larr; PC + 1
+                    </li>
+                </ul>
+
+            </div>
+            <div class="in">
+                <h3>Register Reference instructions</h3>
+                <ul>
+                    <li>These are mainly useful inorder to perform operations on the registers.</li>
+                    <li>We know the opcode value from 0 to 6 are memory reference instructions and in register reference
+                        instructions opcode is 1.</li>
+                    <li>Register reference instructions are executed when D<sub>7</sub>I'T<sub>3</sub> (T<sub>0</sub>,
+                        T<sub>1</sub>, and T<sub>2</sub> are used for decoding and fetching) is active.</li>
+
+                    <li>The size of accumulator is 16 bit.</li>
+                </ul>
+                <p>Some register reference instructions &darr;</p>
+                <ul>
+                    <li>CLA: Clear accumulator &rArr; AC &larr; 0</li>
+                    <li>CLE: Clear E (Extended flip-flop, used for storing carry generated during sum) &rArr; E &larr; 0
+                    </li>
+                    <li>CMA: Compliment accumulator &rArr; AC &larr; (AC)'</li>
+                    <li>CME: Compliment E &rArr; E &larr; E'</li>
+                    <li>CIR: Circular right shift &rArr; AC &larr; shr AC, E &larr; AC(0), AC(15) &larr; E</li>
+                    <li>CIL: Circular left shift &rArr; AC &larr; shl AC, E &larr; AC(15), AC(0) &larr; E</li>
+                    <li>INC: Increment the accumulator &rArr; AC &larr; AC + 1</li>
+                    <li>SPA: Skip the next instruction if accumulator is positive &rArr; if(AC(15) = 0 ) then PC &larr;
+                        PC + 1</li>
+                    <li>SNA: Skip the next instruction if accumulator is negative &rArr; if(AC(15) = 1) then PC &lrarr;
+                        PC + 1</li>
+                    <li>SZA: Skip the next instruction if accumulator is zero &rArr; if(AC = 0) then PC &larr; PC + 1
+                    </li>
+                    <li>SZE: Skip the next instruction is E flip flop is zero &rArr; if(E = 0) then PC &larr; PC + 1
+                    </li>
+                    <li>HLT: Stop the program execution &rArr; S &larr; 0 ( S is start/stop flip flop)</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Input-output Reference Instructions</h3>
+                <ul>
+                    <li>Let's see how data is transferred from input devices to output devices.
+                        <br><img class="wb" src="../../images/ioconfig.svg" alt=""><br>The most common input
+                        device is keyboard. Whenever we type any character with the help of keyboard then the
+                        transmitter interface transmits the character to a register called INPR (input register). At
+                        INPR a flag called FGI is maintained. FGI value is set to 1 if INPR contains a character and if
+                        INPR doesn't contain any character then FGI will be cleared to 0. INPR passes that character to
+                        the accumulator. Next we have OUTR register which receives information from accumulator. At the
+                        OUTR register a flag called FGO is maintained which is intially set to 1. If OUTR contains a
+                        character then FGO will be cleared to 0 (it is reverse to the FGI). Receiver interface receives
+                        the character from the OUTR and provides that character to the monitor. So in this way
+                        transmission will be done.
+                    </li>
+                    <li>We know the size of the intruction format is 16 bit in which first 12 bit specifies I/O
+                        operations and opcode = 111 and address mode bit = 1. We can say the I/O instructions are
+                        executed when the decoders output D<sub>7</sub> and I = 1 is active.</li>
+                </ul>
+                <p>Let's discuss the instructions</p>
+                <ul>
+                    <li>INP: Input character to the accumulator &rArr; AC(0-7) &larr; INPR, FGI &larr; 0
+                        <ul>
+                            <li>Problem: size of INPR register is 8 bit and the size of accumulator is 16 bits, so for
+                                the most significance bit the data will be transfered.</li>
+                            <li>Bits from 8-15 will be 0.</li>
+                            <li>As the data is transfered to the accumulator, so the INPR register doesn't contain any
+                                value so the flag value will be set to 0.</li>
+                        </ul>
+                    </li>
+                    <li>OUT: Output register gets the character from the accumulator &rArr; OUTR &larr; AC(0-7), FGO
+                        &larr; 0
+                        <ul>
+                            <li>OUTR register contains some value so FGO is 0.</li>
+                        </ul>
+                    </li>
+                    <li>SKI: Skip the input flag &rArr; if(FGI = 1) then PC &larr; PC + 1</li>
+                    <li>SKO: Skip the output flag &rArr; if(FGO = 1) then PC &larr; PC + 1</li>
+                    <li>ION: Interrupt enable on &rArr; IEN &larr; 1</li>
+                    <li>IOFF: Interrupt off &rArr; IEN &larr; 0</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Data transfer instructions</h3>
+                <p>The instructions by which data is copied from one regiser/location to another.</p>
+                <ul>
+                    <li>MOV: Data is copied from one register/location to another
+                        <ul>
+                            <li>MOV R1, R2: copy data from R2 (source register) to R1 (destination register)
+                                <br><img src="../../images/instruction3.svg" alt="" class="wb">
+                            </li>
+                            <li>MOV R, M: copy the content of memory location M into R (register)
+                                <br><img src="../../images/instruction4.svg" alt="" class="wb">
+                            <li>MOV M, R: copy data from R (register) to M (memory location)</li>
+                        </ul>
+                    </li>
+                    <li>MVI: Move immediate (we don't have to look for data, the data is already given), means data
+                        source is a data not a location.
+                        <ul>
+                            <li>MVI D 23H &rArr; copy 23H data to D register</li>
+                            <li>MVI M 23H &rArr; copy 23H data to Memory M</li>
+                        </ul>
+                    </li>
+                    <li>LDA: Load accumulator from memory
+                        <ul>
+                            <li>LDA F345H: copy data which is stored in F345H memory address.
+                                <br><img src="../../images/instruction5.svg" alt="" class="wb">
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Arithmetic instructions</h3>
+                <ul>
+                    <li>Keep in mind : we have to assume that one operand is always inside accumulator and second
+                        operand can be inside other registers (B, C, D, E, H, L).</li>
+                </ul>
+                <p>Let's start with first instruction</p>
+                <ul>
+                    <li>ADD R: addition of accumulator with any given register and store the result back to accumulator.
+                        <ul>
+                            <li>ADD R &rArr; A &larr; A + R
+                                <br><img src="../../images/instruction6.svg" alt="" class="wb">
+                            </li>
+                            <li>ADD M: addition of accumulator with data given inside the memory M.</li>
+                        </ul>
+                    </li>
+                    <li>ADI R: add immediate (data is provided), add the given data to accumulator and store the result
+                        back to accumulator.
+                        <ul>
+                            <li>ADI F4H</li>
+                        </ul>
+                    </li>
+                    <li>INR R: increment the value of given register.
+                        <ul>
+                            <li>INR R &rArr; increment the content stored in register R</li>
+                        </ul>
+                    </li>
+                    <li>SUB R: subtract the content of R register from accumulator.
+                        <ul>
+                            <li>SUB C: A &larr; A - C, or we can say A &larr; A + 2's Compliment of C</li>
+                        </ul>
+                    </li>
+                    <li>SUI 33H: subtract the immediate content from accumulator.</li>
+                    <li>DCR R: decrement the content of given register R.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Logical instruction</h3>
+                <p>Some of logical instruction are &darr;</p>
+                <ul>
+                    <li>CMA: Compliment the content of accumulator and store the result back to accumulator. <br>
+                        <img src="../../images/instruction7.svg" alt="" class="wb">
+                    </li>
+                    <li>CMP R: compare content of register R with accumulator.
+                        <ul>
+                            <li>Note: content of neither A nor R is changed.</li>
+                            <li>Simply content of register R is subtracted from accumulator and stored in temp register.
+                            </li>
+                            <li>If content of temp register is +ve means accumulator content is greater else content of
+                                register R is greater (temp = 0, both are equal).</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="t2" class="wh">
+            <h2>Assembly Language</h2>
+            <p>Before learning assembly language we should know about assembler.</p>
+            <div class="in">
+                <h3>Assembler</h3>
+                <ul>
+                    <li>An assembler is a program that accepts a symbolic language program and produces its binary
+                        machine language equivalent.</li>
+                    <li>The input symbolic program is called the source program and the resulting binary program is
+                        called the object program.</li>
+                    <li>The assembler is a program that operates on character strings and produces an equivalent binary
+                        interpretation.</li>
+                </ul>
+                <p>One more instruction we have to learn and those are Pseudo instruction.
+                <ul>
+                    <li>A <i>pseudo instruction</i> is not a machine instruction but rather an instruction to the
+                        assembler giving information about some phase of the translation.</li>
+                </ul>
+                <img src="../../images/instruction8.svg" alt="" class="wb">
+                </p>
+            </div>
+            <ul>
+                <li><b>Machine language is a series of 0 and 1, which is not easy for humans to read. Using Assembly
+                        language, programmers can write human-readable programs. Assembly is a low-level programming
+                        language. It uses short codes (mnemonics) to write the programs for example ADD R1, R2. In
+                        computers, there is an assembler that converts the assembly code into machine code.</b></li>
+            </ul>
+            <div class="in">
+                <h3>Addition of two 8 bit Numbers</h3>
+                <p><b>Algorithm &darr;</b></p>
+                <ol>
+                    <li>Start the program by loading the first data into Accumulator.</li>
+                    <li>Move the data to a register (B register).</li>
+                    <li>Get the second data and load into Accumulator.</li>
+                    <li>Add the two register contents.</li>
+                    <li>Store the value of sum and carry in memory location.</li>
+                    <li>Terminate the program</li>
+                </ol>
+                <p><b>Source Code &darr;</b></p>
+                <pre>
+                    <code>
+Mnemonics    Operand     Explanation
+------------------------------------------------------------------------
+LDA           4150       Load the value to Accumulator.
+MOV           B, AC      Move the content of Accumulator to B register.
+LDA           4151       Load the value to Accumulator.
+ADD           B          Add the value of register B to AC.
+STA           4152       Store the value of Accumulator (SUM).
+HLT                      Halt the program.
+                    </code>
+                </pre>
+            </div>
+            <div class="in">
+                <h3>Assembly Language program to subtract two numbers</h3>
+                <pre>
+                    <code>
+ORG 100  ;Origin of program is location 100
+LDA SUB  ;Load subtrahend to AC
+CMA      ;Complement AC
+INC      ;Increment AC
+ADD MIN  ;Add minuend to AC
+STA DIF  ;Store difference
+HLT      ;Halt computer
+                    </code>
+                </pre>
+            </div>
+            <div class="in">
+                <h3>Types of Assemblers</h3>
+                <p>There are two main types of assemblers used in comoputer programming.</p>
+                <ol>
+                    <li><b>Single-pass assembler:</b> A single-pass assembler, also referred to as a one-pass
+                        translator, is designed for efficiency and simplicity.
+                        <ul>
+                            <li>In this approach, the assembler reads the entire source code in a single pass or
+                                traversal.</li>
+                            <li>As it reads the source code, it generates corresponding machine code on-the-fly without
+                                revisiting the code.</li>
+                            <li>This means that each line of assembly code is processed and translated into machine code
+                                as it is encountered in the source file.</li>
+                            <li>Single-pass assemblers are typically faster and require less memory compared to
+                                multi-pass assemblers.</li>
+                            <li>However, they have limitations, such as not being able to handle forward references,
+                                which are references to symbols or labels that appear later in the code.</li>
+                        </ul>
+                    </li>
+                    <li><b>Multi-pass assembler:</b> The multi-pass assembler takes a more comprehensive and methodical
+                        approach to assembly.
+                        <ul>
+                            <li>It scans the source code multiple times, iterating through it to resolve various aspects
+                                of the code.</li>
+                            <li>The final pass, known as the synthesis pass, is where the assembler generates the
+                                machine code.</li>
+                            <li>During the previous passes, it performs tasks such as collecting information about
+                                labels, symbols, and memory addresses, resolving forward references, and ensuring
+                                correct addressing modes.</li>
+                            <li>Multi-pass assemblers are more capable and flexible in handling complex code structures
+                                and resolving dependencies between different parts of the code.</li>
+                            <li>However, this thoroughness comes at the cost of increased processing time and memory
+                                usage, making multi-pass assemblers slower compared to single-pass assemblers.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            <div class="in">
+                <h3>Difference between Machine language and Assembly language</h3>
+                <img src="../../images/mvsa.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>Program loops programming</h3>
+                <p>A program loop is a sequence of instructions that are executed many times. The following is an
+                    example of a Fortan program that forms the sum of 100 integer numbers.</p>
+                <pre>
+                    <code>
+  DIMENSION A(100)
+  INTEGER SUM, A 
+  SUM = 0
+  DO 3 J = 1, 100
+3 SUM = SUM + A(J)
+                    </code>
+                </pre>
+                <p>Statement number 3 is executed 100 times. A system program that translates a high-level program is
+                    called a compiler. Following table shows corresposnding assembly code of the program</p>
+                <pre>
+                        <code>
+; Symbolic Program to Add 100 Numbers
+S.N.      Assembly Code     Explanation 
+1         ORG 100          ;Origin of program is HEX 100
+2         LDA ADS          ;Load first address of operands in AC 
+3         STA PTR          ;Store contents of AC in counter 
+4         LDA NBR          ;Load minus 100 in AC 
+5         STA CTR          ;Store contents of AC in counter 
+6         CLA              ;Clear accumulator (AC = 0)
+7         LOP ADD PTR 1    ;Add an operand to AC 
+8         ISZ PTR          ;Increment pointer 
+9         ISZ CTR          ;Increment counter 
+10        BUN LOP          ;Repeat loop again 
+11        STA SUM          ;Store sum 
+12        HLT              ;Halt
+                        </code>
+                    </pre>
+                <p>Value update in various registers are shown below:</p>
+                <pre>
+                        <code>
+1       ORG = 100
+2       AC = 100
+3       PTR = 100
+4       AC = -100 
+5       CTR = -100
+6       AC = 0
+                        </code>
+                    </pre>
+            </div>
+            <div class="in">
+                <h3>Subroutines</h3>
+                <ul>
+                    <li>In computer programming, a subroutine is a fundamental concept that allows for the reusability
+                        of a set of instructions within a program. A subroutine is essentially a self-contained sequence
+                        of instructions that can be invoked or called upon by the main program whenever needed.
+                        Subroutines play a crucial role in modularizing code and simplifying program structure.</li>
+                    <li>When a program needs to execute a subroutine, it does so using a branching instruction, often
+                        referred to as "Branch and Save Address" (BSA). This instruction allows the program to transfer
+                        control to the subroutine, which performs a specific task. Once the subroutine completes its
+                        execution, it is designed to return control to the main program. Importantly, a program can
+                        initiate a branch to the subroutine from any part of its main code, enhancing flexibility and
+                        reusability.</li>
+                    <li>To ensure a smooth return from the subroutine to the main program, it's necessary to store the
+                        return address. This return address indicates where in the main program the execution should
+                        resume after the subroutine finishes its task. The BSA instruction, which stands for "Branch and
+                        Save Address," serves this purpose by both initiating the subroutine and preserving the return
+                        address.</li>
+                    <li>As an example, let's consider a subroutine named "SH4" that performs a left shift operation on
+                        the contents of the accumulator (AC) four times. In a program, the sequence of actions might
+                        start by loading a value, let's call it "X," into the accumulator (AC). The next instruction
+                        would be "BSA SH4," invoking the subroutine called "SH4." To ensure that the program knows where
+                        to continue after the subroutine completes, the BSA instruction automatically saves the return
+                        address (in this case, 102 + 1) in the Program Counter (PC).</li>
+                    <li>Following the BSA instruction, the program proceeds to memory location 109, where the subroutine
+                        "SH4" is executed, performing the desired left shift operation. The last instruction of the
+                        subroutine, "SH4 I," facilitates the return to the main program. It does so by instructing the
+                        control unit to return to the address specified by the Program Counter (PC), which, in this
+                        case, is 102.</li>
+                </ul>
+                <p>Program to demonstrate the Use of Subroutines</p>
+                <pre>
+                    <code>
+Location   Assembly Code    Explanation
+            ORG 100        ;Main program
+100         LDA X          ;Load X
+101         BSA SH4        ;Branch to subroutine
+102         STA X          ;Store shifted number
+103         HLT
+
+;Subroutine to shift left 4 times 
+104         SH4, HEX 0     ;Store return address here 
+105         CIL            ;Circulate left once 
+106         CIL             
+107         CIL             
+108         CIL            ;Circulate left fourth time
+109         BUN SH4 I      ;Return to main program
+            END
+            </code>
+                </pre>
+            </div>
+            <div class="in">
+                <h3>Input-output programming</h3>
+                <ul>
+                    <li>In the realm of computer programming, input and output operations play a crucial role in
+                        interacting with external devices and facilitating communication between the computer and its
+                        users. These operations often involve processing symbols represented as strings of characters,
+                        with each character typically consisting of 8 bits.</li>
+                    <li>When a user interacts with the computer, such as by pressing a key on the keyboard, a specific
+                        set of instructions comes into play. To handle input, an "INP" (input) instruction is executed,
+                        while for displaying a character, an "OUT" (output) instruction is employed. These instructions
+                        bridge the gap between the computer's internal binary representation and the human-readable
+                        characters.</li>
+                </ul>
+                <div class="wh">
+                    <p><b>In the context of input operations, the following instructions, as listed in Table-A, are
+                            needed to input a character and store it in memory:</b></p>
+                    <ul>
+                        <li><b>SKI Instruction:</b> The "SKI" instruction plays a critical role by checking the input
+                            flag. This flag serves as an indicator of whether a character is available for transfer. If
+                            the flag is set to 1, it signifies the presence of a character ready for input; otherwise,
+                            if it's 0, no character is currently available.</li>
+                        <li><b>INP Instruction:</b> The "INP" instruction takes action when a character is indeed
+                            available. It proceeds to transfer the character into the Accumulator (AC), making it
+                            accessible for further processing. Subsequently, the character can be printed or manipulated
+                            using subsequent instructions, such as "OUT."</li>
+                    </ul>
+                    <p>In cases where the "SKI" instruction determines that the flag bit is equal to 0, the program
+                        proceeds with the next instruction in the sequence. Typically, this instruction entails
+                        branching to a return point and reevaluating the flag bit's status. This iterative process
+                        continues until a character becomes available for input.</p>
+                </div>
+                <div class="wh">
+                    <p><b>For output operations, Table-B outlines the instructions required to print a character:</b>
+                    </p>
+                    <ul>
+                        <li><b>Load Character into AC:</b> Initially, the character to be printed is loaded into the
+                            Accumulator (AC).</li>
+                        <li><b>Check Output Flag:</b> Next, the output flag is examined. If the flag is found to be 0,
+                            this check is repeated until the flag transitions to 1.</li>
+                        <li><b>Character Transfer:</b> Once the output flag is set to 1, the character stored in the
+                            Accumulator (AC) can be transferred to the printer for physical printing. This step
+                            effectively completes the process of displaying the character.</li>
+                    </ul>
+                </div>
+                <p><b>Table A - Program to Input Character</b></p>
+                <pre>
+                    <code>
+    Assembly Code     Explanation
+CIF   SKI             ;Check input flag 
+      BUN             ;Flag = 0, branch to check again 
+      INP             ;Flag = 1, input character 
+      OUT             ;Print character 
+      STA CHR         ;Store character
+      HLT
+                    </code>
+                </pre>
+                <p><b>Table B - Program to Output one character:</b></p>
+                <pre>
+                    <code>
+    Assembly Code    Explanation
+       LDA CHR       ;Load character into AC 
+COF,   SKO           ;Check output flag 
+       BUN COF       ;Flag = 0, branch to check again
+       OUT           ;Flag = 1, output character
+       HLT
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <div id="t3" class="wh">
+            <h2>Control Memory</h2>
+            <ul>
+                <li>The central processing unit (CPU) of a digital computer comprises several essential functional
+                    units, including the control unit, arithmetic and logic unit (ALU), and various registers. Among
+                    these units, the control unit plays a pivotal role in managing the execution of instructions by
+                    initiating sequences of microoperations. To do this, it generates control words, which are composed
+                    of binary values (0's and 1's). These control words serve as signals that orchestrate the actions of
+                    various functional components within the computer.</li>
+                <li>The memory component residing within the Control Unit is referred to as "control memory." This
+                    specialized memory is primarily responsible for storing microprograms, which, in turn, consist of
+                    collections of Micro Instructions. Each Micro Instruction is designed to execute one or more
+                    micro-operations, such as addition (ADD), subtraction (SUB), transfer of data (TSA), or
+                    multiplication (MUL).</li>
+                <li>There are two primary approaches to designing a Control Unit:
+                    <ul>
+                        <li>Hardwired Control Unit: In this design, control signals are generated directly by dedicated
+                            hardware components.</li>
+                        <li>Microprogrammed Control Unit: In contrast, a microprogrammed control unit relies on
+                            software-based microprograms to generate control signals. This approach involves two
+                            distinct types of memory: a main memory for general program instructions and a control
+                            memory to store microprograms and their associated micro instructions.</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="in">
+                <h3>Control Unit Design: Hardwired vs. Microprogrammed</h3>
+                <ul>
+                    <li>In the realm of control unit design, two distinct approaches are employed: hardwired design and
+                        microprogrammed design. These approaches dictate how control signals are generated and executed
+                        within a digital computer system.</li>
+                    <li>In a <b>hardwired design</b>, control signals are generated directly by dedicated hardware
+                        components. These components are carefully designed to produce the required control signals
+                        based on the system's architecture and operational requirements.</li>
+                    <li>Conversely, in a <b>microprogrammed design</b>, control signals are generated using
+                        microprograms, which are software-based instructions. These microprograms are stored in a
+                        specialized memory called "control memory." A microprogrammed control unit typically encompasses
+                        two separate memory components: a main memory and a control memory.</li>
+                    <li>It's important to note that while the contents of the main memory may change during program
+                        execution, the contents of the control memory remain static and cannot be altered by the user.
+                        This distinction is crucial for maintaining the integrity of the control instructions and
+                        ensuring the proper functioning of the control unit.</li>
+                    <li>The general configuration of a microprogrammed control unit includes the following key elements:
+                        <ul>
+                            <li>Control Memory: This memory component stores all the control information required for
+                                the execution of microprograms. The Control Memory Address Register (CAR) is responsible
+                                for providing the address of the microinstruction stored in the Control Memory.</li>
+                            <li>Control Data Register (CDR): The CDR serves as a temporary storage location for the data
+                                fetched from the control memory. It holds the binary data associated with the current
+                                microinstruction.</li>
+                            <li>Next Address Generator (Sequencer): The Next Address Generator, often referred to as the
+                                Sequencer, plays a vital role in the microprogrammed control unit. It is responsible for
+                                fetching the address of the next microinstruction to ensure the orderly progression of
+                                instructions within the microprogram.</li>
+                        </ul>
+                    </li>
+                    <li>As an illustrative example, consider a scenario where the Control Memory Address Register (CAR)
+                        contains the address "010." In this case, the data "1101" is retrieved from the Control Memory
+                        and placed into the Control Data Register (CDR) for further processing.</li>
+                    <li>This data handling process, combined with the sequencer's function, facilitates the proper
+                        execution of microprograms within the microprogrammed control unit.</li>
+                </ul>
+                <img src="../../images/microprogrammed.svg" alt="" class="wb">
+            </div>
+        </div>
+        <div id="t4" class="wh">
+            <h2>Address Sequencing </h2>
+            <ul>
+                <li>While the CPU is executing the current instruction, it simultaneously generates the address for the
+                    next instruction. This concept is known as address sequencing.
+                    <ul>
+                        <li>In a computer's central processing unit (CPU), the execution of program instructions is a
+                            fundamental process that drives the entire computing system. As the CPU processes each
+                            instruction, it performs a series of steps, including fetching the instruction from memory,
+                            decoding it to determine the operation to be performed, executing that operation, and then
+                            storing the results back in memory or registers.</li>
+                        <li>However, to maintain the flow of program execution, the CPU needs to know where to fetch the
+                            next instruction. This is where the concept of address sequencing comes into play. While the
+                            CPU is in the process of executing the current instruction, it also generates the memory
+                            address of the next instruction that needs to be fetched and executed.</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="in">
+                <p><b>There are four methods to determine the address of the next instruction:</b></li>
+                <ol>
+                    <li><b>Incrementing CAR by 1:</b>
+                        <ul>
+                            <li>In this method, the contents of the Control Address Register (CAR) are incremented by 1.
+                                The new value represents the address of the next instruction.</li>
+                        </ul>
+                    </li>
+                    <li><b>Subroutine Call:</b>
+                        <ul>
+                            <li>Subroutines are analogous to functions in a C program. Subroutines consist of
+                                instructions that are executed multiple times.
+                                <ul>
+                                    <li>When a subroutine is called, the address of the next instruction is stored in
+                                        the Subroutine Register.</li>
+                                    <li>Program control then transitions to the subroutine (function definition) and
+                                        executes its instructions.</li>
+                                    <li>Once the subroutine is completed, the address stored in the Subroutine Register
+                                        is used to locate the address of the next instruction in the program.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><b>Unconditional / Conditional Branch:</b>
+                        <ul>
+                            <li>In an unconditional branch instruction, no conditions are assessed. However, in
+                                conditional branch instructions, a specific condition must be true for branching to
+                                occur. In both cases, certain flag bits (often referred to as Status bits) are examined
+                                to determine the address of the next instruction.</li>
+                        </ul>
+                    </li>
+                    <li><b>Mapping:</b>
+                        <ul>
+                            <li>Mapping involves the utilization of mapping functions to ascertain the address of the
+                                next instruction within the program."</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div id="t5" class="wh">
+            <h2>Design of Control Unit</h2>
+            <ul>
+                <li>The design of the control unit (CU) is a crucial aspect of CPU architecture.</li>
+                <li>It dictates how instructions are executed and plays a pivotal role in a processor's performance.
+                </li>
+                <li>There are two primary approaches to control unit design: Hardwired and Micro-programmed Control
+                    Units.</li>
+                <li>The CPU has two main systems: control unit (CU) and arithmetic and logic unit (ALU).</li>
+                <li>CU synchronizes tasks using timings and control signals, while ALU handles mathematical and logical
+                    operations.</li>
+                <li>Two types of control units: Micro-programmed and Hardwired.</li>
+                <li>Both control units execute instructions.</li>
+            </ul>
+            <div class="in">
+                <h3>Control Signals</h3>
+                <ul>
+                    <li>Control signals convey information about operations, sequence of operations, and timing.</li>
+                    <li>Used to determine the operation to be performed.</li>
+                    <li>Indicate the sequence of processor operations.</li>
+                    <li>Specify the timing for operation execution and more.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Hardwired Control Unit</h3>
+
+                <p>The hardwired control unit is responsible for generating control signals that orchestrate the
+                    execution of instructions with precision in terms of timing and sequence. When compared to
+                    micro-programmed control units, the hardwired CU exhibits generally superior speed and efficiency.
+                    It achieves this by employing a combination of a Programmable Logic Array (PLA) circuit and a state
+                    counter, using hardware-based mechanisms to generate control signals, essentially embracing a
+                    circuitry-centric approach.</p>
+
+                <p>To provide a comprehensive understanding of the "generation of control signals" within a hardwired
+                    control unit, let's delve into its components step by step.</p>
+
+                <img src="../../images/hardwireddia.svg" alt="" class="wb">
+
+                <ul>
+                    <li><strong>The Instruction Register:</strong> This crucial component plays a pivotal role in
+                        generating the opcode bits corresponding to both the operation and the addressing mode of
+                        operands.</li>
+                    <li><strong>Instruction Decoder:</strong> The opcode bits generated earlier are fed into the
+                        instruction decoder, which interprets the operation and the addressing mode of the instruction.
+                        Based on these factors, the instruction decoder sets the corresponding Instruction signal (INSi)
+                        to 1. The execution of each instruction typically involves several steps, including instruction
+                        fetch, decode, operand fetch, arithmetic and logical operations, and memory storage. While the
+                        specific steps may vary across different sources, these five steps generally characterize the
+                        execution of an instruction.</li>
+                    <li><strong>Step Counter:</strong> It is crucial for the control unit to keep track of the current
+                        step in the instruction execution process. To facilitate this, a Step Counter is implemented,
+                        capable of holding signals from T1 to T5. Depending on the step within which the instruction
+                        currently resides, one of these step counter signals will be set to 1.</li>
+                    <li><strong>Clock:</strong> How does the Step Counter discern the current step of instruction
+                        execution? This task is accomplished by employing a Clock. Each clock cycle corresponds to one
+                        step. For instance, if the Step Counter sets T3 to 1, it will advance to T4 after the completion
+                        of one clock cycle.</li>
+                    <li><strong>Interrupt Handling:</strong> A pertinent question arises: what happens if the execution
+                        of an instruction is interrupted for some reason? Will the Step Counter continue to be triggered
+                        by the clock? The answer is no. While the execution of the current step is ongoing, the Counter
+                        Enable function will "disable" the Step Counter, ensuring that it halts temporarily and
+                        subsequently increments to the next step signal once the current step is completed.</li>
+                    <li><strong>Conditional Execution:</strong> In scenarios where the execution of an instruction
+                        depends on certain conditions, Condition Signals come into play. These signals are generated
+                        using control signals and encompass conditions such as less than, greater than, less than or
+                        equal to, greater than or equal to, and many more.</li>
+                    <li><strong>External Input:</strong> The last component, External Input, plays a crucial role in
+                        informing the Control Signal Generator about interrupts that could impact the execution of an
+                        instruction.</li>
+                </ul>
+
+                <p>Thus, based on input received from conditional signals, the step counter, external inputs, and the
+                    instruction register, the control signals are meticulously generated with the assistance of the
+                    Control Signal Generator, ensuring the seamless execution of instructions.</p>
+
+            </div>
+            <div class="in">
+                <h3>Micro-programmed Control Unit</h3>
+                <ul>
+                    <li>A micro-programmed control unit can be characterized as a straightforward logic circuit with
+                        dual capabilities:</li>
+                    <ul>
+                        <li>Firstly, it can execute instructions by generating control signals.</li>
+                        <li>Secondly, it can sequence through microinstructions to determine the control signals needed
+                            for each step of instruction execution.</li>
+                    </ul>
+                    <p>These control signals are generated based on programmed sequences, making it a valuable approach
+                        during the era of Complex Instruction Set Computer (CISC) architecture. The program responsible
+                        for crafting these control signals is known as the "Micro-program," which is stored on the
+                        processor chip, often referred to as fast memory or the control store/control memory.</p>
+                    </li>
+                    <li>A micro-program comprises a collection of microinstructions, also known as control words. Each
+                        microinstruction contains distinct bit patterns, typically n-bit words. These bit patterns serve
+                        as the blueprint for generating specific control signals, differentiating them from one another.
+                    </li>
+                    <li>Similar to other control units, micro-programmed control units execute instructions in discrete
+                        steps. Each step corresponds to a specific microinstruction within the micro-program. To execute
+                        a particular instruction, a sequence of microinstructions is employed, collectively known as a
+                        "micro-routine."</li>
+                    <li>Let's delve into the organizational structure of a Micro-programmed Control Unit, including the
+                        arrangement of micro-programs, micro-routines, and control words/microinstructions. We'll also
+                        explore the flow of instruction execution, detailing the steps involved in this process.
+                        <br>
+                        <img src="../../images/microprogramdia.svg" alt="" class="wb">
+                        <ul>
+                            <li>Instruction fetch is the first step. In this step, the instruction is fetched from the
+                                IR (Instruction Register) with the help of a Microinstruction address register.</li>
+                            <li>Decode is the second step. In this step, the instructions obtained from the instruction
+                                register will be decoded with the help of a microinstruction address generator. Here we
+                                will also get the starting address of a micro-routine. With the help of this address, we
+                                can easily perform the operation, which is mentioned in the instruction. It will also
+                                load the starting address into the micro-program counter.</li>
+                            <li>Increment is the third step. In this step, the control word, which corresponds to the
+                                starting address of a micro-program, will be read. When the execution proceeds, the
+                                value of the micro-program counter will be increased so that it can read the successive
+                                control words of a micro-routine.</li>
+                            <li>End bit is the fourth step. In this step, the microinstruction of a micro-routine
+                                contains a bit, which is known as the end bit. The execution of the microinstruction
+                                will be successfully completed when the end bit is set to 1.</li>
+                            <li>This is the last step, and in this step, the micro-program address generator will again
+                                go back to Step 1 so that we can fetch a new instruction, and this process or cycle goes
+                                on.</li>
+                        </ul>
+                    </li>
+                    <li>So in the micro-programmed control unit, the micro-programs are stored with the help of Control
+                        memory or Control store. The implementation of this CU is very easy and flexible, but it is
+                        slower as compared to the Hardwired control unit.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Difference between hardwired and microprogrammed CU</h3>
+                <img src="../../images/microvshard.svg" alt="" class="wb">
+                <br>
+                <img src="../../images/microvshard2.svg" alt="" class="wb">
+            </div>
+        </div>
+    </div>
+    <div class="content-box">
+        <h2>Previous Year Questions</h2>
+        <div class="in">
+            <h3>What is assembly language? Write assembly language program to multiply two 8 bits number stored in any
+                memory locations.</h3>
+            <h3>What is assembly language? Write assembly language program to multiply two 16 bits number stored in any
+                memory locations.</h3>
+            <h3>Explain the rules of assembly language. Write an assembly language program to add two numbers.</h3>
+        </div>
+        <div class="in">
+            <h3>Explain Mirco-instruction Format? Write micro-program for FETCH routine.</h3>
+        </div>
+        <div class="in">
+            <h3>What is control unit? Explain two method of implementing control unit.</h3>
+        </div>
+        <div class="in">
+            <h3>
+                What is address sequencing. How is it useful in selection of address for control memory?
+            </h3>
+        </div>
+        <div class="in">
+            <h3>What are the data transfer and data manipulation instructions? Explain data manipulation instructions in
+                brief.</h3>
+        </div>
+        <div class="in">
+            <h3>What is control word? Design and explain control unit.</h3>
+        </div>
+        <div class="in">
+            <h3>Differentiate between hardwired and mircroprogrammed control unit.</h3>
+        </div>
+        <div class="in">
+            <h3>Mention the advantages and disadvantages of micro-programmed control and hardwired control.</h3>
+        </div>
+        <div class="in">
+            <h3>Write short notes on the following:
+                <br>(i) Compiler
+                <br>(ii) Subroutines
+                <br>(iii) Assembly Language
+                <br>(iv) Machine Language
+            </h3>
+        </div>
+    </div>
+    <div class="content-box">
+        <p>Reference</p>
+        <ul>
+            <li><a href="https://youtu.be/0wi91k1eSS0?si=vjpEYQHSvFZ9WIv8" target="_blank" >Memory
+                    Reference Instructions
+                    video lecture &neArr;</a></li>
+            <li><a href="https://youtu.be/tMtxrElswak?si=Q9USkxq78-WTuInq"  target="_blank">Register
+                    Reference Instruction video lecture &neArr;</a></li>
+            <li><a href="https://youtu.be/W0hDfef5E1c?si=MaG5wPvQTLIzQFPK"  target="_blank">Input-output
+                    Reference Instruction video lecture &neArr;</a></li>
+            <li><a target="_blank"  href="https://youtu.be/cybYscgFQBU?si=eQWVuUHPHtAwvZfE">Data transfer
+                    instructions &neArr; &neArr;</a></li>
+            <li><a href="https://youtu.be/d1iRgeBjTgw?si=CixVfXc7PGQyEfFR" target="_blank" > Arithmetic
+                    instructions Video
+                    lecture &neArr;</a></li>
+            <li><a href="https://youtu.be/EjWsdO8pdBE?si=F98aELsHhfWGlZKf" target="_blank" >Logical
+                    Instructions Video
+                    lecture &neArr;</a></li>
+            <li><a href="https://youtu.be/Nsl2nhaQYE8?si=SMAyt8bJs_oIcejK" target="_blank" >Assembler Video
+                    lecture &neArr;</a></li>
+            <li><a href="https://www.youtube.com/watch?v=eC6pWLNPSQ4" target="_blank" >Hardwired and
+                    microprogrammed control unit Video lecture
+                    &neArr;</a></li>
+            <li><a target="_blank"  href="https://www.youtube.com/watch?v=nxNytEYQLKI">Address sequencing
+                    Video lecture
+                    &neArr;</a></li>
+        </ul>
+    </div>
+    <script src="../../../../public/main.js"></script>
+</body>
+
+</html>

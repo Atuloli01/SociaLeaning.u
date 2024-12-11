@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introduction to Cryptography</title>
+    <link rel="stylesheet" href="../../../../public/style.css">
+    <link rel="icon" href="../../../../public/logo/favicon_io/favicon.ico">
+</head>
+
+<body class="bg-c">
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">back</a>
+        <div class="fix-column-links">
+            <a href="#" class="link"></a>
+            <div class="botbut">
+                <a href="../unit2/index.html" class="link">Next Topic &rarr;</a>
+            </div>
+        </div>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Introduction to Cryptography</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Introduction to Cryptography</h1>
+        <p>Cryptography is the science of securing communication by transforming readable data (plain text) into an
+            unreadable form (cipher text). The goal is to ensure that only authorized users can access or understand the
+            information, protecting it from unauthorized access. Cryptography plays a key role in securing data in our
+            everyday lives, from email communication to online banking, ensuring that private information remains
+            confidential and secure.</p>
+        <div class="wh">
+            <h2>Security Goals</h2>
+            <ul>
+                <li>These goals define what cryptographic methods aim to achieve when protecting data.
+                    Without these goals, any effort to protect information becomes ineffective.</li>
+            </ul>
+            <p>The three main security goals are confidentiality, integrity, and availability.</p>
+            <ol>
+                <li><strong>Confidentiality</strong>:
+                    <ul>
+                        <li>The primary goal of confidentiality is to prevent unauthorized access to data. Only those
+                            who have the right permissions should be able to view the information.</li>
+                        <li>Example: Your password is encrypted when you log in to your email, ensuring that only you
+                            and the system can access it.</li>
+                    </ul>
+                </li>
+                <li><strong>Integrity</strong>:
+                    <ul>
+                        <li>Integrity ensures that the data remains unchanged and accurate. Any unauthorized
+                            modifications to data should be detectable, and only authorized users should be able to make
+                            changes.</li>
+                        <li>Example: When sending important documents via email, the integrity goal ensures the document
+                            isn’t altered during transmission.</li>
+                    </ul>
+                </li>
+                <li><strong>Availability</strong>:
+                    <ul>
+                        <li>Availability ensures that authorized users can access the data or services when needed.
+                            Attacks that limit access to resources can disrupt business operations and communication.
+                        </li>
+                        <li>Example: During a denial-of-service (DoS) attack, users may be unable to access a website
+                            because the server is overwhelmed with traffic.</li>
+                    </ul>
+                </li>
+            </ol>
+        </div>
+        <div class="wh">
+            <h2>Classification of Cryptographic Attacks</h2>
+            <p>Cryptographic attacks refer to attempts by attackers to compromise or break cryptographic systems. These
+                attacks can be classified based on the security goal they target, the type of damage they cause, or the
+                mathematical methods they exploit.</p>
+            <div class="in">
+                <h3>1) Attacks Based on Security Goals They Impact</h3>
+                <p>Each cryptographic attack is designed to target specific security goals, threatening the
+                    confidentiality, integrity, or availability of data.</p>
+                <h3>1. Confidentiality Attacks</h3>
+                <ul>
+                    <li>
+                        <strong>Snooping:</strong> Unauthorized access to data without modifying it. The attacker reads
+                        or monitors the information.
+                        <br><strong>Example:</strong> Intercepting unencrypted emails to steal sensitive information
+                        like PINs.
+                    </li>
+                    <li>
+                        <strong>Traffic Analysis:</strong> Monitoring traffic patterns (e.g., size, frequency) to gather
+                        insights, even if data is encrypted.
+                        <br><strong>Example:</strong> Monitoring encrypted military communications to predict troop
+                        movements.
+                    </li>
+                </ul>
+
+                <h3>2. Integrity Attacks</h3>
+                <ul>
+                    <li>
+                        <strong>Modification:</strong> Altering the contents of a message or file. Unauthorized changes
+                        to data violate its integrity.
+                        <br><strong>Example:</strong> Modifying a bank transaction to transfer money to the attacker’s
+                        account.
+                    </li>
+                    <li>
+                        <strong>Masquerading (Spoofing):</strong> The attacker pretends to be someone else to gain
+                        unauthorized access.
+                        <br><strong>Example:</strong> An attacker impersonates a system administrator to steal sensitive
+                        data.
+                    </li>
+                    <li>
+                        <strong>Replay Attack:</strong> Re-transmitting a previously captured message to trick the
+                        system into accepting it as legitimate.
+                        <br><strong>Example:</strong> Re-sending a captured financial transaction to duplicate an
+                        authorized payment.
+                    </li>
+                    <li>
+                        <strong>Repudiation:</strong> Denying having performed an action in communication, often leading
+                        to disputes.
+                        <br><strong>Example:</strong> A person denies having made an online payment, even though the
+                        transaction was completed.
+                    </li>
+                </ul>
+
+                <h3>3. Availability Attacks</h3>
+                <ul>
+                    <li>
+                        <strong>Denial of Service (DoS):</strong> Preventing legitimate users from accessing services by
+                        overwhelming the system with excessive requests.
+                        <br><strong>Example:</strong> Overloading a server with traffic, making a website unavailable to
+                        users.
+                    </li>
+                </ul>
+
+
+            </div>
+            <div class="in">
+                <h3>2) Attacks Based on the Type of Damage</h3>
+                <p>Cryptographic attacks can also be classified based on whether they involve directly damaging data or
+                    simply stealing information without modification.</p>
+                <ol>
+                    <li><strong>Active Attacks:</strong>
+                        <ul>
+                            <li>In active attacks, the attacker aims to modify or disrupt data and services, causing
+                                harm to the system.</li>
+                            <li>Example: An attacker intercepting and altering a message in transit to change the
+                                meaning.</li>
+                            <li>Security Goals Compromised: Integrity and Availability.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Passive Attacks:</strong>
+                        <ul>
+                            <li>In passive attacks, the attacker’s goal is to observe and collect information without
+                                altering or disrupting the data.</li>
+                            <li>Example: Monitoring network traffic to capture unencrypted usernames and passwords.</li>
+                            <li>Security Goal Compromised: Confidentiality.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            <div class="in">
+                <h3>3) Attacks Based on Mathematical Viewpoint (Cryptographic Attacks)</h3>
+                <p>Cryptographic attacks can also exploit mathematical flaws in cryptographic algorithms. These types of
+                    attacks are more technical and focus on breaking the encryption itself.</p>
+                <ol>
+                    <li><strong>Cryptoanalytic Attacks:</strong>
+                        <ul>
+                            <li>These attacks use mathematical techniques such as statistical analysis to find
+                                vulnerabilities in cryptographic algorithms and deduce the secret key.</li>
+                            <li>Example: Factoring large prime numbers to break the RSA encryption algorithm.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Non-cryptoanalytic Attacks:</strong>
+                        <ul>
+                            <li>These attacks don’t target the mathematical weaknesses of cryptography but exploit other
+                                vulnerabilities, such as poor implementation or human error.</li>
+                            <li>Example: Social engineering attacks where attackers trick users into revealing their
+                                passwords.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <h3>Cryptoanalytic Attacks</h3>
+                <p>Cryptoanalytic attacks focus on analyzing the encrypted data (ciphertext) to extract information or
+                    break the encryption without knowing the key.</p>
+                <ol>
+                    <li><strong>Cipherli-only Attack:</strong>
+                        <ul>
+                            <li>In this attack, the attacker only has access to the ciphertext and tries to deduce the
+                                encryption key or original message.</li>
+                            <li>Example: Intercepting encrypted emails and trying to decrypt them using statistical
+                                methods.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Known-plaintext Attack:</strong>
+                        <ul>
+                            <li>Here, the attacker has access to both the plaintext and its corresponding ciphertext,
+                                allowing them to analyze how the encryption process works.</li>
+                            <li>Example: If an attacker knows a common word in a message, they can use that to decrypt
+                                other parts of the message.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Chosen-plaintext Attack:</strong>
+                        <ul>
+                            <li>The attacker chooses specific plaintexts and encrypts them to study how the algorithm
+                                works.</li>
+                            <li>Example: Encrypting the word "password" using different encryption methods to study
+                                patterns in the ciphertext.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Chosen-ciphertext Attack:</strong>
+                        <ul>
+                            <li>The attacker can select specific ciphertexts and attempt to decrypt them, using the
+                                results to understand the encryption system.</li>
+                            <li>Example: Injecting fake ciphertexts into a system to gather insights into its decryption
+                                process.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <h3>Non-cryptoanalytic Attacks</h3>
+                <p>Non-cryptoanalytic attacks focus on vulnerabilities outside the cryptographic algorithms, such as
+                    poor security practices or flaws in the system setup.</p>
+                <img src="../../images/cry1.png" alt="">
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Mathematics of Cryptography</h2>
+            <p>introductory paragraph</p>
+            <div class="in">
+                <h3>Integer Arithmetic</h3>
+                <p>Integer arithmetic refers to mathematical operations performed on integers (whole numbers), which
+                    include positive numbers, negative numbers, and zero. Unlike floating-point arithmetic, which
+                    can handle fractions and decimals, integer arithmetic only deals with whole numbers.</p>
+
+                <ul>
+                    <li><strong>Set of Integers:</strong> The set of integers is denoted by <strong>Z</strong>, and
+                        it includes all integral numbers from negative infinity to positive infinity. This set can
+                        be written as:
+                        <br>Z = { ..., -2, -1, 0, 1, 2, ... }
+                    </li>
+                </ul>
+
+                <p><strong>Division in Integer Arithmetic</strong></p>
+                <p>When dividing two integers, we may not always get a whole number. Instead, we can express the
+                    division in terms of quotient and remainder. For two integers a (the dividend) and n (the
+                    divisor), the operation can be described by the equation:</p>
+
+                <ul>
+                    <li><strong>a = q × n + r</strong></li>
+                    <li>Where:
+                        <ul>
+                            <li>a = dividend</li>
+                            <li>n = divisor</li>
+                            <li>q = quotient</li>
+                            <li>r = remainder</li>
+                        </ul>
+                    </li>
+                    <li>The remainder r will always be less than the divisor n and greater than or equal to zero.
+                    </li>
+                </ul>
+
+                <p><strong>Example:</strong></p>
+                <ul>
+                    <li>100 divided by 9:
+                        <ul>
+                            <li>a = 100, n = 9</li>
+                            <li>The quotient q is 11, and the remainder r is 1.</li>
+                            <li>100 = 11 × 9 + 1</li>
+                        </ul>
+                    </li>
+                    <li>122 divided by 11:
+                        <ul>
+                            <li>a = 122, n = 11</li>
+                            <li>The quotient q is 11, and the remainder r is 1.</li>
+                            <li>122 = 11 × 11 + 1</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <p><strong>Restrictions in Integer Arithmetic Division</strong></p>
+                <ul>
+                    <li>The divisor n must be a positive integer: <strong>n &gt; 0</strong></li>
+                    <li>The remainder r must be non-negative: <strong>r ≥ 0</strong></li>
+                </ul>
+
+                <p>These restrictions ensure consistency in how we define quotient and remainder.</p>
+
+                <h3>Greatest Common Divisor (GCD)</h3>
+                <p>The greatest common divisor (GCD) of two integers a and b is the largest integer that divides
+                    both a and b without leaving a remainder. It helps in simplifying ratios or fractions and is
+                    essential in cryptography for algorithms like RSA.</p>
+                <ul>
+                    <li>For example, the GCD of 24 and 18 is 6, because 6 is the largest integer that divides both
+                        numbers evenly.</li>
+                </ul>
+
+                <h3>Euclidean Algorithm</h3>
+                <p>The Euclidean Algorithm is a method to compute the GCD of two integers. It is based on the
+                    principle that the GCD of two numbers does not change if the larger number is replaced by its
+                    remainder when divided by the smaller number.</p>
+
+                <p><strong>Steps:</strong></p>
+                <ul>
+                    <li>Divide a by b, and get the remainder r.</li>
+                    <li>Replace a with b, and b with r.</li>
+                    <li>Repeat the process until the remainder becomes zero.</li>
+                    <li>The last non-zero remainder is the GCD.</li>
+                </ul>
+
+                <p><strong>Example:</strong></p>
+                <ul>
+                    <li>Let’s compute the GCD of 252 and 105 using the Euclidean Algorithm:
+                        <ul>
+                            <li>252 ÷ 105 = 2 (quotient) with a remainder of 42 (i.e., 252 = 2 × 105 + 42)</li>
+                            <li>105 ÷ 42 = 2, remainder 21</li>
+                            <li>42 ÷ 21 = 2, remainder 0</li>
+                            <li>The GCD is 21.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Modular Arithmetic</h3>
+                <p>Modular arithmetic is a system of arithmetic for integers, where numbers "wrap around" upon reaching
+                    a certain value—the modulus. This is widely used in cryptography, computer science, and number
+                    theory.</p>
+
+                <p>In modular arithmetic, we work with the remainder of a division operation. If we divide a number by
+                    another (called the modulus), the remainder is the result of the modular operation. The notation is:
+                </p>
+
+                <ul>
+                    <li><strong>a ≡ b (mod n)</strong></li>
+                    <li>Where:
+                        <ul>
+                            <li>a is the dividend (the number we are dividing)</li>
+                            <li>b is the remainder</li>
+                            <li>n is the modulus (the number by which we are dividing)</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <p><strong>Understanding Modular Arithmetic</strong></p>
+                <ul>
+                    <li><strong>a ≡ b (mod n)</strong> means that when a is divided by n, the remainder is b.</li>
+                    <li>If two numbers have the same remainder when divided by a modulus n, they are considered
+                        congruent.</li>
+                </ul>
+
+                <p><strong>Example:</strong></p>
+                <ul>
+                    <li>7 ≡ 3 (mod 4):
+                        <ul>
+                            <li>When you divide 7 by 4, the quotient is 1 and the remainder is 3.</li>
+                        </ul>
+                    </li>
+                    <li>10 ≡ 1 (mod 3):
+                        <ul>
+                            <li>When you divide 10 by 3, the quotient is 3 and the remainder is 1.</li>
+                        </ul>
+                    </li>
+                    <li>15 ≡ 0 (mod 5):
+                        <ul>
+                            <li>When you divide 15 by 5, there is no remainder, so it is congruent to 0 mod 5.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <p><strong>Applications in Cryptography</strong></p>
+                <p>Modular arithmetic plays a crucial role in cryptography. It is used in algorithms like RSA,
+                    Diffie-Hellman, and elliptic curve cryptography, which rely on the difficulty of reversing modular
+                    exponentiation without knowing the private key.</p>
+
+                <!--<h3>Modular Arithmetic in Cryptographic Systems</h3>
+                <p>Modular arithmetic helps in designing secure encryption methods because of the one-way nature of
+                    modular exponentiation. For example, in RSA encryption:</p>
+
+                <ul>
+                    <li>The public key is derived using a large modulus (n), which is a product of two large prime
+                        numbers.</li>
+                    <li>Encryption involves raising a message to an exponent (e), then reducing it modulo n:
+                        <ul>
+                            <li><strong>C = M^e mod n</strong>, where M is the message and C is the ciphertext.</li>
+                        </ul>
+                    </li>
+                    <li>To decrypt, you need the private key (d) to reverse the operation:
+                        <ul>
+                            <li><strong>M = C^d mod n</strong>, which gives back the original message M.</li>
+                        </ul>
+                    </li>
+                </ul>-->
+
+            </div>
+            <div class="in">
+                <h3>Congruence</h3>
+                <p>Congruence is a fundamental concept in modular arithmetic that deals with the relationship between
+                    two integers. Two numbers are said to be congruent modulo a number if they leave the same remainder
+                    when divided by that number.</p>
+
+                <p>The notation for congruence is:</p>
+                <ul>
+                    <li><strong>a ≡ b (mod n)</strong></li>
+                    <li>Where:
+                        <ul>
+                            <li><strong>a</strong> and <strong>b</strong> are integers</li>
+                            <li><strong>n</strong> is the modulus</li>
+                            <li>If <strong>a ≡ b (mod n)</strong>, it means that when both a and b are divided by n,
+                                they leave the same remainder.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+                <p><strong>Understanding Congruence</strong></p>
+                <ul>
+                    <li>If two numbers are congruent modulo n, their difference is divisible by n.</li>
+                    <li><strong>a ≡ b (mod n)</strong> implies that <strong>(a - b)</strong> is divisible by n, meaning
+                        <strong>a - b = kn</strong>, where k is an integer.
+                    </li>
+                </ul>
+
+                <p><strong>Example of Congruence:</strong></p>
+                <ul>
+                    <li>12 ≡ 5 (mod 7):
+                        <ul>
+                            <li>When you divide both 12 and 5 by 7, the remainder is the same (5).</li>
+                            <li>Also, 12 - 5 = 7, which is divisible by 7.</li>
+                        </ul>
+                    </li>
+                    <li>20 ≡ 2 (mod 6):
+                        <ul>
+                            <li>When 20 and 2 are divided by 6, both give the same remainder (2).</li>
+                            <li>Additionally, 20 - 2 = 18, which is divisible by 6.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p><strong>Congruence and Cryptography:</strong></p>
+                <ul>
+                    <li>Congruence plays a key role in cryptographic algorithms, especially in public-key cryptography
+                        like RSA, where large integers and modular exponentiation are used.</li>
+                    <li>In RSA encryption, for instance, the message is encrypted using the equation <strong>C ≡ M^e
+                            (mod n)</strong>, and the decryption follows a similar form with modular arithmetic.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Matrices</h3>
+                <p>A matrix is a rectangular array of numbers or symbols arranged in rows and columns. It is a
+                    fundamental concept in mathematics used for various applications, including solving systems of
+                    linear equations, transformations in geometry, and cryptography.</p>
+
+                <p><strong>Basic Terminology:</strong></p>
+                <ul>
+                    <li><strong>Order of a Matrix:</strong> The size of a matrix is described by the number of rows and
+                        columns it has. A matrix with m rows and n columns is called an <strong>m x n</strong> matrix.
+                    </li>
+                    <li><strong>Element of a Matrix:</strong> Each value in the matrix is called an element, usually
+                        denoted by <strong>a<sub>ij</sub></strong>, where <strong>i</strong> is the row number and
+                        <strong>j</strong> is the column number.
+                    </li>
+                </ul>
+
+                <p><strong>Types of Matrices:</strong></p>
+                <ul>
+                    <li><strong>Square Matrix:</strong> A matrix with the same number of rows and columns (e.g., 3x3
+                        matrix).</li>
+                    <li><strong>Identity Matrix:</strong> A square matrix where all the diagonal elements are 1, and all
+                        other elements are 0.</li>
+                    <li><strong>Zero Matrix:</strong> A matrix where all elements are 0.</li>
+                    <li><strong>Diagonal Matrix:</strong> A matrix where all non-diagonal elements are 0.</li>
+                    <li><strong>Transpose of a Matrix:</strong> The matrix obtained by switching the rows and columns of
+                        a given matrix.</li>
+                </ul>
+                <p><strong>Matrices in Cryptography:</strong></p>
+                <ul>
+                    <li>Matrices are often used in cryptography, particularly in algorithms like the Hill Cipher, where
+                        they are employed to encrypt and decrypt messages using matrix multiplication.</li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Types of Cryptography</h2>
+            <p>Cryptography is the practice of securing information by transforming it into an unreadable format.
+                There are several types of cryptographic techniques, each serving different purposes and utilizing
+                various methods to ensure data security. The primary types of cryptography include symmetric
+                cryptography, asymmetric cryptography, and hash functions. Each type has its own unique features and
+                applications in securing digital communication and data.</p>
+
+            <div class="in">
+                <h3>Symmetric Cryptography</h3>
+                <p>Symmetric cryptography, also known as secret key cryptography or private key cryptography, is a
+                    straightforward encryption technique that uses a single key for both encryption and decryption.
+                    This means that the same key is used to transform plaintext into ciphertext and vice versa. The
+                    security of this method relies on keeping the key secret between the communicating parties.</p>
+                <p>The most popular symmetric key cryptography system is DES (Data Encryption Standard), which has
+                    been widely used for securing data. However, due to advancements in computational power, DES has
+                    been largely replaced by more secure algorithms like AES (Advanced Encryption Standard).</p>
+                <img src="../../images/cry2.jpeg" alt="Symmetric Cryptography">
+
+            </div>
+
+
+            <div class="in">
+                <h3>Asymmetric Cryptography</h3>
+                <p>Asymmetric cryptography, also known as public key cryptography, utilizes two different keys for
+                    encryption and decryption. One key, known as the public key, is shared openly and can be used by
+                    anyone to encrypt data. The second key, known as the private key, is kept secret by the owner
+                    and is used to decrypt the data that was encrypted with the corresponding public key.</p>
+                <ul>
+                    <li>Public Key: This key is widely distributed and available to anyone. It is used to encrypt
+                        data.</li>
+                    <li>Private Key: This key is kept confidential by the owner. It is used to decrypt data that was
+                        encrypted with the corresponding public key.</li>
+                </ul>
+                <p><strong>Note:</strong> A message encrypted using a public key can only be decrypted using the
+                    corresponding private key. Conversely, a message encrypted with a private key can only be
+                    decrypted using the corresponding public key.</p>
+                <p>Popular asymmetric key algorithms include RSA (Rivest–Shamir–Adleman), DSA (Digital Signature
+                    Algorithm), and elliptic curve cryptography (ECC).</p>
+                <img src="../../images/cry3.jpeg" alt="Asymmetric Cryptography">
+            </div>
+
+            <div class="in">
+                <h3>Hash Functions</h3>
+                <p>Hash functions are cryptographic algorithms that generate a fixed-size output (hash value) from
+                    variable-size input data. The primary purpose of a hash function is to ensure data integrity by
+                    producing a unique hash value for unique input data. Even a small change in the input data will
+                    result in a significantly different hash value, making hash functions useful for detecting
+                    alterations or corruption in data.</p>
+                <ul>
+                    <li>Hash functions are one-way functions, meaning they cannot be reversed to retrieve the
+                        original data from the hash value.</li>
+                    <li>Common hash functions include MD5 (Message Digest Algorithm 5), SHA-1 (Secure Hash Algorithm
+                        1), and SHA-256 (Secure Hash Algorithm 256).</li>
+                </ul>
+                <img src="../../images/cry4.jpeg" alt="">
+                <h4>Example: Password Storage and Verification</h4>
+                <p>When a user creates a password for their account, it is not stored directly in the database.
+                    Instead, the password is processed through a hash function to produce a hash value. This hash
+                    value is then stored in the database.</p>
+                <p>Here's how it works in practice:</p>
+                <ol>
+                    <li><strong>User Registration:</strong> When a user sets a password, the password is hashed
+                        using a hash function (e.g., SHA-256) to produce a hash value. For example, if the password
+                        is "mypassword", the hash function generates a hash value like
+                        "5e884898da28047151d0e5" (this is just a sample hash).</li>
+                    <li><strong>Storing the Hash:</strong> The resulting hash value is stored in the database, not
+                        the actual password. This ensures that the plaintext password is not exposed even if the
+                        database is compromised.</li>
+                    <li><strong>User Login:</strong> When the user attempts to log in, they enter their password.
+                        This password is again processed through the same hash function to produce a hash value.
+                    </li>
+                    <li><strong>Verification:</strong> The hash value generated from the entered password is
+                        compared with the hash value stored in the database. If the two hash values match, the
+                        password is correct, and the user is granted access. If they do not match, access is denied.
+                    </li>
+                </ol>
+
+                <p>By using hash functions, passwords are kept secure and confidential, as the original password
+                    cannot be directly retrieved from the hash value.</p>
+
+            </div>
+            <h3>Difference between Symmetric and Asymmetric Cryptography</h3>
+            <img src="../../images/cry5.png" alt="">
+        </div>
+        <div class="wh">
+            <h2>Conventional Encryption Model</h2>
+            <p>The conventional encryption model, also known as the classical encryption model, is a foundational
+                concept in symmetric cryptography. It outlines the process of encrypting and decrypting data using a
+                single key. This model serves as the basis for many traditional encryption techniques and is essential
+                for understanding how modern symmetric algorithms function. The key components of the conventional
+                encryption model include:</p>
+            <ul>
+                <li><strong>Plaintext:</strong> The original, readable data that needs to be protected. For example, a
+                    message or file that a user wants to keep confidential from unauthorized access.</li>
+                <li><strong>Encryption Algorithm:</strong> The process or set of rules used to transform plaintext into
+                    ciphertext. This algorithm applies mathematical operations and logical functions, utilizing the key
+                    to perform the encryption effectively.</li>
+                <li><strong>Key:</strong> A secret value used by the encryption algorithm to perform the transformation.
+                    Both the sender and receiver must securely share and store this key to ensure the integrity of the
+                    communication.</li>
+                <li><strong>Ciphertext:</strong> The encrypted, unreadable data produced by the encryption algorithm.
+                    This is the result of applying the key to the plaintext, rendering it secure from unauthorized
+                    parties.</li>
+                <li><strong>Decryption Algorithm:</strong> The process or set of rules used to transform ciphertext back
+                    into plaintext. This algorithm employs the same key used in encryption to reverse the
+                    transformation, allowing the intended recipient to access the original data.</li>
+            </ul>
+            <p>Understanding the conventional encryption model is crucial as it leads us to classical ciphers, which
+                illustrate these principles in action. One of the most notable examples is the Caesar cipher, which
+                embodies the basic concepts of encryption and decryption in a straightforward manner. By examining the
+                Caesar cipher, we can see how a simple algorithm and a single key can effectively secure information,
+                laying the groundwork for more complex encryption methods used in modern cryptography.</p>
+
+            <div class="in">
+                <h3>Caesar Cipher</h3>
+                <p>The Caesar cipher is one of the oldest and simplest encryption techniques, named after Julius Caesar,
+                    who reportedly used it to protect his messages. This cipher operates by shifting each letter in the
+                    plaintext a fixed number of places down the alphabet. For example, with a shift of 3:</p>
+                <ul>
+                    <li><strong>A</strong> becomes <strong>D</strong></li>
+                    <li><strong>B</strong> becomes <strong>E</strong></li>
+                    <li><strong>C</strong> becomes <strong>F</strong></li>
+                </ul>
+                <p>This means that a message like "HELLO" would be encrypted as "KHOOR" with a shift of 3. The process
+                    is reversible: the same key can be used to decrypt the ciphertext back to the original plaintext.
+                </p>
+                <p>The simplicity of the Caesar cipher makes it an excellent introduction to the concepts of encryption
+                    and decryption, but it also highlights vulnerabilities associated with classical ciphers, such as
+                    the ease of frequency analysis. Despite its weaknesses, the Caesar cipher remains a fundamental
+                    educational tool in the study of cryptography.</p>
+                <p>Below is a visual representation of the Caesar cipher with a shift of 3:</p>
+                <img src="../../images/cry8.jpeg" alt="Caesar Cipher Diagram" />
+            </div>
+
+        </div>
+        <div class="wh">
+            <h2>Symmetric Key Ciphers</h2>
+            <p>We know that in symmetric cryptography, a single key is used for both encryption and decryption. A cipher
+                is the
+                algorithm or method used to perform this encryption. Symmetric key ciphers use the same secret key to
+                transform readable data (plaintext) into an unreadable format (ciphertext) and back again. </p>
+
+            <ul>
+                <li>Stream and Block ciphers are the two main types of symmetric key ciphers, each differing in how
+                    they process data during encryption.</li>
+                <li>Before diving into stream and block ciphers, it's important to understand two key principles
+                    used in cryptographic methods: confusion and diffusion. These concepts help enhance the security
+                    of the encryption, making it harder for attackers to decipher the original message.</li>
+            </ul>
+            <div class="in">
+                <h3>Confusion and Diffusion</h3>
+                <p>Encryption algorithms rely heavily on two important properties to ensure the security of data:
+                    confusion and diffusion. These concepts were introduced by Claude Shannon and play a key role in
+                    making encryption more secure by hiding patterns between plaintext and ciphertext.</p>
+
+                <ul>
+                    <li><strong>Confusion:</strong> This property focuses on making the relationship between the
+                        encryption key and the ciphertext as complex as possible. In other words, confusion aims to
+                        obscure the connection between the plaintext and the resulting ciphertext. Even if a third
+                        party
+                        has access to the ciphertext, they should be unable to determine the plaintext or the key
+                        used
+                        for encryption. A cipher that relies heavily on confusion makes it difficult to trace how
+                        specific keys relate to the ciphertext, protecting the data from being decrypted easily.
+                    </li>
+
+                    <li><strong>Diffusion:</strong> The diffusion property ensures that any small change in the
+                        plaintext leads to significant and unpredictable changes in the ciphertext. This is achieved
+                        by
+                        making each bit of the plaintext affect multiple bits of the ciphertext. If even a single
+                        bit of
+                        the plaintext is altered, the corresponding ciphertext should differ drastically, enhancing
+                        the
+                        security of the encryption.</li>
+                </ul>
+
+                <p>Both confusion and diffusion are essential for building a strong encryption system. While
+                    confusion
+                    hides the relationship between the key and the ciphertext, diffusion spreads out the influence
+                    of
+                    each bit across the ciphertext to protect against pattern recognition.</p>
+            </div>
+            <p>One of the classical symmetric key ciphers that utilizes these principles, especially confusion, is the
+                Playfair cipher.
+                While modern ciphers have evolved significantly, the Playfair cipher was an important step in the
+                development of encryption techniques.
+                It demonstrates how early cryptographers worked to create more secure methods by encrypting not just
+                individual letters, but pairs of letters (digraphs),
+                making it harder to break through simple frequency analysis.</p>
+
+            <div class="in">
+                <h3>Playfair Cipher</h3>
+                <p>The Playfair cipher is a manual symmetric encryption technique that was popular during World War I.
+                    It encrypts
+                    digraphs (pairs of letters), rather than single letters, making frequency analysis more difficult
+                    than in simple substitution ciphers.
+                    The cipher uses a 5x5 grid of letters constructed from a keyword. It is a classical example of a
+                    symmetric key cipher and focuses
+                    on obscuring the relationship between the plaintext and the ciphertext, highlighting the principle
+                    of confusion.</p>
+                <div class="wh">
+                    <p><strong>Playfair Cipher: Step-by-Step Breakdown</strong></p>
+                    <p><strong>Step 1: Create the 5x5 Grid</strong></p>
+                    <ul>
+                        <li>Keyword: Start by writing out the keyword (in our case, "MONARCHY"), without repeating any
+                            letters.</li>
+                        <li>Alphabet: After placing the keyword in the grid, fill the remaining spaces with the rest of
+                            the
+                            alphabet, excluding "J". In the Playfair cipher, "I" and "J" are usually treated as the same
+                            letter.</li>
+                    </ul>
+                    <p>Example grid using "MONARCHY":</p>
+                    <pre>
+                        <code>
+M O N A R
+C H Y B D
+E F G I K
+L P Q S T
+U V W X Z
+                        </code>
+                    </pre>
+                    <p><strong>Step 2: Prepare the Plaintext</strong></p>
+                    <ol>
+                        <li>Pair the letters:
+                            <ul>
+                                <li>Divide the plaintext into pairs of two letters. If there is an odd number of
+                                    letters,
+                                    add an "X" at the end.</li>
+                                <li>Handling repeated letters: If a pair contains two identical letters (like "LL"),
+                                    insert
+                                    an "X" between them to separate the pair.</li>
+                            </ul>
+                        </li>
+                        <li>Example of pairing:
+                            <ul>
+                                <li>For the plaintext "ATTACK":
+                                    <ul>
+                                        <li>Pairs: "AT", "TA", "CK" (No repeated letters, so no need to add an 'X').
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>If the plaintext were "HELLO":
+                                    <ul>
+                                        <li>Pairs: "HE", "LX", "LO" (The repeated "L" is separated by an "X").</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ol>
+                    <p><strong>Step 3: Apply the Playfair Cipher Rules</strong></p>
+                    <p>Now that we have the plaintext divided into pairs, we can encrypt each pair using the following
+                        rules:</p>
+                    <ol>
+                        <li>Same Row Rule: If both letters of the pair are in the same row, replace each letter with the
+                            letter to its immediate right. If the letter is at the far right of the row, wrap around to
+                            the
+                            beginning of the row.
+                            <ul>
+                                <li>Example: In the pair "AR" (row 1: A and R), "A" becomes "R" and "R" wraps around to
+                                    "M".
+                                </li>
+                                <li>Result: "AR" becomes "RM".</li>
+                            </ul>
+                            <img src="../../images/cry20.jpeg" alt="">
+                        </li>
+                        <li>Same Column Rule: If both letters are in the same column, replace each letter with the
+                            letter
+                            immediately below it. If the letter is at the bottom, wrap around to the top of the column.
+                            <ul>
+                                <li>Example: In the pair "CL" (column 1: C and L), "C" becomes "L" and "L" wraps around
+                                    to
+                                    "U".</li>
+                                <li>Result: "CL" becomes "LU".</li>
+                            </ul>
+                            <img src="../../images/cry21.jpeg" alt="">
+                        </li>
+                        <li>Rectangle Rule (Different Row and Column): If the two letters form a rectangle (i.e., they
+                            are
+                            in different rows and columns), replace them with the letters at the opposite corners of the
+                            rectangle. Each letter moves horizontally to the other corner of the rectangle while staying
+                            in
+                            its own row.
+                            <br>Note: In the Rectangle Rule of the Playfair cipher, the replacements are always done
+                            horizontally, not vertically. This means you swap the letters with the ones at the opposite
+                            corners of the rectangle while staying in the same row as the original letters.
+                            <ul>
+                                <li>Example: For the pair "AT":
+                                    <ul>
+                                        <li>"A" is in row 1, column 4 (1,4) and "T" is in row 4, column 5 (4,5).</li>
+                                        <li>They form a rectangle. To encrypt, replace "A" with the letter in the same
+                                            row
+                                            but at the opposite corner of the rectangle, which is "R". Similarly,
+                                            replace
+                                            "T" with the letter at the opposite corner in its row, which is "S".</li>
+                                        <li>Result: "AT" becomes "RS".</li>
+                                    </ul>
+                                </li>
+                                <img src="../../images/cry22.jpeg" alt="">
+                            </ul>
+                        </li>
+                    </ol>
+                    <p><strong>Step 4: Finalize the Ciphertext</strong></p>
+                    <ul>
+                        <li>Once all pairs have been encrypted, combine them to get the final ciphertext.</li>
+                    </ul>
+                </div>
+                <div class="wh">
+                    <p><strong>Playfair Cipher: Example Encryptions</strong></p>
+
+                    <p><strong>Example 1: Encrypting "ATTACK" with the keyword "MONARCHY"</strong></p>
+
+                    <p><strong>Step 1: Create the 5x5 Grid</strong></p>
+                    <pre>
+    <code>
+M O N A R
+C H Y B D
+E F G I K
+L P Q S T
+U V W X Z
+    </code>
+</pre>
+
+                    <p><strong>Step 2: Prepare the Plaintext</strong></p>
+                    <ol>
+                        <li>Pair the letters:
+                            <ul>
+                                <li>Plaintext: "ATTACK"</li>
+                                <li>Pairs: "AT", "TA", "CK" (No repeated letters)</li>
+                            </ul>
+                        </li>
+                    </ol>
+
+                    <p><strong>Step 3: Apply the Playfair Cipher Rules</strong></p>
+                    <ol>
+                        <li>Pair 1: "AT"</li>
+                        <ul>
+                            <li>"A" is at (1,4) and "T" is at (4,5).</li>
+                            <li>They form a rectangle. Using the rectangle rule, "A" becomes "R" and "T" becomes "S".
+                            </li>
+                            <li>Result: "AT" becomes "RS".</li>
+                        </ul>
+
+                        <li>Pair 2: "TA"</li>
+                        <ul>
+                            <li>"T" is at (4,5) and "A" is at (1,4).</li>
+                            <li>They also form a rectangle. "T" becomes "S" and "A" becomes "R".</li>
+                            <li>Result: "TA" becomes "SR".</li>
+                        </ul>
+
+                        <li>Pair 3: "CK"</li>
+                        <ul>
+                            <li>"C" is at (2,1) and "K" is at (3,5).</li>
+                            <li>They form a rectangle. "C" becomes "D" and "K" becomes "E".</li>
+                            <li>Result: "CK" becomes "DE".</li>
+                        </ul>
+                    </ol>
+
+                    <p><strong>Step 4: Finalize the Ciphertext</strong></p>
+                    <ul>
+                        <li>Ciphertext: RS SR DE</li>
+                    </ul>
+
+                    <hr>
+
+                    <p><strong>Example 2: Encrypting "HELLO" with the keyword "MONARCHY"</strong></p>
+
+                    <p><strong>Step 1: Create the 5x5 Grid</strong></p>
+                    <pre>
+    <code>
+M O N A R
+C H Y B D
+E F G I K
+L P Q S T
+U V W X Z
+    </code>
+</pre>
+
+                    <p><strong>Step 2: Prepare the Plaintext</strong></p>
+                    <ol>
+                        <li>Pair the letters:
+                            <ul>
+                                <li>Plaintext: "HELLO"</li>
+                                <li>Pairs: "HE", "LX", "LO" ("L" is repeated, so we insert an "X" between the letters)
+                                </li>
+                            </ul>
+                        </li>
+                    </ol>
+
+                    <p><strong>Step 3: Apply the Playfair Cipher Rules</strong></p>
+                    <ol>
+                        <li>Pair 1: "HE"</li>
+                        <ul>
+                            <li>"H" is at (2,2) and "E" is at (3,1).</li>
+                            <li>They form a rectangle. "H" becomes "C" and "E" becomes "F".</li>
+                            <li>Result: "HE" becomes "CF".</li>
+                        </ul>
+
+                        <li>Pair 2: "LX"</li>
+                        <ul>
+                            <li>"L" is at (4,1) and "X" is at (5,4).</li>
+                            <li>They form a rectangle. "L" becomes "S" and "X" becomes "U".</li>
+                            <li>Result: "LX" becomes "SU".</li>
+                        </ul>
+
+                        <li>Pair 3: "LO"</li>
+                        <ul>
+                            <li>"L" is at (4,1) and "O" is at (1,2).</li>
+                            <li>They form a rectangle. "L" becomes "P" and "O" becomes "M".</li>
+                            <li>Result: "LO" becomes "PM".</li>
+                        </ul>
+                    </ol>
+
+                    <p><strong>Step 4: Finalize the Ciphertext</strong></p>
+                    <ul>
+                        <li>Ciphertext: CF SU PM</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="in">
+                <h3>Stream Ciphers</h3>
+                <p>Stream ciphers encrypt data one bit or one byte at a time, processing the input continuously as it is
+                    fed into the encryption algorithm. This method makes stream ciphers efficient for real-time
+                    applications, where data is transmitted in a steady stream, such as in network communications or
+                    streaming services.</p>
+
+                <ul>
+                    <li>In a stream cipher, each plaintext digit is encrypted individually, using a corresponding digit
+                        from a keystream. The key is often combined with the plaintext using the XOR (exclusive OR)
+                        operation, resulting in a ciphertext stream.</li>
+                    <li>The process is simple and fast, making stream ciphers ideal for environments where speed is
+                        critical.</li>
+                    <li>Stream ciphers typically use confusion as their primary security property, ensuring that the
+                        relationship between the key and ciphertext is as obscured as possible.</li>
+                </ul>
+                <img src="../../images/cry6.jpeg" alt="Stream Cipher Diagram">
+                <h4>Stream Cipher Example</h4>
+                <p>A classic example of a stream cipher is the Vernam cipher. In this method, each bit of the plaintext
+                    is XORed with a corresponding bit of the key stream to produce the ciphertext.</p>
+
+
+            </div>
+
+            <div class="in">
+                <h3>Block Ciphers</h3>
+                <p>Unlike stream ciphers, block ciphers work by dividing the plaintext into fixed-size blocks and
+                    encrypting each block individually. These blocks can vary in size, with common block sizes being 64
+                    bits or 128 bits, depending on the algorithm used.</p>
+
+                <ul>
+                    <li>A block cipher encrypts entire blocks of data at once, rather than processing the data bit by
+                        bit or byte by byte as stream ciphers do.</li>
+                    <li>Block ciphers utilize both confusion and diffusion properties, making them highly secure by
+                        obscuring both the relationship between the key and the ciphertext, and ensuring that even minor
+                        changes in the plaintext result in drastic changes in the ciphertext.</li>
+                </ul>
+                <img src="../../images/cry7.jpeg" alt="Block Cipher Diagram">
+
+                <div class="wh">
+                    <h3>Types of Block Ciphers</h3>
+                    <p>Block ciphers are symmetric key algorithms that encrypt data in fixed-size blocks. They use the
+                        same key for both encryption and decryption, transforming readable plaintext into ciphertext
+                        through a series of rounds and transformations. The most notable block ciphers include the
+                        Advanced Encryption Standard (AES) and the Data Encryption Standard (DES). Understanding these
+                        ciphers provides insight into the security and efficiency of data encryption.</p>
+
+                    <p><strong>1. Advanced Encryption Standard (AES)</strong></p>
+                    <p>AES is a widely used symmetric key encryption standard established to replace DES. Here are its
+                        key features:</p>
+                    <ul>
+                        <li><strong>Block Size:</strong> AES operates on blocks of 128 bits.</li>
+                        <li><strong>Key Sizes:</strong> It supports key lengths of 128, 192, or 256 bits, providing
+                            flexibility in security levels.</li>
+                        <li><strong>Rounds:</strong> The encryption process consists of 10 rounds for 128-bit keys, 12
+                            for 192-bit keys, and 14 for 256-bit keys.</li>
+                        <li><strong>Security:</strong> AES is considered highly secure, resistant to most attack
+                            vectors, and is used globally across various industries, including government, finance, and
+                            healthcare.</li>
+                        <li><strong>Established:</strong> Adopted as a federal standard by the U.S. National Institute
+                            of Standards and Technology (NIST) in 2001.</li>
+                    </ul>
+
+                    <p><strong>2. Data Encryption Standard (DES)</strong></p>
+                    <p>DES was one of the earliest block ciphers and was widely used for data encryption until it became
+                        obsolete due to vulnerabilities. Key aspects include:</p>
+                    <ul>
+                        <li><strong>Block Size:</strong> DES operates on blocks of 64 bits.</li>
+                        <li><strong>Key Size:</strong> It uses a 56-bit key (with 8 bits reserved for parity), which is
+                            relatively short by modern standards.</li>
+                        <li><strong>Rounds:</strong> The encryption process consists of 16 rounds of transformations.
+                        </li>
+                        <li><strong>Security:</strong> DES is now considered insecure due to its small key size, making
+                            it susceptible to brute-force attacks.</li>
+                        <li><strong>Established:</strong> Adopted as a federal standard in 1977, DES was widely used
+                            until the late 1990s.</li>
+                    </ul>
+
+                    <p><strong>Comparison of AES and DES</strong></p>
+                    <p>Both AES and DES serve as fundamental examples of block ciphers, but they differ significantly in
+                        their security and efficiency:</p>
+                    <ul>
+                        <li><strong>Security Level:</strong> AES is designed to be secure against modern attack methods,
+                            while DES's short key length makes it vulnerable.</li>
+                        <li><strong>Performance:</strong> AES generally provides better performance on modern hardware
+                            due to its more efficient algorithm.</li>
+                        <li><strong>Usage:</strong> AES is the current standard for encryption, while DES has largely
+                            been phased out in favor of stronger algorithms.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="in">
+                <h3>Comparing Stream and Block Ciphers</h3>
+                <p>Both stream and block ciphers are widely used in cryptography, but they differ in how they process
+                    data and the encryption methods they use. The choice between the two depends on the specific
+                    requirements of the application, such as speed, security, and the nature of the data being
+                    encrypted.</p>
+
+                <ul>
+                    <li><strong>Input Size:</strong> Stream ciphers process data bit by bit or byte by byte, whereas
+                        block ciphers process data in fixed-size blocks.</li>
+                    <li><strong>Design Complexity:</strong> Stream ciphers tend to have a more complex design due to the
+                        need for continuous encryption, while block ciphers use more structured designs based on
+                        predefined block sizes.</li>
+                    <li><strong>Encryption Principle:</strong> Stream ciphers primarily use confusion, while block
+                        ciphers rely on both confusion and diffusion.</li>
+                    <li><strong>Speed:</strong> Stream ciphers are generally faster than block ciphers because they
+                        encrypt data continuously without needing to wait for a full block of data.</li>
+                    <li><strong>Decryption:</strong> Stream ciphers often use simple XOR operations for decryption,
+                        while block ciphers use more complex decryption algorithms that reverse the encryption process.
+                    </li>
+                </ul>
+            </div>
+
+            <p>Stream ciphers offer speed and simplicity for real-time data encryption, while block
+                ciphers provide stronger security by encrypting data in chunks. Understanding the differences
+                between these two ciphers is critical for choosing the right encryption method for a specific
+                application.</p>
+        </div>
+
+    </div>
+    <div class="wh">
+        <p>Reference</p>
+        <ul>
+            <li><a href="https://youtu.be/3adBPqIB4Tw?si=MWM9Oej5l-brYgcg" target="_blank">Stream Cipher and Block
+                    Cipher Video Lecture &neArr;</a></li>
+        </ul>
+    </div>
+    <script src="../../../../public/main.js"></script>
+</body>
+
+</html>

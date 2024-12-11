@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CBNST lab</title>
+    <link rel="icon" href="../../../public/logo/favicon_io/favicon.ico">
+    <link rel="stylesheet" href="../../../public/style.css">
+    <link rel="stylesheet" id="highlightStylesheet"
+        href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/tomorrow-night-blue.min.css">
+</head>
+
+<body>
+    <div id="navbar" class="grad">
+        <div class="back">
+            <a href="../../../index.html"><img src="../../../public/back.svg" alt=""></a>
+        </div>
+        <div>
+            <h2>CBNST lab</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <div class="wh">
+            <div class='code'>
+                <div class='dotc'></div>
+                <button class="ac">
+                    Program to find actual error, relative error and percentage error
+                </button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-c">
+#include &lt;stdio.h>
+#include &lt;math.h>
+int main()
+{
+    float actual_val, approx_val, actual_err, relative_err, percentage_err;
+    printf("Enter Actual value : ");
+    scanf("%f", &actual_val);
+    printf("Enter Approx value : ");
+    scanf("%f", &approx_val);
+    actual_err = fabs(actual_val - approx_val);
+    relative_err = actual_err / actual_val;
+    percentage_err = relative_err * 100;
+    printf("\nActual Error = %f", actual_err);
+    printf("\nRelative Error = %f", relative_err);
+    printf("\nPercentage Error = %f%%\n", percentage_err);
+    return 0;
+}
+                        </code>
+                </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <div class='code'>
+                <div class='dotc'></div>
+                <button class="ac">
+                    Program to Find Root of the Function Using Bisection Method.
+                </button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-c">
+#include &lt;stdio.h>
+#include &lt;stdlib.h>
+#include &lt;math.h>
+#define EPSILON 0.003
+float f(float x)
+{
+    return x * x * x - 9 * x + 1;
+}
+int main()
+{
+    float xmid, x1, x2;
+    int i = 1;
+    printf("Enter the initial guess : ");
+    scanf("%f%f", &x1, &x2);
+    if (f(x1) * f(x2) > 0)
+    {
+        printf("Wrong Assumptions");
+        exit(0);
+    }
+    do
+    {
+        xmid = (x1 + x2) / 2;
+        if (f(xmid) * f(x1) < 0)
+            x2 = xmid;
+        else
+            x1 = xmid;
+        printf("Root after %d iteration is = %f\n", i, xmid);
+        i++;
+    } while (fabs(f(xmid)) > EPSILON);
+    return 0;
+}
+                        </code>
+                </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <div class='code'>
+                <div class='dotc'></div>
+                <button class="ac">
+                    Program to Find Root of the Function Using Regula Falsi Method.
+                </button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-c">
+#include &lt;stdio.h>
+#include &lt;math.h>
+#include &lt;stdlib.h>
+#define EPSILON 0.003
+float f(float x)
+{
+    return x * x * x - 9 * x + 1;
+}
+
+int main()
+{
+    float x1, x2, xn;
+    int i = 1;
+    printf("Enter Initial Guess: ");
+    scanf("%f", &x1);
+    scanf("%f", &x2);
+
+    if (f(x1) * f(x2) > 0)
+    {
+        printf("\nAssumptions are wrong!");
+        exit(0);
+    }
+    do
+    {
+        xn = ((x1 * f(x2)) - (x2 * f(x1))) / (f(x2) - f(x1));
+        if (f(xn) * f(x1) < 0)
+            x2 = xn;
+        else
+            x1 = xn;
+        printf("\nRoot after %d iteration = %f\n", i, xn);
+        i++;
+    } while (fabs(f(xn)) > EPSILON);
+    return 0;
+}
+                        </code>
+                </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <div class='code'>
+                <div class='dotc'></div>
+                <button class="ac">
+                    Program to Find Root of the Function Using Secant Method.
+                </button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-c">
+#include &lt;stdio.h>
+#include &lt;stdlib.h>
+#include &lt;math.h>
+#define EPSILON 0.003
+float f(float x)
+{
+    return x * x * x - 4 * x - 9;
+}
+float fx2(float x0, float x1)
+{
+    return x0 - (((x1 - x0) / (f(x1) - f(x0))) * f(x0));
+}
+
+int main()
+{
+    float x0, x1, x2;
+    int i = 1;
+    printf("Enter Initial Guess: ");
+    scanf("%f%f", &x0, &x1);
+    if (f(x0) * f(x1) > 0) {
+        printf("Assumptions are wrong! The guesses do not bracket a root.\n");
+        exit(0);
+    }
+    do
+    {
+        x2 = ((x0 * f(x1)) - (x1 * f(x0))) / (f(x1) - f(x0));
+        x0 = x1;
+        x1 = x2;
+        printf("Root after iteration = %d is %f and value of function = %f\n", i, x2, f(x2));
+        i++;
+    } while (fabs(f(x2)) > EPSILON);
+    return 0;
+}
+                        </code>
+                </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <div class='code'>
+                <div class='dotc'></div>
+                <button class="ac">
+                    Program to Find Root of the Function Using Newton-Raphson Method.
+                </button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-c">
+#include &lt;stdio.h>
+#include &lt;math.h>
+#define EPSILON 0.003
+
+float f(float x)
+{
+    return ((x * x * x) - 4 * x - 9);
+}
+float df(float x)
+{
+    return (3 * x * x - 4);
+}
+
+int main()
+{
+    float x0, x1;
+    int i = 1;
+    printf("Enter intial guess: ");
+    scanf("%f", &x0);
+    do
+    {
+        x1 = x0 - (f(x0) / df(x0));
+        x0 = x1;
+        printf("No. of iteration = %d\t Root = %f\t Value of function = %f\n", i, x1, f(x1));
+        i++;
+    } while (fabs(f(x1)) > EPSILON);
+    return 0;
+}
+                        </code>
+                </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <div class='code'>
+                <div class='dotc'></div>
+                <button class="ac">
+                    Program to Find Root of the Function Using Iterative Method.
+                </button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-c">
+#include &lt;stdio.h>
+#include &lt;math.h>
+#include &lt;stdlib.h>
+#define e 0.003
+
+float f(float x)
+{
+    return x * x * x - 9 * x + 1;
+}
+
+float g1(float x)
+{
+    return pow((9 * x - 1), 1 / 3);
+}
+
+float g2(float x)
+{
+    return ((1 + x * x * x) / 9);
+}
+
+int main()
+{
+    int i = 0;
+    float a, b, xm, diff;
+    int ch;
+    printf("Enter two initial guess = ");
+    scanf("%f%f", &a, &b);
+    if (f(a) * f(b) > 0)
+    {
+        printf("You assumptions were wrong");
+        exit(0);
+    }
+    xm = (a + b) / 2;
+    printf("Enter your choice for choice between two method (1 & 2) : ");
+    scanf("%d", &ch);
+    if (ch == 1)
+    {
+        do
+        {
+            float xnew = g1(xm);
+            diff = fabs(xnew - xm);
+            xm = xnew;
+            i++;
+            printf("No. of iteration = %d", i);
+            printf("Your root is : %f", xnew);
+        } while (fabs(diff) > e);
+    }
+    else if (ch == 2)
+    {
+        do
+        {
+            float xnew = g2(xm);
+            float diff = fabs(xnew - xm);
+            xm = xnew;
+            printf("No. of iteration : %d", i);
+            printf("Your root is : %f", xnew);
+        } while (fabs(diff > e));
+    }
+    else
+    {
+        printf("Either choose 1 or 2");
+        exit(0);
+    }
+    return 0;
+}
+                        </code>
+                </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <div class='code'>
+                <div class='dotc'></div>
+                <button class="ac">
+                    Program to compare two root finding methods.
+                </button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-c">
+#include &lt;stdio.h>
+#include &lt;stdlib.h>
+#include &lt;math.h>
+#define EPSILON 0.003
+
+float f(float x)
+{
+    return x * x * x - 9 * x + 1;
+}
+
+float df(float x)
+{
+    return 3 * x * x - 9;
+}
+int i1 = 1, i2 = 1;
+float bisectionMethod(float x1, float x2)
+{
+    float xmid;
+    do
+    {
+        xmid = (x1 + x2) / 2;
+        if ((f(xmid) * f(x1)) < 0)
+        {
+            x2 = xmid;
+        }
+        else
+        {
+            x1 = xmid;
+        }
+        i1++;
+    } while (fabs(f(xmid)) > EPSILON);
+    return xmid;
+}
+float newtonMethod(float x0)
+{
+    float f0, x1, f1, dx0;
+    do
+    {
+        f0 = f(x0);
+        dx0 = df(x0);
+        x1 = x0 - (f0 / dx0);
+        f1 = f(x1);
+        x0 = x1;
+        i2++;
+    } while (fabs(f1) > EPSILON);
+    return x1;
+}
+int main()
+{
+    float b1, b2, n0;
+    printf("Enter initial Guess for Bisection method : ");
+    scanf("%f%f", &b1, &b2);
+    printf("Enter initial Guess for Newton Ralphson method : ");
+    scanf("%f", &n0);
+    printf("It took %d iteration in Bisection method and the value of root is = %f\n", i1, bisectionMethod(b1, b2));
+    printf("It took %d iteration in Newton Ralphson method and the value of root is = %f\n", i2, newtonMethod(n0));
+
+    return 0;
+}
+                        </code>
+                </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <div class='code'>
+                <div class='dotc'></div>
+                <button class="ac">
+                    Upper Triangularization of a Matrix
+                </button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-c">
+#include &lt;stdio.h>
+void main()
+{
+    int n, i, j, k;
+    float a[10][10], u;
+    printf("\n Enter number of unknowns:");
+    scanf("%d", &n);
+    printf("Enter coefficients:");
+    for (i = 0; i < n; i++)
+        for (j = 0; j < n + 1; j++)
+            scanf("%f", &a[i][j]);
+    printf("\n Entered Matrix:\n");
+    for (i = 0; i < n; i++)
+    {
+        for (j = 0; j < n + 1; j++)
+        {
+            printf("\t%f", a[i][j]);
+        }
+        printf("\n");
+    }
+
+    // Transformation
+    for (i = 0; i < n - 1; i++)
+        for (j = i + 1; j < n; j++)
+        {
+            u = a[j][i] / a[i][i];
+            for (k = 0; k < n + 1; k++)
+                a[j][k] = a[j][k] - u * a[i][k];
+        }
+
+    printf("\nUper Triangular Matrix Elements:\n");
+    for (i = 0; i < n; i++)
+    {
+        for (j = 0; j < n + 1; j++)
+            printf("%f\t", a[i][j]);
+        printf("\n");
+    }
+}
+                        </code>
+                </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Matrix Back Substitution</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+#include &lt;stdio.h>
+
+int main()
+{
+    int i, j, k, n;
+    float a[10][10], x[10], u, sum;
+
+    printf("\nEnter number of unknowns: ");
+    scanf("%d", &n);
+
+    printf("\nEnter [A:B] matrix:\n");
+    for (i = 0; i &lt; n; i++)
+    {
+        for (j = 0; j &lt; n + 1; j++)
+        {
+            scanf("%f", &a[i][j]);
+        }
+    }
+
+    // Transform to upper triangular matrix
+    for (i = 0; i &lt; n - 1; i++)
+    {
+        for (j = i + 1; j &lt; n; j++)
+        {
+            u = a[j][i] / a[i][i];
+            for (k = 0; k &lt; n + 1; k++)
+            {
+                a[j][k] = a[j][k] - u * a[i][k];
+            }
+        }
+    }
+
+    printf("\nUpper Triangular Matrix Elements:\n");
+    for (i = 0; i &lt; n; i++)
+    {
+        for (j = 0; j &lt; n + 1; j++)
+        {
+            printf("%f\t", a[i][j]);
+        }
+        printf("\n");
+    }
+
+    // Back substitution
+    for (i = n - 1; i >= 0; i--)
+    {
+        sum = 0;
+        for (j = i + 1; j &lt; n; j++)
+        {
+            sum += a[i][j] * x[j]; /* Performing Back Substitution */
+        }
+        x[i] = (a[i][n] - sum) / a[i][i];
+    }
+
+    printf("\nSolution values are:\n");
+    for (i = 0; i &lt; n; i++)
+    {
+        printf("%f\n", x[i]);
+    }
+
+    return 0;
+}
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <div class='code'>
+                <div class='dotc'></div>
+                <button class="ac">
+                    Trapezoidal Method
+                </button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-c">
+#include &lt;stdio.h>
+
+float findValueAt(float x)
+{
+    return x * x * x;
+}
+
+int main()
+{
+    int n;
+    float sum = 0, h, a, b, i;
+    printf("Enter the upper limit value : ");
+    scanf("%f", &a);
+    printf("Enter the lower limit value : ");
+    scanf("%f", &b);
+    printf("Enter the number of Intervals : ");
+    scanf("%d", &n);
+    sum = findValueAt(a) + findValueAt(b);
+    h = (a + b) / n;
+    for (i = a + h; i < b; i = i + h)
+    {
+        sum = sum + (2 * findValueAt(i));
+    }
+    sum = (sum * h) / 2;
+    printf("Value of the Integral is = %f\n", sum);
+    return 0;
+}
+                        </code>
+                </pre>
+                </div>
+            </div>
+        </div>
+        <!--
+        <div class="wh">
+            <div class='code'>
+                <div class='dotc'></div>
+                <button class="ac">
+                    
+                </button>
+                <div class="panel">
+                    <pre>
+                        <code class="language-c">
+                        </code>
+                </pre>
+                </div>
+            </div>
+        </div>
+    -->
+    </div>
+    <div class="content-box">
+        <p >Reference:</p>
+        <ul>
+            <li><a href="https://www.youtube.com/playlist?list=PLVKIC9j3jSYsm8GELqAMFJ_1ebbMpK-9U" target="_blank">Playlist &neArr;</a></li>
+            <li><a href="https://www.youtube.com/watch?v=KKJorRX2new" target="_blank">Bisection method &neArr;</a></li>
+            <li><a href="https://www.youtube.com/watch?v=ADlIUvQeiI0" target="_blank">Regula falsi method &neArr;</a></li>
+            <li><a href="https://www.youtube.com/watch?v=LBuJt_kGX0E" target="_blank">Trapezoidal Rule &neArr;</a></li>
+        </ul>
+    </div>
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="../../../public/main.js"></script>
+</body>
+
+</html>

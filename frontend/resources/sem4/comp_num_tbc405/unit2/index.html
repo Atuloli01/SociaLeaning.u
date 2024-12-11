@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simultaneous Linear Algebric Equations</title>
+    <link rel="stylesheet" href="../../../../public/style.css">
+    <link rel="icon" href="../../../../public/logo/favicon_io/favicon.ico">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        .ms {
+            display: inline-block;
+            font-size: 20px;
+            line-height: 2.2;
+        }
+    </style>
+</head>
+
+<body class="bg-c">
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">back</a>
+        <div class="fix-column-links">
+            <a href="#" class="link"></a>
+            <div class="botbut">
+                <a href="../unit3/index.html" class="link">Next Topic &rarr;</a>
+                <a href="../unit1/index.html" class="link">&larr; Previous Topic</a>
+            </div>
+        </div>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Simultaneous Linear Algebric Equations</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Simultaneous Linear Algebric Equations</h1>
+        <div class="wh">
+            <h2>Matrices</h2>
+            <ul>
+                <li>The evolution of the concept of matrices is the result of an attempt to obtain compact and simple
+                    methods of solving systems of linear equations. Matrices are not only used as representations of the
+                    coefficients in the system of linear equations, but their utility exceeds that initial use.</li>
+            </ul>
+            <h3>Applications of Matrices</h3>
+            <ul>
+                <li>Matrices are used in business and scientific fields such as budgeting, sales projection, cost
+                    estimation, and analyzing the results of experiments.</li>
+                <li>Physical operations such as magnification, rotation, and reflection through a plane can be
+                    represented mathematically by matrices.</li>
+            </ul>
+            <div class="in">
+                <h3>Matrix Inversion Method for Solving Linear Equations</h3>
+                <p>Steps:</p>
+                <ol>
+                    <li>Convert the linear equation into a matrix in the form AX = B, where A is the matrix of
+                        coefficients of the equation, X is the matrix of unknown variables, and B is the matrix of known
+                        results.</li>
+                    <li>Calculate the matrix of unknowns using the formula X = A<sup>-1</sup>B.</li>
+                    <li>Compute A<sup>-1</sup> as (Adj A) / |A|.</li>
+                    <li>Determine the matrix of unknowns (X) by multiplying A<sup>-1</sup> and the matrix B.</li>
+                </ol>
+                <div class="in">
+                    <p><strong>Solve by Matrix Inversion method:
+                            <br>x + y + z = 8
+                            <br>x - y + 2z = 6
+                            <br>3x + 5y - 7z = 14
+                        </strong></p>
+                    <p>Sol:
+                        <br>
+                        Writing these equation in matrix form:
+                    <pre>
++--        --+  +-- --+     +--  --+
+| 2    1   1 |  |  x  |     |  8   |
+| 1   -1   2 |  |  y  |  =  |  6   |  
+| 3    5  -7 |  |  z  |     |  14  |
++--        --+  +-- --+     +--  --+
+                        </pre>
+                    AX = B
+                    <br>X = A<sup>-1</sup>B
+                    <br>We have to calculate A<sup>-1</sup>
+                    <br>We know A<sup>-1</sup> = <math>
+                        <mfrac>
+                            <mn>Adj A</mn>
+                            <mn>|A|</mn>
+                        </mfrac>
+                    </math>
+                    <br>And Adj A = Transpose of Cofactor matrix
+                    <pre>
+            +--                       --+
+            | (7-10)   -(-7-6)   (5+3)  |                
+Cofactor =  | -(-7-5)   (-7-3)  -(5-3)  |
+            | (2+1)     -(2-1)   (-1-1) |
+            +--                       --+
+
+            +--          --+
+            | -3   13   8  |                
+Cofactor =  | 12  -10  -2  |
+            |  3   -1  -2  |
+            +--          --+
+
+Adj = Transpose of cofactor matrix
+
+         +--          --+
+         | -3   12   3  |                
+Adj A =  | 13  -10  -1  |
+         |  8   -2  -2  |
+         +--          --+
+
+Now finding |A|,
+|A| = 1(7-10) -1(-7-6) +1(5+3)
+|A| = 18
+
+As X = A<sup>-1</sup>B 
+       +--         --+    +--  --+
+       | -3    12    3 |  |  8   |
+X = <math><mfrac><mn>1</mn><mn>18</mn></mfrac></math> | 13   -10   -1 |  |  6   |
+       |  8    -2   -2 |  |  14  |
+       +--           --+  +--  --+
+
+       +-  -+  
+       | 90 |  
+X = <math><mfrac><mn>1</mn><mn>18</mn></mfrac></math> | 30 |
+       | 24 |
+       +-  -+
+
++-- --+    +--  --+ 
+|  x  |    |  5   |
+|  y  | =  |  5/3 | 
+|  z  |    |  4/3 |
++-- --+    +--  --+
+                        </pre>
+                    </p>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Gauss Elimination Method for Solving Linear Equations</h3>
+                <ul>
+                    <li>In linear algebra, Gaussian elimination is an efficient algorithm for solving systems of linear
+                        equations.</li>
+                    <li>This is a direct method that is divided into two parts:
+                        <ol>
+                            <li>Elimination or triangular elimination</li>
+                            <li>Back substitution</li>
+                        </ol>
+                    </li>
+                </ul>
+                <p><strong>Steps for Gauss Elimination</strong></p>
+                <ol>
+                    <li>Convert the equation into matrix form, i.e., AX = B, where A is the matrix of coefficients, X is
+                        the matrix of unknowns, and B is the result matrix.</li>
+                    <li>The obtained matrix will also be augmented as [AB].</li>
+                    <li>Choose the pivot element as A<sub>11</sub> if it is non-zero.</li>
+                    <li>Take the pivot element and make the elements below it zero:
+                        <br>
+                        R2 &rarr; R2 - (a<sub>21</sub> / a<sub>11</sub>) * R1
+                        <br>
+                        R3 &rarr; R3 - (a<sub>31</sub> / a<sub>11</sub>) * R1
+                    </li>
+                </ol>
+                <div class="in">
+                    <p><strong>Solve the following equation by Gauss Elimination Method:
+                            <br>2x + y + 4z = 12
+                            <br>4x + 11y - z = 33
+                            <br>8x -3y + 2z = 20
+                        </strong></p>
+                    <p>Sol:
+                        <br>First we convert the above equation to augmented form (matrix)
+                    <pre>
++--               --+
+| 2    1   4  :  12 |
+| 4   11  -1  :  33 |
+| 8   -3   2  :  20 |
++--               --+
+                        </pre>
+                    pivot = 2
+                    <br> We want to make a<sub>21</sub> zero so we use following formula.
+                    <br>
+                    R2 &larr; R2 - <math xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mfrac>
+                            <mn>(No. to be zero)</mn>
+                            <mn>Pivot</mn>
+                        </mfrac>
+                        <mo>&#x22C5;</mo>
+                        <mtext>Pivot Row</mtext>
+                    </math>
+                    <br>R2 &larr; R2 - <math xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mfrac>
+                            <mn>4</mn>
+                            <mn>1</mn>
+                        </mfrac>
+                        <mspace width="0.3em"></mspace>
+                        <mtext>R1</mtext>
+                    </math>
+
+                    <br>
+                    R2 &larr; R2 - 4R1
+                    <br>After performing R2 &larr; R2 - 4R1 it becomes
+                    <pre>
++--               --+
+| 2    1   4  :  12 |
+| 0    9  -9  :   9 |
+| 8   -3   2  :  20 |
++--               --+
+                        </pre>
+                    Pivot is still 2
+                    <br>Now we want to make a31 zero now the formula will be:
+                    <br> R3 &larr; R3 - <math xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mfrac>
+                            <mn>8</mn>
+                            <mn>2</mn>
+                        </mfrac>
+                        <mspace width="0.3em"></mspace>
+                        <mtext>R1</mtext>
+                    </math>
+                    
+                    <br> R3 &larr; R3 - 4R1
+                    <pre>
++--                --+
+| 2    1    4  :  12 |
+| 0    9   -9  :   9 |
+| 0   -7  -14  : -28 |
++--                --+
+                        </pre>
+                    Now we want to set a32 to zero, and since we shifted towards the 2nd column, there will be a new
+                    pivot.
+                    <br>New pivot = 9 and Pivot row = R2
+                    <br>Now formula will be:
+                    <br> R3 &larr; R3 - <math xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mfrac>
+                            <mn>(-7)</mn>
+                            <mn>9</mn>
+                        </mfrac>
+                        <mspace width="0.3em"></mspace>
+                        <mtext>R2</mtext>
+                    </math>
+                    
+                    <br> R3 &larr; R3 + <math xmlns="http://www.w3.org/1998/Math/MathML">
+                        <mfrac>
+                            <mn>7</mn>
+                            <mn>9</mn>
+                        </mfrac>
+                        <mspace width="0.3em"></mspace>
+                        <mtext>R2</mtext>
+                    </math>
+                    
+                    <br>Now we get
+                    <pre>
++--                --+
+| 2    1    4  :  12 |
+| 0    9   -9  :   9 |
+| 0    0  -21  : -21 |
++--                --+
+                        </pre>
+                    Converting this back into equation form, we get:
+                    <br>2x + y + 4z = 12 (eq-1)
+                    <br>9y -9z = 9 (eq-2)
+                    <br>-21z = -21 (eq-3)
+                    <br>From equation 3 we get z = 1
+                    <br>While substituting z in equation 2 we get y = 2
+                    <br>Substitution values of z and y in equation 1 we get x = 3
+                    <br>Hence, x = 3, y = 2 and z = 1
+                    </p>
+                </div>
+            </div>
+
+            <div class="in">
+                <h3>Ill-Conditioned and Well-Conditioned System</h3>
+                <ul>
+                    <li>When the change in the values of the matrix does not significantly affect the determinant, it is
+                        called a well-conditioned system. Conversely, when the variation in the determinant is very
+                        high, it
+                        is referred to as an ill-conditioned system.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Interpolation</h2>
+            <ul>
+                <li>Interpolation is a statistical method used to estimate unknown values based on related known values.
+                </li>
+                <li>It involves constructing a function that passes through known data points, allowing for the
+                    estimation of values within the range of those data points.</li>
+                <li>Interpolation is commonly used in various fields such as mathematics, engineering, computer science,
+                    and data analysis.</li>
+                <li>The accuracy and reliability of interpolation depend on factors such as the distribution and quality
+                    of the known data points, the chosen interpolation method, and any assumptions made about the
+                    underlying data behavior.</li>
+            </ul>
+            <img src="../../images/cbnst15.svg" alt="" class="wb">
+            <div class="in">
+                <h3>Forward and Backward difference table</h3>
+                <img src="../../images/cbnst16.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>Newton's methods of Interpolation</h3>
+                <h3>1- Newton's forward difference interpolation formula</h3>
+                <ul>
+                    <li>Conditions:
+                        <ol>
+                            <li>The function should be tabulated at equal intervals, such as regularly spaced values
+                                like 1, 2, 3, 4, etc., to ensure the accuracy of the interpolation process.</li>
+                            <li>The point for which the function is to be interpolated should lie in the first or upper
+                                half of the table. This means that the value you're trying to estimate falls within the
+                                range of known data points towards the beginning or top part of the data set.</li>
+                        </ol>
+                    </li>
+                </ul>
+                <p><strong>Understanding formula using the following example:</strong></p>
+                <img src="../../images/cbnst17.svg" alt="" class="wb">
+                <h3>2- Newton's backward difference interpolation formula</h3>
+                <ul>
+                    <li>Conditions:
+                        <ol>
+                            <li>The function should be tabulated at equal intervals.</li>
+                            <li>The point for which the function is to be interpolated should lie in the second or lower
+                                half of the table. This means that the value you're trying to estimate falls within the
+                                range of known data points towards the ending or bottom part of the data set.</li>
+                        </ol>
+                    </li>
+                </ul>
+                <img src="../../images/cbnst18.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>Central Difference Formula</h3>
+                <ul>
+                    <li>The Central Difference Formula is a method used for interpolation that is specifically designed
+                        for estimating values near the middle of a data table.</li>
+                    <li>There are two main types of Central Difference Formulas:
+                        <ul>
+                            <li><strong>Gauss's Forward Difference Formula</strong></li>
+                            <li><strong>Gauss's Backward Difference Formula</strong></li>
+                        </ul>
+                    </li>
+                </ul>
+                <h3>Gauss's Forward Difference Formula</h3>
+                <p><span class="ms">y(x) = \(y_0\) + u&triangle;\(y_0\) +
+                        \(\frac{(u-1)u}{2!}\)&triangle;<sup>2</sup>\(y_{-1}\) +
+                        \(\frac{(u-1)u(u+1)}{3!}\)&triangle;<sup>3</sup>\(y_{-1}\) +
+                        \(\frac{(u-2)(u-1)u(u+1)}{4!}\)&triangle;<sup>4</sup>\(y_{-2}\) +
+                        \(\frac{(u-2)(u-1)u(u+1)(u+2)}{5!}\)&triangle;<sup>5</sup>\(y_{-2}\)</span> + ...
+                    <br><span class="ms">u = \(\frac{x - x_o}{h}\)</span>
+                </p>
+                <p><strong>Q-</strong> Use Gauss's forward formula to find the value of y when x = 3.75 from the
+                    following table:
+                <pre>
+x |  2.5   |   3.0   |   3.5   |   4.0   |   4.5   |   5.0   |
+y | 24.145 | 22.043  | 20.225  | 18.644  | 17.262  | 16.047  |
+                </pre>
+                Sol:
+                <br><span class="ms">u = \(\frac{x - x_o}{h}\)</span>
+                <br>here x is the given value in the question, so x = 3.75 and \(x_o\) = just smallest value then x, so
+                \(x_o\) = 3.5
+                <br>Now h is the difference between two consecutive value of x, so h = 3.0 - 2.5 = 0.5
+                <br><span class="ms">u = \(\frac{3.75 - 3.5}{0.5}\) = 0.5</span>
+                <br>If (0 &lt; u &lt; 1) then we use Gauss Forward formula.
+                <br>Now table:
+                <pre>
+ x       |      y      |          △y               |    △^2 y   |    △^3 y    |   △^4 y    |   △^5 y
+---------+-------------+----------------------------+----------------------------+-------------+-------------
+2.5      | 24.145      |                            |             |              |             |
+         |             | 22.043-24.145= -2.102  (-2)|             |              |             |
+3.0      | 22.043      |                            | 0.284 (y-2) |              |             |
+         |             |        -1.818          (-1)|             | -0.047 (y-2) |             |
+3.5 (x0) | 20.225 (y0)✮|                            | 0.237 (y-1)✮|              | 0.009 (y-2)✮|
+         |             |        -1.581          (0)✮|             | -0.038 (y-1)✮|             | -0.003 (y-2)✮
+4.0      | 18.644      |                            | 0.199 (y0)  |              | 0.006 (y-1) |
+         |             |        -1.382           (1)|             | -0.032 (y0)  |             |
+4.5      | 17.262      |                            | 0.167 (y1)  |              |             |
+         |             |        -1.215           (2)|             |              |             |
+5.0      | 16.047      |                            |             |              |             |
+                </pre>
+                <span class="ms">y(x) = 20.225 + 0.5(-1.581) +
+                    \(\frac{(0.5-1)0.5}{2!}\) (0.237) +
+                    \(\frac{(0.5-1)0.5(0.5+1)}{3!}\)(-0.038) +
+                    \(\frac{(0.5-2)(0.5-1)0.5(0.5+1)}{4!}\)(0.009) +
+                    \(\frac{(0.5-2)(0.5-1)0.5(0.5+1)(0.5+2)}{5!}\)(-0.003)</span>
+                <br>y(x) = 22.225 - 0.7905 - 0.029625 + 0.002375 + 0.0002109375 - 0.0000351563
+                <br>y(x) = 19.4074257812
+                </p>
+                <br>
+                <h3>Gauss's Backward Formula</h3>
+                <p>
+                    <span class="ms">
+                        y(x) = \(y_o\) + u&triangle;\(y_{-1}\) + \(\frac{u(u+1)}{2!}\)&triangle;<sup>2</sup>\(y_{-1}\) +
+                        \(\frac{(u-1)u(u+1)}{3!}\)&triangle;<sup>3</sup>\(y_{-2}\) +
+                        \(\frac{(u-1)u(u+1)(u+2)}{4!}\)&triangle;<sup>4</sup>\(y_{-2}\) +
+                        \(\frac{(u-2)(u-1)u(u+1)(u+2)}{5!}\)&triangle;<sup>5</sup>\(y_{-3}\)
+                    </span>
+                    <br><span class="ms">u = \(\frac{x - x_o}{h}\)</span>
+                </p>
+                <p><strong>Q-</strong> Apply Gauss Backward formula to find the population of the town in 1946, given
+                    that
+                <pre>
+         Year  |  1931  |  1941  |  1951  |  1961  | 1971
+   Population  |   15   |   20   |   27   |   39   |  52
+(In thousands) | 
+                </pre>
+                <span class="ms">u = \(\frac{x - x_o}{h}\)</span>
+                <br>x = 1946 and \(x_o\) is slightly bigger value than x so here \(x_o\) = 1951
+                <br>h is the difference between two consecutive x values.
+                <br><span class="ms">u = \(\frac{1946 - 1951}{10}\) = -0.5</span>
+                <br>We use Gauss Backward when (-1 &lt; u &lt; 0)
+                <pre>
+ x       |   y     |    △y   | △^2 y  | △^3 y   |   △^4 y  |   
+---------+---------+----------+---------+----------+-----------+
+1931     | 15      |          |         |          |           |
+         |         | 5   (y-2)|         |          |           |
+1941     | 20      |          | 2 (y-2) |          |           |
+         |         | 7  (y-1)✮|         | 3 (y-2)✮ |           |
+1951 (x0)| 27 (y0)✮|          | 5 (y-1)✮|          | -7 (y-2)✮ |
+         |         | 12  (y0) |         | -4 (y-1) |           |
+1961     | 39      |          | 1 (y0)  |          |           |
+         |         | 13   (y1)|         |          |           |
+1971     | 52      |          |         |          |           |
+            </pre>
+                <span class="ms">
+                    y(x) = 27 + (-0.5)(7) + \(\frac{(-0.5)(-0.5+1)}{2!}\)(5) + \(\frac{(-0.5-1)(-0.5)(-0.5+1)}{3!}\)(3)
+                    + \(\frac{(-0.5-1)(-0.5)(-0.5+1)(-0.5+2)}{4!}\)(-7)
+                    <br>y(x) = 22.7890
+                </span>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="content-box">
+        <p>Reference</p>
+        <ul>
+            <li><a href="https://www.youtube.com/playlist?list=PLEHGYFbPuuMGfyIXGx8V-Xhi0HRSjT8Ak" target="_blank">Root
+                    Finding Method Playlist &neArr;</a></li>
+        </ul>
+    </div>
+    <script src="../../../../public/main.js"></script>
+</body>
+
+</html>

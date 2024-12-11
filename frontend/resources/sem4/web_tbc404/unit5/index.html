@@ -1,0 +1,1755 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHP</title>
+    <link rel="stylesheet" href="../../../../public/style.css">
+    <link rel="icon" href="../../../../public/logo/favicon_io/favicon.ico">
+    <link rel="stylesheet" id="highlightStylesheet"
+        href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/tomorrow-night-blue.min.css">
+</head>
+
+<body class="bg-c">
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">back</a>
+        <div class="fix-column-links">
+            <a href="#" class="link"></a>
+            <div class="botbut">
+                <a href="../unit4/index.html" class="link">&larr; Previous Topic</a>
+            </div>
+        </div>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>PHP</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>PHP</h1>
+        <div class="wh">
+            <h2>Introduction to Web Servers</h2>
+            <p>Web servers are fundamental components of the internet infrastructure, responsible for hosting and
+                delivering web content and applications to users worldwide. Understanding the different types of web
+                servers and development environments is crucial for developers and system administrators alike.</p>
+
+            <div class="in">
+                <h3>Different Types of Web Servers</h3>
+                <ul>
+                    <li><strong>Apache HTTP Server:</strong>
+                        <ul>
+                            <li>Apache HTTP Server, commonly known as Apache, is an open-source web server software
+                                maintained by the Apache Software Foundation.</li>
+                            <li>It is highly versatile and widely used for hosting static and dynamic websites,
+                                supporting
+                                various features such as virtual hosting, SSL/TLS encryption, URL rewriting, and
+                                authentication mechanisms.</li>
+                            <li>Apache is compatible with multiple operating systems, including Linux, Unix, macOS, and
+                                Windows, making it a preferred choice for a broad range of web hosting scenarios.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Tomcat and Glassfish:</strong>
+                        <ul>
+                            <li>Tomcat and Glassfish are Java-based application servers designed to execute Java
+                                servlets
+                                and render JavaServer Pages (JSP).</li>
+                            <li>Apache Tomcat, often referred to simply as Tomcat, is a lightweight and robust servlet
+                                container used for deploying Java web applications. It provides support for servlets,
+                                JSP,
+                                and WebSocket implementations.</li>
+                            <li>Glassfish, developed by Oracle Corporation, offers a complete Java EE (Enterprise
+                                Edition)
+                                environment with additional features such as Java Messaging Service (JMS), Java
+                                Persistence
+                                API (JPA), and Enterprise JavaBeans (EJBs). It is suitable for enterprise-level Java web
+                                applications requiring advanced functionalities.</li>
+                        </ul>
+                    </li>
+                    <li><strong>IIS (Internet Information Services):</strong>
+                        <ul>
+                            <li>Internet Information Services (IIS) is a web server developed by Microsoft for Windows
+                                Server environments.</li>
+                            <li>It is commonly used to host websites and applications built using Microsoft technologies
+                                such as ASP.NET, C#, and Visual Basic.NET.</li>
+                            <li>IIS offers features like integrated security, application pools for managing web
+                                applications, and performance monitoring tools through its management console.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Nginx (Engine X):</strong>
+                        <ul>
+                            <li>Nginx is a high-performance, lightweight, and open-source web server known for its
+                                efficient
+                                handling of concurrent connections and low resource consumption.</li>
+                            <li>It excels in serving static content, acting as a reverse proxy, load balancer, and
+                                caching
+                                server.</li>
+                            <li>Nginx is often used in modern web architectures alongside Apache or other servers to
+                                improve
+                                performance, scalability, and security.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Development Environments:</h3>
+                <p>Development environments play a crucial role in the software development lifecycle, providing
+                    developers with tools and resources to create, test, and debug web applications effectively. These
+                    environments often include web servers, databases, scripting languages, and other development tools
+                    necessary for building and deploying web projects.</p>
+                <p>Following are the development environment stacks commonly used:</p>
+                <ol>
+                    <li><strong>XAMPP (Cross-Platform Apache, MySQL, PHP, Perl):</strong>
+                        <ul>
+                            <li><strong>Cross-Platform:</strong> XAMPP supports multiple operating systems, making it
+                                accessible to developers using different platforms.</li>
+                            <li><strong>Apache HTTP Server:</strong> The Apache web server component handles HTTP
+                                requests and serves web content.</li>
+                            <li><strong>MySQL:</strong> A relational database management system used for data storage
+                                and retrieval in web applications.</li>
+                            <li><strong>PHP:</strong> A server-side scripting language that enables dynamic content
+                                generation and processing in web applications.</li>
+                            <li><strong>Perl:</strong> Another scripting language included in XAMPP for server-side
+                                development.</li>
+                        </ul>
+                    </li>
+                    <li><strong>WAMP (Windows, Apache, MySQL, PHP/Perl/Python):</strong>
+                        <ul>
+                            <li>WAMP is a development stack specifically designed for Windows environments, providing a
+                                local server environment for web development.</li>
+                            <li><strong>Windows:</strong> The operating system where WAMP is installed, offering a
+                                familiar environment for Windows-based developers.</li>
+                            <li><strong>Apache:</strong> The Apache HTTP Server serves as the web server component,
+                                handling HTTP requests and serving web content.</li>
+                            <li><strong>MySQL (or MariaDB):</strong> A relational database management system used for
+                                data storage and retrieval.</li>
+                            <li><strong>PHP/Perl/Python:</strong> Scripting languages that enable server-side processing
+                                and dynamic content generation in web applications.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Introduction to PHP</h2>
+            <ul>
+                <li><strong>What PHP Stands For:</strong> Hypertext Preprocessor, reflecting its primary
+                    purpose of processing hypertext or web pages.</li>
+                <li><strong>Server-Side Scripting Language:</strong> PHP is a server-side scripting language used to
+                    manage dynamic content on webpages. It runs on the server, generating HTML content that is then sent
+                    to the client's browser.</li>
+                <li><strong>Interpreter-Based Language:</strong> PHP is an interpreter-based language, meaning there's
+                    no need for compilation. PHP scripts are executed directly by the PHP interpreter on the server.
+                </li>
+                <li><strong>Performance:</strong> PHP is known for its speed and performance compared to other scripting
+                    languages like ASP and JSP, making it a popular choice for web development.</li>
+                <li><strong>Integration with HTML:</strong> PHP can be seamlessly embedded within HTML, allowing
+                    developers to mix PHP code with HTML markup to create dynamic web pages.</li>
+                <li><strong>Object-Oriented Programming (OOP):</strong> PHP supports object-oriented programming (OOP)
+                    concepts, enabling developers to create modular, reusable code with classes and objects.</li>
+                <li><strong>Open Source:</strong> PHP is an open-source scripting language, which means it's freely
+                    available for anyone to use, modify, and distribute.</li>
+                <li><strong>Simplicity and Ease of Use:</strong> PHP is known for its simplicity and ease of
+                    understanding, making it accessible to beginners and experienced developers alike.</li>
+            </ul>
+            <div class="in">
+                <h3>Features of PHP:</h3>
+                <ul>
+                    <li><strong>Performance:</strong> PHP scripts execute faster than languages like ASP and JSP. PHP
+                        utilizes its own memory management, reducing server workload and minimizing loading times for
+                        web pages.</li>
+                    <li><strong>Open Source:</strong> PHP's source code and software are freely available, allowing
+                        developers to access and modify the language according to their needs. All PHP versions and
+                        components are downloadable and usable at no cost.</li>
+                    <li><strong>Embeddable:</strong> PHP code can be seamlessly embedded within HTML tags and scripts,
+                        enabling developers to create dynamic and interactive web pages.</li>
+                    <li><strong>Platform Independence:</strong> PHP is compatible with various operating systems such as
+                        Unix, macOS, Windows, and Linux. Applications developed in PHP on one operating system can
+                        easily run on other platforms, enhancing cross-platform compatibility.</li>
+                    <li><strong>Error Handling:</strong> PHP includes predefined error reporting mechanisms that
+                        generate notices or warnings during runtime, aiding developers in identifying and resolving
+                        errors in their code.</li>
+                    <li><strong>Weakly Typed Language:</strong> PHP is a weakly typed or loosely typed language,
+                        allowing variables to be used without declaring their data types. The type of data and its value
+                        determine the variable's type during execution.</li>
+                    <li><strong>File Storage:</strong> PHP uses different directories for file storage, such as 'htdocs'
+                        for XAMPP and 'www' for WAMP. Developers must create these folders to organize and store PHP
+                        files and resources effectively.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Syntax</h3>
+                <ul>
+                    <li>PHP uses a combination of HTML, JavaScript-like syntax, and PHP-specific tags to execute
+                        server-side code.</li>
+                </ul>
+                <pre>
+                    <code>
+&lt;? php 
+    echo "PHP";
+?>
+                    </code>
+                </pre>
+                <ul>
+                    <li>In the above code, we have used PHP opening and closing tags
+                        &lt;?php ?> to encapsulate PHP code. The echo statement is used to output the text "PHP" to the
+                        webpage.
+                    </li>
+                </ul>
+                <h3>File Extension</h3>
+                <ul>
+                    <li>PHP files typically use the .php extension, indicating that the file contains PHP code that
+                        needs to be processed by the PHP interpreter on the server.</li>
+                </ul>
+                <h3>Running PHP Scripts Locally</h3>
+                <ol>
+                    <li><strong>Install XAMPP or WAMP:</strong>
+                        <ul>
+                            <li>Download and install XAMPP or WAMP on your computer.</li>
+                            <li>Follow the installation instructions provided by the respective software.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Start the Local Server:</strong>
+                        <ul>
+                            <li>Open XAMPP Control Panel or WAMP Manager.</li>
+                            <li>Start the Apache server from the control panel or manager.</li>
+                            <li>Or go to the terminal, change the directory to /opt/lampp, and run "sudo ./xampp start".
+                                This
+                                works in Linux."</li>
+                        </ul>
+                    </li>
+                    <li><strong>Create or Place Your PHP File:</strong>
+                        <ul>
+                            <li>Navigate to the directory where PHP files should be placed (e.g., htdocs for XAMPP, www
+                                for WAMP).</li>
+                            <li>Create a new PHP file (e.g., <code>abc.php</code>) or place an existing PHP file in this
+                                directory.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Accessing the PHP File:</strong>
+                        <ul>
+                            <li>Open your web browser (e.g., Chrome, Firefox).</li>
+                            <li>In the address bar, type <code>http://localhost/abc.php</code> (replace
+                                <code>abc.php</code> with your PHP file name).
+                            </li>
+                            <li>If using a different port, specify the port in the URL (e.g.,
+                                <code>http://localhost:8080/abc.php</code>).
+                            </li>
+                        </ul>
+                    </li>
+                    <li><strong>Execute the PHP Script:</strong>
+                        <ul>
+                            <li>The local server will process the PHP script and display the output in your web browser.
+                            </li>
+                            <li>Errors, if any, will be displayed on the page or in server logs.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>PHP Programming</h2>
+            <ul>
+                <li>Writing our first PHP program. We are going to print "Hello World" as we always do with other
+                    programming languages.</li>
+                <li>So, we should know some keywords like `echo` and others.</li>
+            </ul>
+            <div class="in">
+                <h3>echo</h3>
+                <ul>
+                    <li>`echo` can be used to print strings, multi-line strings, escape characters, variables, etc. Some
+                        important points that you must know about the `echo` statement are:
+                        <ol>
+                            <li>`echo` is a statement used to display output.</li>
+                            <li>`echo` can be used with or without parentheses: `echo` or `echo()`.</li>
+                            <li>`echo` does not return any value.</li>
+                            <li>You can pass multiple strings separated by commas (,) in `echo`.</li>
+                            <li>`echo` is faster than the `print` statement.</li>
+                        </ol>
+                    </li>
+                </ul>
+                <p>Example:</p>
+                <pre>
+                    <code>
+&lt;?php
+    echo "Hello World";
+?>
+                    </code>
+                </pre>
+                <ul>
+                    <li>Just like `echo`, we also have the `print` statement which does the exact same thing as `echo`.
+                        The difference is that `echo` doesn't return any value, but the `print` statement always returns
+                        an integer value of 1. Additionally, `print` is slower than `echo`.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>PHP Variables</h3>
+                <p>In PHP, a variable is declared using a <strong>$</strong> sign followed by the variable name. Here
+                    are
+                    some important points to know about variables:</p>
+                <ul>
+                    <li>As PHP is a loosely typed language, we do not need to declare the data types of the variables.
+                        It automatically analyzes the values and makes conversions to the correct datatype.</li>
+                    <li>After declaring a variable, it can be reused throughout the code.</li>
+                    <li>The assignment operator (<strong>=</strong>) is used to assign a value to a variable.</li>
+                </ul>
+                <p>Syntax of declaring a variable in PHP is given below:</p>
+                <pre>
+                    <code>
+$variablename = value;
+                    </code>
+                </pre>
+                <h3>Rules for declaring PHP variables:</h3>
+                <ul>
+                    <li>A variable must start with a dollar (<strong>$</strong>) sign, followed by the variable name.
+                    </li>
+                    <li>It can only contain alphanumeric characters and underscores ( <strong>A-z</strong>,
+                        <strong>0-9</strong>,
+                        <strong>_</strong> ).
+                    </li>
+                    <li>A variable name must start with a letter or underscore (<strong>_</strong>) character.</li>
+                    <li>A PHP variable name cannot contain spaces.</li>
+                    <li>The variable name cannot start with a number or special symbols.</li>
+                    <li>PHP variables are case-sensitive, so <strong>$name</strong> and <strong>$NAME</strong> are
+                        treated as
+                        different variables.</li>
+                </ul>
+                <h3>PHP Variable: Declaring string, integer, and float</h3>
+                <p>Let's see the example to store string, integer, and float values in PHP variables.</p>
+                <pre>
+    <code>
+&lt;?php
+    $str = "hello string";
+    $x = 200;
+    $y = 44.6;
+    echo "string is: $str <br/>";
+    echo "integer is: $x <br/>";
+    echo "float is: $y <br/>";
+?>
+    </code>
+</pre>
+            </div>
+            <div class="in">
+                <h3>Sum of two numbers in php</h3>
+                <pre>
+                    <code>
+&lt;?php
+    $num1 = 5;
+    $num2 = 4;
+    $sum = $num1 + $num2;
+    echo "The sum is = $sum";
+?>
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>PHP Data Types</h2>
+            <p>In PHP, data types are used to specify the type of data that variables can hold. PHP supports various
+                data types, each with its own characteristics and usage.</p>
+
+            <div class="in">
+                <h3>Basic Data Types</h3>
+                <ul>
+                    <li><strong>Integer:</strong> Represents whole numbers, such as 1, 100, -5, etc.</li>
+                    <li><strong>Float (Floating Point Number):</strong> Represents decimal numbers, such as 3.14, -0.5,
+                        etc.
+                    </li>
+                    <li><strong>String:</strong> Represents sequences of characters, enclosed in single quotes
+                        (<code>' '</code>) or double quotes (<code>" "</code>).</li>
+                    <li><strong>Boolean:</strong> Represents true or false values.</li>
+                    <li><strong>Array:</strong> Represents a collection of elements, each identified by a key.</li>
+                    <li><strong>Object:</strong> Represents instances of user-defined classes, containing properties and
+                        methods.</li>
+                    <li><strong>Null:</strong> Represents a variable with no value assigned.</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Special Data Types</h3>
+                <ul>
+                    <li><strong>Resource:</strong> Represents external resources, such as file handles or database
+                        connections.</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Dynamic Typing in PHP</h3>
+                <p>PHP is a loosely typed language known for dynamic typing, meaning you don't need to declare the data
+                    type explicitly. PHP determines the data type based on the value assigned to the variable.</p>
+                <h3>Example:</h3>
+                <pre>
+                <code>
+$integerVar = 10; // Integer
+$floatVar = 3.14; // Float
+$stringVar = "Hello, PHP!"; // String
+$boolVar = true; // Boolean
+$arrayVar = array(1, 2, 3); // Array
+$objectVar = new stdClass(); // Object
+$nullVar = null; // Null
+    </code>
+</pre>
+            </div>
+
+            <div class="in">
+                <h3>Type Casting</h3>
+                <p>You can also explicitly convert data types using type casting. For example:</p>
+                <pre>
+                <code>
+$intValue = (int) 10.5; // Converts float to integer (10)
+$floatValue = (float) "3.14"; // Converts string to float (3.14)
+$stringValue = (string) 100; // Converts integer to string ("100")
+$boolValue = (bool) ""; // Converts empty string to boolean (false)
+    </code>
+</pre>
+            </div>
+
+        </div>
+        <div class="wh">
+            <h2>Control Statements in PHP</h2>
+            <p>Control statements in PHP are used to control the flow of execution in a program. They allow you to make
+                decisions, repeat actions, and perform different tasks based on conditions.</p>
+            <div class="in">
+                <h3>1. Conditional Statements</h3>
+                <p>Conditional statements are used to execute code based on certain conditions. PHP supports the
+                    following
+                    conditional statements:</p>
+                <ul>
+                    <li><strong>If Statement:</strong> Executes a block of code if a specified condition is true.</li>
+                    <li><strong>If...Else Statement:</strong> Executes a block of code if a specified condition is true;
+                        otherwise, executes another block of code.</li>
+                    <li><strong>If...ElseIf...Else Statement:</strong> Executes different blocks of code based on
+                        multiple
+                        conditions.</li>
+                    <li><strong>Switch Statement:</strong> Executes one block of code among many alternatives based on
+                        the
+                        value of a variable or expression.</li>
+                </ul>
+
+                <h3>Examples:</h3>
+                <p>Let's see examples of each control statement:</p>
+
+                <h4>1. If Statement Example</h4>
+                <pre>
+                <code>
+$age = 25;
+if ($age >= 18) {
+    echo "You are eligible to vote.";
+}
+                </code>
+            </pre>
+
+                <h4>2. If...Else Statement Example</h4>
+                <pre>
+                <code>
+$marks = 85;
+if ($marks >= 60) {
+    echo "You passed.";
+} else {
+    echo "You failed.";
+}
+                </code>
+            </pre>
+
+                <h4>3. If...ElseIf...Else Statement Example</h4>
+                <pre>
+                <code>
+$score = 85;
+if ($score >= 90) {
+    echo "Excellent!";
+} elseif ($score >= 70) {
+    echo "Good!";
+} else {
+    echo "Needs improvement.";
+}
+                </code>
+            </pre>
+
+                <h4>4. Switch Statement Example</h4>
+                <pre>
+                <code>
+$day = "Monday";
+switch ($day) {
+    case "Monday":
+        echo "Today is Monday.";
+        break;
+    case "Tuesday":
+        echo "Today is Tuesday.";
+        break;
+    default:
+        echo "Invalid day.";
+}
+                </code>
+            </pre>
+            </div>
+            <div class="in">
+                <h3>2. Looping Statements</h3>
+                <p>Looping statements are used to execute a block of code repeatedly as long as a specified condition is
+                    true. PHP supports the following looping statements:</p>
+                <ul>
+                    <li><strong>While Loop:</strong> Executes a block of code as long as a specified condition is true.
+                    </li>
+                    <li><strong>Do...While Loop:</strong> Executes a block of code once, and then repeats the execution
+                        as
+                        long as a specified condition is true.</li>
+                    <li><strong>For Loop:</strong> Executes a block of code a specified number of times.</li>
+                    <li><strong>Foreach Loop:</strong> Iterates over elements in an array or an object.</li>
+                </ul>
+
+                <h3>Examples:</h3>
+                <p>Let's see examples of each loop:</p>
+
+                <h4>1. While Loop Example</h4>
+                <pre>
+                <code>
+$num = 1;
+while ($num <= 5) {
+    echo "Number: $num&lt;br>";
+    $num++;
+}
+    </code>
+</pre>
+
+                <h4>2. Do...While Loop Example</h4>
+                <pre>
+                <code>
+$num = 1;
+do {
+    echo "Number: $num&lt;br>";
+    $num++;
+} while ($num <= 5);
+    </code>
+</pre>
+
+                <h4>3. For Loop Example</h4>
+                <pre>
+                <code>
+for ($i = 1; $i <= 5; $i++) {
+    echo "Number: $i&lt;br>";
+}
+    </code>
+</pre>
+
+                <h4>4. Foreach Loop Example</h4>
+                <pre>
+                <code>
+$fruits = array("Apple", "Banana", "Orange", "Mango");
+foreach ($fruits as $fruit) {
+    echo "$fruit&lt;br>";
+}
+    </code>
+</pre>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Arrays in PHP</h2>
+            <p>Arrays in PHP allow you to store multiple values in a single variable. PHP supports several types of
+                arrays:</p>
+            <div class="in">
+                <h3>1. Indexed Arrays</h3>
+                <p>An indexed array stores elements with numeric indices. Elements are accessed using their index
+                    numbers.
+                </p>
+                <pre>
+                <code>
+$colors = array("Red", "Green", "Blue");
+echo $colors[0]; // Outputs: Red
+echo $colors[1]; // Outputs: Green
+echo $colors[2]; // Outputs: Blue
+            </code>
+        </pre>
+            </div>
+            <div class="in">
+
+                <h3>2. Associative Arrays</h3>
+                <p>An associative array stores elements with named keys. Elements are accessed using their keys.</p>
+                <pre>
+                <code>
+$person = array("name" => "John", "age" => 30, "city" => "New York");
+echo $person["name"]; // Outputs: John
+echo $person["age"]; // Outputs: 30
+echo $person["city"]; // Outputs: New York
+            </code>
+        </pre>
+            </div>
+            <div class="in">
+                <h3>3. Multidimensional Arrays</h3>
+                <p>A multidimensional array contains one or more arrays. It is used to store arrays within an array.</p>
+
+                <h4>Associative Array Example:</h4>
+                <pre>
+        <code>
+$students = array(
+    array("name" => "John", "age" => 20),
+    array("name" => "Jane", "age" => 22),
+    array("name" => "Doe", "age" => 25)
+);
+echo $students[0]["name"]; // Outputs: John
+echo $students[1]["age"]; // Outputs: 22
+        </code>
+        </pre>
+
+                <h4>Indexed Array Example:</h4>
+                <pre>
+        <code>
+$students = array(
+    array("John", 20),
+    array("Jane", 22),
+    array("Doe", 25)
+);
+echo $students[0][0]; // Outputs: John
+echo $students[1][1]; // Outputs: 22
+        </code>
+        </pre>
+
+            </div>
+            <h3>Using Array Functions</h3>
+            <p>PHP provides built-in functions to work with arrays, such as <strong>count()</strong> to count
+                elements
+                in an
+                array and <strong>array_push()</strong> to add elements to an array.</p>
+            <pre>
+                <code>
+$fruits = array("Apple", "Banana", "Orange");
+echo count($fruits); // Outputs: 3
+
+array_push($fruits, "Mango");
+print_r($fruits); // Outputs: Array ( [0] => Apple [1] => Banana [2] => Orange [3] => Mango )
+            </code>
+        </pre>
+        </div>
+        <div class="wh">
+            <h2>String Handling in PHP</h2>
+            <p>Strings in PHP are sequences of characters, which can include letters, numbers, symbols, and spaces. PHP
+                provides various functions and methods to manipulate and work with strings.</p>
+
+            <h3>1. Concatenation</h3>
+            <p>Concatenation is the process of combining strings. In PHP, the dot (.) operator is used for
+                concatenation.</p>
+            <pre>
+                <code>
+$name = "John";
+$greeting = "Hello, " . $name . "!";
+echo $greeting; // Outputs: Hello, John!
+    </code>
+</pre>
+
+            <h3>2. String Length</h3>
+            <p>The <strong>strlen()</strong> function is used to get the length of a string in PHP.</p>
+            <pre>
+                <code>
+$text = "This is a string.";
+echo strlen($text); // Outputs: 16 (including spaces)
+    </code>
+</pre>
+
+            <h3>3. Substrings</h3>
+            <p>The <strong>substr()</strong> function is used to extract a part of a string.</p>
+            <pre>
+                <code>
+$text = "Hello World";
+$substring = substr($text, 0, 5); // Extracts "Hello"
+echo $substring;
+    </code>
+</pre>
+
+            <h3>4. String Case</h3>
+            <p>PHP provides functions like <strong>strtolower()</strong> and <strong>strtoupper()</strong> to change the
+                case
+                of
+                strings.</p>
+            <pre>
+                <code>
+$text = "Hello World";
+echo strtolower($text); // Outputs: hello world
+echo strtoupper($text); // Outputs: HELLO WORLD
+    </code>
+</pre>
+
+            <h3>5. String Replace</h3>
+            <p>The <strong>str_replace()</strong> function is used to replace a substring with another substring in a
+                string.</p>
+            <pre>
+                <code>
+$text = "Hello World";
+$newText = str_replace("World", "PHP", $text);
+echo $newText; // Outputs: Hello PHP
+    </code>
+</pre>
+
+            <h3>6. String Splitting</h3>
+            <p>PHP provides functions like <strong>explode()</strong> and <strong>implode()</strong> to split and join
+                strings
+                based on delimiters.</p>
+            <pre>
+                <code>
+$text = "apple,banana,orange";
+$fruitsArray = explode(",", $text); // Splits the string into an array
+print_r($fruitsArray); // Outputs: Array ( [0] => apple [1] => banana [2] => orange )
+
+$fruitsString = implode(", ", $fruitsArray); // Joins the array elements into a string
+echo $fruitsString; // Outputs: apple, banana, orange
+    </code>
+</pre>
+        </div>
+        <div class="wh">
+            <h2>Functions in PHP</h2>
+            <p>A function in PHP is a block of reusable code that performs a specific task. Functions help in organizing
+                code, improving readability, and reducing redundancy. Here's how you declare and use functions in PHP:
+            </p>
+
+            <h3>Basic Syntax:</h3>
+            <pre>
+                <code>
+&lt;?php
+function functionName($param1, $param2, ...) {
+    // Function body
+    // Code to be executed when the function is called
+    return $returnValue; // Optional: return value
+}
+?>
+                </code>
+            </pre>
+            <p>Let's break down the components of a PHP function:</p>
+            <ul>
+                <li><strong>function</strong>: Keyword used to define a function.</li>
+                <li><strong>functionName</strong>: Name of the function.</li>
+                <li><strong>($param1, $param2, ...)</strong>: Parameters the function accepts.</li>
+                <li><strong>Function Body</strong>: Block of code executed when the function is called.</li>
+                <li><strong>return $returnValue;</strong>: Optional; used to return a value from the function.</li>
+            </ul>
+
+            <h3>Example 1: Function to Calculate Sum</h3>
+            <pre>
+                <code>
+&lt;?php
+function calculateSum($num1, $num2) {
+    $sum = $num1 + $num2;
+    return $sum;
+}
+
+$number1 = 10;
+$number2 = 5;
+$result = calculateSum($number1, $number2);
+echo "The sum of $number1 and $number2 is: $result";
+?>
+                </code>
+            </pre>
+
+            <p>In this example, the <strong>calculateSum</strong> function takes two parameters and returns their sum.
+            </p>
+
+            <h3>Example 2: Function to Check Even or Odd</h3>
+            <pre>
+                <code>
+&lt;?php
+function checkEvenOdd($number) {
+    if ($number % 2 == 0) {
+        return "Even";
+    } else {
+        return "Odd";
+    }
+}
+
+$inputNumber = 15;
+$result = checkEvenOdd($inputNumber);
+echo "$inputNumber is $result";
+?>
+                </code>
+            </pre>
+
+            <p>This example demonstrates a function that checks whether a number is even or odd.</p>
+
+            <h3>Example 3: Function with Default Parameter</h3>
+            <pre>
+                <code>
+&lt;?php
+function greetUser($name = "Guest") {
+    echo "Hello, $name!";
+}
+
+greetUser(); // Outputs: Hello, Guest!
+greetUser("John"); // Outputs: Hello, John!
+?>
+                </code>
+            </pre>
+
+            <p>Here, the <strong>greetUser</strong> function has a default parameter value, allowing it to be called
+                without
+                an argument.</p>
+        </div>
+        <div class="wh">
+            <h2>PHP Variable Scope</h2>
+            <p>Variable scope refers to the visibility and accessibility of variables within different parts of a PHP
+                script. Understanding variable scope is crucial for writing efficient and bug-free code. Here are the
+                key aspects of PHP variable scope:</p>
+
+            <h3>Local Scope</h3>
+            <p>Variables declared within a function have local scope and can only be accessed within that function.</p>
+            <pre>
+                <code>
+&lt;?php
+function myFunction() {
+    $localVariable = "This is a local variable.";
+    echo $localVariable;
+}
+
+myFunction(); // Outputs: This is a local variable.
+echo $localVariable; // Error: Undefined variable
+?>
+                </code>
+            </pre>
+
+            <h3>Global Scope</h3>
+            <p>Variables declared outside of any function have global scope and can be accessed from anywhere within the
+                script. To access a global variable inside a function, use the <code>global</code> keyword.</p>
+            <pre>
+                <code>
+&lt;?php
+$globalVariable = "This is a global variable.";
+
+function myFunction() {
+    global $globalVariable;
+    echo $globalVariable;
+}
+
+myFunction(); // Outputs: This is a global variable.
+echo $globalVariable; // Outputs: This is a global variable.
+?>
+                </code>
+            </pre>
+
+            <h3>Static Variables</h3>
+            <p>Static variables retain their values between function calls and are initialized only once. They are
+                useful when you need a variable to persist its value across multiple function calls.</p>
+            <pre>
+                <code>
+&lt;?php
+function staticCounter() {
+    static $count = 0; // Initialized only once
+    $count++;
+    echo "Static Count: $count&lt;br&gt;";
+}
+
+function regularCounter() {
+    $count = 0; // Initialized every time the function is called
+    $count++;
+    echo "Regular Count: $count&lt;br&gt;";
+}
+
+staticCounter(); // Outputs: Static Count: 1
+staticCounter(); // Outputs: Static Count: 2
+staticCounter(); // Outputs: Static Count: 3
+
+regularCounter(); // Outputs: Regular Count: 1
+regularCounter(); // Outputs: Regular Count: 1
+regularCounter(); // Outputs: Regular Count: 1
+?>
+            </code>
+        </pre>
+
+        </div>
+        <div class="wh">
+            <h2>PHP SuperGlobal Variables</h2>
+            <p>PHP provides several superglobal variables that are used to collect data from various sources. These
+                superglobal variables are accessible from any part of the script, regardless of scope. Here are some of
+                the most commonly used superglobals:</p>
+
+            <ul>
+                <li><strong>$_POST:</strong> This variable is used to collect data from HTML forms using the POST
+                    method. The data is sent as part of the HTTP request body, making it more secure for sensitive
+                    information like passwords.</li>
+                <li><strong>$_GET:</strong> This variable is used to collect data from HTML forms using the GET method.
+                    The data is sent as part of the URL, making it visible in the browser's address bar. It is suitable
+                    for non-sensitive information and when bookmarking or sharing the URL is needed.</li>
+                <li><strong>$_REQUEST:</strong> This variable contains the contents of $_GET, $_POST, and $_COOKIE. It
+                    is used to collect data from multiple sources in a single variable.</li>
+                <li><strong>$_COOKIE:</strong> This variable is used to collect data stored in cookies. Cookies are
+                    small files stored on the client's computer that are sent to the server with each HTTP request.</li>
+                <li><strong>$_SESSION:</strong> This variable is used to store data that persists across multiple pages.
+                    Session variables are stored on the server and are identified by a unique session ID, which is
+                    typically stored in a cookie on the client side.</li>
+            </ul>
+
+            <h3>Examples:</h3>
+
+            <div class="in">
+                <h3>Example 1: Using $_POST</h3>
+                <p>This example demonstrates how to use the $_POST variable to collect data from a form.</p>
+                <pre>
+                <code>
+&lt;!-- form.html file --&gt; 
+&lt;!DOCTYPE html&gt; 
+&lt;html&gt;
+    &lt;body&gt; 
+        &lt;form method="post" action="post_handler.php"&gt;
+            &lt;label&gt;Enter your name: &lt;/label&gt;
+            &lt;input type="text" name="name" /&gt;
+            &lt;input type="submit" value="Submit" /&gt;
+        &lt;/form&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+                </code>
+            </pre>
+
+                <pre>
+                <code>
+&lt;?php
+// post_handler.php
+$name = $_POST['name'];
+echo "Hello, $name!";
+?>
+                </code>
+            </pre>
+            </div>
+
+            <div class="in">
+                <h3>Example 2: Using $_GET</h3>
+                <p>This example demonstrates how to use the $_GET variable to collect data from a form.</p>
+                <pre>
+                    <code>
+&lt;!-- form.html file --&gt; 
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;form action="get_handler.php" method="get"&gt;
+            Name: &lt;input type="text" name="name"&gt;
+            &lt;input type="submit" value="Submit"&gt;
+        &lt;/form&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+                    </code>
+                </pre>
+
+                <pre>
+                    <code>
+&lt;?php
+// get_handler.php
+$name = $_GET['name'];
+echo "Hello, $name!";
+?>
+                </code>
+            </pre>
+
+            </div>
+
+            <div class="in">
+                <h3>Example 3: Using $_REQUEST</h3>
+                <p>This example demonstrates how to use the $_REQUEST variable to collect data from a form.</p>
+                <pre>
+                <code>
+&lt;!-- form_request.html file --&gt; 
+&lt;!DOCTYPE html&gt; 
+&lt;html&gt;
+    &lt;body&gt; 
+        &lt;form method="post" action="request_handler.php"&gt;
+            &lt;label&gt;Enter your age: &lt;/label&gt;
+            &lt;input type="text" name="age" /&gt;
+            &lt;input type="submit" value="Submit" /&gt;
+        &lt;/form&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+                </code>
+            </pre>
+
+                <pre>
+                <code>
+&lt;?php
+// request_handler.php
+$age = $_REQUEST['age'];
+echo "Your age is: $age";
+?>
+                </code>
+            </pre>
+            </div>
+
+            <div class="in">
+                <h3>Example 4: Using $_COOKIE</h3>
+                <p>This example demonstrates how to use the $_COOKIE variable to store and retrieve a cookie.</p>
+                <pre>
+                <code>
+&lt;?php
+// set_cookie.php
+setcookie("user", "John", time() + (86400 * 30), "/"); // 86400 = 1 day
+?>
+&lt;!DOCTYPE html&gt; 
+&lt;html&gt;
+    &lt;body&gt; 
+        &lt;?php
+        if(isset($_COOKIE["user"])) {
+            echo "User is " . $_COOKIE["user"];
+        } else {
+            echo "User is not set";
+        }
+        ?&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+                </code>
+            </pre>
+            </div>
+
+            <div class="in">
+                <h3>Example 5: Using $_SESSION</h3>
+                <p>This example demonstrates how to use the $_SESSION variable to store and retrieve session data.</p>
+                <pre>
+                    <code>
+&lt;?php
+// start_session.php
+session_start();
+$_SESSION["favcolor"] = "green";
+$_SESSION["favanimal"] = "cat";
+echo "Session variables are set.";
+?>
+                    </code>
+                </pre>
+
+                <pre>
+                    <code>
+&lt;?php
+// retrieve_session.php
+session_start();
+echo "Favorite color is " . $_SESSION["favcolor"] . ".&lt;br&gt;";
+echo "Favorite animal is " . $_SESSION["favanimal"] . ".";
+?>
+                    </code>
+                </pre>
+            </div>
+            <p>By understanding and using these superglobal variables, you can effectively manage and manipulate data
+                within your PHP applications.</p>
+            <div class="in">
+                <h3>Program to Add Two Numbers Inputted in an HTML Input Tag and Show the Result in an HTML Input Tag
+                    Upon Clicking the Add Button</h3>
+                <p>This example demonstrates how to create a simple web form that allows users to input two numbers, add
+                    them, and display the result in another input field using PHP.</p>
+
+                <pre>
+                    <code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Add Two Numbers&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h3&gt;Program to Add Two Numbers Inputted in an HTML Input Tag and Show the Result in an HTML Input Tag Upon Clicking the Add Button&lt;/h3&gt;
+
+    &lt;?php
+    $sum = &quot;&quot;; // Initialize the sum variable
+
+    // Fetch data directly without checking request method
+    $num1 = $_POST[&quot;num1&quot;];
+    $num2 = $_POST[&quot;num2&quot;];
+    $sum = $num1 + $num2;
+    ?&gt;
+
+    &lt;form method=&quot;post&quot; action=&quot;&quot;&gt;
+        &lt;label&gt;Num 1: &lt;/label&gt;
+        &lt;input type=&quot;text&quot; name=&quot;num1&quot; value=&quot;&lt;?php echo $num1; ?&gt;&quot; required&gt;
+        &lt;br&gt;
+        &lt;label&gt;Num 2: &lt;/label&gt;
+        &lt;input type=&quot;text&quot; name=&quot;num2&quot; value=&quot;&lt;?php echo $num2; ?&gt;&quot; required&gt;
+        &lt;br&gt;
+        &lt;label&gt;Result: &lt;/label&gt;
+        &lt;input type=&quot;text&quot; name=&quot;result&quot; value=&quot;&lt;?php echo $sum; ?&gt;&quot; &gt;
+        &lt;br&gt;
+        &lt;input type=&quot;submit&quot; value=&quot;Add&quot;&gt;
+        &lt;input type=&quot;reset&quot; value=&quot;Reset&quot;&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                    </code>
+                </pre>
+                <p>Make sure you save this file with ".php" extension.</p>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>MySQL Database Connectivity with PHP</h2>
+            <p>MySQL is a popular relational database management system used with PHP for building dynamic web
+                applications. It allows storing, retrieving, and managing structured data efficiently.</p>
+
+            <h3>Need for Database Connectivity in PHP</h3>
+            <p>Connecting PHP to a MySQL database is essential for web applications that require data storage,
+                retrieval, and manipulation. It enables seamless integration of dynamic content and user data
+                management.</p>
+
+            <h3>Methods for MySQL Connectivity in PHP</h3>
+            <p>There are three main methods used in PHP to connect to MySQL databases:</p>
+            <ol>
+                <li><strong>MySQL (Deprecated)</strong>:
+                    <ul>
+                        <li>Deprecated method for MySQL connectivity in PHP.</li>
+                        <li>Primarily procedural in nature: In procedural programming, code is written as a series of
+                            step-by-step instructions. In the case of MySQL, procedural code involves functions like
+                            mysql_connect() and mysql_query() to interact with the database.</li>
+                        <li>Supports only MySQL database.</li>
+                    </ul>
+                </li>
+                <li><strong>MySQLi (Improved MySQL)</strong>:
+                    <ul>
+                        <li>Improved version of MySQL connectivity.</li>
+                        <li>Supports both procedural and object-oriented approaches:
+                            <ul>
+                                <li>Procedural approach: Similar to MySQL, mysqli allows procedural code where functions
+                                    like mysqli_connect() and mysqli_query() are used for database operations.</li>
+                                <li>Object-oriented approach: In object-oriented programming (OOP), code is organized
+                                    around objects and classes. In MySQLi's object-oriented mode, you create a
+                                    connection object (mysqli) and use its methods for database operations. For example,
+                                    $mysqli = new mysqli("localhost", "username", "password", "database");</li>
+                            </ul>
+                        </li>
+                        <li>Exclusive support for MySQL databases.</li>
+                    </ul>
+                </li>
+                <li><strong>PDO (PHP Data Objects)</strong>:
+                    <ul>
+                        <li>PHP's data access abstraction layer.</li>
+                        <li>Object-oriented approach for database connectivity:
+                            <ul>
+                                <li>PDO represents a modern and versatile way to interact with databases using OOP
+                                    principles. You create a PDO object and use its methods for database operations. For
+                                    example, $pdo = new PDO("mysql:host=localhost;dbname=database", "username",
+                                    "password");</li>
+                            </ul>
+                        </li>
+                        <li>Supports multiple database systems including MySQL, PostgreSQL, SQLite, etc.</li>
+                    </ul>
+                </li>
+            </ol>
+            <div class="in">
+                <h3>Establishing MySQL Connection in PHP</h3>
+                <ul>
+                    <li>We use a connection string that includes at least three parameters:</li>
+                    <ul>
+                        <li><strong>Hostname:</strong> Specifies the server where the MySQL database is hosted.
+                            Typically, it's "localhost" if the database is on the same server as the PHP code.</li>
+                        <li><strong>Username:</strong> The username used to authenticate with the MySQL server.</li>
+                        <li><strong>Password:</strong> The password associated with the username for authentication.
+                        </li>
+                    </ul>
+                    <li>"localhost:3306" is the default host and port for MySQL databases. The port 3306 is where MySQL
+                        usually listens for connections.</li>
+                    <li>We are using the mysqli method to establish the database connection. MySQLi is a PHP extension
+                        used for interacting with MySQL databases, offering both procedural and object-oriented
+                        approaches.</li>
+                </ul>
+
+                <p>Explanation of Code:</p>
+                <pre>
+                    <code>
+&lt;?php
+// Database credentials
+$servername = "localhost";
+$username = "root";
+$password = "";
+
+// Create a connection to the MySQL database
+$conn = mysqli_connect($servername, $username, $password);
+
+// Check if the connection was successful
+if (!$conn) {
+    // If connection fails, terminate the script and display an error message
+    die("Connection failed: " . mysqli_connect_error());
+} else {
+    // If the connection is successful, display a success message
+echo "Connected successfully";
+}
+mysqli_close($conn);
+?>
+                </code>
+            </pre>
+
+                <p>In the code:</p>
+                <ul>
+                    <li><strong>$servername</strong>, <strong>$username</strong>, and <strong>$password</strong> are
+                        variables holding the database credentials.</li>
+                    <li><strong>mysqli_connect()</strong> is used to create a connection to the MySQL database.</li>
+                    <li>The <strong>if (!$conn)</strong> statement checks if the connection was successful. If not,
+                        <strong>die()</strong> terminates the script and displays the error message retrieved from
+                        <strong>mysqli_connect_error()</strong>.
+                    </li>
+                    <li>If the connection is successful, the script continues and displays "Connected successfully".
+                    </li>
+                    <li>The mysqli_close() function is used to close a previously opened database connection. This
+                        function takes a single parameter, which is the connection object that was created by the
+                        mysqli_connect() function.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>PHP MySQL Database Connectivity</h3>
+                <p>PHP allows you to connect to a MySQL database using the <strong>mysqli_connect()</strong> function.
+                </p>
+
+                <h3>Steps to Connect to MySQL Database in PHP</h3>
+                <ol>
+                    <li><strong>Set Database Credentials:</strong> Define variables for hostname, username, password,
+                        and database name.</li>
+                    <li><strong>Establish Connection:</strong> Use <strong>mysqli_connect()</strong> function to
+                        establish a
+                        connection to the MySQL database.</li>
+                    <li><strong>Check Connection:</strong> Verify if the connection was successful using an
+                        <strong>if</strong> statement.
+                    </li>
+                    <li><strong>Perform Database Operations:</strong> Once connected, you can execute SQL queries to
+                        perform various database operations.</li>
+                    <li><strong>Close Connection:</strong> After completing the database operations, close the
+                        connection using <code>mysqli_close()</code> function to free up resources.</li>
+                </ol>
+
+                <h3>PHP MySQL Database Connectivity Example</h3>
+                <p><strong>Example:</strong></p>
+                <pre>
+                    <code>
+&lt;?php
+$host = 'localhost:3306';
+$user = 'root';
+$pass = 'your_password';
+$dbname = 'your_database';
+
+// Establishing the connection
+$conn = mysqli_connect($host, $user, $pass, $dbname);
+
+if (!$conn) {
+    die('Could not connect: ' . mysqli_connect_error());
+}
+echo 'Connected successfully&lt;br/&gt;';
+
+// Perform database operations here
+
+// Closing the connection
+mysqli_close($conn);
+?>
+                </code>
+            </pre>
+            </div>
+            <div class="in">
+                <h3>PHP MySQL Create Database</h3>
+                <p>Since PHP 4.3, the <strong>mysql_create_db()</strong> function is deprecated. Now it is recommended to
+                    use one of the two alternatives:</p>
+                <ul>
+                    <li><strong>mysqli_query()</strong></li>
+                    <li><strong>PDO::__query()</strong></li>
+                </ul>
+
+                <h3>PHP MySQLi Create Database Example</h3>
+                <pre>
+                    <code>
+&lt;?php
+$host = 'localhost:3306';
+$user = 'root';
+$pass = '';
+
+$conn = mysqli_connect($host, $user, $pass);
+
+if(!$conn) {
+    die('Could not connect: ' . mysqli_connect_error());
+}
+echo 'Connected successfully';
+
+$sql = 'CREATE DATABASE mydb';
+
+if(mysqli_query($conn, $sql)) {
+    echo "Database mydb created successfully.";
+} else {
+    echo "Sorry, database creation failed: " . mysqli_error($conn);
+}
+
+mysqli_close($conn);
+?>
+                </code>
+            </pre>
+
+                <h3>Explanation of the Code</h3>
+                <ul>
+                    <li><strong>Connection to Database:</strong>
+                        <pre>
+                            <code>
+$conn = mysqli_connect($host, $user, $pass);
+                            </code>
+                        </pre>
+                        This line establishes a connection to the MySQL server using the specified hostname, username,
+                        and password.
+                    </li>
+                    <li><strong>Check Connection:</strong>
+                        <pre>
+                            <code>
+if(!$conn) { die('Could not connect: ' . ysqli_connect_error()); }
+                            </code>
+                        </pre>
+                        This block checks if the connection was successful. If not, it outputs an error message and
+                        terminates the script.
+                    </li>
+                    <li><strong>Create Database:</strong>
+                        <pre>
+                            <code>
+$sql = 'CREATE DATABASE mydb';
+                            </code>
+                        </pre>
+                        This line stores the SQL query for creating a new database named 'mydb'.
+                    </li>
+                    <li><strong>Execute Query:</strong>
+                        <pre>
+                            <code>
+if(mysqli_query($conn, $sql)) { 
+    echo "Database mydb created successfully."; 
+} else { 
+    echo "Sorry, database creation failed: " . mysqli_error($conn); 
+}
+                            </code>
+                        </pre>
+                        This block executes the SQL query. It checks the success of the query and outputs an appropriate
+                        message.
+                    </li>
+                    <li><strong>Close Connection:</strong>
+                        <pre>
+                            <code>
+mysqli_close($conn);
+                            </code>
+                        </pre>
+                        This line closes the database connection that was previously opened.
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>PHP MySQL Create Table</h3>
+                <p>PHP <strong>mysqli_query()</strong> function is used to create tables in MySQL databases.</p>
+
+                <h3>PHP MySQLi Create Table Example</h3>
+                <p><strong>Example:</strong></p>
+                <pre>
+                    <code>
+&lt;?php
+$host = 'localhost:3306';
+$user = 'root';
+$pass = '';
+$dbname = 'test';
+
+// Establishing the connection
+$conn = mysqli_connect($host, $user, $pass, $dbname);
+
+if (!$conn) {
+    die('Could not connect: ' . mysqli_connect_error());
+}
+echo 'Connected successfully&lt;br/&gt;';
+
+// SQL query to create a table
+$sql = "CREATE TABLE emp5 (
+    id INT AUTO_INCREMENT,
+    name VARCHAR(20) NOT NULL,
+    emp_salary INT NOT NULL,
+    PRIMARY KEY (id)
+)";
+
+if (mysqli_query($conn, $sql)) {
+    echo "Table emp5 created successfully";
+} else {
+    echo "Could not create table: " . mysqli_error($conn);
+}
+
+// Closing the connection
+mysqli_close($conn);
+?>
+                </code>
+            </pre>
+
+                <h3>Explanation of the Code</h3>
+                <ol>
+                    <li>
+                        <strong>Connecting to the Database:</strong>
+                        <pre>
+                            <code>
+$host = 'localhost:3306';
+$user = 'root';
+$pass = '';
+$dbname = 'test';
+$conn = mysqli_connect($host, $user, $pass, $dbname);
+                        </code>
+                    </pre>
+                        <ul>
+                            <li><strong>$host:</strong> The hostname and port number where the MySQL server is running.
+                            </li>
+                            <li><strong>$user:</strong> The MySQL username.</li>
+                            <li><strong>$pass:</strong> The MySQL password.</li>
+                            <li><strong>$dbname:</strong> The name of the database to connect to.</li>
+                            <li><strong>mysqli_connect():</strong> Establishes a connection to the MySQL server.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Creating the Table:</strong>
+                        <pre>
+                            <code>
+$sql = "CREATE TABLE emp5 (
+    id INT AUTO_INCREMENT,
+    name VARCHAR(20) NOT NULL,
+    emp_salary INT NOT NULL,
+    PRIMARY KEY (id)
+)";
+                        </code>
+                    </pre>
+                        <ul>
+                            <li><strong>AUTO_INCREMENT:</strong> Automatically increments the value of <code>id</code>
+                                for each new record.</li>
+                            <li><strong>VARCHAR(20) NOT NULL:</strong> Defines a column <code>name</code> that can store
+                                a string of up to 20 characters and cannot be null.</li>
+                            <li><strong>INT NOT NULL:</strong> Defines a column <code>emp_salary</code> that stores an
+                                integer and cannot be null.</li>
+                            <li><strong>PRIMARY KEY (id):</strong> Sets the <code>id</code> column as the primary key of
+                                the table.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Executing the Query:</strong>
+                        <pre>
+                            <code>
+if (mysqli_query($conn, $sql)) {
+    echo "Table emp5 created successfully";
+} else {
+    echo "Could not create table: " . mysqli_error($conn);
+}
+                        </code>
+                    </pre>
+                        <ul>
+                            <li><strong>mysqli_query():</strong> Executes the SQL query against the MySQL database.</li>
+                            <li><strong>mysqli_error():</strong> Returns the error description of the last MySQL
+                                operation.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            <div class="in">
+                <h3>PHP MySQL Insert Record</h3>
+                <pre>
+                    <code>
+&lt;?php
+$host = 'localhost:3306';
+$user = 'root';
+$pass = '';
+$dbname = 'test';
+
+// Establishing the connection
+$conn = mysqli_connect($host, $user, $pass, $dbname);
+
+if (!$conn) {
+    die('Could not connect: ' . mysqli_connect_error());
+}
+echo 'Connected successfully&lt;br/&gt;';
+
+// SQL query to insert a record
+$sql = "INSERT INTO emp4 (name, salary) VALUES ('sonoo', 9000)";
+
+if (mysqli_query($conn, $sql)) {
+    echo "Record inserted successfully";
+} else {
+    echo "Could not insert record: " . mysqli_error($conn);
+}
+
+// Closing the connection
+mysqli_close($conn);
+?>
+    </code>
+</pre>
+
+                <h3>Explanation of the Code</h3>
+                <ol>
+                    <li>
+                        <strong>Inserting a Record:</strong>
+                        <pre>
+                            <code>
+$sql = "INSERT INTO emp4 (name, salary) VALUES ('sonoo', 9000)";
+
+if (mysqli_query($conn, $sql)) {
+    echo "Record inserted successfully";
+} else {
+    echo "Could not insert record: " . mysqli_error($conn);
+}
+                            </code>
+                        </pre>
+                        <ul>
+                            <li><strong>INSERT INTO emp4 (name, salary) VALUES ('sonoo', 9000):</strong> SQL query to
+                                insert a record into the <code>emp4</code> table with specified values.</li>
+                            <li><strong>mysqli_query():</strong> Executes the SQL query against the MySQL database.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            <h3>PHP MySQL Update Record</h3>
+            <pre>
+                <code>
+&lt;?php
+$host = 'localhost:3306';
+$user = 'root';
+$pass = '';
+$dbname = 'test';
+
+// Establishing the connection
+$conn = mysqli_connect($host, $user, $pass, $dbname);
+
+if (!$conn) {
+    die('Could not connect: ' . mysqli_connect_error());
+}
+echo 'Connected successfully&lt;br/&gt;';
+
+// Variables to update the record
+$id = 2;
+$name = "Rahul";
+$salary = 80000;
+
+// SQL query to update a record
+$sql = "UPDATE emp4 SET name='$name', salary=$salary WHERE id=$id";
+
+if (mysqli_query($conn, $sql)) {
+    echo "Record updated successfully";
+} else {
+    echo "Could not update record: " . mysqli_error($conn);
+}
+
+// Closing the connection
+mysqli_close($conn);
+?>
+                </code>
+            </pre>
+
+            <div class="in">
+                <h2>PHP MySQL Delete Record</h2>
+                <pre>
+    <code>
+&lt;?php
+$host = 'localhost:3306';
+$user = 'root';
+$pass = '';
+$dbname = 'test';
+
+// Establishing the connection
+$conn = mysqli_connect($host, $user, $pass, $dbname);
+
+if (!$conn) {
+    die('Could not connect: ' . mysqli_connect_error());
+}
+echo 'Connected successfully&lt;br/&gt;';
+
+// SQL query to delete a record
+$id = 2;
+$sql = "DELETE FROM emp4 WHERE id=$id";
+
+if (mysqli_query($conn, $sql)) {
+    echo "Record deleted successfully";
+} else {
+    echo "Could not delete record: " . mysqli_error($conn);
+}
+
+// Closing the connection
+mysqli_close($conn);
+?>
+                    </code>
+                </pre>
+            </div>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">All MySQL operation in single php file</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+&lt;?php
+$host = 'localhost:3306';
+$user = 'root';
+$pass = '';
+$dbname = 'test';
+
+// Establishing the connection
+$conn = mysqli_connect($host, $user, $pass);
+
+if (!$conn) {
+    die('Could not connect: ' . mysqli_connect_error());
+}
+echo 'Connected successfully&lt;br/>';
+
+// Creating a database
+$sql = "CREATE DATABASE IF NOT EXISTS $dbname";
+if (mysqli_query($conn, $sql)) {
+    echo "Database $dbname created successfully&lt;br/>";
+} else {
+    echo "Could not create database: " . mysqli_error($conn) . "&lt;br/>";
+}
+
+// Selecting the database
+mysqli_select_db($conn, $dbname);
+
+// Creating a table
+$sql = "CREATE TABLE IF NOT EXISTS emp4 (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(20) NOT NULL,
+    salary INT NOT NULL
+)";
+if (mysqli_query($conn, $sql)) {
+    echo "Table emp4 created successfully&lt;br/>";
+} else {
+    echo "Could not create table: " . mysqli_error($conn) . "&lt;br/>";
+}
+
+// Inserting a record
+$sql = "INSERT INTO emp4 (name, salary) VALUES ('sonoo', 9000)";
+if (mysqli_query($conn, $sql)) {
+    echo "Record inserted successfully&lt;br/>";
+} else {
+    echo "Could not insert record: " . mysqli_error($conn) . "&lt;br/>";
+}
+
+// Updating a record
+$id = 1;
+$name = "Rahul";
+$salary = 80000;
+$sql = "UPDATE emp4 SET name='$name', salary=$salary WHERE id=$id";
+if (mysqli_query($conn, $sql)) {
+    echo "Record updated successfully&lt;br/>";
+} else {
+    echo "Could not update record: " . mysqli_error($conn) . "&lt;br/>";
+}
+
+// Deleting a record
+$id = 1;
+$sql = "DELETE FROM emp4 WHERE id=$id";
+if (mysqli_query($conn, $sql)) {
+    echo "Record deleted successfully&lt;br/>";
+} else {
+    echo "Could not delete record: " . mysqli_error($conn) . "&lt;br/>";
+}
+
+// Closing the connection
+mysqli_close($conn);
+?>
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Create a User Registration Page with the Help of PHP and MySQL</h3>
+                <ul>
+                    <li>We can create everything in one PHP file, but we are creating it in two separate files: an HTML
+                        file to display the form, and a PHP file to handle the form submission.</li>
+                </ul>
+
+                <div class="code">
+                    <div class="dotc"></div>
+                    <button class="ac">register.html file code</button>
+                    <div class="panel">
+                        <pre>
+                        <code>
+&lt;!DOCTYPE html>
+&lt;html>
+&lt;head>
+    &lt;title>User Registration&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;h2>User Registration&lt;/h2>
+    &lt;form action="register.php" method="post">
+        &lt;label for="username">Username:&lt;/label>
+        &lt;input type="text" id="username" name="username" required>&lt;br>&lt;br>
+
+        &lt;label for="email">Email:&lt;/label>
+        &lt;input type="email" id="email" name="email" required>&lt;br>&lt;br>
+
+        &lt;label for="password">Password:&lt;/label>
+        &lt;input type="password" id="password" name="password" required>&lt;br>&lt;br>
+
+        &lt;input type="submit" value="Register">
+    &lt;/form>
+&lt;/body>
+&lt;/html>
+                        </code>
+                    </pre>
+                    </div>
+                </div>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <button class="ac">register.php file code</button>
+                    <div class="panel">
+                        <pre>
+                            <code>
+&lt;?php
+$host = 'localhost:3306';
+$user = 'root';
+$pass = '';
+$dbname = 'user_registration';
+
+// Establishing the connection
+$conn = mysqli_connect($host, $user, $pass);
+
+if (!$conn) {
+die('Could not connect: ' . mysqli_connect_error());
+}
+echo 'Connected successfully&lt;br/>';
+
+// Creating a database
+$sql = "CREATE DATABASE IF NOT EXISTS $dbname";
+if (mysqli_query($conn, $sql)) {
+echo "Database $dbname created successfully&lt;br/>";
+} else {
+echo "Could not create database: " . mysqli_error($conn) . "&lt;br/>";
+}
+
+// Selecting the database
+mysqli_select_db($conn, $dbname);
+
+// Creating a table
+$sql = "CREATE TABLE IF NOT EXISTS users (
+id INT AUTO_INCREMENT PRIMARY KEY,
+username VARCHAR(50) NOT NULL,
+email VARCHAR(50) NOT NULL,
+password VARCHAR(50) NOT NULL
+)";
+if (mysqli_query($conn, $sql)) {
+echo "Table users created successfully&lt;br/>";
+} else {
+echo "Could not create table: " . mysqli_error($conn) . "&lt;br/>";
+}
+
+// Getting form data
+$username = $_POST['username'];
+$email = $_POST['email'];
+$password = $_POST['password'];
+
+// Inserting a record
+$sql = "INSERT INTO users (username, email, password) VALUES ('$username', '$email', '$password')";
+if (mysqli_query($conn, $sql)) {
+echo "Registration successful!&lt;br/>";
+} else {
+echo "Could not register user: " . mysqli_error($conn) . "&lt;br/>";
+}
+
+// Closing the connection
+mysqli_close($conn);
+?>
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+                <ul>
+                    <li>If the registration database is already created in MySQL, there is no need to create it in the
+                        PHP file.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="content-box">
+        <p>Reference</p>
+        <ul>
+            <li><a href="https://stackoverflow.com/questions/12584762/mysql-connect-no-such-file-or-directory"
+                    target="_blank">No such file or directory Error Solution &neArr;</a></li>
+        </ul>
+    </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="../../../../public/main.js"></script>
+</body>
+
+</html>

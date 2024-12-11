@@ -1,0 +1,1407 @@
+<!DOCTYPE html>
+< lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Client Side Scripting</title>
+        <link rel="stylesheet" href="../../../../public/style.css">
+        <link rel="icon" href="../../../../public/logo/favicon_io/favicon.ico">
+        <link rel="stylesheet" id="highlightStylesheet"
+            href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/tomorrow-night-blue.min.css">
+        <style>
+            .box {
+                background-color: rgb(216, 216, 216);
+                margin: 10px;
+                color: black;
+                padding: 15px;
+                border-radius: 5px;
+            }
+
+            #t8 {
+                outline: none;
+                border: 2px solid black;
+                border-radius: 4px;
+            }
+        </style>
+    </head>
+
+    <body class="bg-c">
+        <div id="mySidepanel" class="sidepanel">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+            <a href="../index.html" class="home">back</a>
+            <div class="fix-column-links">
+                <a href="#" class="link"></a>
+                <div class="botbut">
+                    <a href="../unit5/index.html" class="link">Next Topic &rarr;</a>
+                    <a href="../unit3/index.html" class="link">&larr; Previous Topic</a>
+                </div>
+            </div>
+        </div>
+        <div id="navbar" class="grad">
+            <div>
+                <div class="openbtn" onclick="openNav()">
+                    <div id="nav-icon1" for="nav-menu1">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <h2>Client Side Scripting</h2>
+            </div>
+        </div>
+        <div class="content-box">
+            <h1>Client Side Scripting</h1>
+            <div class="wh">
+                <h2>Introduction to JavaScript</h2>
+                <ul>
+                    <li>JavaScript is a lightweight, object-oriented programming language that also supports the
+                        functional
+                        programming paradigm. It is widely used by several websites for scripting dynamic interactions
+                        and
+                        behaviors on webpages.</li>
+                    <li>It is an interpreted, full-fledged programming language that enables dynamic interactivity on
+                        websites, allowing for real-time updates and responses without requiring the page to reload.
+                    </li>
+                    <li>When applied to an HTML document, JavaScript empowers users to build modern web applications
+                        that
+                        can interact directly with servers and databases, often using technologies like AJAX
+                        (Asynchronous
+                        JavaScript and XML). This asynchronous capability enhances user experience by making web pages
+                        more
+                        responsive and interactive.</li>
+                    <li>It's important to note that JavaScript has no direct relation with the Java programming
+                        language.
+                        Despite their similar names, they are entirely separate and serve different purposes in software
+                        development.</li>
+                    <li>In addition to frontend scripting, JavaScript can be utilized for backend development as well.
+                        With
+                        frameworks like Node.js, developers can use JavaScript to write server-side code, interact with
+                        databases (both SQL databases like MySQL, MariaDB, and NoSQL databases like MongoDB, Cassandra,
+                        HBase, Redis, and CouchDB), handle HTTP requests and responses, and create robust, scalable web
+                        applications.</li>
+                    <li>JavaScript's versatility as both a client-side and server-side scripting language makes it a
+                        powerful tool for building interactive and dynamic web applications. Its ecosystem includes a
+                        vast
+                        array of libraries, frameworks, and tools that streamline development and enhance functionality.
+                    </li>
+                    <li>Furthermore, JavaScript has evolved significantly over the years, with ECMAScript standards
+                        introducing new features and enhancements to the language. Modern JavaScript (ES6 and beyond)
+                        offers
+                        improved syntax, better support for asynchronous programming with Promises and async/await,
+                        modules
+                        for organizing code, arrow functions for concise code, and much more, making it a preferred
+                        choice
+                        for web development.</li>
+                </ul>
+            </div>
+            <div class="wh">
+                <h2>Features of JavaScript</h2>
+                <ul>
+                    <li><strong>Lightweight</strong> :
+                        JavaScript is a lightweight, interpreted language, meaning it is executed directly by the
+                        browser without the need for prior compilation. This makes it quick and easy to deploy and
+                        run.
+                    </li>
+                    <li><strong>Dynamic Typing</strong> :
+                        JavaScript is dynamically typed, meaning variables can hold values of any type and can change
+                        their type at runtime. This provides flexibility in coding but requires careful handling to
+                        avoid type-related errors.
+                    </li>
+                    <li><strong>Object-Oriented</strong> :
+                        JavaScript supports object-oriented programming, allowing developers to create objects that
+                        model real-world entities. It uses prototypes rather than classes for inheritance, enabling
+                        flexible and dynamic object structures.
+                    </li>
+                    <li><strong>First-Class Functions</strong> :
+                        Functions in JavaScript are first-class citizens, meaning they can be assigned to variables,
+                        passed as arguments, and returned from other functions. This feature enables powerful
+                        programming paradigms like functional programming.
+                    </li>
+                    <li><strong>Event-Driven</strong> :
+                        JavaScript is inherently event-driven, making it well-suited for creating interactive web
+                        applications. It allows developers to define event handlers that respond to user actions
+                        such as clicks, keyboard inputs, and mouse movements.
+                    </li>
+                    <li><strong>Asynchronous Programming</strong> :
+                        JavaScript supports asynchronous programming through callbacks, promises, and async/await
+                        syntax. This allows for non-blocking operations, enabling smooth and responsive web
+                        applications, especially when dealing with I/O operations like network requests.
+                    </li>
+                    <li><strong>Browser Compatibility</strong> :
+                        JavaScript is supported by all modern web browsers, making it a ubiquitous language for
+                        client-side web development. Its consistent behavior across different browsers ensures broad
+                        compatibility for web applications.
+                    </li>
+                    <li><strong>Interoperability</strong> :
+                        JavaScript can interact with other languages and technologies, allowing it to integrate with
+                        various back-end services, APIs, and libraries. This makes it a versatile choice for
+                        full-stack development.
+                    </li>
+                    <li><strong>Rich Libraries and Frameworks</strong> :
+                        JavaScript has a rich ecosystem of libraries and frameworks such as React, Angular, and
+                        Vue.js, which simplify complex tasks and enhance development efficiency. These tools provide
+                        pre-built components and functionalities for rapid application development.
+                    </li>
+                    <li><strong>Community Support</strong> :
+                        JavaScript has a large and active community, offering extensive resources, tutorials, and
+                        support. This vibrant community contributes to a continuous evolution of the language and
+                        its ecosystem.
+                    </li>
+                </ul>
+            </div>
+            <div class="wh">
+                <h2>Advantages and Disadvantages of JavaScript</h2>
+                <h3>Advantages</h3>
+                <ul>
+                    <li><strong>Client-Side Execution</strong>:
+                        JavaScript executes on the client side, reducing server load and improving website
+                        performance by handling tasks directly in the user's browser.
+                    </li>
+                    <li><strong>Rich User Interface</strong>:
+                        JavaScript allows for dynamic and interactive user interfaces, enhancing user experience with
+                        features like animations, form validations, and real-time updates.
+                    </li>
+                    <li><strong>Enhanced Functionality</strong>:
+                        With JavaScript, developers can add functionalities such as sliders, carousels, interactive
+                        maps, and drag-and-drop features to web applications without relying on plugins or
+                        third-party software.
+                    </li>
+                    <li><strong>Asynchronous Operations</strong>:
+                        JavaScript supports asynchronous programming, enabling non-blocking operations like fetching
+                        data from servers, performing animations, and handling user interactions without freezing
+                        the UI.
+                    </li>
+                    <li><strong>Extensive Ecosystem</strong>:
+                        JavaScript has a vast ecosystem of libraries, frameworks, and plugins (e.g., React, Vue.js,
+                        jQuery) that simplify development, provide reusable components, and accelerate project
+                        delivery.
+                    </li>
+                    <li><strong>Browser Compatibility</strong>:
+                        JavaScript is supported by all modern web browsers, ensuring cross-platform compatibility and
+                        consistent behavior across different devices and operating systems.
+                    </li>
+                    <li><strong>Community Support</strong>:
+                        JavaScript has a large and active community of developers who contribute to open-source
+                        projects, share knowledge, and provide support, leading to continuous improvements and
+                        innovations.
+                    </li>
+                    <li><strong>Serverless Architecture</strong>:
+                        With advancements in serverless computing and cloud platforms, JavaScript can be used to
+                        build serverless applications, reducing infrastructure management overhead and scaling more
+                        efficiently.
+                    </li>
+                </ul>
+                <h3>Disadvantages</h3>
+                <ul>
+                    <li><strong>Security Risks</strong>:
+                        JavaScript executed in the browser exposes code to potential vulnerabilities such as
+                        cross-site scripting (XSS) attacks if not properly secured, leading to data breaches and
+                        malicious activities.
+                    </li>
+                    <li><strong>Client-Side Dependencies</strong>:
+                        Heavy reliance on JavaScript for critical functionalities can result in degraded user
+                        experience if users disable JavaScript or encounter compatibility issues with older
+                        browsers.
+                    </li>
+                    <li><strong>Performance Concerns</strong>:
+                        Excessive use of JavaScript, especially in complex web applications, can impact performance
+                        by increasing page load times, consuming more memory, and causing rendering delays.
+                    </li>
+                    <li><strong>SEO Challenges</strong>:
+                        Search engine optimization (SEO) for JavaScript-powered websites can be challenging, as
+                        search engine crawlers may have difficulty indexing dynamic content generated by JavaScript,
+                        affecting search rankings.
+                    </li>
+                    <li><strong>Debugging Complexity</strong>:
+                        Debugging JavaScript code, especially in large-scale applications or with asynchronous
+                        operations, can be complex and time-consuming, requiring robust testing and debugging tools.
+
+                    </li>
+                    <li><strong>Code Readability</strong>:
+                        JavaScript's dynamic nature and flexibility can lead to code that is less structured, harder
+                        to maintain, and prone to inconsistencies, especially in collaborative development
+                        environments.
+                    </li>
+                    <li><strong>Learning Curve</strong>:
+                        For beginners, JavaScript's diverse ecosystem, evolving standards, and varying best practices
+                        can present a steep learning curve, requiring continuous learning and adaptation.</p>
+                    </li>
+                </ul>
+            </div>
+            <div class="wh">
+                <h2>Application of JavaScript</h2>
+                <ul>
+                    <li>JavaScript (JS) is utilized to develop interactive websites.</li>
+                    <li>Its primary applications include:
+                        <ol>
+                            <li>Client-side validation, which ensures that user input conforms to specified criteria
+                                before
+                                submission.</li>
+                            <li>Creation of dynamic drop-down menus, enhancing user experience by providing interactive
+                                navigation options.</li>
+                            <li>Implementation of date and time controls, facilitating user interaction with
+                                time-related
+                                data.</li>
+                            <li>Displaying pop-up windows and dialog boxes, which serve various purposes such as:
+                                <ul>
+                                    <li>Alert dialog boxes: Used to display important information or warnings to users.
+                                    </li>
+                                    <li>Confirm dialog boxes: Prompt users to confirm an action before proceeding.</li>
+                                    <li>Prompt dialog boxes: Prompt users to enter data or make a choice based on a
+                                        specific
+                                        context.</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+            <div class="wh">
+                <h2>Including JavaScript along with HTML</h2>
+                <p>JavaScript (JS) can be seamlessly integrated into HTML documents using various methods. Below are
+                    three
+                    commonly used approaches:</p>
+                <div class="in">
+                    <strong>1: Placing JS code inside the body tag:</strong>
+                    <p>One method is to embed JavaScript directly within the body of the HTML document, typically at
+                        the
+                        end of the body tag. This allows the JavaScript code to access and manipulate the HTML
+                        elements
+                        on the page once they have been loaded. It's worth noting that when JavaScript code is
+                        placed
+                        here, the content of the webpage loads before the script is executed. This can be
+                        advantageous
+                        for ensuring that critical content is displayed to users before any JavaScript functionality
+                        is
+                        applied.</p>
+                    <pre>
+                        <code class="language-html">
+&lt;body&gt;
+    &lt;!-- HTML content goes here --&gt;
+
+    &lt;script&gt;
+        // JavaScript code here
+        document.body.style.backgroundColor = "lightblue";
+    &lt;/script&gt;
+&lt;/body&gt;
+                        </code>
+                    </pre>
+                </div>
+                <div class="in">
+                    <strong>2: Placing JS code inside the head tag:</strong>
+                    <p>Another approach is to include JavaScript within the head section of the HTML document. While
+                        this method is common, it's important to note that the JavaScript code is executed before
+                        the
+                        HTML content is parsed and loaded. This means that if JavaScript manipulates or interacts
+                        with
+                        HTML elements that have not yet been loaded, errors may occur.</p>
+                    <pre>
+                        <code class="language-html">
+&lt;head&gt;
+    &lt;script&gt;
+        // JavaScript code here
+        document.title = "Updated Title";
+    &lt;/script&gt;
+&lt;/head&gt;
+                        </code>
+                    </pre>
+                </div>
+                <div class="in">
+                    <strong>3: Creating a separate external JS file:</strong>
+                    <p>Alternatively, JavaScript code can be placed in a separate external file with the ".js"
+                        extension. This file is then linked to the HTML document using the
+                        <strong>&lt;script&gt;</strong>
+                        tag. This method promotes code reusability and maintainability, as the same JavaScript file
+                        can
+                        be referenced by multiple HTML pages.
+                    </p>
+                    <pre>
+                        <code class="language-html">
+&lt;script src="script.js"&gt;&lt;/script&gt;
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="wh">
+                <h2>Variables and Data Types in JavaScript</h2>
+                <p>JavaScript supports various data types and allows the creation of variables to store different kinds
+                    of
+                    information.</p>
+                <div class="in">
+                    <strong>Declaring Variables:</strong>
+                    <p>Variables in JavaScript are declared using the <strong>var</strong>, <strong>let</strong>, or
+                        <strong>const</strong> keywords.
+                    </p>
+                    <pre>
+                        <code class="language-html">
+// Using var
+var x = 10;
+
+// Using let (block-scoped)
+let y = 'Hello';
+
+// Using const (block-scoped, immutable)
+const PI = 3.14;
+                        </code>
+                    </pre>
+                </div>
+                <div class="in">
+                    <strong>Data Types:</strong>
+                    <p>JavaScript has several built-in data types:</p>
+                    <ul>
+                        <li><strong>Number:</strong> Represents numeric values, including integers and
+                            floating-point
+                            numbers.</li>
+                        <li><strong>String:</strong> Represents textual data enclosed within single or double
+                            quotes.
+                        </li>
+                        <li><strong>Boolean:</strong> Represents true or false values.</li>
+                        <li><strong>Array:</strong> Represents a collection of elements, which can be of any data
+                            type.
+                        </li>
+                        <li><strong>Object:</strong> Represents a collection of key-value pairs.</li>
+                        <li><strong>Undefined:</strong> Represents a variable that has been declared but not
+                            assigned a
+                            value.</li>
+                        <li><strong>Null:</strong> Represents the absence of any value.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="wh">
+                <h2>Arrays in JavaScript</h2>
+                <ul>
+                    <li>Arrays in JS are dynamic, meaning they can grow or shrink in size as elements are added or
+                        removed.</li>
+                    <li>An array in JavaScript is an object that represents a collection of similar type of elements.
+                    </li>
+                    <li>There are three ways to construct arrays in JS:</li>
+                    <ol>
+                        <li><strong>By Array Literal:</strong> Arrays can be created using array literal notation, which
+                            involves enclosing elements in square brackets [].</li>
+                        <li><strong>By Creating Instance of Array Directly:</strong> Arrays can be created by directly
+                            instantiating the Array object using the `new` keyword followed by `Array()` constructor.
+                        </li>
+                        <li><strong>By Using an Array Constructor:</strong> Arrays can also be created using the `new`
+                            keyword followed by the specific array constructor, such as `new Array()`.</li>
+                    </ol>
+                </ul>
+
+                <div class="in">
+                    <p><strong>Array Literal Example:</strong></p>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <pre>
+            <code class="language-javascript">
+// Creating an array using array literal
+let emp = ["Arun", "Ayush", "Shaaer"];
+for(i = 0; i &lt; emp.length; i++)
+{
+    document.write(emp[i] + "&lt;br/>")
+}
+
+            </code>
+        </pre>
+                    </div>
+                </div>
+
+                <div class="in">
+                    <p><strong>Creating Instance of Array Directly Example:</strong></p>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <pre>
+            <code class="language-javascript">
+let i;
+let emp = new Array();
+emp[0] = "Aman";
+emp[1] = "Ayush";
+emp[2] = "Anurag";
+for(i = 0; i &lt; emp.length; i++)
+{
+    document.write(emp[i] + "&lt;br/>")
+}
+            </code>
+        </pre>
+                    </div>
+                </div>
+
+                <div class="in">
+                    <p><strong>Using an Array Constructor Example:</strong></p>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <pre>
+            <code class="language-javascript">
+let emp = new Array("Aman", "Anurag", "Ayush");
+for(let i = 0; i &lt; emp.length; i++)
+{
+    document.write(emp[i] + "&lt;br/>")
+}
+            </code>
+        </pre>
+                    </div>
+                </div>
+                <div class="in">
+                    <h3>Various Types of Arrays in JavaScript</h3>
+                    <p>In JavaScript, arrays are used to store multiple values in a single variable. They can hold
+                        different types of data and offer various functionalities for data manipulation.</p>
+
+                    <h3>1. Single-Dimensional Array</h3>
+                    <p>A single-dimensional array is the most common type of array in JavaScript. It contains a list of
+                        elements accessed by a single index.</p>
+                    <p><em>Example:</em> <code>let numbers = [1, 2, 3, 4, 5];</code></p>
+
+                    <h3>2. Multi-Dimensional Array</h3>
+                    <p>A multi-dimensional array is an array of arrays, allowing for the creation of matrices or nested
+                        data structures.</p>
+                    <p><em>Example:</em> <code>let matrix = [[1, 2], [3, 4], [5, 6]];</code></p>
+
+                    <h3>3. Array of Objects</h3>
+                    <p>An array of objects stores a collection of objects, each with its own properties and methods.</p>
+                    <p><em>Example:</em></p>
+                    <pre>
+                        <code>
+let students = [
+    { name: 'Alice', age: 20 },
+    { name: 'Bob', age: 22 },
+    { name: 'Charlie', age: 21 }
+];
+            </code>
+            </pre>
+                </div>
+            </div>
+            <div class="wh">
+                <h2>Operators and Expressions in JavaScript</h2>
+                <p>JavaScript provides a variety of operators for performing operations on data, along with expressions
+                    that
+                    combine values and operators to produce a result.</p>
+                <div class="in">
+                    <h3>Arithmetic Operators:</h3>
+                    <p>Arithmetic operators perform mathematical operations on numeric operands.</p>
+                    <pre>
+                        <code class="language-html">
+// Addition
+var sum = 5 + 3; // Result: 8
+
+// Subtraction
+var difference = 10 - 5; // Result: 5
+
+// Multiplication
+var product = 4 * 6; // Result: 24
+
+// Division
+var quotient = 20 / 4; // Result: 5
+
+// Modulus (Remainder)
+var remainder = 10 % 3; // Result: 1
+                        </code>
+                    </pre>
+                </div>
+                <div class="in">
+                    <h3>Comparison Operators:</h3>
+                    <p>Comparison operators are used to compare values and return a boolean result.</p>
+                    <pre>
+                        <code class="language-html">
+// Equal to
+var isEqual = 5 === 5; // Result: true
+
+// Not equal to
+var notEqual = 10 !== 5; // Result: true
+
+// Greater than
+var greaterThan = 20 > 10; // Result: true
+
+// Less than or equal to
+var lessThanOrEqual = 3 <= 3; // Result: true
+                        </code>
+                    </pre>
+                </div>
+                <div class="in">
+                    <h3>Logical Operators:</h3>
+                    <p>Logical operators are used to combine boolean values or expressions.</p>
+                    <pre>
+                        <code class="language-html">
+var x = true;
+var y = false;
+
+// Logical AND
+var resultAND = x && y; // Result: false
+
+// Logical OR
+var resultOR = x || y; // Result: true
+
+// Logical NOT
+var resultNOT = !x; // Result: false
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="wh">
+                <h2>Functions in JavaScript</h2>
+                <p>Functions in JavaScript are reusable blocks of code that perform a specific task. They allow you to
+                    organize code, avoid repetition, and create modular programs.</p>
+
+                <div class="in">
+                    <h3>Function Declaration:</h3>
+                    <p>A function declaration defines a named function.</p>
+                    <pre>
+                        <code class="language-html">
+// Function Declaration
+function greet(name) {
+    return "Hello, " + name + "!";
+}
+
+// Calling the function
+var greeting = greet("John"); // Result: "Hello, John!"
+                        </code>
+                    </pre>
+                </div>
+
+                <div class="in">
+                    <h3>Function Expression:</h3>
+                    <p>A function expression defines a function as a variable assignment.</p>
+                    <pre>
+                        <code class="language-html">
+// Function Expression
+var multiply = function(a, b) {
+    return a * b;
+};
+
+// Calling the function
+var result = multiply(5, 3); // Result: 15
+                        </code>
+                    </pre>
+                </div>
+                <div class="in">
+                    <h3>Arrow Function:</h3>
+                    <p>An arrow function is a concise way to write functions in JavaScript.</p>
+                    <pre>
+                        <code class="language-html">
+// Arrow Function
+var square = (num) => num * num;
+
+// Calling the function
+var squaredValue = square(4); // Result: 16
+                        </code>
+                    </pre>
+                </div>
+                <div class="in">
+                    <h3>Function Parameters and Return:</h3>
+                    <p>Functions can accept parameters and return values.</p>
+                    <pre>
+                        <code class="language-html">
+// Function with Parameters and Return
+function add(a, b) {
+    return a + b;
+}
+
+// Calling the function
+var sum = add(10, 5); // Result: 15
+                    </code>
+                </pre>
+                </div>
+                <div class="in">
+                    <h3>Common Built-in Functions:</h3>
+                    <p>JavaScript provides several built-in functions for common tasks.</p>
+                    <pre>
+                        <code class="language-html">
+// parseInt
+// Definition: Parses a string and returns an integer.
+var num1 = parseInt("10"); // Result: 10
+
+// parseFloat
+// Definition: Parses a string and returns a floating-point number.
+var num2 = parseFloat("3.14"); // Result: 3.14
+
+// isNaN
+// Definition: Checks if a value is NaN (Not a Number).
+var isNumber = isNaN("Hello"); // Result: true
+
+// typeof
+// Definition: Returns the data type of a variable or expression.
+var type = typeof(num1); // Result: "number"
+                        </code>
+                    </pre>
+                </div>
+
+            </div>
+            <div class="wh">
+                <h2>Dialog Boxes in JavaScript</h2>
+                <p>Dialog boxes are interactive elements used to display messages or prompts to users and collect input.
+                </p>
+                <div class="in">
+                    <h3>alert()</h3>
+                    <p>The <strong>alert()</strong> method displays an alert dialog with a specified message.</p>
+                    <pre>
+                        <code class="language-html">
+alert("Hello, World!");
+                        </code>
+                    </pre>
+                </div>
+                <div class="in">
+                    <h3>confirm()</h3>
+                    <p>The <strong>confirm()</strong> method displays a dialog box with a message and OK and Cancel
+                            buttons.
+                    </p>
+                    <pre>
+        <code class="language-html">
+var result = confirm("Are you sure you want to delete this item?");
+if (result) {
+    // User clicked OK
+} else {
+    // User clicked Cancel
+}
+        </code>
+    </pre>
+                </div>
+                <div class="in">
+                    <h3>prompt()</h3>
+                    <p>The <strong>prompt()</strong> method displays a dialog box that prompts the user for input.</p>
+                    <pre>
+                        <code class="language-html">
+var name = prompt("Please enter your name:");
+if (name !== null) {
+    alert("Hello, " + name + "!");
+} else {
+    alert("User cancelled the prompt.");
+}
+                        </code>
+                    </pre>
+                </div>
+                <div class="in">
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <button class="ac">Create a web program that prompts users to input their age and determines
+                            their eligibility to vote. Use HTML and JavaScript to achieve this functionality, utilizing
+                            the prompt and alert methods for user interaction.</button>
+                        <div class="panel">
+                            <pre>
+                                <code class="language-html">
+&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+&lt;title>Voting Eligibility Checker&lt;/title>
+&lt;/head>
+&lt;body>
+
+&lt;script>
+        // Ask user for their age
+        let age = prompt("Please enter your age:");
+
+        // Convert age to a number
+        age = parseInt(age);
+
+        // Check if age is a valid number and greater than or equal to 18
+        if (age >= 18) {
+            alert("Congratulations! You are eligible to vote.");
+        } else {
+            alert("Sorry, you are not eligible to vote.");
+        }
+
+&lt;/script>
+
+&lt;/body>
+&lt;/html>
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <button class="ac">
+                            web program that takes two numbers from the user using prompt and displays the result using
+                            alert
+                        </button>
+                        <div class="panel">
+                            <pre>
+                                <code class="language-html">
+&lt;!DOCTYPE html>
+&lt;html lang="en">
+&lt;head>
+&lt;title>Addition Program&lt;/title>
+&lt;/head>
+&lt;body>
+
+&lt;script>
+        // Ask user for the first number
+        let num1 = prompt("Enter the first number:");
+
+        // Convert num1 to a number
+        num1 = parseFloat(num1);
+
+        // Ask user for the second number
+        let num2 = prompt("Enter the second number:");
+
+        // Convert num2 to a number
+        num2 = parseFloat(num2);
+
+        // Calculate the sum
+        let sum = num1 + num2;
+
+        // Display the result using alert
+        alert("The sum of " + num1 + " and " + num2 + " is: " + sum);
+&lt;/script>
+
+&lt;/body>
+&lt;/html>
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="wh">
+                <h2>Document Object Model (DOM)</h2>
+                <ul>
+                    <li>The DOM stands for Document Object Model.</li>
+                    <li>It represents the structure and content of a webpage as a tree-like structure.</li>
+                    <li>The DOM is created by the browser when a webpage is loaded.</li>
+                    <li>It provides a structured way to access and manipulate elements and content on a webpage using
+                        JavaScript.</li>
+                    <li>Each HTML element in a webpage is represented as a node in the DOM tree.</li>
+                    <li>The DOM allows you to dynamically modify the content, structure, and styles of a webpage.</li>
+                    <li>It serves as your JavaScript "window" into the contents of a webpage, allowing you to interact
+                        with and modify elements in real time.</li>
+                    <li>By using DOM methods and properties, you can create interactive and responsive web applications.
+                    </li>
+                    <li>The DOM is a key concept in front-end web development and is fundamental to understanding how
+                        JavaScript interacts with web pages.</li>
+                </ul>
+                <div class="in">
+                    <h3>Document Object</h3>
+                    <ul>
+                        <li>The Document Object Model (DOM) is an application programming interface (API) for valid HTML
+                            and
+                            well-formed XML documents. It defines the logical structure of documents and the way a
+                            document is
+                            accessed and manipulated.</li>
+                        <li>The Document object represents the entire HTML document in the DOM.</li>
+                        <li>It provides properties and methods to access and manipulate various aspects of the document.
+                        </li>
+                        <li>You can use the Document object to interact with elements, styles, events, and more within
+                            the document.</li>
+                        <li>It is accessed through the global `document` variable in JavaScript.</li>
+                    </ul>
+
+                    <div class="wh">
+                        <h3>Example: Accessing Document Properties</h3>
+                        <p>You can use the Document object to access properties like title, URL, and document type.</p>
+                        <pre>
+                            <code class="language-html">
+// Get the document title
+var pageTitle = document.title;
+
+// Get the URL of the document
+var pageURL = document.URL;
+
+// Get the document type
+var docType = document.doctype.name;
+                            </code>
+                        </pre>
+                        <h3>Example: Modifying Document Elements</h3>
+                        <p>The Document object allows you to modify elements, styles, and content within the document.
+                        </p>
+                        <pre>
+                            <code class="language-html">
+// Create a new paragraph element
+var newParagraph = document.createElement("p");
+newParagraph.textContent = "This is a new paragraph.";
+
+// Append the new element to the document body
+document.body.appendChild(newParagraph);
+
+// Change the background color of the document body
+document.body.style.backgroundColor = "lightblue";
+                        </code>
+                    </pre>
+                    </div>
+                </div>
+                <div class="in">
+                    <h3>Selecting Elements</h3>
+                    <p>Methods that help us select elements from the DOM:</p>
+
+                    <div class="wh">
+                        <h3>getElementById</h3>
+                        <p>The <code class="language-html">getElementById</code> method selects an element by its
+                            ID attribute.</p>
+                        <pre>
+                        <code class="language-html">
+// Select an element by ID
+var elementById = document.getElementById("myElementId");
+                        </code>
+                    </pre>
+                    </div>
+
+                    <div class="wh">
+                        <h3>getElementsByTagName</h3>
+                        <p>The <code class="language-html">getElementsByTagName</code> method selects elements by
+                            their tag name.</p>
+                        <pre>
+                        <code class="language-html">
+// Select elements by tag name
+var elementsByTagName = document.getElementsByTagName("div");
+                        </code>
+                    </pre>
+                    </div>
+
+                    <div class="wh">
+                        <h3>getElementsByClassName</h3>
+                        <p>The <code class="language-html">getElementsByClassName</code> method selects elements
+                            by their class name.</p>
+                        <pre>
+                        <code class="language-html">
+// Select elements by class name
+var elementsByClassName = document.getElementsByClassName("myClassName");
+                        </code>
+                    </pre>
+                    </div>
+                </div>
+                <div class="in">
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <button class="ac">Web program that allows users to input two numbers and then adds them
+                            together, displaying the result dynamically on the page.</button>
+                        <div class="panel">
+                            <pre>
+                                <code class="language-html">
+&lt;!DOCTYPE html>
+&lt;html>
+
+&lt;head>
+    &lt;title>Addition Program&lt;/title>
+&lt;/head>
+
+&lt;body>
+    &lt;label>Num 1 : &lt;/label>
+    &lt;input type="text" id="t1">&lt;br>&lt;br>
+    &lt;label>Num 2 : &lt;/label>
+    &lt;input type="text" id="t2">&lt;br>&lt;br>
+    &lt;label>Sum Result : &lt;/label>
+    &lt;input type="text" id="t3">&lt;br>&lt;br>
+    &lt;input type="button" value="Add" onclick="add()">
+    &lt;input type="button" value="Reset" onclick="reset()">
+    &lt;script>
+        function add() {
+            var num1 = parseInt(document.getElementById("t1").value);
+            var num2 = parseInt(document.getElementById("t2").value);
+            var sum = num1 + num2;
+            document.getElementById("t3").value = sum;
+        }
+        function reset() {
+            document.getElementById("t1").value = "";
+            document.getElementById("t2").value = "";
+            document.getElementById("t3").value = "";
+        }
+    &lt;/script>
+&lt;/body>
+
+&lt;/html>
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <label>Num 1 : </label>
+                        <input type="text" id="t1"><br><br>
+                        <label>Num 2 : </label>
+                        <input type="text" id="t2"><br><br>
+                        <label>Sum Result : </label>
+                        <input type="text" id="t3"><br><br>
+                        <input type="button" value="Add" onclick="add()">
+                        <input type="button" value="Reset" onclick="reset()">
+                    </div>
+                </div>
+                <div class="in">
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <button class="ac">Web program that allows users to input a number and then find its factorial,
+                            and displays its result dynamically on the page.</button>
+                        <div class="panel">
+                            <pre>
+                                <code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+
+&lt;head&gt;
+    &lt;title&gt;Factorial&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;label for=&quot;&quot;&gt;Enter a number : &lt;/label&gt;
+    &lt;input type=&quot;text&quot; id=&quot;t1&quot;&gt;&lt;br&gt;&lt;br&gt;
+    &lt;label for=&quot;&quot;&gt;Factorial : &lt;/label&gt;
+    &lt;input type=&quot;text&quot; id=&quot;t2&quot;&gt;&lt;br&gt;&lt;br&gt;
+    &lt;input type=&quot;button&quot; value=&quot;Find Factorial&quot; onclick=&quot;fact()&quot;&gt;
+    &lt;script&gt;
+        function fact() {
+            var f = 1;
+            var num = parseInt(document.getElementById(&quot;t1&quot;).value);
+            for (var i = 1; i &lt;= num; i++) {
+                f = f * i;
+            }
+            document.getElementById(&quot;t2&quot;).value = f;
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <label for="">Enter a number : </label>
+                        <input type="text" id="t4"><br><br>
+                        <label for="">Factorial : </label>
+                        <input type="text" id="t5"><br><br>
+                        <input type="button" value="Find Factorial" onclick="fact()">
+                    </div>
+                </div>
+                <div class="in">
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <button class="ac">Web program to swap two numbers</button>
+                        <div class="panel">
+                            <pre>
+                                <code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+
+&lt;head&gt;
+    &lt;title&gt;Factorial&lt;/title&gt;
+&lt;/head&gt;
+
+&lt;body&gt;
+    &lt;label for=&quot;&quot;&gt;Enter A : &lt;/label&gt;
+    &lt;input type=&quot;text&quot; id=&quot;t1&quot;&gt;&lt;br&gt;&lt;br&gt;
+    &lt;label for=&quot;&quot;&gt;Enter B : &lt;/label&gt;
+    &lt;input type=&quot;text&quot; id=&quot;t2&quot;&gt;&lt;br&gt;&lt;br&gt;
+    &lt;input type=&quot;button&quot; value=&quot;Swap&quot; onclick=&quot;swap()&quot;&gt;
+    &lt;script&gt;
+        function swap() {
+            var temp = parseInt(document.getElementById(&quot;t1&quot;).value);
+            document.getElementById(&quot;t1&quot;).value = document.getElementById(&quot;t2&quot;).value;
+            document.getElementById(&quot;t2&quot;).value = temp;
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+
+&lt;/html&gt;
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <label for="">Enter A : </label>
+                        <input type="text" id="t6"><br><br>
+                        <label for="">Enter B : </label>
+                        <input type="text" id="t7"><br><br>
+                        <input type="button" value="Swap" onclick="swap()">
+                    </div>
+                </div>
+            </div>
+            <div class="wh">
+                <h2>Form Validation</h2>
+                <ul>
+                    <li>Form validation can prevent invalid or malicious data from being submitted to the server,
+                        enhancing data integrity and security.</li>
+                    <li>Common validation checks include verifying required fields, checking data formats (such as email
+                        addresses or phone numbers), and ensuring data falls within acceptable ranges (like minimum and
+                        maximum values).</li>
+                    <li>Client-side validation provides immediate feedback to users, improving user experience by
+                        highlighting errors before submission.</li>
+                    <li>Server-side validation acts as a safety net even if client-side validation fails or is bypassed,
+                        ensuring data consistency and reliability.</li>
+                </ul>
+                <p>We can apply validation using the following methods:
+                <ol>
+                    <li>HTML 5: This method is easier as we can use attributes like 'required' for simple validations
+                        directly in HTML tags.</li>
+                    <li>jQuery: This approach, although deprecated now, was based on JavaScript and allowed for more
+                        interactive form validation.</li>
+                    <li>JavaScript: This method is superior as it provides more control and flexibility. Using
+                        JavaScript, we can handle complex validations, customize error messages, and implement dynamic
+                        validation logic based on user inputs.</li>
+                </ol>
+                </p>
+                <div class="in">
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <button class="ac">Create a form that takes a username and password, and display an alert
+                            message when the username field is empty or the password length is less than 6
+                            characters.</button>
+                        <div class="panel">
+                            <pre>
+                                <code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+    &lt;form action=&quot;#&quot; name=&quot;myform&quot;&gt;
+        &lt;label&gt;Name : &lt;/label&gt;
+        &lt;input type=&quot;text&quot; name=&quot;name&quot; /&gt; &lt;br&gt;&lt;br&gt;
+        &lt;label&gt;Password : &lt;/label&gt;
+        &lt;input type=&quot;password&quot; name=&quot;password&quot; /&gt; &lt;br&gt;&lt;br&gt;
+        &lt;input type=&quot;button&quot; value=&quot;submit&quot; onclick=&quot;validate()&quot; /&gt;
+        &lt;input type=&quot;reset&quot; value=&quot;reset&quot;&gt;
+    &lt;/form&gt;
+    &lt;script&gt;
+        function validate() {
+            var name = document.myform.name.value;
+            var password = document.myform.password.value;
+            if (name == &quot;&quot;) {
+                alert(&quot;Name can't be blank!&quot;);
+            }
+            else if (password.length &lt; 6) {
+                alert(&quot;Password must be atleast 6 characters long!&quot;);
+            }
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <form action="#" name="myform">
+                            <label>Name : </label>
+                            <input type="text" name="name" /> <br><br>
+                            <label>Password : </label>
+                            <input type="password" name="password" /> <br><br>
+                            <input type="button" value="submit" onclick="validate()" />
+                            <input type="reset" value="reset">
+                        </form>
+                    </div>
+                </div>
+                <div class="in">
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <button class="ac">Create a form that takes a numeric input and displays an error message if the
+                            input is not a number when the form is submitted</button>
+                        <div class="panel">
+                            <pre>
+                                <code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+    &lt;form action=&quot;#&quot; name=&quot;myform&quot; onsubmit=&quot;validate()&quot;&gt;
+        &lt;label&gt;Number : &lt;/label&gt;
+        &lt;input type=&quot;text&quot; name=&quot;num&quot; /&gt; &lt;br&gt;
+        &lt;span id=&quot;numloc&quot;&gt;&lt;/span&gt;
+        &lt;br&gt;
+        &lt;input type=&quot;submit&quot; value=&quot;submit&quot;&gt;
+    &lt;/form&gt;
+    &lt;script&gt;
+        function validate() {
+            var num = document.myform.num.value;
+            if (isNaN(num)) {
+                document.getElementById(&quot;numloc&quot;).innerHTML = &quot;Enter numberic value only&quot;;
+            } else {
+                document.getElementById(&quot;numloc&quot;).innerHTML = &quot;&quot;;
+            }
+        }
+    &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                    <div class="box">
+                        <form action="#" name="myform1" onsubmit="validate1(event)">
+                            <label>Number : </label>
+                            <input type="text" name="num" /> <br>
+                            <span id="numloc"></span>
+                            <br>
+                            <input type="submit" value="submit">
+                        </form>
+                    </div>
+                    <ul>
+                        <li>We have used the `isNaN()` function, which checks if a value is not a number (NaN). In our
+                            validation logic, `isNaN(num)` is used to verify if the input value in the "num" field is a
+                            numeric value or not. If it's not a number, the validation displays an error message.</li>
+                        <li>We have also used `.innerHTML`, which is a property that allows us to get or set the HTML
+                            content inside an element. In our validation function,
+                            `document.getElementById("numloc").innerHTML` is used to dynamically update the content of
+                            the `&lt;span>` element with the ID "numloc" to display the error message when the input
+                            value
+                            is not a number.</li>
+                    </ul>
+                </div>
+                <div class="in">
+                    <h3>
+                        Design a page using the following JS constraints: <br>
+                        1- Validate a field against an email address. <br>
+                        2- Validate a field against alphanumeric values. <br>
+                        3- Validate a field against a minimum length of 6 characters and a maximum length of 15
+                        characters. <br>
+                    </h3>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <button class="ac">Code</button>
+                        <div class="panel">
+                            <pre>
+                                <code>
+&lt;!DOCTYPE html>
+&lt;html>
+&lt;head>
+&lt;title>Form Validation&lt;/title>
+&lt;/head>
+&lt;body>
+    &lt;h2>Form Validation&lt;/h2>
+    &lt;form id="myForm">
+        &lt;label for="email">Email Address:&lt;/label>
+        &lt;input type="text" id="email" name="email">&lt;br>
+
+        &lt;label for="alphanumeric">Alphanumeric Field:&lt;/label>
+        &lt;input type="text" id="alphanumeric" name="alphanumeric">&lt;br>
+
+        &lt;label for="length">Length Field (6-15 characters):&lt;/label>
+        &lt;input type="text" id="length" name="length">&lt;br>
+
+        &lt;input type="button" value="Submit" onclick="validateForm()">
+    &lt;/form>
+    &lt;script>
+        function validateForm() {
+            const email = document.getElementById('email').value;
+            const alphanumeric = document.getElementById('alphanumeric').value;
+            const lengthField = document.getElementById('length').value;
+            const emailPattern = /^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/;
+            const alphanumericPattern = /^[a-zA-Z0-9]*$/;
+
+            let isValid = true;
+
+            // Validate Email
+            if (!email.match(emailPattern)) {
+                alert('Please enter a valid email address.');
+                isValid = false;
+            }
+
+            // Validate Alphanumeric
+            if (!alphanumeric.match(alphanumericPattern)) {
+                alert('Please enter only alphanumeric characters.');
+                isValid = false;
+            }
+
+            // Validate Length
+            if (lengthField.length &lt; 6 || lengthField.length > 15) {
+                alert('Length must be between 6 and 15 characters.');
+                isValid = false;
+            }
+
+            // If all validations pass
+            if (isValid) {
+                alert('Form submitted successfully!');
+                // Here you can add further actions, such as sending form data to a server or redirecting to another page.
+            }
+        }
+    &lt;/script>
+&lt;/body>
+&lt;/html>
+                                </code>
+                            </pre>
+                        </div>
+                    </div>
+                    <h3>Email Validation Regular Expression Explanation</h3>
+                    <p>The regular expression <code>/^[A-Za-z\._\-0-9]*[@][A-Za-z]*[\.][a-z]{2,4}$/</code> is
+                        used for validating simple email addresses. Here's a detailed breakdown of each part of
+                        the pattern:</p>
+                    <ul>
+                        <li><code>/</code>: The starting delimiter for the regular expression.</li>
+                        <li><code>^</code>: Anchors the pattern to the start of the string. Ensures that the
+                            match starts at the beginning of the string.</li>
+                        <li><code>[A-Za-z\._\-0-9]*</code>: Matches zero or more characters that can be:
+                            <ul>
+                                <li><code>A-Z</code>: Any uppercase letter.</li>
+                                <li><code>a-z</code>: Any lowercase letter.</li>
+                                <li><code>\.</code>: A literal dot (the backslash <code>\</code> is used to
+                                    escape the dot, as dot is a special character in regex that matches any
+                                    character).</li>
+                                <li><code>_</code>: A literal underscore (no need to escape, as underscore has
+                                    no special meaning in regex).</li>
+                                <li><code>\-</code>: A literal hyphen (escaped with <code>\</code> to
+                                    distinguish from range indicator in character class).</li>
+                                <li><code>0-9</code>: Any digit.</li>
+                            </ul>
+                            <p>The <code>*</code> quantifier matches zero or more occurrences of the preceding
+                                element, allowing for flexibility in the number of characters in this part of
+                                the email address.</p>
+                        </li>
+                        <li><code>[@]</code>: Matches exactly one "@" symbol.</li>
+                        <li><code>[A-Za-z]*</code>: Matches zero or more uppercase or lowercase letters.
+                            <p>The <code>*</code> quantifier here also allows for flexibility in the number of
+                                characters in this part of the email address.</p>
+                        </li>
+                        <li><code>[\.]</code>: Matches exactly one dot (escaped with <code>\</code> to treat it
+                            as a literal character).</li>
+                        <li><code>[a-z]{2,4}</code>: Matches 2 to 4 lowercase letters (the domain extension,
+                            such as "com", "org", "net").</li>
+                        <li><code>$</code>: Anchors the pattern to the end of the string. Ensures that the match
+                            ends at the end of the string.</li>
+                        <li><code>/</code>: The ending delimiter for the regular expression.</li>
+                    </ul>
+                    <p>This regular expression ensures that the email address:
+                    <ul>
+                        <li>Starts with letters, dots, underscores, hyphens, or digits.</li>
+                        <li>Contains exactly one "@" symbol.</li>
+                        <li>Has letters for the domain name before the dot.</li>
+                        <li>Contains a dot followed by a domain extension of 2 to 4 lowercase letters.</li>
+                    </ul>
+                    </p>
+                    <p>Example of valid email addresses:
+                    <ul>
+                        <li>user@example.com</li>
+                        <li>john_doe@example.net</li>
+                        <li>name123@example.org</li>
+                    </ul>
+                    </p>
+                    <p>Example of invalid email addresses:
+                    <ul>
+                        <li>userexample.com (missing "@")</li>
+                        <li>john.doe@ (missing domain part)</li>
+                        <li>name@domain.c (domain extension too short)</li>
+                        <li>name@domain.company (domain extension too long)</li>
+                    </ul>
+                    </p>
+                </div>
+            </div>
+            <div class="wh">
+                <h2>JavaScript Events and Event Handling</h2>
+                <ul>
+                    <li>An event in JavaScript refers to a change in the state of an object, indicating that some
+                        activity has occurred. In HTML, there are various events that represent user actions or
+                        browser-related activities. When JavaScript code is included in HTML, JavaScript reacts to these
+                        events, allowing for dynamic and interactive behavior. This process of reacting to events is
+                        known as event handling.</li>
+                    <li>JavaScript handles HTML events using event handlers, which are functions that execute specific
+                        tasks in response to events. For example, when a user clicks a button in the browser, JavaScript
+                        code associated with an event handler executes a task defined for that event.</li>
+                </ul>
+
+                <p><strong>Types of JavaScript Events:</strong></p>
+                <ul>
+                    <li><strong>Mouse Events:</strong> Events related to mouse actions, such as clicks, mouse movements,
+                        and scrolling.</li>
+                    <li><strong>Keyboard Events:</strong> Events triggered by keyboard actions, such as key presses and
+                        releases.</li>
+                    <li><strong>Form Events:</strong> Events related to form elements, such as submitting a form or
+                        changing input values.</li>
+                    <li><strong>Document Events:</strong> Events associated with document-level actions, such as loading
+                        or unloading a page.</li>
+                    <li><strong>Window Events:</strong> Events related to the browser window, such as resizing or
+                        closing the window.</li>
+                </ul>
+                <div class="in">
+                    <h3>HTML Events and Their Event Handlers</h3>
+                    <img src="../../images/event1.svg" alt="" class="wb">
+                </div>
+                <div class="in">
+                    <h3>Example</h3>
+                    <div class="box">
+                        <p onmouseover="mouseOverEventHandler()">Keep Mouse Over me</p>
+                    </div>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <pre>
+                            <code class="language-html">
+&lt;!DOCTYPE html> 
+&lt;html> 
+    &lt;body>
+        &lt;p onmouseover="mouseOverEventHandler()"> Keep Mouse Over Me &lt;/p> 
+
+        &lt;script>
+            function mouseOverEventHandler()
+            {
+                alert("Mouse Over Event Executed!!")
+            }
+        &lt;/script> 
+    &lt;/body>
+&lt;/html>
+                            </code>
+                        </pre>
+                    </div>
+                    <div class="box">
+                        <label>Input : </label><input type="text" onfocus="focusEventHandler()" id="t8">
+                    </div>
+                    <div class="code">
+                        <div class="dotc"></div>
+                        <pre>
+                            <code class="language-html">
+&lt;!DOCTYPE html> 
+&lt;html> 
+    &lt;body>
+        &lt;label>Input : &lt;/label>
+        &lt;input type="text" id="t1" onfocus="focusEventHandler()" /> 
+
+        &lt;script>
+            function focusEventHandler()
+            {
+                document.getElementById("t1").style.background = "red";
+            }
+        &lt;/script> 
+    &lt;/body>
+&lt;/html>
+                            </code>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            function swap() {
+                var temp = parseInt(document.getElementById("t6").value);
+                document.getElementById("t6").value = document.getElementById("t7").value;
+                document.getElementById("t7").value = temp;
+            }
+            function add() {
+                var num1 = parseInt(document.getElementById("t1").value);
+                var num2 = parseInt(document.getElementById("t2").value);
+                var sum = num1 + num2;
+                document.getElementById("t3").value = sum;
+            }
+            function reset() {
+                document.getElementById("t1").value = "";
+                document.getElementById("t2").value = "";
+                document.getElementById("t3").value = "";
+            }
+            function fact() {
+                var f = 1;
+                var num = parseInt(document.getElementById("t4").value);
+                for (var i = 1; i <= num; i++) {
+                    f = f * i;
+                }
+                document.getElementById("t5").value = f;
+            }
+            function validate() {
+                var name = document.myform.name.value;
+                var password = document.myform.password.value;
+                if (name == "") {
+                    alert("Name can't be blank!");
+                }
+                else if (password.length < 6) {
+                    alert("Password must be atleast 6 characters long!");
+                }
+            }
+            function validate1(event) {
+                event.preventDefault();
+                var num = document.myform1.num.value;
+                if (isNaN(num)) {
+                    document.getElementById("numloc").innerHTML = "Enter numberic value only";
+                } else {
+                    document.getElementById("numloc").innerHTML = "";
+                }
+            }
+            function mouseOverEventHandler() {
+                alert("Mouse Over Event Executed!!")
+            }
+            function focusEventHandler() {
+                document.getElementById("t8").style.background = "red";
+            }
+        </script>
+        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+        <script src="../../../../public/main.js"></script>
+    </body>
+
+    </html>

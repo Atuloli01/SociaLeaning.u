@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time, Speed & Distance</title>
+    <link rel="stylesheet" href="../../../../public/style.css">
+    <link rel="icon" href="../../../../public/logo/favicon_io/favicon.ico">
+</head>
+
+<body class="bg-c">
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">back</a>
+        <div class="fix-column-links">
+            <div class="botbut">
+                <a href="../unit3/index.html" class="link">&larr; Previous Topic</a>
+            </div>
+        </div>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Time, Speed & Distance</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Time, Speed & Distance</h1>
+        <h3>Relation Between Time, Speed, and Distance</h3>
+        <ol>
+            <li><strong>Speed = Distance / Time</strong></li>
+            <li>If time is constant, there is a direct relationship between speed and distance. For example:
+                <ul>
+                    <li>Suppose A and B are traveling with speeds of 60 km/h and 40 km/h respectively, and the time t is
+                        fixed at 2 hours.</li>
+                    <li>The distance traveled by A = 2 * 60 = 120 km</li>
+                    <li>The distance traveled by B = 2 * 40 = 80 km</li>
+                    <li>The ratio of their speeds is 60:40 or 3:2.</li>
+                    <li>The ratio of their distances is 120:80 or 3:2, showing that distance is directly proportional to
+                        speed when time is constant.</li>
+                </ul>
+            </li>
+            <li>If the distance is constant, speed and time are inversely proportional to each other. For example:
+                <ul>
+                    <li>Suppose A and B are traveling a fixed distance of 120 km.</li>
+                    <li>A travels at a speed of 60 km/h, so the time taken by A = 120 / 60 = 2 hours.</li>
+                    <li>B travels at a speed of 40 km/h, so the time taken by B = 120 / 40 = 3 hours.</li>
+                    <li>The ratio of their speeds is 60:40 or 3:2.</li>
+                    <li>The ratio of their times is 2:3, showing that time is inversely proportional to speed when
+                        distance is constant.</li>
+                </ul>
+            </li>
+            <li>If A starts at 10 PM and moves towards B with a speed of 80 km/h, and B also starts at 10 PM and moves
+                towards A with a speed of 20 km/h, they will meet at point X. At point X, they took the same amount of
+                time. No matter the speed, they will take the same amount of time to meet, but the one with the greater
+                speed will cover more distance. Therefore, A will be closer to B's starting point. This demonstrates
+                that speed impacts distance. In summary, if two bodies start at the same time and move towards each
+                other, the one with the higher speed will cover more distance, and they will meet at the same time.<ul>
+                    <li>Example:
+                        <ul>
+                            <li>A and B start at 10 PM.</li>
+                            <li>A's speed = 80 km/h</li>
+                            <li>B's speed = 20 km/h</li>
+                            <li>Suppose they meet after t hours.</li>
+                            <li>The distance covered by A in t hours = 80t km</li>
+                            <li>The distance covered by B in t hours = 20t km</li>
+                            <li>If the total distance between them is D, then 80t + 20t = D</li>
+                            <li>100t = D</li>
+                            <li>So, t = D / 100</li>
+                            <li>Both A and B will take the same time t to meet at point X, but A will cover a greater
+                                distance (80t km) compared to B (20t km).</li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ol>
+        <div class="wh">
+            <h2>Practice Questions:</h2>
+            <div class="in">
+                <h3>A and B started driving towards each other from points X and Y at speeds of 72 km/h and 56 km/h, respectively, in order to meet each other. A had traveled 12 km more than B. Find the distance between X and Y.</h3>
+                <ul>
+                    <li>We know that when they meet, the time taken by both A and B will be the same.
+                        <br>Time = Distance / Speed.
+                        <br>Suppose B traveled 'd' distance, then A will travel (d + 12) distance.
+                        <br>Since time taken by both is the same:
+                        <br>(d + 12) / 72 = d / 56
+                        <br>To solve for 'd', cross-multiply:
+                        <br>(d + 12) * 56 = d * 72
+                        <br>56d + 672 = 72d
+                        <br>72d - 56d = 672
+                        <br>16d = 672
+                        <br>d = 42 km
+                        <br>So, A traveled 42 + 12 = 54 km.
+                        <br>And B traveled 42 km.
+                        <br>Hence, the distance between X and Y is 54 + 42 = 96 km.
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>A and B start driving from P towards Q. The distance between P and Q is 144 km. The speed of A is 18
+                    km/h less than that of B. After reaching Q, B immediately returns to P and meets A at a distance of
+                    24 km from Q. What is the speed of A?</h3>
+                <ul>
+                    <li>When they meet, the time taken by both A and B will be the same.
+                        <br>The distance traveled by B when they meet = 144 km (P to Q) + 24 km (returning towards P) =
+                        168 km.
+                        <br>The distance traveled by A when they meet = 144 km (total distance from P to Q) - 24 km
+                        (distance from Q) = 120 km.
+                        <br>Let B's speed be x km/h. Then, A's speed will be (x - 18) km/h.
+                        <br>Since the time taken is the same, we can set up the equation:
+                        <br>168 / x = 120 / (x - 18)
+                        <br>Cross-multiplying to solve for x:
+                        <br>168 * (x - 18) = 120 * x
+                        <br>168x - 3024 = 120x
+                        <br>168x - 120x = 3024
+                        <br>48x = 3024
+                        <br>x = 63
+                        <br>Therefore, the speed of A is 63 - 18 = 45 km/h.
+                    </li>
+                    <li>Doing it using another method:
+                        <br>We know that if time is constant, then the distance is proportional to speed.
+                        <br>For distances, the ratio of A:B = 120:168.
+                        <br>Upon simplification, we get 5:7.
+                        <br>The difference in the ratio is 2 units.
+                        <br>The difference between A's speed and B's speed is 18 km/h.
+                        <br>So, 2 units = 18 km/h.
+                        <br>1 unit = 9 km/h.
+                        <br>So, A's speed in units is 5.
+                        <br>In km/h, we get 5 * 9 = 45 km/h.
+                        <br>Hence, A's speed is 45 km/h.
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>A runs 3<sup>1</sup>&frasl;<sub>4</sub> times as fast as B. If A gives B a start of 90m, how far
+                    must the winning post be from the starting point of A so that A and B reach it at the same time?
+                </h3>
+                <ul>
+                    <li>3<sup>1</sup>&frasl;<sub>4</sub> = 13/4
+                        <br>A and B's speed ratio is 13:4.
+                        <br>The difference in speed units is 9.
+                        <br>The difference in distance traveled by A and B is 90m.
+                        <br>So, 9 units = 90m.
+                        <br>1 unit = 10m.
+                        <br>Since time is constant, distance is proportional to speed.
+                        <br>This means A travels 13 units and B travels 4 units.
+                        <br>The distance from A's starting point to the winning post = 13 * 10m = 130m.
+                        <br>Therefore, the winning post must be 130m from A's starting point.
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>A man can reach a certain place in 60 hours. If he reduces his speed by 1/15th, he goes 20 km less
+                    in that time. Find his speed.</h3>
+                <ul>
+                    <li>Here also, the time is constant.
+                        <br>If he reduces his speed by 1/15th, it means his original speed was 15 units, and his reduced
+                        speed is 14 units.
+                        <br>So, the distance will also be proportional. Initially, he traveled 15 units of distance, and
+                        with his new reduced speed, he will travel 14 units of distance.
+                        <br>He travels 20 km less, which means 1 unit = 20 km.
+                        <br>So, 15 units = 300 km.
+                        <br>His speed will be 300 km / 60 hours = 5 km/h.
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>A, while going to school, increases his speed to 13/9th of his actual speed. He reaches his school
+                    24 minutes early. Find A's actual speed, if the distance between his house and school is 13 km.</h3>
+                <ul>
+                    <li>His actual speed = 9 units and his new speed = 13 units.
+                        <br>The distance is 13 km, which is constant, so speed and time will be inversely proportional.
+                        <br>So, if the speed ratio is 9:13,
+                        <br>The time ratio will be 13:9.
+                        <br>The difference in time units = 4.
+                        <br>4 units = 24 minutes.
+                        <br>1 unit = 6 minutes.
+                        <br>13 units = 78 minutes = 1<sup>3</sup>&frasl;<sub>10</sub> hours.
+                        <br>So, speed = 13 km / (1<sup>3</sup>&frasl;<sub>10</sub> hours) = 10 km/h.
+                    </li>
+                    <li>Remember: Increase by 13/9 = 9 : 22
+                        <br>and Increase to 13/9 = 9 : 13
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>A arrives at a place 12 minutes earlier than scheduled time if he rides his bike at 48 km/h. If he
+                    rides his bike at 36 km/h, he arrives 18 minutes late. What is the distance of the place from his
+                    starting point?</h3>
+                <ul>
+                    <li>Suppose A's scheduled time was x minutes.
+                        <br>Condition 1: Speed is 48 km/h and time is x - 12 minutes.
+                        <br>Condition 2: Speed is 36 km/h and time is x + 18 minutes.
+                        <br>Speed ratio is 4:3.
+                        <br>As speed and time are inversely proportional (since the distance is the same), the time
+                        ratio will be 3:4.
+                        <br>The difference is 1 unit.
+                        <br>Time difference = (x + 18) - (x - 12) = 30 minutes.
+                        <br>So, 1 unit = 30 minutes.
+                        <br>Let's take condition 1:
+                        <br>Speed is 48 km/h and time was 3 units.
+                        <br>3 units = 3 * 30 = 90 minutes = 1.5 hours.
+                        <br>Distance = Speed * Time = 48 km/h * 1.5 hours = 72 km.
+                        <br>Therefore, the distance of the place from A's starting point is 72 km.
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>In covering a distance of 3600 km, A takes 5 hours more than B. If A increased his speed by 25%,
+                    then he would have taken 4 hours less than B. Find the speed of B (in km/h).</h3>
+            </div>
+            <div class="in">
+                <h3>A bus travels from X to Y at a constant speed. If its speed were increased by 15 km/h, it would have
+                    taken 2 hours less to cover the distance. It would have taken 1 hour more if the speed were
+                    decreased by 5 km/h. What is the distance between X and Y?</h3>
+                <ul>
+                    <li>Let the distance between X and Y be D km.
+                        <br>Let the constant speed be S km/h.
+                        <br>The time to travel the distance at the constant speed is D/S hours.
+                        <br>The time to travel the distance when the speed is increased by 15 km/h is D/(S+15) hours.
+                        <br>Given that when the speed is increased by 15 km/h, it takes 2 hours less:
+                        <br>D/S - D/(S+15) = 2 --- (1)
+                        <br>When the speed is decreased by 5 km/h, it takes 1 hour more:
+                        <br>D/(S-5) - D/S = 1 --- (2)
+                        <br>Now, solve equations (1) and (2) to find D and S:
+                        <br>From equation (1):
+                        <br>(D(S+15) - DS) / (S(S+15)) = 2
+                        <br>(15D) / (S(S+15)) = 2
+                        <br>15D = 2S(S+15) --- (3)
+                        <br>From equation (2):
+                        <br>(D - D(S-5)) / ((S-5)S) = 1
+                        <br>(5D) / ((S-5)S) = 1
+                        <br>5D = S(S-5) --- (4)
+                        <br>From equations (3) and (4):
+                        <br>Set 15D = 2S(S+15) equal to 5D = S(S-5) multiplied by 3 to eliminate D:
+                        <br>15D = 3S^2 - 15S
+                        <br>2S^2 + 30S = 3S^2 - 15S
+                        <br>3S^2 - 2S^2 = 45S
+                        <br>S^2 = 45S
+                        <br>S = 45 km/h (since speed cannot be 0)
+                        <br>Now, substitute S = 45 km/h back into equation (4):
+                        <br>5D = 45^2 - 5 * 45
+                        <br>5D = 2025 - 225
+                        <br>5D = 1800
+                        <br>D = 1800 / 5
+                        <br>D = 360 km
+                        <br>Therefore, the distance between X and Y is 360 km.
+                    </li>
+                    <li>We also have a short formula to find the distance:
+                        <br>D = ((constant speed * modified speed) / difference between two speeds) * difference in time
+                        <br>When the speed is increased by 15 km/h:
+                        <br>D = ((S * (S + 15)) / 15) * 2
+                        <br>When the speed is decreased by 5 km/h:
+                        <br>D = ((S * (S - 5)) / 5) * 1
+                        <br>We can equate them both now:
+                        <br>((S * (S + 15)) / 15) * 2 = ((S * (S - 5)) / 5) * 1
+                        <br>Cancel out the common terms:
+                        <br>(S * (S + 15)) * 2 / 15 = (S * (S - 5)) / 5
+                        <br>(S * (S + 15)) * 2 = (S * (S - 5)) * 3
+                        <br>S * (S + 15) * 2 = S * (S - 5) * 3
+                        <br>(S + 15) * 2 = (S - 5) * 3
+                        <br>2S + 30 = 3S - 15
+                        <br>Solving the equation:
+                        <br>2S + 30 = 3S - 15
+                        <br>30 + 15 = 3S - 2S
+                        <br>45 = S
+                        <br>So, S = 45 km/h.
+                        <br>Now, using the speed S to find the distance D:
+                        <br>D = ((45 * (45 + 15)) / 15) * 2
+                        <br>D = (45 * 60 / 15) * 2
+                        <br>D = (2700 / 15) * 2
+                        <br>D = 180 * 2
+                        <br>D = 360 km
+                        <br>Therefore, the distance between X and Y is 360 km.
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Relative Speed</h2>
+            <ul>
+                <li>When two bodies are in motion simultaneously, we don't consider their individual speeds. Instead, we
+                    consider their relative speed. Relative speed can be of two types:
+                    <ol>
+                        <li>When two bodies are traveling in opposite directions, the relative speed is the sum of their
+                            respective speeds: s1 + s2.</li>
+                        <li>When two bodies are traveling in the same direction, the relative speed is the difference of
+                            their respective speeds: s1 - s2.</li>
+                    </ol>
+                </li>
+                <li>Distance:
+                    <ul>
+                        <li>If the point object is a man, pole, or tree, then the distance is the train's own length as
+                            the length of the man, pole, or tree is negligible.</li>
+                        <li>If it is a platform, tunnel, or bridge, then the distance is the train's own length plus the
+                            length of the platform, tunnel, or bridge.</li>
+                        <li>If it is another train, then the distance is the sum of the lengths of both trains.</li>
+                    </ul>
+                    We use this when calculating the time taken for a train to pass a stationary object or another
+                    moving object.
+                </li>
+                <li>Conversion:
+                    <ul>
+                        <li>To convert from m/s to km/h, multiply by 18/5.</li>
+                        <li>To convert from km/h to m/s, multiply by 5/18.</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="in">
+                <h3>How many seconds will a train 100m long running at the rate of 36 km/h take to pass a stationary
+                    pole?</h3>
+                <ul>
+                    <li>When a train passes a point object, it covers its own length.
+                        <br>Distance = 100 meters.
+                        <br>Speed = 36 km/h.
+                        <br>Convert speed from km/h to m/s:
+                        <br>Speed = 36 * (5/18) = 10 m/s.
+                        <br>Time = Distance / Speed:
+                        <br>Time = 100 meters / 10 m/s = 10 seconds.
+                        <br>Therefore, the train will take 10 seconds to pass the stationary pole.
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>How many seconds will a train 110m long running at the rate of 72 km/h take to cross a bridge 130m
+                    long?</h3>
+                <ul>
+                    <li>
+                        Distance = length of train + length of bridge:
+                        <br>Distance = 110 meters + 130 meters = 240 meters.
+                        <br>Convert speed from km/h to m/s:
+                        <br>Speed = 72 * (5/18) = 20 m/s.
+                        <br>Time = Distance / Speed:
+                        <br>Time = 240 meters / 20 m/s = 12 seconds.
+                        <br>Therefore, the train will take 12 seconds to cross the bridge.
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Two trains 121m and 99m in length respectively are running in opposite directions, one at the rate
+                    of 40 km/h and the other at the rate of 32 km/h. In what time will they completely cross each other
+                    from the moment they meet?</h3>
+                <ul>
+                    <li>
+                        Total distance = length of first train + length of second train:
+                        <br>Total distance = 121 meters + 99 meters = 220 meters.
+                        <br>Since they are moving in opposite directions, their relative speed is the sum of their
+                        speeds:
+                        <br>Relative speed = 40 km/h + 32 km/h = 72 km/h.
+                        <br>Convert the relative speed from km/h to m/s:
+                        <br>Relative speed = 72 * (5/18) = 20 m/s.
+                        <br>Time = Total distance / Relative speed:
+                        <br>Time = 220 meters / 20 m/s = 11 seconds.
+                        <br>Therefore, the two trains will completely cross each other in 11 seconds.
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Two trains 110m and 90m in length respectively are running in the same direction, one at the rate of
+                    50 km/h and the other at the rate of 68 km/h. In what time will they completely cross each other?
+                </h3>
+                <ul>
+                    <li>
+                        Total distance = length of first train + length of second train:
+                        <br>Total distance = 110 meters + 90 meters = 200 meters.
+                        <br>Since they are moving in the same direction, their relative speed is the difference of their
+                        speeds:
+                        <br>Relative speed = 68 km/h - 50 km/h = 18 km/h.
+                        <br>Convert the relative speed from km/h to m/s:
+                        <br>Relative speed = 18 * (5/18) = 5 m/s.
+                        <br>Time = Total distance / Relative speed:
+                        <br>Time = 200 meters / 5 m/s = 40 seconds.
+                        <br>Therefore, the two trains will completely cross each other in 40 seconds.
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Two trains are moving in the same direction at 50 km/h and 30 km/h. The faster train crosses a man
+                    in the slower train in 18 seconds. Find the length of the faster train.</h3>
+                <ul>
+                    <li>
+                        Total distance = Length of the faster train = D
+                        <br>Relative speed = Speed of the faster train - Speed of the slower train:
+                        <br>Relative speed = 50 km/h - 30 km/h = 20 km/h.
+                        <br>Convert the relative speed from km/h to m/s:
+                        <br>Relative speed = 20 * (5/18) = 5.56 m/s.
+                        <br>Time = 18 seconds.
+                        <br>Distance = Speed * Time:
+                        <br>D = 5.56 m/s * 18 s = 100 meters.
+                        <br>Therefore, the length of the faster train is 100 meters.
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>A 150m long train crosses a platform in 45 seconds and crosses a man in 9 seconds. Find the length
+                    of the platform.</h3>
+                <ul>
+                    <li>
+                        Total distance = Train length + Platform length = 150 meters + P meters.
+                        <br>Time to cross the platform = 45 seconds.
+                        <br>Using the man example:
+                        <br>Distance = 150 meters (train length) and time = 9 seconds.
+                        <br>Speed of the train = 150 meters / 9 seconds = 16.67 m/s.
+                        <br>Now, using the speed to find the platform length:
+                        <br>Total distance to cross the platform = Speed * Time:
+                        <br>Total distance = 16.67 m/s * 45 seconds = 750 meters.
+                        <br>So, 150 meters (train length) + P meters (platform length) = 750 meters.
+                        <br>Platform length, P = 750 meters - 150 meters = 600 meters.
+                        <br>Therefore, the length of the platform is 600 meters.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="content-box">
+        <p>Reference</p>
+        <ul>
+            <li><a href="https://www.youtube.com/watch?v=2GgfyxFsj4o" target="_blank">Time, Speed and Distance lecture
+                    &neArr;</a></li>
+            <li><a href="https://www.youtube.com/watch?v=JvXMmcfKQoI" target="_blank">Relative Speed &neArr;</a></li>
+        </ul>
+    </div>
+    <script src="../../../../public/main.js"></script>
+</body>
+
+</html>

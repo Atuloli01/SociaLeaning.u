@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays</title>
+    <link rel="stylesheet" href="../../../../public/style.css">
+    <link rel="stylesheet" id="highlightStylesheet"
+        href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/tomorrow-night-blue.min.css">
+        <link rel="icon" href="../../../../public/logo/favicon_io/favicon.ico">
+</head>
+
+<body class="bg-c">
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">back</a>
+        <a href="#t1" class="link">About array</a>
+        <a href="#t2" class="link">Address calculation of single dimension array</a>
+        <a href="#t3" class="link">Address calculation of two dimensional array</a>
+        <a href="#t4" class="link">Operations on array</a>
+        <a href="#t5" class="link">Sparse matrix</a>
+        <div class="botbut">
+            <a href="../unit2/index.html" class="link">Next Topic &rarr;</a>
+            <a href="./intro_data.html" class="link">&larr; Previous Topic</a>
+        </div>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Arrays</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1 id="t1">Arrays</h1>
+        <ul>
+            <li>Collection of homogenous elements</li>
+            <li>Here elements are stored in linear continous memory location.</li>
+            <li>Array is also known as index variable / subscripted variable.</li>
+            <li>Application of array:
+                <ol>
+                    <li>Data storage: Arrays are often used to store large amounts of data, such as numbers or strings,
+                        in a single location. This makes it easier to access and manipulate the data when needed.</li>
+                    <li>Sorting and searching: Arrays can be sorted and searched efficiently, making them useful in a
+                        wide range of applications, from finding the largest or smallest value in a set of data to
+                        organizing and retrieving data based on specific criteria.</li>
+                    <li>Graphs and matrices: Arrays can be used to represent graphs and matrices, making it easier to
+                        perform calculations and analyses on large datasets.</li>
+                    <li>Dynamic programming: Arrays can be used in dynamic programming, a technique used to solve
+                        optimization problems by breaking them down into smaller subproblems.</li>
+                </ol>
+            </li>
+        </ul>
+        <div id="t2" class="wh">
+            <h2>Address calculation of single dimension array</h2>
+            <p>Representation of 1-D array in memory</p>
+            <img src="../../images/arr1.svg" alt="" class="wb">
+            <p>Formula &darr;</p>
+            <img src="../../images/1dadd.svg" alt="" class="wb">
+            <div class="in">
+                <p>Q- Given base address of A[1300, ... ,1900] is 1020, size of single element is 2 find address of
+                    A[1700].
+                    <br>
+                <pre>
+                        <code>
+BA = 1020
+    w = 2
+    i = 1700
+lb = 1300
+
+formula &darr; 
+address of A[i] = BA + [(i - lb) w]
+
+address of A[1700] = 1020 + [(1700 - 1300) * 2]
+                    = 1820 
+                        </code>
+                    </pre>
+                </p>
+            </div>
+        </div>
+        <div id="t3" class="wh">
+            <h2>Address calculation of two dimensional array.</h2>
+            <img src="../../images/addcal.svg" alt="" class="wb">
+            <div class="in">
+                <p>Q- An array Arr[20][15] is stored in the memory along the column with each element occupying 8 bytes
+                    of memory. Find out the Base address and address of the element Arr[2][3], if the element
+                    Arr[10][25] is stored at the address 1000.
+                    <br>
+                    Ans:
+                    <br>
+Although element Arr[10][25] doesn't exists but still using its address we can find base address of the main array (Arr[20][15]).
+<br>
+Finding B.A. using element Arr[10][25] <br>
+We know array is stored along the column <br>
+<br>
+Address of Arr[10][25] = 1000 <br>
+1000 = B.A. + [(j - lc)m + (i - lr)]w  <br>        
+[m and n will always be of main array (Arr[20][15])]<br>
+[here i = 10 and j = 25] [lc - lower column bound = 0 if not given and lr - lower row bound = 0 if not given]<br>
+1000 = B.A. + [(25 - 0)10 + (10 - 0)]8          <br>
+1000 = B.A. + (500 + 10)8<br>
+1000 = B.A. + (510 * 8)<br>
+1000 = B.A. + 4080<br>
+B.A. = -4080 + 1000<br>
+B.A. = -3080<br>
+<br>
+Now we will find the address of Arr[2][3]<br>
+now i = 2 and j = 3 <br>
+Address of Arr[2][3] = B.A. + [(j - lc)m + (i - lr)]w <br>
+Address of Arr[2][3] = -3080 + [(3 - 0)20 + (2 - 0)]8 <br>
+Address of Arr[2][3] = -3080 + (60 + 2)8 <br>
+Address of Arr[2][3] = -3080 + (62)8 <br>
+Address of Arr[2][3] = -3080 + 496<br>
+Address of Arr[2][3] = -2584 (answer)
+                </p>
+            </div>
+        </div>
+        <div id="t4" class="wh">
+            <h2>Operations on Array</h2>
+            <ul>
+                <li>We will make menu driven program where each operation will be in a separate function.</li>
+            </ul>
+            <div class="in">
+                <h3>Insertion</h3>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <button class="ac">Insertion code</button>
+                    <div class="panel">
+                        <pre>
+                        <code>
+#include &lt;stdio.h>
+void printArr(int[], int);
+void insertion(int[], int *, int, int);
+int main()
+{
+    int arr[100] = {0}, size, value, pos;
+    printf("Enter the size of the array : ");
+    scanf("%d", &size);
+    printf("Enter the value you want to insert : ");
+    scanf("%d", &value);
+    printf("Enter the position : ");
+    scanf("%d", &pos);
+
+    printf("Array before insertion : ");
+    printArr(arr, size);
+
+    // insertion function
+    insertion(arr, &size, pos, value);
+    
+    printf("\nArray after insertion : ");
+    printArr(arr, size);
+    return 0;
+}
+void printArr(int x[], int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        printf("%d\t", x[i]);
+    }
+    printf("\n");
+}
+void insertion(int arr[], int *size, int pos, int value)
+{
+    for (int i = *size - 1; i >= pos - 1; i--)
+    {
+        arr[i + 1] = arr[i];
+    }
+    arr[pos - 1] = value;
+    if (*size <= 100)
+        (*size)++;
+}
+                        </code>
+                    </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Deletion</h3>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <button class="ac">Deleting element in a user entered position</button>
+                    <div class="panel">
+                        <pre>
+                        <code>
+#include &lt;stdio.h>
+void enterEle(int[], int);
+void printArr(int[], int);
+void deletion(int[], int *, int);
+int main()
+{
+    int arr[100] = {0}, size, pos, i;
+    printf("Enter the size of the array : ");
+    scanf("%d", &size);
+    printf("Enter element of the array \n");
+    enterEle(arr, size);
+    printf("Enter the deletion position : ");
+    scanf("%d", &pos);
+    printf("Array before deletion : ");
+    printArr(arr, size);
+    printf("\nArray after deletion : ");
+    deletion(arr, &size, pos);
+    printArr(arr, size);
+    return 0;
+}
+void enterEle(int arr[], int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        printf("Enter element at %d index : ", i);
+        scanf("%d", &arr[i]);
+    }
+}
+void printArr(int arr[], int size)
+{
+    for (int i = 0; i < size; i++)
+    {
+        printf("%d\t", arr[i]);
+    }
+}
+void deletion(int arr[], int *size, int pos)
+{
+    for (int i = pos - 1; i < *size; i++)
+    {
+        arr[i] = arr[i + 1];
+    }
+    *size = *size - 1;
+}
+                        </code>
+                    </pre>
+                    </div>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Menu driven program for Array</h3>
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <button class="ac">code</button>
+                    <div class="panel">
+                        <pre>
+                        <code>
+#include &lt;stdio.h>
+#include &lt;stdlib.h>
+void inputArr(int[], int);
+int insertion(int[], int);
+void display(int[], int);
+int deletion(int[], int);
+int search(int[], int, int);
+void merge(int[], int);
+void sort(int[], int);
+int main()
+{
+    int arr[100] = {0}, size = 10, userChoice, pos, val;
+    while (1)
+    {
+        printf("\n---- MENU ----");
+        printf("\n1. Input Array element");
+        printf("\n2. Insertion");
+        printf("\n3. Deletion");
+        printf("\n4. Display");
+        printf("\n5. Searching");
+        printf("\n6. Merge");
+        printf("\n7. Sort");
+        printf("\n8. Exit");
+        printf("\nEnter your choice : ");
+        scanf("%d", &userChoice);
+
+        switch (userChoice)
+        {
+        case 1:
+            inputArr(arr, size);
+            break;
+        case 2:
+            size = insertion(arr, size);
+            break;
+        case 3:
+            size = deletion(arr, size);
+            break;
+        case 4:
+            display(arr, size);
+            break;
+        case 5:
+            printf("Enter the number you want to search : ");
+            scanf("%d", &val);
+            pos = search(arr, size, val);
+            if (pos >= 0)
+                printf("Found at %d position", pos + 1);
+            else
+                printf("Element not found");
+            break;
+        case 6:
+            merge(arr, size);
+            break;
+        case 7:
+            sort(arr, size);
+            break;
+        case 8:
+            exit(0);
+        default:
+            printf("\nEnter correct choice");
+        }
+    }
+    return 0;
+}
+void inputArr(int a[], int s)
+{
+    int i;
+    printf("\nInsert Array elements : \n");
+    for (i = 0; i < s; i++)
+    {
+        scanf("%d", &a[i]);
+    }
+}
+int insertion(int a[], int s)
+{
+    int val, pos, i;
+    printf("Enter the value you want to insert : ");
+    scanf("%d", &val);
+    printf("Enter the position : ");
+    scanf("%d", &pos);
+    for (i = s - 1; i > pos - 1; i--)
+    {
+        a[i + 1] = a[i];
+    }
+    a[pos - 1] = val;
+    return (s + 1);
+}
+int deletion(int a[], int s)
+{
+    int i, val, flag = 0, pos;
+    printf("Enter the value you want to delete : ");
+    scanf("%d", &val);
+    pos = search(a, s, val);
+    if (pos >= 0)
+    {
+        for (i = pos; i < s - 1; i++)
+        {
+            a[i] = a[i + 1];
+        }
+        if (s > 0)
+            s--;
+    }
+    else
+        printf("Element not found : Deletion cannot be performed ");
+    return s;
+}
+void display(int a[], int s)
+{
+    int i;
+    for (i = 0; i < s; i++)
+    {
+        printf("\t%d", a[i]);
+    }
+}
+int search(int a[], int s, int val)
+{
+    int i;
+    for (i = 0; i < s; i++)
+    {
+        if (a[i] == val)
+        {
+            return i;
+        }
+    }
+    return -1;
+}
+void merge(int a[], int s)
+{
+    int s2, arr2[100], mer[100], i, k, j = 0;
+    printf("Enter size of second array : ");
+    scanf("%d", &s2);
+    printf("Enter elements of array - ");
+    for (i = 0; i < s2; i++)
+    {
+        scanf("%d", &arr2[i]);
+    }
+    i = 0;
+    for (k = 0; k < s + s2; k++)
+    {
+        if (i < s)
+        {
+            mer[k] = a[i];
+            i++;
+        }
+        else
+        {
+            mer[k] = arr2[j];
+            j++;
+        }
+    }
+    display(mer, s + s2);
+}
+void sort(int a[], int s)
+{
+    int i, j;
+    for (i = 0; i < s; i++)
+    {
+        for (j = 1; j < s - i; j++)
+        {
+            if (a[j-1] > a[j])
+            {
+                int temp = a[j-1];
+                a[j-1] = a[j];
+                a[j] = temp;
+            }
+        }
+    }
+    for (i = 0; i < s; i++)
+    {
+        printf("%d\t", a[i]);
+    }
+}
+                        </code>
+                    </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="t5" class="wh">
+            <h2>Sparse Matrix</h2>
+            <ul>
+                <li>Sparse matrix is a matrix that contains a few non-zero elements.</li>
+                <li>Almost all the places are filled with zero.</li>
+                <li>Matrix of m * n dimension refers to a 2-D array with m numbers of rows and n number of columns.</li>
+                <li>And if the non-zero elements in the matrix are more than zero elements in the matrix then it is
+                    called a sparse matrix.</li>
+                <li>And in that case the size of the matrix is big, a lot of space is wasted to represent such a small
+                    number of non-zero elements. </li>
+                <li>Example :
+                    <pre>
+                        <code>
+ _          _
+| 5  0  0  0 | 
+| 0  8  0  0 | 
+| 0  0  3  0 |
+| 0  6  0  0 |
+ -          -
+                        </code>
+                    </pre>
+                </li>
+                <li>Why do we need to use sparse matrix instead of a simple matrix?
+                    <ul>
+                        <li>We can also use the simple martrix to store the elements in the memory, then why do we need
+                            to use the sparse matrix. The following are the advantages of using a sparse matrix:</li>
+                        <li>&rarr; Storage: As we know, a sparse matrix that contains lesser non-zero elements than zero
+                            so less memory can be used to store elements. It evaluates only the non-zero elements.</li>
+                        <li>&rarr; Computing time: In the case of searching n sparse matrix, we need to traverse only
+                            the non-zero elements rather than traversing all the sparse matrix elements. It saves
+                            computing time by logically designing a data structure traversing non-zero elements.</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="in">
+                <h3>Array Representation of Sparse Matrix</h3>
+                <ul>
+                    <li>The 2nd array can be used to represent a sparse matrix in which there are three rows named as:
+                        <ol>
+                            <li>Row: It is an index of a row where a non-zero element is located.</li>
+                            <li>Column: It is an index of the column where a non-zero element is located.</li>
+                            <li>Value: The value of the non-zero element is located at the index (row, column).</li>
+                        </ol>
+                    </li>
+                </ul>
+                <img src="../../images/sparse1.svg" alt="" class="wb">
+                <div class='code'>
+                    <div class='dotc'></div>
+                    <button class="ac">Sparse matrix program</button>
+                    <div class="panel">
+                        <pre>
+                        <code>
+#include&lt;stdio.h>
+
+int main()
+{
+    // Assume 4x5 sparse matrix
+    int sparseMatrix[4][5] =
+    {
+        {0 , 0 , 3 , 0 , 4 },
+        {0 , 0 , 5 , 7 , 0 },
+        {0 , 0 , 0 , 0 , 0 },
+        {0 , 2 , 6 , 0 , 0 }
+    };
+
+    int size = 0;
+    for (int i = 0; i < 4; i++)
+        for (int j = 0; j < 5; j++)
+            if (sparseMatrix[i][j] != 0)
+                size++;
+
+    // number of columns in compactMatrix (size) must be
+    // equal to number of non - zero elements in sparseMatrix
+    int compactMatrix[3][size];
+
+    // Making of new matrix
+    int k = 0;
+    for (int i = 0; i < 4; i++)
+        for (int j = 0; j < 5; j++)
+            if (sparseMatrix[i][j] != 0)
+            {
+                compactMatrix[0][k] = i;
+                compactMatrix[1][k] = j;
+                compactMatrix[2][k] = sparseMatrix[i][j];
+                k++;
+            }
+
+    for (int i=0; i < 3; i++)
+    {
+        for (int j=0; j < size; j++)
+            printf("%d ", compactMatrix[i][j]);
+
+        printf("\n");
+    }
+    return 0;
+}
+                        </code>
+                    </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="content-box">
+        <p>References &darr;</p>
+        <ul>
+            <li><a href="https://www.geeksforgeeks.org/sparse-matrix-representation/">www.geeksforgeeks.org (sparse
+                    matrix program)</a></li>
+        </ul>
+    </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="../../../../public/main.js"></script>
+</body>
+
+</html>

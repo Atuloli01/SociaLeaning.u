@@ -1,0 +1,1189 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes and Objects</title>
+    <link rel="stylesheet" href="../../../../public/style.css">
+    <link rel="stylesheet" id="highlightStylesheet"
+        href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/tomorrow-night-blue.min.css">
+        <link rel="icon" href="../../../../public/logo/favicon_io/favicon.ico">
+</head>
+
+<body class="bg-c">
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">Back</a>
+        <a href="#t1" class="link">Class definition</a>
+        <a href="#t2" class="link">Object of a class</a>
+        <a href="#t3" class="link">Accessing class member</a>
+        <a href="#t4" class="link">Defining member function</a>
+        <a href="#t6" class="link">Static variables in class</a>
+        <a href="#t5" class="link">Arrays within a class</a>
+        <a href="#t7" class="link">Array of objects</a>
+        <a href="#t8" class="link">Friend function</a>
+        <a href="#t12" class="link">Friend class</a>
+        <a href="#t9" class="link">Constructor</a>
+        <a href="#t10" class="link">Constructor overloading</a>
+        <a href="#t13" class="link">Destructors</a>
+        <a href="#t11" class="link">Dynamic initialization of objects</a>
+        <a href="#t14" class="link">Pointer to object</a>
+        <a href="#t15" class="link">"this" pointer</a>
+        <div class="botbut">
+            <a href="./index2.html" class="link">Next Topic &rarr;</a>
+            <a href="../beginning/ctocpp.html" class="link">&larr; Previous Topic</a>
+        </div>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Classes and Objects</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Classes and Objects</h1>
+        <div id="t1" class="wh">
+            <h2>Class</h2>
+            <ul>
+                <li>Class is a way to bind the data and its associated function together.</li>
+                <li>It allow data and functions to be hidden if necessary from external use.</li>
+                <li>Generally, class specification has two parts:
+                    <ol>
+                        <li>Class declaration</li>
+                        <li>Class function definition
+                            <ol>
+                                <li>Inside the class definition</li>
+                                <li>Outside the class definition</li>
+                            </ol>
+                        </li>
+                    </ol>
+                </li>
+            </ul>
+            <div class="in">
+                <h3>Class declaration syntax</h3>
+                <pre>
+                       <code>
+class class_name
+{
+    private:
+        data_type1 variable_name;
+        data_type2 variable_name;
+    public:
+        data_type1 variable_name;
+        data_type2 variable_name;
+};
+                       </code>
+                   </pre>
+                <P>Example &darr;</P>
+                <pre>
+                       <code>                    
+class item
+{
+    int num; // these will be private by default, as we have not specified.
+    float cost;
+    public:
+        void getdata(int a, int b);
+        void putdata(int);
+};
+                       </code>
+                   </pre>
+            </div>
+            <div class="in">
+                <h3>Class v/s Structure</h3>
+                <img src="../../images/cvs.svg" alt="" class="wb">
+            </div>
+        </div>
+        <div id="t2" class="wh">
+            <h2>Creating object of a class</h2>
+            <pre>
+                   <code>
+name_of_class    object/instance of the class 
+      &darr;              &darr; 
+    item        i1, i2, i3, i4;
+                   </code>
+               </pre>
+        </div>
+        <div id="t3" class="wh">
+            <h2>Accessing class member</h2>
+            <p>Syntax &darr;</p>
+            <pre>
+                   <code>
+object.function_name(argument);
+object.data_member_name = 10;
+                   </code>
+               </pre>
+            <p>Example &darr;</p>
+            <pre>
+                   <code>
+object        arguments
+&uarr;              &uarr; 
+i1.getData(100, 105.5);
+    &darr; 
+name of function
+                   </code>
+               </pre>
+        </div>
+        <div id="t4" class="wh">
+            <h2>Defining member function</h2>
+            <ul>
+                <li>Outside the class definition.</li>
+                <li>Inside the class definiton.</li>
+            </ul>
+            <div class="in">
+                <h3>Outside the class definition</h3>
+                <ul>
+                    <li>Here we use scope resolution operator.</li>
+                </ul>
+                <p>Syntax &darr;</p>
+                <pre>
+                       <code>                  
+return_type class_name :: function_name (argument1, argument2, ...)
+{
+    // function body
+}
+                       </code>
+                   </pre>
+                <p>Example &darr;</p>
+                <pre>
+                       <code>                       
+void item :: getData(int a, float b)
+{
+    number = a;
+    cost = b;
+}
+
+void item :: printData(void)
+{
+    cout << "number " << number << endl;
+    cout << "cost " << number << endl;
+}
+                       </code>
+                   </pre>
+            </div>
+            <div class="in">
+                <h3>Inside the class definition</h3>
+                <pre>
+                       <code>
+class item
+{
+    int number;
+    float cost;
+    
+    public:
+        void getData(int a, float b);
+        void putData(void)
+        {
+            cout << number << endl;
+            cout << cost << endl
+        }
+}
+                       </code>
+                   </pre>
+            </div>
+            <div class='code'>
+                <div class='dotc'></div>
+                <button class="ac">WAP to explain the concept of inside and outside definition of member
+                    function.</button>
+                <div class="panel">
+                    <pre>
+                    <code>
+#include &lt;iostream>
+using namespace std;
+class item
+{
+    int number;
+    float cost;
+
+public:
+    void getData(int, float);
+    void showData(void) // definition inside the function
+    {
+        cout << number << endl;
+        cout << cost << endl;
+    }
+};
+void item ::getData(int a, float b) // definition outside the function
+{
+    number = a;
+    cost = b;
+}
+int main()
+{
+    item x, y;
+    x.getData(100, 105.15);
+    x.showData();
+    y.getData(180, 195.15);
+    y.showData();
+    return 0;
+}
+                    </code>
+                </pre>
+                </div>
+            </div>
+        </div>
+        <div id="t6" class="wh">
+            <h2>Static variables in a class</h2>
+            <ul>
+                <li>As the variables declared as static are initialized only once as they are allocated space in
+                    separate static storage so, the static variables in a class are shared by the objects.</li>
+                <li>There can not be multiple copies of same static variables for different objects.</li>
+            </ul>
+            <div class="code">
+                <div class="dotc"></div>
+                <pre>
+                   <code>
+#include &lt;iostream>
+using namespace std;
+class Prac
+{
+public:
+    static int var;
+};
+int main()
+{
+    Prac obj1, obj2;
+    obj1.var = 2;
+    obj2.var = 3;
+    cout << obj1.var << " " << obj2.var;
+    return 0;
+}
+                   </code>
+               </pre>
+            </div>
+            <p>Output &darr;</p>
+            <pre>
+                   <code>
+Undefined symbols for architecture x86_64:
+"Prac::var", referenced from:
+    _main in test-f1185c.o
+                   </code>
+               </pre>
+            <ul>
+                <li>You can see in the above program that we have tried to create multiple copies of the static variable
+                    "var" for multiple objects. But this didn't happen. So, a static variable inside a class should be
+                    intialized explicitly by the user using the class name and scope resolution operator outside the
+                    class as shown below:</li>
+            </ul>
+            <div class="code">
+                <div class="dotc"></div>
+                <pre>
+                   <code>
+#include &lt;iostream>
+using namespace std;
+class Prac
+{
+public:
+    static int var;
+};
+int Prac::var = 1;
+int main()
+{
+    Prac obj1, obj2;
+    // initially the value of "var" is 1
+    // now we will try to increment it using one object
+    obj1.var++;
+    cout << obj1.var << " " << obj2.var << endl;
+    // above we are trying to check the value of "var" from both the object
+    // and it is giving 2 which means it is being shared.
+    return 0;
+}
+                   </code>
+               </pre>
+            </div>
+        </div>
+        <div id="t5" class="wh">
+            <h2>Arrays within a class</h2>
+            <ul>
+                <li>An array can be declared as a member of a class. They can be declared as private, public, or
+                    protected members of the class.</li>
+                <li>Consider the following program where we have used array as a member.</li>
+            </ul>
+            <div class="code">
+                <div class="dotc"></div>
+                <pre>
+                   <code>
+#include &lt;iostream>
+using namespace std;
+class student
+{
+    int roll_no;
+    int marks[3];
+
+public:
+    void getdata();
+    void tot_marks();
+};
+void student ::getdata()
+{
+    cout << "Enter roll no : ";
+    cin >> roll_no;
+    for (int i = 0; i < 3; i++)
+    {
+        cout << "Enter marks in subject " << i + 1 << ": ";
+        cin >> marks[i];
+    }
+}
+void student ::tot_marks()
+{
+    int total = 0;
+    for (int i = 0; i < 3; i++)
+    {
+        total += marks[i];
+    }
+    cout << "Total Marks : " << total << endl;
+}
+int main()
+{
+    student stu;
+    stu.getdata();
+    stu.tot_marks();
+    return 0;
+}
+                   </code>
+               </pre>
+            </div>
+        </div>
+        <div id="t7" class="wh">
+            <h2>Array of objects</h2>
+            <ul>
+                <li>An array of class type is also known as an array of objects.</li>
+            </ul>
+            <p>Program to demonstrate array of objects &darr; </p>
+            <div class="code">
+                <div class="dotc"></div>
+                <pre>
+                   <code>               
+#include &lt;iostream>
+using namespace std;
+class employee
+{
+    int id;
+    int salary;
+
+public:
+    void getdata(void);
+    void putdata(void);
+};
+int main()
+{
+    employee e[10]; // array of objects
+    for (int i = 0; i < 10; i++)
+    {
+        e[i].getdata();
+    }
+    for (int i = 0; i < 10; i++)
+    {
+        e[i].putdata();
+    }
+    return 0;
+}
+
+void employee ::getdata()
+{
+    cout << "Enter id : ";
+    cin >> id;
+    cout << "Enter salary : ";
+    cin >> salary;
+}
+void employee ::putdata()
+{
+    cout << "\Id is : " << id;
+    cout << "\nSalary is : " << salary;
+}
+                   </code>
+               </pre>
+            </div>
+        </div>
+        <div id="t8" class="wh">
+            <h2>Friend Function</h2>
+            <ul>
+                <li>Friend function grant member-level access to functions that aren't members of the class, or to all
+                    members in a separate class.</li>
+                <li>To make an outside function friendly to a class, we have to simply declare that function as friend
+                    function using the keyword "friend" inside the class definition.</li>
+                <li>Friend function can be declared as friend to any number of class.</li>
+                <li>Characteristics of friend function:
+                    <ol>
+                        <li>It is not in the scope of class to which it has been declared as friend.</li>
+                        <li>Since it is not in the scope of class it can not be called using object of that class.</li>
+                        <li>It can be invoked like a normal function without the help of any object.</li>
+                        <li>It can be declared in either public or private part.</li>
+                        <li>Usually it has a object as an arguments.</li>
+                    </ol>
+                </li>
+            </ul>
+            <div class="in">
+                <h3>Syntax:</h3>
+                <pre>
+                       <code>                  
+class abc
+{
+    // private data 
+    public:
+        friend void xyz(abc);
+};
+                       </code>
+                   </pre>
+            </div>
+            <div class="in">
+                <h3>Program to demonstrate friend function &darr;</h3>
+                <div class="code">
+                    <div class="dotc"></div>
+                    <pre>
+                       <code>
+#include &lt;iostream>
+using namespace std;
+class sample
+{
+    int a, b;
+    public:
+        void setValue()
+        {
+            a = 20;
+            b = 30;
+        }
+        friend float mean(sample);
+};
+float mean(sample s)
+{
+    return (float)((s.a + s.b)/2);
+}
+int main()
+{
+    sample x;
+    x.setValue();
+    cout << "mean = " << mean(x);
+    return 0;
+}
+                       </code>
+                   </pre>
+                </div>
+            </div>
+        </div>
+        <div id="t12" class="wh">
+            <h2>Friend Class</h2>
+            <ul>
+                <li>A friend class can access private and protected members of other classes in which it is declared as
+                    a friend.</li>
+                <li>It is sometimes useful to allow a particular class to access private and protected members of other
+                    classes.</li>
+            </ul>
+            <p>Syntax &darr;</p>
+            <pre>
+                   <code>
+friend class class_name; // declared inside the base class
+                   </code>
+               </pre>
+            <p>A simple program which use friend class concept &darr;</p>
+            <div class="code">
+                <div class="dotc"></div>
+                <pre>
+                   <code>
+#include &lt;iostream>
+using namespace std;
+class secret
+{
+private:
+    int secretNumber;
+
+public:
+    int localNumber;
+    secret()
+    {
+        secretNumber = 999;
+        localNumber = 100;
+    }
+    friend class another_secret;
+};
+class another_secret
+{
+public:
+    void showSecret(secret one)
+    {
+        cout << "The secretNumber is = " << one.secretNumber << endl;
+        cout << "The localNumber is = " << one.localNumber << endl;
+    }
+};
+int main()
+{
+    secret first;
+    another_secret second;
+    second.showSecret(first);
+    return 0;
+}
+                   </code>
+               </pre>
+            </div>
+        </div>
+        <div id="t9" class="wh">
+            <h2>Constructor</h2>
+            <ul>
+                <li>A constructor is a special member function whose task is to initialize the object of class.</li>
+                <li>It constructs the values of data member of the class, that's why it is known as constructor.</li>
+                <li>It is special because its name is same as the class name.</li>
+                <li>It is invoked whenever an objects of its associated class is created.</li>
+            </ul>
+            <p>Example &darr;</p>
+            <pre>
+                   <code>           
+class integer
+{
+    int m, n;
+    public:
+        integer(void); // default constructor declared
+        ... 
+        ... 
+};
+integer :: integer(void) // constructor definition
+{
+    cout << "This is default constructor"; 
+    m = 0;
+    n = 0;
+}
+                   </code>
+               </pre>
+            <ul>
+                <li>A constructor that accepts no parameter is called default constructor.</li>
+                <li>Special feature of constructor:
+                    <ul>
+                        <li>It should be declared in public section.</li>
+                        <li>Invoked automatically when the objects are created.</li>
+                        <li>They do not have return type not even void.</li>
+                        <li>They cannot be inherited.</li>
+                        <li>They can have default arguments.</li>
+                        <li>Constructor cannot be virtual, we cannot refer to its address.</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="in">
+                <h3>Parameterized constructor</h3>
+                <pre>
+                       <code>
+class interger
+{
+    int m, n;
+    public:
+        integer(int x, int y); // parameterized constructor declaration
+};
+integer :: integer(int x, int y)
+{
+    m = x;
+    n = y;
+}
+                       </code>
+                   </pre>
+                <p>Object declaration in parameterized constructor: we cannot do this &rarr; integer int1;</p>
+                <ul>
+                    <li>Two type of calls, explicit and implicit.</li>
+                    <li>We must pass the intial values as arguments to the constructor function when an object is
+                        declared this can be done in two ways.
+                        <ol>
+                            <li>By calling the constructor explicitly.
+                                <pre>
+                                       <code>
+integer int1 = integer(100, 10);
+                                       </code>
+                                   </pre>
+                            </li>
+                            <li>By calling the constructor implicitly.
+                                <pre>
+                                        <code>
+integer int1(100, 10);
+                                        </code>
+                                    </pre>
+                            </li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Inline parameterized constructor</h3>
+                <ul>
+                    <li>An inline parameterized constructor is a constructor that is declared and defined within the
+                        class definition and takes one or more parameters.</li>
+                    <li> The keyword "inline" is used to suggest the compiler to insert the code of the constructor
+                        inline at the point of call, rather than creating a separate function call. This can improve the
+                        performance of the program by reducing the overhead of function calls.</li>
+                </ul>
+                <pre>
+                       <code>
+class integer
+{
+    int m, n;
+    public:
+        inline integer(int x, int y) // inline keyword is not neccessary as all the constructor are by default inline.
+        {
+            m = x;
+            n = y;
+        }
+}
+                       </code>
+                   </pre>
+            </div>
+            <div class='code'>
+                <div class='dotc'></div>
+                <button class="ac">Program to demonstrate the working of parameterized constructor.</button>
+                <div class="panel">
+                    <pre>
+                    <code>
+#include&lt;iostream>
+using namespace std;
+class Rect
+{
+    int length, breadth;
+    public:
+        Rect(int x, int y)
+        {
+            length = x; breadth = y;
+        }
+        void putdata()
+        {
+            cout << "Length = " << length << "Breadth = " << breadth;
+        }
+}
+int main()
+{
+    Rect r1(100, 10);
+    r1.putdata();
+    return 0;
+}
+                    </code>
+                </pre>
+                </div>
+            </div>
+        </div>
+        <div id="t10" class="wh">
+            <h2>Constructor overloading</h2>
+            <ul>
+                <li>Multiple constructor in a class having different arguments.</li>
+            </ul>
+            <p>Program to demonstrate the use of constructor overloading</p>
+            <div class='code'>
+                <div class='dotc'></div>
+                <button class="ac">code</button>
+                <div class="panel">
+                    <pre>
+                   <code>
+#include &lt;iostream>
+using namespace std;
+class complex
+{
+    float x, y;
+
+public:
+    complex() {} // constructor 1 (default)
+    complex(float a) { x = y = a; } // constructor 2 (parameterized)
+    complex(float real, float imag) // constructor 3 (parameterized)
+    {
+        x = real;
+        y = imag;
+    }
+    friend complex sum(complex, complex);
+    friend void show(complex);
+};
+complex sum(complex c1, complex c2)
+{
+    complex c3;
+    c3.x = c1.x + c2.x;
+    c3.y = c1.y + c2.y;
+    return c3;
+}
+void show(complex c)
+{
+    cout << c.x << " + j " << c.y;
+}
+int main()
+{
+    complex A(2.7, 3.5);
+    complex B(1.6);
+    complex C;
+
+    C = sum(A, B);
+    cout << "A = ";
+    show(A);
+    cout << "\nB = ";
+    show(B);
+    cout << "\nC = ";
+    show(C);
+
+    // Another way to give initial values (second method)
+    complex P, Q, R;
+    P = complex(2.5, 3.9);
+    Q = complex(1.6, 2.5);
+    R = sum(P, Q);
+    cout << "\nP = ";
+    show(P);
+    cout << "\nQ = ";
+    show(Q);
+    cout << "\nR = ";
+    show(R);
+    return 0;
+}
+                   </code>
+               </pre>
+                </div>
+            </div>
+            <p>Output &darr;</p>
+            <pre>
+                   <code>        
+A = 2.7 + j 3.5
+B = 1.6 + j 1.6
+C = 4.3 + j 5.1
+P = 2.5 + j 3.9
+Q = 1.6 + j 2.5
+R = 4.1 + j 6.4
+                   </code>
+               </pre>
+        </div>
+        <div id="t13" class="wh">
+            <h2>Destructors</h2>
+            <ul>
+                <li>A destructor is a member function that is invoked automatically when the object goes out of scope or
+                    is explicitly destroyed by a call to delete.</li>
+                <li>A destructor has the same name as the class, preceded by a tilde (~). </li>
+                <li>For example, the destructor for class <b>Employee</b> is declared as <b>~Employee()</b></li>
+                <li>Destructor never takes an argument nor does it return any value.</li>
+            </ul>
+            <p>Simple program to demonstrate destructor functionality &darr;</p>
+            <div class="code">
+                <div class="dotc"></div>
+                <pre>
+                   <code>
+#include &lt;iostream>
+using namespace std;
+class Scope
+{
+public:
+    Scope()
+    {
+        cout << "The object is in the scope\n";
+    }
+    ~Scope()
+    {
+        cout << "The object goes out of the scope\n";
+    }
+};
+int main()
+{
+    Scope A;
+    {
+        Scope B;
+    }
+    return 0;
+}
+                   </code>
+               </pre>
+            </div>
+            <p>Output &darr;</p>
+            <pre>
+                   <code>
+The object is in the scope
+The object is in the scope
+The object goes out of the scope
+The object goes out of the scope
+                   </code>
+               </pre>
+            <ul>
+                <li>In the above program first the "A" object is created so its constructor is invoked.</li>
+                <li>Then there is another scope created under which second object "B" is created so its
+                    constructor is invoked.</li>
+                <li>Then the compiler comes of the scope so destructor is called for "B" object.</li>
+                <li>Then finally, the main function is getting terminated, and with that, "A" object is going out of
+                    scope, so its destructor is called.</li>
+            </ul>
+        </div>
+        <div id="t11" class="wh">
+            <h2>Dynamic initialization of objects</h2>
+            <ul>
+                <li>Dynamic initialization of object refers to initializing the objects at a run time i.e., the intial
+                    value of an object is provided during run time.</li>
+                <li>It can be achieved by using constructors and by passing parameters to the constructors.</li>
+                <li><b>Dynamic Constructor:</b> the constructor used for allocating the memory at runtime is known as
+                    the <b>dynamic constructor.</b></li>
+            </ul>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Program to demonstrate dynamic intialization of objects. (1)</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+#include &lt;iostream>
+using namespace std;
+class Fixed_deposit
+{
+    long int P_amount; // Principal amount
+    int Years;         //  Period of investment
+    float Rate;        // interest rate
+    float R_value;     // Return value of amount
+public:
+    Fixed_deposit() {}
+    Fixed_deposit(long int p, int y, float r = 0.12);
+    Fixed_deposit(long int p, int y, int r);
+    void display(void);
+};
+
+Fixed_deposit ::Fixed_deposit(long int p, int y, float r)
+{
+    P_amount = p;
+    Years = y;
+    Rate = r;
+    R_value = P_amount;
+    for (int i = 1; i <= y; i++)
+        R_value = R_value * (1.0 + r);
+}
+Fixed_deposit::Fixed_deposit(long int p, int y, int r)
+{
+    P_amount = p;
+    Years = y;
+    Rate = r;
+    R_value = P_amount;
+    for (int i = 1; i <= y; i++)
+        R_value = R_value * (1.0 + float(r) / 100);
+}
+void Fixed_deposit ::display(void)
+{
+    cout << endl;
+    cout << "Principal Amount = " << P_amount << endl
+        << "Return Value     = " << R_value << endl;
+}
+int main()
+{
+    Fixed_deposit FD1, FD2, FD3; // deposits created
+    long int p;                  // principal amount
+    int y;                       // investment period, years
+    float r;                     // interest rate, decimal form
+    int R;                       // interest rate, percent form
+    cout << "Enter amount, period, interest rate (in percent) : ";
+    cin >> p >> y >> R;
+    FD1 = Fixed_deposit(p, y, R);
+    cout << "Enter amount, period, interest rate (in decimal) : ";
+    cin >> p >> y >> r;
+    FD2 = Fixed_deposit(p, y, r);
+    cout << "Enter amount and period : ";
+    cin >> p >> y;
+    FD3 = Fixed_deposit(p, y);
+    cout << endl
+        << "Deposit 1";
+    FD1.display();
+    cout << endl
+        << "Deposit 2";
+    FD2.display();
+    cout << endl
+        << "Deposit 3";
+    FD3.display();
+    return 0;
+}
+                        </code>
+                    </pre>
+                </div>
+            </div>
+            <div class='code'>
+                <div class='dotc'></div>
+                <button class="ac">program 2</button>
+                <div class="panel">
+                    <pre>
+                       <code>
+#include &lt;iostream>
+using namespace std;
+
+void displayPer(int);
+
+class Marks
+{
+    float percentage;
+
+public:
+    Marks() {}
+    Marks(int, int);
+    Marks(int, int, int);
+    Marks(int, int, int, int);
+    Marks(int, int, int, int, int);
+};
+
+Marks::Marks(int m1, int m2)
+{
+    percentage = (m1 + m2) / 2;
+    displayPer(percentage);
+}
+
+Marks::Marks(int m1, int m2, int m3)
+{
+    percentage = (m1 + m2 + m3) / 3;
+    displayPer(percentage);
+}
+
+Marks::Marks(int m1, int m2, int m3, int m4)
+{
+    percentage = (m1 + m2 + m3 + m4) / 4;
+    displayPer(percentage);
+}
+
+Marks::Marks(int m1, int m2, int m3, int m4, int m5)
+{
+    percentage = (m1 + m2 + m3 + m4 + m5) / 5;
+    displayPer(percentage);
+}
+
+void enterMarks(int);
+
+int m[5] = {0}, m1, m2, m3, m4, m5;
+
+int main()
+{
+    int sub;
+    Marks result;
+    cout << "----- Percentage Calculator------" << endl;
+    cout << "How many subjects do you have : ";
+    cin >> sub;
+    switch (sub)
+    {
+    case 2:
+        enterMarks(sub);
+        result = Marks(m1, m2);
+        break;
+    case 3:
+        enterMarks(sub);
+        result = Marks(m1, m2, m3);
+        break;
+    case 4:
+        enterMarks(sub);
+        result = Marks(m1, m2, m3, m4);
+        break;
+    case 5:
+        enterMarks(sub);
+        result = Marks(m1, m2, m3, m4, m5);
+        break;
+    default:
+        cout << "Enter subject between 1 and 6";
+    }
+    return 0;
+}
+
+void enterMarks(int sub)
+{
+    for (int i = 1; i <= sub; i++)
+    {
+        cout << "Enter the marks in subject " << i << " : ";
+        cin >> m[i - 1];
+    }
+    m1 = m[0];
+    m2 = m[1];
+    m3 = m[2];
+    m4 = m[3];
+    m5 = m[4];
+}
+
+void displayPer(int val)
+{
+    cout << " you got " << val << "%\n";
+}
+                    </code>
+                </pre>
+                </div>
+            </div>
+        </div>
+        <div id="t14" class="wh">
+            <h2>Pointer to object</h2>
+            <ul>
+                <li>A pointer to an object acts the same as pointer to a variable. But here, in place of the address of
+                    the variable, address of the object is stored.</li>
+                <li>In the main function, when an object is created to a class, a pointer variable is declared in the
+                    same manner as we declared for the variable, and it will store the object's address.</li>
+                <li>For creating a pointer to an object, we should not use data type for the pointer. Instead, we need
+                    to use the class name for the object pointer.</li>
+                <li>If we want to use a member function in the class using the pointer in the main function, then we
+                    need
+                    to use the "->" symbol, as shown in the below example.</li>
+            </ul>
+            <p>Syntax &darr;</p>
+            <pre>
+                   <code>
+class_name object_name;
+class_name *ptr = &object_name;
+                   </code>
+               </pre>
+            <p>Example &darr;</p>
+            <div class="code">
+                <div class="dotc"></div>
+                <pre>
+                   <code>
+#include &lt;iostream>
+using namespace std;
+class Rectangle
+{
+    int length;
+    int breadth;
+
+public:
+    Rectangle(int l, int b)
+    {
+        length = l;
+        breadth = b;
+    }
+    int getArea()
+    {
+        return 2 * length * breadth;
+    }
+};
+int main()
+{
+    // creating an object of Rectangle
+    Rectangle var1(10, 30);
+
+    // creating a pointer for the object using class name as data type
+    Rectangle *ptr = &var1;
+
+    // calling the member function using -> symbol
+    int area = ptr->getArea();
+    cout << "Area of rectangle is = " << area << endl;
+    return 0;
+}
+                   </code>
+               </pre>
+            </div>
+            <p>Output &darr;</p>
+            <pre>
+                   <code>
+Area of rectangle is = 600
+                   </code>
+               </pre>
+        </div>
+        <div id="t15" class="wh">
+            <h2>"this" pointer</h2>
+            <ul>
+                <li>"this" is a keyword that represents a pointer to the current object.</li>
+                <li>When a member function is called on an object, the "this" pointer points to the object.</li>
+                <li>In other words, this is a special pointer that is automatically created and used by the compiler in
+                    the context of a member function of a class. It allows the member function to access the data
+                    members and member functions of the object on which it is called.</li>
+                <li>"this" pointer is used when local variable's name is same as member's name</li>
+            </ul>
+            <p>Example code &darr;</p>
+            <div class="code">
+                <div class="dotc"></div>
+                <pre>
+                   <code>
+#include &lt;iostream>
+using namespace std;
+class Test
+{
+private:
+    int x;
+
+public:
+    void setX(int x)
+    {
+        // 'this' pointer is used to retrieve the object's x
+        // here 'x' is in argument and also a data member
+        // using 'this' pointer we can point to data member
+        this->x = x;
+    }
+    void print() { cout << "x = " << x << endl; }
+};
+int main()
+{
+    Test obj;
+    int x = 20;
+    obj.setX(x);
+    obj.print();
+    return 0;
+}
+                   </code>
+               </pre>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Dynamic Objects</h2>
+            <ul>
+                <li>In C++, the objects can be created at run-time.</li>
+                <li>C++ supports two operators <b>new and delete</b> to perform memory allocation and de-allocation.
+                    These types of objects are called dynamic objects.</li>
+                <li>The new operator is used to create objects dynamically and the delete operator is used to delete
+                    objects dynamically.</li>
+                <li>The dynamic objects can be created with the help of pointers.</li>
+            </ul>
+            <p>Syntax &darr;</p>
+            <pre>
+                   <code>
+ClassName *ptr_obj; // pointer to object
+ptr_obj = new ClassName; // Dynamic object creation
+delete ptr_obj; // Delete object dynamically
+                   </code>
+               </pre>
+            <p>Program to implement dynamic objects &darr;</p>
+            <div class="code">
+                <div class="dotc"></div>
+                <pre>
+                   <code>
+#include &lt;iostream>
+using namespace std;
+class Sum
+{
+    int a, b;
+
+public:
+    Sum()
+    {
+        cout << "Constructor is called" << endl;
+        a = 1;
+        b = 2;
+    }
+    ~Sum()
+    {
+        cout << "Destructor is called using free()" << endl;
+    }
+    void show()
+    {
+        cout << "a = " << a << endl;
+        cout << "b = " << b << endl;
+    }
+};
+int main()
+{
+    Sum *ptr;
+    ptr = new Sum; // dynamic object creation
+    ptr->show(); // Accessing member through pointer to object
+    delete ptr; // Destroying object dynamically
+    return 0;
+}
+                   </code>
+               </pre>
+            </div>
+        </div>
+    </div>
+    <div class="content-box">
+        <p>References &darr;</p>
+        <ul>
+            <li><a href="https://www.geeksforgeeks.org/structure-vs-class-in-cpp/">www.geeksforgeeks.org (structure v/s
+                    class)</a></li>
+            <li><a href="https://developerstutorial.com/arrays-within-a-class">https://developerstutorial.com (array
+                    within a class)</a></li>
+            <li><a href="https://www.geeksforgeeks.org/static-keyword-cpp/">www.geeksforgeeks.org (static variable in
+                    class)</a></li>
+            <li><a href="https://learn.microsoft.com/en-us/cpp/cpp/friend-cpp?view=msvc-170">https://learn.microsoft.com
+                    (friend function)</a></li>
+            <li><a href="https://learn.microsoft.com/en-us/cpp/cpp/destructors-cpp?view=msvc-170">https://learn.microsoft.com
+                    (destructors)</a></li>
+            <li><a href="https://www.geeksforgeeks.org/friend-class-function-cpp/">www.geeksforgeeks.org (friend
+                    class)</a></li>
+            <li><a href="https://www.tutorialandexample.com/pointer-to-object-in-cpp">www.tutorialandexmample.com
+                    (poitner to object)</a></li>
+            <li><a href="https://www.geeksforgeeks.org/this-pointer-in-c/">www.geeksforgeeks.org ('this' pointer)</a>
+            </li>
+        </ul>
+    </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="../../../../public/main.js"></script>
+</body>
+
+</html>

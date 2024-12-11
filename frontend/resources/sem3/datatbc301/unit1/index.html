@@ -1,0 +1,1509 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basics of Computer Networks</title>
+    <link rel="stylesheet" href="../../../../public/style.css">
+    <link rel="icon" href="../../../../public/logo/favicon_io/favicon.ico">
+</head>
+
+<body class="bg-c">
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">back</a>
+        <a href="#t1" class="link">Goals of Computer Network</a>
+        <a href="#t2" class="link">Applications of Computer Network</a>
+        <a href="#t3" class="link">Components of a Computer Network</a>
+        <a href="#t4" class="link">Network Topology and Types</a>
+        <a href="#t5" class="link">Types of network</a>
+        <a href="#t7" class="link">Data Transmission Modes</a>
+        <a href="#t8" class="link">Modes of Communication</a>
+        <a href="#t9" class="link">Network Models</a>
+        <a href="#t10" class="link">Design Issues of the Layer</a>
+        <a href="#t11" class="link">Protocol Hierarchy</a>
+        <a href="#t12" class="link">OSI Model</a>
+        <a href="#t13" class="link">TCP/IP Protocol Suite</a>
+        <a href="#t14" class="link">Multiplexing</a>
+        <a href="#t15" class="link">Switching</a>
+        <a href="#tpyq" class="link">PYQ</a>
+        <div class="botbut">
+            <a href="../unit2/index.html" class="link">Next Topic &rarr;</a>
+        </div>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Basics of Computer Networks</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Basics of Computer Networks</h1>
+        <ul>
+            <li><b>Definition</b> : A computer network is a set of interconnected computers and other devices that are
+                linked together to share resources, data, and information. The connections can be wired or wireless and
+                enable communication and collaboration between the connected devices.</li>
+        </ul>
+        <div id="t1" class="wh">
+            <h2>Goals of Computer Network:</h2>
+            <ul>
+                <li><b>Resource Sharing</b>: Networks allow multiple users to share hardware, software, and data
+                    resources,
+                    reducing costs and increasing efficiency.</li>
+                <li><b>Communication</b>: Networks facilitate data exchange and communication between users,
+                    applications,
+                    and
+                    devices.</li>
+                <li><b>Collaboration</b>: Networks enable users to work together on shared projects and documents,
+                    promoting
+                    teamwork and productivity.</li>
+                <li><b>Data Transfer</b>: Networks provide a means to transfer data and information between devices
+                    quickly
+                    and
+                    efficiently.</li>
+            </ul>
+        </div>
+        <div id="t2" class="wh">
+            <h2>Applications of Computer Network:</h2>
+            <ul>
+                <li><b>File Sharing</b>: Networks enable users to access and share files and documents over shared
+                    drives or
+                    cloud-based storage.</li>
+                <li><b>Communication</b>: Networks support email, instant messaging, video conferencing, and other
+                    communication applications.</li>
+                <li><b>Internet Access</b>: Networks provide connectivity to the internet, allowing users to browse the
+                    web
+                    and
+                    access online services.</li>
+                <li><b>Printing</b>: Networked printers enable multiple users to print from their devices to a
+                    centralized
+                    printer.</li>
+                <li><b>Remote Access</b>: Networks allow users to remotely access resources and systems from different
+                    locations.</li>
+                <li><b>Online Gaming</b>: Networks facilitate multiplayer gaming experiences over the internet.</li>
+                <li><b>E-commerce</b>: Networks support online shopping and electronic transactions.</li>
+            </ul>
+        </div>
+        <div id="t3" class="wh">
+            <h2>Components of a Computer Network:</h2>
+            <ul>
+                <li><b>Nodes</b>: Devices such as computers, servers, printers, routers, and switches that are part of
+                    the
+                    network.</li>
+                <li><b>Links</b>: Physical or wireless connections that allow data transmission between nodes.</li>
+                <li><b>Network Interface Card (NIC)</b>: Hardware that enables a device to connect to the network and
+                    communicate using network protocols.</li>
+                <li><b>Switches</b>: Devices that connect multiple nodes in a local network and facilitate data
+                    forwarding.
+                </li>
+                <li><b>Routers</b>: Devices that connect multiple networks and enable data routing between them.</li>
+                <li><b>Cables and Transmission Media</b>: Physical medium used to carry data signals between devices
+                    (e.g.,
+                    twisted-pair cables, fiber-optic cables).</li>
+                <li><b>Protocols</b>: Rules and conventions that govern data transmission and communication within the
+                    network.
+                </li>
+            </ul>
+        </div>
+        <div id="t4" class="wh">
+            <h2>Physical Network Topology and Types:</h2>
+            <p>The term physical topology refers to the way in which a network is laid out physically: I/O or more
+                devices connect to a link; two or more links form a topology.</p>
+            <p>There are four basic topologies possible: mesh, star, bus, and ring. And combining these we get hybrid.
+            </p>
+            <div class="in">
+                <h3>Mesh Topology</h3>
+                <p>In a mesh topology, every device has a dedicated point-to-point link to every other device. The term
+                    "dedicated" means that the link carries traffic only between the two devices it connects.</p>
+                <p>Node 1 must be connected to n - 1 nodes, node 2 must be connected to n – 1 nodes, and finally, node n
+                    must be connected to n - 1 nodes. We need n (n - 1) physical links.</p>
+                <p>However, if each physical link allows communication in both directions, the number of links needed is
+                    n(n-1)/2.</p>
+                <img src="../../images/meshtopo.svg" alt="" class="wb">
+                <h4>Advantages</h4>
+                <ul>
+                    <li>The use of dedicated links guarantees that each connection can carry its own data load, thus
+                        eliminating the traffic problems that can occur when links must be shared by multiple devices.
+                    </li>
+                    <li>A mesh topology is robust. If one link becomes unusable, it does not incapacitate the entire
+                        system.</li>
+                    <li>There is the advantage of privacy or security. When every message travels along a dedicated
+                        line, only the intended recipient sees it.</li>
+                    <li>Point-to-point links make fault identification and fault isolation easy.</li>
+                </ul>
+
+                <h4>Disadvantages</h4>
+                <ul>
+                    <li>Amount of cabling and the number of I/O ports required.</li>
+                    <li>The sheer bulk of the wiring can be greater than the available space (in walls, ceilings, or
+                        floors) can accommodate.</li>
+                    <li>The hardware required to connect each link (I/O ports and cable) can be prohibitively expensive.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Star Topology</h3>
+                <p>In a star topology, each device has a dedicated point-to-point link only to a central controller,
+                    usually called a hub.</p>
+                <p>The devices are not directly linked to one another. Unlike a mesh topology, a star topology does not
+                    allow direct traffic between devices. The controller acts as an exchange: If one device wants to
+                    send data to another, it sends the data to the controller, which then relays the data to the other
+                    connected device.</p>
+                <img src="../../images/startopo.svg" alt="" class="wb">
+                <h4>Advantages</h4>
+                <ul>
+                    <li>A star topology is less expensive than a mesh topology.</li>
+                    <li>In a star, each device needs only one link and one I/O port to connect it to any number of
+                        others. This factor also makes it easy to install and reconfigure.</li>
+                    <li>Far less cabling needs to be housed, and additions, moves, and deletions involve only one
+                        connection: between that device and the hub.</li>
+                    <li>Other advantages include robustness. If one link fails, only that link is affected. All other
+                        links remain active.</li>
+                </ul>
+
+                <h4>Disadvantages</h4>
+                <ul>
+                    <li>The dependency of the whole topology on one single point, the hub. If the hub goes down, the
+                        whole system is inoperative.</li>
+                    <li>Although a star requires far less cable than a mesh, each node must be linked to a central hub.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Bus Topology</h3>
+                <p>In a bus topology, the preceding examples all describe point-to-point connections. However, a bus
+                    topology, on the other hand, is multipoint, where one long cable acts as a backbone to link all the
+                    devices in a network.</p>
+                <p>As a signal travels along the backbone, some of its energy is transformed into heat. Consequently, it
+                    becomes weaker and weaker as it travels farther and farther along the cable.</p>
+                <img src="../../images/bustopo.svg" alt="" class="wb">
+                <h4>Advantages</h4>
+                <ul>
+                    <li>Bus topology offers ease of installation, making it a convenient choice for network setups.</li>
+                    <li>A bus topology uses less cabling compared to mesh or star topologies, resulting in cost savings
+                        and simplified network infrastructure.</li>
+                </ul>
+
+                <h4>Disadvantages</h4>
+                <ul>
+                    <li>Reconnecting devices and fault isolation in a bus topology can be challenging when issues arise,
+                        potentially leading to network downtime.</li>
+                    <li>A single fault or break in the bus cable can disrupt all data transmission, even between devices
+                        located on the same side of the problem, affecting overall network reliability.</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Ring Topology</h3>
+                <p>In a ring topology, each device has a dedicated point-to-point connection with only the two devices
+                    on either side of it. A signal is passed along the ring in one direction, from device to device,
+                    until it reaches its destination.</p>
+                <img src="../../images/ringtopo1.svg" alt="" class="wb">
+                <h4>Advantages</h4>
+                <ul>
+                    <li>A ring topology is relatively easy to install and reconfigure, making it a flexible choice for
+                        network setups. Fault isolation is simplified, making it easier to identify and resolve network
+                        issues.</li>
+                </ul>
+
+                <h4>Disadvantages</h4>
+                <ul>
+                    <li>Unidirectional traffic can be a disadvantage in a ring topology, as data can only travel in one
+                        direction around the ring. This limitation can impact network efficiency.</li>
+                    <li>In a simple ring topology, a break in the ring, such as a disabled station or a cable fault, can
+                        disable the entire network. This lack of redundancy can make the network vulnerable to
+                        disruptions.</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Hybrid Topology</h3>
+                <p>A hybrid topology combines different network topologies within a single network infrastructure. For
+                    example, a hybrid network can consist of a primary star topology with each branch connecting several
+                    stations in a bus topology.</p>
+
+                <h4>Advantages</h4>
+                <ul>
+                    <li>Hybrid topologies offer greater flexibility in designing and customizing a network to meet
+                        specific requirements. They can leverage the strengths of different topologies to optimize
+                        network performance.</li>
+                    <li>By combining topologies, fault tolerance and redundancy can be enhanced. If one part of the
+                        network fails, it may not affect the entire system, improving overall network reliability.</li>
+                    <li>Hybrid topologies can provide scalability, allowing the network to grow and adapt to changing
+                        needs without requiring a complete overhaul.</li>
+                </ul>
+
+                <h4>Disadvantages</h4>
+                <ul>
+                    <li>Designing and managing a hybrid network can be complex and may require more extensive planning
+                        and maintenance compared to single-topology networks.</li>
+                    <li>The cost of implementing and maintaining a hybrid network can be higher due to the need for
+                        different hardware and configurations to support multiple topologies.</li>
+                    <li>Network troubleshooting and fault isolation may be more challenging in a hybrid topology, as
+                        issues can arise from different interconnected topologies.</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Connecting Networks: Broadcast and Point-to-Point</h3>
+                <p>After understanding topologies, we delve into different types of network connections.</p>
+                <p><strong>Broadcast Network</strong></p>
+                <p>In a broadcast network, all devices share the same communication medium and can send their messages
+                    to all other devices on the network. It's like broadcasting a message to everyone.</p>
+                <ul>
+                    <li>Efficient for broadcasting information to all devices simultaneously.</li>
+                    <li>Prone to congestion as all devices compete for the same channel.</li>
+                    <li>Security concerns arise as all devices receive all messages.</li>
+                </ul>
+                <p><strong>Point-to-Point Network</strong></p>
+                <p>In a point-to-point network, devices have dedicated communication links. This type of connection is
+                    often seen in a more traditional client-server architecture.</p>
+                <ul>
+                    <li>Offers direct, dedicated communication between devices.</li>
+                    <li>Enhanced security since only intended recipients receive messages.</li>
+                    <li>Requires more connections as the network expands.</li>
+                    <li>Less efficient for broadcasting messages to all devices.</li>
+                </ul>
+                <p>Understanding network topologies aids in deciding which connection type is suitable for different
+                    scenarios.</p>
+            </div>
+        </div>
+        <div id="t5" class="wh">
+            <h2>Types of Networks:</h2>
+            <div class="in">
+                <h3>Types of Networks</h3>
+                <ul>
+                    <li><strong>LAN (Local Area Network):</strong> A network confined to a small geographical area like
+                        a single building or campus.</li>
+                    <li><strong>MAN (Metropolitan Area Network):</strong> A larger network that spans across a city or
+                        metropolitan area.</li>
+                    <li><strong>WAN (Wide Area Network):</strong> Covers larger distances, often connecting multiple
+                        cities or countries.</li>
+                    <li><strong>Internet:</strong> A global network of networks that enables worldwide communication and
+                        access to information.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>LAN (Local Area Network)</h3>
+                <p><strong>Advantages:</strong></p>
+                <ul>
+                    <li>High data transfer rates, suitable for resource-intensive applications.
+                        <ul>
+                            <li>Having high data transfer rates is like having a super-fast highway for information. It
+                                means that data can zoom from one point to another really quickly. This is especially
+                                useful for "resource-intensive applications," which are like power-hungry superheroes of
+                                the computer world. These applications, such as fancy video editing or intricate 3D
+                                graphics, need a lot of computer muscle to do their jobs well. So, when a network boasts
+                                high data transfer rates, it's like giving these power-hungry applications the speedway
+                                they need to zip through their tasks without slowing down. It's like having a speedy
+                                express lane for data, making sure everything runs smoothly for the most demanding jobs
+                                in the digital world.
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Low implementation cost as it covers a limited area.
+                        <ul>
+                            <li>Since LANs are designed to connect devices within a confined space, such as a single
+                                building, campus, or office floor, the infrastructure required for deployment is
+                                relatively contained. This focused coverage allows organizations to establish a network
+                                environment without incurring the high costs associated with extensive cabling,
+                                networking equipment, and other infrastructure elements needed for larger-scale
+                                networks. As a result, LANs provide a cost-effective solution for facilitating seamless
+                                communication and resource sharing among connected devices within the specified local
+                                area.</li>
+                        </ul>
+                    </li>
+                    <li>Easy to manage and troubleshoot due to smaller scale.
+                        <ul>
+                            <li>Since it operates on a smaller scale, a notable advantage of this system is its ease of
+                                management and troubleshooting. With fewer devices and components to oversee,
+                                administrators can more efficiently handle network tasks, monitor performance, and
+                                swiftly address any issues that may arise. The reduced complexity associated with a
+                                smaller network makes it inherently more manageable, allowing for streamlined operations
+                                and a quicker response to potential challenges. This simplicity contributes to a
+                                user-friendly environment, where administrators can easily navigate and maintain the
+                                network infrastructure, ensuring optimal functionality and minimizing downtime.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p><strong>Disadvantages:</strong></p>
+                <ul>
+                    <li>Limited coverage area, not suitable for connecting distant locations.
+                        <ul>
+                            <li>Since it has a limited coverage area, a notable constraint of this system is its
+                                unsuitability for connecting distant locations. The inherent design of this network
+                                restricts its reach to a confined geographic area, such as a building or campus, making
+                                it less practical for interconnecting devices across considerable distances. While the
+                                system excels in providing localized connectivity, its limitation in terms of coverage
+                                renders it less effective for scenarios requiring networking capabilities over extended
+                                or remote locations. Organizations seeking to establish connections between
+                                geographically distant sites may find alternative network solutions more appropriate for
+                                meeting their broader connectivity needs.</li>
+                        </ul>
+                    </li>
+                    <li>Expensive to expand beyond its initial range.
+                        <ul>
+                            <li>Since expanding beyond its initial range incurs high costs, a significant drawback of
+                                this system is its expense when attempting to broaden coverage. The initial deployment
+                                of this network may be cost-effective for its intended range, but scaling it to cover a
+                                larger area can become financially burdensome. The need for additional infrastructure,
+                                such as additional networking equipment, cabling, and other resources, contributes to
+                                the increased expenses associated with expansion. As organizations strive to extend
+                                network coverage to accommodate growing needs or reach new locations, the financial
+                                implications of scaling up this system may necessitate careful consideration of budget
+                                constraints and alternative solutions for cost-effective network expansion.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>MAN (Metropolitan Area Network)</h3>
+                <p><strong>Advantages:</strong></p>
+                <ul>
+                    <li>Larger coverage area than LAN.
+                        <ul>
+                            <li>One of the notable advantages of this system, is its extended coverage. Operating within
+                                the scope of a metropolitan region,
+                                such as a city or large campus, a MAN provides a broader network footprint. This
+                                expanded coverage allows for connectivity across a more extensive geographical area,
+                                facilitating communication and resource sharing for organizations with dispersed
+                                locations within the metropolitan vicinity. While a MAN surpasses the confined coverage
+                                of LANs, it still retains a regional focus, striking a balance between the localized
+                                nature of LANs and the extensive reach of Wide Area Networks (WANs).</li>
+                        </ul>
+                    </li>
+                    <li>Offers higher data rates than WAN.
+                        <ul>
+                            <li>Another notable advantages of this system, is its enhanced data transfer capabilities.
+                                Operating within the intermediate
+                                scale between local and wide-reaching networks, a MAN offers faster data rates that
+                                surpass those typically achievable in larger-scale WANs. This increased speed in data
+                                transmission makes a MAN well-suited for applications that demand more robust and
+                                efficient connectivity within a metropolitan area. By delivering accelerated data rates,
+                                a MAN addresses the need for swift and reliable communication over a broader regional
+                                scope, catering to the connectivity requirements of organizations with distributed
+                                locations across a city or large campus.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p><strong>Disadvantages:</strong></p>
+                <ul>
+                    <li>Installation and maintenance costs.
+                        <ul>
+                            <li>A significant drawback of
+                                this system, lies in the financial
+                                investments required. The infrastructure necessary for deploying and maintaining a MAN
+                                across a metropolitan area, including the installation of networking equipment, cabling,
+                                and ongoing maintenance procedures, contributes to elevated costs. Unlike Local Area
+                                Networks (LANs), which operate within a confined space, a MAN's intermediate scale
+                                introduces complexities that can
+                                escalate the initial setup expenses and the long-term maintenance overhead.
+                                Organizations considering the implementation of a MAN must carefully weigh the cost
+                                implications against the network's intended benefits and operational requirements.</li>
+                        </ul>
+                    </li>
+                    <li>Not as widely available as LANs.
+                        <ul>
+                            <li>It is not as widely available as Local Area Networks (LANs), a notable limitation
+                                of this system, lies in its comparatively narrower
+                                availability. While LANs are commonly found in various settings such as homes, offices,
+                                and institutions, MANs are less prevalent due to their specific geographic focus on
+                                metropolitan areas. The infrastructure requirements and scale of a MAN make its
+                                deployment less ubiquitous, limiting its accessibility compared to the more widespread
+                                usage of LANs. Organizations seeking network solutions should consider the availability
+                                factor, understanding that MANs may not be as readily accessible in all locations as the
+                                more pervasive LAN technology.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>WAN (Wide Area Network)</h3>
+                <p><strong>Advantages:</strong></p>
+                <ul>
+                    <li>Global coverage, connects remote locations.
+                        <ul>
+                            <li>It offers global coverage and connects remote locations, one of the significant
+                                advantages of this system, lies in its expansive
+                                reach. Unlike Local Area Networks (LANs) and Metropolitan Area Networks (MANs), which
+                                operate within confined areas, a WAN spans across large geographical distances,
+                                facilitating connectivity between distant locations worldwide. This global coverage
+                                enables organizations with dispersed offices, branches, or facilities to establish
+                                seamless communication and data exchange. By connecting remote locations, a WAN plays a
+                                crucial role in fostering collaboration and resource sharing on a global scale, making
+                                it an essential networking solution for businesses and enterprises with a presence
+                                across different regions.</li>
+                        </ul>
+                    </li>
+                    <li>Facilitates data sharing over long distances.
+                        <ul>
+                            <li>It facilitates data sharing over long distances, one of the notable advantages of
+                                this system, lies in its ability to overcome
+                                geographic barriers. Unlike Local Area Networks (LANs) and Metropolitan Area Networks
+                                (MANs), which operate within confined areas, a WAN excels at extending connectivity over
+                                extensive distances. This capability enables seamless data sharing and communication
+                                between geographically dispersed locations. Whether for multinational corporations with
+                                offices across the globe or for individuals collaborating from different regions, a WAN
+                                serves as a vital platform for efficient and reliable data exchange, fostering
+                                collaboration and information flow across vast distances.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p><strong>Disadvantages:</strong></p>
+                <ul>
+                    <li>Higher costs due to long-distance infrastructure.
+                        <ul>
+                            <li>It involves higher costs attributed to long-distance infrastructure, a significant
+                                disadvantage of this system, lies in the financial
+                                implications associated with its extensive reach. The infrastructure required to
+                                establish and maintain connectivity over long distances, including the deployment of
+                                networking equipment, cabling, and other resources, contributes to elevated costs.
+                                Unlike Local Area Networks (LANs) and Metropolitan Area Networks (MANs), which operate
+                                within more confined spaces, the scale of a WAN introduces complexities that can
+                                escalate both the initial setup expenses and ongoing maintenance overhead. Organizations
+                                considering the implementation of a WAN must carefully assess and manage the associated
+                                higher costs against the network's intended benefits and operational requirements."</li>
+                        </ul>
+                    </li>
+                    <li>Slower data transfer rates compared to LAN.
+                        <ul>
+                            <li>It entails slower data transfer rates compared to Local Area Networks (LANs), a
+                                notable disadvantage of this system, lies in its
+                                reduced speed of data transmission. While LANs offer fast and efficient communication
+                                within localized environments, the expansive nature of WANs introduces latency and
+                                bandwidth limitations. The longer distances involved in connecting remote locations
+                                contribute to delays in data transfer, making WANs less suitable for applications that
+                                demand rapid and real-time data exchange. Organizations relying on WANs should be
+                                mindful of the potential trade-off between the network's extended reach and the
+                                comparatively slower data transfer rates, ensuring that it aligns with their specific
+                                communication needs and operational requirements.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Differences Between Network Types</h3>
+                <img src="../../images/lanmanwan.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>Internet</h3>
+                <p><strong>Advantages:</strong></p>
+                <ul>
+                    <li>Unlimited access to information and resources.</li>
+                    <li>Global communication and collaboration.</li>
+                </ul>
+                <p><strong>Disadvantages:</strong></p>
+                <ul>
+                    <li>Security and privacy concerns.</li>
+                    <li>Potential for misinformation and cyber threats.</li>
+                </ul>
+            </div>
+        </div>
+        <div id="t7" class="wh">
+            <h2>Data Transmission Modes</h2>
+            <p>Data transmission modes define how data is sent between devices in a network.</p>
+            <p>Understanding Data Transmission Modes</p>
+            <p>Having learned about network topologies, we now explore the different ways data is transmitted
+                between devices.</p>
+            <img src="../../images/transmissionmethods.svg" alt="" class="wb">
+            <div class="in">
+                <h3>Parallel Transmission</p>
+                    <p>Multiple data bits sent simultaneously using separate lines.</p>
+                    <ul>
+                        <li>Faster data transfer than serial transmission.</li>
+                        <li>Requires more wires, suitable for short distances.</li>
+                    </ul>
+                    <p><b>The main advantages of parallel transmission overserial tranmission are:</b></p>
+                    <ul>
+                        <li>It is easier to program</li>
+                        <li>And data is sent faster</li>
+                    </ul>
+                    <p>Although parallel transmission can transfer data faster, it requires more transmission channels
+                        than serial transmission. that means expensive.</p>
+            </div>
+
+            <div class="in">
+                <p><strong>Serial Transmission</strong></p>
+                <p>Data bits sent one after another over a single line.</p>
+                <ul>
+                    <li>Slower data transfer compared to parallel transmission.</li>
+                    <li>Requires fewer wires, suitable for long distances.</li>
+                </ul>
+                <p><b>Advantages:</b> It requires only one transmission channel, that means economical.</p>
+                <p><b>Disadvantages:</b> Data is sent slower.</p>
+                <p><strong>Serial Transmission Types</strong></p>
+                <ol>
+                    <li>Synchronous Transmission</li>
+                    <li>Asynchronous Transmission</li>
+                    <li>Isochronous Transmission</li>
+                </ol>
+                <div class="in">
+                    <p><strong>Synchronous Transmission</strong></p>
+                    <p>Data sent in a continuous stream, synchronized using clock signals.</p>
+                    <ul>
+                        <li>More efficient for high-speed data transfer.</li>
+                        <li>Used in scenarios where timing is crucial.</li>
+                    </ul>
+                </div>
+                <div class="in">
+                    <p><strong>Asynchronous Transmission</strong></p>
+                    <p>Data sent in separate chunks with start and stop bits.</p>
+                    <ul>
+                        <li>Flexible and suitable for variable-length data.</li>
+                        <li>Used in scenarios where exact timing is not essential.</li>
+                    </ul>
+                </div>
+                <div class="in">
+                    <p><strong>Isochronous Transmission</strong></p>
+                    <p>Real-time data transmission with guaranteed timing and bandwidth.</p>
+                    <ul>
+                        <li>Used for multimedia streaming and time-sensitive applications.</li>
+                        <li>Ensures consistent and predictable data delivery.</li>
+                    </ul>
+                </div>
+            </div>
+            <p>Understanding data transmission modes is crucial for designing efficient and reliable communication
+                in networks.</p>
+            <img src="../../images/parallelvsserialtransmission.svg" alt="" class="wb">
+        </div>
+    </div>
+    <div id="t8" class="content-box">
+        <h1>Modes of Communication</h1>
+        <p>Communication modes refer to the direction and flow of data transmission between devices in a network.
+            <br>This determine how data transmission occurs between devices in terms of direction and availability of
+            communication channels.
+        </p>
+        <div class="wh">
+            <h2>Three primary modes of communications</h2>
+            <ul>
+                <li>
+                    <b>Simplex Mode:</b> In simplex mode, data can only flow in one direction. One device is the sender,
+                    and
+                    the other device is the receiver. The receiver can only receive data, and the sender can only send
+                    data. There is no two-way communication. The receiver can't send data back to the sender on the same
+                    channel. This mode is analogous to a one-way street. Examples of simplex mode include radio and
+                    television
+                    broadcasting, where the information flows from the broadcaster to the viewers, but viewers cannot
+                    send any data back.
+                </li>
+                <li>
+                    <b>Half Duplex Mode:</b> In half duplex mode, data can flow in both directions, but not
+                    simultaneously.
+                    Devices can either send or receive data at any given time, but they cannot do both simultaneously.
+                    Think of it as a walkie-talkie communication, where users must press a button to talk (send) and
+                    release it to listen (receive).
+                </li>
+                <li>
+                    <b>Full Duplex Mode:</b> In full duplex mode, data can flow in both directions simultaneously.
+                    Devices can
+                    send and receive data at the same time, allowing for two-way communication. Full duplex
+                    communication is commonly used in modern computer networks, where devices can both send and receive
+                    data packets simultaneously.
+                </li>
+            </ul>
+        </div>
+        <div class="wh">
+            <h2>Protocols and Standards</h2>
+            <p>Protocols are rules and conventions that devices follow to enable communication. Standards provide a
+                common framework to ensure compatibility and interoperability.</p>
+            <ul>
+                <li><strong>Protocol:</strong> Defines how data should be formatted, transmitted, received, and
+                    interpreted. Ensures consistency in communication across devices.</li>
+                <li><strong>Standard:</strong> Establishes guidelines and specifications for devices and systems to
+                    ensure they work together seamlessly.</li>
+            </ul>
+            <p>Protocols and standards work hand in hand to create a reliable and organized communication environment in
+                computer networks.</p>
+            <div class="in">
+                <h3>Some protocols:</h3>
+                <ul>
+                    <li><b>TCP/IP (Transmission Control Protocol/Internet Protocol):</b> The foundation of the internet
+                        and
+                        most modern networks. TCP handles reliable, connection-oriented data transmission, while IP
+                        provides
+                        the addressing and routing of data packets.</li>
+                    <li><b>HTTP (Hypertext Transfer Protocol):</b> Used for web communication, allowing the transfer of
+                        web
+                        pages and resources between a web server and a web browser.</li>
+                    <li><b>FTP (File Transfer Protocol):</b> Used for transferring files between a client and a server
+                        on a
+                        network or the internet.</li>
+                    <li><b>SMTP (Simple Mail Transfer Protocol):</b> Used for sending and receiving email messages
+                        between
+                        email servers.</li>
+                    <li><b>DNS (Domain Name System):</b> Converts human-readable domain names (e.g., www.example.com)
+                        into
+                        IP addresses, enabling users to access websites using domain names.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Some standards:</h3>
+                <ul>
+                    <li><b>IEEE (Institute of Electrical and Electronics Engineers):</b> Known for creating standards
+                        related to networking, such as IEEE 802.11 (Wi-Fi) and IEEE 802.3 (Ethernet).</li>
+                    <li><b>ITU (International Telecommunication Union):</b> Focuses on global telecommunication
+                        standards,
+                        including those for modems and telecommunications networks.</li>
+                    <li><b>ISO (International Organization for Standardization):</b> Develops international standards
+                        for
+                        various industries, including networking.</li>
+                    <li><b>IETF (Internet Engineering Task Force):</b> Responsible for developing and promoting internet
+                        standards, protocols, and related documents.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="t9" class="content-box">
+        <h1>Network Models</h1>
+        <ul>
+            <li>Network models provide a structured way to understand and describe computer networks.</li>
+            <li>They define how network components interact and communicate, allowing for standardized design and
+                troubleshooting.</li>
+            <li>Popular network models include the OSI (Open Systems Interconnection) model and the TCP/IP model.
+            </li>
+            <li>OSI model consists of seven layers: Physical, Data Link, Network, Transport, Session, Presentation,
+                and Application.</li>
+            <li>TCP/IP model comprises four layers: Network Interface, Internet, Transport, and Application.</li>
+        </ul>
+
+        <div id="t10" class="wh">
+            <h2>Design Issues of the Layer</h2>
+            <ul>
+                <li>Each layer in a network model has specific functions and responsibilities.</li>
+                <li>Design issues refer to the challenges faced while designing and implementing these layers
+                    effectively.</li>
+                <li>For example, the Physical layer deals with issues like data encoding, modulation, and transmission
+                    media selection.</li>
+                <li>The Data Link layer addresses concerns related to framing, error detection, and flow control.</li>
+                <li>Design issues impact how well a layer performs its tasks and how it interacts with adjacent layers.
+                </li>
+            </ul>
+        </div>
+
+        <div id="t11" class="wh">
+            <h2>Protocol Hierarchy</h2>
+            <ul>
+                <li>Protocols are rules and conventions that govern communication between devices in a network.</li>
+                <li>Protocol hierarchy refers to the arrangement of protocols in different layers of a network model.
+                </li>
+                <li>Each layer uses a specific set of protocols to perform its functions and interact with adjacent
+                    layers.</li>
+                <li>For example, at the Transport layer, protocols like TCP (Transmission Control Protocol) and UDP
+                    (User Datagram Protocol) manage end-to-end communication.</li>
+                <li>The hierarchy ensures that complex networking tasks are broken down into manageable layers, each
+                    with its own set of protocols.</li>
+            </ul>
+        </div>
+    </div>
+    <div id="t12" class="content-box">
+        <h1>OSI model</h1>
+        <ul>
+            <li>The OSI (Open Systems Interconnection) model is a conceptual framework that standardizes the
+                functions of a communication or networking system into distinct layers. It was developed by the
+                International Organization for Standardization (ISO) to ensure that different networking
+                technologies could work together seamlessly. </li>
+        </ul>
+        <div class="wh">
+            <h2>Why was the OSI Model Introduced?</h2>
+            <ul>
+                <li>The OSI (Open Systems Interconnection) Model was introduced to address a fundamental problem in the
+                    early days of computer networking: the lack of standardized communication protocols. As technology
+                    advanced and different computer systems emerged, they often had their own unique ways of
+                    transmitting and receiving data. This lack of uniformity created compatibility issues, making it
+                    difficult for devices from different manufacturers to communicate effectively.</li>
+                <li>The need for a standardized framework became apparent as networks expanded and connected globally.
+                    The introduction of the OSI Model aimed to establish a common reference point for how networks
+                    should be designed, operated, and interconnected, regardless of their underlying hardware or
+                    software.</li>
+                <li>Key Reasons for its Introduction:
+                    <ul>
+                        <li>Interoperability: The primary goal of the OSI Model was to enable seamless communication
+                            between devices made by different manufacturers. By defining a set of protocols and
+                            standards, it ensured that devices could understand each other's signals and data formats.
+                        </li>
+                        <li>Uniformity: Before the OSI Model, networking protocols varied widely. The model introduced a
+                            structured framework with distinct layers, each responsible for specific functions. This
+                            layering approach promoted consistency and simplified troubleshooting.</li>
+                        <li>Global Connectivity: As networking expanded beyond individual organizations and crossed
+                            national borders, the OSI Model became vital for enabling international data exchange. It
+                            facilitated connections between networks with different technologies and protocols.</li>
+                        <li>Framework for Development: The model provided a foundation for the development of new
+                            networking technologies and protocols. Engineers and developers could design components to
+                            align with the OSI layers, making it easier to create compatible and interoperable systems.
+                        </li>
+                        <li>Educational Tool: The OSI Model serves as an educational tool, offering a conceptual
+                            framework for understanding how data moves through networks. It aids students,
+                            professionals, and network administrators in comprehending complex networking concepts.</li>
+                        <li>Evolution and Adaptation: While the OSI Model has evolved since its introduction, its core
+                            concepts remain relevant. Its design influenced the development of real-world protocols like
+                            TCP/IP, which underpins the modern internet.</li>
+                    </ul>
+                </li>
+                <li>In essence, the OSI Model was introduced to solve the challenges of disparate networking
+                    technologies, promoting global connectivity, standardization, and interoperability. It continues to
+                    be a foundational framework that shapes the design and operation of networks, ensuring effective
+                    communication in today's interconnected world."</li>
+            </ul>
+        </div>
+        <p>The OSI model consists of seven layers, each responsible for specific tasks in the communication process:
+        <ol>
+            <li><b>Physical Layer : </b> This layer deals with the physical transmission of data over a physical
+                medium, such as cables or wireless signals. It focuses on characteristics like voltage levels, data
+                rates, and physical connectors.</li>
+            <li><b>Data Link Layer </b>: The data link layer is responsible for framing data into packets, error
+                detection
+                and correction, and managing access to the physical medium through protocols like Ethernet.</li>
+            <li><b>Network Layer </b>: The network layer handles routing and forwarding of data packets. It
+                establishes
+                logical paths (routes) for data to travel between source and destination devices.</li>
+            <li><b>Transport Layer </b>: This layer ensures end-to-end communication, managing data segmentation,
+                flow
+                control, and error recovery. It guarantees reliable data delivery between devices.</li>
+            <li><b>Session Layer </b>: The session layer manages sessions (connections) between devices, including
+                establishing, maintaining, and terminating connections. It also handles synchronization and data
+                exchange coordination.</li>
+            <li><b>Presentation Layer </b>: Responsible for data translation, encryption, compression, and other
+                transformations to ensure that data sent from one device can be understood by the receiving device.
+            </li>
+            <li><b>Application Layer </b> : The topmost layer interacts directly with the end user and provides
+                various
+                application-level services such as email, file transfer, and web browsing.</li>
+        </ol>
+        </p>
+        <img src="../../images/layer1.svg" alt="" class="wb">
+        <p>The OSI model is a reference framework, not an actual implementation. It serves as a guide for creating
+            protocols and networking technologies that can work together. When data is transmitted between two
+            devices in a network using the OSI model:</p>
+        <ul>
+            <li><b>Data Generation </b>: The application layer on the sending device generates the data to be
+                transmitted.</li>
+            <li><b>Layer-by-Layer Processing </b>: As the data moves down the OSI layers, each layer adds its header
+                or
+                encapsulation, preparing the data for transmission.</li>
+            <li><b>Transmission </b>: The data is transmitted over the physical medium through the physical and data
+                link
+                layers.</li>
+            <li><b>Reception </b>: The receiving device processes the incoming data in reverse order, stripping off
+                headers
+                added by each layer.</li>
+            <li><b>Delivery to Application </b>: The processed data is delivered to the application layer on the
+                receiving
+                device.</li>
+        </ul>
+        <p>The OSI model helps in understanding and troubleshooting networking protocols and technologies. It also
+            aids in designing new protocols and technologies by providing a clear structure for communication
+            functions. However, in practice, most networking models, like TCP/IP, combine some of the OSI layers for
+            efficiency and practicality.</p>
+        <div class="in">
+            <p>
+                When data is being sent from a device (the sender) to another device (the receiver) over a network,
+                the OSI model's seven layers play a role in both the sender's and receiver's networking stacks. Each
+                layer adds its own header or encapsulation to the data as it moves down the stack on the sender's
+                side, and then removes those headers in reverse order as the data moves up the stack on the
+                receiver's side. Let's break down how the layers are stacked on both sides:
+                <br><img src="../../images/layer2.svg" alt="" class="wb">
+            </p>
+            <p>Example: As you open your Telegram app on your phone and type a message to your friend, a series of
+                processes occur within the OSI model. Initially, at the Physical Layer, the electrical signals
+                representing your message travel through the physical medium, be it Wi-Fi or cellular networks. The Data
+                Link Layer then packages the message into frames, adding addressing information and ensuring data
+                integrity within your local network. Moving to the Network Layer, the optimal path for your message is
+                determined for routing across the internet to your friend's device. At the Transport Layer, your message
+                is divided into segments, adding sequence numbers to ensure proper reconstruction at the destination.
+                The Session Layer establishes and manages the communication session between your Telegram app and the
+                server, and the Presentation Layer encodes the data for transmission. Finally, at the Application Layer,
+                your Telegram app initiates the message transfer, interacts with the user, and communicates with lower
+                layers for sending and receiving messages, ultimately allowing seamless communication between you and
+                your friend.</p>
+        </div>
+        <div id="t13" class="wh">
+            <h2>TCP/IP Protocol Suite</h2>
+            <ul>
+                <li>The TCP/IP protocol suite was developed prior to the OSI model. Therefore, the layers in the
+                    TCP/IP protocol suite do not exactly match those in the OSI model.</li>
+                <li>The original TCP/IP protocol suite was defined as having four layers: host-to-network, internet,
+                    transport, and application. However, when TCP/IP is compared to OSI, we can say that the
+                    host-to-network layer is equivalent to the combination of the physical and data link layers. The
+                    internet layer is equivalent to the network layer, and the application layer is roughly doing the
+                    job of the session, presentation, and application layers with the transport layer in TCP/IP taking
+                    care of part of the duties of the session layer.</li>
+                <li>We will assume that the TCP/IP protocol suite is made of five layers: physical, data link, network,
+                    transport, and application. The first four layers provide physical standards, network interfaces,
+                    internet working, and transport functions that correspond to the first four layers of the OSI model.
+                    The three topmost layers in the OSI model, however, are represented in TCP/IP by a single layer
+                    called the application layer.</li>
+            </ul>
+            <img src="../../images/tcpipsuite.svg" alt="tcp" class="wb">
+            <ul>
+                <li>TCP/IP is a hierarchical protocol made up of interactive modules, each of which provides a specific
+                    functionality. However, the modules are not necessarily interdependent.</li>
+                <li>Whereas the OSI model specifies which functions belong to each of its layers, the layers of the
+                    TCP/IP protocol suite contain relatively independent protocols that can be mixed and matched
+                    depending on the needs of the system. This flexibility is a defining feature of TCP/IP.</li>
+                <li>The term 'hierarchical' means that each upper-level protocol is supported by one or more lower-level
+                    protocols. This arrangement ensures that different layers work together seamlessly to deliver data
+                    across networks.</li>
+                <li>At the transport layer, TCP/IP defines three protocols: Transmission Control Protocol (TCP), User
+                    Datagram Protocol (UDP), and Stream Control Transmission Protocol (SCTP). These protocols offer
+                    different methods of data transmission, each tailored to specific requirements.</li>
+                <li>At the network layer, the main protocol defined by TCP/IP is the Internetworking Protocol (IP). IP
+                    is the backbone of the internet, responsible for routing and addressing packets of data across
+                    networks. In addition to IP, there are other protocols that support data movement within this layer.
+                </li>
+                <li>The TCP/IP model's design allows for adaptability and efficiency. The independence of protocols
+                    within its layers enables network architects to create solutions that suit various networking
+                    scenarios. This modular approach, combined with the model's longevity and robustness, has
+                    contributed to the enduring success of TCP/IP as the foundational protocol suite of the internet.
+                </li>
+            </ul>
+            <div class="in">
+                <h3>Link Layer / Network Access Layer</h3>
+                <ul>
+                    <li>The Link Layer, also known as the Network Access Layer, deals with the physical transmission of
+                        raw data bits over a physical medium, such as copper wires, optical fibers, or wireless
+                        frequencies. It defines the electrical, mechanical, and procedural details for transmitting data
+                        between devices.</li>
+                    <li>At this layer, TCP/IP doesn't define any specific protocol but is designed to support a wide
+                        range of standard and proprietary protocols that operate at these layers. This flexibility
+                        allows TCP/IP to adapt to different network technologies and environments. A TCP/IP internetwork
+                        can incorporate various types of networks, whether they're local-area networks (LANs) or
+                        wide-area networks (WANs). This adaptability is one of the strengths of TCP/IP, as it enables
+                        networks of different scales and types to interconnect seamlessly while utilizing the
+                        appropriate protocols for their specific requirements.</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Internet Layer</h3>
+                <ul>
+                    <li>The Internet Layer, also known as the Network Layer, handles routing and forwarding of data
+                        packets across networks. It's primarily based on the Internet Protocol (IP), which is
+                        responsible for addressing, routing, and fragmenting data for transmission.</li>
+                    <li>Within the Internet Layer, there are four essential supporting protocols:
+                        <ul>
+                            <li><b>Internet Protocol (IP):</b> IP is the backbone of the TCP/IP protocols, responsible
+                                for transmitting data across networks. It operates as an unreliable and connectionless
+                                protocol, providing a best-effort delivery service. This 'best effort' approach means
+                                that IP doesn't perform error checking or tracking and assumes the underlying layers are
+                                not perfect, aiming to get data to its destination without guarantees.</li>
+                            <li><b>Address Resolution Protocol (ARP):</b> ARP associates a logical address with a
+                                physical address, aiding in finding the physical address when the Internet address is
+                                known.</li>
+                            <li><b>Reverse Address Resolution Protocol (RARP):</b> RARP helps a host discover its
+                                Internet address when it only knows its physical address, often used when a computer is
+                                connected to a network for the first time.</li>
+                            <li><b>Internet Control Message Protocol (ICMP):</b> ICMP is used for hosts and gateways to
+                                send notifications about datagram issues back to the sender, handling query and error
+                                reporting messages.</li>
+                        </ul>
+                    </li>
+                    <li>These protocols working together within the network layer of TCP/IP play a crucial role in
+                        ensuring effective communication, managing issues, and enabling specific types of transmissions.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Transport Layer</h3>
+                <ul>
+                    <li>The Transport Layer manages end-to-end communication and data flow between two devices. It
+                        offers two main protocols:
+                        <ul>
+                            <li><b>Transmission Control Protocol (TCP):</b> TCP provides reliable and ordered data
+                                transmission with connection setup. It ensures that data is delivered accurately and in
+                                the correct order. TCP operates as a connection-oriented protocol, establishing a
+                                connection before data transmission.</li>
+                            <li><b>User Datagram Protocol (UDP):</b> UDP offers fast, connectionless data transmission
+                                without reliability guarantees. It is suitable for applications where speed is
+                                prioritized over reliability. UDP adds basic port addresses, checksum error control, and
+                                length information to the upper-layer data.</li>
+                        </ul>
+                    </li>
+                    <li>Additionally, a newer protocol called Stream Control Transmission Protocol (SCTP) has been
+                        introduced to cater to the needs of certain modern applications, combining features of both TCP
+                        and UDP.</li>
+                    <li>These protocols within the transport layer play a critical role in managing how data is
+                        delivered, ensuring reliability, and accommodating various communication needs.</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Application Layer</h3>
+                <ul>
+                    <li>The Application Layer in TCP/IP serves a role equivalent to the combined Session, Presentation,
+                        and Application Layers in the OSI model. This layer is home to numerous protocols that
+                        facilitate various functionalities.</li>
+                    <li>The Application Layer in TCP/IP is the topmost layer and plays a crucial role in enabling
+                        communication between software applications and the underlying network. It's responsible for
+                        providing application-specific services and protocols that allow different programs to
+                        communicate with each other over a network.</li>
+                    <li>Key functions and tasks of the Application Layer in TCP/IP include:
+                        <ul>
+                            <li>Data Formatting and Translation: The Application Layer handles the formatting,
+                                structure, and presentation of data in a way that is understandable by both the sender
+                                and the receiver.</li>
+                            <li>User Interface and Interaction: Providing user interfaces for applications, allowing
+                                users to interact with software and handling user authentication and security.</li>
+                            <li>Application Protocols: Defining various protocols that applications use to exchange
+                                data, such as HTTP (for web browsing), SMTP (for email), FTP (for file transfer), and
+                                DNS (for domain name resolution).</li>
+                            <li>Data Encryption and Security: Implementing security features and encryption methods to
+                                ensure the confidentiality, integrity, and authenticity of data being transmitted.</li>
+                            <li>Resource Sharing and Remote Access: Enabling resource sharing and remote access to
+                                files, printers, and other devices on a network.</li>
+                            <li>Error Handling and Recovery: Implementing error-checking and recovery procedures to
+                                ensure the reliable transfer of data.</li>
+                            <li>Support for Different Applications: Accommodating a wide range of applications, from
+                                simple text-based communication to complex multimedia and real-time applications.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <img src="../../images/tcpvsosi.svg" alt="" class="wb">
+        </div>
+        <div id="t14" class="wh">
+            <h2>Multiplexing</h2>
+            <ul>
+                <li>Multiplexing is a technique used to combine and send multiple data streams over a single medium.
+                </li>
+                <li>The process of combining data streams is known as multiplexing, and the hardware used for this
+                    purpose is called a multiplexer.</li>
+            </ul>
+
+            <div class="in">
+                <h3>Multiplexer (MUX):</h3>
+                <ul>
+                    <li>Multiplexing is achieved by using a device called Multiplexer (MUX).</li>
+                    <li>A multiplexer (MUX) is a device that combines 'n' input lines to generate a single output line.
+                    </li>
+                    <li>Multiplexing follows a many-to-one approach, with 'n' input lines and one output line.</li>
+                </ul>
+
+                <h3>Demultiplexer (DEMUX):</h3>
+                <ul>
+                    <li>Demultiplexing is achieved using a device called a Demultiplexer (DEMUX), typically available at
+                        the
+                        receiving end.</li>
+                    <li>DEMUX separates a signal into its component signals, following a one-to-many approach, with one
+                        input and 'n' outputs.</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Purpose of Multiplexing:</h3>
+                <ul>
+                    <li>The transmission medium can only handle one signal at a time, necessitating multiplexing when
+                        multiple signals need to share it.</li>
+                    <li>To divide the medium's available bandwidth so that each signal gets its share. For example, if
+                        there
+                        are 10 signals and 100 units of bandwidth, each signal gets 10 units.</li>
+                    <li>Prevents collisions when multiple signals share a common medium.</li>
+                    <li>Helps save on expensive transmission services.</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>History of Multiplexing:</h3>
+                <ul>
+                    <li>Multiplexing has a long history:</li>
+                    <li>Originated in telegraphy in the early 1870s.</li>
+                    <li>Widely used in telecommunications, where multiple telephone calls are carried through a single
+                        wire.
+                    </li>
+                    <li>George Owen Squier's development of telephone carrier multiplexing in 1910 was a significant
+                        milestone.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Concept of Multiplexing:</h3>
+                <img src="../../images/multiplexing.svg" alt="" class="wb">
+                <ul>
+                    <li>The 'n' input lines are transmitted through a multiplexer, and the multiplexer combines the
+                        signals to form a composite signal.</li>
+                    <li>The composite signal is passed through a Demultiplexer, and the demultiplexer separates a signal
+                        into component signals and transfers them to their respective destinations.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Advantages of Multiplexing</h3>
+
+                <ul>
+                    <li>Efficient Resource Utilization: Multiplexing optimizes the use of network or communication
+                        resources, ensuring efficient allocation and sharing among multiple data streams or devices.
+                    </li>
+                    <li>Increased Bandwidth Efficiency: It maximizes the utilization of available bandwidth, allowing
+                        multiple data streams to be transmitted simultaneously over the same communication channel.</li>
+                    <li>Cost-Effective Communication: By enabling multiple signals or data streams to share a common
+                        medium, multiplexing helps reduce the cost of establishing and maintaining separate
+                        communication channels for each source.</li>
+                    <li>Prevention of Collisions: Multiplexing helps prevent collisions in shared communication
+                        channels, ensuring that data can be transmitted without interference or data loss.</li>
+                    <li>Flexible Data Transmission: It offers flexibility in accommodating various types of data
+                        streams, including voice, video, text, and application data, within the same network
+                        infrastructure.</li>
+                    <li>More than one signal can be sent over a single medium.</li>
+                    <li>The bandwidth of a medium can be utilized effectively.</li>
+                </ul>
+
+            </div>
+            <div class="in">
+                <h3>Multiplexing Techniques</h3>
+                <img src="../../images/mutiplexing2.svg" alt="" class="wb">
+                <div class="wh">
+                    <p>
+                        <strong>What is Frequency Multiplexing?</strong><br>
+                        Frequency multiplexing is a technique that allows multiple signals or data streams to share a
+                        single
+                        communication channel by dividing the available frequency spectrum into distinct frequency
+                        bands.
+                    </p>
+                    <p>
+                        <strong>How Does It Work?</strong><br>
+                        Each signal or data stream is assigned a specific frequency band. These bands do not overlap,
+                        ensuring that each signal can be transmitted without interference.
+                    </p>
+                </div>
+
+                <div class="wh">
+                    <p>
+                        <strong>What is Wavelength Multiplexing?</strong><br>
+                        Wavelength multiplexing is used in optical networks and involves combining multiple optical
+                        signals
+                        of different wavelengths (colors) onto a single optical fiber.
+                    </p>
+                    <p>
+                        <strong>Why Is It Useful?</strong><br>
+                        This technique significantly increases the capacity and speed of data transmission in optical
+                        communication systems, making it ideal for high-speed data transfer.
+                    </p>
+
+                </div>
+                <div class="wh">
+                    <p>
+                        <strong>What is Time Division Multiplexing (TDM)?</strong><br>
+                        TDM divides a communication channel into discrete time slots. Each connected device or data
+                        stream
+                        is allocated a specific time slot during which it can transmit data.
+                    </p>
+                    <p>
+                        <strong>Synchronous vs. Asynchronous TDM:</strong><br>
+                        - <em>Synchronous TDM:</em> Time slots are fixed and regular, ensuring equal time for each
+                        source.<br>
+                        - <em>Asynchronous TDM:</em> Time slots are allocated dynamically based on demand, which can be
+                        more
+                        flexible for varying data rates.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="wh" id="t15">
+            <h2>Switching Techniques</h2>
+
+            <!-- Introduction to Switching Techniques -->
+            <div class="in">
+                <h2>Why Switching?</h2>
+                <ul>
+                    <li>Whenever we have multiple devices, we have the problem of how to connect them to make one-to-one
+                        communication possible.</li>
+                    <li>Point-to-point and star topologies are impractical for large networks due to inefficiency and
+                        excessive infrastructure requirements.</li>
+                    <li>A better solution is switching, which involves interlinked nodes known as switches capable of
+                        creating temporary connections.</li>
+                </ul>
+            </div>
+
+            <!-- Classification of Switching Techniques -->
+            <div class="in">
+                <h2>Classification of Switching Techniques</h2>
+                <ul>
+                    <li><strong>Circuit Switching:</strong></li>
+                    <ul>
+                        <li>Establishes a dedicated path between sender and receiver.</li>
+                        <li>Requires a complete end-to-end path before communication.</li>
+                        <li>Used in public telephone networks for voice transmission.</li>
+                        <li>Fixed data can be transferred at a time in circuit switching technology.</li>
+                    </ul>
+                    <li><strong>Message Switching:</strong></li>
+                    <ul>
+                        <li>Messages are transferred as complete units, routed through intermediate nodes, and stored
+                            and forwarded.</li>
+                        <li>No establishment of a dedicated path between sender and receiver.</li>
+                        <li>Dynamic routing based on message content.</li>
+                        <li>Treats each message as an independent entity.</li>
+                    </ul>
+                    <li><strong>Packet Switching:</strong></li>
+                    <ul>
+                        <li>Message divided into packets, each with unique identification and routing information.</li>
+                        <li>Packets travel across the network independently, reassembled at the receiving end.</li>
+                        <li>Used in modern data networks, including the Internet.</li>
+                        <li>Supports variable-sized data.</li>
+                    </ul>
+                </ul>
+            </div>
+
+            <!-- Details on Circuit Switching -->
+            <div class="in">
+                <h2>Circuit Switching</h2>
+                <ul>
+                    <li><strong>Circuit Establishment:</strong></li>
+                    <ul>
+                        <li>A complete end-to-end path must exist before communication takes place.</li>
+                        <li>Request signal is sent to the receiver, followed by acknowledgment, before data transfer.
+                        </li>
+                        <li>Used in public telephone networks and for voice transmission.</li>
+                    </ul>
+                    <li><strong>Circuit Disconnect:</strong></li>
+                    <ul>
+                        <li>Once the dedicated path is established, data transmission occurs with minimal delay.</li>
+                        <li>Long connection setup time (approx 10 seconds) with no data transmission during this period.
+                        </li>
+                        <li>Inefficient if the path remains idle.</li>
+                    </ul>
+                    <li><strong>Space Division Switches:</strong></li>
+                    <ul>
+                        <li>Space Division Switching uses physically separate cross points for a single transmission
+                            path.</li>
+                        <li>Includes crossbar switches and semiconductor-based switches.</li>
+                        <li>Offers high speed, high capacity, and no blocking.</li>
+                    </ul>
+                </ul>
+            </div>
+
+            <!-- Details on Packet Switching -->
+            <div class="in">
+                <h2>Packet Switching</h2>
+                <ul>
+                    <li><strong>Packet Structure:</strong></li>
+                    <ul>
+                        <li>Messages divided into smaller packets with unique identification and routing information.
+                        </li>
+                        <li>Packets travel independently, reassembled at the receiving end.</li>
+                        <li>Header contains source address, destination address, and sequence number.</li>
+                    </ul>
+                    <li><strong>Advantages of Packet Switching:</strong></li>
+                    <ul>
+                        <li>Cost-effective, as switching devices do not require massive storage.</li>
+                        <li>Reliable and efficient use of available bandwidth.</li>
+                        <li>Supports simultaneous use by many users.</li>
+                    </ul>
+                    <li><strong>Disadvantages of Packet Switching:</strong></li>
+                    <ul>
+                        <li>Not suitable for applications requiring low delay and high-quality services.</li>
+                        <li>Complex protocols and high implementation cost.</li>
+                        <li>Retransmission of lost packets may lead to information loss.</li>
+                    </ul>
+                </ul>
+            </div>
+
+            <!-- Details on Message Switching -->
+            <div class="in">
+                <h2>Message Switching</h2>
+                <ul>
+                    <li><strong>Message Transmission:</strong></li>
+                    <ul>
+                        <li>Messages transferred as complete units, stored at intermediate nodes, and forwarded to the
+                            next node.</li>
+                        <li>Dynamic routing based on message content.</li>
+                        <li>Each node stores and forwards the entire message.</li>
+                    </ul>
+                    <li><strong>Advantages of Message Switching:</strong></li>
+                    <ul>
+                        <li>Efficient use of data channels and available bandwidth.</li>
+                        <li>Traffic congestion can be reduced due to message storage at nodes.</li>
+                        <li>Supports message priority and variable message sizes.</li>
+                    </ul>
+                    <li><strong>Disadvantages of Message Switching:</strong></li>
+                    <ul>
+                        <li>Nodes must have sufficient storage for message storage and forwarding.</li>
+                        <li>Potential for long delays due to message storage and forwarding.</li>
+                    </ul>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="tpyq" class="content-box">
+        <h2>Previous Year Questions</h2>
+        <div class="wh">
+            <h3>Define computer network based on topologies with a neat diagram. (10 Marks)</h3>
+        </div>
+        <div class="wh">
+            <h3>Differentiate between Synchronous and Asynchronous transmission with a suitable example. (10 Marks)</h3>
+            <div class="part2Half">
+                <div>
+                    <div>
+                        <h3>Synchronous transmission</h3>
+                    </div>
+                    <div>
+                        <h3>Asynchronous Transmission</h3>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <p>Timing Dependency: Synchronous transmission relies on synchronized clocks. Synchronous
+                            transmission is characterized by strict timing and synchronization requirements. In this
+                            method, data is sent in a continuous stream with synchronized clocks at both the sender and
+                            receiver ends. Data is transmitted at fixed, regular intervals, and both sender and receiver
+                            must operate in harmony to maintain synchronization.</p>
+                    </div>
+                    <div>
+                        <p>No Timing Dependency: Asynchronous transmission, on the other hand, does not rely on
+                            synchronized clocks. Data is sent in individual packets or frames, and each packet contains
+                            not only the data but also start and stop bits to delineate the data. There is no fixed
+                            timing for transmission.</p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <p>Efficiency: Synchronous transmission is more efficient for continuous and real-time data
+                            transfer.</p>
+                    </div>
+                    <div>
+                        <p>Efficiency: Asynchronous transmission is more flexible but can have higher overhead.</p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <p>Example: A classic example of synchronous transmission is the traditional voice communication
+                            in a telephone call. When you speak into the phone, your voice signals are continuously
+                            transmitted and received in real-time. Both the caller and the receiver must maintain
+                            synchronized clocks for effective communication.</p>
+                    </div>
+                    <div>
+                        <p>Example: An example of asynchronous transmission is sending emails. When you compose and send
+                            an email, it's broken into discrete packets or frames, each with start and stop bits. These
+                            packets are transmitted independently and reassembled at the receiver's end.</p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <p>Advantages: Synchronous transmission is efficient for real-time applications where data needs
+                            to be transferred continuously and predictably. It ensures a constant flow of data.</p>
+                    </div>
+                    <div>
+                        <p>Advantages: Asynchronous transmission is more flexible and tolerant of variations in timing.
+                            It
+                            is suitable for scenarios with sporadic or irregular data transmission.</p>
+                    </div>
+                </div>
+                <div>
+                    <div>
+                        <p>Disadvantages: It may not be suitable for situations with variable or bursty data traffic, as
+                            it requires continuous synchronization.</p>
+                    </div>
+                    <div>
+                        <p>Disadvantages: It introduces overhead due to the start and stop bits in each packet. It may
+                            not
+                            be as efficient as synchronous transmission for continuous data transfer.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h3>Define multiplexing. Discuss frequency division multiplexing with a suitable example.</h3>
+            <ul>
+                <li>Multiplexing is a technique used in telecommunications and data communication to combine multiple
+                    signals or data streams into a single transmission medium, such as a cable or a wireless channel.
+                    The purpose of multiplexing is to efficiently utilize the available bandwidth and enable multiple
+                    signals to share the same communication channel without interfering with each other.</li>
+                <li>Frequency Division Multiplexing (FDM) is one of the common multiplexing techniques. In FDM, the
+                    available bandwidth of the communication channel is divided into multiple non-overlapping frequency
+                    bands or channels. Each signal or data stream is assigned a specific frequency band within the
+                    channel, and the signals are transmitted simultaneously.</li>
+                <li>Here's how Frequency Division Multiplexing works with a suitable example:
+                    <br>
+                    Example: Radio Broadcasting
+
+                    <br>
+                    Radio broadcasting is a classic example of Frequency Division Multiplexing. In this scenario:
+                    <ul>
+                        <li>Frequency Bands: The entire radio spectrum, from low-frequency (LF) to very high frequency
+                            (VHF) and beyond, is divided into various frequency bands or channels. Each channel
+                            represents a specific range of frequencies. For instance, FM radio stations typically
+                            operate in the VHF band.</li>
+                        <li>Multiple Radio Stations: Multiple radio stations want to broadcast their content
+                            simultaneously without interfering with each other. Each radio station is assigned a unique
+                            frequency channel within the available bandwidth.</li>
+                        <li>Separate Signals: Each radio station generates its audio signal, encodes it, and modulates
+                            it onto its allocated carrier frequency. These carrier frequencies are carefully selected to
+                            ensure they are non-overlapping and do not interfere with each other.</li>
+                        <li>Simultaneous Transmission: All the radio stations transmit their modulated carrier signals
+                            simultaneously. As long as they use different carrier frequencies (channels), their signals
+                            can coexist in the same communication medium without interference.</li>
+                        <li>Receiver Tuning: When a listener tunes their radio receiver to a specific station, the
+                            receiver's tuner is adjusted to select the desired carrier frequency (channel). This allows
+                            the receiver to isolate and demodulate the signal of the chosen station while rejecting
+                            signals from other stations operating on different channels.</li>
+                        <li>Audio Output: The listener hears the audio content of the selected radio station through
+                            their receiver's speakers.</li>
+                    </ul>
+                </li>
+                <li>Frequency Division Multiplexing allows multiple radio stations to share the same broadcasting medium
+                    (the radio spectrum) efficiently. Each station gets its dedicated frequency channel, ensuring that
+                    their signals do not interfere with each other, and listeners can tune in to the station of their
+                    choice.</li>
+            </ul>
+        </div>
+        <div class="wh">
+            <h3>Discuss LAN, MAN and WAN with suitable examples.</h3>
+        </div>
+        <div class="wh">
+            <h3>Assume six devices are arranged in a mesh topology. How many cables are needed? How many ports are
+                needed for each device?</h3>
+            <ul>
+                <li>Number of Cables Needed = (n * (n - 1)) / 2</li>
+                <li>Number of Ports Required for Each Device = n - 1</li>
+                <li>Where "n" is the number of devices in mesh topology.</li>
+            </ul>
+            <p>In this case:</p>
+            <ul>
+                <li>Number of Cables Needed = (6 * (6 - 1)) / 2 = (6 * 5) / 2 = 30 / 2 = 15 cables.</li>
+                <li>Number of Ports Required for Each Device = 6 - 1 = 5 ports.</li>
+                <li>So, in a mesh topology with six devices, you would need 15 cables, and each device would require 5
+                    ports.</li>
+            </ul>
+            <h3>In a mesh topology with ten devices, how many cables are needed, and how many ports are required for
+                each device?</h3>
+            <ul>
+                <li>Number of Cables Needed = (10 * (10 - 1)) / 2 = (10 * 9) / 2 = 90 / 2 = 45 cables.</li>
+                <li>Number of Ports Required for Each Device = 10 - 1 = 9 ports.</li>
+            </ul>
+        </div>
+        <div class="wh">
+            <h3>Define LAN. And discuss the different topologies to desing LAN with suitable example and neat diagram.
+            </h3>
+            <h3>LAN (Local Area Network)</h3>
+            <ul>
+                <li>A LAN, or Local Area Network, is a network of interconnected computers, devices, or systems within a
+                    limited geographic area, such as a home, office building, or campus. LANs are designed to facilitate
+                    the sharing of resources, data, and communication among devices in close proximity. LANs are
+                    characterized by high data transfer rates, low latency, and private ownership or control.</li>
+            </ul>
+
+            <h3>Different Topologies for Designing LANs:</h3>
+            <ul>
+                <li>
+                    <h3>Star Topology:</h3>
+                    <ul>
+                        <li>In a star topology, all devices are connected to a central hub or switch. All data traffic
+                            passes through the central hub, which manages the connections.</li>
+                        <li><strong>Example:</strong> A small office network with computers connected to a central
+                            network switch.</li>
+                        <img src="../../images/startopo.svg" alt="" class="wb">
+                    </ul>
+                </li>
+
+                <li>
+                    <h3>Bus Topology:</h3>
+                    <ul>
+                        <li>In a bus topology, all devices are connected to a single central cable (the bus). Data is
+                            transmitted along the cable, and each device listens for its address.</li>
+                        <li><strong>Example:</strong> Legacy Ethernet networks, which used a single coaxial cable for
+                            data transmission.</li>
+                        <img src="../../images/bustopo.svg" alt="" class="wb">
+                    </ul>
+                </li>
+
+                <li>
+                    <h3>Ring Topology:</h3>
+                    <ul>
+                        <li>In a ring topology, devices are connected in a closed loop. Data circulates around the ring
+                            until it reaches its destination.</li>
+                        <li><strong>Example:</strong> Some early token ring networks used a ring topology.</li>
+                        <img src="../../images/ringtopo1.svg" alt="" class="wb">
+                    </ul>
+                </li>
+
+                <li>
+                    <h3>Mesh Topology:</h3>
+                    <ul>
+                        <li>In a mesh topology, every device is connected to every other device. This redundancy
+                            provides fault tolerance and multiple paths for data.</li>
+                        <li><strong>Example:</strong> Data centers and critical infrastructure networks.</li>
+                        <img src="../../images/meshtopo.svg" alt="" class="wb">
+                    </ul>
+                </li>
+
+                <li>
+                    <h3>Hybrid Topology:</h3>
+                    <ul>
+                        <li>A hybrid topology combines two or more of the above topologies to create a more flexible and
+                            resilient network.</li>
+                        <li><strong>Example:</strong> A large campus network with multiple buildings might use a
+                            combination of star and ring topologies.</li>
+                        <!-- Create the Hybrid Topology Diagram here -->
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="wh">
+            <h3>Explain digital to analog conversion techniques with example.</h3>
+        </div>
+        <div class="wh">
+            <h3>Discuss the data communication components and characteristics with proper example.</h3>
+        </div>
+        <div class="wh">
+            <h3>Explain different modes of communicaiton with diagram.</h3>
+        </div>
+        <div class="wh">
+            <h3>Write a detailed note on various electronics and communication standardization organizaiton.</h3>
+        </div>
+        <div class="wh">
+            <h3>Define computer network. Explain different advantages and application of computer networks.</h3>
+        </div>
+        <div class="wh">
+            <h3>Explain different categories/types of networks?</h3>
+        </div>
+        <p>End Sem &darr;</p>
+        <div class="wh">
+            <h3>What is network topology? Explain the different network topology. Also explain advantages and
+                disadvantages of each topology.</h3>
+        </div>
+        <div class="wh">
+            <h3>What is meant by Data Communication? List the essential elements of network architecture and explain in
+                brief.</h3>
+        </div>
+        <div class="wh">
+            <h3>Explain briefly OSI reference model. Compare it with TCP/IP reference model.</h3>
+        </div>
+        <div class="wh">
+            <h3>Explain the following:
+                <ul>
+                    <li>Packet switching and circuit switching</li>
+                    <li>Simplex, Half duplex and Full duplex</li>
+                </ul>
+            </h3>
+        </div>
+        <div class="wh">
+            <h3>What are the various network criteria? Explain various goals and applications of computer networks?</h3>
+        </div>
+        <div class="wh">
+            <h3>How many categories of networks are present in computer networks? Also define the name of the topologies
+                used in these networks.</h3>
+        </div>
+        <div class="wh">
+            <h3>Explain different modes of communication in computer networks with proper diagram.</h3>
+        </div>
+        <div class="wh">
+            <h3>What is the significance of Switching? Explain the various switching techniques with a neat and clean
+                diagram.</h3>
+        </div>
+        <div class="wh">
+            <h3>Explain the function of each layer of the OSI model. Compare OSI model with TCP/IP protocol suite.</h3>
+        </div>
+    </div>
+    <script src="../../../../public/main.js"></script>
+</body>
+
+</html>

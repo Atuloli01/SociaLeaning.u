@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Layer</title>
+    <link rel="stylesheet" href="../../../../public/style.css">
+    <link rel="icon" href="../../../../public/logo/favicon_io/favicon.ico">
+</head>
+
+<body class="bg-c">
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">back</a>
+        <a href="#" class="link"></a>
+        <a href="#t6" class="link">Network Devices</a>
+        <div class="botbut">
+            <a href="../unit5/index.html" class="link">Next Topic &rarr;</a>
+            <a href="../unit3/index.html" class="link">&larr; Previous Topic</a>
+        </div>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Network Layer</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <div class="wh">
+            <h2>Network Layer</h2>
+            <p>The Network Layer, the third layer of the OSI model, plays a crucial role in facilitating communication
+                across a network.
+                <br>In simple terms, the Network Layer in the OSI model is like the traffic manager of a city. Its main
+                job is to determine the best routes for data to travel from one computer to another in a network. It
+                deals with logical addressing, such as IP addresses, and makes decisions about the most efficient way to
+                deliver data packets across different networks. Just as a traffic manager guides vehicles through the
+                city streets, the Network Layer directs data through the interconnected web of devices and networks,
+                ensuring it reaches its destination accurately and efficiently.
+                <br> Let's delve into its key characteristics and functions:
+            </p>
+
+            <ul>
+                <li><strong>Service Handling:</strong> The Network Layer is responsible for handling service requests
+                    from the transport layer. It acts as an interface between the upper-layer protocols and the
+                    underlying data link layer.</li>
+
+                <li><strong>Address Translation:</strong> One of its primary tasks is translating logical addresses
+                    (such as IP addresses) into physical addresses (like MAC addresses). This translation is vital for
+                    efficient data transmission across the network.</li>
+
+                <li><strong>Routing and Path Determination:</strong> The network layer determines the route that data
+                    packets will take from the source to the destination. It makes decisions on how to forward packets
+                    through various network devices, optimizing the path for efficient delivery.</li>
+
+                <li><strong>Traffic Management:</strong> Managing network traffic is a critical function. This involves
+                    handling issues like switching, routing decisions, and congestion control to ensure smooth and
+                    reliable data packet flow.</li>
+
+                <li><strong>Packet Movement:</strong> The core role of the network layer is to oversee (supervise,
+                    manage) the movement of
+                    packets from the sending host to the receiving host. This involves coordinating with lower layers
+                    and making routing decisions based on logical addressing.</li>
+            </ul>
+
+            <p>In summary, the Network Layer acts as a pivotal component in the OSI model, providing essential services
+                for addressing, routing, and efficient data transfer across interconnected devices within a network.</p>
+            <div class="in">
+                <h3>Key Functions of the Network Layer</h3>
+                <ul>
+                    <li><strong>Routing:</strong> The network layer is responsible for determining the path that a
+                        packet should take from the source to the destination. When a packet arrives at a router's input
+                        link, the router makes decisions on how to forward it to the appropriate output link. For
+                        instance, a packet from source S1 to destination R1 needs to be routed through the next router
+                        on the path to S2.</li>
+
+                    <li><strong>Logical Addressing:</strong> While the data link layer deals with physical addressing,
+                        the network layer handles logical addressing. Logical addresses help differentiate between
+                        source and destination systems. When forwarding a packet, the network layer adds a header
+                        containing logical addresses for both the sender and the receiver.</li>
+
+                    <li><strong>Internetworking:</strong> The primary role of the network layer is to establish logical
+                        connections between different types of networks. It enables communication across diverse network
+                        architectures and technologies.</li>
+
+                    <li><strong>Fragmentation:</strong> Fragmentation involves breaking packets into smaller individual
+                        data units to facilitate transmission through various networks. This process ensures that data
+                        can traverse networks with varying maximum packet sizes.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Services Offered by the Network Layer</h3>
+                <ul>
+                    <li><strong>Guaranteed Delivery:</strong> The network layer provides a service ensuring that packets
+                        will reach their destination reliably.</li>
+
+                    <li><strong>Guaranteed Delivery with Bounded Delay:</strong> This service guarantees that packets
+                        will be delivered within a specified host-to-host delay bound, ensuring timely communication.
+                    </li>
+
+                    <li><strong>In-Order Packets:</strong> The network layer ensures that packets arrive at the
+                        destination in the same order in which they were sent, maintaining the sequence of transmitted
+                        data.</li>
+
+                    <li><strong>Guaranteed Max Jitter:</strong> This service ensures that the time between two
+                        successive transmissions at the sender is equal to the time between their receipt at the
+                        destination, minimizing variation in transmission timing.</li>
+
+                    <li><strong>Security Services:</strong> The network layer enhances security through the use of a
+                        session key between the source and destination hosts. Datagram payloads sent from the source are
+                        encrypted, and the destination host decrypts the payload, maintaining data integrity and source
+                        authentication.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Types of Network Layer Services</h3>
+                <p>Within the network layer, services are categorized based on connections, presenting two distinct
+                    types:</p>
+                <ul>
+                    <li>
+                        <strong>Connectionless Service</strong>
+                        <p>Connectionless services involve the routing and individual insertion of packets into the
+                            subnet without requiring any additional setup. This approach facilitates independent packet
+                            handling.</p>
+                    </li>
+                    <li>
+                        <strong>Connection-Oriented Service</strong>
+                        <p>For connection-oriented services, the subnet must provide a reliable service, ensuring
+                            that
+                            all packets are transmitted over a single route. The implementation of this service
+                            involves:</p>
+                        <ul>
+                            <li><strong>Implementation of Connectionless Service:</strong> Packets, termed as
+                                "datagrams," are transmitted independently to a router via a few protocols. When the
+                                message size to be transmitted is four times the size of a packet, the network layer
+                                divides it into four packets, each with a destination address, and routes them
+                                independently.</li>
+                            <li><strong>Implementation of Connection-Oriented Service:</strong> This service
+                                operates by
+                                first establishing a connection, utilizing it for data transmission, and then
+                                releasing
+                                it. Data packets in connection-oriented services are delivered to the receiver in
+                                the
+                                same order as sent by the sender. There are two ways to implement this service:</li>
+                            <ul>
+                                <li><strong>Circuit Switched Connection:</strong> Involves establishing a dedicated
+                                    physical path or circuit between communicating nodes before transferring the
+                                    data
+                                    stream.</li>
+                                <li><strong>Virtual Circuit Switched Connection:</strong> The data stream is
+                                    transferred
+                                    over a packet-switched network, creating the illusion of a dedicated path from
+                                    the
+                                    sender to the receiver. A virtual path is established, with the possibility of
+                                    other
+                                    connections also utilizing the same path.</li>
+                            </ul>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Virtual Circuit switching vs. Datagram Networks</h3>
+                <p>The Network Layer plays a crucial role in managing
+                    communication between devices. As we navigate through this layer's functionalities, we encounter a
+                    significant choice that influences data transmission strategies—Virtual Circuit Switching and
+                    Datagram Network. These two approaches offer distinct methods for forwarding data packets across
+                    networks, each bringing its own set of characteristics and implications. To gain a comprehensive
+                    understanding of this decision-making process, it's imperative to explore the core concepts of
+                    Virtual Circuit Switching and Datagram Network and appreciate how they contribute to the efficiency
+                    and reliability of data transfer within the Network Layer.</p>
+                <img src="../../images/virtualdata1.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h4>IPv4 in the Network Layer</h4>
+                <p>It stands for Internet Protocol version 4. IPv4 stands as a cornerstone protocol, serving as
+                    the underlying communication mechanism that facilitates data transfer across interconnected devices.
+                    As we delve into the intricacies of the Network Layer, understanding IPv4 becomes imperative, as it
+                    forms the backbone of the internet and enables the seamless exchange of data packets. IPv4, along
+                    with its associated protocols, plays a pivotal role in addressing, routing, and ensuring the
+                    reliable delivery of information between devices within a network. Let's explore the key protocols
+                    associated with IPv4 and unravel the mechanisms that underpin its crucial role in modern computer
+                    networking.</p>
+                <ul>
+                    <li>IPv4 serves as a foundational protocol within the Network
+                        Layer, specifically designed for packet-switched networks. Operating on a best effort delivery
+                        model, IPv4 does not guarantee delivery, proper sequencing, or avoidance of duplicate delivery.
+                        Widely recognized as the fourth revision of the Internet Protocol, IPv4 plays a pivotal role in
+                        data communication across diverse networks.</li>
+                    <li>Connectionless in nature, IPv4 establishes logical connections between network devices by
+                        assigning unique identifications to each device. The protocol is extensively employed in
+                        packet-switched layer networks like Ethernet, providing essential addressing and routing
+                        functionalities. IPv4 configuration methods vary, including manual and automatic configurations,
+                        depending on the network type.</li>
+                    <li>IPv4 is formally defined and specified in the IETF publication RFC 791. It utilizes 32-bit
+                        addresses, divided into five classes—A, B, C, D, and E—for Ethernet communication. Classes A, B,
+                        and C differ in bit length for addressing the network host, while Class D addresses are reserved
+                        for military purposes, and Class E addresses are reserved for future use.</li>
+                    <li>With 32-bit (4-byte) addressing, IPv4 accommodates 2^32 addresses. These addresses are expressed
+                        in dot-decimal notation, comprising four octets separated by periods. For instance, an IPv4
+                        address may appear as 192.168.1.5.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Network Layer Design Issues</h3>
+                <p>The network layer introduces several design issues, each playing a crucial role in shaping the
+                    functionality of this layer. These issues are outlined as follows:</p>
+                <ul>
+                    <li>
+                        <strong>Store and Forward Packet Switching</strong>
+                        <p>In the context of network layer design, the first notable issue is "Store and Forward packet
+                            switching." Here, the host sends a packet to the nearest router, where it is stored until
+                            fully arrived. Once the link is fully processed, including checksum verification, the packet
+                            is forwarded to the next router in a sequential manner until it reaches its destination.</p>
+                    </li>
+                    <li>
+                        <strong>Services provided to Transport Layer</strong>
+                        <p>Through the network/transport layer interface, the network layer extends its services to the
+                            transport layer. These services are provided with specific goals in mind:</p>
+                        <ul>
+                            <li>Offering services that do not depend on router technology.</li>
+                            <li>Protecting the transport layer from details such as the type, number, and topology of
+                                available routers.</li>
+                            <li>Ensuring uniform numbering patterns for network addresses used by the transport layer,
+                                both at LAN and WAN connections.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Intranet & Extranet</h2>
+            <img src="../../images/extranetd1.svg" alt="" class="wb">
+            <ol>
+                <li>
+                    <strong>Intranet</strong>
+                    <ul>
+                        <li>
+                            Intranet is solely owned by a single organization and serves as a dedicated tool for
+                            sharing information within the organization.
+                        </li>
+                        <li>
+                            Functioning as a private network, access to the intranet requires a valid username and
+                            password for security purposes.
+                        </li>
+                        <li>
+                            This network has a limited number of connected devices compared to the internet, ensuring
+                            a high level of security with a restricted number of visitors.
+                        </li>
+                        <li>
+                            Intranet is primarily utilized for obtaining employee information, telephone directories,
+                            and other internal resources.
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Extranet</strong>
+                    <ul>
+                        <li>
+                            Extranet can be owned by either a single organization or multiple organizations.
+                        </li>
+                        <li>
+                            Managed on a contractual basis between organizations, it serves as a tool for sharing
+                            information between internal members and external collaborators.
+                        </li>
+                        <li>
+                            Similar to intranet, the extranet is a private network, and access is restricted to
+                            individuals with valid usernames and passwords.
+                        </li>
+                        <li>
+                            Extranet functionality includes checking status, accessing data, sending emails, and
+                            placing orders, fostering collaborative communication between entities.
+                        </li>
+                    </ul>
+                </li>
+            </ol>
+            <img src="../../images/extravsintra.svg" alt="" class="wb">
+        </div>
+        <div class="wh">
+            <h2>Network Addressing</h2>
+            <ul>
+                <li>
+                    <p>Network Addressing is a fundamental responsibility of the network layer, involving the assignment
+                        of logical, software-based addresses.</p>
+                </li>
+                <li>
+                    <p>A host, also known as an end system, has a single link to the network, and the boundary between
+                        the host and the link is termed as an interface. Each host can have only one interface.
+                    <ul>
+                        <li>A host refers to any device that is connected to a network and uses network resources. Hosts
+                            can include computers, servers, printers, or any other device that participates in network
+                            communication. Essentially, a host is an end system that generates or consumes data within a
+                            network.</li>
+                    </ul>
+                    </p>
+                </li>
+                <li>
+                    <p>On the other hand, a router differs from a host as it has two or more links connecting to it.
+                        When a router forwards a datagram, it directs the packet to one of its links. The boundary
+                        between the router and the link is called an interface, and routers can have multiple
+                        interfaces, one for each link.
+                    <ul>
+                        <li>In networking, a router is a device that connects different networks and directs data
+                            traffic between them. An interface, in the context of a router, refers to the connection
+                            point between the router and a specific network link. Each interface on a router represents
+                            a distinct network link to which the router is connected.</li>
+                        <li>For example, consider a router in a home network setup. This router typically has multiple
+                            interfaces—one connected to the local home network and another to the external network, such
+                            as the internet. Each of these connections constitutes an interface on the router.</li>
+                    </ul>
+                    </p>
+                </li>
+                <li>
+                    <p>Each interface on a router is capable of sending and receiving IP packets. Consequently, IP
+                        requires each interface to have a distinct address.</p>
+                </li>
+                <li>
+                    <p>Each IP address is 32 bits long and is represented in "dot-decimal notation," where each byte is
+                        expressed in decimal form and separated by periods. For example, an IP address would look like
+                        193.32.216.9, where 193 represents the decimal notation of the
+                        first 8 bits of an address, 32 represents the decimal notation of the second 8 bits of an
+                        address.</p>
+                </li>
+                <li>
+                    <p>We need IP addresses to uniquely identify and locate devices on a network. They play a crucial
+                        role in enabling communication between different devices by providing a standardized way to
+                        identify each device.</p>
+                </li>
+                <li>
+                    <p>For example, a host can be a computer, and its IP address (e.g., 192.168.1.1) uniquely identifies
+                        it on the network. This allows other devices to send data to and receive data from the specific
+                        host.</p>
+                </li>
+            </ul>
+        </div>
+        <div id="t6" class="wh">
+            <h2>Network Devices</h2>
+            <p>These are physical devices which are required for communication and interaction between hardware on
+                computer network.</p>
+            <ul>
+                <li>Common network devices:
+                    <ol>
+                        <li>Repeater</li>
+                        <li>Hub</li>
+                        <li>Switches</li>
+                        <li>Router</li>
+                        <li>Bridges</li>
+                        <li>Gateways</li>
+                        <li>Modems</li>
+                    </ol>
+                </li>
+            </ul>
+            <div class="in">
+                <h3>Repeater</h3>
+                <ul>
+                    <li>A repeater operates at the Physical layer of the networking model.</li>
+                    <li>Its primary function is to receive incoming signals, and subsequently, re-transmit these signals
+                        to extend their reach over longer distances. Essentially, repeaters help overcome the
+                        limitations of signal attenuation during transmission.</li>
+                    <li>Contrary to common belief, repeaters do not amplify the signal. Instead, when the signal
+                        weakens, repeaters replicate the signal's data bit by bit and then regenerate it back to its
+                        original strength. This process ensures that the signal remains intelligible and usable despite
+                        the distance it travels.</li>
+                    <li>Structurally, repeaters are designed with two ports: one for signal input and another for signal
+                        output. This allows them to intercept incoming signals, reinvigorate them, and then forward them
+                        to the next segment of the network.</li>
+                    <li>Limitations: While repeaters are effective at combating signal degradation, they are not a
+                        universal solution. They cannot address issues like latency, noise, or errors introduced during
+                        transmission. For these challenges, other networking components like routers, switches, and
+                        error correction mechanisms come into play.</li>
+                    <li>Chain of Repeaters: In scenarios where very long distances need to be covered, a chain of
+                        repeaters can be used. Each repeater in the chain restores and retransmits the signal, further
+                        extending its reach.</li>
+                    <li>Application: Repeaters find use in various communication mediums, including wired and wireless
+                        networks. For example, they are employed in Ethernet networks to counteract signal degradation
+                        over lengthy cable runs.</li>
+                </ul>
+                <img src="../../images/repeaterdevice.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>Hub</h3>
+                <ul>
+                    <li>A hub functions as a multi-port networking device, similar to a multiport repeater, due to its
+                        ability to regenerate and distribute signals to multiple connected devices.</li>
+                    <li>Operating primarily at the Physical layer of networking, a hub's primary role is to facilitate
+                        connections among computers within a Local Area Network (LAN), allowing them to communicate and
+                        share resources.</li>
+                </ul>
+                <p>Hubs are of three types:</p>
+                <ol>
+                    <li>Active hub: Equipped with its own power supply, the active hub not only rejuvenates weak signals
+                        but also amplifies and reinforces them across the network. Essentially functioning as both a
+                        repeater and a central point for connecting cables, the active hub enhances signal quality and
+                        serves as a distribution hub.</li>
+                    <li>Passive hub: This hub serves as a collection point for network nodes' wiring while drawing its
+                        power supply from an active hub. It does not possess signal amplification capabilities but
+                        rather facilitates the physical interconnection of devices within the network.</li>
+                    <li>Intelligent hub: Operating in a manner similar to an active hub, the intelligent hub offers the
+                        additional feature of remote management capabilities. This enables network administrators to
+                        monitor and manage the hub's performance, connections, and potentially connected devices from a
+                        central location.</li>
+                </ol>
+                <img src="../../images/hubdevice.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>Bridge</h3>
+                <ul>
+                    <li>Operating at the Data Link layer of the networking model, a bridge is a device that combines the
+                        functionalities of a repeater with the ability to intelligently filter content based on the
+                        source and destination MAC addresses.</li>
+                    <li>Bridges serve as a means of interconnecting two separate Local Area Networks (LANs) that operate
+                        on the same network protocol, extending network connectivity.</li>
+                    <li>Unlike hubs, which indiscriminately broadcast data to all connected devices, bridges implement a
+                        level of intelligence by selectively transmitting data only to the devices that require it. This
+                        filtering is achieved by examining the MAC addresses of both the source and destination devices
+                        in the data frame.</li>
+                </ul>
+                <img src="../../images/bridgedevice.svg" alt="" class="wb">
+                <ul>
+                    <li>Filtering Mechanism: A bridge maintains a table known as a MAC address table or bridge table.
+                        This table records the MAC addresses of devices connected to each of its ports. When a data
+                        frame arrives, the bridge checks the destination MAC address against the entries in its table
+                        and forwards the frame only to the port associated with the destination device, reducing
+                        unnecessary network traffic and improving efficiency.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Switch</h3>
+                <ul>
+                    <li>Functioning at the Data Link layer of the networking model, a switch is a multiport networking
+                        device that builds upon the foundation of a bridge. It combines intelligent content filtering
+                        with enhanced efficiency and performance features.</li>
+                    <li>Similar to a multiport bridge, a switch includes additional capabilities, such as buffering and
+                        specialized design considerations, that contribute to its improved performance compared to
+                        traditional bridges.</li>
+                    <li>One of the key differentiators between a switch and a bridge lies in the number of available
+                        ports. While bridges typically have only two ports, switches are designed with multiple ports,
+                        enabling numerous devices to simultaneously establish connections and communicate.</li>
+                    <li>Unlike older networking setups where bridges could transmit data only between two devices at a
+                        time, switches can concurrently process data from multiple devices, reducing latency and
+                        enhancing overall network throughput.</li>
+                    <li>Similar to bridges, switches also employ MAC address tables to learn the association between MAC
+                        addresses and the corresponding switch ports. As devices transmit data, the switch populates its
+                        table to optimize data forwarding.</li>
+                </ul>
+                <div class="in">
+                    <p><strong>Types of Switch</strong></p>
+                    <p>Network switches play a pivotal role in managing data traffic within a network. They come in
+                        various types, each tailored to specific network requirements. Here's an overview of different
+                        types of switches:</p>
+                    <ol>
+                        <li>
+                            <strong>Unmanaged Switches</strong>
+                            <p>Unmanaged switches feature a simple plug-and-play design, offering no advanced
+                                configuration options. They are ideal for small networks or as expansions to larger
+                                networks.</p>
+                        </li>
+                        <li>
+                            <strong>Managed Switches</strong>
+                            <p>Managed switches provide advanced configuration options, including VLANs, QoS, and link
+                                aggregation. They are suitable for larger and more complex networks, allowing for
+                                centralized management.</p>
+                        </li>
+                        <li>
+                            <strong>Smart Switches</strong>
+                            <p>Smart switches have features similar to managed switches but are generally easier to set
+                                up and manage. They are well-suited for small to medium-sized networks.</p>
+                        </li>
+                        <li>
+                            <strong>Layer 2 Switches</strong>
+                            <p>Operating at the Data Link layer of the OSI model, Layer 2 switches forward data between
+                                devices on the same network segment.</p>
+                        </li>
+                        <li>
+                            <strong>Layer 3 Switches</strong>
+                            <p>Layer 3 switches operate at the Network layer of the OSI model and can route data between
+                                different network segments. They are more advanced and commonly used in larger, complex
+                                networks.</p>
+                        </li>
+                        <li>
+                            <strong>PoE Switches</strong>
+                            <p>PoE switches come with Power over Ethernet capabilities, supplying power to network
+                                devices over the same cable used for data transmission.</p>
+                        </li>
+                        <li>
+                            <strong>Gigabit Switches</strong>
+                            <p>Gigabit switches support Gigabit Ethernet speeds, offering faster data transfer rates
+                                compared to traditional Ethernet speeds.</p>
+                        </li>
+                        <li>
+                            <strong>Rack-Mounted Switches</strong>
+                            <p>Rack-mounted switches are designed for placement in server racks, making them suitable
+                                for data centers or large networks.</p>
+                        </li>
+                        <li>
+                            <strong>Desktop Switches</strong>
+                            <p>Desktop switches are designed for use on desks or in small office environments, typically
+                                smaller in size than rack-mounted switches.</p>
+                        </li>
+                        <li>
+                            <strong>Modular Switches</strong>
+                            <p>Modular switches have a design that allows for easy expansion or customization, making
+                                them suitable for large networks and data centers.</p>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Router</h3>
+                <ul>
+                    <li>A router is a device similar to a switch, but it operates by directing data packets based on
+                        their IP addresses.</li>
+                    <li>Its primary role falls within the network layer of networking.</li>
+                    <li>While a switch excels at connecting devices within a network, a router has the unique ability to
+                        connect different networks together, including LANs and WANs.</li>
+                    <li>One distinctive feature of routers is their dynamically updated routing table. This table acts
+                        as a map that guides routers in deciding where to send data. It holds vital information,
+                        including various IP addresses.</li>
+                    <li>Routers are like postal workers for the internet. They look at IP addresses on data packets and
+                        decide how to best deliver them, ensuring data reaches its intended destination.</li>
+                    <li> Routers play a critical role in managing internet traffic. They determine the fastest and most
+                        efficient paths for data to travel across the complex web of networks that make up the internet.
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Gateway</h3>
+                <ul>
+                    <li>A gateway is a network node that links two separate networks using different protocols.</li>
+                    <li>It functions as a "gate" that connects and enables communication between these distinct
+                        networks.</li>
+                    <li>A gateway can take various forms, such as a router, firewall, server, or other devices. Its role
+                        is to allow traffic to smoothly enter and exit a network.</li>
+                    <li>One of the key roles of a gateway is to translate data between different network protocols. This
+                        is crucial when connecting networks that use different rules for communication.</li>
+                    <li> A gateway acts as a mediator, helping networks with different communication methods understand
+                        and exchange information.</li>
+                    <li>In the conNetwork Layer of the internet, a gateway often refers to a device that connects a
+                        local network
+                        to the broader internet, managing data flow and security.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="content-box">
+        <p>Resources &darr;</p>
+        <ul>
+            <li><a href="https://youtu.be/mKshc6dxZE8?si=HlBHhZVjtY92Tvbr" target="_blank" class="ba">Repeater & Hub
+                    video
+                    explanation &neArr;</a></li>
+            <li><a class="ba" target="_blank" href="https://youtu.be/JsOzzdypIXQ?si=G7LxhzPd1xTZv0Kv">Bridge & switches
+                    video explanation &neArr;</a></li>
+            <li><a class="ba" target="_blank" href="https://youtu.be/hrAqVWhQ2f8?si=l0jdOYaeYrqQ6jl0">Routers & Gateway
+                    video explanation
+                    &neArr;</a></li>
+        </ul>
+    </div>
+    <script src="../../../../public/main.js"></script>
+</body>
+
+</html>

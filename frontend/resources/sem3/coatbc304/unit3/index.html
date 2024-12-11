@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CPU Organizations</title>
+    <link rel="stylesheet" href="../../../../public/style.css">
+    <link rel="icon" href="../../../../public/logo/favicon_io/favicon.ico">
+</head>
+
+<body class="bg-c">
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">back</a>
+        <a href="#" class="link"></a>
+        <div class="botbut">
+            <a href="../unit4/index.html" class="link">Next Topic &rarr;</a>
+            <a href="../unit2/index.html" class="link">&larr; Previous Topic</a>
+        </div>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>CPU Organizations</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>CPU Organizations</h1>
+        <ul>
+            <li>At the core of every computer chip lies the CPU, where the arrangement and structure of registers play a
+                central role. In this unit, we'll dive deep into the intricacies of CPU design, specifically examining
+                how
+                registers are organized and structured.</li>
+        </ul>
+        <div class="wh">
+            <h2>Types of CPU Organizations</h2>
+            <ol>
+                <li>Single Accumulator Organization</li>
+                <li>General Register Organization</li>
+                <li>Stack organization</li>
+            </ol>
+            <div class="in">
+                <h3>Single Accumulator Organization (Not Important)</h3>
+                <ul>
+                    <li>We are familiar with the general format of a register, which is utilized for storing and
+                        manipulating data. A register typically consists of a mode, opcode, and operand.
+                        <ol>
+                            <li><strong>Mode:</strong> Specifies the address mode.</li>
+                            <li><strong>Opcode:</strong> Indicates the operation to be performed.</li>
+                            <li><strong>Data:</strong> Contains the actual data.</li>
+                        </ol>
+                        This type of register is employed in computer architectures.
+                    </li>
+                    <li>Now, let's delve into the Single Accumulator Organization: Basic computers often adopt the
+                        single accumulator organization, where the accumulator serves as a dedicated register.</li>
+                    <li>Operations are executed within the Arithmetic Logic Unit (ALU), which resides inside the Central
+                        Processing Unit (CPU). The CPU is directly linked to the register, ensuring high-speed data
+                        transfer.</li>
+                    <li>The input data for the ALU is sourced from the accumulator register, and the result of the ALU
+                        calculation is then stored back in the accumulator.</li>
+                    <li>Single Accumulator Organization is chosen when cost-effectiveness is a priority. By minimizing
+                        the number of registers, we reduce the overall system cost.</li>
+                    <li>Registers are the fastest form of memory, and connecting them directly to the CPU ensures rapid
+                        data exchange, contributing to high system performance. The more registers used, the higher the
+                        cost. To achieve cost-effectiveness, a single accumulator register is employed.</li>
+                    <li><strong>Definition of Single Accumulator Organization:</strong> In this architecture, a single
+                        accumulator register is designated for arithmetic and logic operations. It optimizes cost by
+                        limiting the number of registers, emphasizing efficiency in simple computing systems.</li>
+                </ul>
+                <p><strong>General Architecture of Single Accumulator Organization</strong></p>
+                <img src="../../images/singleacreg1.svg" alt="" class="wb">
+                <ul>
+                    <li>In this architecture, we have a Program Counter (PC) responsible for storing addresses, and it
+                        is connected to the memory. Additionally, there is an Accumulator (AC) connected to the
+                        Arithmetic Logic Unit (ALU).</li>
+                    <li>The data stored in memory is retrieved and transferred to the Instruction Register (IR), from
+                        where it is moved to the Accumulator (AC) and subsequently processed in the Arithmetic Logic
+                        Unit (ALU).</li>
+                    <li>The ALU and memory components are interconnected through a common bus, facilitating the exchange
+                        of data between them.</li>
+                </ul>
+                <p><strong>This type of organization supports single-address instructions. As an example, consider the
+                        instruction sequence for the operation C = A + B:</strong></p>
+                <ul>
+                    <li><strong>LDA A:</strong> Load the content of memory location A into the Accumulator (AC).</li>
+                    <li><strong>ADD B:</strong> Add the content of memory location B to the data in the Accumulator
+                        (AC).</li>
+                    <li><strong>Store C:</strong> Store the result in the Accumulator (AC) back to the memory location
+                        designated for C.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>General Register Organization</h3>
+                <ul>
+                    <li>To understand General Register Organization, it's essential to grasp the major components within
+                        a CPU:</li>
+                    <ol>
+                        <li><strong>Storage Components:</strong> These include registers and flip-flops, serving as
+                            temporary storage for data.</li>
+                        <li><strong>Execution Components:</strong> The Arithmetic Logic Unit (ALU) is responsible for
+                            carrying out calculations and logical operations.</li>
+                        <li><strong>Transfer Components:</strong> The bus facilitates the transfer of data between
+                            storage and execution components.</li>
+                        <li><strong>Control Component:</strong> The control unit oversees and directs the functioning of
+                            other components within the CPU.</li>
+                    </ol>
+                    <li>Memory locations play a crucial role in storing various data types such as pointers, counters,
+                        return addresses, temporary results, and partial products. However, accessing memory is a
+                        time-consuming task. To enhance efficiency, intermediate values are stored in processor
+                        registers. These registers are interconnected through a common bus system, allowing seamless
+                        communication not only for direct data transfer but also for coordinating various
+                        microoperations.</li>
+                    <li><strong>Definition of General Register Organization:</strong> In computing, General Register
+                        Organization refers to the systematic arrangement and utilization of registers within the CPU.
+                        These registers serve as high-speed, temporary storage for data and play a vital role in
+                        enhancing computational efficiency by minimizing the need for frequent memory access.</li>
+                </ul>
+                <p><strong>A Bus Organization for Seven CPU Registers</strong></p>
+                <img src="../../images/gro1.svg" alt="" class="wb">
+                <ul>
+                    <li>The depicted bus organization features seven CPU registers, and its functionality is detailed as
+                        follows:</li>
+                    <li>The output of each register is linked to two multiplexers (MUX), both of which play a crucial
+                        role in transferring register data into the Arithmetic Logic Unit (ALU).</li>
+                    <li>Two buses, A and B, are utilized for data transfer. The selection lines in each multiplexer
+                        determine whether to choose data from a register or from input data. Data is transmitted to the
+                        ALU via buses A and B.</li>
+                    <li>The OPR (Operation) signal serves to define the type of operation to be executed by the ALU.
+                    </li>
+                    <li>The result of the operation conducted by the ALU can be directed to other units within the
+                        system or stored in any of the processor registers.</li>
+                    <li>A decoder is employed to select the register where the result will be stored. The decoder
+                        activates one of the register load inputs, specifying the destination register for storing the
+                        result.</li>
+                </ul>
+                <p><strong>Example, Let we want to perform the operation R1 &larr; R2 + R3</strong></p>
+                <ul>
+                    <li>To do this operation, Control Unit generates following singal (Control Word).
+                        <br><img src="../../images/controlw1.svg" alt="" class="wb">
+                    </li>
+                </ul>
+                <div class="in">
+                    <p><b>Control Word</b></p>
+                    <ul>
+                        <li>A control word, designed for the aforementioned CPU organization, consists of four fields as
+                            illustrated below:
+                            <br><img src="../../images/controlw2.svg" alt="" class="wb">
+                        </li>
+                        <li>The three bits of SEL A are dedicated to transferring the contents of a register into
+                            BUS A.</li>
+                        <li>The three bits of SEL B are assigned to transferring the contents of a register into BUS
+                            B.</li>
+                        <li>The three bits of SELD are utilized for selecting a destination register. This
+                            facilitates the decision of whether to store the result in a register or to transmit it
+                            outside the ALU.</li>
+                        <li>The five bits of OPR define the type of operation to be performed by the ALU. This field
+                            governs the arithmetic or logical operation executed by the ALU based on the specified
+                            opcode.</li>
+                    </ul>
+                </div>
+                <div class="in">
+                    <p><strong>Code for for Register Selection</strong></p>
+                    <img src="../../images/sfrs1.svg" alt="" class="wb">
+                </div>
+                <div class="in">
+                    <p><strong>Operation Code for ALU</strong></p>
+                    <img src="../../images/ocfa1.svg" alt="" class="wb">
+                </div>
+            </div>
+            <div class="in">
+                <h3>Stack Organization</h3>
+                <ul>
+                    <li>The memory of a CPU can be organized as a STACK, a structure where information is stored in a
+                        Last-In-First-Out (LIFO) manner. This means that the item last stored is the first to be removed
+                        or popped.</li>
+                    <li>To manage the items, a stack uses a stack pointer (SP) register. The stack pointer stores the
+                        address of the last item in the stack, essentially pointing to the topmost element. Stack
+                        operations involve two main actions:
+                        <ol>
+                            <li><strong>Insertion (Push):</strong> When an item is added to the stack, it is referred to
+                                as insertion or a push operation.</li>
+                            <li><strong>Deletion (Pop):</strong> When an item is removed from the stack, it is known as
+                                deletion or a pop operation.</li>
+                        </ol>
+                    </li>
+                    <li>There are two main types of stacks:
+                        <ol>
+                            <li><strong>Register Stack:</strong> Utilizes processor registers to create a stack
+                                structure, enhancing speed and efficiency in certain operations.</li>
+                            <li><strong>Memory Stack:</strong> Involves using dedicated memory locations to implement
+                                the stack structure.</li>
+                        </ol>
+                    </li>
+                </ul>
+                <div class="in">
+                    <p><b>Register Stack</b></p>
+                    <img src="../../images/stackorg1.svg" alt="" class="wb">
+                    <ul>
+                        <li>When processor registers are organized in a stack-like fashion, it is termed a register
+                            stack. The diagram above illustrates a 64-word register stack.</li>
+                        <li>The stack pointer (SP) contains the address of the topmost element in the stack.</li>
+                        <li>When the stack is empty, the EMPTY flag is set to 1, and when the stack is full, the FULL
+                            flag is set to 1.</li>
+                        <li>The DR (Data Register) contains the data either being popped from or pushed into the stack.
+                        </li>
+                        <li>Additional benefits of a register stack include faster access times and reduced memory bus
+                            contention, making it suitable for certain computing tasks requiring high-speed data
+                            manipulation.</li>
+                        <li>For example, in the figure, three items (A, B, and C) are placed in the stack, with item C
+                            at the top. Thus, the stack pointer (SP) holds the address of C (SP = 3).</li>
+                    </ul>
+                    <p><strong>PUSH Operation:</strong></p>
+                    <ul>
+                        <li>When performing a PUSH operation to add an element (let's say E) to the stack, the following
+                            steps are executed:</li>
+                        <ul>
+                            <li><strong>Step 1:</strong> Increment the Stack Pointer (SP) by 1 so that it points to an
+                                empty slot.
+                                <br><code>SP &larr; SP + 1</code> [Increment stack pointer]
+                            </li>
+                            <li><strong>Step 2:</strong> Store the value of the Data Register (DR) at the address
+                                pointed to by SP.
+                                <br><code>M[SP] &larr; DR</code> [Write the item on top of the stack]
+                            </li>
+                            <li><strong>Step 3:</strong> Check boundary conditions.
+                                <br>If <code>(SP = 0)</code>, then set <code>FULL &larr; 1</code> indicating the stack
+                                is full.
+                                <br><code>EMPTY &larr; 0</code> signifies that the stack is not empty.
+                            </li>
+                        </ul>
+                    </ul>
+                    <p><strong>POP Operation:</strong></p>
+                    <ul>
+                        <li>When performing a POP operation to remove an element from the stack, the following steps are
+                            executed:</li>
+                        <ul>
+                            <li><strong>Step 1:</strong> Retrieve the data from the address stored in the Stack Pointer
+                                (SP) and store it in the Data Register (DR).
+                                <br><code>DR &larr; M[SP]</code> [Fetch item from the top of the stack]
+                            </li>
+                            <li><strong>Step 2:</strong> Decrement the Stack Pointer (SP) by 1.
+                                <br><code>SP &rarr; SP - 1</code>
+                            </li>
+                            <li><strong>Step 3:</strong> Check boundary conditions.
+                                <br><code>if (SP = 0) then (EMPTY &larr; 1) [Check if the stack is empty]
+            <br>
+                                    FULL &larr; 0 [Mark the stack as not full]
+            </code>
+                            </li>
+                        </ul>
+                    </ul>
+                </div>
+                <div class="in">
+                    <p><b>Memory Stack</b></p>
+                    <ul>
+                        <li>When primary memory (RAM) is organized in the form of a stack, it is referred to as a Memory
+                            Stack.</li>
+                    </ul>
+                    <img src="../../images/memstack1.svg" alt="" class="wb">
+                    <ul>
+                        <li>The Program Counter (PC) indicates the address of the next instruction in the program.</li>
+                        <li>The Address Register (AR) points to an array of data within the memory stack.</li>
+                        <li>The Stack Pointer (SP) identifies the top of the stack.</li>
+                        <li>In the illustrated figure, the initial value of SP is 4001, and the stack grows with
+                            decreasing addresses. Consequently, the first item stored in the stack is at address 4000,
+                            the second item at address 3999, and the last item at address 3000.</li>
+                    </ul>
+                    <p><b>PUSH Operation</b></p>
+                    <code>
+    SP &rarr; SP - 1
+    <br>M[SP] &larr; DR
+</code>
+                    <p><b>POP Operation</b></p>
+                    <code>
+    DR &larr; M[SP]
+    <br>SP &rarr; SP + 1
+</code>
+                    <ul>
+                        <li>The PUSH operation involves decrementing the Stack Pointer (SP) to allocate space for a new
+                            item and storing the value from the Data Register (DR) at the address pointed to by the
+                            updated SP.</li>
+                        <li>The POP operation retrieves the item from the top of the stack by copying the data from the
+                            address indicated by SP to DR. Subsequently, SP is incremented to free up space in the
+                            stack.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Addressing Modes</h2>
+            <p>An instruction format is a collection of bits that defines the type of instruction, operands, and the
+                type of operation. The instruction format is represented by a rectangular box, and a basic instruction
+                format includes the following fields: Opcode, Mode, and Address.</p>
+
+            <img src="../../images/opcode11.svg" alt="" class="wb">
+
+            <ul>
+                <li><strong>Opcode:</strong> Defines the type of operation to be performed, such as add, subtract,
+                    complement, and shift.</li>
+                <li><strong>Address field:</strong> Defines the address of operands.</li>
+                <li><strong>Mode (or addressing mode) field:</strong> Defines the method by which operands are fetched,
+                    modifying the address field of the instruction to determine the actual address of the data.</li>
+            </ul>
+
+            <p><strong>Addressing Modes:</strong></p>
+            <ul>
+                <li><strong>1. Implied Addressing Mode:</strong> The zero-address instruction and all instructions using
+                    the accumulator are implied-mode instructions. For example, the "complement accumulator" instruction
+                    is implied-mode because the operand is in the accumulator.</li>
+                <li><strong>2. Immediate Addressing Mode:</strong> In this mode, the operand is specified in the
+                    instruction itself, having an operand field instead of an address field. <br> For example:
+                    <code>ADD 10, 20</code>.
+                </li>
+                <li><strong>3. Register Addressing Mode:</strong> Used when data is stored in processor registers, and
+                    the address part of the instruction contains the address of the processor register. <br> For
+                    example:
+                    <code>SUB R1, R2</code>.
+                </li>
+                <li><strong>4. Register Indirect Addressing Mode:</strong> The instruction has the address of a
+                    processor register, which contains the address of the operand in memory.</li>
+                <li><strong>5. Direct Address Mode:</strong> The instruction has the address of a memory cell where the
+                    data is stored, and the effective address is the address stored in the instruction.</li>
+                <li><strong>6. Indirect Address Mode:</strong> The address field of the instruction has a memory address
+                    where the data is stored.</li>
+                <li><strong>7. Autoincrement or Autodecrement Address Mode:</strong> Used when fetching a series of
+                    data, and the address part of the instruction gives the starting address, which is incremented or
+                    decremented to fetch the next data from memory.</li>
+                <li><strong>8. Relative Address Mode:</strong> The content of the program counter is added to the
+                    address part of the instruction to obtain the effective address of data.</li>
+                <li><strong>9. Indexed Addressing Mode:</strong> The content of an index register is added to the
+                    address part of the instruction to obtain the effective address, useful for accessing data arrays in
+                    memory.</li>
+                <li><strong>10. Base Register Addressing Mode:</strong> Similar to indexed addressing mode, the content
+                    of a base register is added to the address part of the instruction to obtain the effective address.
+                </li>
+            </ul>
+        </div>
+        <div class="wh">
+            <h2>Data Transfer Instructions</h2>
+            <p>Data transfer and manipulation are fundamental aspects of computer architecture, integral to the
+                execution of instructions within a computing system.</p>
+            <ul>
+                <li>These instructions are typically categorized into
+                    three main types:</li>
+                <ol>
+                    <li>Data Transfer Instructions</li>
+                    <li>Data Manipulation Instructions</li>
+                    <li>Program Control Instructions</li>
+                </ol>
+            </ul>
+            <div class="in">
+                <h3>Data Transfer Instructions</h3>
+                <p>Data transfer instructions facilitate the movement of data from one location to another within the
+                    computer system. These instructions are essential for controlling the flow of information,
+                    including:</p>
+                <ul>
+                    <li>Data transfer between memory and processor registers</li>
+                    <li>Data transfer between processor registers and input or output devices</li>
+                    <li>Data transfer between different processor registers</li>
+                </ul>
+                <p>The table below presents a list of eight common data transfer instructions widely utilized across
+                    various computer architectures:</p>
+                <img src="../../images/datatransfer1.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>Data Manipulation Instructions</h3>
+                <p>Data manipulation instructions play a critical role in performing operations on data within a
+                    computer system. These instructions can be broadly categorized into three types:</p>
+
+                <ol>
+                    <li><strong>Arithmetic Instructions</strong></li>
+                    <li><strong>Logical and Bit Manipulation Instructions</strong></li>
+                    <li><strong>Shift Instructions</strong></li>
+                </ol>
+
+                <div class="in">
+                    <p><strong>Arithmetic Instructions</strong></p>
+                    <p>Arithmetic instructions encompass fundamental operations such as addition, subtraction,
+                        multiplication, and division. The table below provides a list of typical arithmetic
+                        instructions:</p>
+                    <img src="../../images/ai1.svg" alt="" class="wb">
+                </div>
+
+                <div class="in">
+                    <p><strong>Logical and Bit Manipulation Instructions</strong></p>
+                    <p>Logical instructions are designed to perform binary operations on data stored in registers. These
+                        instructions consider each bit of the operand individually. Here are some common logical and bit
+                        manipulation instructions:</p>
+                    <img src="../../images/lbmi1.svg" alt="" class="wb">
+                </div>
+
+                <div class="in">
+                    <p><strong>Shift Instructions</strong></p>
+                    <p>Shift instructions move bits within a register either to the left or right. Logical shifts insert
+                        0 to the end bit position. The table below illustrates various types of shift instructions:</p>
+                    <img src="../../images/si1.svg" alt="" class="wb">
+                </div>
+            </div>
+            <div class="in">
+                <h3>Program Control Instructions</h3>
+                <p>In a computer system, instructions are typically stored in successive memory locations, and the
+                    execution of a program involves fetching instructions from these consecutive memory locations. As
+                    each instruction is fetched, the program counter is incremented to contain the address of the next
+                    instruction in sequence. Program control instructions play a crucial role in directing the flow of a
+                    program and managing the execution process.</p>
+
+                <p>General program control instructions encompass a variety of operations that dictate the execution
+                    flow. Some of these instructions are outlined in the table below:</p>
+
+                <img src="../../images/pci1.svg" alt="" class="wb">
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Parallel Processing</h2>
+            <ul>
+                <li>In older computers, only a single instruction used to be executed at a time, leading to the wastage
+                    of ALU time and an inability to fully utilize processing capabilities. To address this inefficiency,
+                    the concept of parallel processing was introduced.</li>
+                <li>Parallel processing involves the simultaneous execution of multiple instructions, allowing for
+                    concurrent data processing and faster execution times. Instead of processing instructions
+                    sequentially, parallel processing techniques enable more efficient use of computing resources. For
+                    example:
+                    <ul>
+                        <li>While an instruction is being executed in the ALU, the next instruction can be read from
+                            memory.</li>
+                        <li>A system may have two or more ALUs, capable of executing multiple instructions
+                            simultaneously.</li>
+                        <li>Multiple processors may operate concurrently, enhancing overall system performance.</li>
+                    </ul>
+                    The primary purpose of parallel processing is to accelerate computer capabilities by leveraging
+                    increased hardware resources.
+                </li>
+                <li>Parallel processing can be examined at various levels of complexity:
+                    <ul>
+                        <li>At a lower level, the distinction between parallel and serial operations is based on the
+                            type of registers used.</li>
+                        <li>Shift registers operate in a serial fashion, processing one bit at a time, while registers
+                            with parallel load operate with all bits of the word simultaneously.</li>
+                        <li>At a higher level of complexity, parallel processing can involve a multiplicity of
+                            functional units performing identical or different operations simultaneously.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <p>The following diagram illustrates a processor with multiple functional units, showcasing the additional
+                components added to increase productivity and enable parallel processing:</p>
+            <img src="../../images/parallel111.svg" alt="" class="wb">
+
+            <p>Parallel processing can be classified in various ways, one of which is introduced by M.J. Flynn. Flynn's
+                classification divides computers into four major groups based on the sequence of instructions read from
+                memory and the operations performed in the instruction and data streams:
+            <ol>
+                <li><strong>Single Instruction Stream, Single Data Stream (SISD):</strong> In SISD architecture, a
+                    single instruction stream is executed on a single data stream. This is the traditional von Neumann
+                    architecture where one instruction is processed at a time.</li>
+                <li><strong>Single Instruction Stream, Multiple Data Streams (SIMD):</strong> SIMD architecture involves
+                    the processing of a single instruction simultaneously on multiple data streams. This is commonly
+                    seen in vector processors, where the same operation is applied to multiple data elements
+                    concurrently.</li>
+                <li><strong>Multiple Instruction Streams, Single Data Stream (MISD):</strong> MISD architecture,
+                    although rare in practice, involves multiple instruction streams operating on a single data stream.
+                    This concept is not widely implemented due to its complexity and limited applicability.</li>
+                <li><strong>Multiple Instruction Streams, Multiple Data Streams (MIMD):</strong> MIMD architecture
+                    allows for the simultaneous execution of multiple instruction streams on multiple data streams. This
+                    is a versatile and widely used parallel processing architecture found in modern multi-core
+                    processors and parallel computing systems.</li>
+            </ol>
+            </p>
+        </div>
+        <div class="wh">
+            <h2>Pipelining</h2>
+            <ul>
+                <li>Pipelining involves dividing a process into several suboperations, with each suboperation associated
+                    with a segment.</li>
+                <li>The output of each segment is stored in a register, and this register information is passed to the
+                    next segment, facilitating a continuous flow of data.</li>
+                <li>Each segment operates independently, allowing for concurrent execution of all segments in the
+                    pipeline.</li>
+                <li>The term "pipelining" is derived from the sequential transfer of information from one segment to
+                    another.</li>
+            </ul>
+
+            <p><strong>Example: Performing Ai * Bi + Ci; for i = 1 to 7.</strong></p>
+            <p>
+                <strong>Segment 1:</strong> R1 &larr; Ai, R2 &larr; Bi
+                <br>
+                <strong>Segment 2:</strong> R3 &lrarr; R1 * R2, R4 &larr; Ci
+                <br>
+                <strong>Segment 3:</strong> R5 &larr; R3 + R4
+            </p>
+            <img src="../../images/pipe1.svg" alt="" class="wb">
+
+            <p>Pipelining is an efficient technique that allows for the overlap of different stages of instruction
+                execution, thereby improving overall throughput. Each segment operates concurrently, enabling the
+                processor to handle multiple instructions simultaneously. This approach significantly enhances the speed
+                and efficiency of data processing in modern computer architectures.</p>
+        </div>
+    </div>
+    <div class="content-box">
+        <p>References</p>
+        <ul>
+            <li><a href="https://www.youtube.com/watch?v=k5YMLXPy1SE&list=PLxCzCOWd7aiHMonh3G6QNKq53C6oNXGrX&index=15"
+                    target="_blank">Playlist &neArr;</a></li>
+
+            <li><a href="https://www.youtube.com/watch?v=6sIfSsz0rWw" target="_blank">Single Accumulator Organization
+                    (Lecture)
+                    &neArr;</a></li>
+            <li><a href="https://www.youtube.com/watch?v=vjqnWn5PdD0" target="_blank">General Register Organization
+                    &neArr;</a>
+            </li>
+            <li><a href="https://www.youtube.com/watch?v=C-3ocd1MkUE" target="_blank">Stack Organization &neArr;</a>
+            </li>
+            <li><a href="https://youtu.be/Di5oX0-PLY8?si=bTkKaBNnkjIeXZ3u" target="_blank">Parallel Processing
+                    &neArr;</a></li>
+        </ul>
+    </div>
+    <script src="../../../../public/main.js"></script>
+</body>
+
+</html>

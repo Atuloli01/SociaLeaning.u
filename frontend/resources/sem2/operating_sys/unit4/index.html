@@ -1,0 +1,985 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Memory Management</title>
+    <link rel="stylesheet" href="../../../../public/style.css">
+    <link rel="icon" href="../../../../public/logo/favicon_io/favicon.ico">
+    
+</head>
+
+<body class="bg-c">
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">back</a>
+        <a href="#t1" class="link">Role of memory management</a>
+        <a href="#t2" class="link">Memory management techniques</a>
+        <a href="#t3" class="link">What is logical address?</a>
+        <a href="#t4" class="link">Difference between contiguous and non-contiguous memory allocation</a>
+        <a href="#t5" class="link">Paging</a>
+        <a href="#t6" class="link">Virtual memory</a>
+        <a href="#t17" class="link">Page replacement algorithm</a>
+        <a href="#t7" class="link">File systems</a>
+        <a href="#t8" class="link">File system structure</a>
+        <a href="#t9" class="link">Disk scheduling</a>
+        <div class="botbut">
+            <a href="../unit5/index.html" class="link">Next Topic &rarr;</a>
+            <a href="../unit3/index.html" class="link">&larr; Previous Topic</a>
+        </div>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Memory Management</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Memory Management</h1>
+        <ul>
+            <li>Memory is the important part of the computer that is used to store te data. Its management is critical
+                to the computer system because the amout of main memory available in a computer system is very limited.
+            </li>
+            <li>At any time, many processes are competing for it. Moreover, to increase performance, several processes
+                are executed simultaneously. For this, we must keep several processes in the main memory, so it is even
+                more important to manage them effectively.</li>
+        </ul>
+        <div id="t1" class="wh">
+            <h2>Role of memory management</h2>
+            <ol>
+                <li>Allocation: Memory management is responsible for allocating memory to processes or programs when
+                    they request it. It tracks the availability of memory blocks and assigns them to processes based on
+                    their requirements. This allocation process ensures that each program receives the necessary memory
+                    to run correctly.</li>
+                <li>Deallocation: When a process no longer needs memory, memory management deallocates the memory and
+                    makes it available for other processes. This deallocation prevents memory leakage and optimizes
+                    memory usage.</li>
+                <li>Memory Organization: Memory management organizes the available memory space efficiently to
+                    accommodate multiple processes. It divides the memory into fixed-size blocks or pages, creating a
+                    logical structure that simplifies the allocation and deallocation process.</li>
+                <li>Memory Protection: Memory management enforces memory protection mechanisms to ensure that processes
+                    do not access memory locations that they are not authorized to access. It prevents one process from
+                    interfering with another process's memory, which enhances security and stability.</li>
+                <li>Memory Sharing: In certain cases, multiple processes may need to share memory resources. Memory
+                    management facilitates memory sharing by allowing multiple processes to access the same memory
+                    region, enabling efficient communication and data exchange between processes.</li>
+                <li>Fragmentation Management: Memory management handles fragmentation, which can occur due to the
+                    allocation and deallocation of memory blocks. It manages both internal fragmentation (unused memory
+                    within allocated blocks) and external fragmentation (unused memory between allocated blocks) to
+                    minimize wastage of memory.</li>
+            </ol>
+        </div>
+        <div id="t2" class="wh">
+            <h2>Memory management Techniques:</h2>
+            <p>The memory management techniques can be classified into following main categories:
+            <ul>
+                <li>Contiguous memory management schemes</li>
+                <li>Non-contiguous memory management schemes</li>
+            </ul>
+            </p>
+            <img src="../../images/memorymng1.svg" alt="" class="wb">
+        </div>
+        <div id="t3" class="wh">
+            <h2>What is a logical address?</h2>
+            <ul>
+                <li>A logical address is an address that is generated by the CPU during program execution. The logical
+                    address is a virtual address as it does not exist physically, and therefore, it is also known as a
+                    Virtual Address. This address is used as a reference to access the physical memory location by CPU.
+                </li>
+            </ul>
+            <h2>What is a physical address?</h2>
+            <ul>
+                <li>The physical address identifies the physical location of required data in memory. The user never
+                    directly deals with the physical address but can access it by its corresponding logical address. The
+                    user program generates the logical address and thinks it is running in it, but the program needs
+                    physical memory for its execution. Therefore, the logical address must be mapped to the physical
+                    address by MMU before they are used. The Physical Address Space is used for all physical addresses
+                    corresponding to the logical addresses in a logical address space.</li>
+            </ul>
+        </div>
+        <div id="t4" class="wh">
+            <h2>Difference between contiguous and Non-contiguous memory allocation:</h2>
+            <div class="in">
+                <h3>Contiguous memory allocation:</h3>
+                <ul>
+                    <li>Contiguous memory allocation is basically a method in which a single contiguous section/part of
+                        memory is allocated to a process or file needing it. Because of this all the available memory
+                        space resides at the same place together, which means that the freely/unused available memory
+                        partitions are not distributed in a random fashion here and there across the whole memory space.
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Non-contiguous memory allocation:</h3>
+                <ul>
+                    <li>Non-Contiguous memory allocation is basically a method on the contrary to contiguous allocation
+                        method, allocates the memory space present in different locations to the process as per it’s
+                        requirements. As all the available memory space is in a distributed pattern so the freely
+                        available memory space is also scattered here and there. This technique of memory allocation
+                        helps to reduce the wastage of memory, which eventually gives rise to Internal and external
+                        fragmentation.</li>
+                </ul>
+            </div>
+            <img src="../../images/memorymng2.svg" alt="" class="wb">
+            <div class="in">
+                <h3>Memory allocation algorithms:</h3>
+                <ol>
+                    <li>Best fit: Selects the memory parition that best fits the size of the process. It minimizes
+                        internal fragmentation.</li>
+                    <li>Worst fit: Selects the largest available memory parition to allocate the process. It maximizes
+                        external fragmentation.</li>
+                    <li>First fit: Allocates the process to the first availale memory partition that is large enough.
+                    </li>
+                </ol>
+                <p><b>Practise problems based on memory allocation algorithms:</b></p>
+                <p>
+                    Consider six memory partitions of size 200 KB, 400 KB, 600 KB, 500 KB, 300 KB and 250 KB. These
+                    partitions need to be allocated to four processes of sizes 357 KB, 210 KB, 468 KB and 491 KB in that
+                    order.
+                    <br>Perform the allocation of processes using:
+                <ol>
+                    <li>First fit algorithm</li>
+                    <li>Best Fit algorithm</li>
+                    <li>Worst file algorithm</li>
+                </ol>
+                </p>
+                <p><b>Solution:</b>
+                    <br>According to question,
+                    <br>The main memory has been divided into fixed size partitions as:
+                    <br><img src="../../images/alloc1.svg" class="wb" alt="">
+                </p>
+                <p>Let us say the given processes are:
+                <ul>
+                    <li>Process P1 = 357 KB</li>
+                    <li>Process P2 = 210 KB</li>
+                    <li>Process P3 = 468 KB</li>
+                    <li>Process P4 = 491 KB</li>
+                </ul>
+                </p>
+                <div class="wh">
+                    <p><b>Allocation using First Fit Algorithm:</b></p>
+                    <ul>
+                        <li>In First Fit Algorithm:
+                            <ul>
+                                <li>Algorithm starts scanning the partitions serially.</li>
+                                <li>When a partition big enough to store the process is found, it allocates that
+                                    partition to the process.</li>
+                                <li>The allocation of partitions of the given processes is shown below:</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <img src="../../images/alloc2.svg" alt="" class="wb">
+                    <p>P4 is not allocated because no partition size greater than or equal to the size of process P4 is
+                        available.</p>
+                </div>
+                <div class="wh">
+                    <p><b>Allocation using Best Fit Algorithm:</b></p>
+                    <ul>
+                        <li>In Best Fit Algorithm:
+                            <ul>
+                                <li>Algorithm first scans all the partitions.</li>
+                                <li>It then allocates the partition of smallest size that can store the process.</li>
+                            </ul>
+                        </li>
+                        <li>The allocation of paritions to the given processes is shown below:</li>
+                    </ul>
+                    <img src="../../images/alloc3.svg" alt="" class="wb">
+                </div>
+                <div class="wh">
+                    <p><b>Allocation using Worst Fit Algorithm:</b></p>
+                    <ul>
+                        <li>In Worst Fit Algorithm,
+                            <ul>
+                                <li>Algorithm fist scans all the partitions.</li>
+                                <li>It then allocates the partitions of largest size to the process.</li>
+                            </ul>
+                        <li>The allocation of partitions to the given processes is shown below:</li>
+                        </li>
+                    </ul>
+                    <img src="../../images/alloc4.svg" alt="" class="wb">
+                </div>
+            </div>
+        </div>
+        <div id="t5" class="wh">
+            <h2>Paging</h2>
+            <ul>
+                <li>In operating systems, paging is a storage mechanism used to retrieve processes from the secondary
+                    storage into the main memory in the form of pages.</li>
+                <li>The main idea behind the paging is to divide each process in the form of pages. The main memory will
+                    also be divided in the form of frames.</li>
+                <li>One page of the process is to be stored in one of the frames of the memory. The pages can be stored
+                    at the different locations of the memory but the priority is always to find the contiguous frames or
+                    holes.</li>
+                <li>
+                    Pages of the process are brought into the main memory only when they are required otherwise they
+                    reside in the secondary storage.
+                </li>
+            </ul>
+        </div>
+        <div id="t6" class="wh">
+            <h2>What is virtual memory in OS?</h2>
+            <ul>
+                <li>Virtual Memory is a storage scheme that provides user an illusion of having a very big main memory.
+                    This is done by treating a part of secondary memory as the main memory.
+                </li>
+                <li>In this scheme, User can load the bigger size processes than the available main memory by having the
+                    illusion that the memory is available to load the process.</li>
+                <li>Instead of loading one big process in the main memory, the Operating System loads the different
+                    parts of more than one process in the main memory.</li>
+                <li>By doing this, the degree of multiprogramming will be increased and therefore, the CPU utilization
+                    will also be increased.</li>
+            </ul>
+            <p><b>How virtual memory works?</b></p>
+            <ul>
+                <li>In modern word, virtual memory has become quite common these days. In this scheme, whenever some
+                    pages needs to be loaded in the main memory for the execution and the memory is not available for
+                    those many pages, then in that case, instead of stopping the pages from entering in the main memory,
+                    the OS search for the RAM area that are least used in the recent times or that
+                    are not referenced and copy that into the secondary memory to make the space for the new pages in
+                    the main memory.</li>
+                <li>Since all this procedure happens automatically, therefore it makes the computer feel like it is
+                    having the unlimited RAM.</li>
+            </ul>
+            <p>Demand Paging</p>
+            <ul>
+                <li>Demand Paging is a popular method of virtual memory management. In demand paging, the pages of a
+                    process which are least used, get stored in the secondary memory.</li>
+                <li>A page is copied to the main memory when its demand is made or page fault occurs. There are various
+                    page replacement algorithms which are used to determine the pages which will be replaced. We will
+                    discuss each one of them later in detail.</li>
+            </ul>
+            <p><b>Advantages of virtual memory</b></p>
+            <ul>
+                <li>The degree of Multiprogramming will be increased.</li>
+                <li>User can run large application with less real RAM.</li>
+                <li>There is no need to buy more memory RAMs.</li>
+            </ul>
+            <p><b>Disadvantages of Virtual memory</b></p>
+            <ul>
+                <li>The system becomes slower since swapping takes time.</li>
+                <li>It takes more time in switching between applications.</li>
+                <li>The user will have the lesser hard disk space for its use.</li>
+            </ul>
+        </div>
+        <div id="t17" class="wh">
+            <h2>Page replacement algorithms</h2>
+            <ul>
+                <li>For process to be executed the process should be in main memory.</li>
+                <li>We know that the size of main memory is finite/limited.</li>
+                <li>Sometime it may happen that the size of process might be larger than main memory, then we cannot
+                    load complete process to main memory. Then it is better to load only main portion of process which
+                    is required in main memory and this type of technique is known as demand paging.</li>
+                <li>By loading only main portion of process then there can recide many processes in main memory.</li>
+                <li>To implement this, we divide process into small equal size portion called pages.</li>
+            </ul>
+            <img src="../../images/page4.svg" alt="" class="wb">
+            <ul>
+                <li>Using demanding paging concept we can implement virtual memory concept.</li>
+                <li>If the needed page is not in main memory then it is known as <b>page fault</b>.</li>
+                <li>Operating system will load that needed page in main memory, now suppose if main memory is full then
+                    we can't place the required page in main memory then OS have to replace page that are already
+                    existing in main memory so that requested page can have a frame in main memory.</li>
+            </ul>
+            <img src="../../images/page5.svg" alt="" class="wb">
+            <ul>
+                <li>Now to decide which page should be replaced, we use page replacement algorithms.</li>
+                <li>Following are the page replacement algorithms:
+                    <ol>
+                        <li>FIFO</li>
+                        <li>LRU</li>
+                        <li>Optimal</li>
+                    </ol>
+                </li>
+            </ul>
+            <div class="in">
+                <h3>FIFO page replacement algorithm</h3>
+                <ul>
+                    <li><a href="https://youtu.be/FWoMSiMep80" class="ba" target="_blank">Video lecture &neArr;</a></li>
+                </ul>
+                <img src="../../images/page1.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>LRU page replacement algorithm</h3>
+                <ul>
+                    <li><a class="ba" href="https://youtu.be/DXU7SqsYDvg" target="_blank">Video lecture &neArr;</a></li>
+                    <li>Least recently used.</li>
+                    <li>Replace a page which is not in use for a long time.</li>
+                </ul>
+                <img src="../../images/page2.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>Optimal page replacement algorithm</h3>
+                <ul>
+                    <li><a href="https://youtu.be/DXU7SqsYDvg" class="ba" target="_blank">Video lecture &neArr;</a></li>
+                    <li>Replace a page that will not be used in near future.</li>
+                    <li>Optimal algorithm will give you least number of page fault.</li>
+                </ul>
+                <img src="../../images/page3.svg" alt="" class="wb">
+            </div>
+        </div>
+        <div id="t7" class="wh">
+            <h2>File Systems</h2>
+            <ul>
+                <li>File system is the part of the operating system which is responsible for file management. It
+                    provides a mechanism to store the data and access to the file contents including data and programs.
+                    Some operating systems treats everything as a file for example Ubuntu.</li>
+                <li>The file system take care of the following issues
+                    <ol>
+                        <li>File structure: <br>We have seen various data structures in which the file can be stored.
+                            The task of the file system is to maintain an optimal file structure.</li>
+                        <li>Recovering free space:
+                            <br>Whenever a file gets deleted from the hard disk, there is a free spaced created in the
+                            disk. There can be may such spaces which need to be recovered in order to reallocate them to
+                            other files.
+                        </li>
+                        <li>Disk space assignment to the files: <br>The major concern about the file is decidding where
+                            to store the files on the hard disk.
+                        </li>
+                        <li>Tracking data location:
+                            <br>A File may or may not be stored within only one block. It can be stored in the non
+                            contiguous blocks on the disk. We need to keep track of all the blocks on which the part of
+                            the files reside.
+                        </li>
+                    </ol>
+                </li>
+            </ul>
+        </div>
+        <div id="t8" class="wh">
+            <h2>File System structure</h2>
+            <ul>
+                <li>File system provide efficient access to the disk by allowing data to be stored, located and
+                    retrieved in a convenient way. A file system must be able to store the file, locate and retrieve the
+                    file.</li>
+                <li>Most of the Operating Systems use layering approach for every task including file systems. Every
+                    layer of the file system is responsible for some activities.</li>
+                <li>The image shown below, elaborates how the file system is divided in different layers, and also the
+                    functionality of each layer.</li>
+            </ul>
+            <img src="../../images/memorymng3.svg" alt="" class="wb">
+            <div class="in">
+                <h3>Storage structure in Operating systems</h3>
+                <ul>
+                    <li>Basically we want the programs and data to reside in main memory permanently.</li>
+                    <li>This arrangement is usually not possible for the following two reasons:
+                        <ol>
+                            <li>Main memory is usually too small to store all needed programs and data permanently.</li>
+                            <li>Main memory is a volatile storage device that loses its contents when power is turned
+                                off or otherwise lost.</li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>There are two types of storage devices</h3>
+                <ol>
+                    <li><b>Volatile Storage Device:</b> It loses its contents when the power of the device is removed.
+                    </li>
+                    <li><b>Non-Volatile Storage device</b>: It does not loses its contents when the power is removed. It
+                        holds all the data when the power is removed.</li>
+                </ol>
+                <ul>
+                    <li>Secondary Storage is used as an extension of main memory. Secondary storage devices can hold the
+                        data permanently.</li>
+                    <li>Storage devices consists of Registers, Cache, Main-Memory, Electronic-Disk, Magnetic- Disk,
+                        Optical-Disk, Magnetic-Tapes. Each storage system provides the basic system of storing a datum
+                        and of holding the datum until it is retrieved at a later time. All the storage devices differ
+                        in speed, cost, size and volatility. The most common Secondary-storage device is a
+                        Magnetic-disk, which provides storage for both programs and data.
+                        <br> In this fig Hierarchy of storage is shown below &darr;
+                    </li>
+                </ul>
+                <img src="../../images/memorymng4.svg" alt="" class="wb">
+                <p>&uarr; Storage device hierarchy</p>
+                <ul>
+                    <li> In this hierarchy all the storage devices are arranged according to speed and cost. The higher
+                        levels are expensive, but they are fast. As we move down the hierarchy, the cost per bit
+                        generally decreases, where as the access time generally increases.</li>
+                    <li>The storage systems above the Electronic disk are Volatile, where as those below are Non- V
+                        olatile.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>File access methods</h3>
+                <ul>
+                    <li>When a file is used, information is read and accessed into computer memory and there are several
+                        ways to access this information of the file. Some systems provide only one access method for
+                        files. Other systems, such as those of IBM, support many access methods, and choosing the right
+                        one for a particular application is a major design problem.</li>
+                    <li>
+                        There are three ways to access a file into a computer system:
+                        <ol>
+                            <li>Sequential-Access</li>
+                            <li>Direct Access</li>
+                            <li>Index sequential Method</li>
+                        </ol>
+                    </li>
+                </ul>
+                <div class="wh">
+                    <p><b>Sequential-Access</b></p>
+                    <ul>
+                        <li>It is the simplest access method. Information in the file is processed in order, one record
+                            after the other. This mode of access is by far the most common; for example, editor and
+                            compiler usually access the file in this fashion.</li>
+                    </ul>
+                    <p><b>Advantages of Sequential Access Method:</b>
+                    <ul>
+                        <li>It is simple to implement this file access mechanism.</li>
+                        <li>It is suitable for applications that require access to all records in a file, in a
+                            specific
+                            order.</li>
+                        <li>It is less prone to data corruption as the data is written sequentially and not
+                            randomly.</li>
+                        <li>It is a more efficient method for reading large files, as it only reads the required
+                            data
+                            and does not waste time reading unnecessary data.</li>
+                        <li>It is a reliable method for backup and restore operations, as the data is stored
+                            sequentially and can be easily restored if required.</li>
+                    </ul>
+                    </p>
+                    <p><b>Disadvantages of Sequential Access Method:</b>
+                    <ul>
+                        <li>It does not allow for quick access to specific records in the file. The entire file must
+                            be searched sequentially to find a specific record, which can be time-consuming.</li>
+                        <li>It is not well-suited for applications that require frequent updates or modifications to the
+                            file. Updating or inserting a record in the middle of a large file can be a slow and
+                            cumbersome process.</li>
+                        <li>Sequential access can also result in wasted storage space if records are of varying lengths.
+                            The space between records cannot be used by other records, which can result in inefficient
+                            use of storage.</li>
+                    </ul>
+                    </p>
+                </div>
+                <div class="wh">
+                    <p><b>Direct Access</b></p>
+                    <ul>
+                        <li>Another method is direct access method also known as relative access method.</li>
+                        <li>A fixed-length logical record that allows the program to read and write record rapidly, in
+                            no particular order.</li>
+                        <li>The direct access is based on the disk model of a file since disk allows random access to
+                            any file block.</li>
+                    </ul>
+                    <p><b>Advantages of Direct Access Method:</b></p>
+                    <ul>
+                        <li>The files can be immediately accessed decreasing the average access time.</li>
+                        <li>In the direct access method, in order to access a block, there is no need of traversing
+                            all the blocks present before it.</li>
+                    </ul>
+                </div>
+                <div class="wh">
+                    <p><b>Index sequential method</b></p>
+                    <ul>
+                        <li>It is the other method of accessing a file that is built on the top of the sequential access
+                            method.</li>
+                        <li>These methods construct an index for the file. The index, like an index in the back of a
+                            book, contains the pointer to the various blocks. To find a record in the file, we first
+                            search the index, and then by the help of pointer we access the file directly.</li>
+                        <li>Key points:
+                            <ul>
+                                <li>It is built on top of Sequential access.</li>
+                                <li>It control the pointer by using index.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="wh">
+                    <p><b>Relative Record Access</b></p>
+                    <ul>
+                        <li>Relative record access is a file access method used in operating systems where records are
+                            accessed relative to the current position of the file pointer.</li>
+                        <li>In this method, records are located based on their position relative to the current record,
+                            rather than by a specific address or key value.</li>
+                        <li>Key Points of Relative Record Access:
+                            <ul>
+                                <li>Relative record access is a random access method that allows records to be accessed
+                                    based on their position relative to the current record.</li>
+                                <li>This method is efficient for accessing individual records but may not be suitable
+                                    for files that require frequent updates or random access to specific records.</li>
+                                <li>Relative record access requires fixed-length records and may not be flexible enough
+                                    for some applications.</li>
+                                <li>This method is useful for processing records in a specific order or for files that
+                                    are accessed sequentially.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <p><b>Advantages of Relative Record Access:</b></p>
+                    <ul>
+                        <li>Random Access: Relative record access allows random access to records in a file. The system
+                            can access any record at a specific offset from the current position of the file pointer.
+                        </li>
+                        <li>Efficient Retrieval: Since the system only needs to read the current record and any records
+                            that need to be skipped, relative record access is more efficient than sequential access for
+                            accessing individual records.</li>
+                        <li>Useful for Sequential Processing: Relative record access is useful for processing records in
+                            a specific order. For example, if the records are sorted in a specific order, the system can
+                            access the next or previous record relative to the current position of the file pointer.
+                        </li>
+                    </ul>
+                    <p><b>Disadvantages of Relative Record Access:</b></p>
+                    <ul>
+                        <li>Fixed Record Length: Relative record access requires fixed-length records. If the records
+                            are of
+                            varying length, it may be necessary to use padding to ensure that each record is the same
+                            length.</li>
+                        <li>
+                            Limited Flexibility: Relative record access is not very flexible. It is difficult to insert
+                            or delete records in the middle of a file without disrupting the relative positions of other
+                            records.</li>
+                        <li>Limited Application: Relative record access is best suited for files that are accessed
+                            sequentially or with some regularity, but it may not be appropriate for files that are
+                            frequently updated or require random access to specific records.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="t9" class="wh">
+            <h2>Disk Scheduling</h2>
+            <ul>
+                <li>Disk scheduling is done by operating systems to schedule I/O requests arriving for the disk. Disk
+                    scheduling is also known as I/O scheduling.</li>
+                <li>Disk scheduling is important because:
+                    <ul>
+                        <li>Multiple I/O requests may arrive by different processes and only one I/O request can be
+                            served at a time by the disk controller. Thus other I/O requests need to wait in the waiting
+                            queue and need to be scheduled.</li>
+                        <li>Two or more requests may be far from each other so it can result in greater disk arm
+                            movement.</li>
+                        <li>Hard drives are one of the slowest parts of the computer system and thus need to be
+                            accessed in an efficient manner.</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="in">
+                <h3>Important terminologies</h3>
+                <ul>
+                    <li><b>Seek time : Seek time is the time taken to locate the disk arm to a specified track where the
+                            data is to be read or write. So the disk scheduling algorithm that gives minimum average
+                            seek time is better.</b></li>
+                    <li><b>Rotational latency : </b> Rotational Latency is the time taken by the desired sector of disk
+                        to rotate into a position so that it can access the read/write heads. So the disk scheduling
+                        algorithm that gives minimum rotational latency is better.</li>
+                    <li><b>Transfer Time : </b> Transfer time is the time to transfer the data. It depends on the
+                        rotating speed of the disk and number of bytes to be transferred.</li>
+                    <li><b>Disk Access Time = </b> Seek time + Rotational latency + Transfer time
+                        <br>& Total seek time = Total head movement * seek time.
+                    </li>
+                    <li><b>Disk Response Time : </b>Response Time is the average of time spent by a request waiting to
+                        perform its I/O operation. Average Response time is the response time of the all requests.
+                        Variance Response Time is measure of how individual request are serviced with respect to average
+                        response time. So the disk scheduling algorithm that gives minimum variance response time is
+                        better.</li>
+                </ul>
+            </div>
+            <p>Now we are going to discuss various Disk Scheduling Algorithms</p>
+            <div class="in">
+                <h3>1. FCFS</h3>
+                <ul>
+                    <li>FCFS is the simplest of all the Disk Scheduling Algorithms. In FCFS, the requests are addressed
+                        in the order they arrive in the disk queue.</li>
+                    <li>Let us understand this with the help of an example.</li>
+                </ul>
+                <img src="../../images/memorymng5.svg" alt="" class="wb">
+                <ul>
+                    <li> So, total overhead movement (total distance covered by the disk arm) : = ( 170 - 50 ) + ( 170 -
+                        43 ) + ( 140 - 43 ) + ( 140 - 16 ) + ( 190 - 16 )= 642</li>
+                </ul>
+                <p><b>Advantages:</b>
+                <ul>
+                    <li>Every request gets a fair chance</li>
+                    <li>No indefinite postponement</li>
+                </ul>
+                </p>
+                <p><b>Disadvantages:</b>
+                <ul>
+                    <li>Does not try to optimize seek time.</li>
+                    <li>May not provide the best possible service.</li>
+                </ul>
+                </p>
+            </div>
+            <div class="in">
+                <h3>2. SSTF</h3>
+                <ul>
+                    <li>In SSTF (Shortest Seek Time First), requests having shortest seek time are
+                        executed first. So, the seek time of every request is calculated in advance in the queue and
+                        then they are scheduled according to their calculated seek time.</li>
+                    <li>As a result, the request near the disk arm will get executed first. SSTF is certainly an
+                        improvement over FCFS as it decreases the average response time and increases the
+                        throughput of system. Let us understand this with the help of an example.</li>
+                </ul>
+                <img src="../../images/memorymng6.svg" alt="" class="wb">
+                <ul>
+                    <li>So,
+                        total overhead movement (total distance covered by the disk arm) = ( 50 - 16 ) + ( 190 - 16 ) =
+                        208</li>
+                </ul>
+                <p><b>Advantages:</b>
+                <ul>
+                    <li>Average Response Time decreases</li>
+                    <li>Throughput increases</li>
+                </ul>
+                </p>
+                <p><b>Disadvantages:</b>
+                <ul>
+                    <li>Overhead to calculate seek time in advance</li>
+                    <li>Can cause Starvation for a request if it has a higher seek time as compared to
+                        incoming requests</li>
+                    <li>High variance of response time as SSTF favors only some requests</li>
+                </ul>
+                </p>
+            </div>
+            <div class="in">
+                <h3>3. SCAN</h3>
+                <ul>
+                    <li>In SCAN algorithm the disk arm moves in a particular direction and services the requests coming
+                        in its path and after reaching the end of the disk, it reverses its direction and again services
+                        the request arriving in its path.</li>
+                    <li>So, this algorithm works as an elevator and is hence also known as an elevator algorithm. As a
+                        result, the requests at the midrange are serviced more and those arriving behind the disk arm
+                        will have to wait.</li>
+                </ul>
+                <img src="../../images/memorymng7.svg" alt="" class="wb">
+                <ul>
+                    <li>Therefore, the total overhead movement (total distance covered by the disk arm): ( 199 - 50 ) +
+                        ( 199 - 16 ) = 322</li>
+                </ul>
+                <p><b> Advantages:</b>
+                <ul>
+                    <li>High throughput</li>
+                    <li>Low variance of response time</li>
+                    <li>Average response time</li>
+                </ul>
+                </p>
+                <p><b>Disadvantages:</b>
+                <ul>
+                    <li>Long waiting time for requests for locations just visited by disk arm.</li>
+                </ul>
+                </p>
+            </div>
+            <div class="in">
+                <h3>4. CSCAN</h3>
+                <ul>
+                    <li>In SCAN algorithm, the disk arm again scans the path that has been
+                        scanned, after reversing its direction. So, it may be possible that too many requests are
+                        waiting at the other end or there may be zero or few requests pending at the scanned area.</li>
+                    <li>These situations are avoided in CSCAN algorithm in which the disk arm instead of reversing its
+                        direction goes to the other end of the disk and starts servicing the requests from there. So,
+                        the disk arm moves in a circular fashion and this algorithm is also similar to SCAN algorithm
+                        and
+                        hence it is known as C-SCAN (Circular SCAN).</li>
+                </ul>
+                <img src="../../images/memorymng8.svg" alt="" class="wb">
+                <ul>
+                    <li> so, the total overhead movement (total distance covered by the disk arm) is calculated as : (
+                        199 - 50 ) + ( 199 - 0 ) + ( 43 - 0 ) = 391</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>5. LOOK</h3>
+                <ul>
+                    <li>It is similar to the SCAN disk scheduling algorithm except for the
+                        difference that the disk arm in spite of going to the end of the disk goes only to the last
+                        request to be serviced in front of the head and then reverses its direction from there only.
+                        Thus it prevents the extra delay which occurred due to unnecessary traversal to the end of the
+                        disk.</li>
+                </ul>
+                <img src="../../images/memorymng9.svg" alt="" class="wb">
+                <ul>
+                    <li>So, the total overhead movement (total distance covered by the disk arm) is calculated as : (
+                        190 - 50 ) + ( 190 - 16 ) = 314</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>6. CLOOK</h3>
+                <ul>
+                    <li>As LOOK is similar to SCAN algorithm, in similar way, CLOOK is similar to CSCAN disk scheduling
+                        algorithm. </li>
+                    <li>In CLOOK, the disk arm in spite of going to the end goes only to the last request to be serviced
+                        in front of the head and then from there goes to the other end’s last request. Thus, it also
+                        prevents the extra delay which occurred due to unnecessary traversal to the end of the disk.
+                    </li>
+                </ul>
+                <img src="../../images/memorymng10.svg" alt="" class="wb">
+                <ul>
+                    <li>So, the total overhead movement (total distance covered by the disk arm) is calculated as : (
+                        190 - 50 ) + ( 190 - 16 ) + ( 43 - 16 ) = 341</li>
+                </ul>
+            </div>
+        </div>
+        <div class="wh">
+            <p>The range of services and add-ons provided by modern operating systems is constantly expanding, and four
+                basic operating system management functions are implemented by all operating systems. These management
+                functions are briefly described below and given the following overall context. The four main operating
+                system management functions (each of which are dealt with in more detail in different places) are:</p>
+            <ul>
+                <li>Process Management</li>
+                <li>Memory Management</li>
+                <li>File and Disk Management</li>
+                <li>I/O System Management</li>
+            </ul>
+            <p>Most computer systems employ secondary storage devices (magnetic disks). It provides low- cost,
+                non-volatile storage for programs and data (tape, optical media, flash drives, etc.). Programs and the
+                user data they use are kept on separate storage devices called files. The operating system is
+                responsible for allocating space for files on secondary storage media as needed.
+                <br><br>
+                There is no guarantee that files will be stored in contiguous locations on physical disk drives,
+                especially large files. It depends greatly on the amount of space available. When the disc is full,
+                new files are more likely to be recorded in multiple locations. However, as far as the user is
+                concerned, the example file provided by the operating system hides the fact that the file is fragmented
+                into multiple parts.
+                <br><br>The operating system needs to track the location of the disk for every part of every file on the
+                disk. In some cases, this means tracking hundreds of thousands of files and file fragments on a single
+                physical disk. Additionally, the operating system must be able to locate each file and perform read and
+                write operations on it whenever it needs to. Therefore, the operating system is responsible for
+                configuring the file system, ensuring the safety and reliability of reading and write operations to
+                secondary storage, and maintains access times (the time required to write data to or read data from
+                secondary storage).
+            </p>
+            <p><b>Disk management of the operating system includes:</b></p>
+            <ul>
+                <li>Disk Format</li>
+                <li>Booting from disk</li>
+                <li>Bad lock recovery</li>
+            </ul>
+            <div class="in">
+                <p><b>The low-level format or physical format:</b></p>
+                <ul>
+                    <li>Divides the disk into sectors before storing data so that the disk controller can read and write
+                        Each sector can be:</li>
+                    <li>The header retains information, data, and error correction code (ECC) sectors of data, typically
+                        512 bytes of data, but optional disks use the operating system’s own data structures to preserve
+                        files using disks.</li>
+                    <li>It is conducted in two stages:
+                        <ol>
+                            <li>Divide the disc into multiple cylinder groups. Each is treated as a logical disk.</li>
+                            <li>Logical format or “Create File System”. The OS stores the data structure of the first
+                                file system on the disk. Contains free space and allocated space.</li>
+                        </ol>
+                    </li>
+                </ul>
+                <ul>
+                    <li>For efficiency, most file systems group blocks into clusters. Disk I / O runs in blocks. File I
+                        / O runs in a cluster.</li>
+                    <li>For example, the sizes can be 256,512, and 1,024 bytes. If disk is formatted with larger sector
+                        size, fewer sectors can fit on each track.</li>
+                    <li>As a result fewer headers and trailers are written on each track and more space is obtainable
+                        for
+                        user data. – Some operating systems can handle a sector size of 512 bytes.</li>
+                    <li>Operating system keeps its own data structures on disk before it use disk to store the files. It
+                        performs this with following two steps:
+                        <ol>
+                            <li>It partitions the disk into one or more groups of cylinders. Each partition is treated
+                                by OS as a separate disk.</li>
+                            <li>Logical formatting: That means creation of file system.</li>
+                        </ol>
+                    </li>
+                    <li>In order to increase the efficiency, file system groups blocks in chunks called as clusters.
+                    </li>
+                    <li>Some operating systems give special programs the ability to use a disk partition as a large
+                        sequential array of logical blocks, without any file-system data structures. This array is
+                        sometimes called the raw disk, and I/O to this array is called as raw I/O.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <p><b>Boot block:</b></p>
+                <ul>
+                    <li>When the computer is turned on or restarted, the program stored in the initial bootstrap ROM
+                        finds the location of the OS kernel from the disk, loads the kernel into memory, and runs the OS
+                        start.</li>
+                    <li>To change the bootstrap code, you need to change the ROM and hardware chip. Only a small
+                        bootstrap loader program is stored in ROM instead.</li>
+                    <li>The full bootstrap code is stored in the “boot block” of the disk.</li>
+                    <li>A disk with a boot partition is called a boot disk or system disk.</li>
+                    <li>The bootstrap program is required for a computer to initiate the booting after it is
+                        powered up or rebooted.</li>
+                    <li>It initializes all components of the system, from CPU registers to device controllers
+                        and the contents of main memory, and then starts the operating system.</li>
+                    <li>The bootstrap program then locates the OS kernel on disk, loads that kemel into
+                        memory, and jumps to an initial address to start the operating-system execution.</li>
+                    <li>The Read Only Memory (ROM) does not require initialization and is at a fixed location that the
+                        processor can begin executing when powered up or reset. Therefore
+                        bootstrap is stored in ROM.</li>
+                    <li>Because of read only feature of ROM; it cannot be infected by a computer virus. The
+                        difficulty is that modification of this bootstrap code requires changing the ROM
+                        hardware chips.</li>
+                    <li>Therefore, most systems store a small bootstrap loader program in the boot ROM
+                        which invokes and bring full bootstrap program from disk into main memory.</li>
+                    <li>The modified version of full bootstrap program can be simply written onto the disk.</li>
+                    <li>The fixed storage location of full bootstrap program is in the “boot blocks”. </li>
+                    <li>A disk that has a boot partition is called a boot disk or system disk.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <p><b>Bad Blocks:</b></p>
+                <ul>
+                    <li>Disks are error-prone because moving parts have small tolerances.</li>
+                    <li>Most disks are even stuffed from the factory with bad blocks and are handled in a variety of
+                        ways.</li>
+                    <li>The controller maintains a list of bad blocks.</li>
+                    <li>The controller can instruct each bad sector to be logically replaced with one of the spare
+                        sectors. This scheme is known as sector sparing or transfer.</li>
+                    <li>A soft error triggers the data recovery process.</li>
+                    <li>However, unrecoverable hard errors may result in data loss and require manual intervention.</li>
+                    <li>Failure of the disk can be:
+                        <ol>
+                            <li>Complete, means there is no way other than replacing the disk. Back up of content must
+                                be taken on new disk.</li>
+                            <li>One or more sectors become faulty.</li>
+                            <li>After manufacturing, the bad blocks exist. Depending on the disk and controller in use,
+                                these blocks are handled in a different ways.</li>
+                            <li></li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+            <p>Disk management in operating systems involves organizing and maintaining the data on a storage device,
+                such as a hard disk drive or solid-state drive. The main goal of disk management is to efficiently
+                utilize the available storage space and ensure data integrity and security.
+                <br><br>
+                Some common disk management techniques used in operating systems include:
+            <ol>
+                <li>Partitioning: This involves dividing a single physical disk into multiple logical
+                    partitions. Each partition can be treated as a separate storage device, allowing for
+                    better organization and management of data.</li>
+                <li>Formatting: This involves preparing a disk for use by creating a file system on it.
+                    This process typically erases all existing data on the disk.</li>
+                <li>File system management: This involves managing the file systems used by the
+                    operating system to store and access data on the disk. Different file systems have
+                    different features and performance characteristics.</li>
+                <li>Disk space allocation: This involves allocating space on the disk for storing files
+                    and directories. Some common methods of allocation include contiguous allocation,
+                    linked allocation, and indexed allocation.</li>
+                <li>Disk defragmentation: Over time, as files are created and deleted, the data on a disk
+                    can become fragmented, meaning that it is scattered across the disk. Disk defragmentation involves
+                    rearranging the data on the disk to improve performance.</li>
+            </ol>
+            </p>
+            <p><b>Advantages of disk management include:</b></p>
+            <ul>
+                <li>Improved organization and management of data.</li>
+                <li>Efficient use of available storage space.</li>
+                <li>Improved data integrity and security.</li>
+                <li>Improved performance through techniques such as defragmentation.</li>
+            </ul>
+            <p><b>
+                    Disadvantages of disk management include:</b></p>
+            <ul>
+                <li>Increased system overhead due to disk management tasks.</li>
+                <li>Increased complexity in managing multiple partitions and file systems.</li>
+                <li>Increased risk of data loss due to errors during disk management tasks.</li>
+                <li>Overall, disk management is an essential aspect of operating system management
+                    and can greatly improve system performance and data integrity when implemented properly.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="content-box">
+        <h2>Previous Years Questions</h2>
+        <div class="wh">
+            <h3>Q- With a diagram, discuss the steps involved in handling a page fault.</h3>
+        </div>
+        <div class="wh">
+            <h3>Q- Explain the contiguous and non-contiguous memory allocation.</h3>
+        </div>
+        <div class="wh">
+            <h3>Q- Memory paritions of 100kb, 500 kb, 200 kb, 300 kb, 600 kb are available how would best, worst, first
+                fit algorithm to place process 212, 417, 112, 426 in order? Which is the best algorithm?</h3>
+            <div class="in">
+                <p><b>Solution:</b></p>
+                <img src="../../images/alloc5.svg" alt="" class="wb">
+                <p>And the given processes are:
+                <ul>
+                    <li>Process P1 = 212 KB</li>
+                    <li>Process P2 = 417 KB</li>
+                    <li>Process P3 = 112 KB</li>
+                    <li>Process P4 = 426 KB</li>
+                </ul>
+                <div class="wh">
+                    <p><b>Allocation using First Fit Algorithm:</b></p>
+                    <img src="../../images/alloc6.svg" alt="" class="wb">
+                </div>
+                <div class="wh">
+                    <p><b>Allocation using Best Fit Algorithm:</b></p>
+                    <img src="../../images/alloc7.svg" alt="" class="wb">
+                </div>
+                <div class="wh">
+                    <p><b>Allocation using Worst Fit Algorithm:</b></p>
+                    <img src="../../images/alloc8.svg" alt="" class="wb">
+                </div>
+                <ul>
+                    <li>Best Fit Algorithm is the best algorithm because all the process get memory allocation to be
+                        executed.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="wh">
+            <h3>Q- How many page fault occur for FIFO, LRU and Optimal page replacement algorithm with following
+                reference string for four-page frames:
+                <br>1, 2, 3, 4, 5, 3, 4, 1, 6, 7, 8, 7, 9, 7, 8, 9, 5, 4, 5, 4, 2
+            </h3>
+        </div>
+        <div class="wh">
+            <h3>Q- The queue of requests in FIFO is 86, 147, 91, 177, 94, 150, 102, 175, 130. What is the total head
+                movement needed to satisfy the requests for the following Scheduling algorithms:
+                <br>FCFS, SSTF, SCAN, LOOK, C-SCAN.
+            </h3>
+            <div class="in">
+                <p><b>Solution:</b>
+                    <br>The queue of requests in FIFO is 86, 147, 91, 177, 94, 150, 102, 175, 130
+                    <br>let's assume the initial position of the head is at track 100
+                    <br>
+                </p>
+                <p><b>FCFS &darr;</b></p>
+                <img src="../../images/ds1.svg" alt="" class="wb">
+                <ul>
+                    <li>So, total overhead movement (total distance covered by the disk arm) = (100 - 86) + (147 - 86) +
+                        (147 - 91) + (177 - 91) + (177 - 94) + (150 - 94) + (150 - 102) + (175 - 102) + (175 - 130) =
+                        522</li>
+                </ul>
+                <p><b>SSTF &darr;</b></p>
+                <img src="../../images/ds2.svg" alt="" class="wb">
+                <ul>
+                    <li>So, total overhead movement (total distance covered by the disk arm) = (102 - 100) + (102 - 86)
+                        + (177 - 86) = 109</li>
+                </ul>
+                <p><b>SCAN &darr;</b></p>
+                <ul>
+                    <li>Suppose we are moving towards larger value.</li>
+                </ul>
+                <img src="../../images/ds3.svg" alt="" class="wb">
+                <ul>
+                    <li>So, total overhead movement (total distance covered by the disk arm) = (180 - 100) + (180 - 86)
+                        = 174</li>
+                </ul>
+                <p><b>C-SCAN &darr;</b></p>
+                <ul>
+                    <li>Suppose we are moving towards larger value.</li>
+                </ul>
+                <img src="../../images/ds4.svg" alt="" class="wb">
+                <ul>
+                    <li>So, total overhead movement (total distance covered by the disk arm) = (180-100) + (180 - 0) +
+                        (94 - 0) = 354</li>
+                </ul>
+                <p><b>LOOK &darr;</b></p>
+                <ul>
+                    <li>Suppose we are moving towards larger value.</li>
+                </ul>
+                <img src="../../images/ds5.svg" alt="" class="wb">
+                <ul>
+                    <li>So, total overhead movement (total distance covered by the disk arm) = (180 - 100) + (180 - 86)
+                        = 174</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="../../../../public/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEHU E-Learning Course Selection</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #760404;
+            --secondary-color: #e48e8e;
+            --text-color: #333;
+            --bg-color: #fff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            min-height: 100vh;
+            transition: background 0.3s ease;
+            padding: 1rem;
+        }
+
+        body.dark-mode {
+            --primary-color: #1a1a1a;
+            --secondary-color: #333333;
+            --text-color: #fff;
+            --bg-color: #222;
+        }
+
+        .logo {
+            display: block;
+            width: 300px;
+            height: auto;
+            margin: 20px auto;
+        }
+
+        .theme-switch {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .switch {
+            background: #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 10px;
+            border-radius: 20px;
+            cursor: pointer;
+            width: 60px;
+        }
+
+        .switch i {
+            font-size: clamp(0.8rem, 1.5vw, 1rem);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: clamp(10px, 3vw, 20px);
+            background-color: var(--bg-color);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: var(--text-color);
+            margin-bottom: 30px;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+        }
+
+        .semester-section {
+            margin-bottom: clamp(15px, 3vw, 30px);
+            padding: clamp(10px, 3vw, 20px);
+            background-color: var(--bg-color);
+            border-radius: 8px;
+        }
+
+        .semester-title {
+            color: var(--text-color);
+            margin-bottom: 15px;
+            font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+        }
+
+        .course-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+            gap: clamp(10px, 2vw, 15px);
+        }
+
+        .course-card {
+            padding: clamp(10px, 2vw, 15px);
+            background-color: var(--bg-color);
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .course-name {
+            font-weight: 500;
+            color: var(--text-color);
+            font-size: clamp(0.9rem, 1.8vw, 1rem);
+        }
+
+        .course-code {
+            font-size: clamp(0.8rem, 1.6vw, 0.9rem);
+            color: var(--text-color);
+            opacity: 0.7;
+        }
+
+        .selected {
+            background-color: var(--secondary-color);
+        }
+
+        .selected .course-name,
+        .selected .course-code {
+            color: #fff;
+        }
+
+        @media (max-width: 480px) {
+            .theme-switch {
+                top: 10px;
+                right: 10px;
+            }
+
+            .container {
+                margin: 20px auto;
+            }
+
+            .semester-section {
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <img src="hill-black.png" alt="GEHU Logo" class="logo">
+
+    <div class="theme-switch">
+        <div class="switch" id="theme-toggle">
+            <i class="fas fa-sun"></i>
+            <i class="fas fa-moon"></i>
+        </div>
+    </div>
+
+    <div class="container">
+        <h1>GEHU E-Learning || BCA Course's Semester</h1>
+        
+        <div class="semester-section">
+            <h2 class="semester-title">Semester 1</h2>
+            <div class="course-list">
+                <div class="course-card" onclick="window.location.href='resources/sem1/Programming Concepts Using C Language/index.html'">
+                    <div class="course-name">Programming Concepts Using C Language</div>
+                </div>
+                <div class="course-card" onclick="window.location.href='resources/sem1/Computer Fundamentals and Information Technology/index.html'">
+                    <div class="course-name">Computer Fundamentals and Information Technology</div>
+                </div>
+                <div class="course-card" onclick="window.location.href='resources/sem1/Mathematical Foundation of Compuer Science/index.html'">
+                    <div class="course-name">Mathematical Foundation of Computer Science</div>
+                </div>
+                <div class="course-card" onclick="window.location.href='resources/sem1/professional_communication-1/index.html'">
+                  <div class="course-name">Professional Communication -1</div>
+              </div>
+              <div class="course-card" onclick="window.location.href='resources/sem1/health_edu/health.html'">
+                  <div class="course-name">Health Education</div>
+              </div>
+              <div class="course-card" onclick="window.location.href='resources/sem1/principle_of_management/index.html'">
+                  <div class="course-name">Principle of Management</div>
+              </div>
+            </div>
+        </div>
+
+        <div class="semester-section">
+          <h2 class="semester-title">Semester 2</h2>
+          <div class="course-list">
+              <div class="course-card" onclick="window.location.href='resources/sem2/datastructure_and_FO/index.html'">
+                  <div class="course-name">Data Structures and File Organization</div>
+              </div>
+              <div class="course-card" onclick="window.location.href='resources/sem2/advance_C/index.html'">
+                  <div class="course-name">Advance Concepts of 'C' Programming</div>
+              </div>
+              <div class="course-card" onclick="window.location.href='resources/sem2/OOPS_using_C++/index.html'">
+                  <div class="course-name">Object Oriented Programming Using C++</div>
+              </div>
+              <div class="course-card" onclick="window.location.href='resources/sem2/operating_sys/index.html'">
+                <div class="course-name">Operating System</div>
+            </div>
+            <div class="course-card" onclick="window.location.href='resources/sem2/digital_electronics/index.html'">
+                <div class="course-name">Digital Electronics</div>
+            </div>
+            <div class="course-card" onclick="window.location.href='resources/sem2/maths/index.html'">
+                <div class="course-name">Discrete mathematical Structures and Graph Theory</div>
+            </div>
+          </div>
+      </div>
+      
+      <div class="semester-section">
+        <h2 class="semester-title">Semester 3</h2>
+        <div class="course-list">
+            <div class="course-card" onclick="window.location.href='resources/sem3/datatbc301/index.html'">
+                <div class="course-name">Data Communication and Computer Networks </div>
+            </div>
+            <div class="course-card" onclick="window.location.href='resources/sem3/dbmstbc302/index.html'">
+                <div class="course-name">Database Management System</div>
+            </div>
+            <div class="course-card" onclick="window.location.href='resources/sem3/softetbc305/index.html'">
+                <div class="course-name">Software Engineering</div>
+            </div>
+            <div class="course-card" onclick="window.location.href='resources/sem3/coatbc304/index.html'">
+                <div class="course-name">Computer Organization and Architecture</div>
+            </div>
+            <div class="course-card" onclick="window.location.href='resources/sem3/javatbc303/index.html'">
+                <div class="course-name">Java Programming</div>
+            </div>
+            <div class="course-card" onclick="window.location.href='resources/sem3/careerxbc301/index.html'">
+                <div class="course-name">Career Skills-I</div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="semester-section">
+      <h2 class="semester-title">Semester 4</h2>
+      <div class="course-list">
+          <div class="course-card" onclick="window.location.href='resources/sem4/python_tbc401/index.html'">
+              <div class="course-name">Data Analytics Using Python</div>
+          </div>
+          <div class="course-card" onclick="window.location.href='resources/sem4/soft_pro_tbc403/index.html'">
+              <div class="course-name">Software Project Management and Information Systems</div>
+          </div>
+          <div class="course-card" onclick="window.location.href='resources/sem4/micro_tbc402/index.html'">
+              <div class="course-name">Microprocessor</div>
+          </div>
+          <div class="course-card" onclick="window.location.href='resources/sem4/comp_num_tbc405/index.html'">
+            <div class="course-name">Computer Based Numerical & Statistical Techniques</div>
+        </div>
+        <div class="course-card" onclick="window.location.href='resources/sem4/web_tbc404/index.html'">
+            <div class="course-name">Web Technologies</div>
+        </div>
+        <div class="course-card" onclick="window.location.href='resources/sem4/cs/index.html'">
+            <div class="course-name">Career Skills-II</div>
+        </div>
+      </div>
+  </div>
+  
+  <div class="semester-section">
+    <h2 class="semester-title">Semester 5</h2>
+    <div class="course-list">
+        <div class="course-card" onclick="window.location.href='resources/sem5/ap/index.html'">
+            <div class="course-name">Android Programming</div>
+        </div>
+        <div class="course-card" onclick="window.location.href='resources/sem5/crypto/index.html'">
+            <div class="course-name">Cryptography</div>
+        </div>
+        <div class="course-card" onclick="window.location.href='resources/sem5/net/index.html'">
+            <div class="course-name">Programming with .Net</div>
+        </div>
+        <div class="course-card" onclick="window.location.href='resources/sem5/ot/index.html'">
+            <div class="course-name">Optimization Techniques</div>
+        </div>
+        <div class="course-card" onclick="window.location.href='resources/sem5/sc/index.html'">
+            <div class="course-name">Soft Computing</div>
+        </div>
+        <div class="course-card" onclick="window.location.href='resources/sem5/cs/index.html'">
+            <div class="course-name">Career Skills-III</div>
+        </div>
+    </div>
+</div>
+
+        <div class="semester-section">
+            <h2 class="semester-title">Semester 6</h2>
+            <div class="course-list">
+                <div class="course-card">
+                    <div class="course-name">Upcoming</div>
+                </div>
+                <div class="course-card">
+                    <div class="course-name">Upcoming</div>
+                </div>
+                <div class="course-card">
+                    <div class="course-name">Upcoming</div>
+                </div>
+                <div class="course-card">
+                    <div class="course-name">Upcoming</div>
+                </div>
+                <div class="course-card">
+                    <div class="course-name">Upcoming</div>
+                </div>
+                <div class="course-card">
+                    <div class="course-name">Upcoming</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+
+        // Course selection functionality
+        const courseCards = document.querySelectorAll('.course-card');
+        courseCards.forEach(card => {
+            card.addEventListener('click', () => {
+                card.classList.toggle('selected');
+            });
+        });
+    </script>
+</body>
+</html>

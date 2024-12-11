@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number System</title>
+    <link rel="icon" href="../../../../public/logo/favicon_io/favicon.ico">
+    <link rel="stylesheet" href="../../../../public/style.css">
+</head>
+
+<body class="bg-c">
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">back</a>
+        <a href="#t1" class="link">Data representation</a>
+        <a href="#t2" class="link">Binary, Octal and Hex-decimal number systems</a>
+        <a href="#t3" class="link">Arithmetic operation on Binary numbers</a>
+        <a href="#t4" class="link">r's and r-1's complement</a>
+        <a href="#t5" class="link">Subtraction of decimal using 10's and 9's complemnet</a>
+        <a href="#t6" class="link">Overflow & underflow</a>
+        <a href="#t7" class="link">Fixed and floating point representation</a>
+        <a href="#t8" class="link">ASCII code</a>
+        <a href="#t9" class="link">Gray code</a>
+        <a href="#t10" class="link">Excess-3 code</a>
+        <a href="#t11" class="link">BCD</a>
+        <a href="#t12" class="link">PYQs</a>
+        <div class="botbut">
+            <a href="../logic_gates/index.html" class="link">Next Topic &rarr;</a>
+            <a href="../basics/index.html" class="link">&larr; Previous Topic</a>
+        </div>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Number System</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Number System</h1>
+        <div id="t1" class="wh">
+            <h2>Data Representation</h2>
+            <ul>
+                <li>Computers are digital devices which uses 1 and 0.</li>
+                <li>These 1s and 0s are refered to as binary digits.</li>
+                <li>Computers use sequences of bits to digitally represent numbers, letters, punctuation marks, music,
+                    picture, and videos.</li>
+                <li>Binary information in digital computers is stored in memory or processor registers. Registers
+                    contain either data or control information. Data are numbers and other binary-coded information such
+                    as ASCII codes, EBCDIC codes etc.</li>
+                <li><b>Numeric data</b> consists of numbers that might be used in arithmetic operations. Computers
+                    represent numeric data using the binary number system.</li>
+                <li><b>Character data</b> is composed of letters, symbols, and numerals that are not used in arithmetic
+                    operations. Computers uses several types of codes to represent character data, such as ASCII,
+                    EBCDIC, and Unicode.
+                    <ol>
+                        <li>ASCII (American Standard Code for Information Interchange,) requires only 7 bits for each
+                            character. ASCII provides codes for 128 characters.</li>
+                    </ol>
+                </li>
+                <li>To work with music and pictures, they must be digitalized. The term to digitize means to convert
+                    raw, analog data into digital format representation.</li>
+            </ul>
+            <div class="in">
+                <h3>Quantifying Bits and Bytes</h3>
+                <ul>
+                    <li>A <b>byte</b> is composed of eight bits.</li>
+                    <li>Transmission speeds are expressed in bits, whereas storage space is expressed in bytes.</li>
+                </ul>
+            </div>
+        </div>
+        <div id="t2" class="wh">
+            <h2>Binary, Octal and Hex-decimal number systems</h2>
+            <ul>
+                <li>The <b>decimal</b> system is also called the base-10 system because it has 10 discrete numerals or
+                    symbols (0, 1, 2, 3, 4, 5, 6, 7, 8, 9) so its base or radix is 10. Decimal Examples:
+                    3.14<sub>10</sub>, 52<sub>10</sub>, 12.03<sub>10</sub></li>
+                <li>A binary numbers system has 2 discrete numbers (0, 1) so its base or radix is 2.</li>
+                <li>An octal numbers system has 8 discrete numbers (0, 1, 2, 3, 4, 5, 6, 7) so its base or radix is
+                    8.</li>
+                <li>A hexa-decimal numbers system has 16 discrete numbers (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E,
+                    F) so its base or radix is 16.</li>
+            </ul>
+            <img src="../../images/numbersys.svg" alt="" class="wb">
+            <img src="../../../sem1/images/conversions.svg" alt="" class="wb">
+        </div>
+        <div id="t3" class="wh">
+            <h2>Arithmetic operation on Binary numbers</h2>
+            <ul>
+                <li>The binary arithmetic operations such as addition, subtraction, multiplication and division are
+                    similar to the decimal number system. Binary arithmetics are simpler than decimal because they
+                    involve only two digits (bits) 1 and 0.</li>
+            </ul>
+            <div class="in">
+                <h3>Binary addition</h3>
+                <p>
+                <pre>
+                        <code>
+                
+                                     sum  carry 
+                            0 + 0  =  0     0
+                            1 + 0  =  1     0
+                            0 + 1  =  1     0
+                            1 + 1  =  0     1
+
+                            example &darr;
+
+                              1 1 0
+                            + 1 0 1
+                            -------- 
+                            1 0 1 1   
+                            
+                              1 1 0 1 1 
+                             +  1 1 1 1 
+                             ---------- 
+                            1 0 1 0 1 0 
+                        </code>
+                    </pre>
+                </p>
+            </div>
+            <div class="in">
+                <h3>Binary subtraction</h3>
+                <p>
+                <pre>
+                        <code>
+
+                            1 1 1 0
+                            - 1 1 1
+                            ------- 
+                            0 1 1 1  
+                            
+                              1 1 0 1 1
+                            - 1 0 1 1 0
+                              --------- 
+                              0 0 1 0 1
+                        </code>
+                    </pre>
+                </p>
+            </div>
+            <div class="in">
+                <h3>Binary multiplication</h3>
+                <p>
+                <pre>
+                        <code>
+
+                                product
+                                    &darr;                              
+                            0 x 0 = 0
+                            1 x 0 = 0
+                            0 x 1 = 0
+                            1 x 1 = 1
+
+                            example &darr; 
+
+                                  1 0 1 0
+                                  x 1 0 1
+                                  ------- 
+                                  1 0 1 0
+                                0 0 0 0 x                            
+                            + 1 0 1 0 x x
+                              ----------- 
+                              1 1 0 0 1 0
+
+
+                                1 1 0 1
+                                x   1 1
+                               -------- 
+                                1 1 0 1
+                            + 1 1 0 1 x
+                            ----------- 
+                            1 0 0 1 1 1
+                        </code>
+                    </pre>
+                </p>
+            </div>
+            <div class="in">
+                <h3>Binary division</h3>
+                <img src="../../images/div.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>1's complement</h3>
+                <ul>
+                    <li>1's complement of a binary number is obtained simply by replacing each 1 by 0 and each 0 by 1.
+                    </li>
+                    <li>Example &darr;</li>
+                </ul>
+                <p>
+                <pre>
+                        <code>
+
+                            0 1 1 0 0 1
+                            &darr; &darr; &darr; &darr; &darr; &darr;
+                            1 0 0 1 1 0
+                        </code>
+                    </pre>
+                </p>
+            </div>
+            <div class="in">
+                <h3>2's complement</h3>
+                <ul>
+                    <li>2's complement of a binary number can be obtained by adding 1 to it's 1's complement.</li>
+                    <li>Example &darr;</li>
+                </ul>
+                <p>
+                <pre>
+                        <code>
+
+                            0 1 1 0 0 1 &larr; number 
+                            1 0 0 1 1 0 &larr; 1's complement 
+                                    + 1 &larr; add 1 to 1's complement
+                            ------------ 
+                            1 0 0 1 1 1 &larr; 2's complement
+                        </code>
+                    </pre>
+                </p>
+                <ul>
+                    <li>Shortcut for 2's complement</li>
+                    <li>Steps &darr;
+                        <ol>
+                            <li>Write down the given number.</li>
+                            <li>Starting from LSB, copy all the zeros till the first 1.</li>
+                            <li>Copy the first 1.</li>
+                            <li>Complement all the remaining bits.</li>
+                        </ol>
+                    </li>
+                </ul>
+                <p>
+                <pre>
+                        <code>
+
+                            1 0 1 1 1 0 0 0 
+                                  &darr; 
+                            0 1 0 0 1 0 0 0
+                        </code>
+                    </pre>
+                </p>
+            </div>
+            <div class="in">
+                <h3>Subtraction using 1's and 2's complement</h3>
+                <ul>
+                    <li>Before using any complement method for subtraction equate the length of both minuend and
+                        subtrahend by attaching zeros.</li>
+                </ul>
+                <div class="wh">
+                    <ul>
+                        <li>Following are the rules for subtraction using 1's complement.
+                            <ol>
+                                <li>Take 1's complement of subtrahend.</li>
+                                <li>Add this complement to minued.
+                                    <ul>
+                                        <li>5 - 7, here 7 is subtrahend and 5 is minued.</li>
+                                    </ul>
+                                </li>
+                                <li>If a carry is produced by addition then add this carry to the LSB of result. This is
+                                    called as end around carry (EAC).</li>
+                                <li>If no carry generated result is negative, and is in 1's complement form. Take 1's
+                                    complement of result and assign -ve sign to it.</li>
+                            </ol>
+                        </li>
+                    </ul>
+                    <p><b>Example 1. </b>Perform following subtraction using 1's complement. <br>(i) 7 - 3 <br>(ii) 3 -
+                        7</p>
+                    <p><b>Solution. (i) 7 - 3</b></p>
+                    <img src="../../images/sub1.svg" alt="" class="wb">
+                    <p><b>Solution. (ii) 3 - 7</b></p>
+                    <img src="../../images/sub2.svg" alt="" class="wb">
+                </div>
+                <div class="wh">
+                    <p><b>2's complement subtraction</b></p>
+                    <ul>
+                        <li>Method of 2's complement is similar to 1's complement subtraction except the end around
+                            carry (EAC). The rules are listed below.
+                            <ol>
+                                <li>Take 2's complement of subtrahend.</li>
+                                <li>Add this complement to minued.</li>
+                                <li>If a carry is produced, then discard the carry and the result is positive. If no
+                                    carry is produced result is negative and is in 2's compliment form.</li>
+                            </ol>
+                        </li>
+                    </ul>
+                    <p><b>Example 2. </b>Perform following subtraction using 2's complement. <br>(i) 7 - 5 <br>(ii) 5 -
+                        7</p>
+                    <p><b>Solution. (i) 7 - 5</b></p>
+                    <img src="../../images/sub3.svg" alt="" class="wb">
+                    <p><b>Solution. (ii) 5 - 7</b></p>
+                    <img src="../../images/sub4.svg" alt="" class="wb">
+                </div>
+            </div>
+        </div>
+        <div id="t4" class="wh">
+            <h2>r's and r-1's complement</h2>
+            <p><a
+                    href="https://www.javatpoint.com/radix-and-diminished-radix-complement-in-digital-electronics">notes</a>
+            </p>
+            <img src="../../../sem1/images/rscompliment.svg" alt="" class="wb">
+            <br>
+            <img src="../../../sem1/images/rscompliment2.svg" alt="" class="wb">
+        </div>
+        <div id="t5" class="wh">
+            <h2>Subtraction of decimal using 10's and 9's complement</h2>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=cT3odd4xwKw" target="_blank">lecture for 10's
+                        complement &neArr;</a></li>
+                <li><a href="https://www.youtube.com/watch?v=ejUTuskVUX4" target="_blank">lecture for 9's
+                        complement &neArr;</a>
+                </li>
+            </ul>
+            <div class="in">
+                <h3>10's complement subtraction</h3>
+                <p>Steps &darr;</p>
+                <ol>
+                    <li>Find 10's complement of subtrahend.</li>
+                    <li>Add 10's complement of subtrahend to minuend.
+                        <ol>
+                            <li>If there is a carry then drop it and you will get your result in positive.</li>
+                            <li>If there is no carry then find 10's complement of your result and your result will be in
+                                negative.</li>
+                        </ol>
+                    </li>
+                </ol>
+                <img src="../../images/10scomp.svg" alt="" class="wb"><br>
+                <img src="../../images/10scomp2.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>9's complement subtraction</h3>
+                <p>Steps &darr;</p>
+                <ol>
+                    <li>Find 9's complement of subtrahend.</li>
+                    <li>Add 9's complement of subtrahend to minuend.</li>
+                    <li>If there is a carry then add it to result and your answer will be in positive.</li>
+                    <li>If there is no carry then find 9's complement of your result and your answer will in negative
+                        form.</li>
+                </ol>
+                <img src="../../images/9scomp.svg" alt="" class="wb"><br>
+                <img src="../../images/9scomp2.svg" alt="" class="wb">
+            </div>
+        </div>
+        <div id="t6" class="wh">
+            <h2>Overflow & underflow</h2>
+            <ul>
+                <li><b>Overflow</b> and <b>underflow</b> are both are the errors that occured in arithmetic operations
+                    due to a shortage of memory space.</li>
+                <li>When some operation is performed on two n-bit numbers and we get result of n+1 bits, this is called
+                    an overflow occurs. Let us consider the addition of two 4-bit numbers
+                    <pre>
+                        <code>
+
+                              9 ---> 1 0 0 1
+                             +8 ---> 1 0 0 0
+                              ---------------
+                            17 ---> 1 0 0 0 1
+                        </code>
+                    </pre>
+                    Thus, addition of two 4-bits numbers requires 5-bits (n+1 bits) to represent the sum. What does a
+                    computer then do in this scenario? A computer will discard the <i>most-significant bit (MSB)</i> and
+                    keep the rest.
+                </li>
+                <li><b>Underflow errors</b> occurs when some operation is performed on floating point numbers. A
+                    floating point number has some fractional part. For ex- 1101.110.
+                    <ul>
+                        <li>Suppose a computer can store only 3 fraction digits. So we can store .005 easily. But, when
+                            we want to store .005 x .005 =.000025 then only .000 can be stored. This is called underflow
+                            error.
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div id="t7" class="wh">
+            <h2>Fixed and Floating Point Representation</h2>
+            <ul>
+                <li>There are various types of digital number representation, for example: Binary, octal, decimal, and
+                    hexadecimal number system etc. But Binary number system is most relevant and popular for
+                    representing numbers in digital computer system.</li>
+                <li>There are two major approaches to store real numbers (i.e., numbers with fractional component) in
+                    modern computing. These are (i) Fixed Point Notation and (ii) Floating Point Notation. whereas
+                    floating point number allows for a varying number of digits after the decimal point.</li>
+            </ul>
+            <div class="in">
+                <h3>Fixed Point Representation</h3>
+                <ul>
+                    <li>In fixed point notation, there are a fixed number of digits after the decimal point. Fixed point
+                        representation has a fixed number of bits for the integral and fractional parts. There are three
+                        parts of the fixed-point number representation: Sign bit, Integral
+                        part, and Fractional part. The below figure depicts it.
+                        <br><img src="../../images/rep1.svg" alt="" class="wb">
+                        <br><b>Sign bit:</b> The fixed point number representation uses a sign bit. The negative number
+                        has a sign bit 1, while a positive number has a bit 0.
+                        <br><b>Integral Part:</b> The integral part depends on the register's size; for an 8-bit
+                        register, the integral part is 4 bits.
+                        <br><b>Fractional part:</b> Fractional part is also of different lengths at different places. It
+                        depends on the register's size, like in an 8-bit register, integral part is of 3 bits.
+                        <ul>
+                            <li>8 bits = 1 Sign bit + 4 bits (integral) + 3 bits (fractional part)</li>
+                            <li>16 bits = 1 Sign bit + 9 bits (integral) + 6 bits (fractional part)</li>
+                            <li>32 bits = 1 Sign bit + 15 bits (integral) + 9 bits (fractional part)</li>
+                        </ul>
+                    </li>
+                    <li>If we want to store 4.5
+                        <ul>
+                            <li>Step 1: We will convert the number 4.5 to fixed-point notation with the following
+                                format. <br><img src="../../images/rep2.svg" alt="" class="wb"></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Floating Point Representation</h3>
+                <ul>
+                    <li>Floating Point representation doesn't reserve any specific number of bits for the integer or
+                        fractional parts. But instead, it reserves certain bits for the mantissa and the exponent.</li>
+                    <li>The floating-point representation has two types of notation:
+                        <ol>
+                            <li><b>Scientific notation:</b> it uses a x b<sup>e</sup> form. It is further converted into
+                                floating-point representation. For example, Number = 32635
+                                <br>Number in Scientific Notation = 32.625 x 10<sup>3</sup>
+                                <br>Number is binary form = 1101.101 * 2<sup>101</sup>
+                            </li>
+                            <li><b>Normalization notation:</b> It is a special case of scientific notaiton. Normalized
+                                means that we have at least one non-zero digit after the decimal point. <br>A
+                                floating-point representation has three parts: <b>Sign bit, Exponent Part, and
+                                    Mantissa</b>. We can see the below diagraam to understand these parts.
+                                <br><img src="../../images/rep3.svg" alt="" class="wb">
+                                <br><b>Sign bit:</b> A negative number has a sign bit 1, while a positive number has a
+                                sign bit 0. The sign of any number depends on mantissa, not on exponenet.
+                                <br><b>Mantissa Part:</b> The mantissa part is of different lengths at different places.
+                                It depends on registers like for a 16-bit register, and mantissa part is of 8 bits.
+                                <br><b>Exponent Part</b>: It is the power of the number. It depends on the size of the
+                                register. For example, in the 16-bit register, the exponent part is of 7 bits.
+                            </li>
+                        </ol>
+                    </li>
+                    <li><b>How to write numbers in Floating-point notation</b>
+                        <ul>
+                            <li>Let the number is <b>53.5</b>
+                                <br>step 1: We will convert the number 53.5 to binary form 53.5 =110101.1
+                                <br>step 2: Normalize the number (base 2) = (1.101011)*2<sup>5</sup>.
+                                <br>step 3: Represent the binary number in floating-point notation with the following
+                                format.
+                                <br><img src="../../images/rep4.svg" alt="" class="wb">
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="t8" class="wh">
+            <h2>ASCII Code</h2>
+            <ul>
+                <li>Many digital applications require the handling of both numerical and alphabetical characters, as
+                    well as special characters such as %, $, &, #, etc. These code are called alphanumeric codes, or
+                    alphanumeric character set.</li>
+                <li>The two most widely used alphanumeric codes are the ASCII code (<i>American Standard Code for
+                        Information Interchange</i>) and the EBCDIC (<i>Extended Binary Coded Decimal Interchange
+                        Code</i>).</li>
+                <li>ASCII is a seven-bit code and includes special control characters.
+                    <ul>
+                        <li> It has the 10 decimal numbers, the 26 upper-case and 26 lower-case character of the English
+                            language</li>
+                        <li>as well as large number of special characters, such as SOH (Start of Heading), etc.</li>
+                    </ul>
+                    It also handle special functions on a computer keyboard, such as Escape, Control, Caps lock, Enter
+                    or Return, and many other funciton.
+                </li>
+                <li>Seven bits gives 2<sup>7</sup> = 128 code words. The numerals and the upper and lowercase letters
+                    add up to 62 characters, leaving 66 7-bit binary strings available for other words.</li>
+            </ul>
+            <img src="../../images/ascii.svg" alt="" class="wb"><br>
+            <img src="../../images/asciiques1.svg" alt="" class="wb">
+        </div>
+        <div id="t9" class="wh">
+            <h2>Gray Code</h2>
+            <ul>
+                <li>There are applications in which it is desirable to represent numerical that changes in only one bit
+                    position from one code word to the next adjacent word. This class of code is called a unit distance
+                    code (UDC). These are sometimes also called as 'cyclic', 'reflective' or 'gray' code. </li>
+                <li>Gray code is binary numeral system where two successive value differ in only one bit.</li>
+                <li>Binary number is converted to gray code to reduce switching operation.</li>
+                <li>These codes finds great applications in Boolean function minimization using Karnaugh map.</li>
+            </ul>
+            <img src="../../images/table1.svg" alt="" class="wb">
+            <div class="in">
+                <p>Binary to Gray code conversion <a
+                        href="https://www.youtube.com/watch?v=R7uuIACpdGQ&list=PLxCzCOWd7aiFOet6KEEqDff1aXEGLdUzn&index=10">lecture</a>
+                </p>
+                <div class="wh">
+                    <p>XOR table</p>
+                    <img src="../../../sem1/images/xortable.svg" alt="" class="wb">
+                </div>
+                <ul>
+                    <li>copy the most significant bit as it is</li>
+                    <li>( b4 b3 b2 b1 b0 )<sub>2</sub> = b4 ( b4 ^ b3) ( b3 ^ b2 ) ( b2 ^ b1 ) ( b1 ^ b0 )</li>
+                </ul>
+                <div class="wh">
+                    <p>Example 1</p>
+                    <pre>
+                    <code>
+
+                        1  0  1  1 = 1 ( 1 ^ 0 ) ( 0 ^ 1 ) ( 1 ^ 1 )
+                                   = 1     1         1         0
+                        (1011)2 = (1110)gray
+                    </code>
+                </pre>
+                    <p>Example 2</p>
+                    <pre>
+                    <code>
+
+                        11001 = 1 ( 1 ^ 1 ) ( 1 ^ 0 ) ( 0 ^ 0 ) ( 0 ^ 1)
+                              = 10101
+                    </code>
+                </pre>
+                </div>
+            </div>
+            <img src="../../images/grayques1.svg" alt="" class="wb">
+        </div>
+        <div id="t10" class="wh">
+            <h2>Excess-3 code</h2>
+            <ul>
+                <li>A decimal code that has been used in some old computers is the excess-3 code. This is an unweighted
+                    code.</li>
+                <li>It is obtained from the corresponding value of BCD after the addition of 3.</li>
+            </ul>
+            <pre>
+                <code>
+
+                    Decimal  BCD   X-3
+                      0     0000   0011
+                      1     0001   0100
+                      2     0010   0101
+                      3     0011   0110
+                      4     0100   0111
+                      5     0101   1000
+                      6     0110   1001
+                      7     0111   1010 
+                </code>
+            </pre>
+            <img src="../../images/excess3ques.svg" alt="" class="wb">
+        </div>
+        <div id="t11" class="wh">
+            <h2>BCD</h2>
+            <ul>
+                <li>In BCD codes, individual decimal digits are coded in binary notation. Thus binary codes representing
+                    0 to 9 decimal digits are allowed.</li>
+                <li>Therefore, all BCD codes have atleast four bits (&becaus; min. no. of bits required to encode to
+                    decimal digits = 4)</li>
+                <li>For example, decimal 364 in BCD
+                    <pre>
+                        <code>
+
+                            3 &rarr; 0011
+                            6 &rarr; 0110
+                            4 &rarr; 0100
+                            364 &rarr; 0011 0110 0100
+                        </code>
+                    </pre>
+                </li>
+                <li>However, we should realize that with 4 bits, total 16 combinations are possible (0000, 0001, ...,
+                    1111) but only 10 are used (0 to 9). The remaining 6 combinations are unvalid and commonly referred
+                    to as "UNUSED CODES".</li>
+                <li>Example &rarr; convert (643)<sub>10</sub> into XS3 code
+                    <pre>
+                    <code>
+
+                        Decimal         6 4 3
+                        Add 3 to each   3 3 3 
+                                   Sum &rarr; 976
+                        Converting the sum into BCD code we have    9    7     6
+                                                                    &darr;    &darr;     &darr;
+                                                                  1001  0111  0110
+                    </code>
+                </pre>
+                </li>
+            </ul>
+            <div class="in">
+                <h3>BCD Addition</h3>
+                <ul>
+                    <li>In many application it is required to add two BCD numbers. But the adder circuits used are
+                        simple binary adders, which does not take care of peculiarity of BCD representation. Thus we
+                        must verify the result for valid BCD by using following rules:
+                        <ol>
+                            <li>If the sum is less then or equal to 9, it is valid BCD number.</li>
+                            <li>If sum is greater than 9, it is invalid. Add 6 (0110) to the sum, to make it valid.</li>
+                            <li>If a carry is generated when 6 is added, attach this carry at MSB.</li>
+                        </ol>
+                    </li>
+                    <li>Example 1. Add the following BCD numbers. (i) 1000 and 0101 (ii) 00011001 and 00011000
+                        <br>Solution. (i)
+                        <pre>
+                            <code>
+
+                                   1 0 0 0  &rarr;   8
+                                 + 0 1 0 1  &rarr; + 5
+                                 ----------- ----- 
+                                   1 1 0 1    13
+
+                                since, (1101)<sub>2</sub> > (9)<sub>10</sub> add 6 (0110) to it
+                                           1 1 0 1
+                                           0 1 1 0
+                                           ------- 
+                                        1   0 0 1 1
+                                        &darr;     &darr; 
+                                        1     3
+                                So, result = 00010011
+                            </code>
+                        </pre>
+                        Solution. (ii)
+                        <pre>
+                            <code>
+
+                                      <sub>1</sub>   &larr; &larr; &larr; Carry generated
+                                0 0 0 1   1 0 0 1 &rarr;  19
+                                0 0 0 1   1 0 0 0 &rarr; +18
+                                -----------------   ---- 
+                                0 0 1 1   0 0 0 1    37
+                                Since, a carry is generated we must add 6 (0110) to it.  
+
+                                So,      0 0 1 1   0 0 0 1
+                                                   0 1 1 0
+                                        ------------------- 
+                                         0 0 1 1   0 1 1 1   &rarr; (37)10    
+                                So, result = 00110111
+                            </code>
+                        </pre>
+                    </li>
+                </ul>
+                <img src="../../images/bcdques1.svg" alt="" class="wb">
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Error Detection and Error Correction</h2>
+            <ul>
+                <li><a href="https://youtu.be/ipstZPNjpuI" target="_blank">Parity bits lecture &neArr;</a>
+                </li>
+                <li><a href="https://youtu.be/VlyE-H3jMnY" target="_blank">Hamming code lecture &neArr;</a>
+                </li>
+                <li><a href="https://youtu.be/hyu6dOsvbSE" target="_blank">Hamming code question video
+                        &neArr;</a></li>
+            </ul>
+            <p>We know that data is transmitted in binary form.
+                <br>While transmission of data, if noise are added to the data then it will not be same in receiving
+                side as it will contain some error.
+            <ul>
+                <li>To solve this error we use error detection and correction methods.</li>
+                <li>To detect the error we use parity bits.
+                    <br>Parity bits A.K.A check bit, these are added with message
+                    <br>Message + parity bit = parity bit code.
+                </li>
+                <li>Now parity bit code is transmitted to receiver.</li>
+                <li>The appended parity bit determines whether the message has any error or not.</li>
+            </ul>
+            </p>
+            <div class="in">
+                <p><b>There are two types of parity bit code</b></p>
+                <h3>1- Even parity bit code</h3>
+                <ul>
+                    <li>It ensures that message including parity bit must contain even number of 1's.</li>
+                </ul>
+                <img src="../../images/parity1.svg" alt="" class="wb">
+                <h3>2- Odd parity bit code</h3>
+                <ul>
+                    <li>It ensures that message including parity bit must contain odd 1's.</li>
+                </ul>
+                <img src="../../images/parity2.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>Drawback of parity bit code</h3>
+                <ol>
+                    <li>Only single bit error can be deducted.</li>
+                    <li>Can't tell in which position the bit is manipulated.</li>
+                </ol>
+            </div>
+            <div class="in">
+                <h3>Hamming code</h3>
+                <ul>
+                    <li>It is an error detecting and correcting code.</li>
+                    <li>It uses a number of parity bits located at certain positions.</li>
+                </ul>
+                <div class="wh">
+                    <p>How many parity bit can 'm' number of bit message can have?</p>
+                    <img src="../../images/parity3.svg" alt="" class="wb"><br>
+                    <img src="../../images/parity4.svg" alt="" class="wb">
+                </div>
+                <div class="wh">
+                    <p>Now we will see where to place the parity bits within the message.</p>
+                    <p>Let the code is of 7 bits.
+                        <br>There is a rule: the parity bits can always be place at position 2<sup>n</sup> where n = 0,
+                        1, 2, 3, ...
+                    </p>
+                    <img src="../../images/parity5.svg" alt="" class="wb">
+                </div>
+                <div class="wh">
+                    <p>What will be the value of parity bits?</p>
+                    <img src="../../images/parity6.svg" alt="" class="wb">
+                </div>
+                <div class="wh">
+                    <p>Example question:
+                        <br>Encode the binary word 1011 into seven bit <b>even parity hamming code.</b>
+                    </p>
+                    <img src="../../images/parity7.svg" alt="" class="wb">
+                </div>
+                <div class="wh">
+                    <p>Determine the hamming code for 10111 for odd parity.</p>
+                    <img src="../../images/parity8.svg" alt="" class="wb">
+                </div>
+                <div class="wh">
+                    <p>Assume that the even parity hamming code 0110011 is transmitted & that 0100011 is recevied. The
+                        receiver does not know what was transmitted, determine the error location.</p>
+                    <img src="../../images/parity9.svg" alt="" class="wb">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="t12" class="content-box">
+        <h2>Previous year questions</h2>
+        <div class="wh">
+            <h3>Convert the following:</h3>
+            <ol type="i">
+                <li>(652)<sub>10</sub> = ( )<sub>2</sub></li>
+                <li>(25.32)<sub>8</sub> = ( )<sub>10</sub></li>
+                <li>(6864)<sub>10</sub> = ( )<sub>16</sub></li>
+                <li>(1011)<sub>2</sub> = ( )<sub>8</sub></li>
+                <li>(5D2)<sub>16</sub> = ( )<sub>8</sub></li>
+                <li>(011010110)<sub>2</sub> = ( )<sub>8</sub></li>
+                <li>(155)<sub>8</sub> = ( )<sub>2</sub></li>
+                <li>(10101.01)<sub>2</sub> = ( )<sub>10</sub></li>
+                <li>(BF4A)<sub>16</sub> = ( )<sub>8</sub></li>
+                <li>(6FBC)<sub>16</sub> = ( )<sub>8</sub></li>
+                <li>(1010)<sub>2</sub> = ( )<sub>2</sub> = ( )<sub>10</sub></li>
+                <li>(72.45)<sub>10</sub> = ( )<sub>2</sub> = ( )<sub>16</sub></li>
+                <li>(EFF2.F)<sub>16</sub> = ( )<sub>8</sub> = ( )<sub>10</sub></li>
+                <li>(100101.1101)<sub>2</sub> = ( )<sub>8</sub> = ( )<sub>10</sub></li>
+                <li>(2341)<sub>5</sub> = ( )<sub>10</sub> = ( )<sub>16</sub></li>
+            </ol>
+        </div>
+        <div class="wh">
+            <h3>Perform the following operation using 2's complement method:</h3>
+            <ol>
+                <li>(-29)<sub>10</sub> + (35)<sub>10</sub></li>
+                <li>(-33)<sub>10</sub> + (-67)<sub>10</sub></li>
+            </ol>
+        </div>
+        <div class="wh">
+            <ol>
+                <li>Encode data bits 0101 into a 7 bit even parity Hamming code.</li>
+                <li>A 7 bit Hamming code is received as 01011101. Check whether it is correct or not? If it is
+                    incorrect, find the correct code.</li>
+            </ol>
+        </div>
+        <div class="wh">
+            <h3>How is error detection and correction carried out using parity method in digital data transmission?</h3>
+        </div>
+        <div class="wh">
+            <h3>Explain grey code and excess-3 code. Encode the following into grey code and excess-3 code.</h3>
+            <ol>
+                <li>45</li>
+                <li>26</li>
+            </ol>
+        </div>
+        <div class="wh">
+            <h3>Explain BCD code and Excess-3 code. Represent the following in decimal number binary form using BCD code
+                and Excess-3 code.</h3>
+            <ol>
+                <li>317</li>
+                <li>89</li>
+                <li>565</li>
+                <li>67</li>
+            </ol>
+        </div>
+        <div class="wh">
+            <h3>What do you mean by r's and r-1's complement? Find out the r's and r-1's complement of the following
+                numbers:</h3>
+            <ol>
+                <li>(10011)<sub>2</sub></li>
+                <li>(54)<sub>10</sub></li>
+                <li>(10101011)<sub>2</sub></li>
+                <li>(87)<sub>10</sub></li>
+            </ol>
+        </div>
+    </div>
+    <div class="content-box">
+        <p>References</p>
+        <ul>
+            <li><a href="https://www.youtube.com/watch?v=VKemv9u40gc&list=PLBlnK6fEyqRjMH3mWf6kwqiTbT798eAOm&index=29">Playlist
+                    &neArr;</a></li>
+        </ul>
+    </div>
+    <script src="../../../../public/main.js"></script>
+    <script src="../../../../public/codeSpace.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,2003 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Relational Data Model and Relational Algebra</title>
+    <link rel="stylesheet" href="../../../../public/style.css">
+    <link rel="icon" href="../../../../public/logo/favicon_io/favicon.ico">
+    <link rel="stylesheet" id="highlightStylesheet"
+        href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/tomorrow-night-blue.min.css">
+</head>
+
+<body class="bg-c">
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">back</a>
+        <div class="fix-column-links">
+            <a href="#t1" class="link">Intoduction to Relational Model</a>
+            <a href="#t2" class="link">Integrity constrints over Relations</a>
+            <a href="#t19" class="link">Keys in DBMS</a>
+            <a href="#t3" class="link">Relational Query Language</a>
+            <a href="#t4" class="link">Relational Algebra</a>
+            <a href="#t5" class="link">Relational Calculus</a>
+            <a href="#tpyq" class="link">Previous year questions</a>
+        </div>
+        <div class="botbut">
+            <a href="../unit3/index.html" class="link">Next Topic &rarr;</a>
+            <a href="../unit1/index.html" class="link">&larr; Previous Topic</a>
+        </div>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Relational Data Model and Relational Algebra</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Relational Data Model and Relational Algebra</h1>
+        <div id="t1" class="wh">
+            <h2>Introduction to Relational Model</h2>
+            <ul>
+                <li>The relational model serves as the theoretical foundation for relational databases.</li>
+                <li>At its core, the relational model of data is built on the concept of relations.</li>
+                <li>A "Relation" is a mathematical concept that draws from set theory.</li>
+                <li>The relational model was originally proposed by E.F. Codd for IBM in 1970 as a means to organize and
+                    manage data using relations or tables.</li>
+                <li>In practical terms, the relational model defines how data is stored within relational databases.
+                    These databases organize data into tables, also known as relations.
+                    <ul>
+                        <li>Once the conceptual model of a database is designed using tools like Entity-Relationship
+                            (ER) diagrams, the next step is to convert this conceptual model into the relational model,
+                            which can then be implemented using various Relational Database Management System (RDBMS)
+                            languages.</li>
+                        <li>RDBMS languages encompass a range of software systems such as Oracle, SQL, MySQL, and more.
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="in">
+                <h3>What is RDBMS?</h3>
+                <ul>
+                    <li>RDBMS stands for Relational Database Management System, and it forms the basis for SQL and most
+                        modern database systems, including MS SQL Server, IBM DB2, Oracle, MySQL, and Microsoft Access.
+                    </li>
+                    <li>An RDBMS is a type of Database Management System (DBMS) that is founded on the principles of the
+                        relational model, initially introduced by E.F. Codd.</li>
+                    <li>Popular RDBMS options today include:
+                        <ol>
+                            <li>DB2 and Informix Dynamic Server (both from IBM)</li>
+                            <li>Oracle and Rdb (from Oracle Corporation)</li>
+                            <li>SQL Server and MS Access (from Microsoft)</li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Relational Model Concepts</h3>
+                <ul>
+                    <li>The relational model represents data in the form of tables, consisting of columns and rows.
+                        <ul>
+                            <li>Each individual row within a table is referred to as a "tuple." For example, in a table
+                                named "Students," each row represents a student's information.</li>
+                            <li>Every column in a table has a specific name or attribute. In a table named "Employees,"
+                                attributes might include "EmployeeID," "FirstName," and "LastName."</li>
+                            <li><strong>Relation:</strong> A relation is essentially a table, characterized by its
+                                columns and rows. For instance, a "Products" table can be a relation.</li>
+                            <li><strong>Attribute:</strong> An attribute is a named column within a relation. In a
+                                "Customers" table, "CustomerID" and "Email" are attributes.</li>
+                            <li><strong>Domain:</strong> A domain represents the set of permissible values for one or
+                                more attributes. For instance, the domain for the "Gender" attribute in a "Persons"
+                                table could include values like "Male" and "Female."</li>
+                            <li><strong>Tuple:</strong> A tuple, on the other hand, is a single row within a relation.
+                                In a "Orders" table, each order made by a customer is a tuple.</li>
+                            <li><strong>Relation Schema:</strong> A relation schema specifies the name of the relation
+                                and its attributes. The schema for a "Books" table might include "BookID," "Title," and
+                                "Author."</li>
+                            <li><strong>Relation Instance (State):</strong> A relation instance is a finite collection
+                                of tuples. For example, the current orders placed by customers in an "Online Orders"
+                                table represent the relation instance.</li>
+                            <li><strong>Degree:</strong> Degree refers to the total number of columns or attributes
+                                present within a relation. If a "Vehicles" table has attributes like "Make," "Model,"
+                                and "Year," its degree is 3.</li>
+                            <li><strong>Cardinality:</strong> Cardinality is the total number of rows within a table,
+                                representing the size or extent of the relation. If there are 1000 products in a
+                                "Products" table, its cardinality is 1000.</li>
+                            <li><strong>Relation Key:</strong> A relation key is one or more attributes within a row
+                                that can uniquely identify that row within the relation. In a "Students" table,
+                                "StudentID" can serve as the primary key.</li>
+                            <li><strong>Tuple Variable:</strong> A tuple variable stores data corresponding to a record
+                                or row within a table. For instance, when querying a database, a tuple variable might be
+                                used to temporarily store and manipulate a specific row's data.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <img src="../../images/rdbmstable1.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>Properties of the Relational Model</h3>
+                <ul>
+                    <li><strong>Unique Relation Names:</strong> In a relational database, each table (relation) must
+                        have a unique name. For example, you cannot have two tables both named "Customers."</li>
+                    <li><strong>Unique Tuples (Rows):</strong> Within a relation, each tuple (row) must be unique,
+                        meaning there are no duplicate rows. This ensures that each row represents distinct data. For
+                        instance, if you have a "Students" table, each student's record should be unique.</li>
+                    <li><strong>Uniform Data Domains:</strong> Entries in any given column must belong to the same
+                        domain. A domain defines the set of allowable values for an attribute. For instance, if you have
+                        a "Gender" column, all entries in that column should be either "Male" or "Female," ensuring data
+                        consistency.</li>
+                    <li><strong>Unique Attribute Names:</strong> Each attribute (column) within a relation must have a
+                        unique name. This helps in unambiguously identifying and accessing specific attributes. For
+                        example, you cannot have two columns both named "DateOfBirth" in the same table.</li>
+                    <li><strong>Order Independence:</strong> The order of columns or rows in a relation is irrelevant.
+                        Relations are considered unordered sets of data. This means you can retrieve and manipulate data
+                        without worrying about its physical storage order. For example, whether "Name" comes before
+                        "Age" in a table does not affect the data's integrity.</li>
+                    <li><strong>Atomic Attribute Values:</strong> In the context of the relational model, "atomic" means
+                        that each cell (intersection of a row and column) of a relation contains exactly one value.
+                        Atomic attribute values are indivisible or cannot be further broken down into smaller parts. For
+                        instance, if you have an "Address" column, it should contain a single complete address, not
+                        components like street, city, and zip code separated into multiple cells.</li>
+                </ul>
+            </div>
+        </div>
+        <div id="t2" class="wh">
+            <h2>Integrity Constraints over Relations</h2>
+            <ul>
+                <li><strong>Understanding Integrity Constraints:</strong> When we enter values into a table within a
+                    relational database, it's crucial to ensure that the data remains valid, accurate, and unique. To
+                    achieve this, we follow specific rules and conditions known as constraints. Integrity, in this
+                    context, refers to the maintenance of data accuracy and consistency, which is made possible by
+                    adhering to these sets of rules and constraints.</li>
+                <li><strong>Ensuring Data Accuracy:</strong> Integrity constraints play a pivotal role in guaranteeing
+                    the accuracy and consistency of data in a relational database.</li>
+                <li><strong>Rule-Based Guidelines:</strong> Integrity constraints are essentially sets of rules that a
+                    database is not allowed to violate. These rules serve as guidelines that govern the data within the
+                    database.</li>
+                <li><strong>Application to Attributes and Relationships:</strong> Constraints can be applied at the
+                    level of individual attributes or to the relationships between tables. They help maintain data
+                    integrity at both the micro and macro levels of the database.</li>
+                <li><strong>Preserving Data Consistency:</strong> Integrity constraints ensure that any changes made to
+                    the database, such as updates, deletions, or insertions, by authorized users do not result in a loss
+                    of data consistency. In other words, they act as safeguards against accidental damage to the
+                    database's integrity.</li>
+                <ul>
+                    <li><strong>Example:</strong> Consider a scenario where a database stores information about blood
+                        groups. An integrity constraint in this case could specify that the blood group attribute must
+                        contain values such as 'A,' 'B,' 'AB,' or 'O' only. Any other values would be considered
+                        invalid. This constraint ensures that the database maintains accurate and meaningful blood group
+                        data.</li>
+                </ul>
+            </ul>
+            <h3>Types of Integrity Constraints</h3>
+            <ol>
+                <li><strong>Domain Constraint:</strong> Domain constraints are applied to attributes. They define the
+                    permissible values for an attribute. For example, an attribute "Age" may have a domain constraint
+                    specifying that it can only contain positive integers.</li>
+                <li><strong>Entity Integrity Constraint:</strong> Entity integrity constraints are also applied to
+                    attributes. They ensure that each tuple (row) within a relation has a unique identifier, often
+                    referred to as a primary key. This constraint guarantees that no duplicate rows exist within the
+                    relation.</li>
+                <li><strong>Referential Integrity Constraint:</strong> Referential integrity constraints come into play
+                    when establishing relationships between tables. They enforce the consistency of data between related
+                    tables. For example, when one table references another through a foreign key, referential integrity
+                    constraints ensure that the foreign key values match the primary key values in the referenced table,
+                    preventing orphans or invalid references.</li>
+                <li><strong>Key Constraint:</strong> Key constraints, similar to entity integrity constraints, are
+                    applied to attributes. They specify that a particular attribute or combination of attributes serves
+                    as a unique identifier for tuples within a relation. This unique identifier is often referred to as
+                    a candidate key or primary key.</li>
+            </ol>
+            <div class="in">
+                <h3>Domain Constraints</h3>
+                <ul>
+                    <li><strong>Defining Valid Attribute Values:</strong> Domain constraints play a crucial role in
+                        defining the permissible or valid set of values for an attribute within a relational database.
+                        For example, if you have an attribute like "Age," the domain constraint might specify that valid
+                        values must be positive integers. Similarly, for an attribute like "Name," the domain constraint
+                        might define that valid values are characters from 'A' to 'Z,' excluding numbers or other
+                        special characters.</li>
+
+                    <li><strong>Range of Data Types:</strong> The data type of a domain can encompass a wide range of
+                        possibilities, including strings, characters, integers, times, dates, currencies, and more. It's
+                        essential to ensure that any value assigned to an attribute falls within the defined domain for
+                        that attribute.</li>
+
+                    <li><strong>Defining During Table Creation:</strong> Domain constraints are typically established
+                        when defining the structure of a table. When creating a table, database designers specify the
+                        data types and constraints for each attribute, ensuring that data integrity is maintained
+                        throughout the database's lifecycle.</li>
+                </ul>
+
+                <img src="../../images/rdbmstable2.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>Entity Integrity Constraints</h3>
+                <ul>
+                    <li><strong>Ensuring Primary Key Not Null:</strong> Entity integrity constraints play a fundamental
+                        role in ensuring that the primary key value within a relational database cannot be null. The
+                        primary key serves as a unique identifier for individual rows within a relation, and if it were
+                        allowed to have null values, it would compromise our ability to distinguish and identify those
+                        rows accurately.</li>
+
+                    <li><strong>Importance of Identifiable Rows:</strong> Consider a scenario where you have a table
+                        storing information about employees, and the "EmployeeID" is the primary key. If the
+                        "EmployeeID" field could have null values, it would become impossible to uniquely identify and
+                        differentiate employees. Entity integrity constraints address this issue by mandating that
+                        primary keys must always contain a valid, non-null value.</li>
+
+                    <li><strong>Null Values in Non-Primary Key Fields:</strong> While entity integrity constraints
+                        prohibit null values in primary key fields, it's important to note that tables can still contain
+                        null values in other non-primary key fields. This allows flexibility in representing missing or
+                        unknown information for certain attributes without affecting the uniqueness and integrity of the
+                        primary key.</li>
+                </ul>
+                <img src="../../images/rdbmstable3.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>Referential Integrity Constraints</h3>
+                <ul>
+                    <li><strong>Definition and Scope:</strong> Referential integrity constraints are rules specified
+                        between two tables within a relational database.</li>
+
+                    <li><strong>Enforcement Through Foreign Keys:</strong> These constraints come into play when a
+                        foreign key in one table references the primary key of another table. This ensures that
+                        relationships between tables are maintained accurately.</li>
+
+                    <li><strong>Key Principle:</strong> In the context of referential integrity constraints, when a
+                        foreign key in Table 1 references the primary key in Table 2, it dictates that every value of
+                        the foreign key in Table 1 must either match an available primary key value in Table 2 or be
+                        null.</li>
+                </ul>
+
+                <img src="../../images/rdbmstable4.svg" alt="Referential Integrity Example" class="wb">
+
+                <ul>
+                    <li><strong>Rules for Referential Integrity:</strong>
+                        <ol>
+                            <li><strong>Deletion Restriction:</strong> You cannot delete a record from a primary table
+                                if matching records exist in a related table. This safeguard prevents accidental data
+                                loss in related tables due to deletion in the primary table.</li>
+
+                            <li><strong>Modification Allowance:</strong> You can change the primary key value in the
+                                primary table, even if it has related records. This flexibility allows for updates
+                                without breaking referential integrity.</li>
+
+                            <li><strong>Insertion Validation:</strong> You cannot insert a value in the foreign key
+                                field of the related table if that value does not exist in the primary key of the
+                                primary table. This constraint ensures that relationships between tables are based on
+                                valid and existing data.</li>
+
+                            <li><strong>Null Values for Unrelated Records:</strong> However, you can enter a null value
+                                in the foreign key field, signifying that the records are unrelated. This accommodates
+                                scenarios where a record in one table may not have a corresponding entry in another
+                                table.</li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Key Constraints</h3>
+                <ul>
+                    <li><strong>Understanding Candidate Keys:</strong> An entity set within a relational database can
+                        have multiple keys known as candidate keys or minimal superkeys. However, from these candidates,
+                        one key is chosen to be the primary key.</li>
+
+                    <li><strong>Role of Key Constraints:</strong> Key constraints are rules that apply to the primary
+                        key of any relation. These rules ensure that:
+                        <ul>
+                            <li><strong>Uniqueness:</strong> All values within the primary key must be unique. This
+                                uniqueness is essential to distinguish individual rows within the relation accurately.
+                            </li>
+                            <li><strong>Non-Null Values:</strong> The primary key must not contain null values. Null
+                                values would undermine the key's ability to uniquely identify rows.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="t19" class="wh">
+            <h2>Keys in DBMS</h2>
+            <ul>
+                <li>A key is a value that can always be used to uniquely identify an object instance.</li>
+                <li>A key is used to uniquely identify any record or row of data in a table.</li>
+                <li>It is also used to establish and identify relationships between tables.</li>
+                <li>For example: "ID" is used as a key in the student table because it is unique for each student. In
+                    the
+                    person table, "passport number" and "license number" are keys since they are unique for each person.
+                </li>
+            </ul>
+
+            <div class="in">
+                <h3>Super Key</h3>
+                <ul>
+                    <li>A super key is a set of one or more attributes that, when taken collectively, allow us to
+                        uniquely identify
+                        an entity in the entity set.</li>
+                    <li>For example, in the student table with attributes (S_rollno, S_name, S_branch, S_year):
+                        <ul>
+                            <li>Super key &rarr; S1 &rarr; S_rollno, S_name
+                                <br>S2 &rarr; S_rollno, S_branch
+                                <br>S3 &rarr; S_rollno, S_year
+                                <br>S4 &rarr; S_rollno, S_name, S_branch
+                                <br>S5 &rarr; S_rollno, S_branch, S_year
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Candidate Key</h3>
+                <ul>
+                    <li>The minimal set of attributes that can uniquely identify a tuple is known as a candidate key.
+                    </li>
+                    <li>A candidate key can be defined as the minimum number of super keys that identify the record
+                        uniquely.</li>
+                    <li>It must contain unique values.</li>
+                    <li>Every table must have at least a single candidate key.</li>
+                    <li>For example, in the student table with attributes (S_rollno, S_name, S_branch, S_year):
+                        <ul>
+                            <li>Candidate key &rarr; C1 &rarr; S_rollno
+                                <br>C2 &rarr; S_rollno, S_name
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Composite Key</h3>
+                <ul>
+                    <li>Whenever a primary key consists of more than one attribute, it is known as a composite key.</li>
+                    <li>For example, in the student table with attributes (S_rollno, S_id, S_name, S_branch):
+                        <ul>
+                            <li>Composite key &rarr; S_rollno, S_id</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <p>RDBMS (Relational Database Management Systems) use key constraints to define rules and restrictions on
+                data stored in database tables. These constraints ensure data integrity and maintain consistency within
+                the database. Here are some key constraints commonly used in RDBMS:</p>
+            <p>In types of Key constraints we have :
+            <ol>
+                <li>Primary Key</li>
+                <li>Unique Key</li>
+                <li>Foriegn Key</li>
+                <li>Null</li>
+                <li>Not Null</li>
+                <li>Check</li>
+                <li>default</li>
+            </ol>
+            </p>
+            <div class="in">
+                <h3>Primary Key & Unique Key</h3>
+                <img src="../../images/prianduni.svg" alt="" class="wb">
+                <ul>
+                    <li>
+                        <strong>Primary Key:</strong> A primary key is a unique key that serves as a unique identifier
+                        for each record in a database table. Key characteristics of a primary key include:
+                        <ul>
+                            <li>It cannot be NULL: A primary key must always have a value for each record. This ensures
+                                that each record in the table is uniquely identifiable.</li>
+                            <li>It cannot contain duplicate values: All values within the primary key column(s) must be
+                                unique across all records in the table. This uniqueness is essential for accurate record
+                                identification.</li>
+                        </ul>
+                        <p>Primary keys play a crucial role in establishing relationships between tables in a relational
+                            database. They are used as references by foreign keys in related tables.</p>
+                    </li>
+                    <li>
+                        <strong>Unique Key:</strong> A unique key, also known as a unique constraint, is similar to a
+                        primary key in that it enforces uniqueness within a column or combination of columns. However,
+                        there's a key difference:
+                        <ul>
+                            <li>It can have NULL values: Unlike a primary key, a unique key allows the presence of NULL
+                                values. This means that while it enforces uniqueness for non-NULL values, it permits
+                                multiple NULL values in the constrained column(s).</li>
+                        </ul>
+                        <p>Unique keys are useful when you need to ensure the uniqueness of values within a column or
+                            set of columns, but you want to allow some flexibility by permitting NULL values in those
+                            columns.</p>
+                    </li>
+                </ul>
+                <p><b>Difference between Primary Key and Unique Key</b></p>
+                <ul>
+                    <li>
+                        <strong>Number of Keys:</strong> One significant difference between a primary key and a unique
+                        key is the number of keys allowed in a table:
+                        <ul>
+                            <li><em>Primary Key:</em> A table can have only one primary key. The primary key uniquely
+                                identifies each record in the table, and it ensures that there are no duplicate values
+                                within the primary key column(s).</li>
+                            <li><em>Unique Key:</em> In contrast, a table can have multiple unique keys. Each unique key
+                                enforces uniqueness within its respective column(s) but doesn't serve as the primary
+                                means of identifying records. This allows you to have different unique constraints on
+                                various columns or combinations of columns.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Null Values:</strong> Another key difference lies in how these keys handle null values:
+                        <ul>
+                            <li><em>Primary Key:</em> A primary key cannot contain null values. Every record in the
+                                table must have a unique and non-null value in the primary key column(s). This ensures a
+                                high level of data integrity and accurate record identification.</li>
+                            <li><em>Unique Key:</em> On the other hand, a unique key can include null values. While
+                                unique key constraints enforce uniqueness for non-null values, they permit multiple null
+                                values within the constrained column(s). This offers some flexibility when dealing with
+                                data where certain values might be unknown or undefined.</li>
+                        </ul>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="in">
+                <h3>Foreign Key</h3>
+                <ul>
+                    <li>A foreign key is a column whose values match the primary key of another table.</li>
+                    <li>It establishes a relationship between two or more tables at a time.</li>
+                    <li>Foreign keys act as cross-references between tables, ensuring referential integrity.</li>
+                    <li>Foreign keys are columns in one table that are used to point to the primary key of another
+                        table.</li>
+                </ul>
+                <img src="../../images/foreignkey.svg" alt="" class="wb">
+                <pre>
+                    <code>
+-- mysql format
+--Creating a Foreign Key During Table Creation
+-- Creating the parent table ST_REG
+CREATE TABLE ST_REG (
+    ST_ID INT PRIMARY KEY,
+    -- Other columns
+);
+
+-- Creating the child table ST_FEE with a foreign key referencing ST_REG(ST_ID)
+CREATE TABLE ST_FEE (
+    FEE_ID INT PRIMARY KEY,
+    ST_ID INT,
+    -- Other columns
+    FOREIGN KEY (ST_ID) REFERENCES ST_REG(ST_ID)
+);
+
+
+--Creating a Foreign Key During Table Creation
+-- Creating the parent table ST_REG (if not already created)
+CREATE TABLE ST_REG (
+    ST_ID INT PRIMARY KEY,
+    -- Other columns
+);
+
+-- Creating the child table ST_FEE without a foreign key initially
+CREATE TABLE ST_FEE (
+    FEE_ID INT PRIMARY KEY,
+    ST_ID INT,
+    -- Other columns
+);
+
+-- Adding a foreign key constraint to the ST_FEE table
+ALTER TABLE ST_FEE
+ADD FOREIGN KEY (ST_ID) REFERENCES ST_REG(ST_ID);
+                    </code>
+                </pre>
+                <p>Both primary keys and foreign keys serve important roles in database design:</p>
+                <ul>
+                    <li>Primary keys are used to ensure attribute-level uniqueness in a table.</li>
+                    <li>Foreign keys are employed to establish relationships between tables, such as ensuring that only
+                        registered students can submit fees.</li>
+                    <li>They provide automatic restrictions and maintain data integrity.</li>
+                </ul>
+                <p>Additional notes:</p>
+                <ul>
+                    <li>The name of a foreign key in the child/referenced table can be different from that in the
+                        parent/primary table.</li>
+                    <li>You cannot change the data type or size of a foreign key in the child table; it should be of the
+                        same data type or larger than the primary key it references, but not smaller.</li>
+                </ul>
+                <div class="wh">
+                    <p><b>Problem:</b></p>
+                    <ul>
+                        <li>Redundancy: One of the primary issues with foreign keys is the potential for data
+                            redundancy. Since foreign keys can contain repeated data, this can lead to inefficiencies in
+                            storage and maintenance. For example, if you have a foreign key that references a student's
+                            ID in multiple rows of a table, you end up duplicating the same student ID multiple times.
+                            This not only wastes storage space but also increases the risk of inconsistencies and errors
+                            if the data is not properly maintained.</li>
+                        <li>Ambiguity: Foreign keys, unlike primary keys, can reference data that may change or be
+                            deleted. If a foreign key references a record in another table, and that record is modified
+                            or deleted, it can lead to ambiguity and integrity issues. For instance, if a foreign key
+                            references a student's ID, and that student's record is deleted, it may leave behind
+                            orphaned foreign key references that point to nonexistent records, causing confusion and
+                            potential errors in data retrieval and analysis.</li>
+                        <li>Performance Impact: The use of foreign keys can also impact database performance, especially
+                            when dealing with large datasets. The presence of foreign keys requires additional checks
+                            and validations during data insertion, updating, and deletion. While these checks are
+                            essential for maintaining data integrity, they can introduce overhead and slow down database
+                            operations, particularly in complex queries.</li>
+                        <li>Data Consistency Challenges: Foreign keys rely on the accuracy and consistency of the
+                            referenced data. If the referenced data contains errors or inconsistencies, it can lead to
+                            problems in the tables containing foreign key references. Ensuring data consistency between
+                            related tables can be challenging and may require careful management and validation
+                            processes.</li>
+                        <li>Complexity in Querying: When working with tables that have multiple foreign key
+                            relationships, constructing queries can become complex. Developers need to join tables based
+                            on foreign key relationships, which can lead to intricate SQL queries that are harder to
+                            read, maintain, and optimize.</li>
+                    </ul>
+                </div>
+                <div class="wh">
+                    <p><b>Deletion of Record Problem</b></p>
+                    <img src="../../images/foreignkey2.svg" alt="" class="wb">
+                    <ul>
+                        <li>Now suppose a student with ID = 1 leaves the college, and we need to delete their record
+                            from all related tables.</li>
+                        <li>However, if we attempt to delete it from the base table (parent), we'll encounter an
+                            integrity constraint violation, and it will display an error message: "You are violating the
+                            integrity constraints; remove the data from the child table first."</li>
+                        <li>Conversely, if we delete the record from the child table but forget to delete it from the
+                            parent table, we encounter a similar problem.</li>
+                        <li>When we query for the number of students, the child table may be empty, but the parent table
+                            still holds data, which is not ideal.</li>
+                        <li>Therefore, there should be a mechanism to ensure that data is deleted from all related
+                            tables.</li>
+                        <li>To achieve this, we use a concept called "ON DELETE CASCADE."</li>
+                    </ul>
+                    <pre>
+                        <code>
+CREATE TABLE st_fee (
+    st_id INT(3),
+    -- Other columns
+    FOREIGN KEY (st_id) REFERENCES st_reg(st_id) ON DELETE CASCADE ON UPDATE CASCADE
+);
+                        </code>
+                    </pre>
+                    <ul>
+                        <li>Now, when we delete a record from the parent table (st_reg), it will automatically be
+                            deleted from the child table (st_fee).</li>
+                        <li>The same principle applies to updating data; if we update data in one table, it will be
+                            updated in all related tables.</li>
+                        <li>Using these cascading actions is not mandatory, but it helps maintain data integrity in the
+                            database. Without them, you would need to use delete commands for all related tables
+                            manually.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="in">
+                <ul>
+                    <li><b>NULL Constraint:</b> This constraint allows a column to contain null values, signifying that
+                        no
+                        value is assigned to it. For example, a "birthdate" column may allow null values for people with
+                        unknown birthdates.</li>
+
+                    <li><b>NOT NULL Constraint:</b> The NOT NULL constraint specifies that a column must contain a
+                        value,
+                        and null values are not allowed. For instance, a "username" column in a user table should have a
+                        NOT
+                        NULL constraint to ensure that each user has a username.</li>
+
+                    <li><b>CHECK Constraint:</b> The CHECK constraint defines a condition that data in a column must
+                        meet.
+                        For example, you can use a CHECK constraint to ensure that ages in a "customer" table are
+                        greater
+                        than or equal to 18, preventing the insertion of minors' data.</li>
+
+                    <li><b>DEFAULT Constraint:</b> The DEFAULT constraint specifies a default value for a column when no
+                        value is explicitly provided during insertion. For instance, a "status" column in an order table
+                        may
+                        have a DEFAULT constraint set to "pending" so that new orders have the default status unless
+                        specified otherwise.</li>
+                </ul>
+
+                <p><b>Examples:</b></p>
+
+                <p><b>1. NULL Constraint:</b></p>
+                <pre>
+                <code>
+CREATE TABLE Employees (
+    EmployeeID INT PRIMARY KEY,
+    FirstName VARCHAR(50),
+    LastName VARCHAR(50),
+    Birthdate DATE,
+    Email VARCHAR(100) NULL -- Email can be null
+);
+        </code>
+            </pre>
+
+                <p><b>2. NOT NULL Constraint:</b></p>
+                <pre>
+                <code>
+CREATE TABLE Users (
+    UserID INT PRIMARY KEY,
+    Username VARCHAR(50) NOT NULL, -- Username cannot be null
+    Password VARCHAR(100),
+    Email VARCHAR(100)
+);
+            </code>
+            </pre>
+
+                <p><b>3. CHECK Constraint:</b></p>
+                <pre>
+                <code>
+CREATE TABLE Products (
+    ProductID INT PRIMARY KEY,
+    ProductName VARCHAR(100),
+    Price DECIMAL(10, 2) CHECK (Price >= 0), -- Price must be non-negative
+    StockQuantity INT CHECK (StockQuantity >= 0), -- Stock quantity must be non-negative
+);
+                </code>
+            </pre>
+
+                <p><b>4. DEFAULT Constraint:</b></p>
+                <pre>
+                <code>
+CREATE TABLE Orders (
+    OrderID INT PRIMARY KEY,
+    OrderDate DATE DEFAULT CURRENT_DATE, -- Default to the current date
+    CustomerID INT,
+    Status VARCHAR(20) DEFAULT 'Pending' -- Default to 'Pending' status
+);
+            </code>
+            </pre>
+                <p>These key constraints ensure data consistency, reliability, and accuracy within the relational
+                    database,
+                    making it easier to manage and maintain data integrity.</p>
+            </div>
+        </div>
+        <div id="t3" class="wh">
+            <h2>Relational Query Language</h2>
+            <ul>
+                <li>Relational database systems are expected to be equipped with a query language that assists its users
+                    in querying
+                    the database instances. This query language allows users to request information from the database,
+                    and one of
+                    the most commonly used query languages for this purpose is SQL (Structured Query Language).</li>
+
+                <li>In essence, a query can be thought of as a "Retrieval Program" used to extract specific data from a
+                    database.</li>
+
+                <li><b>Two Types of Query Language:</b></li>
+                <ul>
+                    <li><b>Procedural Query Language</b></li>
+
+                    <li><b>Non-Procedural (or Declarative) Query Language</b></li>
+                </ul>
+            </ul>
+            </ul>
+
+            <div class="in">
+                <h3>Procedural Query Language:</h3>
+                <ul>
+                    <li>In procedural query language, the user provides explicit instructions to the system on how to
+                        retrieve
+                        the data they require.</li>
+                    <li>The user not only defines what data should be retrieved but also specifies the exact steps and
+                        operations
+                        to achieve the desired results.</li>
+                </ul>
+
+                <h3>Non-Procedural (or Declarative) Query Language:</h3>
+                <ul>
+                    <li>In non-procedural query language, the user focuses solely on stating what data they want from
+                        the
+                        database.</li>
+                    <li>The user doesn't need to provide a detailed procedure or specify the operational steps; they
+                        simply
+                        declare their data retrieval requirements.</li>
+                </ul>
+                <p>Both procedural and non-procedural query languages serve as powerful tools for interacting with
+                    relational
+                    databases, allowing users to retrieve and manipulate data according to their needs.</p>
+            </div>
+            <div class="in">
+                <h2>Two "Pure" Query Languages</h2>
+                <ul>
+                    <li>
+                        <p>There are two fundamental "Pure" Query languages or Mathematical Query Languages:</p>
+                        <ol>
+                            <li><strong>Relational Algebra</strong></li>
+                            <li>
+                                <strong>Relational Calculus</strong>
+                                <ul>
+                                    <li>Tuple Relational Calculus</li>
+                                    <li>Domain Relational Calculus</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                    <li>
+                        <p>Understanding these languages is crucial for comprehending how database systems manage
+                            relational databases, as well as for gaining insights into how SQL functions.</p>
+                    </li>
+                    <li>
+                        <p><strong>Relational Algebra</strong> and <strong>Relational Calculus</strong> provide the
+                            theoretical foundation for query languages. SQL, on the other hand, is a practical
+                            implementation of these theories, enabling us to retrieve data from Relational Database
+                            Management Systems (RDBMS).</p>
+                    </li>
+                </ul>
+
+                <div class="wh">
+                    <h4>Relational Algebra vs. Relational Calculus</h4>
+                    <ol>
+                        <li>
+                            <strong>Relational Algebra:</strong>
+                            <ul>
+                                <li>Relational algebra is a procedural query language.</li>
+                                <li>It is highly operational and is particularly useful for representing execution
+                                    plans.</li>
+                                <li>Procedural in nature, it defines both what data is required and how to obtain that
+                                    data.</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <strong>Relational Calculus:</strong>
+                            <ul>
+                                <li>Relational calculus includes <em>Tuple Relational Calculus</em> and <em>Domain
+                                        Relational Calculus</em>.</li>
+                                <li>It is a non-procedural query language.</li>
+                                <li>Unlike relational algebra, it is not operational or declarative.</li>
+                                <li>In the calculus approach, queries specify what data is desired without specifying
+                                    how to retrieve that data.</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div id="t4" class="in">
+                <h3>The Relational Algebra:</h3>
+                <p><strong>Basic Introduction</strong></p>
+                <ul>
+                    <li>
+                        The introduction of Relational Algebra marks the point where the complexity of Database
+                        Management Systems (DBMS) starts to increase.
+                    </li>
+                </ul>
+                <p><strong>What is the Concept of Relational Algebra?</strong></p>
+                <ul>
+                    <li>
+                        Relational Algebra is a procedural query language that employs a collection of mathematical
+                        'operators' to construct queries.
+                    </li>
+                    <li>
+                        Procedural Query Language: In this type of language, every aspect of the query, including the
+                        steps and methods for data retrieval, must be explicitly defined.
+                    </li>
+                </ul>
+                <p><strong>How Does Relational Algebra Work?</strong></p>
+                <ul>
+                    <li>
+                        <p>Each query in Relational Algebra describes a step-by-step procedure for computing the desired
+                            answer.</p>
+                    </li>
+                </ul>
+                <p><strong>The Relational Algebraic Operations can be categorized in several ways:</strong></p>
+                <ol>
+                    <li>Fundamental & Additional Operations</li>
+                    <li>Set-Oriented Operations & Relation-Oriented Operations</li>
+                    <li>Unary Operations & Binary Operations</li>
+                </ol>
+                <div class="wh">
+                    <p><strong>Fundamental Operations</strong></p>
+                    <ul>
+                        <li>Select (&sigma; Sigma)</li>
+                        <li>Project (&pi; Pi)</li>
+                        <li>Cross Product (X)</li>
+                        <li>Union (&Union; Union)</li>
+                        <li>Set Difference (-)</li>
+                        <li>Rename (&rho; Rho)</li>
+                    </ul>
+                    <p><strong>Additional Operations</strong></p>
+                    <ul>
+                        <li>Join (&timesb;)</li>
+                        <li>Set Intersection (&Intersection; Intersection)</li>
+                        <li>Division (&divide;;, /)</li>
+                    </ul>
+                </div>
+                <div class="wh">
+                    <p><strong>Set-Oriented Operations</strong></p>
+                    <ul>
+                        <li>Union</li>
+                        <li>Intersection</li>
+                        <li>Set Difference</li>
+                        <li>Cross Product</li>
+                    </ul>
+                    <p><strong>Relation-Oriented Operations</strong></p>
+                    <ul>
+                        <li>Select</li>
+                        <li>Project</li>
+                        <li>Division</li>
+                        <li>Join</li>
+                        <li>Rename</li>
+                    </ul>
+                </div>
+                <div class="wh">
+                    <p><strong>Unary Operations</strong>: When we use only a single table and apply operations</p>
+                    <ul>
+                        <li>Cross Product</li>
+                        <li>Set Difference</li>
+                        <li>Set Intersection</li>
+                    </ul>
+                    <p><strong>Binary Operations</strong>: When we use two tables</p>
+                    <ul>
+                        <li>Union</li>
+                        <li>Join</li>
+                        <li>Division</li>
+                    </ul>
+                </div>
+
+                <div class="in">
+                    <h3>Relation Operations in Relational Algebra</h3>
+                    <ol>
+                        <li>
+                            <p><strong>Select (&sigma;):</strong> Selects all tuples that satisfy the given selection
+                                condition from relation 'R'.</p>
+                            <ul>
+                                <li>For example, it can be used to retrieve all employee details working in an
+                                    organization
+                                    where the age is greater than 20 years.</li>
+                                <li>Mathematically represented as: &sigma; &lt;condition&gt; (R)</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p><strong>Project (&pi;):</strong> Produces a new relation with a subset of the attributes
+                                from
+                                'R'.</p>
+                            <ul>
+                                <li>For instance, if you have a table with 20 attributes but you are interested in
+                                    viewing
+                                    only 2 of them, you would use the project operation.</li>
+                                <li>Mathematically represented as: &pi; &lt;attribute1, attribute2&gt; (R)</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p><strong>Cross Product (X):</strong> Generates a relation that combines attributes from
+                                both
+                                'R1' and 'R2,' including all possible combinations of tuples from 'R1' and 'R2'.</p>
+                            <ul>
+                                <li>Mathematically represented as: (R1 X R2)</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p><strong>Union (&Union;):</strong> Produces a relation that includes all the tuples from
+                                either 'R1' or 'R2' (or both).</p>
+                            <ul>
+                                <li>Mathematically represented as: (R1 &Union; R2)</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p><strong>Set Difference (-):</strong> Produces a relation that includes all the tuples in
+                                'R1'
+                                that are not in 'R2'.</p>
+                            <ul>
+                                <li>Mathematically represented as: (R1 - R2)</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p><strong>Set Intersection (&Intersection;):</strong> Generates a relation that includes
+                                all
+                                the
+                                tuples found in both 'R1' and 'R2'.</p>
+                            <ul>
+                                <li>Mathematically represented as: (R1 &Intersection; R2)</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p><strong>Division (&divide;;):</strong> Used for queries involving concepts like 'For All'
+                                or
+                                'Every.'</p>
+                            <ul>
+                                <li>Mathematically represented as: (R1 &divide;; R2)</li>
+                            </ul>
+                        </li>
+                        <li>
+                            <p><strong>Rename (&rho;):</strong> Used to assign a name to a relation obtained after
+                                applying
+                                any relational algebra operation.</p>
+                            <ul>
+                                <li>Mathematically represented as: &rho;(R, E)</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </div>
+                <div class="in">
+                    <h3>Select Operation (&sigma;)</h3>
+                    <ul>
+                        <li>
+                            <p>The select operation is used when we want to retrieve or display a particular set of
+                                tuples
+                                from a 'relation' based on certain conditions.</p>
+                        <li>
+                            <p><strong>Syntax:</strong> &sigma; &lt;condition&gt; (R)</p>
+                        </li>
+                    </ul>
+
+                    <p><strong>Example:</strong></p>
+                    <pre>
+                    <code>
+                STUDENT (R)
++---------+----------+-------+-----------+----------+
+|  S_ID   |  S_Name  | S_Age | S_State   | S_Course |
+|---------+----------+-------+-----------+----------+
+|    1    |  Deepak  |  25   |  Delhi    |  B.Com   |
+|    2    |  Rahul   |  24   |  Pune     |  B.Sc    |
+|    3    |  Kapil   |  30   |  Delhi    |  B.Com   |
+|    4    |  Sudesh  |  22   | Bangalore |  M.Sc    |
+|    5    |  Varun   |  29   |  Pune     |  B.Com   |
++---------+----------+-------+-----------+----------+
+                    </code>
+                </pre>
+                    <div class="wh">
+                        <p><strong>Query:</strong> Select * from student where S_Age > 25</p>
+                        <ul>
+                            <li>
+                                <p><strong>Algebraic Representation:</strong> &sigma; &lt; S_Age > 25 > (STUDENT)</p>
+                            </li>
+                            <li>
+                                <p><strong>Output:</strong></p>
+
+                            </li>
+                        </ul>
+                        <pre>
+                        <code>
++---------+----------+-------+--------+----------+
+|  S_ID   |  S_Name  | S_Age |S_State | S_Course |
+|---------+----------+-------+--------+----------+
+|    3    |  Kapil   |  30   |  Delhi |  B.Com   |
+|    5    |  Varun   |  29   |  Pune  |  B.Com   |
++---------+----------+-------+--------+----------+
+                        </code>
+                    </pre>
+                    </div>
+                    <div class="wh">
+                        <p><strong>Query:</strong> Select * from student where S_Age > 25 AND S_Age &lt; 30</p>
+                        <ul>
+                            <li>
+                                <p><strong>Algebraic Representation:</strong> &sigma; &lt; S_Age > 25 AND S_Age &lt; 30
+                                    >
+                                    (STUDENT)
+                                    <br> We could also use : &sigma; &lt; S_Age > 25 &and; S_Age &lt; 30 > (STUDENT)
+                                </p>
+                            </li>
+                            <li>
+                                <p><strong>Output:</strong></p>
+
+                            </li>
+                        </ul>
+                        <pre>
+                        <code>
++---------+----------+-------+---------+----------+
+|  S_ID   |  S_Name  | S_Age | S_State | S_Course |
+|---------+----------+-------+---------+----------+
+|    5    |  Varun   |  29   |  Pune   |  B.Com   |
++---------+----------+-------+---------+----------+
+                        </code>
+                    </pre>
+                    </div>
+                    <div class="wh">
+                        <p><strong>Query:</strong> Select * from student where S_Age > 25 AND S_Course = "B.Com"</p>
+                        <ul>
+                            <li>
+                                <p><strong>Algebraic Representation:</strong> &sigma; &lt; S_Age > 25 &and; S_Course =
+                                    "B.Com" > (STUDENT) </p>
+                            </li>
+                            <li>
+                                <p><strong>Output:</strong></p>
+
+                            </li>
+                        </ul>
+                        <pre>
+                        <code>
++---------+----------+-------+---------+----------+
+|  S_ID   |  S_Name  | S_Age | S_State | S_Course |
+|---------+----------+-------+---------+----------+
+|    3    |  Kapil   |  30   |  Delhi  |  B.Com   |
+|    5    |  Varun   |  29   |  Pune   |  B.Com   |
++---------+----------+-------+---------+----------+
+                        </code>
+                    </pre>
+                    </div>
+                </div>
+                <div class="in">
+                    <h3>Project Operation (&pi;)</h3>
+                    <ul>
+                        <li>It is used to retrieve particular set of attribute from a relation.</li>
+                        <li><strong>Syntax:</strong> &pi; &lt; attribute > (R)</li>
+                    </ul>
+                    <p><strong>Example:</strong></p>
+                    <pre>
+                    <code>
+                STUDENT (R)
++---------+----------+-------+-----------+----------+
+|  S_ID   |  S_Name  | S_Age | S_State   | S_Course |
+|---------+----------+-------+-----------+----------+
+|    1    |  Deepak  |  25   |  Delhi    |  B.Com   |
+|    2    |  Rahul   |  24   |  Pune     |  B.Sc    |
+|    3    |  Kapil   |  30   |  Delhi    |  B.Com   |
+|    4    |  Sudesh  |  22   | Bangalore |  M.Sc    |
+|    5    |  Rahul   |  29   |  Pune     |  B.Com   |
++---------+----------+-------+-----------+----------+
+                    </code>
+                </pre>
+                    <div class="wh">
+                        <p><strong>Query:</strong> Retrieve S_Age from STUDENT.</p>
+                        <ul>
+                            <li>
+                                <p><strong>Algebraic Representation:</strong> &pi; &lt; S_Age > (STUDENT)</p>
+                            </li>
+                            <li>
+                                <p><strong>Output:</strong></p>
+                            </li>
+                        </ul>
+                        <pre>
+                        <code>
++-------+
+| S_Age |
++-------+
+|  25   |
+|  24   |
+|  30   |
+|  22   |
+|  29   |
++-------+
+                        </code>
+                    </pre>
+                    </div>
+                    <div class="wh">
+                        <p><strong>Query:</strong> Retrieve S_ID & S_Name from STUDENT.</p>
+                        <ul>
+                            <li>
+                                <p><strong>Algebraic Representation:</strong> &pi; &lt; S_ID, S_Name > (STUDENT)</p>
+                            </li>
+                            <li>
+                                <p><strong>Output:</strong></p>
+                            </li>
+                        </ul>
+                        <pre>
+                        <code>
++---------+----------+
+|  S_ID   |  S_Name  |
+|---------+----------+
+|    1    |  Deepak  |
+|    2    |  Rahul   |
+|    3    |  Kapil   |
+|    4    |  Sudesh  |
+|    5    |  Rahul   |
++---------+----------+
+                        </code>
+                    </pre>
+                    </div>
+                    <div class="wh">
+                        <p><strong>Query:</strong> Retrieve S_Name from STUDENT.</p>
+                        <ul>
+                            <li>
+                                <p><strong>Algebraic Representation:</strong> &pi; &lt; S_ID, S_Name > (STUDENT)</p>
+                            </li>
+                            <li>
+                                <p><strong>Output:</strong></p>
+                            </li>
+                        </ul>
+                        <pre>
+                        <code>
++----------+
+|  S_Name  |
++----------+
+|  Deepak  |
+|  Rahul   |
+|  Kapil   |
+|  Sudesh  |
++----------+
+                        </code>
+                    </pre>
+                        <ul>
+                            <li>There were two individuals with the name Rahul, so only one is shown; the duplicate one
+                                is
+                                removed.</li>
+                        </ul>
+                    </div>
+                    <div class="wh">
+                        <p><strong>Query:</strong> Retrieve S_Name, S_Id & S_Course from STUDENT Where S_Course =
+                            "B.Com".
+                        </p>
+                        <ul>
+                            <li>
+                                <p><strong>Algebraic Representation:</strong> &sigma; &lt; S_Course = "B.Com" > (&pi;
+                                    &lt;
+                                    S_ID, S_Name, S_Course > (STUDENT))</p>
+                            </li>
+                            <li>
+                                <p><strong>Output:</strong></p>
+                            </li>
+                        </ul>
+                        <pre>
+                        <code>
++---------+----------+----------+
+|  S_ID   |  S_Name  | S_Course |
+|---------+----------+----------+
+|    1    |  Deepak  |  B.Com   |
+|    3    |  Kapil   |  B.Com   |
+|    5    |  Rahul   |  B.Com   |
++---------+----------+----------+
+                        </code>
+                    </pre>
+                    </div>
+                    <div class="wh">
+                        <p><strong>Query:</strong> Retrieve S_Name, S_Id & S_Course from STUDENT Where S_Course =
+                            "B.Com".
+                        </p>
+                        <ul>
+                            <li>
+                                <p><strong>Algebraic Representation:</strong> &sigma; &lt; S_Course = "B.Com" > (&pi;
+                                    &lt;
+                                    S_ID, S_Name, S_Course > (STUDENT))</p>
+                            </li>
+                            <li>
+                                <p><strong>Output:</strong></p>
+                            </li>
+                        </ul>
+                        <pre>
+                        <code>
++---------+----------+----------+
+|  S_ID   |  S_Name  | S_Course |
+|---------+----------+----------+
+|    1    |  Deepak  |  B.Com   |
+|    3    |  Kapil   |  B.Com   |
+|    5    |  Rahul   |  B.Com   |
++---------+----------+----------+
+                        </code>
+                    </pre>
+                    </div>
+                </div>
+                <div class="in">
+                    <h3>Rename Operation (&rho;)</h3>
+                    <ul>
+                        <li>It is used to assign a name of 'our choice' to a new 'relation' obtained after applying any
+                            relational algebra operation.</li>
+                        <li>It is a unary operation, means we can only apply it on single table.</li>
+                        <li><strong>Syntax:</strong> &rho;(R, E)
+                            <ul>
+                                <li>R: New relation name that we want</li>
+                                <li>E: Relational algebra operation expression</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <p>We want to retrieve S_Age and S_State column with new name = Student_details
+                        <br>&rho;(Student_Details, &pi; &lt; A_Age, S_State > (STUDENT))
+                    </p>
+                    <p><strong>Output:</strong></p>
+                    <pre>
+                    <code>
+    Student_Details
++-------+-----------+
+| S_Age | S_State   |
++-------+-----------+
+|  25   |  Delhi    |
+|  24   |  Pune     |
+|  30   |  Delhi    |
+|  22   | Bangalore |
+|  29   |  Pune     |
++-------+-----------+
+                    </code>
+                </pre>
+                    <ul>
+                        <li>Note: It is also used to rename Attributes.</li>
+                        <li>Now we want to retrieve S_Age and S_State but the name of these attributes should be Age and
+                            State:
+                            <br>&rho;(Student_Details(Age, State), &pi; &lt; S_Age, S_State > (STUDENT))
+                        </li>
+                    </ul>
+                    <pre>
+                    <code>
+    Student_Details
++-------+-----------+
+|  Age  |   State   |
++-------+-----------+
+|  25   |  Delhi    |
+|  24   |  Pune     |
+|  30   |  Delhi    |
+|  22   | Bangalore |
+|  29   |  Pune     |
++-------+-----------+
+                    </code>
+                </pre>
+                </div>
+                <div class="in">
+                    <h3>Union Operation (&Union;)</h3>
+                    <ul>
+                        <li>Union is a binary operation, requiring two tables to perform the operation.</li>
+                        <li>It treats relations as sets, eliminating duplicate values.</li>
+                        <li>It produces a new relation that includes all the tuples from either R1 or R2.</li>
+                        <li>Union Compatibility Conditions:
+                            <ol>
+                                <li>Both relations must have the same number of attributes.</li>
+                                <li>The data types of corresponding attributes must be the same.</li>
+                            </ol>
+                        </li>
+                    </ul>
+
+                    <pre>
+                    <code>
+    Employee                Student
++-------+-----------+   +-------+-----------+
+|  E_ID |  E_Name   |   |  S_ID |  S_Name   |
++-------+-----------+   +-------+-----------+
+|  1    |  Deepak   |   |  6    |  Sudesh   |
+|  2    |  Rajesh   |   |  5    |  Rahul    |
+|  3    |  Deepak   |   |  2    |  Deepak   |
+|  4    |  Kapil    |   |  7    |  Sanjay   |
++-------+-----------+   |  9    |  Deepak   |   
+                        +-------+-----------+
+                    </code>
+                </pre>
+
+                    <p><strong>Employee &Union; Student</strong></p>
+                    <ul>
+                        <li>The attribute names are selected from the first table in the expression, so here the
+                            attributes
+                            from the Employee table will be chosen.</li>
+                    </ul>
+
+                    <p>Output:</p>
+                    <pre>
+                    <code>
++-------+-----------+  
+|  E_ID |  E_Name   |  
++-------+-----------+  
+|  1    |  Deepak   |  
+|  2    |  Rajesh   |  
+|  3    |  Deepak   |  
+|  4    |  Kapil    |  
+|  6    |  Sudesh   |  
+|  5    |  Rahul    |  
+|  7    |  Sanjay   |  
+|  9    |  Deepak   |  
++-------+-----------+     
+                    </code>
+                </pre>
+
+                    <p><strong>&pi; &lt; E_Name &gt; (Employee) &Union; &pi; &lt; S_Name &gt; (Student)</strong></p>
+                    <ul>
+                        <li>Here, the attributes from the left table are selected.</li>
+                    </ul>
+
+                    <p>Output:</p>
+                    <pre>
+                    <code>
++-----------+  
+|  E_Name   |  
++-----------+  
+|  Deepak   |  
+|  Rajesh   |  
+|  Kapil    |  
+|  Sudesh   |  
+|  Rahul    |  
+|  Sanjay   |   
++-----------+  
+                    </code>
+                </pre>
+                    <p><strong>Union Properties</strong></p>
+                    <ul>
+                        <li>Commutative &rArr; R1 &Union; R2 = R2 &Union; R1</li>
+                        <li>Associative &rArr; R1 &Union; ( R2 &Union; R3 ) = (R1 &Union; R2 ) &Union; R3 </li>
+                        <li>Distributive &rArr; &rArr; A &Union; ( B &Intersection; C ) = ( A &Union; B ) &Intersection;
+                            ( A
+                            &Union; C )
+                        </li>
+                    </ul>
+                </div>
+                <div class="in">
+                    <h3>Set Intersection Operation (&#8745;)</h3>
+                    <ul>
+                        <li>This operation is used to find the common tuples between two relations (R1 &#8745; R2).</li>
+                    </ul>
+
+                    <p><strong>Compatibility Conditions:</strong></p>
+                    <ul>
+                        <li>Both relations must have the same number of attributes.</li>
+                        <li>The data type of their corresponding attributes must be the same.</li>
+                    </ul>
+
+                    <pre>
+                    <code>
+Employee                Student
++-------+-----------+   +-------+-----------+
+|  E_ID |  E_Name   |   |  S_ID |  S_Name   |
++-------+-----------+   +-------+-----------+
+|  1    |  Deepak   |   |  6    |  Sudesh   |
+|  2    |  Rajesh   |   |  5    |  Rahul    |
+|  3    |  Deepak   |   |  2    |  Deepak   |
+|  4    |  Kapil    |   |  7    |  Sanjay   |
++-------+-----------+   |  9    |  Deepak   |   
+                        +-------+-----------+
+                    </code>
+                </pre>
+
+                    <p>(&#960; &lt; S_ID &gt; (Student)) &#8745; (&#960; &lt; E_ID &gt; (Employee))</p>
+                    <pre>
+                    <code>
++-------+
+|  S_ID |
++-------+
+|   2   |
++-------+
+                    </code>
+                </pre>
+
+                    <p>Now, if we also want to show the name column:
+                        <br />(&#960; &lt; E_Name &gt; (Employee)) &#8745; (&#960; &lt; S_Name &gt; (Student))
+                    </p>
+                    <pre>
+                    <code>
++-----------+
+|  S_Name   |
++-----------+
+|  Deepak   |
++-----------+
+                    </code>
+                </pre>
+
+                    <p><strong>Intersection Properties</strong></p>
+                    <ul>
+                        <li>Commutative &rarr; R1 &#8745; R2 = R2 &#8745; R1</li>
+                        <li>Associative &rarr; R1 &#8745; ( R2 &#8745; R3 ) = (R1 &#8745; R2 ) &#8745; R3 </li>
+                        <li>Distributive &rarr; A &#8745; ( B &#8746; C ) = ( A &#8745; B ) &#8746; ( A &#8745; C )
+                        </li>
+                    </ul>
+                </div>
+                <div class="in">
+                    <h3>Set Difference Operation (-)</h3>
+                    <ul>
+                        <li>Set Difference is a binary operation that provides tuples from one relation but not in the
+                            other
+                            relation (R1 - R2). Essentially, it removes the common tuples from the first table in the
+                            expression.</li>
+                    </ul>
+
+                    <p><strong>Compatibility Conditions:</strong></p>
+                    <ul>
+                        <li>Both relations must have the same number of attributes.</li>
+                        <li>The data type of their corresponding attributes must be the same.</li>
+                    </ul>
+
+                    <pre>
+                    <code>
+Employee                Student
++-------+-----------+   +-------+-----------+
+|  E_ID |  E_Name   |   |  S_ID |  S_Name   |
++-------+-----------+   +-------+-----------+
+|  1    |  Deepak   |   |  6    |  Sudesh   |
+|  2    |  Rajesh   |   |  5    |  Rahul    |
+|  3    |  Deepak   |   |  2    |  Deepak   |
+|  4    |  Kapil    |   |  4    |  Kapil    |
++-------+-----------+   |  9    |  Deepak   |   
+                        +-------+-----------+
+                    </code>
+                </pre>
+
+                    <p><strong>Employee - Student</strong></p>
+                    <pre>
+                    <code>
++-------+-----------+
+|  E_ID |  E_Name   |
++-------+-----------+
+|  1    |  Deepak   |
+|  2    |  Rajesh   |
+|  3    |  Deepak   |
++-------+-----------+
+                    </code>
+                </pre>
+
+                    <ul>
+                        <li>As (4, Kapil) was common, it was removed from the result.</li>
+                    </ul>
+
+                    <p><strong>(&#960; &lt; E_Name &gt; (Employee)) - (&#960; &lt; S_Name &gt; (Student))</strong></p>
+                    <pre>
+                    <code>
++-----------+
+|  E_Name   |
++-----------+
+|  Rajesh   |
++-----------+
+                    </code>
+                </pre>
+
+                    <ul>
+                        <li>Rajesh is the only name which is an employee but not a student.</li>
+                    </ul>
+
+                    <p><strong>Set Difference Properties:</strong></p>
+                    <ul>
+                        <li>R1 - R2 &ne; R2 - R1</li>
+                    </ul>
+                </div>
+                <div class="in">
+                    <h3>Cartesian Product (&times;)</h3>
+                    <ul>
+                        <li>Cartesian Product is a binary operation used to combine two relations.</li>
+                        <li>This operation returns a third relation that contains all possible combinations of tuples
+                            from
+                            two relations.</li>
+                    </ul>
+
+                    <p><strong>Compatibility Conditions:</strong></p>
+                    <ul>
+                        <li>There are no specific compatibility conditions for the Cartesian Product operation. It can
+                            be
+                            performed on any two relations regardless of their attributes or data types.</li>
+                    </ul>
+
+                    <p><strong>Example:</strong></p>
+
+                    <pre>
+                    <code>
+Table A                 Table B
++-------+-----------+   +-------+-----------+
+|  ID   |  Name     |   |  Code |  Category |
++-------+-----------+   +-------+-----------+
+|  1    |  John     |   |  101  |  A        |
+|  2    |  Alice    |   |  102  |  B        |
+|  3    |  Bob      |   |  103  |  A        |
++-------+-----------+   |  104  |  C        |   
+                        +-------+-----------+
+                    </code>
+                </pre>
+
+                    <p><strong>Cartesian Product (A &times; B):</strong></p>
+
+                    <pre>
+                    <code>
++-------+-----------+-------+-----------+
+|  ID   |  Name     |  Code |  Category |
++-------+-----------+-------+-----------+
+|  1    |  John     |  101  |  A        |
+|  1    |  John     |  102  |  B        |
+|  1    |  John     |  103  |  A        |
+|  1    |  John     |  104  |  C        |
+|  2    |  Alice    |  101  |  A        |
+|  2    |  Alice    |  102  |  B        |
+|  2    |  Alice    |  103  |  A        |
+|  2    |  Alice    |  104  |  C        |
+|  3    |  Bob      |  101  |  A        |
+|  3    |  Bob      |  102  |  B        |
+|  3    |  Bob      |  103  |  A        |
+|  3    |  Bob      |  104  |  C        |
++-------+-----------+-------+-----------+
+                    </code>
+                </pre>
+
+                    <ul>
+                        <li>The Cartesian Product combines all possible combinations of tuples from Tables A and B.</li>
+                    </ul>
+
+                    <p><strong>Cartesian Product Properties:</strong></p>
+                    <ul>
+                        <li>Size of Result: The size of the resulting relation is the product of the sizes of the input
+                            relations.</li>
+                        <li>Associative: (A &times; B) &times; C = A &times; (B &times; C)</li>
+                    </ul>
+                </div>
+                <div class="in">
+                    <h3>Division Operation (&divide;)</h3>
+                    <p>
+                        Concept:
+                        <br>
+                        Imagine you have two tables: "Customers" and "Orders." The "Customers" table contains
+                        information
+                        about different customers, and the "Orders" table keeps track of various orders made by those
+                        customers.
+                    </p>
+                    <p>
+                        Now, let's say you want to find customers who have ordered all available products. In other
+                        words,
+                        you want to identify customers who have ordered every product in your store.
+                    </p>
+                    <p>
+                        This is where the Division operation comes in.
+                    </p>
+
+                    <h4>How Division Works</h4>
+                    <ol>
+                        <li>
+                            You have two tables: "Customers" and "Orders."
+                        </li>
+                        <li>
+                            You perform the Division operation: "Customers ÷ Orders."
+                        </li>
+                    </ol>
+
+                    <h4>What Does the Result Show?</h4>
+                    <p>
+                        The result of "Customers ÷ Orders" will give you a list of customer IDs (or names) who have
+                        ordered
+                        every product.
+                    </p>
+
+                    <h4>Example</h4>
+                    <p><strong>Customers Table:</strong></p>
+                    <pre>
+                    <code>
++-----------+-----+
+| CustomerID| Name|
++-----------+-----+
+|  101      | John|
+|  102      | Alice|
+|  103      | Bob  |
++-----------+-----+
+                    </code>
+                </pre>
+
+                    <p><strong>Orders Table:</strong></p>
+                    <pre>
+                    <code>
++---------+-----------+---------+
+| OrderID | CustomerID| Product |
++---------+-----------+---------+
+|   1     |     101   |   A     |
+|   2     |     101   |   B     |
+|   3     |     102   |   A     |
+|   4     |     101   |   C     |
+|   5     |     102   |   B     |
+|   6     |     102   |   C     |
+|   7     |     103   |   A     |
+|   8     |     103   |   B     |
++---------+-----------+---------+
+                    </code>
+                </pre>
+
+                    <p>
+                        Now, if you perform "Customers ÷ Orders," the result will be a list of customer IDs who have
+                        ordered
+                        every product. In this case, it will be:
+                    </p>
+
+                    <pre>
+                    <code>
++-----------+
+| CustomerID|
++-----------+
+|  101      |
+|  102      |
++-----------+
+                    </code>
+                </pre>
+
+                    <p>
+                        This tells you that both John (CustomerID 101) and Alice (CustomerID 102) have ordered every
+                        product
+                        available in the store.
+                    </p>
+
+                    <h2>Properties of Division</h2>
+                    <ul>
+                        <li>
+                            Division is not commutative, which means the order of tables matters. "Customers ÷ Orders"
+                            is
+                            not the same
+                            as "Orders ÷ Customers."
+                        </li>
+                        <li>
+                            Division is not associative, which means the grouping of tables matters. "(Customers ÷
+                            Orders) ÷
+                            AnotherTable" is not the same as "Customers ÷ (Orders ÷ AnotherTable)."
+                        </li>
+                    </ul>
+                </div>
+                <div class="in">
+                    <h3>Join Operation</h3>
+                    <h4>Concept</h4>
+                    <p>
+                        The Join operation is used when you have two or more tables, and you want to combine them based
+                        on a common column or attribute. It helps you retrieve information from multiple tables by
+                        linking related data.
+                    </p>
+
+                    <h4>How Join Works</h4>
+                    <p>
+                        The Join operation combines rows from two or more tables based on a specified condition or
+                        matching column. This condition is typically defined using the equality operator (=), where the
+                        values in the specified columns must match for the rows to be included in the result.
+                    </p>
+
+                    <h4>Types of Joins</h4>
+                    <p>
+                        There are several types of Join operations in relational algebra, including:
+                    </p>
+
+                    <ul>
+                        <li>
+                            <b>Inner Join:</b> Retrieves rows that have matching values in both tables. Non-matching
+                            rows are excluded.
+                        </li>
+                        <li>
+                            <b>Left Outer Join (or Left Join):</b> Retrieves all rows from the left table and the
+                            matching rows from the right table. Non-matching rows from the left table will have NULL
+                            values for right table columns.
+                        </li>
+                        <li>
+                            <b>Right Outer Join (or Right Join):</b> Similar to Left Join but retrieves all rows from
+                            the right table and matching rows from the left table.
+                        </li>
+                        <li>
+                            <b>Full Outer Join:</b> Retrieves all rows when there is a match in either the left or right
+                            table. Non-matching rows from both tables will have NULL values for columns from the
+                            non-matching table.
+                        </li>
+                        <li>
+                            <b>Cross Join (or Cartesian Join):</b> Combines all rows from the left table with all rows
+                            from the right table, resulting in a Cartesian product.
+                        </li>
+                    </ul>
+                    <div class="wh">
+                        <h4>Example</h4>
+                        <p>
+                            Let's consider two tables: "Employees" and "Departments." The "Employees" table contains
+                            information about employees, including their names and department IDs. The "Departments"
+                            table
+                            contains department names and corresponding department IDs.
+                        </p>
+
+                        <h4>Employees Table:</h4>
+                        <pre>
+                        <code>
++-------+-----------+-----------+
+| EmpID | EmpName   | DeptID    |
++-------+-----------+-----------+
+| 1     | John      | 101       |
+| 2     | Alice     | 102       |
+| 3     | Bob       | 101       |
+| 4     | Carol     | 103       |
++-------+-----------+-----------+
+                        </code>
+                    </pre>
+
+                        <h4>Departments Table:</h4>
+                        <pre>
+                        <code>
++-------+------------+
+| DeptID| DeptName   |
++-------+------------+
+| 101   | HR         |
+| 102   | Sales      |
+| 103   | Marketing  |
++-------+------------+
+                        </code>
+                    </pre>
+
+                        <h4>Inner Join (Employees and Departments):</h4>
+                        <p>
+                            An Inner Join between the "Employees" and "Departments" tables on the "DeptID" column would
+                            result in:
+                        </p>
+
+                        <pre>
+                        <code>
++-------+-----------+-----------+------------+
+| EmpID | EmpName   | DeptID    | DeptName   |
++-------+-----------+-----------+------------+
+| 1     | John      | 101       | HR         |
+| 2     | Alice     | 102       | Sales      |
+| 3     | Bob       | 101       | HR         |
+| 4     | Carol     | 103       | Marketing  |
++-------+-----------+-----------+------------+
+                        </code>
+                    </pre>
+
+                        <p>
+                            This Inner Join combines data from both tables where the "DeptID" values match. You get a
+                            result
+                            set that includes employee names and their corresponding department names.
+                        </p>
+                    </div>
+                    <div class="wh">
+                        <h4>Left Outer Join (Employees and Department):</h4>
+                        <h4>Employees Table:</h4>
+                        <pre>
+                        <code>
++-------+-----------+-----------+
+| EmpID | EmpName   | DeptID    |
++-------+-----------+-----------+
+| 1     | John      | 101       |
+| 2     | Alice     | 102       |
+| 3     | Bob       | 101       |
+| 4     | Carol     | 103       |
++-------+-----------+-----------+
+                        </code>
+                    </pre>
+                        <h2>Departments Table:</h2>
+                        <pre>
+                        <code>
++-------+------------+
+| DeptID| DeptName   |
++-------+------------+
+| 101   | HR         |
+| 102   | Sales      |
+| 103   | Marketing  |
+| 104   | Finance    |
++-------+------------+
+                        </code>
+                    </pre>
+
+                        <h4>Left Outer Join (Employees and Departments):</h4>
+                        <pre>
+                        <code>
++-------+-----------+-----------+------------+
+| EmpID | EmpName   | DeptID    | DeptName   |
++-------+-----------+-----------+------------+
+| 1     | John      | 101       | HR         |
+| 2     | Alice     | 102       | Sales      |
+| 3     | Bob       | 101       | HR         |
+| 4     | Carol     | 103       | Marketing  |
+| null  | null      | 104       | Finance    |
++-------+-----------+-----------+------------+
+                        </code>
+                    </pre>
+
+                        <p>
+                            In this Left Outer Join example, all rows from the "Employees" table are included in the
+                            result,
+                            along with matching rows from the "Departments" table. However, there's one additional row
+                            with
+                            null values in the "Employees" columns because there was no matching employee for the
+                            "Finance"
+                            department.
+                        </p>
+                    </div>
+                    <div class="wh">
+                        <h4>Right Outer Join Example:</h4>
+                        <h4>Employees Table:</h4>
+                        <pre>
+                        <code>
++-------+-----------+-----------+
+| EmpID | EmpName   | DeptID    |
++-------+-----------+-----------+
+| 1     | John      | 101       |
+| 2     | Alice     | 102       |
+| 3     | Bob       | 101       |
+| 4     | Carol     | 103       |
++-------+-----------+-----------+
+                    </code>
+                </pre>
+                        <h4>Departments Table:</h4>
+                        <pre>
+                    <code>
++-------+------------+
+| DeptID| DeptName   |
++-------+------------+
+| 101   | HR         |
+| 102   | Sales      |
+| 103   | Marketing  |
+| 104   | Finance    |
++-------+------------+
+                    </code>
+                </pre>
+                        <h4>Right Outer Join (Employees and Departments):</h4>
+                        <pre>
+                        <code>
++-------+-----------+-----------+------------+
+| EmpID | EmpName   | DeptID    | DeptName   |
++-------+-----------+-----------+------------+
+| 1     | John      | 101       | HR         |
+| 2     | Alice     | 102       | Sales      |
+| 3     | Bob       | 101       | HR         |
+| null  | null      | 104       | Finance    |
++-------+-----------+-----------+------------+
+                        </code>
+                    </pre>
+
+                        <p>
+                            In this Right Outer Join, all rows from the "Departments" table are included in the result,
+                            along with matching rows from the "Employees" table. If there's no match for a particular
+                            department in the "Employees" table, the employee-related columns will contain null values.
+                        </p>
+                    </div>
+                    <div class="wh">
+                        <h4>Full Outer Join Example:</h4>
+                        <h4>Employees Table:</h4>
+                        <pre>
+                        <code>
++-------+-----------+-----------+
+| EmpID | EmpName   | DeptID    |
++-------+-----------+-----------+
+| 1     | John      | 101       |
+| 2     | Alice     | 102       |
+| 3     | Bob       | 101       |
+| 4     | Carol     | 103       |
++-------+-----------+-----------+
+                        </code>
+                    </pre>
+
+                        <h2>Departments Table:</h2>
+                        <pre>
+                        <code>
++-------+------------+
+| DeptID| DeptName   |
++-------+------------+
+| 101   | HR         |
+| 102   | Sales      |
+| 103   | Marketing  |
+| 104   | Finance    |
++-------+------------+
+                        </code>
+                    </pre>
+
+                        <h2>Full Outer Join (Employees and Departments):</h2>
+                        <pre>
+                        <code>
++-------+-----------+-----------+------------+
+| EmpID | EmpName   | DeptID    | DeptName   |
++-------+-----------+-----------+------------+
+| 1     | John      | 101       | HR         |
+| 2     | Alice     | 102       | Sales      |
+| 3     | Bob       | 101       | HR         |
+| 4     | Carol     | 103       | Marketing  |
+| null  | null      | 104       | Finance    |
++-------+-----------+-----------+------------+
+                        </code>
+                    </pre>
+
+                        <p>
+                            In this Full Outer Join example, all rows from both the "Employees" and "Departments" tables
+                            are
+                            included in the result. If there's no match for a particular department in the "Employees"
+                            table
+                            or if there's no match for a particular employee in the "Departments" table, the
+                            corresponding
+                            columns will contain null values.
+                        </p>
+                    </div>
+                    <p><strong>Properties of Join</strong></p>
+                    <ul>
+                        <li>
+                            The order of tables in the Join operation can affect the result. Swapping the order may
+                            yield a different result.
+                        </li>
+                        <li>
+                            The type of Join (Inner, Left, Right, Full, Cross) determines which rows are included in the
+                            result.
+                        </li>
+                        <li>
+                            Joins allow you to relate and combine data from multiple tables, making it a powerful tool
+                            in relational databases.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="t5" class="in">
+                <h3>Relational Calculus</h3>
+                <ul>
+                    <li>Relational Calculus is a way to ask questions or retrieve data from a database.</li>
+                    <li>Imagine you have a database with lots of information, like a list of employees in a company. You
+                        might want to find specific employees, like those who are older than 30 or those who work in a
+                        particular department. Relational Calculus helps you express these questions.</li>
+                    <li>It's like asking a question in plain English and letting the database figure out how to find the
+                        answer. You don't need to specify the step-by-step process; you just describe what you want.
+                    </li>
+                </ul>
+                <p><strong>Key Points:</strong></p>
+                <ul>
+                    <li>Relational Calculus is an alternative to Relational Algebra, another way to interact with
+                        databases.</li>
+                    <li>In Relational Calculus, queries are expressed using variables and formulas. These queries
+                        describe what you want to retrieve from the database.</li>
+                    <li>It is non-procedural, meaning you don't have to specify how to get the data; you only define
+                        what data you need.</li>
+                    <li>Queries in Relational Calculus describe the properties of the desired result relation without
+                        specifying the steps to compute it. It's all about defining the result you want.</li>
+                    <li>Relational Calculus is based on predicate calculus, a mathematical system used to symbolize
+                        logical arguments.</li>
+                </ul>
+                <p>So, when you use Relational Calculus, you're essentially telling the database what you're looking
+                    for, and it handles the behind-the-scenes work to find the information you need.</p>
+                <p><b>Relational Calculus Variants</b></p>
+
+                <p>Relational Calculus, as a query language used in database management, comes in two main variants,
+                    each with its unique approach to formulating queries:</p>
+
+                <ol>
+                    <li><b>Tuple Relational Calculus:</b> In this variant, variables take on tuple values. It allows you
+                        to specify conditions that the desired tuples must satisfy. Think of it as describing the
+                        specific rows you want from a database table based on certain criteria.</li>
+                    <li><b>Domain Relational Calculus:</b> In contrast, Domain Relational Calculus involves variables
+                        that range over the underlying domains or data types. It focuses on specifying conditions for
+                        the attributes or columns of the tuples you want. This variant is more concerned with defining
+                        what attributes should possess certain properties.</li>
+                </ol>
+
+                <p>Both Tuple and Domain Relational Calculus provide a declarative way to query databases, allowing
+                    users to state what they want from the database without detailing how to retrieve it. These variants
+                    have significantly influenced the development of query languages used in practice.</p>
+
+                <p><b>Influence on Query Languages</b></p>
+
+                <p>Relational Calculus has played a pivotal role in shaping the design of many query languages,
+                    including widely used ones like:</p>
+
+                <ul>
+                    <li><b>SQL (Structured Query Language):</b> SQL is one of the most popular database query languages,
+                        and it draws inspiration from both Tuple and Domain Relational Calculus. SQL allows users to
+                        retrieve and manipulate data in a relational database using a syntax that resembles natural
+                        language queries.</li>
+                    <li><b>QBE (Query by Example):</b> QBE is another user-friendly database query language that
+                        simplifies the process of formulating queries. It is particularly known for its visual
+                        representation, where users can specify query conditions by example, making it accessible to
+                        users without extensive SQL knowledge.</li>
+                </ul>
+
+                <p>These query languages, influenced by Relational Calculus, have made it easier for database users to
+                    interact with and retrieve data from relational databases, regardless of their technical expertise.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div id="tpyq" class="content-box">
+        <h2>Previous Year Questions</h2>
+        <div class="wh">
+            <h3>What are integrity constraints? How do you implement these constraints in SQL?</h3>
+        </div>
+        <div class="wh">
+            <h3>What is Super Key? Differentiate between Primary key and Candidate key with examples.</h3>
+        </div>
+        <div class="wh">
+            <h3>Define the five basic operators of relational algebra with an example of each.</h3>
+        </div>
+
+        <div class="wh">
+            <h3>Write a short note on relational algebra. Explain selection and projection operation in relational
+                algebra.</h3>
+        </div>
+        <div class="wh">
+            <h3>Differentiate between entity integrity and referential integrity. Explain the terms primary ke,
+                candidate key and foreign key.</h3>
+        </div>
+        <div class="wh">
+            <h3>Define the term constrait. Explain the following constraint with SQL Syntax:
+                <br>(i) Primary key
+                <br>(ii) Foreign key
+                <br>(iii) Check
+                <br>(iv) Unique
+                <br>(v) Default
+            </h3>
+        </div>
+        <div class="wh">
+            <h3>Explain mapping cardinalities. Also explain relational algebra, with proper example.</h3>
+        </div>
+        <div class="wh">
+            <h3>Write short notes on the following:
+                <br>(i) Domain
+                <br>(ii) Schema
+                <br>(iii) Tuple
+                <br>(iv) Super key
+                <br>(v) Composite key
+            </h3>
+        </div>
+    </div>
+    <div class="content-box">
+        <p>Reference</p>
+        <ul>
+            <li><a href="https://www.youtube.com/playlist?list=PL3R9-um41JszwZtQ91SlFbBw8Vx5Pb340" target="_blank"
+                    class="ba">Unit playlist &neArr;</a></li>
+            <li><a href="https://youtu.be/DZKIyMgC_KQ?si=03SINSYiud60jspy" target="_blank" class="ba">Relational
+                    Query Language &neArr;</a></li>
+            <li><a target="_blank" href="https://youtu.be/qI2yyKfI6Fw?si=-tFVfFX1jXKGKNIC">Relational Operations in
+                    Relational Albegra &neArr;</a></li>
+            <li><a target="_blank" href="https://youtu.be/j14UhfIkbUA?si=-GyGd74pzQDVpFVY">Relational Operations in
+                    Relational Albegra pt 2 &neArr;</a></li>
+            <li><a target="_blank" href="https://youtu.be/CnUwIxKeH7M?si=LazV4cJ3gsnLEnE-">Select operation &neArr;</a>
+            </li>
+        </ul>
+    </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="../../../../public/main.js"></script>
+</body>
+
+</html>

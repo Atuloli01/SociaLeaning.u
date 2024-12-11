@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Basic Operating System Concepts</title>
+    <link rel="stylesheet" href="../../../../public/style.css">
+    <link rel="icon" href="../../../../public/logo/favicon_io/favicon.ico">    
+</head>
+
+<body class="bg-c">
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../../Computer Fundamentals and Information Technology/index.html" class="home">Back</a>
+        <a href="#t1" class="link">Operating System</a>
+        <a href="#t2" class="link">Types of OS</a>
+        <a href="#t3" class="link">Processors</a>
+        <a href="#t4" class="link">ROM software</a>
+        <a href="#t5" class="link">Booting</a>
+        <div class="botbut">
+            <a href="../internet/index.html" class="link">Next Topic &rarr;</a>
+            <a href="../memory/index.html" class="link">&larr; Previous Topic</a>
+        </div>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Basic Operating System Concepts</h2>
+        </div>
+    </div>
+    <div id="t1" class="content-box">
+        <h1>Basic Operating System Concepts</h1>
+        <div class="wh">
+            <h2>Operating System</h2>
+            <ul>
+                <li>An operating system acts as an intermediary between the user of a computer and computer hardware.
+                </li>
+                <li>The purpose of an operating system is to provide an environment in which a user can execute programs
+                    conveniently and efficiently.</li>
+            </ul>
+            <div class="in">
+                <h3>Functions of Operating System</h3>
+                <ol>
+                    <li>Convenience &rArr; An OS makes a computer more convenient to use.</li>
+                    <li>Efficiency &rArr; An OS allows the computer system resources to be used efficiently.</li>
+                    <li>Ability to Envolve &rArr; An OS should be constructed in such a way as to permit effective
+                        development, testing, and introduction of new system functions at the same time without
+                        interfering with service.</li>
+                    <li>Throughput &rArr; An OS should be constructed so that it can give maximum throughput (Number of
+                        tasks per unit time).</li>
+                </ol>
+            </div>
+            <div class="in">
+                <h3>Major Functionalities of Operating System:</h3>
+                <ul>
+                    <li><b>Process Management</b>
+                        <ul>
+                            <li>A process is a program in execution
+                                <ul>
+                                    <li>During execution a process needs certain resources such as CPU time, memory
+                                        space, files and input-output devices.</li>
+                                </ul>
+                            </li>
+                            <li>Process management module take care of creation and division of process and scheduling
+                                of system resources.</li>
+                            <li>It includes various tasks like <b>scheduling, termination</b> of the process.</li>
+                            <li>OS manages various tasks at a time.</li>
+                            <li>Here <b>CPU Scheduling</b> happens means all the tasks would be done by the many
+                                alogirthms that use for scheduling.</li>
+                        </ul>
+                    </li>
+                    <li><b>Memory Management</b>
+                        <ul>
+                            <li>To execute a program it must be loaded in main memory (atleast partially) together with
+                                data.</li>
+                            <li>Memory management module takes care of allocation and deallocation of the memory space.
+                            </li>
+                            <li>Refers to the management of primary memory.</li>
+                            <li>The operating system has to keep track, how much memory has been used and by whom.</li>
+                            <li>It has to decide which process needs memory space and how much.</li>
+                        </ul>
+                    </li>
+                    <li><b>File Management</b>
+                        <ul>
+                            <li>All computer store, retrieve and share information.</li>
+                            <li>Normally a computer store such in form in units called files.</li>
+                            <li>File management module takes care of file relative activities such as organization,
+                                storage, retrival, naming, sharing and production of files.</li>
+                        </ul>
+                    </li>
+                    <li><b>Device Management</b>
+                        <ul>
+                            <li>The device management controls all input-output devices it keeps track of input-output
+                                request from processes, issues command to input-output devices and issues correct data
+                                transmission to/from input-ouput device.</li>
+                        </ul>
+                    </li>
+                    <li><b>Security/Privacy Management</b>
+                        <ul>
+                            <li>security module protects the resources and information of a computer system against
+                                destruction and un-authorized access.</li>
+                            <li>Privacy is also provided by the Operating System by means of passwords so that
+                                unauthorized applications can't access programs or data.</li>
+                            <li>For example, Windows uses <b>Kerberos</b> authentication to prevent unauthorized access
+                                to data.</li>
+                        </ul>
+                    </li>
+                    <li><b>Command Interpretation</b>
+                        <ul>
+                            <li>This module interprets user commands and directs system resource to process the command.
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>The Operating system must support the following tasks. The tasks are:</h3>
+                <ul>
+                    <li>Provides the facilities to create, modification of programs and data files using an editor.</li>
+                    <li>Access to the compiler for translating the user program from high-level language to machine
+                        language.
+                    </li>
+                    <li>Provide a loader program to move the compiled program code to the computer's memory for
+                        execution.</li>
+                    <li>Provide routines that handles the details I/O programming.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>I/O System Management</h3>
+                <ul>
+                    <li>The module that keeps track of the status of devices is called I/O traffic controller.</li>
+                    <li>Each I/O device has a device handler that resides in a separate process associated with that
+                        device.</li>
+                    <li>The I/O subsystem consists of
+                        <ul>
+                            <li>A memory Management component that includes buffering caching and spooling.</li>
+                            <li>A general device driver interface.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="wh">
+                    <p>Drivers for specific hardware devices.</p>
+                    <ul>
+                        <li><b>Assembler -</b>
+                            <ul>
+                                <li>The input to an assembler is an assembly language program. The output is an object
+                                    program plus information that enables the loader to prepare the object program for
+                                    execution.</li>
+                            </ul>
+                        </li>
+                        <li><b>Compiler -</b>
+                            <ul>
+                                <li>The High-level languages- examples are FORTRAN, COBOL, ALGOL, and PL/I are processed
+                                    by compilers and interpreters.</li>
+                                <li>A compiler is a program that accepts a source program in a “high-level language “and
+                                    produces a corresponding object program.</li>
+                                <li>An interpreter is a program that appears to execute a source program as if it was
+                                    machine language.</li>
+                                <li>The same name (FORTRAN, COBOL, etc.) is often used to designate both a compiler and
+                                    its associated language. </li>
+                            </ul>
+                        </li>
+                        <li><b>Loader -</b>
+                            <ul>
+                                <li>A Loader is a routine that loads an object program and prepares it for execution.
+                                </li>
+                                <li>There are various loading schemes: absolute, relocating, and direct-linking.</li>
+                                <li>In general, the loader must load, relocate and link the object program.</li>
+                                <li>The loader is a program that places it in the core.</li>
+                                <li>The loader places into memory the machine language version of the user's program and
+                                    tranfers control to it.</li>
+                                <li>Since the loader program is much smaller than the assembler, those make more core
+                                    available to the user's program.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div id="t2" class="wh">
+                    <h3>Types of Operating System</h3>
+                    <ol>
+                        <li>Batch Operating System</li>
+                        <li>Multi programming OS</li>
+                        <li>Time-sharing OS</li>
+                        <li>Multiprocessing OS</li>
+                        <li>Distributed OS</li>
+                        <li>Network OS</li>
+                        <li>Real time OS</li>
+                        <li>Embedded OS</li>
+                    </ol>
+                    <div class="in">
+                        <p><b>Batch OS</b></p>
+                        <ul>
+                            <li>The user of this type of OS does not interact with the computer directly.</li>
+                            <li>Each user prepares his job on an offline device like punch cards and submits it to the
+                                computer operator.</li>
+                            <li>There is an operator which takes similar jobs having the same requirement and group them
+                                into batch.</li>
+                        </ul>
+                        <div class="wh">
+                            <p>Advantages of BOS</p>
+                            <ul>
+                                <li>Processors of the batch systems know how long the job would run when it is in queue.
+                                </li>
+                                <li>Multiple users can share the batch systems.</li>
+                                <li>It is easy to manage large work repeatedly in batch systems.</li>
+                                <li>The idle time for the batch system is very less.</li>
+                            </ul>
+                        </div>
+                        <div class="wh">
+                            <p>Disadvantages</p>
+                            <ul>
+                                <li>The computer operators should be well known wih batch systems</li>
+                                <li>Batch systems are hard to debug.</li>
+                                <li>It is sometime costly.</li>
+                                <li>The other jobs will have to wait for an unknown time if any job fails.</li>
+                                <li>Example &rarr; IBM's, MVS</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="in">
+                        <p><b>Multi programming OS</b></p>
+                        <ul>
+                            <li>This type of Os is used to execute more than one jobs simultaneously by a single
+                                processor.</li>
+                            <li>It increases CPU utilization by organizing jobs so that the CPU always has one job to
+                                execute.</li>
+                            <li>Multi programming OS use the mechanism of job scheduling and CPU scheduling.</li>
+                        </ul>
+                        <img src="../../images/os3.svg" alt="" class="wb">
+                    </div>
+                    <div class="in">
+                        <p><b>Time Sharing OS</b></p>
+                        <ul>
+                            <li>A time sharing operating system allow many users to share the computer resources
+                                simultaneously</li>
+                            <li>Timesharing refers to the allocation of computer resources and time slots to several
+                                programs simultaneously.</li>
+                            <li>For example &rarr; a main frame computer that has many users logged onto it. Each user
+                                uses the resources of the main frame that is memory CPU</li>
+                        </ul>
+                    </div>
+                    <div class="in">
+                        <p><b>Multiprocess OS</b></p>
+                        <ul>
+                            <li>Also known as parallel operating system or tightly coupled operating system. </li>
+                            <li>Such operating system have more than one processor in close communication that sharing
+                                the computer bus, the clock and sometimes memory and peripheral devices. </li>
+                            <li>It execute multiple jobs at the same time makes the processes faster.</li>
+                            <li>It supports large physical address this piece in larger virtual address space. </li>
+                            <li>If one processor fails then other processor should retrieve the interrupted process
+                                state so execution of process can continue. </li>
+                        </ul>
+                    </div>
+                    <div class="in">
+                        <p><b>Distributed OS</b></p>
+                        <ul>
+                            <li>Distributed means data can be stored and processed on multiple locations. </li>
+                            <li>distributed operating system use multiple central processors to serve multiple real-time applications.</li>
+                            <li>Independent system possess their own memory unit and CPU</li>
+                            <li>These are referring to is loosely the coupled system</li>
+                        </ul>
+                    </div>
+                    <div class="in">
+                        <p><b>Network OS</b></p>
+                        <ul>
+                            <li>These systems run on a server and provide the capability to manage data, users, group, security, application and other networking function</li>
+                            <li>These types of operating system allow us to access our files, security , applications and other networking function over a small private network</li>
+                            <li>Popularly known as tightly Coupled system</li>
+                            <li>The other computers are called client and each computer that connects to a network server must be running client software designed to request a specific service.</li>
+                            <li>Example &rarr; Cyber cafe</li>
+                        </ul>
+                        <div class="wh">
+                            <p>Advantages</p>
+                            <ul>
+                                <li>Highly stable centralized server.</li>
+                                <li>New technologies and hardware up-gradation are easily integrated into the system.</li>
+                                <li>Security concerns are handled through servers.</li>
+                            </ul>
+                        </div>
+                        <div class="wh">
+                            <p>Disadvantages</p>
+                            <ul>
+                                <li>Servers are costly.</li>
+                                <li>Users has to depend on a central location for most operations.</li>
+                                <li>Maintenance and updates are required regularly.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="in">
+                        <p><b>Real-time operating system</b></p>
+                        <ul>
+                            <li>These types of operating systems serves real time systems.</li>
+                            <li>The time interval required to process and respond to inputs which is very small. This time interval is known as response time.</li>
+                            <li>Real time systems are used a when there are time requirements dad are very strict light missile system, air traffic control systems, robots, etc.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="t3" class="wh">
+            <h2>Processors</h2>
+            <ul>
+                <li>The processor is defined as a logic circuit or simple chip which reacts to fundamental instructions and input processes to operate the computer. </li>
+                <li>The important purposes of a processor are getting, decoding, processing, executing and writing back as feedback to the instructions of the chip.</li>
+                <li>The processor is termed as the brain of any electronic systems that incorporate into a laptop, computers, smartphones, and embedded systems.</li>
+                <li> The control unit and arithmetic logic unit are the two significant components of the processors.</li>
+            </ul>
+            <div class="in">
+                <h3>Different Types of Processor</h3>
+                <div class="wh">
+                    <p>Microprocessor</p>
+                    <ul>
+                        <li>The fundamental process of the system is denoted by a microprocessor incorporated in the embedded systems.</li>
+                        <li> The microprocessor is a standard processor which comprises of ALU, control unit and club of registers known as control registers, status registers, and scratchpad registers.</li>
+                        <li>A one or two microprocessor can be merged together to form a multiprocessor. </li>
+                        <li>The input and output operations and memory are shared by the processors.</li>
+                    </ul>
+                </div>
+                <div class="wh">
+                    <p>Microcontroller</p>
+                    <ul>
+                        <li>The microcontroller is standard which is available in different size and packages. </li>
+                        <li>The input reading and reacting to its corresponding output is the fundamental function of the basic microcontroller and so it is called as general-purpose input and output processors (GPIO). </li>
+                    </ul>
+                </div>
+                <div class="wh">
+                    <p>Embedded Processor</p>
+                    <ul>
+                        <li>The embedded processor is structured to control the electrical and mechanical functions. </li>
+                        <li>It comprises of numerous blocks like timer, program memory, data memory, reset, power supply, data memory, interrupt controller, clock oscillator systems, interfacing circuits, specific circuits and system application ports and circuits.</li>
+                    </ul>
+                </div>
+                <div class="wh">
+                    <p> Digital Signal Processor</p>
+                    <ul>
+                        <li>The digital signal processor is used for filtering, measuring, compressing analogue and digital signals.   </li>
+                        <li>The processing of signal means that manipulation and analysis of digital signals.</li>
+                        <li>This process can be made using application specified integration circuits, digital signal processor, field-programmable gate array or it can be a computer to achieve a distinct signal.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <div id="t4" class="in">
+                <h3>ROM Software</h3>
+                <ul>
+                    <li>ROM stands for <b>Read-Only Memory.</b></li>
+                    <li>ROM is storage device that is used with computers and other electronic devices.</li>
+                    <li>Data stored in ROM may only be read.</li>
+                    <li>ROM is used for firmware updates, which means it contains the basic instructions for what needs
+                        to happen when a computer is powered on.</li>
+                    <li>Firmware is also known to as BIOS, or basic input/output system.</li>
+                    <li>ROM is non-volatile storage, which means the information is maintained even if the component
+                        loses power.</li>
+                    <li>ROM is located on a BIOS chip which is plugged into the motherboard.</li>
+                    <li>ROM is a type of memory circuitry that holds the computer's startup routine.</li>
+                    <li>The ROM BIOS tells the computer how to access the hard disk, find the operating system, and load
+                        it into RAM.</li>
+                </ul>
+            </div>
+            <div id="t5" class="in">
+                <h3>Booting</h3>
+                <ul>
+                    <li>Booting basically the process of starting the computer.</li>
+                    <li>When the CPU is first switched on it has nothing inside the memory.</li>
+                    <li>In order to start the computer, load the Operating System into the Main memory and then computer
+                        is ready to take commands from the user.</li>
+                </ul>
+                <div class="wh">
+                    <p>Types of booting</p>
+                    <ol>
+                        <li>Cold Booting &rarr; A.K.A hard boot. When the computer is started from its initial state by pressing the power
+                            button is called cold boot. The instructions are read from the ROM and the operating system
+                            is loaded in the main memory.</li>
+                        <li>Warm Booting &rarr; A.K.A warm boot. It refers to when we restart the computer. Here, the
+                            computer does not start from the initial state, when the system gets stuck sometimes it is
+                            required to restart it while it is ON. Therefore, in this condition the warm boot takes
+                            place. Restart button or CTRL + ALT + DELETE keys are used for warm boot.</li>
+                    </ol>
+                </div>
+                <div class="wh">
+                    <p>Steps of Booting</p>
+                    <ol>
+                        <li>The Startup &rarr; It is the first step that involves switching the power ON. It supplies
+                            electricity to the main components like BIOS and processor.</li>
+                        <li>BIOS: Power on Self Test &rarr; It is an initial test performed by the BIOS. Further, the
+                            test performs an initial check on the input/output devices, computer's main memory, disk
+                            drives, etc. Moreover, if any error occurs, the system produces a beep sound.</li>
+                        <li>Loading of OS &rarr; In this step, the operating system is loaded into the main memory. The
+                            operating system starts working and executes all the initial files and instructions.</li>
+                        <li>System Configuration &rarr; In this step, the drivers are loaded into the main memory.
+                            Drivers are programs that help in the functioning of the peripheral devices.</li>
+                        <li>User Authentication &rarr; If any password has been set up in the computer system, the
+                            system checks for user authentication. Once the user enters the login Id and password
+                            correctly the system finally starts.</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Directory Structure in Operating System</h2>
+            <ul>
+                <li>A directory is a container that is used to contain folders and files. It organizes files and folders in a hierarchical manner.</li>
+                <li>There are several logical structures of a directory :</li>
+            </ul>
+            <div class="in">
+                <h3>Single level directory</h3>
+                <ul>
+                    <li>The single level directory is the simplest directory structure. In it, all files are contained in the same directory which makes it easy to support and understand.</li>
+                    <li>A single level directory has a significal limitaion, however, when the number of files increases or when the system has more than one user, since all the files are in the same directory, they must have a unique name. If two users call their dataset test, then the unique name rule gets violated.</li>
+                </ul>
+                <img src="../../images/direc1.svg" alt="" class="wb">
+                <div class="wh">
+                    <p>Advantages</p>
+                    <ul>
+                        <li>Since it is a single directory, so its implementation is very easy.</li>
+                        <li>If the files are smaller in size, searching will become faster.</li>
+                        <li>The operations like file creation, searching, deletion, updating are very easy in such a directory structure.</li>
+                    </ul>
+                </div>
+                <div class="wh">
+                    <p>Disadvantages</p>
+                    <ul>
+                        <li>Searching will become time taking if the directory is large.</li>
+                        <li>This can not group same type of files together.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Two-level directory</h3>
+                <ul>
+                    <li>As we know that single level directory often leads to confusion of file names among different users, the solution of this problem is to create a separate directory for each user.</li>
+                    <li>In the two-level directory structure, each user has their own user file directory (UFD). The UFDs have similar structures, but each lists only the files of a single user.</li>
+                </ul>
+                <img src="../../images/direc2.svg" alt="" class="wb">
+                <div class="wh">
+                    <p>Adavantages</p>
+                    <ul>
+                        <li>We can give full path like /User-name/directory-name/.</li>
+                        <li>Different users can have the same directory as well as the file name.</li>
+                        <li>Searching of files becomes easier due to pathname and user-grouping.</li>
+                    </ul>
+                </div>
+                <div class="wh">
+                    <p>Disadvantages</p>
+                    <ul>
+                        <li>A user is not allowed to share files with other users.</li>
+                        <li>Still, it is not very scalable, two files of the same type cannot be grouped together in the same user.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Hierarchical structure directory</h3>
+                <ul>
+                    <li>A hierarchical structure directory is one in which file and folder are organized in a tree like structure with multiple level of sub-directories.</li>
+                </ul>
+                <img src="../../images/direc3.svg" alt="" class="wb">
+                <div class="wh">
+                    <p>Advantages</p>
+                    <ul>
+                        <li>Organization &rarr; a heirarchy directory structure allows for grouping files into smaller, more managerial groups within large groups.</li>
+                        <li>Security &rarr; It allows for have control over folder and files by giving permissions.</li>
+                        <li>Easy to maintain &rarr; easy to keep track of what file and folder are present and to ensure that files are stored in appropriate directories.</li>
+                    </ul>
+                </div>
+                <div class="wh">
+                    <p>Disadvantages</p>
+                    <ul>
+                        <li>Complexity &rarr; Hierarchical directory structure can be more complex than other type of directory structure.</li>
+                        <li>Limited search ability &rarr; it can be harder to search through all the files and folders.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="t2" class="content-box">
+        <h1>MS-DOS Operating System</h1>
+        <ul>
+            <li>A disk operating system (DOS) is an operating system for <a
+                    href="https://www.computerhope.com/jargon/x/x86.htm" target="_blank">x86</a> based personal
+                computers mostly developed by Microsoft.</li>
+            <li>MS-DOS, its rebranding as IBM PC DOS, and some operating systems attempting to be compatible with
+                MS-DOS.</li>
+            <li>Sometimes it is referred to as "DOS", which is also the generic acronym for disk operating system.</li>
+            <li>MS-DOS was the main operating system for IBM PC compatible personal computers during the 1980s.
+                <ul>
+                    <li>It was gradually superseded by operating systems offering a graphical user interface (GUI) in
+                        various graphical Microsoft Windows operating system generations.</li>
+                </ul>
+            </li>
+            <li>DOS is also used to describe several similar command-line disk operating systems.</li>
+            <li>Early computers, such as the Commodore 64, Atari 800, and Apple II, all featured a disk operating
+                system, including Commodore Business Machines DOS, Atari DOS, and Apple DOS, respectively. DOS/360 was
+                an OS for IBM mainframes, which first appeared in 1966, but it is unrelated to the 8086-based DOS of the
+                1980s.</li>
+        </ul>
+        <img src="../../images/dos.svg" alt="" class="wb">
+        <div class="in">
+            <h3>How DOS works?</h3>
+            <p>When a computer is powered on, it goes through various steps called <b>boot process</b>. For a computer
+                running a disk operating system in the following six steps, such as:</p>
+            <ol>
+                <li>The read-only memory (ROM) bootstrap loader reads the Master Boot Record and passes control over to
+                    it.
+                <li>The boot record loads the disk operating system into memory, and it takes control of the machine.
+                </li>
+                <li>The computer transfers data stored on a magnetic disk to its main memory, the random access memory
+                </li>
+                <li>It also transfers data to external devices attached to the computer, such as a computer screen or
+                    printer.</li>
+                <li>The computer provides various applications that organizes, read, and writes files on storage. The
+                    files are organized in a hierarchical structure of directories, subdirectories, and files.</li>
+                </li>
+            </ol>
+            <p>A disk operating system doesn't have a graphical user interface (GUI). Its interface is character-based,
+                so users must type commands in the command line to indicate what actions they want.</p>
+        </div>
+        <div class="in">
+            <h3>Features of DOS</h3>
+            <ul>
+                <li>MS-DOS does not offer GUI (Graphical User Interface) and doesn't accept mouse inputs.
+                    <ul>
+                        <li>It is a character-based interface system where all commands are entered in the text at the
+                            command-line prompt.</li>
+                    </ul>
+                </li>
+                <li>A disk operating system manages files, folders and allows program loading and execution. It can
+                    control hardware devices such as disk, memory and allocate resources.</li>
+                <li>MS-DOS offers a file system to organize, read and write files to disk storage.</li>
+                <li>It is a single-user operating system and performs various taks to ensure the proper operation of
+                    systems.</li>
+                <li>It uses a 16-bit file allocation table (FAT16), and a 16-bit interface is used to define the
+                    location of the memory of each file uniquely. These identifiers are stored in a tabular format with
+                    the name File Allocation table.</li>
+                <li>MS-DOS does not support a multiuser operating system, and it is less secure and does not have
+                    concept of user roles.
+                    <ul>
+                        <li>It is very lightweight due to its basic interface and limited features.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="in">
+            <h3>Limitations of MS-DOS</h3>
+            <ul>
+                <li>Built-in security &rarr; DOS does not have built-in security, such as file ownership and
+                    permissions.</li>
+                <li>No multiuser or multitasking &rarr; It also does not support multiuser or multitasking.
+                    <ul>
+                        <li>It can only run one program at a time, but it provides direct access to the basic I/O system
+                            and underlying hardware.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="in">
+            <h3>Types of DOS Commands</h3>
+            <ul>
+                <li>The entire set of commands available in DOS is divided into two types</li>
+            </ul>
+            <div class="wh">
+                <p>Internal Commands</p>
+                <ul>
+                    <li>Internal commands are the simplest memory resident commands, most commonly used commands and execute immediately because they are a part of file named COMMAND.COM</li>
+                    <li>When we list the files of our directory the internal commands are not seen.</li>
+                    <li>Once DOS is loaded, there is not need for the DOS Diskette in a drive to use these commands. E.g. DIR, COPY, MOVE, etc.</li>
+                    <li>If we execute internal command, the command processor executes the command itself.</li>
+                </ul>
+            </div>
+            <div class="wh">
+                <p>External Commands</p>
+                <ul>
+                    <li>They are separate utility programs or files stored in DOS directory.</li>
+                    <li>File name with an extension of .COM, .EXE or .BAT is considered as an external command.</li>
+                    <li>They are faster than internal commands because they do not look for the COMMAND.COM file and are executed directly.</li>
+                    <li>It does not execute the command itself but transfers the control to the appropriate program.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-box">
+        <h2>References</h2>
+        <ul>
+            <li><a href="https://www.geeksforgeeks.org/operating-systems/">Operating System</a></li>
+            <li><a href="https://www.javatpoint.com/ms-dos-operating-system">MS DOS</a></li>
+            <li><a href="https://cs.hamilton.edu/misc/LearningDOS.pdf">MS DOS commands</a></li>
+            <li><a
+                    href="https://www.studocu.com/row/document/university-of-nairobi/information-technology/ms-dos-lecture-notes-7/4513407">Booting</a>
+            </li>
+            <li><a href="https://www.educba.com/types-of-processor/">processor</a></li>
+            <li><a href="https://www.vskills.in/certification/tutorial/types-of-dos-commands-2/">Types of DOS commands</a></li>
+        </ul>
+    </div>
+    <script src="../../../../public/main.js"></script>
+</body>
+
+</html>

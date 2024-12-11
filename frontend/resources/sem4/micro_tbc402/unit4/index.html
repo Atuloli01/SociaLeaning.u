@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assembly Language Programming (8085)</title>
+    <link rel="stylesheet" href="../../../../public/style.css">
+    <link rel="icon" href="../../../../public/logo/favicon_io/favicon.ico">
+    <link rel="stylesheet" id="highlightStylesheet"
+        href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/tomorrow-night-blue.min.css">
+</head>
+
+<body class="bg-c">
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">back</a>
+        <div class="fix-column-links">
+            <a href="#" class="link"></a>
+            <div class="botbut">
+                <a href="../unit5/index.html" class="link">Next Topic &rarr;</a>
+                <a href="../unit3/index.html" class="link">&larr; Previous Topic</a>
+            </div>
+        </div>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Assembly Language Programming (8085)</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Assembly Language Programming (8085)</h1>
+        <p>Assembly language programming for the 8085 microprocessor involves writing low-level code that directly
+            controls the hardware. This type of programming is essential for understanding how microprocessors work,
+            optimizing performance, and implementing critical real-time applications. The 8085 microprocessor, with its
+            simple architecture and instruction set, is an excellent starting point for learning assembly language
+            programming.</p>
+        <div class="wh">
+            <h2>Instruction Set</h2>
+            <p>The instruction set of the 8085 microprocessor comprises various commands that dictate the processor's
+                operations. These instructions are categorized into five main groups, each serving a distinct purpose:
+            </p>
+            <ol>
+                <li>Data Transfer Group</li>
+                <li>Arithmetic Group</li>
+                <li>Logical Group</li>
+                <li>Branch Control Group</li>
+                <li>Control Group</li>
+            </ol>
+            <ul>
+                <li>To write Assembly Language Programs, we should be familiar with certain instructions. Here is a
+                    review
+                    of these instructions:</li>
+            </ul>
+            <div class="in">
+                <h3>Data Transfer Group</h3>
+                <p>The Data Transfer Group includes instructions that handle the movement of data between registers,
+                    memory, and I/O devices. These instructions are crucial for the effective manipulation of data
+                    within the system.</p>
+
+                <p>The addressing modes in this group specify how the operand is accessed. One of the most common modes
+                    is the <strong>Immediate Mode</strong>, where the operand is included directly in the instruction,
+                    enabling rapid execution without delay.</p>
+
+                <p>Here are some key instructions under the immediate addressing mode:</p>
+                <ol>
+                    <li>
+                        <strong>MVI B, 25H:</strong>
+                        <br>The "MVI" instruction stands for "Move Immediate," indicating that the data (25H) is moved
+                        directly into the specified register (B).
+                        <br>Format: MVI [destination], [source]
+                        <br><strong>Operation:</strong> B &larr; 25H
+                        <br><strong>Explanation:</strong> This instruction places the hexadecimal value 25 directly into
+                        the B register. The "I" in "MVI" signifies that the operand is immediate, meaning it is provided
+                        directly in the instruction itself.
+                    </li>
+
+                    <li>
+                        <strong>LXI B, 2000H:</strong>
+                        <br>The "LXI" instruction stands for "Load Register Pair Immediate," indicating that the data
+                        (2000H) is loaded directly into a specified register pair.
+                        <br>Format: LXI [register pair], [data]
+                        <br><strong>Operation:</strong> B &larr; 20H, C &larr; 00H
+                        <br><strong>Explanation:</strong> This instruction loads the immediate 16-bit data (2000H) into
+                        the B-C register pair. Here, the higher byte (20H) is loaded into register B, and the lower byte
+                        (00H) is loaded into register C. The "X" in "LXI" denotes that the instruction deals with a
+                        register pair.
+                    </li>
+                    <li>
+                        <strong>MVI M, 25H:</strong>
+                        <br>In this instruction, "M" stands for memory. The memory location is defined by the address
+                        pointed to by the H-L register pair.
+                        <br>Format: MVI M, [data]
+                        <br><strong>Operation:</strong> (HL) &larr; 25H
+                        <br><strong>Explanation:</strong> This instruction loads the immediate value 25H into the memory
+                        location pointed to by the H-L register pair. For instance, if the H-L pair is pointing to the
+                        memory address C500, the value 25H will be stored at that specific memory location. The use of
+                        "M" indicates that the data is being moved directly into the memory address defined by the
+                        contents of the H-L register pair.
+                    </li>
+                </ol>
+                <p>Now we have the <strong>Register Addressing Mode</strong>. In this mode, data is transferred through
+                    registers. The following instructions fall under this category:</p>
+                <ol start="4">
+                    <li>
+                        <strong>MOV B, C:</strong>
+                        <br>This instruction moves the data from register C to register B.
+                        <br>Format: MOV [destination], [source]
+                        <br><strong>Operation:</strong> B &larr; C
+                        <br><strong>Explanation:</strong> The data in register C is transferred to register B. This
+                        operation is useful when you need to copy data between registers without altering the original
+                        data in the source register (C in this case).
+                    </li>
+                    <li>
+                        <strong>MOV B, M:</strong>
+                        <br>This instruction moves the data from the memory location addressed by the H-L register pair
+                        to register B.
+                        <br>Format: MOV [destination], [source]
+                        <br><strong>Operation:</strong> B &larr; (HL)
+                        <br><strong>Explanation:</strong> The data in the memory location pointed to by the H-L register
+                        pair is transferred to register B. This instruction is useful for accessing data stored in
+                        memory and moving it to a register for further processing.
+                    </li>
+                    <li>
+                        <strong>MOV M, C:</strong>
+                        <br>This instruction moves the data from register C to the memory location addressed by the H-L
+                        register pair.
+                        <br>Format: MOV [destination], [source]
+                        <br><strong>Operation:</strong> (HL) &larr; C
+                        <br><strong>Explanation:</strong> The data in register C is transferred to the memory location
+                        specified by the H-L register pair. This instruction is useful for storing data from a register
+                        into a specific memory address for later use. For instance, if the H-L pair points to the memory
+                        address 3000H, the data in register C will be moved to this address.
+                    </li>
+                </ol>
+                <p>Now the following instructions come under the high-level instructions:</p>
+                <ol start="7">
+                    <li>
+                        <strong>LDA 2000H:</strong>
+                        <br>This instruction loads the accumulator with the data from the memory location 2000H.
+                        <br>Format: LDA [address]
+                        <br><strong>Operation:</strong> A &larr; (2000H)
+                        <br><strong>Explanation:</strong> The "LDA" instruction stands for "Load Accumulator." Although
+                        the accumulator (A) is an 8-bit register, the address 2000H is 16-bit, indicating the location
+                        in memory from which data is to be fetched. This instruction reads the data from the specified
+                        memory address (2000H) and loads it into the accumulator for immediate use in subsequent
+                        operations.
+                    </li>
+                    <li>
+                        <strong>STA 2000H:</strong>
+                        <br>This instruction stores the contents of the accumulator into the memory location 2000H.
+                        <br>Format: STA [address]
+                        <br><strong>Operation:</strong> (2000H) &larr; A
+                        <br><strong>Explanation:</strong> The "STA" instruction stands for "Store Accumulator." It takes
+                        the data in the accumulator and writes it to the specified memory address. For instance, if the
+                        accumulator contains the value 5AH, executing STA 2000H will store this value at the memory
+                        location 2000H.
+                    </li>
+                    <li>
+                        <strong>LDAX B:</strong>
+                        <br>This instruction loads the accumulator with the contents of the memory location addressed by
+                        the B-C register pair.
+                        <br>Format: LDAX [register pair]
+                        <br><strong>Operation:</strong> A &larr; (BC)
+                        <br><strong>Explanation:</strong> The "LDAX" instruction stands for "Load Accumulator Indirect."
+                        It fetches data from the memory address specified by the B-C register pair and loads it into the
+                        accumulator. If the B-C register pair points to address 3000H, executing LDAX B will load the
+                        data from memory location 3000H into the accumulator.
+                    </li>
+                    <li>
+                        <strong>STAX B:</strong>
+                        <br>This instruction stores the contents of the accumulator into the memory location addressed
+                        by the B-C register pair.
+                        <br>Format: STAX [register pair]
+                        <br><strong>Operation:</strong> (BC) &larr; A
+                        <br><strong>Explanation:</strong> The "STAX" instruction stands for "Store Accumulator
+                        Indirect." It takes the data in the accumulator and writes it to the memory address specified by
+                        the B-C register pair. If the accumulator contains the value 3FH and the B-C pair points to
+                        address 4000H, executing STAX B will store 3FH at memory location 4000H.
+                    </li>
+                </ol>
+            </div>
+            <div class="in">
+                <h3>Arithmetic Group</h3>
+                <p>The Arithmetic Group includes instructions that perform various arithmetic operations such as
+                    addition, subtraction, multiplication, and division.</p>
+
+                <p>We have the following instructions:</p>
+                <ol start="11">
+                    <li>
+                        <strong>ADD B:</strong>
+                        <br>In microprocessor instructions, the operand is fixed to register A, so it does not need to
+                        be included in the instruction, resulting in a shorter instruction length.
+                        <br><strong>Operation:</strong> A &larr; A + B
+                        <br><strong>Explanation:</strong> This instruction adds the contents of register B to register
+                        A, updating the value in register A with the sum.
+                    </li>
+                    <li>
+                        <strong>ADD M:</strong>
+                        <br>Here, M represents a memory location where data is stored.
+                        <br><strong>Operation:</strong> A &larr; A + [data at memory location M]
+                        <br><strong>Explanation:</strong> This instruction adds the data stored at memory location M to
+                        the contents of register A, updating the value in register A with the sum.
+                        <br><strong>H and L Pair:</strong> In some microprocessor architectures like Intel 8085, the
+                        `ADD M` instruction indirectly uses the H and L registers. The memory address specified by the
+                        HL pair (H-L register pair) points to the memory location M. So, the data at the memory location
+                        addressed by HL is added to register A.
+                    </li>
+                    <li>
+                        <strong>SUB B:</strong>
+                        <br>This instruction subtracts the value in register B from the contents of register A.
+                        <br><strong>Operation:</strong> A &larr; A - B
+                        <br><strong>Explanation:</strong> The SUB B instruction performs subtraction by subtracting the
+                        value in register B from the contents of register A, updating the result in register A.
+                    </li>
+                    <li>
+                        <strong>SUB M:</strong>
+                        <br>Here, M represents a memory location where data is stored.
+                        <br><strong>Operation:</strong> A &larr; A - [data at memory location M]
+                        <br><strong>Explanation:</strong> This instruction subtracts the data stored at memory location
+                        M from the contents of register A, updating the value in register A with the difference.
+                        <br><strong>H and L Pair:</strong> Similar to the ADD M instruction, in architectures like Intel
+                        8085, the `SUB M` instruction indirectly uses the H and L registers. The memory address
+                        specified by the HL pair (H-L register pair) points to the memory location M, from which data is
+                        subtracted from register A.
+                    </li>
+                    <li>
+                        <strong>INR B:</strong>
+                        <br>This instruction increments the value in register B by 1.
+                        <br><strong>Operation:</strong> B &larr; B + 1
+                        <br><strong>Explanation:</strong> The INR B instruction increases the value in register B by 1,
+                        updating the result in register B.
+                    </li>
+                    <li>
+                        <strong>DCR B:</strong>
+                        <br>This instruction decrements the value in register B by 1.
+                        <br><strong>Operation:</strong> B &larr; B - 1
+                        <br><strong>Explanation:</strong> The DCR B instruction decreases the value in register B by 1,
+                        updating the result in register B.
+                    </li>
+                    <li>
+                        <strong>INR M:</strong>
+                        <br>Here, M represents a memory location where data is stored.
+                        <br><strong>Operation:</strong> [data at memory location M] &larr; [data at memory location M] +
+                        1
+                        <br><strong>Explanation:</strong> This instruction increments the data stored at memory location
+                        M by 1, updating the value at that memory location.
+                        <br><strong>H and L Pair:</strong> In architectures like Intel 8085, the `INR M` instruction
+                        indirectly uses the H and L registers. The memory address specified by the HL pair (H-L register
+                        pair) points to the memory location M, where data is incremented by 1.
+                    </li>
+                    <li>
+                        <strong>DCR M:</strong>
+                        <br>Here, M represents a memory location where data is stored.
+                        <br><strong>Operation:</strong> [data at memory location M] &larr; [data at memory location M] -
+                        1
+                        <br><strong>Explanation:</strong> This instruction decrements the data stored at memory location
+                        M by 1, updating the value at that memory location.
+                        <br><strong>H and L Pair:</strong> Similar to `INR M`, the `DCR M` instruction in certain
+                        architectures indirectly uses the H and L registers to access and modify data at memory location
+                        M.
+                    </li>
+                    <li>
+                        <strong>INX B:</strong>
+                        <br>This instruction increments the BC register pair by 1.
+                        <br><strong>Operation:</strong> BC &larr; BC + 1
+                        <br><strong>Explanation:</strong> The INX B instruction increases the BC register pair by 1,
+                        updating the result in the BC register pair.
+                    </li>
+                    <li>
+                        <strong>DCX B:</strong>
+                        <br>This instruction decrements the BC register pair by 1.
+                        <br><strong>Operation:</strong> BC &larr; BC - 1
+                        <br><strong>Explanation:</strong> The DCX B instruction decreases the BC register pair by 1,
+                        updating the result in the BC register pair.
+                    </li>
+                    <li><strong>CMP B (Compare with Register B):</strong>
+                        <br>In microprocessor instructions, the CMP B instruction compares the contents of the
+                        accumulator
+                        with the contents of register B.
+                        <br><strong>Operation:</strong> A - B
+                        <br><strong>Explanation:</strong> This instruction subtracts the contents of register B from the
+                        contents of the accumulator, but the result is not stored. Instead, the flags are updated based
+                        on
+                        the result of the subtraction.
+                        <ul>
+                            <li>If the accumulator is greater than the contents of register B, the carry flag (CY) is
+                                reset (CY = 0)
+                                and the zero flag (Z) is reset (Z = 0).</li>
+                            <li>If the accumulator is equal to the contents of register B, the zero flag (Z) is set (Z =
+                                1).
+                            </li>
+                            <li>If the accumulator is less than the contents of register B, the carry flag (CY) is set
+                                (CY = 1).
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            <div class="in">
+                <h3>Branch Control Group</h3>
+                <p>The Branch Control Group in the 8085 microprocessor contains instructions that change the sequence of
+                    execution of instructions in a program. These instructions are essential for implementing control
+                    flow constructs such as loops, conditionals, and function calls. The primary function of branch
+                    control instructions is to alter the program counter (PC), which dictates the address of the next
+                    instruction to be executed.</p>
+                <ol start="22">
+                    <li>
+                        <strong>JNC (Jump if No Carry):</strong>
+                        <br>In microprocessor instructions, the condition is checked for the Carry flag (CY). If the CY
+                        flag is not set (no carry occurred), the program jumps to the specified address or label.
+                        <br><strong>Operation:</strong> Conditional jump to specified address if CY flag is not set (no
+                        carry occurred).
+                        <br><strong>Explanation:</strong> This instruction checks the Carry flag (CY) and jumps to the
+                        specified address or label if the CY flag is not set (indicating no carry occurred during the
+                        previous operation). Otherwise, the program continues sequential execution without jumping.
+                    </li>
+                    <li>
+                        <strong>RCC (Return on Carry Clear):</strong>
+                        <br>In microprocessor instructions, the condition is checked for the Carry flag (CY). If the CY
+                        flag is not set (no carry occurred), the program returns from the subroutine to the address
+                        stored in the stack.
+                        <br><strong>Operation:</strong> Conditional return from subroutine if CY flag is not set (no
+                        carry occurred).
+                        <br><strong>Explanation:</strong> This instruction checks the Carry flag (CY) and returns from
+                        the subroutine to the address stored in the stack if the CY flag is not set (indicating no carry
+                        occurred during the previous operation). Otherwise, the program continues sequential execution
+                        within the subroutine.
+                    </li>
+                </ol>
+            </div>
+            <div class="in">
+                <h3>Control Group</h3>
+                <p>The Control Group in the 8085 microprocessor includes instructions that manage the flow of data and
+                    control within the processor. These instructions are crucial for handling input/output operations,
+                    enabling interrupts, and controlling various aspects of the microprocessor's operation. </p>
+                <ol start="24">
+                    <li>
+                        <strong>HLT (Halt):</strong>
+                        <br>In microprocessor instructions, the HLT instruction is used to halt or stop the execution of
+                        the program.
+                        <br><strong>Operation:</strong> Halts the program execution.
+                        <br><strong>Explanation:</strong> This instruction causes the microprocessor to stop executing
+                        instructions and enter a halted state, suspending program execution until the system is reset or
+                        another interrupt occurs.
+                    </li>
+                </ol>
+            </div>
+            <p>There are many instructions, about 70 or more, but we are only discussing those that are relevant for
+                writing basic assembly language programs.</p>
+        </div>
+        <div class="wh">
+            <h2>Categorization of Microprocessor Instructions by Byte Length</h2>
+            <p>As we will write programs in assembly language, it is important to know the byte length of the
+                instructions so that we can accurately fill the memory location column of our program.</p>
+
+            <div class="in">
+                <h3>One-Byte Instructions</h3>
+                <p>One-byte instructions consist solely of an opcode and operate directly on specific registers or
+                    implied operands. They do not require any additional data bytes.</p>
+                <ul>
+                    <li><strong>MOV B, C</strong>: Moves the contents of register C to register B.</li>
+                    <li><strong>MOV B, M</strong>: Moves the contents of the memory location pointed to by the HL
+                        register pair to register B.</li>
+                    <li><strong>MOV M, C</strong>: Moves the contents of register C to the memory location pointed to by
+                        the HL register pair.</li>
+                    <li><strong>LDAX B</strong>: Loads the contents of the memory location pointed to by the BC register
+                        pair into the accumulator.</li>
+                    <li><strong>STAX B</strong>: Stores the contents of the accumulator in the memory location pointed
+                        to by the BC register pair.</li>
+                    <li><strong>ADD B</strong>: Adds the contents of register B to the accumulator.</li>
+                    <li><strong>ADD M</strong>: Adds the contents of the memory location pointed to by the HL register
+                        pair to the accumulator.</li>
+                    <li><strong>SUB B</strong>: Subtracts the contents of register B from the accumulator.</li>
+                    <li><strong>SUB M</strong>: Subtracts the contents of the memory location pointed to by the HL
+                        register pair from the accumulator.</li>
+                    <li><strong>INR B</strong>: Increments the contents of register B by 1.</li>
+                    <li><strong>DCR B</strong>: Decrements the contents of register B by 1.</li>
+                    <li><strong>INR M</strong>: Increments the contents of the memory location pointed to by the HL
+                        register pair by 1.</li>
+                    <li><strong>DCR M</strong>: Decrements the contents of the memory location pointed to by the HL
+                        register pair by 1.</li>
+                    <li><strong>INX B</strong>: Increments the BC register pair by 1.</li>
+                    <li><strong>DCX B</strong>: Decrements the BC register pair by 1.</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Two-Byte Instructions</h3>
+                <p>Two-byte instructions consist of an opcode followed by a single byte of data. This additional byte
+                    provides immediate data or an 8-bit operand.</p>
+                <ul>
+                    <li><strong>MVI B, 25H</strong>: Moves immediate data <strong>25H</strong> to register B.
+                        <br>First byte: Opcode for <strong>MVI B</strong>.
+                        <br>Second byte: Immediate data <strong>25H</strong>.
+                    </li>
+                    <li><strong>MVI M, 25H</strong>: Moves immediate data <strong>25H</strong> to the memory location
+                        pointed to
+                        by the HL register pair.
+                        <br>First byte: Opcode for <strong>MVI M</strong>.
+                        <br>Second byte: Immediate data <strong>25H</strong>.
+                    </li>
+                    <li><strong>JNC (Jump if No Carry)</strong>: Conditional jump instruction in the 8085 microprocessor
+                        instruction set.<br>
+                        First byte: Opcode for <strong>JNC</strong>.<br>
+                        Second byte: Address or label to jump to if the Carry flag (CY) is not set (no carry occurred).
+                    </li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Three-Byte Instructions</h3>
+                <p>Three-byte instructions consist of an opcode followed by two bytes of data. These two bytes
+                    typically
+                    represent a 16-bit address.</p>
+                <ul>
+                    <li><strong>LXI B, 2000H</strong>: Loads the BC register pair with immediate 16-bit data
+                        <strong>2000H</strong>.
+                        <br>First byte: Opcode for <strong>LXI B</strong>.
+                        <br>Second byte: Lower-order byte of the address (<strong>00H</strong>).
+                        <br>Third byte: Higher-order byte of the address (<strong>20H</strong>).
+                    </li>
+                    <li><strong>LDA 2000H</strong>: Loads the accumulator with the contents of memory location
+                        <strong>2000H</strong>.
+                        <br>First byte: Opcode for <strong>LDA</strong>.
+                        <br>Second byte: Lower-order byte of the address (<strong>00H</strong>).
+                        <br>Third byte: Higher-order byte of the address (<strong>20H</strong>).
+                    </li>
+                    <li><strong>STA 2000H</strong>: Stores the contents of the accumulator in memory location
+                        <strong>2000H</strong>.
+                        <br>First byte: Opcode for <strong>STA</strong>.
+                        <br>Second byte: Lower-order byte of the address (<strong>00H</strong>).
+                        <br>Third byte: Higher-order byte of the address (<strong>20H</strong>).
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Assembly Language Programs</h2>
+            <div class="in">
+                <h3>1- Write a Program for Addition of two 8-bit Hexa-decimal Numbers and Store the Result at 3050H
+                    Location.
+                    (Without Carry)</h3>
+                <p>Suppose the first number is 32H and the second number is 54H. The addition of these two numbers will
+                    be 32H + 54H = 86H.
+                    <br>We start our program from the memory location 3000H, so 3000H will be the starting memory
+                    location.
+                </p>
+                <pre>
+                    <code>
+Memory Location  |   Instruction   |    Comments
+-----------------|-----------------|---------------------------------------------
+  3000H          |  MVI A, 32H     |    ; Load 32H into the accumulator (A)
+  3002H          |  MVI B, 54H     |    ; Load 54H into register B
+  3004H          |  ADD B          |    ; Add the contents of register B to the accumulator
+  3005H          |  STA 3050H      |    ; Store the result from the accumulator at memory location 3050H
+  3008H          |  HLT            |    ; Halt the program
+                    </code>
+                </pre>
+                <p>Explanation of Instructions:</p>
+                <ul>
+                    <li><strong>MVI A, 32H</strong>: This instruction moves the immediate value 32H into the accumulator
+                        (A).</li>
+                    <li><strong>MVI B, 54H</strong>: This instruction moves the immediate value 54H into register B.
+                    </li>
+                    <li><strong>ADD B</strong>: This instruction adds the contents of register B to the accumulator and
+                        stores the result in the accumulator.</li>
+                    <li><strong>STA 3050H</strong>: This instruction stores the contents of the accumulator at the
+                        memory location 3050H.</li>
+                    <li><strong>HLT</strong>: This instruction halts the execution of the program.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>2. Write a Program for Addition of Two 8-bit Hexadecimal Numbers and Store the Sum and Carry at
+                    Memory Locations 2051H and 2052H Respectively</h3>
+                <p>Numbers are: FFH and FFH.</p>
+                <p>So basically, FFH is added to FFH, resulting in 1FEH. Since there is a carry, 1 is stored as the
+                    carry, and FEH is stored as the sum.</p>
+                <p>The basic steps involved for this program are:</p>
+                <ol>
+                    <li>Start</li>
+                    <li>Initialize the carry register as zero (C = 0)</li>
+                    <li>Get the first and second numbers</li>
+                    <li>Add them</li>
+                    <li>Check for the carry
+                        <ul>
+                            <li>If there is a carry, then increment the carry register</li>
+                        </ul>
+                    </li>
+                    <li>Store the sum</li>
+                    <li>Store the carry if there is one</li>
+                    <li>Stop</li>
+                </ol>
+                <pre>
+                    <code>
+MVI C, 00H        ; Initialize carry register (C) to zero
+MVI A, FFH        ; Load first number (FFH) into accumulator A
+MVI B, FFH        ; Load second number (FFH) into register B
+ADD B             ; Add the contents of register B to accumulator A
+JNC NO_CARRY      ; Jump if no carry (CY flag is not set)
+INR C             ; Increment register C (carry) by 1 if there is a carry
+NO_CARRY:         ; Label for no carry condition
+STA 2051H         ; Store the sum from the accumulator to memory location 2051H
+MOV A, C          ; Move the value of register C (carry) to accumulator A
+STA 2052H         ; Store the carry from the accumulator to memory location 2052H
+HLT               ; Halt the program
+                    </code>
+                </pre>
+                <p>After execution of this program, FEH will be stored at 2051H, and the carry 1 will be stored at
+                    2052H.</p>
+            </div>
+            <div class="in">
+                <h3>3- Program to Subtract Two 8-Bit Numbers Without Borrow in 8085</h3>
+                <p>Suppose we have two 8-bit numbers, 40H and 30H, and we want to subtract them without borrow.</p>
+                <pre>
+    <code>
+  Memory Location  |   Instruction   |    Comments
+-------------------|-----------------|---------------------------------------------
+    3000H          |  MVI A, 40H     |    ; Load first number (40H) into accumulator A
+    3002H          |  MVI B, 30H     |    ; Load second number (30H) into register B
+    3004H          |  SUB B          |    ; Subtract the content of register B from accumulator A without borrow
+    3005H          |  HLT            |    ; Halt the program
+    </code>
+</pre>
+                <p>Explanation of Instructions:</p>
+                <ul>
+                    <li><strong>MVI A, 40H</strong>: Load the first number (40H) into accumulator A.</li>
+                    <li><strong>MVI B, 30H</strong>: Load the second number (30H) into register B.</li>
+                    <li><strong>SUB B</strong>: Subtract the content of register B from accumulator A without borrow.
+                    </li>
+                    <li><strong>HLT</strong>: Halt the execution of the program.</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>4- Program to Subtract Two 8-Bit Numbers with Borrow in 8085</h3>
+                <p>Suppose we have two 8-bit numbers, 30H and 20H where we want to subtract 30H from 20H with borrow
+                    (20H - 30H).</p>
+                <pre>
+    <code>
+  Memory Location  |   Instruction   |    Comments
+-------------------|-----------------|---------------------------------------------
+    3000H          |  MVI A, 20H     |    ; Load 20H into accumulator A
+    3002H          |  MVI B, 30H     |    ; Load 30H into register B
+    3004H          |  SUB B          |    ; Subtract B from A with borrow
+    3005H          |  MOV C, A       |    ; Move result to register C
+    3006H          |  SBB A          |    ; Subtract borrow from A
+    3007H          |  HLT            |    ; Halt the program
+    </code>
+</pre>
+                <p><strong>Explanation:</strong></p>
+                <ul>
+                    <li><strong>MVI A, 20H</strong>: Loads the first number (20H) into accumulator A.</li>
+                    <li><strong>MVI B, 30H</strong>: Loads the second number (30H) into register B.</li>
+                    <li><strong>SUB B</strong>: Subtracts B (30H) from A (20H) with borrow.</li>
+                </ul>
+                <p>Now, let's perform the binary subtraction:</p>
+                <pre>
+  A (Accumulator)  |  B (Register B)  |  Result (A - B with borrow)  |  Carry (CY)  
+-------------------|------------------|-----------------------------|---------------
+    0010 0000      |    0011 0000     |          1111 0000           |       1       
+</pre>
+                <p>After the subtraction, the result (1111 0000) is stored in accumulator A, and the carry flag (CY) is
+                    set to 1 indicating a borrow.</p>
+                <ul>
+                    <li><strong>MOV C, A</strong>: Moves the result (1111 0000) from accumulator A to register C.</li>
+                    <li><strong>SBB A</strong>: Subtracts the borrow (1) from A (1111 0000 - 1 = 1110 1111).</li>
+                    <li><strong>HLT</strong>: Halts the program.</li>
+                </ul>
+                <p>After executing this program, the final result in accumulator A is EFH (1110 1111 in binary).</p>
+            </div>
+
+            <div class="in">
+                <h3>5- Program to Add Two 16-bit Hexadecimal Numbers and Store the Result at Memory Location 3050H</h3>
+                <p>Suppose we have two 16-bit numbers: 2A75H and B42FH. We want to add these numbers and store the
+                    result at memory location 3050H.</p>
+                <pre>
+    <code>
+Memory Location  |   Instruction   |    Comments
+-----------------|-----------------|---------------------------------------------
+    3000H        |  MVI H, 2AH     |    ; Load high byte of first number (2A75H) into register H
+    3002H        |  MVI L, 75H     |    ; Load low byte of first number into register L
+    3004H        |  MVI D, B4H     |    ; Load high byte of second number (B42FH) into register D
+    3006H        |  MVI E, 2FH     |    ; Load low byte of second number into register E
+    3008H        |  MOV A, L       |    ; Move low byte of first number to accumulator A
+    3009H        |  ADD E          |    ; Add low byte of second number to accumulator A
+    300AH        |  MOV L, A       |    ; Move the sum in accumulator A to register L (low byte)
+    300BH        |  MOV A, H       |    ; Move high byte of first number to accumulator A
+    300CH        |  ADC D          |    ; Add high byte of second number to accumulator A with carry
+    300DH        |  MOV H, A       |    ; Move the sum in accumulator A to register H (high byte)
+    300EH        |  STA 3050H      |    ; Store the 16-bit sum from registers H and L at memory location 3050H
+    3011H        |  HLT            |    ; Halt the program
+    </code>
+</pre>
+                <p><strong>Explanation of Instructions:</strong></p>
+                <ul>
+                    <li><strong>MVI H, 2AH</strong>: Load the high byte (2A) of the first number (2A75H) into register
+                        H.</li>
+                    <li><strong>MVI L, 75H</strong>: Load the low byte (75) of the first number into register L.</li>
+                    <li><strong>MVI D, B4H</strong>: Load the high byte (B4) of the second number (B42FH) into register
+                        D.</li>
+                    <li><strong>MVI E, 2FH</strong>: Load the low byte (2F) of the second number into register E.</li>
+                    <li><strong>MOV A, L</strong>: Move the low byte of the first number (75) to accumulator A.</li>
+                    <li><strong>ADD E</strong>: Add the low byte of the second number (2F) to accumulator A (resulting
+                        in 75 + 2F = A4).</li>
+                    <li><strong>MOV L, A</strong>: Move the sum (A4) in accumulator A to register L (low byte).</li>
+                    <li><strong>MOV A, H</strong>: Move the high byte (2A) of the first number to accumulator A.</li>
+                    <li><strong>ADC D</strong>: Add the high byte (B4) of the second number to accumulator A with carry
+                        (resulting in 2A + B4 + 1 (carry) = D9).</li>
+                    <li><strong>MOV H, A</strong>: Move the sum (D9) in accumulator A to register H (high byte).</li>
+                    <li><strong>STA 3050H</strong>: Store the 16-bit sum (D9A4H) from registers H and L at memory
+                        location 3050H.</li>
+                    <li><strong>HLT</strong>: Halt the execution of the program.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>6- Program to Swap Two Numbers in Memory Locations.</h3>
+                <p>Suppose we have two numbers stored in memory locations 4000H and 4001H, and we want to swap their
+                    values.</p>
+                <pre>
+                                <code>
+Memory Location  |   Instruction   |    Comments
+-----------------|-----------------|---------------------------------------------
+    3000H        |  LXI H, 4000H   |    ; Load memory location for first number into register pair HL
+    3003H        |  MOV A, M       |    ; Move the content of memory location 4000H to accumulator A
+    3004H        |  LXI D, 4001H   |    ; Load memory location for second number into register pair DE
+    3007H        |  MOV E, M       |    ; Move the content of memory location 4001H to register E
+    3008H        |  MOV L, E       |    ; Move the content of register E (second number) to register L (first number)
+    3009H        |  MOV M, A       |    ; Move the content of accumulator A (first number) to memory location 4001H
+    300AH        |  MOV M, L       |    ; Move the content of register L (second number) to memory location 4000H
+    300BH        |  HLT            |    ; Halt the program
+                                </code>
+                            </pre>
+                <p>Explanation of Instructions:</p>
+                <ul>
+                    <li><strong>LXI H, 4000H</strong>: Load the memory location for the first number into register pair
+                        HL.</li>
+                    <li><strong>MOV A, M</strong>: Move the content of memory location 4000H to accumulator A.</li>
+                    <li><strong>LXI D, 4001H</strong>: Load the memory location for the second number into register pair
+                        DE.</li>
+                    <li><strong>MOV E, M</strong>: Move the content of memory location 4001H to register E.</li>
+                    <li><strong>MOV L, E</strong>: Move the content of register E (second number) to register L (first
+                        number).</li>
+                    <li><strong>MOV M, A</strong>: Move the content of accumulator A (first number) to memory location
+                        4001H.</li>
+                    <li><strong>MOV M, L</strong>: Move the content of register L (second number) to memory location
+                        4000H.</li>
+                    <li><strong>HLT</strong>: Halt the execution of the program.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>7- Program to Move a Block of Data of 16 Bytes from Starting Addresses 2050H to 2060H in 8085</h3>
+                <p>We want to move a block of data of 16 bytes from starting addresses 2050H to 2060H to another
+                    location.</p>
+                <pre>
+                                <code>
+Memory Location  |   Instruction   |    Comments
+-----------------|-----------------|---------------------------------------------
+    3000H          |  LXI H, 2050H   |    ; Load starting address of the block into register pair HL
+    3003H          |  LXI D, 2070H   |    ; Load destination address into register pair DE
+    3006H          |  LXI B, 10H     |    ; Load counter (number of bytes to move) into register pair BC
+    3009H          |  L1 MOV A, M    |    ; Move data from source address pointed by HL to accumulator A
+    300AH          |  MOV M, A       |    ; Move data from accumulator A to destination address pointed by DE
+    300BH          |  INX H          |    ; Increment source address (HL)
+    300CH          |  INX D          |    ; Increment destination address (DE)
+    300DH          |  DCX B          |    ; Decrement counter (BC)
+    300EH          |  JNZ L1         |    ; Jump to L1 if counter is not zero
+    3011H          |  HLT            |    ; Halt the program
+                                </code>
+                            </pre>
+                <p>Explanation of Instructions:</p>
+                <ul>
+                    <li><strong>LXI H, 2050H</strong>: Load the starting address of the block (2050H) into register pair
+                        HL.</li>
+                    <li><strong>LXI D, 2070H</strong>: Load the destination address (2070H) into register pair DE.</li>
+                    <li><strong>LXI B, 10H</strong>: Load the counter (number of bytes to move, here 16 bytes) into
+                        register pair BC.</li>
+                    <li><strong>MOV A, M</strong>: Move data from the source address pointed by HL to accumulator A.
+                    </li>
+                    <li><strong>MOV M, A</strong>: Move data from accumulator A to the destination address pointed by
+                        DE.</li>
+                    <li><strong>INX H</strong>: Increment the source address (HL).</li>
+                    <li><strong>INX D</strong>: Increment the destination address (DE).</li>
+                    <li><strong>DCX B</strong>: Decrement the counter (BC).</li>
+                    <li><strong>JNZ L1</strong>: Jump to label L1 if the counter is not zero.</li>
+                    <li><strong>HLT</strong>: Halt the execution of the program.</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+    <div class="content-box">
+        <p>Reference</p>
+        <ul>
+            <li><a href="https://www.youtube.com/playlist?list=PLvuJ46soashfETxnmSK6uzV_5F-Fa4KAP"
+                    target="_blank">Instruction Set Playlist &neArr;</a></li>
+            <li><a href="https://www.youtube.com/watch?v=JcAdJxfmgTw&list=PLU-faXGCDVRJ_FskAr0wl7wuGzVwFExqH&index=41"
+                    target="_blank">Assembly Language Programs &neArr;</a></li>
+        </ul>
+    </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="../../../../public/main.js"></script>
+</body>
+
+</html>

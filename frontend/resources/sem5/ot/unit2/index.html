@@ -1,0 +1,2173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 2</title>
+    <link rel="stylesheet" href="../../../../public/style.css">
+    <link rel="icon" href="../../../../public/logo/favicon_io/favicon.ico">
+</head>
+
+<body class="bg-c">
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">back</a>
+        <div class="fix-column-links">
+            <a href="#t1" class="link">Graphical Method</a>
+            <a href="#t2" class="link">Simplex Method</a>
+            <a href="#t3" class="link">Big M Method</a>
+            <a href="#t4" class="link">Two Phase Method</a>
+            <a href="#t5" class="link">Transportation Method</a>
+            <a href="#t6" class="link">Assignment Problem</a>
+            <a href="#t7" class="link">Travelling Problem</a>
+            <div class="botbut">
+                <a href="" class="link">Next Topic &rarr;</a>
+                <a href="../unit1/index.html" class="link">&larr; Previous Topic</a>
+            </div>
+        </div>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Unit 2</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <div class="wh">
+            <h2>Linear Programming Problem (LPP)</h2>
+            <ul>
+                <li><strong>What is LPP?</strong>
+                    Linear Programming Problem (LPP) is a mathematical technique used to achieve the best possible
+                    outcome in a given situation, often involving maximization of profits or minimization of costs.
+                    Think about running a business—what is the main goal? The primary objective is usually profit
+                    maximization or cost minimization.
+                    <br>
+                    For example, a company might want to maximize its profit or minimize its costs given a set of
+                    limitations or resources. In LPP, the objective function is the formula that represents this goal.
+                </li>
+
+                <li><strong>Objective Function:</strong>
+                    In LPP, we typically encounter two types of problems:
+                    <ul>
+                        <li>Maximization: An objective function might look like <strong>Z = x + 2y</strong>, where the
+                            goal is to maximize Z (profit, output, etc.).</li>
+                        <li>Minimization: Another example could be <strong>Z = 2x + 3y</strong>, where the objective is
+                            to minimize Z (cost, time, etc.).</li>
+                    </ul>
+                    The variables <strong>x</strong> and <strong>y</strong> are decision variables that represent
+                    quantities (like products, resources, etc.) in the real-world problem.
+                </li>
+
+                <li><strong>Constraints:</strong>
+                    Every business operates under certain limitations, such as limited resources like manpower, money,
+                    time, land, or raw materials. These limitations are known as <strong>constraints</strong> in LPP.
+                    <br>
+                    Constraints are represented as inequalities because they indicate the limits within which the
+                    decision variables must operate. For example:
+                    <br><strong>2x + 3y ≥ 5</strong> (resource must be more than or equal to 5)<br>
+                    <strong>x + y ≤ 7</strong> (resource must be less than or equal to 7)
+                </li>
+
+                <li><strong>Non-negativity Restriction:</strong>
+                    In most real-world scenarios, the decision variables (like products, resources, etc.) cannot be
+                    negative. Therefore, in LPP, we assume:
+                    <br><strong>x ≥ 0</strong>, <strong>y ≥ 0</strong>
+                    <br>
+                    This condition ensures that the solution is realistic and practical.
+                </li>
+
+                <li><strong>Summary of LPP Components:</strong>
+                    In summary, a Linear Programming Problem consists of two main components:
+                    <ul>
+                        <li><strong>Objective Function</strong>: This is the function you aim to maximize or minimize
+                            (profit, cost, time, etc.).</li>
+                        <li><strong>Constraints</strong>: These are the limitations or restrictions on the resources
+                            available, usually in the form of inequalities.</li>
+                    </ul>
+                    Together, these components form the LPP model, which helps in decision-making for optimal outcomes.
+                </li>
+            </ul>
+            <div id="t1" class="in">
+                <h3>Graphical Method to Solve LPP</h3>
+                <div class="wh">
+                    <p><strong>Problem Statement:</strong></p>
+                    <p>
+                        Maximize <strong>Z = 3x<sub>1</sub> + 4x<sub>2</sub></strong>
+                        <br><strong>Subject to the constraints:</strong>
+                        <br><strong>x<sub>1</sub> + 2x<sub>2</sub> ≤ 4</strong>
+                        <br><strong>3x<sub>1</sub> + 2x<sub>2</sub> ≤ 6</strong>
+                        <br><strong>x<sub>1</sub>, x<sub>2</sub> ≥ 0</strong> (Non-negativity constraint)
+                    </p>
+
+                    <ul>
+                        <li><strong>Step 1: Find the coordinates</strong>
+                            <br>We start by finding the points where the constraints intersect the axes, as these points
+                            will help us plot the lines representing the constraints.
+                            <br>
+                            <strong>For the constraint <strong>x<sub>1</sub> + 2x<sub>2</sub> ≤ 4</strong>:</strong>
+                            <br>To find the points where the line intersects the x<sub>1</sub> and x<sub>2</sub> axes:
+                            <ul>
+                                <li>If <strong>x<sub>2</sub> = 0</strong>, then <strong>x<sub>1</sub> = 4</strong>,
+                                    giving the point
+                                    (4, 0).</li>
+                                <li>If <strong>x<sub>1</sub> = 0</strong>, then <strong>x<sub>2</sub> = 2</strong>,
+                                    giving the point
+                                    (0, 2).</li>
+                            </ul>
+                            <strong>For the constraint <strong>3x<sub>1</sub> + 2x<sub>2</sub> ≤ 6</strong>:</strong>
+                            <ul>
+                                <li>If <strong>x<sub>2</sub> = 0</strong>, then <strong>x<sub>1</sub> = 2</strong>,
+                                    giving the point
+                                    (2, 0).</li>
+                                <li>If <strong>x<sub>1</sub> = 0</strong>, then <strong>x<sub>2</sub> = 3</strong>,
+                                    giving the point
+                                    (0, 3).</li>
+                            </ul>
+                        </li>
+
+                        <li><strong>Step 2: Draw the lines and identify the feasible region</strong>
+                            <br>We now plot the lines <strong>x<sub>1</sub> + 2x<sub>2</sub> = 4</strong> and
+                            <strong>3x<sub>1</sub> + 2x<sub>2</sub> = 6</strong> on a graph using the points found
+                            earlier.
+                            <br>
+                            The feasible region is the area where both constraints overlap, and it represents the
+                            possible
+                            values of <strong>x<sub>1</sub></strong> and <strong>x<sub>2</sub> </strong> that satisfy
+                            all
+                            constraints.
+                            <br>
+                            Since both constraints have ≤, the feasible region will be the area below both lines,
+                            towards
+                            the origin (0, 0).
+                            <br><img src="../../images/ot1.jpeg" alt="Graph of Feasible Region">
+                        </li>
+
+                        <li><strong>Step 3: Identify the corner points of the feasible region</strong>
+                            <br>The optimal solution of an LPP in the graphical method will always lie at one of the
+                            corner
+                            points (vertices) of the feasible region.
+                            <br>The corner points in this example are:
+                            <ul>
+                                <li><strong>O</strong>: (0, 0) – the origin</li>
+                                <li><strong>A</strong>: (2, 0) – where <strong>3x<sub>1</sub> + 2x<sub>2</sub> =
+                                        6</strong>
+                                    intersects the x<sub>1</sub>-axis</li>
+                                <li><strong>C</strong>: (0, 2) – where <strong>x<sub>1</sub> + 2x<sub>2</sub> =
+                                        4</strong>
+                                    intersects the x<sub>2</sub>-axis</li>
+                                <li><strong>B</strong>: The intersection of the two constraints
+                                    <strong>x<sub>1</sub> + 2x<sub>2</sub> = 4</strong> and
+                                    <strong>3x<sub>1</sub> + 2x<sub>2</sub> = 6</strong>. To find B, we solve both
+                                    equations
+                                    simultaneously:
+                                    <br>Solve the system:
+                                    <br><strong>x<sub>1</sub> + 2x<sub>2</sub> = 4</strong>
+                                    <br><strong>3x<sub>1</sub> + 2x<sub>2</sub> = 6</strong>
+                                    <br>Subtract the first equation from the second:
+                                    <br><strong>(3x<sub>1</sub> + 2x<sub>2</sub>) - (x<sub>1</sub> + 2x<sub>2</sub>) = 6
+                                        - 4</strong>
+                                    <br>This simplifies to:
+                                    <br><strong>2x<sub>1</sub> = 2</strong>, so <strong>x<sub>1</sub> = 1</strong>.
+                                    <br>Substitute <strong>x<sub>1</sub> = 1</strong> into
+                                    <strong>x<sub>1</sub> + 2x<sub>2</sub> = 4</strong>:
+                                    <br><strong>1 + 2x<sub>2</sub> = 4</strong>, so <strong>x<sub>2</sub> =
+                                        3/2</strong>.
+                                    <br>The intersection point <strong>B</strong> is (1, 3/2).
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li><strong>Step 4: Evaluate the objective function at each corner point</strong>
+                            <br>Now, we substitute the coordinates of each corner point into the objective function
+                            <strong>Z = 3x<sub>1</sub> + 4x<sub>2</sub></strong> to find the value of Z at each point:
+                            <ul>
+                                <li>At <strong>O</strong>: <strong>Z = 3(0) + 4(0) = 0</strong></li>
+                                <li>At <strong>A</strong>: <strong>Z = 3(2) + 4(0) = 6</strong></li>
+                                <li>At <strong>B</strong>: <strong>Z = 3(1) + 4(3/2) = 3 + 6 = 9</strong></li>
+                                <li>At <strong>C</strong>: <strong>Z = 3(0) + 4(2) = 8</strong></li>
+                            </ul>
+                        </li>
+
+                        <li><strong>Step 5: Determine the optimal solution</strong>
+                            <br>Since the problem is a maximization problem, the optimal solution will be the point that
+                            gives the maximum value of Z.
+                            <br>From the calculations, we see that the maximum value of Z is 9, which occurs at point
+                            <strong>B (1, 3/2)</strong>.
+                            <br>Thus, the optimal solution is:
+                            <ul>
+                                <li><strong>x<sub>1</sub> = 1</strong></li>
+                                <li><strong>x<sub>2</sub> = 3/2</strong></li>
+                            </ul>
+                        </li>
+
+                        <li><strong>Step 6: Minimization (if required)</strong>
+                            <br>If we were tasked with minimizing Z instead of maximizing it, the minimum value would
+                            occur
+                            at the origin <strong>O (0, 0)</strong>, where <strong>Z = 0</strong>.
+                        </li>
+                    </ul>
+                </div>
+                <div class="wh">
+                    <h3>Graphical Method to Solve LPP (Minimization Problem)</h3>
+                    <p><strong>Problem Statement:</strong></p>
+                    <p>
+                        Minimize <strong>Z = 3x<sub>1</sub> + 4x<sub>2</sub></strong>
+                        <br><strong>Subject to the constraints:</strong>
+                        <br><strong>x<sub>1</sub> + 2x<sub>2</sub> ≥ 4</strong>
+                        <br><strong>3x<sub>1</sub> + 2x<sub>2</sub> ≥ 6</strong>
+                        <br><strong>x<sub>1</sub>, x<sub>2</sub> ≥ 0</strong> (Non-negativity constraint)
+                    </p>
+
+                    <ul>
+                        <li><strong>Step 1: Find the coordinates</strong>
+                            <br>Since the constraints have “≥” signs, the feasible region will be away from the origin.
+                            <br>
+                            To plot the constraints, we first find the points where the lines intersect the axes.
+                            <br>
+                            <strong>For the constraint <strong>x<sub>1</sub> + 2x<sub>2</sub> ≥ 4</strong>:</strong>
+                            <ul>
+                                <li>If <strong>x<sub>2</sub> = 0</strong>, then <strong>x<sub>1</sub> = 4</strong>,
+                                    giving the
+                                    point (4, 0).</li>
+                                <li>If <strong>x<sub>1</sub> = 0</strong>, then <strong>x<sub>2</sub> = 2</strong>,
+                                    giving the
+                                    point (0, 2).</li>
+                            </ul><strong>For the constraint <strong>3x<sub>1</sub> + 2x<sub>2</sub> ≥
+                                    6</strong>:</strong>
+                            <ul>
+                                <li>If <strong>x<sub>2</sub> = 0</strong>, then <strong>x<sub>1</sub> = 2</strong>,
+                                    giving the
+                                    point (2, 0).</li>
+                                <li>If <strong>x<sub>1</sub> = 0</strong>, then <strong>x<sub>2</sub> = 3</strong>,
+                                    giving the
+                                    point (0, 3).</li>
+                            </ul>
+                        </li>
+
+                        <li><strong>Step 2: Draw the lines and identify the feasible region</strong>
+                            <br>We now plot the lines <strong>x<sub>1</sub> + 2x<sub>2</sub> = 4</strong> and
+                            <strong>3x<sub>1</sub> + 2x<sub>2</sub> = 6</strong> using the points found earlier.
+                            <br>
+                            The feasible region in this case will be above both lines (away from the origin), as the
+                            constraints are in the form of “≥”.
+                            <br>
+                            The common area between the two constraints will give us the feasible region where both
+                            constraints are satisfied.
+                            <br><img src="../../images/ot2.jpeg" alt="Graph of Feasible Region">
+                        </li>
+
+                        <li><strong>Step 3: Identify the corner points of the feasible region</strong>
+                            <br>Just like in the maximization case, the optimal solution for a minimization problem also
+                            lies at one of the corner points (vertices) of the feasible region.
+                            <br>
+                            The corner points of the feasible region are:
+                            <ul>
+                                <li><strong>P</strong>: (4, 0) – where <strong>x<sub>1</sub> + 2x<sub>2</sub> =
+                                        4</strong>
+                                    intersects the x<sub>1</sub>-axis</li>
+                                <li><strong>Q</strong>: (0, 3) – where <strong>3x<sub>1</sub> + 2x<sub>2</sub> =
+                                        6</strong>
+                                    intersects the x<sub>2</sub>-axis</li>
+                                <li><strong>R</strong>: The intersection of the two constraints. To find this point, we
+                                    solve both equations simultaneously:
+                                    <br>Solve the system:
+                                    <br><strong>x<sub>1</sub> + 2x<sub>2</sub> = 4</strong>
+                                    <br><strong>3x<sub>1</sub> + 2x<sub>2</sub> = 6</strong>
+                                    <br>Subtract the first equation from the second:
+                                    <br><strong>(3x<sub>1</sub> + 2x<sub>2</sub>) - (x<sub>1</sub> + 2x<sub>2</sub>) = 6
+                                        - 4</strong>
+                                    <br>This simplifies to:
+                                    <br><strong>2x<sub>1</sub> = 2</strong>, so <strong>x<sub>1</sub> = 1</strong>.
+                                    <br>Substitute <strong>x<sub>1</sub> = 1</strong> into
+                                    <strong>x<sub>1</sub> + 2x<sub>2</sub> = 4</strong>:
+                                    <br><strong>1 + 2x<sub>2</sub> = 4</strong>, so <strong>x<sub>2</sub> =
+                                        3/2</strong>.
+                                    <br>The intersection point <strong>R</strong> is (1, 3/2).
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li><strong>Step 4: Evaluate the objective function at each corner point</strong>
+                            <br>Now we substitute the coordinates of each corner point into the objective function
+                            <strong>Z = 3x<sub>1</sub> + 4x<sub>2</sub></strong> to find the value of Z at each point:
+                            <ul>
+                                <li>At <strong>P</strong>: <strong>Z = 3(4) + 4(0) = 12</strong></li>
+                                <li>At <strong>Q</strong>: <strong>Z = 3(0) + 4(3) = 12</strong></li>
+                                <li>At <strong>R</strong>: <strong>Z = 3(1) + 4(3/2) = 3 + 6 = 9</strong></li>
+                            </ul>
+                        </li>
+
+                        <li><strong>Step 5: Determine the optimal solution</strong>
+                            <br>Since the problem is a minimization problem, the optimal solution will be the point that
+                            gives the minimum value of Z.
+                            <br>From the calculations, we see that the minimum value of Z is 9, which occurs at point
+                            <strong>R (1, 3/2)</strong>.
+                            <br>Thus, the optimal solution is:
+                            <ul>
+                                <li><strong>x<sub>1</sub> = 1</strong></li>
+                                <li><strong>x<sub>2</sub> = 3/2</strong></li>
+                            </ul>
+                        </li>
+                        <li><strong>Note: Unbounded Solution (if the question was for maximization)</strong>
+                            <br>If this problem were a maximization problem, the solution would be unbounded.
+                            <br>This is because, as we move away from the origin in the feasible region, the value of Z
+                            increases indefinitely.
+                            <br>Thus, there is no maximum value for Z, and we say the solution is unbounded.
+                        </li>
+                    </ul>
+                </div>
+                <!-- <div class="wh">
+                    <h3>Graphical Method to Solve LPP</h3>
+                    <p><strong>Problem Statement:</strong></p>
+                    <p>
+                        Maximize <strong>Z = 3x<sub>1</sub> + 2x<sub>2</sub></strong>
+                        <br><strong>Subject to the constraints:</strong>
+                        <br><strong>x<sub>1</sub> + 2x<sub>2</sub> ≥ 4</strong>
+                        <br><strong>3x<sub>1</sub> + 2x<sub>2</sub> ≥ 6</strong>
+                        <br><strong>x<sub>1</sub>, x<sub>2</sub> ≥ 0</strong> (Non-negativity constraint)
+                    </p>
+
+                    <ul>
+                        <li><strong>Step 1: Plot the constraints directly</strong>
+                            <br>As we are dealing with greater than or equal to (≥) inequalities, we first find the
+                            points of intersection with the axes and plot the lines:
+                        </li>
+
+                        <li><strong>For the constraint <strong>x<sub>1</sub> + 2x<sub>2</sub> ≥ 4</strong>:</strong>
+                            <ul>
+                                <li>If <strong>x<sub>2</sub> = 0</strong>, then <strong>x<sub>1</sub> = 4</strong>, giving the
+                                    point (4, 0).</li>
+                                <li>If <strong>x<sub>1</sub> = 0</strong>, then <strong>x<sub>2</sub> = 2</strong>, giving the
+                                    point (0, 2).</li>
+                            </ul>
+                            We plot the line connecting (4, 0) and (0, 2) on the graph.
+                        </li>
+
+                        <li><strong>For the constraint <strong>3x<sub>1</sub> + 2x<sub>2</sub> ≥ 6</strong>:</strong>
+                            <ul>
+                                <li>If <strong>x<sub>2</sub> = 0</strong>, then <strong>x<sub>1</sub> = 2</strong>, giving the
+                                    point (2, 0).</li>
+                                <li>If <strong>x<sub>1</sub> = 0</strong>, then <strong>x<sub>2</sub> = 3</strong>, giving the
+                                    point (0, 3).</li>
+                            </ul>
+                            We plot the line connecting (2, 0) and (0, 3) on the graph.
+                        </li>
+
+                        <li><strong>Step 2: Identify the feasible region</strong>
+                            <br>Since both constraints are of the form ≥, the feasible region will lie above and to the
+                            right of the lines, away from the origin (0,0).
+                            <br>To find the feasible region, mark the area where both constraints overlap. This
+                            represents the region where both inequalities are satisfied.
+                            <br><img src="../../images/ot2.jpeg" alt="Graph of Feasible Region">
+                        </li>
+
+                        <li><strong>Step 3: Find the intersection of the two constraints</strong>
+                            <br>To find the point of intersection of the two lines, solve the system of equations:
+                            <br><strong>x<sub>1</sub> + 2x<sub>2</sub> = 4</strong>
+                            <br><strong>3x<sub>1</sub> + 2x<sub>2</sub> = 6</strong>
+                            <br>Subtract the first equation from the second:
+                            <br><strong>(3x<sub>1</sub> + 2x<sub>2</sub>) - (x<sub>1</sub> + 2x<sub>2</sub>) = 6 - 4</strong>
+                            <br>This simplifies to:
+                            <br><strong>2x<sub>1</sub> = 2</strong>, so <strong>x<sub>1</sub> = 1</strong>.
+                            <br>Substitute <strong>x<sub>1</sub> = 1</strong> into
+                            <strong>x<sub>1</sub> + 2x<sub>2</sub> = 4</strong>:
+                            <br><strong>1 + 2x<sub>2</sub> = 4</strong>, so <strong>x<sub>2</sub> = 3/2</strong>.
+                            <br>Thus, the intersection point is <strong>(1, 3/2)</strong>.
+                        </li>
+
+                        <li><strong>Step 4: Identify the corner points of the feasible region</strong>
+                            <br>The corner points of the feasible region are:
+                            <ul>
+                                <li><strong>A</strong>: (2, 0) – where <strong>3x<sub>1</sub> + 2x<sub>2</sub> = 6</strong>
+                                    intersects the x<sub>1</sub>-axis.</li>
+                                <li><strong>B</strong>: (1, 3/2) – the intersection point of the two constraints, as
+                                    calculated earlier.</li>
+                                <li><strong>C</strong>: (0, 2) – where <strong>x<sub>1</sub> + 2x<sub>2</sub> = 4</strong>
+                                    intersects the x<sub>2</sub>-axis.</li>
+                            </ul>
+                        </li>
+
+                        <li><strong>Step 5: Evaluate the objective function at each corner point</strong>
+                            <br>Substitute the coordinates of each corner point into the objective function
+                            <strong>Z = 3x<sub>1</sub> + 2x<sub>2</sub></strong>:
+                            <ul>
+                                <li>At <strong>A</strong> (2, 0): <strong>Z = 3(2) + 2(0) = 6</strong></li>
+                                <li>At <strong>B</strong> (1, 3/2): <strong>Z = 3(1) + 2(3/2) = 3 + 3 = 6</strong></li>
+                                <li>At <strong>C</strong> (0, 2): <strong>Z = 3(0) + 2(2) = 4</strong></li>
+                            </ul>
+                        </li>
+
+                        <li><strong>Step 6: Determine the type of solution</strong>
+                            <br>Since the objective function gives the same value of <strong>Z = 6</strong> at both points A
+                            and B, we have an <strong>alternate optimal solution</strong>.
+                            <br>This means that there are multiple optimal solutions that give the same maximum value of
+                            Z, in this case, at both points A (2, 0) and B (1, 3/2).
+                            <br>However, due to the nature of the constraints, every point on the line segment
+                            connecting A and B also yields a value of <strong>Z = 6</strong>. Therefore, there are
+                            infinitely many solutions within that segment, leading to an <strong>infinite
+                                solution</strong> scenario.
+                            <br>Thus, this problem can be classified as having both an <strong>alternate
+                                solution</strong> and an <strong>infinite solution</strong>.
+                        </li>
+                    </ul>
+                </div> -->
+                <div class="wh">
+                    <h3>Alternative solutions</h3>
+                    <p><strong>Problem Statement:</strong></p>
+                    <p>
+                        Maximize <strong>Z = 3x<sub>1</sub> + 2x<sub>2</sub></strong>
+                        <br><strong>Subject to the constraints:</strong>
+                        <br><strong>x<sub>1</sub> + 2x<sub>2</sub> ≤ 4</strong>
+                        <br><strong>3x<sub>1</sub> + 2x<sub>2</sub> ≤ 6</strong>
+                        <br><strong>x<sub>1</sub>, x<sub>2</sub> ≥ 0</strong> (Non-negativity constraint)
+                    </p>
+
+                    <ul>
+                        <li><strong>Step 1: Find the coordinates</strong>
+                            <br>We start by finding the points where the constraints intersect the axes, which will help
+                            us plot the lines representing the constraints.
+                            <strong>For the constraint <strong>x<sub>1</sub> + 2x<sub>2</sub> ≤ 4</strong>:</strong>
+                            <br>To find the points where the line intersects the x<sub>1</sub> and x<sub>2</sub> axes:
+                            <ul>
+                                <li>If <strong>x<sub>2</sub> = 0</strong>, then <strong>x<sub>1</sub> = 4</strong>,
+                                    giving the
+                                    point (4, 0).</li>
+                                <li>If <strong>x<sub>1</sub> = 0</strong>, then <strong>x<sub>2</sub> = 2</strong>,
+                                    giving the
+                                    point (0, 2).</li>
+                            </ul>
+                            <strong>For the constraint <strong>3x<sub>1</sub> + 2x<sub>2</sub> ≤
+                                    6</strong>:</strong>
+                            <ul>
+                                <li>If <strong>x<sub>2</sub> = 0</strong>, then <strong>x<sub>1</sub> = 2</strong>,
+                                    giving the
+                                    point (2, 0).</li>
+                                <li>If <strong>x<sub>1</sub> = 0</strong>, then <strong>x<sub>2</sub> = 3</strong>,
+                                    giving the
+                                    point (0, 3).</li>
+                            </ul>
+                        </li>
+
+                        <li><strong>Step 2: Draw the lines and identify the feasible region</strong>
+                            <br>We now plot the lines <strong>x<sub>1</sub> + 2x<sub>2</sub> = 4</strong> and
+                            <strong>3x<sub>1</sub> + 2x<sub>2</sub> = 6</strong> on a graph using the points found
+                            earlier.
+                            <br>
+                            The feasible region is the area where both constraints overlap, representing the possible
+                            values of <strong>x<sub>1</sub></strong> and <strong>x<sub>2</sub> </strong> that satisfy
+                            all
+                            constraints.
+                            <br>
+                            Since both constraints have ≤, the feasible region will be the area below both lines,
+                            towards the origin (0, 0).
+                            <br><img src="../../images/ot3.jpeg" alt="Graph of Feasible Region">
+                        </li>
+
+                        <li><strong>Step 3: Identify the corner points of the feasible region</strong>
+                            <br>The optimal solution of an LPP in the graphical method will always lie at one of the
+                            corner points (vertices) of the feasible region.
+                            <br>The corner points in this example are:
+                            <ul>
+                                <li><strong>O</strong>: (0, 0) – the origin</li>
+                                <li><strong>A</strong>: (2, 0) – where <strong>3x<sub>1</sub> + 2x<sub>2</sub> =
+                                        6</strong>
+                                    intersects the x<sub>1</sub>-axis</li>
+                                <li><strong>C</strong>: (0, 2) – where <strong>x<sub>1</sub> + 2x<sub>2</sub> =
+                                        4</strong>
+                                    intersects the x<sub>2</sub>-axis</li>
+                                <li><strong>B</strong>: The intersection of the two constraints
+                                    <strong>x<sub>1</sub> + 2x<sub>2</sub> = 4</strong> and
+                                    <strong>3x<sub>1</sub> + 2x<sub>2</sub> = 6</strong>. To find B, we solve both
+                                    equations
+                                    simultaneously:
+                                    <br>Solve the system:
+                                    <br><strong>x<sub>1</sub> + 2x<sub>2</sub> = 4</strong>
+                                    <br><strong>3x<sub>1</sub> + 2x<sub>2</sub> = 6</strong>
+                                    <br>Subtract the first equation from the second:
+                                    <br><strong>(3x<sub>1</sub> + 2x<sub>2</sub>) - (x<sub>1</sub> + 2x<sub>2</sub>) = 6
+                                        - 4</strong>
+                                    <br>This simplifies to:
+                                    <br><strong>2x<sub>1</sub> = 2</strong>, so <strong>x<sub>1</sub> = 1</strong>.
+                                    <br>Substitute <strong>x<sub>1</sub> = 1</strong> into
+                                    <strong>x<sub>1</sub> + 2x<sub>2</sub> = 4</strong>:
+                                    <br><strong>1 + 2x<sub>2</sub> = 4</strong>, so <strong>x<sub>2</sub> =
+                                        3/2</strong>.
+                                    <br>The intersection point <strong>B</strong> is (1, 3/2).
+                                </li>
+                            </ul>
+                        </li>
+
+                        <li><strong>Step 4: Evaluate the objective function at each corner point</strong>
+                            <br>Now, we substitute the coordinates of each corner point into the objective function
+                            <strong>Z = 3x<sub>1</sub> + 2x<sub>2</sub></strong> to find the value of Z at each point:
+                            <ul>
+                                <li>At <strong>O</strong>: <strong>Z = 3(0) + 2(0) = 0</strong></li>
+                                <li>At <strong>A</strong>: <strong>Z = 3(2) + 2(0) = 6</strong></li>
+                                <li>At <strong>B</strong>: <strong>Z = 3(1) + 2(3/2) = 3 + 3 = 6</strong></li>
+                                <li>At <strong>C</strong>: <strong>Z = 3(0) + 2(2) = 4</strong></li>
+                            </ul>
+                        </li>
+
+                        <li><strong>Step 5: Determine the optimal solution</strong>
+                            <br>In this case, we have two points (A and B) that give the same maximum value of Z:
+                            <ul>
+                                <li><strong>A (2, 0):</strong> Z = 6</li>
+                                <li><strong>B (1, 3/2):</strong> Z = 6</li>
+                            </ul>
+                            This indicates that there are multiple optimal solutions. Therefore, the solution is
+                            classified as an <strong>alternative optimal solution</strong> since the maximum Z can be
+                            achieved at both points.
+                        </li>
+
+                        <li><strong>Step 6: Discuss the type of solution</strong>
+                            <br>Since both points A and B yield the same maximum value for Z (which is 6), we can
+                            conclude that:
+                            <ul>
+                                <li>This problem has <strong>alternative solutions</strong>, as there are multiple
+                                    combinations of <strong>x<sub>1</sub></strong> and <strong>x<sub>2</sub></strong>
+                                    that
+                                    maximize the objective function.</li>
+                                <li>Moreover, if we extend the feasible region further, we may find that there are
+                                    infinite solutions along the line segment connecting points A and B. Hence, the
+                                    solution can also be described as having <strong>infinite optimal
+                                        solutions.</strong></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="wh">
+                    <h3>Graphical Method to Solve LPP (No Solution Case)</h3>
+                    <p><strong>Problem Statement:</strong></p>
+                    <p>
+                        Maximize <strong>Z = 6x<sub>1</sub> + 4x<sub>2</sub></strong>
+                        <br><strong>Subject to the constraints:</strong>
+                        <br><strong>2x<sub>1</sub> + 4x<sub>2</sub> ≤ 4</strong>
+                        <br><strong>4x<sub>1</sub> + 8x<sub>2</sub> ≥ 16</strong>
+                        <br><strong>x<sub>1</sub>, x<sub>2</sub> ≥ 0</strong> (Non-negativity constraint)
+                    </p>
+                    <ul>
+                        <li><strong>Step 1: Find the coordinates</strong>
+                            <br>We start by finding the points where the constraints intersect the axes.
+                            <br>
+                            <strong>For the constraint <strong>2x<sub>1</sub> + 4x<sub>2</sub> ≤ 4</strong>:</strong>
+                            <br>To find the points where the line intersects the x<sub>1</sub> and x<sub>2</sub> axes:
+                            <ul>
+                                <li>If <strong>x<sub>2</sub> = 0</strong>, then <strong>2x<sub>1</sub> = 4</strong>,
+                                    giving the
+                                    point (2, 0).</li>
+                                <li>If <strong>x<sub>1</sub> = 0</strong>, then <strong>4x<sub>2</sub> = 4</strong>,
+                                    giving the
+                                    point (0, 1).</li>
+                            </ul>
+                            <strong>For the constraint <strong>4x<sub>1</sub> + 8x<sub>2</sub> ≥ 16</strong>:</strong>
+                            <br>To find the points where the line intersects the axes:
+                            <ul>
+                                <li>If <strong>x<sub>2</sub> = 0</strong>, then <strong>4x<sub>1</sub> = 16</strong>,
+                                    giving the
+                                    point (4, 0).</li>
+                                <li>If <strong>x<sub>1</sub> = 0</strong>, then <strong>8x<sub>2</sub> = 16</strong>,
+                                    giving the
+                                    point (0, 2).</li>
+                            </ul>
+                        </li>
+                        <li><strong>Step 2: Draw the lines and identify the feasible region</strong>
+                            <br>We now plot the lines <strong>2x<sub>1</sub> + 4x<sub>2</sub> = 4</strong> and
+                            <strong>4x<sub>1</sub> + 8x<sub>2</sub> = 16</strong> on a graph using the points found
+                            earlier.
+                            <br>
+                            The feasible region for the first constraint is the area below the line, while for the
+                            second constraint, it is the area above the line.
+                            <br>
+                            Since one constraint is ≤ and the other is ≥, we are looking for an intersection of these
+                            two regions.
+                            <br><img src="../../images/ot4.jpeg" alt="Graph of No Solution">
+                        </li>
+                        <li><strong>Step 3: Analyze the feasible region</strong>
+                            <br>Upon examining the plotted constraints, we see that there is no overlap between the
+                            feasible regions defined by the two constraints.
+                            <br>Thus, there is no common area where both conditions are satisfied simultaneously. This
+                            indicates that:
+                            <ul>
+                                <li>The problem has <strong>no feasible solution</strong>.</li>
+                                <li>The constraints are contradictory, as one requires values below a certain level
+                                    while the other requires values above a certain level.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Step 4: Conclusion</strong>
+                            <br>In this case, since there is no feasible region where all constraints are satisfied, the
+                            linear programming problem does not have a solution.
+                            <br>It illustrates the importance of properly formulating constraints to ensure they can
+                            coexist without conflict in optimization problems.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="t2" class="in">
+                <h3>Simplex Method to Solve LPP</h3>
+                <div class="wh">
+                    <!-- <p><strong>Max Z = 5x1 + 3x2
+                        <br> constraints:
+                        <br>3x1 + 5x2 <= 15
+                        <br>5x1 + 2x2 <= 10
+                        <br>x1, x2 <= 0
+                    </strong></p>
+                    <ul>
+                        <li>If we are solving LPP using SM then we have to make sure that we have it in maximum</li>
+                        <li>Now we have to make our constaints balanced so we have to add some variable as if we have <= sign than that means we have to add slick variable because upon adding that than only it will be equal. and if we have >= sign thatn we subtact surplus variable value from hte contsaint to make them equal</li>
+                        <li>so now we have 
+                            <br>Max Z = 5x1 + 3x2 + 0x3 + 0x4
+                            <br> constraints:
+                            <br>3x1 + 5x2 + x3 + 0x4= 15
+                            <br>5x1 + 2x2 + 0x3 + x4= 10
+                            <br>xi <= 0 (this includes all x1, x2, x3 and x4)
+                        </li>
+                        <li>Now we have the concept of basic variable BV are those variable which make unit matrix like x3 and x4 in our constraints as in first contraint x3 and x4 are 1, 0 and in second constraint x3 and x4 are 0, 1 making a unit matrix 
+                            <br> ustally these basic varaible are the slick variable that we add to our constraints
+                        </li>
+                        <li>now we have to create table
+                            <pre>
+                                <code>
+           | Cj  |   5  |   3  |   0  |   0
+  CB | Xb  |  b  |  x1  |  x2  |  x3  |  x4
+---------------------------------------------
+  0  | x3  |  15 |  3   |  5   |  1   |  0
+  0  | x4  |  10 |  5   |  2   |  0   |  1
+                                </code>
+                            </pre>
+                            here CB is the cos of x3 and x4 in cost function 
+                            <br>Xb is the basic variable
+                            <br>Cj is the cost function and ahead of it these are the coefficients
+                        </li>
+                        <li>Now what we are trying to do is that we want to make x1 and x2 as asic variable for that we ...</li>
+                        <li>
+                            <pre>
+                                <code>
+           | Cj  |   5  |   3  |   0  |   0
+  CB | Xb  |  b  |  x1  |  x2  |  x3  |  x4
+---------------------------------------------
+  0  | x3  |  15 |  3   |  5   |  1   |  0    (row 1)
+  0  | x4  |  10 |  5   |  2   |  0   |  1    (row 2)
+---------------------------------------------
+       Zj  |     |  0   |  0   |  0   |  0
+       Cj  |     |  5   |  3   |  0   |  0
+  Zj - Cj  |     | -5   | -3   |  0   |  0
+                    ↓
+              Most neg value
+                                </code>
+                            </pre>
+                            now here Zj we get CB * x1 (row 1) + CB * x1 (row 2) and we do it for x2, x3, x4 
+                            <br>as we want tor eplace x3 and x4 by x1 and x2 from Xb so we find the most negative value from Zj - Cj row and here the most negative value is -5 so as this is in the x1 column hence x1 becomes our entrying variable.
+                            <br>Now either this enterying varabiel (x1) will replace x3 or x4 from Xb column so to find that we find the min ration of b and the column where the entrying variable is found so there the ratio wil be of b and x1 
+                            <pre>
+                                <code>
+           | Cj  |   5  |   3  |   0  |   0  |
+  CB | Xb  |  b  |  x1  |  x2  |  x3  |  x4  | min Ratio
+---------------------------------------------------------
+  0  | x3  |  15 |  3   |  5   |  1   |  0   | 15/3
+  0  | x4  |  10 |  5   |  2   |  0   |  1   | 10/5 → smallest value
+---------------------------------------------------------
+  Zj - Cj  |     | -5   | -3   |  0   |  0   |
+                    ↓
+              Most neg value
+                                </code>
+                            </pre>
+                            so as 10/5 < 15/3 & 10/5 is in row 2 and at b column x4 is located hence x4 is the outgoing variable 
+                            <br>hence x1 will replace x4 
+                            <br>now at x1 column there will be 1 at row 2 and at row 1 there will be 0 
+                            <br>hence at 5's place we have to put 1 and above it 0 at x1 column 
+                            <br>so this 5 is they key element because...
+                        </li>
+                        <li>
+                            <pre>
+                                <code>
+           | Cj  |   5  |   3  |   0  |   0  
+  CB | Xb  |  b  |  x1  |  x2  |  x3  |  x4  
+---------------------------------------------
+  0  | x3  |   9 |  0   | 19/5 |  1   | -3/5    (row 1)
+  0  | x4  |   2 |  1   | 2/5  |  0   |  1/5    (row 2) new
+---------------------------------------------
+                                </code>
+                            </pre>
+                            first row 2 get divided by 5 <br>
+                            and then we do row 1(old) - 3 * row 2(new)
+<br>again we find Zj - Cj to ....
+                        </li>
+                        <li>
+                            <pre>
+                                <code>
+           | Cj  |   5  |   3  |   0  |   0  |
+  CB | Xb  |  b  |  x1  |  x2  |  x3  |  x4  | Min Ratio
+--------------------------------------------------
+  0  | x3  |   9 |  0   | 19/5 |  1   | -3/5 | 45/19 → smallest value
+  5  | x1  |   2 |  1   | 2/5  |  0   |  1/5 | 10/2  
+--------------------------------------------------
+       Zj  |     |  5   |  2   |  0   |  1
+       Cj  |     |  5   |  3   |  0   |  0
+  Zj - Cj  |     |  0   | -1   |  0   |  1
+                           ↓
+                     Most neg value
+                                </code>
+                            </pre>
+                            here we did 2 thing simultaneously ....
+                            <br>now x2 is the entrying varaible and x3 is the outgoing .. 
+                            <br>hence x2 will reaplce x3
+                            <br>now the key element is 19/5
+                            <br>now we have to put 1 in place of 19/5 at x2 column in row 1 and in row 2 we have to put 0
+                        </li>
+                        <li>
+                            <pre>
+                                <code>
+           |   Cj  |   5  |   3  |   0   |   0  
+  CB | Xb  |    b  |  x1  |  x2  |  x3   |  x4  
+-------------------------------------------------------------
+  3  | x2  | 45/19 |  0   |   1  |  5/19 |-3/19         (row 1) new
+  5  | x1  | 20/19 |  1   |   0  | -2/19 | 5/19         (row 2)
+-------------------------------------------------------------
+       Zj  |       |  5   |  3   |  5/19 | 16/19
+       Cj  |       |  5   |  3   |   0   |   0
+  Zj - Cj  |       |  0   |  0   |  5/19 | 16/19
+                                </code>
+                            </pre>
+                            here what we did is multiplied row 1 by 5/19 and Row 2 (old) - 2/5 row 1 new 
+                            <br>then we find Zj - Cj and we found that there is not negative value which means we have found out optimal solution 
+                            <br>x1 and x2 are now the basic varaible and these are solution
+                            <br>x1 = 20/19 and x2 = 45/19 
+                            <br>now we put htese in cost function we get 
+                            <br>5(20/19) + 3(45/19) = 235/19 which is our..
+                        </li>
+                    </ul> -->
+                    <p><strong>Maximize Z = 5x1 + 3x2</strong></p>
+                    <p><strong>Subject to the constraints:</strong></p>
+                    <p>
+                        <strong>3x1 + 5x2 ≤ 15</strong><br>
+                        <strong>5x1 + 2x2 ≤ 10</strong><br>
+                        <strong>x1, x2 ≥ 0</strong> <!-- Updated to reflect non-negative constraints -->
+                    </p>
+
+                    <ul>
+                        <li>To solve an LPP using the Simplex Method, we must ensure that the objective function is in
+                            maximization form. If it is a minimization problem, we first convert it to a maximization
+                            problem.</li>
+                        <li>If the given objective function is in the form of minimization (Min Z), we can convert it
+                            into a maximization problem by using the following relationship:
+                            <ul>
+                                <li>Max Z' = -Min Z</li>
+                                <li>For example, if the objective is to minimize Z = 5x<sub>1</sub> + 3x<sub>2</sub>, we
+                                    convert
+                                    it to:
+                                    <ul>
+                                        <li>Max Z' = - (5x<sub>1</sub> + 3x<sub>2</sub>)</li>
+                                        <li>This simplifies to: Max Z' = -5x<sub>1</sub> - 3x<sub>2</sub></li>
+                                    </ul>
+                                </li>
+                                <li>Now, we can proceed to solve the maximization problem using the Simplex Method.</li>
+                            </ul>
+                        </li>
+                        <li>Next, we need to balance the constraints. For constraints with ≤ signs, we add slack
+                            variables to convert inequalities into equalities. For example, if we have a ≤ constraint,
+                            we add a slack variable. Similarly, if we have a ≥ constraint, we subtract a surplus
+                            variable to achieve equality.</li>
+
+                        <li>Now, converting the given problem:
+                            <br>Maximize Z = 5x1 + 3x2 + 0x3 + 0x4 (introducing slack variables x3 and x4)
+                            <br>Subject to:
+                            <br>3x1 + 5x2 + x3 = 15
+                            <br>5x1 + 2x2 + x4 = 10
+                            <br>All variables x1, x2, x3, x4 ≥ 0
+                        </li>
+
+                        <li>The variables x3 and x4 are known as the basic variables, as they form the identity matrix
+                            in the system of equations. The basic variables usually include the slack variables we
+                            introduced. The objective now is to make the decision variables (x1, x2) the basic variables
+                            through iterations.</li>
+
+                        <li>We now create the initial Simplex tableau as follows:
+                            <pre>
+            <code>
+           | Cj  |   5  |   3  |   0  |   0  |
+  CB | Xb  |  B  |  x1  |  x2  |  x3  |  x4  |
+----------------------------------------------
+  0  | x3  |  15 |  3   |  5   |  1   |  0   |
+  0  | x4  |  10 |  5   |  2   |  0   |  1   |
+            </code>
+        </pre>
+                            Here:
+                            <ul>
+                                <li><strong>CB</strong> represents the cost of the basic variables in the objective
+                                    function (initially zero for slack variables).</li>
+                                <li><strong>Xb</strong> represents the basic variables.</li>
+                                <li><strong>Cj</strong> represents the cost coefficients of the decision variables x1,
+                                    x2, and slack variables x3, x4 in the objective function.</li>
+                            </ul>
+                        </li>
+
+                        <li>Next, we perform the Simplex iteration. We want to bring x1 and x2 into the basis:
+                            <pre>
+        <code>
+          | Cj  |   5  |   3  |   0  |   0  |
+ CB | Xb  |  B  |  x1  |  x2  |  x3  |  x4  |
+----------------------------------------------
+ 0  | x3  |  15 |  3   |  5   |  1   |  0   | (Row 1)
+ 0  | x4  |  10 |  5   |  2   |  0   |  1   | (Row 2)
+----------------------------------------------
+      Zj  |     |  0   |  0   |  0   |  0   |
+      Cj  |     |  5   |  3   |  0   |  0   |
+ Zj - Cj  |     | -5   | -3   |  0   |  0   |
+        </code>
+    </pre>
+
+                            <p>
+                                To calculate <strong>Zj</strong>, we use the formula <strong>Zj = CB × B</strong>,
+                                where:
+                            <ul>
+                                <li><strong>CB</strong> is the cost coefficient of the basic variables in the basis
+                                    (here, x3 and x4).</li>
+                                <li><strong>B</strong> is the column for the variable we are calculating
+                                    <strong>Zj</strong> for.</li>
+                            </ul>
+                            For example, for the x1 column:
+                            <br>
+                            <strong>Zj(x1) = (CB(row1) × B(row1,x1)) + (CB(row2) × B(row2,x1))</strong><br>
+                            Substituting the values:
+                            <br>
+                            <strong>Zj(x1) = (0 × 3) + (0 × 5) = 0</strong>
+                            <br>
+                            Similarly, <strong>Zj</strong> for x2, x3, and x4 will be calculated. In this iteration,
+                            since all the current
+                            basic variables (x3 and x4) have cost coefficients of 0, all Zj values will be 0.
+                            </p>
+
+                            <p>After calculating Zj, we compute <strong>Zj - Cj</strong>, which shows the difference
+                                between the calculated and actual costs.
+                                The most negative value, -5 (in the x1 column), indicates that x1 should enter the
+                                basis.</p>
+
+                            <p>To decide which variable to remove from the basis (x3 or x4), we compute the minimum
+                                ratio of b values and the
+                                coefficients in the x1 column:</p>
+                            <pre>
+        <code>
+          | Cj  |   5  |   3  |   0  |   0  |
+ CB | Xb  |  b  |  x1  |  x2  |  x3  |  x4  | min ratio
+--------------------------------------------------------
+ 0  | x3  |  15 |  3   |  5   |  1   |  0   | 15/3 = 5
+ 0  | x4  |  10 |  5   |  2   |  0   |  1   | 10/5 = 2 → smallest ratio
+        </code>
+    </pre>
+
+                            <p>As 2 is the smallest ratio, x4 is the outgoing variable, and x1 will replace x4 in the
+                                basis.</p>
+                        </li>
+
+
+                        <li>Now, we pivot on the key element (5 in the x1 column, row 2). After performing row
+                            operations, the updated tableau looks like this:
+                            <pre>
+                                <code>
+           | Cj  |   5  |   3  |   0  |   0  |
+  CB | Xb  |  b  |  x1  |  x2  |  x3  |  x4  |
+----------------------------------------------
+  0  | x3  |   9 |  0   | 19/5 |  1   | -3/5 | (Row 1)
+  5  | x1  |   2 |  1   |  2/5 |  0   |  1/5 | (Row 2)
+----------------------------------------------
+                                </code>
+                            </pre>
+                            Row 2 was divided by 5, and row 1 was updated using row 1 - 3 * (new row 2).
+                        </li>
+
+                        <li>Next, we compute Zj - Cj again:
+                            <pre>
+            <code>
+           | Cj  |   5  |   3  |   0  |   0  |
+  CB | Xb  |  b  |  x1  |  x2  |  x3  |  x4  | min ratio
+--------------------------------------------------------
+  0  | x3  |   9 |  0   | 19/5 |  1   | -3/5 | 45/19 → smallest ratio
+  5  | x1  |   2 |  1   |  2/5 |  0   |  1/5 | 10/2
+--------------------------------------------------------
+       Zj  |     |  5   |  2   |  0   |  1   |
+       Cj  |     |  5   |  3   |  0   |  0   |
+  Zj - Cj  |     |  0   | -1   |  0   |  1   |
+            </code>
+        </pre>
+                            The next entering variable is x2 (as -1 is the most negative value in Zj - Cj), and the
+                            outgoing variable is x3 (smallest ratio). We perform another pivot operation.
+                        </li>
+
+                        <li>After performing the row operations, the final tableau is:
+                            <pre>
+                                <code>
+           |   Cj  |   5  |   3  |   0   |   0  |
+  CB | Xb  |    b  |  x1  |  x2  |  x3   |  x4  |
+--------------------------------------------------------
+  3  | x2  | 45/19 |  0   |   1  |  5/19 |-3/19 | (Row 1) new
+  5  | x1  | 20/19 |  1   |   0  | -2/19 |  5/19 | (Row 2)
+--------------------------------------------------------
+       Zj  |       |  5   |  3   |  5/19 | 16/19
+       Cj  |       |  5   |  3   |   0   |   0
+  Zj - Cj  |       |  0   |  0   |  5/19 | 16/19
+                                </code>
+                            </pre>
+                            Since there are no more negative values in the Zj - Cj row, the optimal solution has been
+                            reached.
+                        </li>
+
+                        <li>Finally, the optimal solution is:
+                            <br>x1 = 20/19, x2 = 45/19
+                            <br>Optimal value of Z = 5(20/19) + 3(45/19) = 225/19 ≈ 11.84
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="wh">
+                    <p><strong>Maximize Z = 3x1 + 2x2 + 5x3</strong></p>
+                    <p><strong>Subject to the constraints:</strong></p>
+                    <p>
+                        <strong>x1 + x2 + x3 ≤ 9</strong><br>
+                        <strong>2x1 + 3x2 + 5x3 ≤ 30</strong><br>
+                        <strong>2x1 - x2 - x3 ≤ 8</strong><br>
+                        <strong>xi ≥ 0</strong>
+                    </p>
+
+                    <ul>
+                        <li>Convert the constraints by adding slack variables:
+                            <br>Maximize Z = 3x1 + 2x2 + 5x3 + 0x4 + 0x5 + 0x6
+                            <br>Subject to:
+                            <br>x1 + x2 + x3 + x4 = 9
+                            <br>2x1 + 3x2 + 5x3 + x5 = 30
+                            <br>2x1 - x2 - x3 + x6 = 8
+                            <br>xi ≥ 0
+                        </li>
+
+                        <li>Create the initial Simplex tableau:
+                            <pre>
+            <code>
+           | Cj  |   3  |   2  |   5  |   0  |   0  |   0  |
+  CB | Xb  |  b  |  x1  |  x2  |  x3  |  x4  |  x5  |  x6  |
+----------------------------------------------------------------------
+  0  | x4  |   9 |   1  |   1  |   1  |   1  |   0  |   0  | (Row 1)
+  0  | x5  |  30 |   2  |   3  |   5  |   0  |   1  |   0  | (Row 2)
+  0  | x6  |   8 |   2  |  -1  |  -1  |   0  |   0  |   1  | (Row 3)
+            </code>
+        </pre>
+                        </li>
+
+                        <li>Perform the Simplex iteration by identifying the entering and exiting variables:
+                            <pre>
+            <code>
+           | Cj  |   3  |   2  |   5  |   0  |   0  |   0  |
+  CB | Xb  |  b  |  x1  |  x2  |  x3  |  x4  |  x5  |  x6  |
+------------------------------------------------------------------------
+  0  | x4  |   9 |   1  |   1  |   1  |   1  |   0  |   0  | (Row 1)
+  0  | x5  |  30 |   2  |   3  |   5  |   0  |   1  |   0  | (Row 2)
+  0  | x6  |   8 |   2  |  -1  |  -1  |   0  |   0  |   1  | (Row 3)
+------------------------------------------------------------------------
+       Zj  |     |   0  |   0  |   0  |   0  |   0  |   0  |
+       Cj  |     |   3  |   2  |   5  |   0  |   0  |   0  |
+  Zj - Cj  |     |  -3  |  -2  |  -5  |   0  |   0  |   0  |
+            </code>
+        </pre>
+                            The most negative value in Zj - Cj is -5, so x3 enters the basis. We calculate the minimum
+                            ratio to determine the exiting variable:
+                            <br>Row 1: 9/1 = 9
+                            <br>Row 2: 30/5 = 6 (smallest ratio)
+                            <br>Row 3: 8/-1 (ignored because it’s negative)
+                            <br>Thus, x5 exits, and x3 replaces x5 in the basis.
+                        </li>
+
+                        <li>Perform the pivot on the key element (5 in Row 2, x3 column), and update the tableau:
+                            <br>for row 2 we are dividing it by 5
+                            <br>for row 1 we are doing row 1 - row 2 (new)
+                            <br>for row 3 we are doing row 3 + row 2 (new)
+                            <pre>
+            <code>
+           | Cj  |   3  |   2  |   5  |   0  |   0  |   0  |
+  CB | Xb  |  b  |  x1  |  x2  |  x3  |  x4  |  x5  |  x6  |
+-------------------------------------------------------------------
+  0  | x4  |   3 |   3/5|   2/5|   0  |   1  |  -1/5|   0  | (Row 1)
+  5  | x3  |   6 |   2/5|   3/5|   1  |   0  |   1/5|   0  | (Row 2)
+  0  | x6  |  14 |  12/5|  -2/5|   0  |   0  |   1/5|   1  | (Row 3)
+--------------------------------------------------------------------
+            </code>
+        </pre>
+                        </li>
+
+                        <li>Compute Zj - Cj again:
+                            <pre>
+            <code>
+           | Cj  |   3  |   2  |   5  |   0  |   0  |   0  |
+  CB | Xb  |  b  |  x1  |  x2  |  x3  |  x4  |  x5  |  x6  |
+---------------------------------------------------------------------
+  0  | x4  |   3 |   3/5|   2/5|   0  |   1  |  -1/5|   0  | (Row 1)
+  5  | x3  |   6 |   2/5|   3/5|   1  |   0  |   1/5|   0  | (Row 2)
+  0  | x6  |  14 |  12/5|  -2/5|   0  |   0  |   1/5|   1  | (Row 3)
+---------------------------------------------------------------------
+       Zj  |     |   2  |   3  |   5  |   0  |   1  |   0  |
+       Cj  |     |   3  |   2  |   5  |   0  |   0  |   0  |
+  Zj - Cj  |     |  -1  |   1  |   0  |   0  |   1  |   0  |
+            </code>
+        </pre>
+                            The most negative value in Zj - Cj is -1, so x1 enters the basis. We calculate the minimum
+                            ratio to determine the exiting variable:
+                            <br>Row 1: 3/(3/5) = 5 (smallest ratio)
+                            <br>Row 2: 30/2 = 15
+                            <br>Row 3: 14/(12/5) = 5.833
+                            <br>Thus, x4 exits, and x1 replaces x4 in the basis.
+                        </li>
+
+                        <li>
+                            now we wil put 1 at key element place which is 3/5 and at row 2 and row 3 we will put 0
+                            below the key element.
+                            <br>for row 1 we will do row 1 * 5/3
+                            <br>for row 2 we will do row 2 - 2/5 * row 1(new)
+                            <br>for row 3 we will do row 3 - 12/5 * row 1 (new)
+                            <br>
+                            <pre>
+                                <code>
+           | Cj  |   3  |   2  |   5  |   0  |   0  |   0  |
+  CB | Xb  |  b  |  x1  |  x2  |  x3  |  x4  |  x5  |  x6  |
+-------------------------------------------------------------------
+  3  | x1  |   5 |   1  |   2/3|   0  |  5/3 |  -1/3|   0  | (Row 1) new
+  5  | x3  |   4 |   0  |   1/3|   1  | -2/3 |   1/3|   0  | (Row 2)
+  0  | x6  |   2 |   0  |   -2 |   0  |  -4  |   1  |   1  | (Row 3)
+--------------------------------------------------------------------
+  Zj - Cj  |     |   0  |   5/3|   0  |   5/3|   2/3|   0  |
+                                </code>
+                            </pre>
+                            As now all Zj - Cj values are postive, hence we have our optimal solution
+                            <br>so, x1 = 5, x2 = 0 and x3 = 4
+                            <br>We put this in Z cost function we get max Z = 35
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div id="t3" class="in">
+                <h3>Big M method</h3>
+                <p>The Big M Method is an approach used to solve linear programming problems (LPP) involving artificial
+                    variables when the problem includes greater-than-or-equal-to (≥) or equality (=) constraints. It
+                    allows converting such constraints into a standard form suitable for solving using the Simplex
+                    method.</p>
+                <div class="wh">
+                    <p><strong>Min Z = x1 + x2</strong>
+                        <br>Constraints:
+                        <br>2x1 + x2 ≥ 4
+                        <br>x1 + 7x2 ≥ 7
+                        <br>x1 ≥ 0
+                    </p>
+                    <ul>
+                        <li>First, we have to convert it into a maximization function.
+                            <br>For that, we will multiply it by -1.
+                            <br>Max z' = -x1 - x2
+                            <br>Since we have ≥, we need to subtract a surplus variable.
+                            <br>2x1 + x2 - x3 + 0x4 = 4
+                            <br>x1 + 7x2 + 0x3 - x4 = 7
+                            <br>Now, the problem is that we don't have a unit matrix, so we add 2 more variables called
+                            artificial variables.
+                            <br>Max z' = -x1 - x2 + 0x3 + 0x4 - Mx5 - Mx6
+                            <br>2x1 + x2 - x3 + 0x4 + x5 + 0x6 = 4
+                            <br>x1 + 7x2 + 0x3 - x4 + 0x5 + x6 = 7
+                            <br>This M is a very large value, which is why we call it the Big M method.
+                        </li>
+                        <li>
+                            <pre>
+                                <code>
+         |  Cj  |  -1   |  -1    |   0  |   0  |  -M  |  -M  |
+CB | Xb  |  b   |  x1   |  x2    |  x3  |  x4  |  x5  |  x6  |
+------------------------------------------------------------------------
+-M  | x5  |  4   |  2    |  1    |  -1  |  0   |  1   |  0   | (Row 1)
+-M  | x6  |  7   |  1    |  7    |  0   |  -1  |  0   |  1   | (Row 2)
+------------------------------------------------------------------------
+      Zj  |      | -3M   | -8M   |  M   |  M   |  -M  |  -M  |
+      Cj  |      |  -1   |  -1   |  0   |  0   |  0   |  0   |
+  Zj - Cj |      | -3M+1 | -8M+1 |  M   |  M   |  0   |  0   |
+                                </code>
+                            </pre>
+                            Since M is a large value, suppose it is 100, then the most negative value will be -8M+1. So
+                            in this column, x2 is the entering variable.
+                            <br>Now, we will find the minimum ratio to identify the outgoing variable.
+                            <br>Row 1 ratio of b/x2 = 4/1 = 4
+                            <br>Row 2 ratio of b/x2 = 7/7 = 1 (this is the minimum ratio value).
+                            <br>Thus, 7 becomes our key value, and we need to make it 1.
+                            <br>x6 is the outgoing variable.
+                        </li>
+                        <li>Remember, in the Big M method, we don't write the outgoing variable in the next table, so we
+                            will not write the x6 column.
+                            <br>To make 7 into 1, we will perform the following operations:
+                            <br>For row 2, divide row 2 by 7.
+                            <br>For row 1, subtract the new row 2 from row 1.
+                            <pre>
+                                <code>
+         |  Cj   | -1        |  -1  |   0  |   0      |  -M  
+CB | Xb  |  b    |  x1       |  x2  |  x3  |  x4      |  x5  
+---------------------------------------------------------------
+-M  | x5  |  3   | 13/7      |  0   |  -1  |  1/7     |  1   (Row 1)
+-1  | x2  |  1   |  1/7      |  1   |   0  | -1/7     |  0   (Row 2) new
+---------------------------------------------------------------
+      Zj  |      |(-13M-1)/7 |  -1  |  M    |(-M+1)/7 |  -M  
+      Cj  |      |  -1       |  -1  |  0    |  0      |  0  
+  Zj - Cj |      |(-13M-8)/7 |  0   |  M    |(-M+1)/7 |  0  
+                                </code>
+                            </pre>
+                            Here, (-13M-8)/7 is the most negative, which makes x1 the entering variable.
+                            <br>Now, find the ratio of b and x1 to identify the outgoing variable.
+                            <br>Row 1 ratio of b/x1 = 21/13
+                            <br>Row 2 ratio of b/x1 = 7
+                            <br>Thus, 21/13 is the smallest ratio, making x5 the outgoing variable, and 13/7 is the key
+                            value.
+                        </li>
+                        <li>For row 1, we will multiply row 1 by 7/13.
+                            <br>For row 2, we will perform the following operation: row 2 = row 2 - 1/7 * row 1 (new).
+                            <pre>
+                                <code>
+          |  Cj   |  -1  |  -1  |   0   |   0   
+ CB | Xb  |  b    |  x1  |  x2  |  x3   |  x4  
+---------------------------------------------------
+-1  | x1  | 21/13 |   1  |  0   | -7/13 | 1/13  (Row 1) new
+-1  | x2  | 10/13 |   0  |  1   |  1/13 | -2/13 (Row 2) 
+----------------------------------------------------
+      Zj  |       |  -1  |  -1  |  6/13 |  1/13  
+      Cj  |       |  -1  |  -1  |  0    |  0    
+  Zj - Cj |       |   0  |   0  |  6/13 |  1/13  
+                                </code>
+                            </pre>
+                            Now, as all Zj - Cj values are ≥ 0, we have found our optimal solution.
+                            <br>x1 = 21/13
+                            <br>x2 = 10/13
+                            <br>Min Z = (21/13) + (10/13) = 31/13
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+            <div id="t4" class="in">
+                <h3>Two Phase Method</h3>
+                <p>The Two-Phase Method is used to solve Linear Programming Problems (LPP) when the problem involves
+                    artificial variables, typically in the case of equality constraints or greater-than-or-equal-to (≥)
+                    constraints. It ensures that a feasible solution is found even when such variables are introduced.
+                    The method is divided into two phases:
+                <ol>
+                    <li>Phase 1:
+                        <ul>
+                            <li>The goal is to minimize the sum of artificial variables, ensuring that they are driven
+                                to zero.</li>
+                            <li>The original LPP is modified by adding artificial variables and creating an auxiliary
+                                objective function (minimizing the sum of these variables).</li>
+                            <li>Solve the modified problem using the simplex method. If the optimal solution of the
+                                auxiliary problem has a value of zero for the artificial variables, it means a feasible
+                                solution is found.</li>
+                        </ul>
+                    </li>
+                    <li>Phase 2:
+                        <ul>
+                            <li>After obtaining a feasible solution from Phase 1, the artificial variables are removed
+                                from the problem.</li>
+                            <li>The original objective function is restored, and the feasible solution is used as the
+                                starting point for solving the original LPP using the simplex method.</li>
+                        </ul>
+                    </li>
+                </ol>
+                </p>
+                <div class="wh">
+                    <p><strong>Min Z = x1 + x2</strong>
+                        <br>Constraints:
+                        <br>2x1 + x2 ≥ 4
+                        <br>x1 + 7x2 ≥ 7
+                        <br>x1 ≥ 0
+                    </p>
+                    <ul>
+                        <li>First, we have to convert it into a maximization function.
+                            <br>For that, we will multiply it by -1.
+                            <br>Max z' = -x1 - x2
+                            <br>Since we have ≥, we need to subtract a surplus variable.
+                            <br>2x1 + x2 - x3 + 0x4 = 4
+                            <br>x1 + 7x2 + 0x3 - x4 = 7
+                            <br>Now, the problem is that we don't have a unit matrix, so we add 2 more variables called
+                            artificial variables.
+                            <br>Max z' = -x1 - x2 + 0x3 + 0x4 - x5 - x6
+                            <br>
+                            <strong>Phase 1:</strong>
+                            <br>for phase 1 our max z' function becomes 0x1 + 0x2 + 0x3 + 0x4 - x5 - x6
+                            <br> Max z' = -x5 - x6
+                            <br>Following are the constraints
+                            <br>2x1 + x2 - x3 + 0x4 + x5 + 0x6 = 4
+                            <br>x1 + 7x2 + 0x3 - x4 + 0x5 + x6 = 7
+                        </li>
+                        <li>
+                            <pre>
+                                <code>
+         |  Cj  |   0   |   0    |   0  |   0  |  -1  |  -1  |
+CB  | Xb |  b   |  x1   |  x2    |  x3  |  x4  |  x5  |  x6  |
+------------------------------------------------------------------------
+-1  | x5  |  4   |  2   |  1    |  -1  |  0   |  1   |  0   | (Row 1)
+-1  | x6  |  7   |  1   |  7    |  0   |  -1  |  0   |  1   | (Row 2)
+------------------------------------------------------------------------
+      Zj  |      | -3   |  -8   |  1   |  1   |  -1  |  -1  |
+      Cj  |      |  0   |   0   |  0   |  0   | -1   |  -1  |
+  Zj - Cj |      | -3   | -8    |  1   |  1   |  0   |  0   |
+                                </code>
+                            </pre>
+                            The most negative value will be -8. So
+                            in this column, x2 is the entering variable.
+                            <br>Now, we will find the minimum ratio to identify the outgoing variable.
+                            <br>Row 1 ratio of b/x2 = 4/1 = 4
+                            <br>Row 2 ratio of b/x2 = 7/7 = 1 (this is the minimum ratio value).
+                            <br>Thus, 7 becomes our key value, and we need to make it 1.
+                            <br>x6 is the outgoing variable.
+                        </li>
+                        <li>Remember, in the 2 phase method also, we don't write the outgoing variable in the next
+                            table, so we
+                            will not write the x6 column.
+                            <br>To make 7 into 1, we will perform the following operations:
+                            <br>For row 2, divide row 2 by 7.
+                            <br>For row 1, subtract the new row 2 from row 1.
+                            <pre>
+                                <code>
+         |  Cj   |  0        |   0  |   0  |   0      |  -1  
+CB | Xb  |  b    |  x1       |  x2  |  x3  |  x4      |  x5  
+---------------------------------------------------------------
+-1  | x5  |  3   | 13/7      |  0   |  -1  |  1/7     |  1   (Row 1)
+ 0  | x2  |  1   |  1/7      |  1   |   0  | -1/7     |  0   (Row 2) new
+---------------------------------------------------------------
+      Zj  |      | -13/7     |  -1  |  1   | -1/7     |  -1  
+      Cj  |      |   0       |   0  |  0   |    0     |  -1  
+  Zj - Cj |      | -13/7     |  -1  |  1   | -1/7     |   0  
+                                </code>
+                            </pre>
+                            Here, -13/7 is the most negative, which makes x1 the entering variable.
+                            <br>Now, find the ratio of b and x1 to identify the outgoing variable.
+                            <br>Row 1 ratio of b/x1 = 21/13
+                            <br>Row 2 ratio of b/x1 = 7
+                            <br>Thus, 21/13 is the smallest ratio, making x5 the outgoing variable, and 13/7 is the key
+                            value.
+                        </li>
+                        <li>For row 1, we will multiply row 1 by 7/13.
+                            <br>For row 2, we will perform the following operation: row 2 = row 2 - 1/7 * row 1 (new).
+                            <pre>
+                                <code>
+          |  Cj  |   0  |   0    |   0     |   0   
+ CB | Xb  |  b   |  x1  |  x2    |  x3     |  x4  
+---------------------------------------------------
+ 0  | x1  | 21/13 |   1  |  0    | -7/13   | 1/13  (Row 1) new
+ 0  | x2  | 10/13 |   0  |  1    |  1/13   | -2/13 (Row 2) 
+----------------------------------------------------
+      Zj  |       |   0  |  0    |    0   |  0  
+      Cj  |       |   0  |   0   |  0     |  0    
+  Zj - Cj |       |   0  |   0   |  0     |  0 
+                                </code>
+                            </pre>
+                            Now, as all Zj - Cj values are ≥ 0, so our phase 1 is ended
+                        </li>
+                        <li><strong>Phase 2:</strong>
+                            <br>now for phase 2 our objective function becomes:
+                            <br>Max z' = -x1 - x2 + 0x3 + 0x4
+                        </li>
+                        <li>
+                            <pre>
+                            <code>
+          |  Cj  |  -1  |  -1    |   0     |   0   
+ CB | Xb  |  b   |  x1  |  x2    |  x3     |  x4  
+---------------------------------------------------
+-1  | x1  | 21/13 |   1  |  0    | -7/13   | 1/13  (Row 1) new
+-1  | x2  | 10/13 |   0  |  1    |  1/13   | -2/13 (Row 2) 
+---------------------------------------------------- 
+  Zj - Cj |       |   0  |   0   | 6/13    |  1/13
+                            </code>
+                        </pre>
+                            Now, as all Zj-Cj values are >= 0, so we have found our optimal solution
+                            <br>x1 = 21/13 and x2 = 10/13
+                            <br>min z = 31/13
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="t5" class="wh">
+            <h2>Transportation Problem</h2>
+            <ul>
+                <li>In the transportation problem, we aim to minimize transportation costs for a business while
+                    maximizing overall profit.</li>
+                <li>Suppose you are running a business, and you need to transport materials to 4 different destinations
+                    from 4 supply locations. You are aware of the transportation costs from each location, the demand at
+                    each destination, and the available supply at each source. The model used to minimize the
+                    transportation cost while balancing supply and demand is known as the Transportation Model.</li>
+                <li>Usually, the transportation problem involves minimization, but in some cases, we may need to
+                    maximize certain factors, such as profit. In such scenarios, a different approach or method is
+                    applied to solve the problem effectively.</li>
+            </ul>
+
+            <div class="in">
+                <!-- <h3>Example Probelm</h3>
+                <p>Let's understand transportation problem with some example problem:</p>
+                <p><strong>Q- A manufacturing firm has three plants located at three different citites all producing the same product. The total supply potential at the firm is absorbed by four large customer . The details are given below</strong></p> -->
+                <h3>Methods of finding the inital feasible solution</h3>
+                <ol>
+                    <li>Nort-west corner rule</li>
+                    <li>Least cost method</li>
+                    <li>Vogel's Approximation Method</li>
+                </ol>
+            </div>
+            <div class="in">
+                <p><strong>Basic Feasible Solution (BFS):</strong></p>
+                <ul>
+                    <li>The Transportation Problem is a special case of Linear Programming Problems (LPP), so the
+                        definition of a Basic Feasible Solution (BFS) is similar to that in LPP.</li>
+                    <li>In the case of the Transportation Problem, there are only (m + n - 1) basic variables out of a
+                        total of m * n variables. Here, <em>m</em> represents the number of rows (suppliers) and
+                        <em>n</em> represents the number of columns (destinations) in the transportation problem.
+                        Therefore, the BFS of a transportation problem consists of at most (m + n - 1) variables, with
+                        the remaining variables being zero.
+                    </li>
+                </ul>
+
+                <p><strong>Example Problem - Find the Initial BFS (Basic Feasible Solution) of the Following
+                        Transportation Problem:</strong></p>
+                <pre>
+                    <code>
+                                        |  Warehouse
+    Factory |  w1  |  w2  |  w3  |  w4  | Capacity
+----------------------------------------------------
+        F1  |  19  |  30  |  50  |  10  |   7
+        F2  |  70  |  30  |  40  |  60  |   9
+        F3  |  40  |   8  |  70  |  20  |  18
+----------------------------------------------------
+Warehouse   |   5  |   8  |   7  |  14  |
+Requirement |
+                    </code>
+                </pre>
+
+                <ul>
+                    <li>We will solve this using the <strong>North-West Corner Rule</strong>.</li>
+                    <li>First, we check if the supply and demand are balanced. This means the total supply should equal
+                        the total demand. In this case, the total capacity (7 + 9 + 18 = 34) is equal to the total
+                        requirement (5 + 8 + 7 + 14 = 34), so the problem is balanced.</li>
+                    <li>In the North-West Corner method, we start at the top-left (north-west) corner of the cost matrix
+                        and assign the supply or demand, whichever is smaller, to that cell. We then subtract the
+                        smaller value from the larger one and move to the next cell, following the north-west direction
+                        until all supplies and demands are met.</li>
+                    <li>
+                        Start with top-left and assign smallest supply or demand.
+                        <pre>
+                            <code>
+    Factory |  w1      |  w2  |  w3  |  w4  | Capacity
+----------------------------------------------------
+        F1  |  19 (5)  |  30  |  50  |  10  |   7-5=2
+        F2  |  70      |  30  |  40  |  60  |   9
+        F3  |  40      |   8  |  70  |  20  |  18
+----------------------------------------------------
+Requirement | 5-5=0    |   8  |   7  |  14  |
+                            </code>
+                        </pre>
+                        now we will remove the column 1
+                        <br>again we assign
+                        <pre>
+                            <code>
+    Factory |  w2    |  w3  |  w4  | Capacity
+----------------------------------------------------
+        F1  |  30(2) |  50  |  10  |   2-2=0
+        F2  |  30    |  40  |  60  |   9
+        F3  |   8    |  70  |  20  |  18
+----------------------------------------------------
+Requirement | 8-2=6  |   7  |  14  |
+                            </code>
+                        </pre>
+                        now we remove row 1
+                        <pre>
+                            <code>
+    Factory |  w2     |  w3  |  w4  | Capacity
+----------------------------------------------------
+        F2  |  30(6)  |  40  |  60  |   9-6=3
+        F3  |   8     |  70  |  20  |  18
+----------------------------------------------------
+Requirement |  6-6=0  |   7  |  14  |
+                            </code>
+                        </pre>
+                        now we remove column 1
+                        <pre>
+                            <code>
+    Factory |  w3     |  w4  | Capacity
+--------------------------------------------
+        F2  |  40(3)  |  60  |   3-3=0
+        F3  |  70     |  20  |  18
+--------------------------------------------
+Requirement |  7-3=4  |  14  |
+                            </code>
+                        </pre>
+                        now we remove row 1
+                        <br>Now only 2 values are left so we can directly assign.
+                        <pre>
+                            <code>
+    Factory |  w3     |  w4      | Capacity
+-----------------------------------------------
+        F3  |  70(4)  |  20(14)  |  18-4-14=0
+-----------------------------------------------
+Requirement |   4-4=0 |  14-14=0 |
+                            </code>
+                        </pre>
+                        so finaly we have:
+                        <pre>
+                            <code>
+    Factory |  w1      |    w2   |     w3  |     w4   | Capacity
+----------------------------------------------------------------
+        F1  |  19 (5)  |  30(2)  |  50     |  10      |   7
+        F2  |  70      |  30(6)  |  40(3)  |  60      |   9
+        F3  |  40      |   8     |  70(4)  |  20(14)  |  18
+----------------------------------------------------------------
+Requirement |   5      |   8  |   7  |  14  |
+                            </code>
+                        </pre>
+                        Now we will find its transportation cost:
+                        <br>(19 * 5) + (30 * 2) + (30 * 6) + (40 * 3) + (70 * 4) + (20 * 14)
+                        <br>= 1015
+                    </li>
+                </ul>
+                <p><strong>Solving the Same Question Using the <em>Least Cost Method</em></strong></p>
+                <ul>
+                    <li>
+                        In this method, we find the minimum cost and assign the minimum value from either the supply or
+                        demand.
+                        <br>Here, the minimum cost is 8, so we allocate accordingly.
+                        <pre>
+            <code>
+ Factory |  w1  |  w2     |  w3  |  w4  |   D
+-------------------------------------------------
+     F1  |  19  |  30     |  50  |  10  |   7
+     F2  |  70  |  30     |  40  |  60  |   9
+     F3  |  40  |   8(8)  |  70  |  20  |  18-8=10
+-------------------------------------------------
+      S  |   5  |   8-8=0 |   7  |  14  |  34
+            </code>
+        </pre>
+                        Now, we remove the <em>w2</em> column.
+                        <br>Then, we assign the next smallest cost.
+                        <pre>
+            <code>
+ Factory |  w1  |  w3  |  w4     |   D
+-------------------------------------------------
+     F1  |  19  |  50  |  10(7)  |   7-7=0
+     F2  |  70  |  40  |  60     |   9
+     F3  |  40  |  70  |  20     |  10
+-------------------------------------------------
+      S  |   5  |   7  |  14-7=7 |  34
+            </code>
+        </pre>
+                        Now, we remove row 1.
+                        <br>Then, we assign the next smallest cost.
+                        <pre>
+            <code>
+ Factory |  w1  |  w3  |  w4     |   D
+-----------------------------------------
+     F2  |  70  |  40  |  60     |   9
+     F3  |  40  |  70  |  20(7)  |  10-7=3
+-----------------------------------------
+      S  |   5  |   7  |   7-7=0 |  34
+            </code>
+        </pre>
+                        Now, we remove the <em>w4</em> column.
+                        <br>Since we have two minimum values, we can allocate to either one of them.
+                        <pre>
+            <code>
+ Factory |  w1  |  w3     |  D
+-------------------------------
+     F2  |  70  |  40(7)  |  9-7=2
+     F3  |  40  |  70     |  3
+-------------------------------
+      S  |   5  |   7-7=0 |  
+            </code>
+        </pre>
+                        Now, we remove the <em>w3</em> column.
+                        <pre>
+            <code>
+ Factory |  w1     |  D
+-----------------------
+     F2  |  70(2)  |  2-2=0
+     F3  |  40(3)  |  3-3=0
+-----------------------
+      S  | 5-2-3=0 |  
+            </code>
+        </pre>
+                        So finally, we have:
+                        <pre>
+                            <code>
+ Factory |  w1     |  w2    |  w3    |  w4  
+----------------------------------------------
+     F1  |  19     |  30    |  50    |  10(7)  
+     F2  |  70(2)  |  30    |  40(7) |  60  
+     F3  |  40(3)  |  8(8)  |  70    |  20(7)  
+                            </code>
+                        </pre>
+                        The number of allocations should be <em>m + n - 1</em>:
+                        <br>3 + 4 - 1 = 6
+                        <br>And we also have 6 allocations, so we did it correctly.
+                        <br>Now, we will find the transportation cost using the Least Cost Method:
+                        <br>(10 * 7) + (70 * 2) + (40 * 7) + (40 * 3) + (8 * 8) + (20 * 7)
+                        <br>70 + 140 + 280 + 120 + 64 + 140 = 814
+                        <br>So, we know that using the North-West Corner Rule, the transportation cost was 1015, and
+                        using the Least Cost Method, the cost is 814. When we solve this same question using Vogel's
+                        Approximation Method, the cost will decrease further, making it the best method for solving
+                        transportation problems.
+                    </li>
+                </ul>
+                <p>Again Solving this above question using <strong>Vogel's Approximation Method</strong></p>
+                <pre>
+                    <code>
+ Factory |  w1  |  w2  |  w3  |  w4  |   D
+---------------------------------------------
+     F1  |  19  |  30  |  50  |  10  |   7
+     F2  |  70  |  30  |  40  |  60  |   9
+     F3  |  40  |   8  |  70  |  20  |  18
+---------------------------------------------
+      S  |   5  |   8  |   7  |  14  |  34
+                    </code>
+                </pre>
+                <ul>
+                    <li>Here we first mention the penalties for each row and column.
+                        <br>We find 2 smallest cost in a row or column and write down there difference.
+                        <br>Then we look for biggest penalty and look for smallest cost in that row or column and simply
+                        assign.
+                        <pre>
+                            <code>
+ Factory |  w1  |  w2   |  w3  |  w4  |   D     |  P
+---------------------------------------------------------
+     F1  |  19  |  30   |  50  |  10  |   7     |  (9)
+     F2  |  70  |  30   |  40  |  60  |   9     |  (10)
+     F3  |  40  | 8(8)  |  70  |  20  | 18-8=10 |  (12)
+---------------------------------------------------------
+      S  |   5  | 8-8=0 |   7  |  14  |  
+      P  | (21) | (22)  | (10) | (10) |  
+                    ↓
+             Biggest Penalty
+                            </code>
+                        </pre>
+                        Now we will remove w2 column
+                        <pre>
+                            <code>
+ Factory |  w1   |  w3  |  w4  |   D    |  P
+------------------------------------------------------
+     F1  | 19(5) |  50  |  10  | 7-5=2  |  (9)
+     F2  |  70   |  40  |  60  |   9    |  (20)
+     F3  |  40   |  70  |  20  |  10    |  (20)
+------------------------------------------------------
+      S  | 5-5=0 |   7  |  14  |  
+      P  | (21)  | (10) | (10) |  
+             ↓
+      Biggest Penalty
+                            </code>
+                        </pre>
+                        Now we remove the w1 column
+                        <pre>
+                            <code>
+ Factory |  w3  |  w4    |  D      |  P
+-------------------------------------------
+     F1  |  50  |  10    |  2      |  (40)
+     F2  |  40  |  60    |  9      |  (20)
+     F3  |  70  | 20(10) | 10-10=0 |  (50) → Biggest Penalty
+-------------------------------------------
+      S  |   7  | 14-10=4|  
+      P  | (10) | (10)   |  
+                            </code>
+                        </pre>
+                        Now we remove row 3
+                        <pre>
+                            <code>
+ Factory |  w3  |  w4   |  D    |  P
+-------------------------------------------
+     F1  |  50  | 10(2) | 2-2=0 |  (40)
+     F2  |  40  |  60   |  9    |  (20)
+-------------------------------------------
+      S  |   7  | 4-2=2 |  
+      P  | (10) | (50)  |  
+                   ↓
+            Biggest Penalty
+                            </code>
+                        </pre>
+                        Now we will remove row 1
+                        <pre>
+                            <code>
+ Factory |  w3   |  w4   |  D      |  P
+-------------------------------------------
+     F2  | 40(7) | 60(2) | 9-7-2=0 |  (20)
+-------------------------------------------
+      S  | 7-7=0 | 2-2=0 |
+                            </code>
+                        </pre>
+                        Finally we have:
+                        <pre>
+                            <code>
+ Factory |  w1   |  w2  |  w3   |  w4  
+-------------------------------------
+     F1  | 19(5) |  30  |  50   |  10(2)  
+     F2  |  70   |  30  | 40(7) |  60(2)  
+     F3  |  40   | 8(8) |  70   |  20(10)  
+                            </code>
+                        </pre>
+                        Transportation cost:
+                        <br>
+                        (19 * 5) + (10 * 2) + (40 * 7) + (60 * 2) + (8 * 8) + (20 * 10)
+                        <br>=779
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Optimality Test</h3>
+                <p>This test helps in determining whether the current solution to an optimization problem is optimal. It
+                    evaluates if any further improvements can be made to the solution. If the solution satisfies the
+                    optimality criteria, it is declared the best possible solution; otherwise, adjustments are made to
+                    improve the results, and the process is repeated.</p>
+
+                <ul>
+                    <li>First, we have to find the total transportation cost then we can apply optimality test.</li>
+                    <li>Finding transportation cost for the following problem using Vogel's Approximation Method:
+                        <pre>
+                            <code>
+    |  D1 |  D2 |  D3 |  D4 | Avail
+-------------------------------------
+ O1 |  1  |  2  |  1  |  4  |  30
+ O2 |  3  |  3  |  2  |  1  |  50
+ O3 |  4  |  2  |  5  |  9  |  20
+-------------------------------------
+Req | 20  | 40  | 30  | 10  | 100
+                            </code>
+                        </pre>
+                        Writing penalities
+                        <br>Note: if we have smallest cost which are same like 2, 2 then we don't subtract them instead
+                        we find another just bigger then them.
+                        <pre>
+                            <code>
+    |  D1 |  D2 |  D3 |  D4    | Avail    |  P
+----------------------------------------------------
+ O1 |  1  |  2  |  1  |  4     |  30      |  (1)
+ O2 |  3  |  3  |  2  | 1(10)  | 50-10=40 |  (1)
+ O3 |  4  |  2  |  5  |  9     |  20      |  (2)
+---------------------------------------------------
+Req | 20  | 40  | 30  | 10-10=0   
+  P | (2) | (1) | (1) | (3)  
+                         ↓
+                  Biggest Penalty
+                            </code>
+                        </pre>
+                        Remove D4 column
+                        <pre>
+                            <code>
+    |  D1     |  D2 |  D3 |   Avail  |  P
+-----------------------------------------------
+ O1 | 1(20)   |  2  |  1  | 30-20=10 |  (1)
+ O2 |  3      |  3  |  2  |  40      |  (1)
+ O3 |  4      |  2  |  5  |  20      |  (2)
+-----------------------------------------------
+Req | 20-20=0 | 40  | 30  |    
+  P |  (2)    | (1) | (1) |   
+        ↓
+ Biggest Penalty
+                            </code>
+                        </pre>
+                        Remove D1 column
+                        <pre>
+                            <code>
+    |  D2      |  D3 |  Avail  |  P
+----------------------------------------------------
+ O1 |  2       |  1  |  10     | (1)
+ O2 |  3       |  2  |  40     | (1)
+ O3 | 2(20)    |  5  | 20-20=0 | (2)  → Biggest Penalty
+---------------------------------------------------
+Req | 40-20=20 | 30  |    
+  P |   (1)    | (1) |
+                            </code>
+                        </pre>
+                        Remove row 3
+                        <br>Now as we have same penalties then we can take the row or column with smallest supply or
+                        demand
+                        <pre>
+                            <code>
+    |  D2  |  D3      |  Avail  |  P
+------------------------------------------
+ O1 |  2   | 1(10)    | 10-10=0 | (1)
+ O2 |  3   |  2       |  40     | (1)
+------------------------------------------
+Req |  20  | 30-10=20 |    
+  P | (1)  | (1)      |
+                            </code>
+                        </pre>
+                        remove row 1
+                        <pre>
+                            <code>
+    |  D2     |  D3     | Avail      |  P
+------------------------------------------
+ O2 | 3(20)   | 2(20)   | 40-20-20=0 | (1)
+------------------------------------------
+Req | 20-20=0 | 20-20=0 |    
+  P | (1)   | (1)   
+                            </code>
+                        </pre>
+                        Finally we have
+                        <pre>
+                            <code>
+    |    D1   |    D2   |    D3   |  D4 
+-------------------------------------------
+ O1 |  1(20)  |  2      |  1(10)  |  4  
+ O2 |  3      |  3(20)  |  2(20)  |  1(10) 
+ O3 |  4      |  2(20)  |  5      |  9  
+                            </code>
+                        </pre>
+                        Total transportation cost = 20 + 10 + 60 + 40 + 10 + 40 = 180
+                    </li>
+                    <li>Now we have found transportation cost now we will perform the optimality test using <strong>MODI
+                            (Modification) method</strong>:</li>
+                    <li>For allocated cell Cij = ui + vj
+                        <pre>
+                            <code>
+    |    D1   |    D2   |    D3   |   D4   |  
+-------------------------------------------------
+ O1 |  1(20)  |    .    |  1(10)  |   .    |  u1 = -1
+ O2 |    .    |  3(20)  |  2(20)  |  1(10) |  u2 = 0
+ O3 |    .    |  2(20)  |   .     |   .    |  u3 = -1
+ -------------------------------------------
+         v1       v2        v3        v4
+          2        3         2         1
+                            </code>
+                        </pre>
+                        We put vi or ui as zero where there are most allocated cost in a row or column. so in the above
+                        table at row 3 we have the most allocated cost so we will put u2 = 0
+                        <br>Now for non allocated cell cij - (ui + vj) >= 0
+                        <pre>
+                            <code>
+    |    D1   |    D2   |    D3   |  D4   |
+-------------------------------------------
+ O1 |    .    |   2(2)  |    .    |  4(0) |  u1 = -1
+ O2 |  3(2)   |   .     |    .    |   .   |  u2 = 0
+ O3 |  4(1)   |   .     |  5(1)   |  9(0) |  u3 = -1
+ ------------------------------------------ 
+       v1        v2         v3       v4
+        2        3          2        1
+                            </code>
+                        </pre>
+                        Now here for all cij - (ui + vj) the difference is >= 0
+                        <br>so transportation cost 180 is optimal. which means we can't decrease it cost less than 180.
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="t6" class="wh">
+            <h3>Assignment Problem</h3>
+            <ul>
+                <li>Assignment problem is special type of transportation problem where number of origin is equal to
+                    number of destination </li>
+                <li>for understanding suppose we have 4 people and we have 4 work and those 4 people have expertise
+                    in some work for example one person is good at driving another one is good at running, another
+                    one is good at dancing and last one is expert in fighting and also all of them can do each work
+                    also but the work they are expertise they do it in less time so we have to figure out what work
+                    to assign to which person so that overall time for completing the whole work is less.</li>
+                <li>We use Hungarian method to solve Assignment Problem.</li>
+            </ul>
+            <p><strong>Application of Assignment Problem:</strong></p>
+            <ol>
+                <li>To minimize the total cost/time required to complete task.</li>
+                <li>To assign a best job to best person.</li>
+                <li>To assign vehicles to the routes.</li>
+                <li>To assign sales representative to the sales teritories.</li>
+                <li>In minimizing the time of arrival and departure of airlines.</li>
+            </ol>
+            <div class="in">
+                <p><strong>Example problem:
+                        <br>Q- Solve the following assignment problem using the Hungarian Method:
+                    </strong></p>
+                <pre>
+    <code>
+    | J1 | J2 | J3 |
+--------------------
+ P1 | 10 | 20 | 30 |  
+ P2 | 20 | 10 | 40 | 
+ P3 | 50 | 30 | 20 |
+--------------------  
+    </code>
+</pre>
+                <ul>
+                    <li>First, we perform row reduction, followed by column reduction, and then we allocate the tasks.
+                        <br>Row reduction: We find the smallest cost in each row and subtract it from every cost in that
+                        particular row.
+                        <pre>
+            <code>
+    | J1 | J2 | J3 |
+--------------------
+ P1 | 10 | 20 | 30 |  row 1's minimum cost = 10 
+ P2 | 20 | 10 | 40 |  row 2's minimum cost = 10 
+ P3 | 50 | 30 | 20 |  row 3's minimum cost = 20
+--------------------
+
+    |    J1    |    J2    |    J3    |
+--------------------------------------
+ P1 | 10-10=0  | 20-10=10 | 30-10=20 |  
+ P2 | 20-10=10 | 10-10=0  | 40-10=30 | 
+ P3 | 50-20=30 | 30-20=10 | 20-20=0  |
+---------------------------------------
+
+    | J1 | J2 | J3 |
+--------------------
+ P1 | 0  | 10 | 20 |  
+ P2 | 10 | 0  | 30 | 
+ P3 | 30 | 10 | 0  |
+--------------------
+            </code>
+        </pre>
+                    </li>
+                    <li>Next, we perform column reduction. Since the minimum value in each column is 0, the matrix
+                        remains unchanged.
+                        <pre>
+            <code>
+    | J1 | J2 | J3 |
+--------------------
+ P1 | 0  | 10 | 20 |  
+ P2 | 10 | 0  | 30 | 
+ P3 | 30 | 10 | 0  |
+--------------------
+            </code>
+        </pre>
+                    </li>
+                    <li>Now we proceed with the allocation:
+                        <br>Wherever there is a 0, that cost will be assigned to the corresponding job-person pair.
+                        <pre>
+            <code>
+                     | Cost |
+-----------------------------
+               P1-J1 |  10  |  
+               P2-J2 |  10  | 
+               P3-J3 |  20  |
+-----------------------------
+Total Assignment Cost: 40
+            </code>
+        </pre>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="in">
+                <p><strong>Another Example:</strong></p>
+                <p><strong>Q- Solve the following problem using the Hungarian Assignment Method:</strong></p>
+                <pre>
+    <code>
+    | J1 | J2 | J3 | J4 |
+----+----+----+----+----+
+ P1 | 12 | 30 | 21 | 15 |
+ P2 | 18 | 33 |  9 | 31 |
+ P3 | 44 | 25 | 24 | 21 |
+ P4 | 23 | 30 | 28 | 14 |
+----+----+----+----+----+
+    </code>
+</pre>
+                <ul>
+                    <li>Row reduction:
+                        <pre>
+            <code>
+    |    J1    |    J2    |    J3    |    J4    |
+----+----------+----------+----------+----------+
+ P1 | 12-12=0  | 30-12=18 | 21-12=9  | 15-12=3  |
+ P2 | 18-9=9   | 33-9=24  |  9-9=0   | 31-9=22  |
+ P3 | 44-21=23 | 25-21=4  | 24-21=3  | 21-21=0  |
+ P4 | 23-14=9  | 30-14=16 | 28-14=14 | 14-14=0  |
+----+----------+----------+----------+----------+
+
+It becomes:
+
+    | J1 | J2 | J3 | J4 |
+----+----+----+----+----+
+ P1 |  0 | 18 |  9 |  3 |
+ P2 |  9 | 24 |  0 | 22 |
+ P3 | 23 |  4 |  3 |  0 |
+ P4 |  9 | 16 | 14 |  0 |
+----+----+----+----+----+
+            </code>
+        </pre>
+                    </li>
+                    <li>Column reduction:
+                        <pre>
+            <code>
+    | J1 |    J2   | J3 | J4 |
+----+----+---------+----+----+
+ P1 |  0 | 18-4=14 |  9 |  3 |
+ P2 |  9 | 24-4=20 |  0 | 22 |
+ P3 | 23 |  4-4=0  |  3 |  0 |
+ P4 |  9 | 16-4=12 | 14 |  0 |
+----+----+----+----+---------+
+
+It becomes:
+
+    | J1 | J2 | J3 | J4 |
+----+----+----+----+----+
+ P1 |  0 | 14 |  9 |  3 |
+ P2 |  9 | 20 |  0 | 22 |
+ P3 | 23 |  0 |  3 |  0 |
+ P4 |  9 | 12 | 14 |  0 |
+----+----+----+----+----+
+            </code>
+        </pre>
+                    </li>
+                    <li>Assignment:
+                        <br>Select the rows where 0 appears only once.
+                        <br>Once a job is assigned to a person, it cannot be reassigned, so the remaining 0s will be
+                        assigned to the unassigned person.
+                        <pre>
+            <code>
+    |   J1 |   J2 |  J3  |  J4   |
+----+------+------+------+-------+
+ P1 |  0 A | 14   |  9   |    3  |
+ P2 |  9   | 20   |  0 A |  22   |
+ P3 | 23   |  0 A |  3   |  0 C |
+ P4 |  9   |  12  | 14   |  0 A  |
+----+------+------+------+-------+
+A - assigned 
+C - can't assign
+            </code>
+        </pre>
+                        <pre>
+            <code>
+          | Cost |
+----------+-------
+    P1-J1 |  12
+    P2-J3 |   9
+    P3-J2 |  25
+    P4-J4 |  14
+----------+-------
+  Total Assignment Cost: 60 /-
+            </code>
+        </pre>
+                    </li>
+                </ul>
+
+            </div>
+            <div class="in">
+                <p><strong>Q- Four professors are each capable of teaching any one of the four different subects. Class
+                        preparation time (in hrs) for different topics varies from professor to professor and is given
+                        in the table. Each professor should be assigned only one subject. Find the schedule so as to
+                        minimize the total subject preparation time for all subjects/professor.</strong></p>
+                <pre>
+                    <code>
+    | S1 | S2 | S3 | S4 |
+----+----+----+----+----+
+ P1 |  2 | 10 |  9 |  7 |
+ P2 | 15 |  4 | 14 |  8 |
+ P3 | 13 | 14 | 16 | 11 |
+ P4 |  3 | 15 | 13 |  8 |
+----+----+----+----+----+
+                    </code>
+                </pre>
+            </div>
+            <div class="in">
+                <h3>Unbalanced Assignment Problem</h3>
+                <p>In an unbalanced assignment problem, the number of rows (tasks) is not equal to the number of columns
+                    (jobs). This happens when the number of tasks to be assigned differs from the number of resources or
+                    workers available. To handle such cases, we convert the unbalanced problem into a balanced one by
+                    adding dummy rows or columns. These dummy rows or columns are introduced with a cost of zero for all
+                    their elements, ensuring that the problem becomes balanced while keeping the integrity of the
+                    assignment process intact. This way, each task can still be assigned to a worker, or a job can be
+                    assigned to a task, without any imbalance.
+                    For example:</p>
+                <pre>
+    <code>
+    Original Matrix (Unbalanced):
+       | J1 | J2 | J3 |
+-------+----+----+----+
+    P1 | 15 | 20 | 35 |  
+    P2 | 25 | 30 | 25 |  
+-------+----+----+----+
+
+    After adding a dummy row to balance the matrix:
+
+    | J1 | J2 | J3 |
+----+----+----+----+
+ P1 | 15 | 20 | 35 |  
+ P2 | 25 | 30 | 25 |  
+ D1 |  0 |  0 |  0 |  
+----+----+----+----+
+
+    Now the problem is balanced, and you can apply the usual steps of row reduction, column reduction, and assignment using the Hungarian Method.
+    </code>
+</pre>
+
+            </div>
+            <div class="in">
+                <h3>Maximization Problem:</h3>
+                <p>In assignment problems, the objective is usually to minimize the total cost. However, in some cases,
+                    the goal is to maximize the total profit or benefit. These are called maximization problems. The
+                    Hungarian method, which is typically used for minimization problems, can also be applied to
+                    maximization problems with a slight modification.
+                    To solve a maximization problem, we convert it into a minimization problem. This is done by
+                    subtracting each element of the given matrix from the highest element in the matrix. This
+                    transformation effectively inverts the problem, allowing us to use the same Hungarian Method steps
+                    of row reduction, column reduction, and allocation for maximization problems.
+                    For example:</p>
+                <pre>
+                    <code>
+Original Profit Matrix (Maximization):
+   | J1 | J2 | J3 |
+---+----+----+----+
+P1 | 50 | 60 | 40 |  
+P2 | 70 | 80 | 60 |  
+P3 | 65 | 55 | 45 |  
+---+----+----+----+
+
+Step 1: Find the maximum value in the matrix (which is 80 here) and subtract each element from this value:
+
+| J1     |   J2     |   J3     |
+---------+----------+----------+
+80-50=30 | 80-60=20 | 80-40=40 |
+80-70=10 | 80-80=0  | 80-60=20 |
+80-65=15 | 80-55=25 | 80-45=35 |
+---------+----------+----------+
+
+Resulting Cost Matrix (for minimization):
+     | J1 | J2 | J3 |
+-----+----+----+----+
+ P1  | 30 | 20 | 40 |  
+ P2  | 10 |  0 | 20 |  
+ P3  | 15 | 25 | 35 |  
+-----+----+----+----+
+                    </code>
+                </pre>
+                <p> Now, you can apply the usual steps of the Hungarian Method to this transformed matrix to find the
+                    optimal assignment.</p>
+            </div>
+            <div id="t7" class="in">
+                <h3>Travelling Salesman Problem</h3>
+                <p><strong>Conditions:</strong>
+                <ol>
+                    <li>No place is to be visited twice before the tour of all places is completed. This means that each
+                        location must be visited exactly once during the tour, ensuring a complete path through all
+                        designated points without repetition.</li>
+                    <li>Going from one place to itself is not allowed. This condition emphasizes that the salesman must
+                        travel to different locations, and returning to the starting point without visiting other places
+                        is not an option during the tour.</li>
+                </ol>
+                </p>
+                <p><strong>Application of TSP:</strong>
+                <ul>
+                    <li><strong>Postal Deliveries:</strong> In postal delivery systems, TSP can be used to optimize the
+                        routes that delivery vehicles take to minimize travel distance and time while ensuring all
+                        delivery points are reached.</li>
+                    <li><strong>Inspection:</strong> TSP is applicable in scenarios where inspections are required at
+                        multiple sites (e.g., infrastructure inspections), allowing inspectors to plan efficient routes
+                        that cover all sites with minimal travel.</li>
+                    <li><strong>Cable Connection:</strong> In telecommunications and networking, TSP can help design
+                        optimal routes for laying cables between multiple points, ensuring the least distance is
+                        covered, which can reduce costs and time.</li>
+                    <li><strong>School Bus Routes:</strong> TSP can be utilized to determine the most efficient routes
+                        for school buses, ensuring that all student pickups and drop-offs are conducted with minimal
+                        travel time and distance. </li>
+                </ul>
+                </p>
+                <p><strong>Q- Solve the TSP given by:</strong></p>
+                <pre>
+    <code>
+     |  A  |  B  |  C  |  D  |  E
+-----------------------------------                        
+  A  |  ∞  |  2  |  5  |  7  |  1
+  B  |  6  |  ∞  |  3  |  8  |  2
+  C  |  8  |  7  |  ∞  |  4  |  7
+  D  | 12  |  4  |  6  |  ∞  |  5
+  E  |  1  |  3  |  2  |  8  |  ∞
+    </code>
+</pre>
+                <ul>
+                    <li>∞ is there to show that we can't go from A to A, B to B, and so on.
+                        <br>Note: In the Traveling Salesman Problem (TSP), you must visit all places exactly once, and
+                        the tour must return to the starting point. The path cannot repeat the same place until the tour
+                        is complete.
+                    </li>
+                    <li><strong>Row Reduction:</strong>
+                        <br>We will perform row reduction by subtracting the smallest value in each row from all
+                        elements in that row:
+                        <pre>
+            <code>
+     |  A  |  B  |  C  |  D  |  E
+-----------------------------------                        
+  A  |  ∞  |  1  |  4  |  6  |  0
+  B  |  4  |  ∞  |  1  |  6  |  0
+  C  |  4  |  3  |  ∞  |  0  |  3
+  D  |  8  |  0  |  2  |  ∞  |  1
+  E  |  0  |  2  |  1  |  7  |  ∞
+            </code>
+        </pre>
+                    </li>
+                    <li><strong>Column Reduction:</strong>
+                        <br>We now perform column reduction by subtracting the smallest value in each column from all
+                        elements in that column:
+                        <pre>
+            <code>
+     |  A   |  B  |  C   |  D   |  E
+-----------------------------------                        
+  A  |  ∞   |  1  |  3   |  6   |  0A
+  B  |  4   |  ∞  |  0A  |  6   |  0C
+  C  |  4   |  3  |  ∞   |  0A  |  3
+  D  |  8   |  0A |  1   |  ∞   |  1
+  E  |  0A  |  2  |  0C  |  7   |  ∞
+            </code>
+        </pre>
+                        Now, we try to assign paths, but there will be no complete cycle. This means the current
+                        solution is not optimal.
+                    </li>
+                    <li><strong>Assigning Greater Than Zero:</strong>
+                        <br>We now look for the next smallest value greater than zero, which is 1, and attempt to make
+                        assignments:
+                        <pre>
+            <code>
+     |  A  |  B  |  C   |  D  |  E
+-----------------------------------                        
+  A  |  ∞  |  1A  |  3  |  6  |  0C
+  B  |  4  |  ∞   |  0C |  6  |  0A
+  C  |  4  |  3   |  ∞  |  0A |  3
+  D  |  8  |  0C  |  1A |  ∞  |  1C
+  E  |  0A |  2   |  0C |  7  |  ∞
+            </code>
+        </pre>
+                        There is still no complete cycle, so we adjust the assignments.
+                    </li>
+                    <li><strong>Adjusting Assignments:</strong>
+                        <br>We adjust the assignments further to ensure a complete cycle is formed:
+                        <pre>
+            <code>
+     |  A  |  B  |  C  |  D  |  E
+-----------------------------------                        
+  A  |  ∞  |  1A |  3  |  6  |  0C
+  B  |  4  |  ∞  |  0A |  6  |  0C
+  C  |  4  |  3  |  ∞  |  0A |  3
+  D  |  8  |  0C |  1C |  ∞  |  1A
+  E  |  0A |  2  |  0C |  7  |  ∞
+            </code>
+        </pre>
+                        The cycle is now complete: A - B - C - D - E - A, which forms the optimal solution.
+                    </li>
+                    <li><strong>Calculating the Total Cost:</strong>
+                        <br>The total cost of the optimal tour is the sum of the selected paths:
+                        <ul>
+                            <li>From A to B: 2</li>
+                            <li>From B to C: 3</li>
+                            <li>From C to D: 4</li>
+                            <li>From D to E: 5</li>
+                            <li>From E to A: 1</li>
+                        </ul>
+                        So, the total TSP cost = 2 + 3 + 4 + 5 + 1 = 15.
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+    </div>
+    <div class="wh">
+        <p>Reference</p>
+        <ul>
+            <li><a href="https://www.youtube.com/playlist?list=PLU6SqdYcYsfLyEPjMPHT_1ZhTRrnXA55R"
+                    target="_blank">Operation Research Playlist &neArr;</a></li>
+        </ul>
+    </div>
+    <script src="../../../../public/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JDBC</title>
+    <link rel="icon" href="../../../../public/logo/favicon_io/favicon.ico">
+    <link rel="stylesheet" href="../../../../public/style.css">
+    <link rel="stylesheet" id="highlightStylesheet"
+        href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/tomorrow-night-blue.min.css">
+</head>
+
+<body class="bg-c">
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">back</a>
+        <a href="#" class="link"></a>
+        <div class="botbut">
+            <a href="../unit4/index.html" class="link">&larr; Previous Topic</a>
+        </div>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>JDBC</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>JDBC</h1>
+        <div class="wh">
+            <h2>Introduction to JDBC (Java Database Connectivity)</h2>
+                <ul>
+                    <li>JDBC, which stands for Java Database Connectivity, is a Java-based technology that facilitates
+                        communication between Java applications and databases.</li>
+                    <li>Contrary to being a programming language, JDBC is a technology that provides a set of Java
+                        classes and interfaces for developers to interact with databases, enabling the creation of
+                        robust and dynamic applications.</li>
+                    <li><strong>Purpose of JDBC:</strong>
+                        <ul>
+                            <li>JDBC serves as a crucial mediator between a Java application and a database, allowing
+                                seamless communication and data exchange. This technology is versatile and can be
+                                employed in various types of Java applications, including but not limited to applets,
+                                servlets, and JSP (JavaServer Pages).
+                            <br><img src="../../images/jdbc1.svg" alt="" class="wb"></li>
+                            <li>Supported Databases: JDBC is compatible with a wide range of databases such as Oracle,
+                                SQL Server, MySQL, and more, making it a universal solution for database connectivity in
+                                Java-based projects.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Features of JDBC:</strong>
+                        <ul>
+                            <li><strong>Standard API:</strong>
+                                <ul>
+                                    <li><em>API (Application Programming Interface):</em> In the context of JDBC, an API refers to a set of rules and protocols that allow different software applications to communicate with each other. JDBC provides a standard API for Java programs to interact with relational databases.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Database Independence:</strong>
+                                <ul>
+                                    <li>JDBC is designed to be a database-independent API. This means that once a JDBC program is developed for a specific database (e.g., Oracle), it can be used with other databases (e.g., SQL) with minimal or no modifications. Typically, only adjustments to the connection details are required.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Platform Independence:</strong>
+                                <ul>
+                                    <li>JDBC is built on Java, a platform-independent technology. Consequently, JDBC programs can be executed on various operating systems, such as Windows, Linux, macOS, or Unix, without the need for modification. This inherent portability is a result of Java's "write once, run anywhere" philosophy.</li>
+                                </ul>
+                            </li>
+                            <li><strong>CRUD and SCUD Operations:</strong>
+                                <ul>
+                                    <li>JDBC facilitates the fundamental database operations: Create, Retrieve, Update, and Delete (CRUD). Additionally, it supports SCUD operations, which involve Select, Create, Update, and Deletion operations, covering a comprehensive range of interactions with a database.</li>
+                                </ul>
+                            </li>
+                            <li><strong>Support for Advanced SQL Concepts:</strong>
+                                <ul>
+                                    <li>JDBC enables developers to work with advanced SQL concepts such as views, triggers, cursors, and stored procedures. This allows for more sophisticated and customized interactions with the underlying database system.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>                    
+                    <li><strong>Key Components of JDBC:</strong>
+                        <ul>
+                            <li><strong>Driver:</strong> JDBC drivers play a vital role in the interaction between Java
+                                applications and databases. They are platform-specific implementations that enable the
+                                translation of Java calls into database-specific calls.</li>
+                            <li><strong>Connection:</strong> JDBC facilitates the establishment of a connection to the
+                                database using the DriverManager class. This connection is essential for executing SQL
+                                queries and transactions.</li>
+                            <li><strong>Statement:</strong> JDBC provides various statement interfaces, such as
+                                Statement, PreparedStatement, and CallableStatement, to execute SQL queries and updates
+                                against the database.</li>
+                            <li><strong>ResultSet:</strong> The ResultSet interface allows Java applications to retrieve
+                                and process the results of SQL queries from the database.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Benefits of JDBC:</strong>
+                        <ul>
+                            <li><strong>Portability:</strong> JDBC's platform independence ensures that Java
+                                applications can seamlessly connect to different databases without significant code
+                                modifications.</li>
+                            <li><strong>Scalability:</strong> JDBC supports scalable database access, making it suitable
+                                for projects ranging from small-scale applications to large enterprise systems.</li>
+                            <li><strong>Security:</strong> JDBC provides mechanisms for secure database transactions,
+                                helping developers implement robust security measures in their applications.</li>
+                        </ul>
+                    </li>
+                </ul>
+        </div>
+        <div class="wh">
+            <h2>JDBC operations using MySQL</h2>
+            <ul>
+                <li>Mainly we can perform 4 operations: (CRUD)
+                    <ol>
+                        <li>Create</li>
+                        <li>Retrieve</li>
+                        <li>Update</li>
+                        <li>Delete</li>
+                    </ol>
+                </li>
+            </ul>
+            <p>We will understand these operations using a program</p>
+            <pre>
+                <code>
+import java.sql.*;
+public class CRUD 
+{
+    public static void main(String[] args) throws Exception
+    {
+        Class.forName("com.mySql.jdbc.Driver");
+        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/college", "root", "Root1234@");
+        // now we will perform first operation which is creating a table 
+        Statement st = con.createStatement();
+        st.executeUpdate("create table student(rno int, name varchar(20), branch varchar(20))");// using this we are creating a table
+        // closing Statement and Connection object 
+        st.close();
+        con.close();
+    }
+}
+                </code>
+            </pre>
+            <ul>
+                <li>java.sql package contains several classes and interfaces which helps</li>
+                <li>Inside the main function as we use several methods like get connection and those methods throws some exception so we have to handle the exception using try catch or explicitly throw them</li>
+                <li>Class.forName("com.mydql.jdbc.Driver"); - Class is a static class which is available in lang package, there is no need to import the lang package and forName is a static method which is used to load corresponding driver class. Driver class is available in jdbc folder, jdbc is availabe in mysql, mysql folder is available in com folder. ForName method throws class not found exception which can be handle by throws sqlexception</li>
+                <li>Connection is an Interface and we know that we can't create object of an interface so in order to create an object we are using getconnection method, getconnectio is a static method which is available in driver manager class. In getConnection method we have to specify three arguments 1st one is to specify the url of the mysql using which we connection to mysql. Default portnumber for mysql is 3306 after this we specify databse name. 2nd argument is username and then 3rd is the password.</li>
+                <li>In order to create a table first we have to create Statement object, Statement is an interface and we create its object using createStatement method we can call createStatement method using Connection object. Create operation is done using executeUpdate</li>
+            </ul> 
+        </div>
+    </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="../../../../public/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MS EXCEL</title>
+    <link rel="stylesheet" href="../../../../public/style.css">
+    <link rel="icon" href="../../../../public/logo/favicon_io/favicon.ico">
+
+    <style>
+    ul {
+        width: 96%; /* Make sure the list takes up available space */
+        padding: 10px; /* Add some padding for better readability */
+    }
+
+    li {
+        white-space: normal; /* Ensures that long text breaks and wraps */
+        word-wrap: break-word; /* Forces wrapping for long words */
+        max-width: 100%; /* Ensures the list item does not exceed the parent width */
+        overflow-wrap: break-word; /* Breaks long text in words */
+    }
+    </style>
+</head>
+
+<body class="bg-c">
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../../PC packages lab/index.html" class="home">Back</a>
+        <a href="#" class="link"></a>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>MS EXCEL</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>MS EXCEL</h1>
+        <div class="wh">
+            <h2>Common terms</h2>
+            <div class="in">
+                <h3>Workbooks</h3>
+                <ul>
+                    <li>Excel files are known as workbooks.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Cell</h3>
+                <ul>
+                    <li>Intersection of row and a column.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Range</h3>
+                <ul>
+                    <li>Group of cells.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Data Entry</h2>
+            <div class="in">
+                <h3>Filling number</h3>
+                <ul>
+                    <li>Ctrl + click on fill handle and drag &rarr; if only one digit is entered.</li>
+                    <li>click on fill handle drag to fill data.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Adjusting multiple column width</h3>
+                <ul>
+                    <li>Select all columns and double click on any mid section.</li>
+                    <li>Ctrl + A then Alt + h + o + i</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Sum of data</h3>
+                <ul>
+                    <li>=SUM(C2:E2)</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Finding max and min</h3>
+                <ul>
+                    <li>=MAX(C2:E2)</li>
+                    <li>=MIN(C2:E2)</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Counting cells</h3>
+                <ul>
+                    <li>=COUNT(E2:F3)</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Finding average</h3>
+                <ul>
+                    <li>=AVERAGE(E2:H2)</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Finding percentage</h3>
+                <ul>
+                    <li>=total_sum/total_value*100</li>
+                </ul>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Conditional formatting</h2>
+            <ul>
+                <li>The range that we have selected on that we are going to do formatting according to the conditions
+                </li>
+                <li>Like we have to highlight all the number that are less than 35 then in 'conditional formatting'
+                    option select 'less than'.</li>
+                <li>There are more options like greater than, equal to, between and so on.</li>
+            </ul>
+        </div>
+        <div class="wh">
+            <h2>Insert/Delete = Row/Column</h2>
+            <ul>
+                <li>Insert &rarr; Click on row or column and press Ctrl + +</li>
+                <li>Delete &rarr; Ctrl + -</li>
+            </ul>
+        </div>
+        <div class="wh">
+            <h2>Merge and center</h2>
+            <ul>
+                <li>Selecting single range click 'merge and center' on home ribbon under alignment group.</li>
+            </ul>
+        </div>
+        <div class="wh">
+            <h2>Tables</h2>
+            <ul>
+                <li>Convert your data into table and then formating it becomes easier.</li>
+                <li>If you want to remove the table so inside design tab there is an option 'convert to range'.</li>
+            </ul>
+        </div>
+        <div class="wh">
+            <h2>Filter and sort</h2>
+            <ul>
+                <li>Filter &rarr; In data tab there is a 'filter' option, using this we can filter data according to the
+                    option.</li>
+                <li>Sort &rarr; arranging data in ascending or descending order.</li>
+            </ul>
+        </div>
+        <div class="wh">
+            <h2>If formula</h2>
+            <div class="in">
+                <h3>If</h3>
+                <ul>
+                    <li>=IF(I12>=35,"PASS","FAIL") &rarr; if in cell I12 the value is greater or equal to 35, it will
+                        show "PASS" else "FAIL".</li>
+                    <li>This works when there is only single column or row.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>IF...AND &rarr; works with multiple rows and columns.</h3>
+                <ul>
+                    <li>=IF(AND(C3>=35,D3>=35,E>=35),"PASS","FAIL")</li>
+                    <li>Here everything option should be true.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>IF...OR</h3>
+                <ul>
+                    <li>=IF(OR(C3&lt;35,D3&lt;35,E&lt;35),"PASS","FAIL")</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Nesting IF</h3>
+                <ul>
+                    <li>=IF(L3="FAIL","FAIL",IF(K3>=75,"A+",IF(K3>=60,"B+",IF(K3>=55,"B-",IF(K3>=35,"C")))))</li>
+                </ul>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Wrap text</h2>
+            <ul>
+                <li>To fit the text inside small width.</li>
+            </ul>
+        </div>
+        <div class="wh">
+            <h2>Freeze column</h2>
+            <ul>
+                <li>When we scroll we permanently want to see some particular column.</li>
+                <li>Select a cell below the row you want to freeze and press 'freeze panes' under view tab.</li>
+            </ul>
+        </div>
+        <div class="wh">
+            <h2>Mean, Median and mode</h2>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=7A8dAYeulL4">Video link &neArr;</a></li>
+            </ul>
+            <div class="in">
+                <h3>Mean</h3>
+                <ul>
+                    <li>Basically it is an average.</li>
+                    <li>Formula &rarr; =AVERAGE(cell_a:cell_z)</li>
+                    <li>Or you can select the cells.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Median</h3>
+                <ul>
+                    <li>this means the middle value in list of arranged numbers</li>
+                    <li>Formula &rarr; =MEDIAN(cell_a:cell_b)</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Mode</h3>
+                <ul>
+                    <li>Most common value or repeated value in a given data.</li>
+                    <li>Formula &rarr; =MODE.SNGL(cell_a:cell_z)</li>
+                </ul>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Some questions</h2>
+            <div class="in">
+                <h3>What is MS Excel?</h3>
+                <ul>
+                    <li>Microsoft Excel is an electronic spreadsheet application that enables users to store, organize,
+                        calculate and manipulate the data with formulas using spreadsheet system broken up by rows and
+                        columns.</li>
+                    <li>It also provides flexibility to use an externel database to do analysis, make reports, etc. thus
+                        saving a lots of time.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>What is ribbon?</h3>
+                <ul>
+                    <li>Ribbon refers to the topmost area of the application that contains menu items and toolbars
+                        available in MS-Excel.</li>
+                    <li></li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>How many data formats are available in Excel?</h3>
+                <ul>
+                    <li>Eleven data formats are available in Microsoft Excel for data storage. Example:
+                        <ul>
+                            <li>Number - Stores data as a number</li>
+                            <li>Currency &rarr; Stores data in the form of currency</li>
+                            <li>Date - Data is stored as dates</li>
+                            <li>Percentage - Stores numbers as a percentage</li>
+                            <li>Text Formats - Stores data as string of texts</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Explain Macro in MS-Excel</h3>
+                <ul>
+                    <li>Macros are used for iterating over a group of tasks.</li>
+                    <li>Users can create macros for their customized repetitive functions and instructions.</li>
+                    <li>Macros can be either written or recorded depending on the user.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>What are charts in MS-Excel</h3>
+                <ul>
+                    <li>To enable graphical representation of the data in Excel, charts are provided.</li>
+                    <li>A user can use any chart type, including column, bar, line, pie, etc. by selecting an option
+                        from insert tab's chart group.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>What are freeze panes in MS-Excel</h3>
+                <ul>
+                    <li>To locak any row or column, freeze panes is used.</li>
+                    <li>The locked row or column will be visible on the screen even after we scroll the sheet vertically
+                        or horizontally.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>What is IF function in Excel</h3>
+                <ul>
+                    <li>To perform the logic text IF function is performed.</li>
+                    <li>It checks whether certain conditions is true or false.</li>
+                    <li>If the condition is true, then it will give result accordingly if the condition is false then
+                        the result or out-put will be different.</li>
+                    <li>=IF(Logical test, value if true, value if false)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="content-box">
+        <h2>Reference</h2>
+        <ul>
+            <li><a href="https://www.guru99.com/microsoft-excel-interview-questions-answers.html">questions &neArr;</a>
+            </li>
+        </ul>
+    </div>
+    <script src="../../../../public/main.js"></script>
+</body>
+
+</html>

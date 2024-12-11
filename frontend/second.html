@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEHU E-Learning</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, #760404, #e48e8e);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+            position: relative;
+        }
+
+        body.dark-mode {
+            background: linear-gradient(to right, #1a1a1a, #333333);
+        }
+
+        .theme-switch {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .switch {
+            background: #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 10px;
+            border-radius: 20px;
+            cursor: pointer;
+            width: 60px;
+            position: relative;
+        }
+
+        .switch i {
+            color: #fff;
+            font-size: 14px;
+        }
+
+        #theme-toggle {
+            display: none;
+        }
+
+        .logo {
+            width: 300px;
+            height: auto;
+            margin-bottom: 30px;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+            width: 90%;
+            max-width: 600px;
+            text-align: center;
+            transition: background 0.3s ease;
+            margin: 1rem;
+        }
+
+        body.dark-mode .container {
+            background: rgba(42, 42, 42, 0.9);
+        }
+
+        h1 {
+            color: #760404;
+            margin-bottom: 2rem;
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
+        }
+
+        body.dark-mode h1 {
+            color: #fff;
+        }
+
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .action-button {
+            padding: clamp(0.8rem, 2vw, 1.2rem);
+            border: none;
+            border-radius: 12px;
+            background: #f10004;
+            color: white;
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s, background 0.3s;
+            text-transform: uppercase;
+            width: 100%;
+        }
+
+        .action-button:hover {
+            background: #d10003;
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1.5rem;
+            }
+
+            .theme-switch {
+                top: 10px;
+                right: 10px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 1rem;
+                margin: 0.5rem;
+            }
+
+            .button-grid {
+                gap: 1rem;
+            }
+
+            .action-button {
+                padding: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <img src="hill-black.png" alt="GEHU Logo" class="logo">
+    
+    <div class="theme-switch">
+        <input type="checkbox" id="theme-toggle">
+        <label for="theme-toggle" class="switch">
+            <i class="fas fa-sun"></i>
+            <i class="fas fa-moon"></i>
+        </label>
+    </div>
+
+    <div class="container">
+        <h1>GEHU - Portal</h1>
+        <div class="button-grid">
+            <button class="action-button" onclick="window.location.href='https://www.gehu.ac.in' ">Explore</button>
+            <button class="action-button" onclick="window.location.href='FirstPage.html'">Learn Basics</button>
+            <button class="action-button" onclick="window.location.href='courseSelect.html'">Courses</button>
+            <button class="action-button" onclick="window.location.href='Test.html'">Test Yourself</button>
+        </div>
+    </div>
+
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        
+        // Check localStorage for saved theme preference
+        if(localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+            themeToggle.checked = true;
+        }
+        
+        themeToggle.addEventListener('change', () => {
+            document.body.classList.toggle('dark-mode');
+            // Save theme preference to localStorage
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,839 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tree</title>
+    <link rel="stylesheet" href="../../../../public/style.css">
+    <link rel="stylesheet" id="highlightStylesheet"
+        href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/tomorrow-night-blue.min.css">
+        <link rel="icon" href="../../../../public/logo/favicon_io/favicon.ico">
+</head>
+
+<body class="bg-c">
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">back</a>
+        <a href="#t1" class="link">Terminologies</a>
+        <a href="#t2" class="link">Types of tree</a>
+        <a href="#t3" class="link">Binary tree representation</a>
+        <a href="#t4" class="link">Traverse in Binary tree</a>
+        <a href="#t5" class="link">Operations on BST</a>
+        <a href="#t6" class="link">AVL tree</a>
+        <a href="#t7" class="link">Huffman tree</a>
+        <a href="#t8" class="link">B Trees and B+ Trees</a>
+        <div class="botbut">
+            <a href="./file_org.html" class="link">Next Topic &rarr;</a>
+            <a href="../unit4_2_sorting/index.html" class="link">&larr; Previous Topic</a>
+        </div>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Tree</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Tree</h1>
+        <ul>
+            <li>It is a non-linear, acyclic, recursive data structure.</li>
+        </ul>
+        <p><b>Why Tree Data structure?</b></p>
+        <ul>
+            <li>Other data structures such as arrays, linked list, stack, and queue are linear data structures that
+                store data sequentially. In order to perform any operation in a linear data structure, the time
+                complexity increases with the increase in the data size. But, it is not acceptable in today's
+                computational world.</li>
+            <li>Different tree data structures allow quicker and easier access to the data as it is a non-linear data
+                structure.</li>
+        </ul>
+        <div id="t1" class="wh">
+            <h2>Tree Terminologies</h2>
+            <div class="in">
+                <h3>Node</h3>
+                <ul>
+                    <li>Each element in a tree is called a node.</li>
+                    <li>It can contain data and references to other nodes.</li>
+                </ul>
+                <img src="../../images/tree1.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>Edge/branch</h3>
+                <ul>
+                    <li>The path line which connects two nodes.</li>
+                    <li><b>Note:</b> A tree having 'n' number of nodes has 'n-1' edges.</li>
+                </ul>
+                <img src="../../images/tree7.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>Root</h3>
+                <ul>
+                    <li>This is the topmost node of a tree.</li>
+                    <li>It serves as the starting point for traversing the tree and has no parent.</li>
+                </ul>
+                <img src="../../images/tree2.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>Parent</h3>
+                <ul>
+                    <li>A node that has one or more child nodes is called a parent. It is the immediate ancestor of its
+                        children.</li>
+                    <li>B is parent as D, E and F are its children.</li>
+                </ul>
+                <img src="../../images/tree3.svg" alt="" class="wb">
+                <h3>Child</h3>
+                <ul>
+                    <li>Nodes directly connected to a parent node are called its children. A parent can have zero or
+                        more children.</li>
+                    <li>D, E and F are children of B.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Sibling</h3>
+                <ul>
+                    <li>Nodes that share the same parent are called siblings. They are at the same level in the tree.
+                    </li>
+                </ul>
+                <img src="../../images/tree4.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>Leaf node</h3>
+                <ul>
+                    <li>Nodes that do not have any children are called leaves or leaf nodes. They are the terminal nodes
+                        in a tree.</li>
+                </ul>
+                <img src="../../images/tree5.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>Ancestor</h3>
+                <ul>
+                    <li>A node's ancestors are its parent, grandparent, and all the nodes on the path to the root.</li>
+                </ul>
+                <h3>Descendant</h3>
+                <ul>
+                    <li>A node's descendants are its children, grandchildren, and all the nodes reachable from it by
+                        following edges downward.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Subtree</h3>
+                <ul>
+                    <li>A subtree is a smaller tree formed by a node and all its descendants, including the node itself.
+                    </li>
+                </ul>
+                <img src="../../images/tree6.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>Internal nodes</h3>
+                <ul>
+                    <li>Nodes other than leaf nodes are known as internal nodes.</li>
+                </ul>
+                <h3>External nodes</h3>
+                <ul>
+                    <li>Leaf nodes are known as external nodes.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Depth/Level</h3>
+                <ul>
+                    <li>The depth or level of a node represents its distance from the root. The root has a depth of 0,
+                        its children have a depth of 1, and so on.</li>
+                </ul>
+                <img src="../../images/tree8.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>Height</h3>
+                <ul>
+                    <li>The height of a tree is the maximum depth among all its nodes. It represents the length of the
+                        longest path from the root to a leaf node.</li>
+                </ul>
+                <img src="../../images/tree9.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>Degree</h3>
+                <ul>
+                    <li>The degree of a node is the number of children it has. A node with no children has a degree of
+                        0, and a node with two children has a degree of 2.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Forest</h3>
+                <ul>
+                    <li>A collection of disjoint trees is called a forest. It consists of multiple trees with no common
+                        root.</li>
+                </ul>
+                <img src="../../images/tree10.svg" alt="" class="wb">
+            </div>
+        </div>
+        <div id="t2" class="wh">
+            <h2>Types of tree</h2>
+            <ol>
+                <li>Generalized tree</li>
+                <li>Binary tree</li>
+                <li>Binary search tree</li>
+                <li>Full binary tree</li>
+                <li>Complete binary tree</li>
+                <li>Height balance tree</li>
+                <li>Left skewed tree</li>
+                <li>Right skewed tree</li>
+                <li>Forest many tree</li>
+            </ol>
+            <div class="in">
+                <h3>Generalized tree</h3>
+                <ul>
+                    <li>Generalized tree : It have no restrictions of level and number of child nodes of a parent.</li>
+                </ul>
+                <img src="../../images/tree11.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>Binary tree</h3>
+                <ul>
+                    <li>It is a type of tree data structure in which each node has at most two children, referred to as
+                        the left child and right child.</li>
+                    <li>In a binary tree:
+                        <ul>
+                            <li>Each node can have zero, one, or two children.</li>
+                            <li>The left children is positioned to the left of the parent node.</li>
+                            <li>The right child is positioned to the right of parent node.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <img src="../../images/tree12.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>Binary search tree (BST)</h3>
+                <ul>
+                    <li>It is a specialized form of binary tree data structure in which the elements are organized in a
+                        specific order.</li>
+                    <li>In a binary search tree, the left child of a node contains a value smaller than the node's
+                        value, and the right child contains a value greater than the node's value. This property allows
+                        for efficient searching, insertion, and deletion operaton.</li>
+                    <li>Key properties of a binary search tree:
+                        <ol>
+                            <li>Ordering property: For any given node in the binary search tree, all the values in left
+                                subtree are less than its value, and all the values in its right subtree are greater
+                                than its value.</li>
+                            <li>Unique Keys: Each node in the binary search tree has a unique key: No two nodes can have
+                                the same key.</li>
+                        </ol>
+                    </li>
+                    <li>The binary search tree property enables efficient searching because it allows for a binary
+                        search algorithm to be applied. When searching for a value in a binary search tree, comparisons
+                        are made at each node, and based on the comparisons, the search can efficiently proceed to the
+                        left or right subtree, narrowing down the search space.</li>
+                </ul>
+                <img src="../../images/tree13.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>Full binary tree</h3>
+                <ul>
+                    <li>A full binary tree is a special type of binary tree in which every node has either 0 or 2
+                        children. In other words, every node in a full binary tree is eiher a leaf node (having no
+                        children) or an internal node with exactly two child nodes.</li>
+                    <li>Key properties of a full binary tree:
+                        <ol>
+                            <li>Each node in the tree is either a leaf node or has exactly two children.</li>
+                            <li>All leaf nodes are at the same level.</li>
+                        </ol>
+                    </li>
+                </ul>
+                <img src="../../images/tree14.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>Complete binary tree</h3>
+                <ul>
+                    <li>A complete binary tree is another type of binary tree where all levels are completely filled,
+                        except possibly for the last level, which is filled from left to right. In other words, in a
+                        complete binary tree, all nodes are placed as far left as possible at each level, creating a
+                        left-skewed structure.</li>
+                    <li>Key properties of a complete binary tree:
+                        <ol>
+                            <li>All levels of the tree, except possibly the last one, are completely filled with nodes.
+                            </li>
+                            <li>If the last level is not completely filled, the nodes are filled from left to right.
+                            </li>
+                        </ol>
+                    </li>
+                </ul>
+                <img src="../../images/tree15.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>Height-balanced tree</h3>
+                <ul>
+                    <li>A height-balanced tree, also known as an AVL tree, is binary search tree that maintains a
+                        balance condition to ensure efficient operations.</li>
+                    <li>In a height-balanced tree, the heights of the left and right subtrees of any node differ by at
+                        most one.</li>
+                    <li>This balanced condition helps to maintain a relatively low height of the tree, which leads to
+                        efficient search, insertion and deletion operations.</li>
+                    <li>Key properties of a height-balanced tree (AVL tree):
+                        <ol>
+                            <li>Balance factor: The balanced factor of a node in a height-balanced tree is defined as
+                                the difference between the heights of its left and right subtrees. A node is considered
+                                balanced if its balance factor is -1, 0 or 1.</li>
+                            <li>Balance Maintenance: When performing insertion or deletion operations that may violate
+                                to restore balance. These rotations rearrange the tree structure while maintaining the
+                                order of the keys.</li>
+                        </ol>
+                    </li>
+                    <li>By maintaining the balance condition, height-balanced trees ensure that the height of the tree
+                        remains relatively low and balanced, resulting in efficient performance for various operations.
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Left-skewed tree</h3>
+                <ul>
+                    <li>A left-skewed tree, also known as a left-leaning tree or a left-heavy tree, is a binary tree in
+                        which the majority of nodes and branches are oriented towards the left side of the tree.</li>
+                </ul>
+                <img src="../../images/tree16.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>Right-skewed tree</h3>
+                <ul>
+                    <li>A right-skewed tree, also known as a right-leaning tree or a right-heavy tree, is a binary tree
+                        in which the majority of nodes and branches are oriented towards the right side of the tree.
+                    </li>
+                </ul>
+                <img src="../../images/tree17.svg" alt="" class="wb">
+            </div>
+        </div>
+        <div id="t3" class="wh">
+            <h2>Binary tree representation</h2>
+            <div class="in">
+                <h3>Using array</h3>
+                <ul>
+                    <li>left child of a node = 2n + 1</li>
+                    <li>right child of a node = 2n + 2</li>
+                    <li>n = index of parent node</li>
+                </ul>
+                <img src="../../images/tree18.svg" alt="" class="wb">
+                <p>The array method of representing a binary tree has some limitations and may not be suitable in all
+                    scenarios. Here are some reasons why the array method may not be considered ideal:
+                <ol>
+                    <li>Wasted space: The array representation can result in wasted space when the binary tree is not
+                        complete or nearly complete. If the tree is unbalanced, a significant portion of array will be
+                        left unused, leading to inefficient memory utilization.</li>
+                    <li>Dynamic Size: The array representation requires a fixed-size array, which may be impractical if
+                        the size of the binary tree needs to change dynamically. If the tree grows beyond the capacity
+                        of the array, it would require resizing the array or allocating a larger array, resulting in
+                        extra overhead and potentially costly operations.</li>
+                    <li>Insertion and Deletion: Insertion and deletion operations can be challenging and inefficient in
+                        the array representation. When a new node is inserted or a node is deleted from the tree, it may
+                        require shifting elements in the array to maintain the tree structure, resulting in costly time
+                        complexity, especially for large trees.</li>
+                    <li>Lack of Dynamic Operations: The array representation does not naturally support dynamic
+                        operations such as splitting or merging subtrees. Performing such operations efficiently would
+                        require additional manipulation of the array and potentially complex algorithms.</li>
+                    <li>Tree Operations: Performing certain tree operations like finding the parent of a node or
+                        navigating to a particular level in the tree can be less straightforward and require additional
+                        calculations compared to other tree representations that use explicit pointers.</li>
+                </ol>
+                <p>While the array representation has its advantages, such as simplicity and efficient indexing, it may
+                    not be the best choice in situations where the binary tree is large, dynamically changing, or
+                    unbalanced. Other representations like linked lists or explicit node structures with pointers may be
+                    more appropriate for such scenarios.</p>
+                </p>
+            </div>
+            <div class="in">
+                <h3>Linked list representation</h3>
+                <img src="../../images/tree19.svg" alt="" class="wb">
+                <p>Node structure &darr;</p>
+                <pre>
+                    <code>
+struct node 
+{
+    struct node *left;
+    int data;
+    struct node *right;
+};
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <div id="t4" class="wh">
+            <h2>Traverse in Binary tree</h2>
+            <p>There are three order by which we can traverse a binary tree:
+            <ol>
+                <li>Pre order traversal</li>
+                <li>Post order traversal</li>
+                <li>In order traversal</li>
+            </ol>
+            </p>
+            <div class="in">
+                <h3>1- Pre order traversal technique</h3>
+                <p>Algorithm &darr;</p>
+                <ol>
+                    <li>Visit the node</li>
+                    <li>Traverse left sub tree</li>
+                    <li>Traverse right sub tree</li>
+                </ol>
+                <p>Example &darr;</p>
+                <img src="../../images/tree20.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>2- Post order traversal technique</h3>
+                <p>Algorithm &darr;</p>
+                <ol>
+                    <li>Traverse left sub tree</li>
+                    <li>Traverse right sub tree</li>
+                    <li>Visit the node</li>
+                </ol>
+                <p>Example &darr;</p>
+                <img src="../../images/tree21.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>3- In order traversal technique</h3>
+                <p>Algorithm &darr;</p>
+                <ol>
+                    <li>Traverse left sub tree</li>
+                    <li>Visit the node</li>
+                    <li>Traverse right sub tree</li>
+                </ol>
+                <p>Example &darr;</p>
+                <img src="../../images/tree22.svg" alt="" class="wb">
+                <ul>
+                    <li>Generally we use in-order traversal.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <p>Q- Make binary tree using in-order and post order traversal list.</p>
+                <ul>
+                    <li>Post order - 9, 1, 2, 12, 7, 5, 3, 11, 4, 8 (Left, Right, Node)</li>
+                    <li>In order - 9, 5, 1, 7, 2, 12, 8, 4, 3, 11 (Left, Node, Right)</li>
+                </ul>
+                <p>Sol:
+                <ul>
+                    <li>In order traversal list is important to make the tree.</li>
+                    <li>We know that in post order, root node comes at last so the last node in post order will be the
+                        root node.</li>
+                    <li>In post order we go from left to right for scanning.</li>
+                </ul>
+                <img src="../../images/tree23.svg" alt="" class="wb">
+                </p>
+            </div>
+            <div class="in">
+                <p>Q- Make binary tree using in-order and pre order traversal list.</p>
+                <ul>
+                    <li>Pre order - 1, 2, 4, 8, 9, 10, 11, 5, 3, 6, 7 (Node, left, right)</li>
+                    <li>In order - 8, 4, 10, 9, 11, 2, 5, 1, 6, 3, 7 (Left, Node, Right)</li>
+                </ul>
+                <p>Sol:
+                <ul>
+                    <li>We know that in pre order, root node comes at first so the first node in pre order will be the
+                        root node.</li>
+                    <li>In pre order we go from right to left for scanning.</li>
+                </ul>
+                <img src="../../images/tree24.svg" alt="" class="wb">
+                </p>
+            </div>
+            <div class="in">
+                <p><b>Concept of expression tree</b></p>
+                <p>Q- Make binary tree of infix expression (a+b)/c*(d^f)</p>
+                <img src="../../images/tree41.svg" alt="" class="wb">
+            </div>
+        </div>
+        <div id="t5" class="wh">
+            <h2>Operations on Binary Search Tree</h2>
+            <div class="in">
+                <h3>Insertion</h3>
+                <p>Inserting following list in BST
+                    <br>30, 4, 40, 10, 29, 48, 35, 90
+                </p>
+                <ul>
+                    <li>First element becomes the root node.</li>
+                    <li>If a element is smaller then root node then it comes it left and subtree and if it greater than
+                        it comes in right sub tree.</li>
+                </ul>
+                <img src="../../images/tree25.svg" alt="" class="wb"><br><br>
+                <img src="../../images/tree26.svg" alt="" class="wb">
+                <p>As 4 is smaller then 30, so it get placed in left side of root node.</p>
+                <img src="../../images/tree27.svg" alt="" class="wb">
+                <p>As 40 is greater then 30, so it get placed in right side of root node.</p>
+                <img src="../../images/tree28.svg" alt="" class="wb"><br><br>
+                <img src="../../images/tree29.svg" alt="" class="wb"><br><br>
+                <img src="../../images/tree30.svg" alt="" class="wb"><br><br>
+                <img src="../../images/tree31.svg" alt="" class="wb"><br><br>
+                <img src="../../images/tree32.svg" alt="" class="wb"><br><br>
+            </div>
+            <div class="in">
+                <h3>Deletion</h3>
+                <p>There are three condition:
+                <ol>
+                    <li>Deleting leaf node</li>
+                    <li>Deleting node having one child node</li>
+                    <li>Deleting node having two child nodes</li>
+                </ol>
+                </p>
+                <div class="wh">
+                    <p><b>Deleting leaf node</b></p>
+                    <ul>
+                        <li>Simply remove it and put NULL in parent node.</li>
+                    </ul>
+                    <img src="../../images/tree33.svg" alt="" class="wb">
+                </div>
+                <div class="wh">
+                    <p><b>Deleting node having one child node</b></p>
+                    <img src="../../images/tree34.svg" alt="" class="wb">
+                </div>
+                <div class="wh">
+                    <p><b>Deleting node having two child nodes</b></p>
+                    <img src="../../images/tree35.svg" alt="" class="wb">
+                </div>
+            </div>
+            <div class="in">
+                <h3>Searching</h3>
+                <p>Algorithm:</p>
+                <pre>
+                    <code>
+if(node == search)
+{
+    return 1;
+}
+else if(search < node)
+{
+    traverse left subtree
+}
+else 
+{
+    traverse right subtree
+}
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <div id="t6" class="wh">
+            <h2>AVL Tree</h2>
+            <ul>
+                <li>AVL tree is a height-balanced binary search tree. That means, an AVL tree is also a binary search
+                    tree but it is a balanced tree. </li>
+                <li>A binary tree is said to be balanced if, the difference between the heights of left and right
+                    subtrees of every node in the tree is either -1, 0 or +1.</li>
+                <li>In an AVL tree, every node maintains an extra information known as <b>balance factor.</b>
+                    <ul>
+                        <li>Balance factor of a node is the difference between the heights of the left and right
+                            subtrees of that node.</li>
+                        <li>Balance factor = height of left subtree - height of right subtree.</li>
+                    </ul>
+                </li>
+                <li>The AVL tree was introduced in the year 1962 by G.M. Adelson-Velsky and E.M. Landis.</li>
+            </ul>
+            <img src="../../images/tree36.svg" alt="" class="wb">
+            <ul>
+                <li>The above tree is a binary search tree and every node is satisfying balance factor condition. So
+                    this tree is said to be an AVL tree.
+                    <br><b>Every AVL tree is a binary search tree but every Binary search tree need not be AVL tree.</b>
+                </li>
+            </ul>
+            <div class="in">
+                <h3>AVL Tree Rotations</h3>
+                <ul>
+                    <li>In AVL tree, after performing operations like insertion and deletion we need to check the
+                        balance factor of every node in the tree. </li>
+                    <li>If every node satisfies the balance factor condition then we conclude the operation otherwise we
+                        must make it balanced.</li>
+                    <li>Whenever the tree becomes imbalanced due to any operation we use <b>rotation</b> operations to
+                        make the tree balanced.</li>
+                    <li><b>Rotation is the process of moving nodes either to left or to right to make the tree
+                            balanced.</b></li>
+                    <li>There are four rotations and they are classified into two types.
+                        <ol>
+                            <li>Single rotation
+                                <ul>
+                                    <li>Left rotation</li>
+                                    <li>Right rotation</li>
+                                </ul>
+                            </li>
+                            <li>Double rotation
+                                <ul>
+                                    <li>Left Right rotation</li>
+                                    <li>Right Left rotation</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Single Left Rotation (LL Rotation)</h3>
+                <ul>
+                    <li>When a node is added into the right subtree of the right subtree, if the tree gets out of
+                        balance, we do a LL rotation..</li>
+                    <li>In LL Rotation, every node moves one position to left from the current position.</li>
+                    <li>To understand LL rotation, let us consider the following insertion operatino in AVL tree.</li>
+                    <img src="../../images/tree37.svg" alt="" class="wb">
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Single Right Rotation (RR Rotation)</h3>
+                <ul>
+                    <li>If a node is added to the left subtree of the left subtree, the AVL tree may get out of balance,
+                        we do a RR rotation.</li>
+                    <li>In RR Rotation, every node moves one position to right from the current position.</li>
+                    <li>To understand RR rotation, let us consider the following insertion operatino in AVL tree.</li>
+                    <img src="../../images/tree38.svg" alt="" class="wb">
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Left Right Rotation (LR Rotation)</h3>
+                <ul>
+                    <li>The LR rotation is a sequence of single left rotation followed by a single right rotation.</li>
+                    <li>In LR Rotation, at first, every node moves one position to the left and one position to right
+                        from the current position.</li>
+                    <li>To understand LR rotation, let us consider the following insertion operatino in AVL tree.</li>
+                    <img src="../../images/tree39.svg" alt="" class="wb">
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Right Left Rotation (RL Rotation)</h3>
+                <ul>
+                    <li>When a node is inserted to the left of the right child of a parent node, causing an imbalance,
+                        it can be balanced using an RL rotation.</li>
+                    <li>The RL rotation is a sequence of single right rotation followed by a single left rotation.</li>
+                    <li>In RL Rotation, at first every node moves one position to right and one position to left from
+                        the current position.</li>
+                    <li>To understand RL rotation, let us consider the following insertion operatino in AVL tree.</li>
+                    <img src="../../images/tree40.svg" alt="" class="wb">
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Operation on an AVL Tree</h3>
+                <p>The following operations are performed on AVL tree.
+                <ol>
+                    <li>Search</li>
+                    <li>Insertion</li>
+                    <li>Deletion</li>
+                </ol>
+                </p>
+                <div class="wh">
+                    <p><b>Search Operation in AVL Tree</b></p>
+                    <ul>
+                        <li>In an AVL tree, the search operation is performed with <b>O(log n)</b> time complexity.</li>
+                        <li>The search operation in the AVL tree is similar to the search operation in a binary tree.
+                        </li>
+                    </ul>
+                    <p>We use the following steps to search an element in AVL tree.
+                    <ol>
+                        <li>Read the search element from the user.</li>
+                        <li>Compare the search element with the value of root node in the tree.</li>
+                        <li>If both are matched, then display "Given node is found!" and terminate the function.</li>
+                        <li>If both are not match, then check whether element is smaller or larger than that node value.
+                        </li>
+                        <li>If search element is smaller, then continue the search process in left subtree.</li>
+                        <li>If search element is larger, ten continue the search process in right subtree.</li>
+                        <li>Reapeat the same until we found the exact element or until the search element is compared
+                            with the leaf node.</li>
+                        <li>If we reach to the node having the value equal to the search value, then display
+                            "Element is found" and terminate the function.</li>
+                        <li>If we reach to the leaf node and if it is also not matched with the search element, then
+                            display "Element is not found" and terminate the function.</li>
+                    </ol>
+                    </p>
+                </div>
+                <div class="wh">
+                    <p><b>Insertion Operation</b></p>
+                    <ul>
+                        <li>In an AVL tree, the insertion operation is performed with <b>O(log n)</b> time complexity.
+                            In AVL Tree a new node is always inserted as a leaf node.</li>
+                    </ul>
+                    <p>The insertion operation is performed as follows:
+                    <ol>
+                        <li>Insert the new element into the tree using Binary Search Tree insertion logic.</li>
+                        <li>After insertion, check the <b>Balance Factor</b> of every node.</li>
+                        <li>If the <b>Balance Factor</b> of any node is other than 0, 1 or -1 then go for next
+                            operation.</li>
+                        <li>If the <b>Balance Factor</b> of any node is other than 0, 1 or -1 then that tree is said to
+                            be imbalanced. In this case, perform suitable rotation to make it balanced and go for next
+                            operation.</li>
+                    </ol>
+                    </p>
+                </div>
+                <div class="wh">
+                    <p><b>Deletion operation</b></p>
+                    <ul>
+                        <li>The deletion operation in AVL is similar to deletion operation in BST. But after every
+                            deletion operation, we need to check with the balance factor condition. </li>
+                        <li>If the tree is balanced after deletion go for next operation otherwise perform suitable
+                            roation to make the tree balanced.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="t7" class="wh">
+            <h2>Huffman tree</h2>
+            <ul>
+                <li>A Huffman tree, also known as a Huffman coding tree or Huffman algorithm, is a binary tree used in
+                    data compression to generate variable-length prefix codes for characters or symbols.</li>
+                <li>For message coding we use Huffman tree.</li>
+            </ul>
+            <div class="in">
+                <h3>Huffman coding</h3>
+                <ul>
+                    <li>Huffman coding is a specific algorithm and technique used for data compression but it can also
+                        be seen as a form of encoding.</li>
+                    <li>It was developed by David A. Huffman in 1952 while he was a student at MIT.</li>
+                    <li>The purpose of Huffman coding is to efficiently represent data by assigning variable-length
+                        binary code to symbols based on their frequency of occurence.</li>
+                    <li>The algorithm begins by analyzing the input data and creating a frequency table or histogram of
+                        the symbols present. This table lists each symbol along with its frequency count, which
+                        represents how often the symbol appears in the data.</li>
+                    <li>Using the frequency table, the Huffman coding algorithm builds a binary tree called a Huffman
+                        tree or coding tree. The tree is constructed in a way that allows the more frequent symbols to
+                        have shorter binary codes, while less frequent symbols have longer binary codes.</li>
+                    <li>To build the Huffman tree, the algorithm repeatedly combines the two symbols with the lowest
+                        frequencies and creates a new internal node with a combined frequency equal to the sum of the
+                        frequencies of the two symbols. This process continues until all symbols are incorporated into
+                        the tree.</li>
+                    <li>Once the Huffman tree is constructed, each symbol is assigned a binary code by traversing the
+                        tree from the root to the symbol. The binary code is determined by the path taken during the
+                        traversal: moving to the left child corresponds to a "0" bit, while moving to the right child
+                        corresponds to a "1" bit. As a result, the codes assigned to symbols in the Huffman tree are
+                        prefix codes, meaning no code is a prefix of another code, ensuring unambiguous decoding.</li>
+                    <li>Finally, the input data is encoded using the assigned Huffman codes. The original symbols are
+                        replaced with their corresponding binary codes, resulting in a compressed representation of the
+                        data. To decode the compressed data, the same Huffman tree is used to map the binary codes back
+                        to their original symbols.</li>
+                    <li>Huffman coding is widely used in various applications where data compression is desired, such as
+                        file compression algorithms (e.g., ZIP), image compression (e.g., JPEG), and video compression
+                        (e.g., MPEG). Its effectiveness lies in its ability to achieve a compact representation of data
+                        by assigning shorter codes to frequently occurring symbols, leading to efficient storage or
+                        transmission of information.</li>
+                </ul>
+                <p>Let's see other coding technique</p>
+                <img src="../../images/huffman1.svg" alt="" class="wb">
+                <ul>
+                    <li>We can see in ASCII coding that even if we are using only 5 letters of alphabet in our message,
+                        still we have 8 bits of size of each letter.</li>
+                    <li>So, can we use our own code with less amount of bits? Yes, We can fix this using Huffman coding.
+                    </li>
+                </ul>
+                <img src="../../images/huffman2.svg" alt="" class="wb">
+            </div>
+        </div>
+        <div id="t8" class="wh">
+            <h2>B Trees and B+ Trees</h2>
+            <p>Before learning B Trees and B+ Trees we have to go through some topic:</p>
+            <ol>
+                <li>Disk structure</li>
+                <li>How data is stored on Disk</li>
+                <li>What is Indexing</li>
+                <li>What is multilevel indexing</li>
+                <li>M-way search trees</li>
+                <li>B-Trees</li>
+                <li>Insertion & Deletion on B-Trees</li>
+                <li>B+ trees</li>
+            </ol>
+            <div class="in">
+                <h3>Disk structure</h3>
+                <img src="../../images/btree1.svg" alt="" class="wb">
+                <ul>
+                    <li><b>Data</b> is <b>stored</b> in blocks.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>How data is accessed</h3>
+                <img src="../../images/btree2.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>How data is organized on the disk in the form of data base.</h3>
+                <img src="../../images/btree3.svg" alt="" class="wb">
+                <ul>
+                    <li>By calculation we got to know that in each block only 4 employee's data can be stored.</li>
+                    <li>Now if we want to search a particular employee we have to lineary search in 25 blocks as blocks
+                        can be in any random order.</li>
+                    <li>Can we reduce this searching time??? Yes by preparing index table. This index will store pointer
+                        to records.</li>
+                </ul>
+                <img src="../../images/btree4.svg" alt="" class="wb">
+                <ul>
+                    <li>Now what if number of index is also growing then searching in index table will consume time.
+                    </li>
+                    <li>For this we will create another index table which will point to each block.</li>
+                </ul>
+                <img src="../../images/btree5.svg" alt="" class="wb">
+            </div>
+            <ul>
+                <li>So now we know we know about high level index or multi level indexing now we want these index table
+                    to manage itself. If the data is growing then accordingly to that multi level index should also
+                    increase. This whole concept leads to B tree and B+ tree.</li>
+                <li>B and B+ tree are originating from M-way search trees so, we will discuss it first.</li>
+            </ul>
+            <div class="in">
+                <h3>M-way search tree</h3>
+                <p>Let's recall binary search tree</p>
+                <img src="../../images/btree6.svg" alt="" class="wb">
+                <ul>
+                    <li>Now the question is that, can we use these trees for preparing index??</li>
+                </ul>
+                <img src="../../images/btree7.svg" alt="" class="wb">
+                <p>Problem with m-way search tree</p>
+                <img src="../../images/btree8.svg" alt="" class="wb">
+            </div>
+            <ul>
+                <li>When control and guidelines are applied on m-way search tree they become B-trees.</li>
+            </ul>
+            <p>What are those rule?
+            <ol>
+                <li>Every node must be filled atleast half.
+                    <ul>
+                        <li>If the degree is m then [m/2] (ceil value) children must be there to control the height of
+                            the tree.</li>
+                    </ul>
+                </li>
+                <li>Root can have minimum 2 children.</li>
+                <li>All leaf node must be at same level.</li>
+                <li>Creation process is bottom-up</li>
+            </ol>
+            </p>
+            <div class="in">
+                <h3>B Tree</h3>
+                <p>Let's create a B Tree where m = 4 and we will insert 10, 20, 40, 50</p>
+                <img src="../../images/btree9.svg" alt="" class="wb">
+                <ul>
+                    <li>This is how B-tree is generated while inserting. </li>
+                </ul>
+                <img src="../../images/btree10.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>B+ Tree</h3>
+                <ul>
+                    <li>In B+ tree we will not have record pointer from every key. We will have record pointer only from
+                        leaf nodes.</li>
+                    <li>All the internel key will be present in leaf node also and all leaf node will be connected like
+                        linked list.</li>
+                    <li>So Rather than B-Tree, B+-Tree is exactly like a multi level indexing.</li>
+                </ul>
+                <img src="../../images/btree11.svg" alt="" class="wb">
+            </div>
+        </div>
+    </div>
+    <div class="content-box">
+        <p>Reference &darr;</p>
+        <ul>
+            <li><a href="https://www.programiz.com/dsa/trees" target="_blank">www.programiz.com</a></li>
+            <li><a href="https://www.youtube.com/watch?v=s5XRtcud35E" target="_blank">Binary tree using post and
+                    in-order traversal</a></li>
+            <li><a href="https://www.youtube.com/watch?v=PoBGyrIWisE" target="_blank">Binary tree using pre and in-order
+                    traversal</a></li>
+            <li><a href="https://www.youtube.com/watch?v=co4_ahEDCho" target="_blank">Huffman coding (Abdul Bari Youtube
+                    channel) &neArr;</a></li>
+            <li><a href="https://www.youtube.com/watch?v=aZjYr87r1b8" target="_blank">B-Tree and B+-Tree (Abdul Bari
+                    Youtube channel) &neArr;</a></li>
+        </ul>
+    </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="../../../../public/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,1357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA&rArr;Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Key concepts Computer Organization and Architecture</title>
+    <link rel="stylesheet" href="../../../../public/style.css">
+    <link rel="icon" href="../../../../public/logo/favicon_io/favicon.ico">
+</head>
+
+<body class="bg-c">
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">back</a>
+        <a href="#t1" class="link">RTL</a>
+        <a href="#t2" class="link">Register definition</a>
+        <a href="#t3" class="link">Designation of a register</a>
+        <a href="#t4" class="link">Register transfer</a>
+        <a href="#t5" class="link">Bus and memory transfer</a>
+        <a href="#t6" class="link">Memory transfer in detail</a>
+        <a href="#t7" class="link">Micro operation</a>
+        <a href="#t8" class="link">Computer instruction</a>
+        <a href="#t81" class="link">Instruction formats</a>
+        <a href="#t9" class="link">Instruction cycle</a>
+        <a href="#t10" class="link">Memory reference instruction</a>
+        <a href="#t11" class="link">Input/output and interrupts</a>
+        <a href="#tpyq" class="link">Previous Year Questions</a>
+        <div class="botbut">
+            <a href="../unit2/index.html" class="link">Next Topic &rarr;</a>
+        </div>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Key concepts of Computer Organization and Architecture</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Key concepts of Computer Organization and Architecture</h1>
+        <ul>
+            <li><b>About Computer Organization and Architecture:</b>
+                <ul>
+                    <li>Computer Organization and Architecture is a fundamental field in computer science that deals
+                        with the design and structure of computer systems, including the internal components and their
+                        interactions. It focuses on how computers are structured and organized at both the hardware and
+                        system levels, ensuring that they can efficiently execute programs and perform tasks.</li>
+                </ul>
+            </li>
+            <li>Importance of Learning Computer Organization and Architecture:
+                <ul>
+                    <li>Efficient Program Execution: Understanding computer organization helps programmers write code
+                        that can make the best use of a computer's resources, resulting in faster and more efficient
+                        programs.</li>
+                    <li>Hardware-Software Interface: It bridges the gap between software and hardware. Knowing how
+                        software instructions are executed in hardware, guides developers in optimizing code.</li>
+                    <li>System Design: For computer engineers, understanding architecture is crucial for designing
+                        efficient and powerful computer systems, from microcontrollers to supercomputers.</li>
+                    <li>Troubleshooting and Performance Optimization: Proficiency in architecture aids in diagnosing
+                        hardware and software performance issues and optimizing system performance.</li>
+                    <li>Innovation and Advancement: Knowledge of computer architecture enables the creation of new
+                        technologies, architectures, and computing paradigms, driving technological advancements.</li>
+                    <li>Career Opportunities: Many roles in the tech industry, from software development to system
+                        administration, benefit from a strong understanding of computer organization and architecture.
+                    </li>
+                    <li>In essence, computer organization and architecture lay the foundation for developing robust,
+                        high-performance, and innovative computing systems that drive various industries and impact our
+                        daily lives.</li>
+                </ul>
+            </li>
+        </ul>
+        <div id="t1" class="wh">
+            <h2>Register Transfer Language (RTL)</h2>
+            <p><b>Before learning Register Transfer Language we should know what are registers and why we are learning
+                    them? What is its significane in digital machine?</b></p>
+            <ul>
+                <li>We know that digital machine work with digital circuits.</li>
+                <li>There are two types of digital circuits:
+                    <ol>
+                        <li>Combinational circuits</li>
+                        <li>Sequential circuits</li>
+                    </ol>
+                </li>
+                <li>We came across flip-flop in digital circuits and we know that a register is a group of flip-flop
+                    which can store bit of information.</li>
+                <li>Simple digital systems are frequently characterized in terms of:
+                    <ol>
+                        <li>The register they contain.
+                            <ul>
+                                <li>When we say our computer is of 64 bit, we mean that the size of register which is
+                                    used to pass instruction to the machine is of size 64 bits.</li>
+                                <li>Instructions and data can be processed more efficiently.</li>
+                                <li>Register is a very fast computer memory, used to store data/instruction
+                                    in-execution.
+                                    <ul>
+                                        <li>A Register is a group of flip-flops with each flip-flop capable of storing
+                                            one bit of
+                                            information.</li>
+                                        <li>An <b>n-bit register</b> has a group of n flip-flops and is capable of
+                                            storing binary
+                                            information of n-bits.</li>
+                                    </ul>
+                                </li>
+                                <li>Hence, a register consists of a group of flip-flops and gates.</li>
+                                <li>Use of Flip-Flops: Flip-flops store binary information, and they are controlled by
+                                    logic gates to
+                                    determine when and how new information is transferred into a register.</li>
+                                <li>That's why we are learning about registers.</li>
+                            </ul>
+                        </li>
+                        <li>The operations that are performed on data stored in them.</li>
+                    </ol>
+                </li>
+                <li>The operations executed on the data in registers are called micro-operations e.g. shift, count,
+                    clear
+                    and load.</li>
+            </ul>
+            <p><b>Some of the commonly used register are:</b></p>
+            <ul>
+                <li><b>Accumulator</b> : This is the most common register, used to store data taken out from the memory.
+                </li>
+                <li><b>General Purpose Registers</b> : This is used to store data intermediate results during program
+                    execution. It can be accessed via assembly programming.</li>
+            </ul>
+            <p><b>Special purpose registers:</b> Users do not access these registers. These registers are for computer
+                system.</p>
+            <ul>
+                <li><b>MAR</b> : Memory Address Register are those registers that holds the address for memory unit.
+                </li>
+                <li><b>MBR</b> : Memory Buffer Register stores instruction and data received from the memory and sent
+                    from the memory.</li>
+                <li><b>PC</b> : Program Counter points to the next instruction to be executed.</li>
+                <li><b>IR</b> : Instruction Register holds the instruction to be executed.</li>
+            </ul>
+            <img src="../../images/register1.svg" alt="" class="wb">
+            <div class="in">
+                <h3>Internal hardware organization of a digital computer</h3>
+                <ul>
+                    <li>Internal hardware organization of a digital computer can be orgaized in 3 format.</li>
+                </ul>
+                <ol>
+                    <li>Set of register it contains and their function.
+                        <ul>
+                            <li>How many general purpose register are there.</li>
+                            <li>Size of instruction register.</li>
+                        </ul>
+                    </li>
+                    <li>Sequence of microoperations performed on binary information stored in registers.</li>
+                    <li>Control signals that initiate the sequence of microoperations that we want to perform.
+                        <ul>
+                            <li>Suppose if we want to add two numbers (A + B), they will not be directly added, there
+                                must be some control function will be used which will be contolling the value of A and
+                                B, and which will also control this operation to happen.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            <div class="in">
+                <h3>What is RTL?</h3>
+                <ul>
+                    <li>The symbolic notation used to describe the microoperation transfers among registers is called
+                        <b>Register Transfer Language.</b>
+                    </li>
+                    <li>It is basically a language and we know that a language have its own syntax and rules and RTL is
+                        used while we are working with computer organization and its design.</li>
+                </ul>
+                <p><b>Key points for RTL</b></p>
+                <ul>
+                    <li>A symbolic language.</li>
+                    <li>A convenient tool for describing the internal organization of digital computers in
+                        consice/precise manner.</li>
+                    <li>Can also be used to facilitate the design process of digital systems.</li>
+                </ul>
+                <p><b>Rules of RTL</b></p>
+                <ul>
+                    <li>Registers are designated by capital letters, some time followed by numbers (e.g. A, R1, IR)</li>
+                    <li>Often the name indicate function:
+                        <ul>
+                            <li>MAR : Memory Address Regsiter</li>
+                            <li>PC : Program Counter</li>
+                            <li>IR : Instruction Register</li>
+                        </ul>
+                    </li>
+                </ul>
+                <div class="wh">
+                    <p><b>Register Transfer</b></h>
+                    <p>Register transfer involves transferring data between registers using microoperations.</p>
+                    <ul>
+                        <li>Hardware logic circuits perform microoperations.</li>
+                        <li>Transfers results between registers.</li>
+                        <li>Control signals can conditionally affect transfers.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div id="t2" class="wh">
+            <h2>Some register definition</h2>
+            <div class="in">
+                <h3>Address registers</h3>
+                <ul>
+                    <li>We know CPU reads and write data on memory. So this address register is used to store memory
+                        address of
+                        data for CPU.</li>
+                    <li>It picks data from memory like addresses, addresses stored in address register, AR gives the
+                        address to memory, memory then decodes the addresses and then fetches the data from RAM.</li>
+                    <li>Size = 12 bits.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Memory Data Register</h3>
+                <ul>
+                    <li>The Memory Data Register (MDR) is a component of a computer's CPU that temporarily holds data
+                        fetched from the computer's memory. When the CPU reads data from memory, it's stored in the MDR
+                        before being processed. Similarly, when the CPU writes data to memory, it places the data in the
+                        MDR before sending it to the memory. The MDR essentially acts as a temporary storage location
+                        for data during memory read and write operations.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Memory Buffer Register (MBR)</h3>
+                <ul>
+                    <li>The Memory Buffer Register (MBR) is used in input/output (I/O) operations in computer systems.
+                        It holds data that is being transferred between the CPU and an I/O device, such as a hard drive
+                        or network interface. The MBR helps in coordinating data transfers between the CPU and I/O
+                        devices, ensuring efficient communication and minimizing bottlenecks. It serves as a temporary
+                        buffer to hold data that is moving between the CPU and external devices.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Accumulator</h3>
+                <ul>
+                    <li>It stores intermediate results from the ALU and temporary information of operands.</li>
+                    <li>It is also called a Processor Register.</li>
+                    <li>The accumulator register retrieves data from memory and temporarily stores it before
+                        transferring it to the ALU. This intermediate step allows data to be efficiently accessed by the
+                        ALU for various arithmetic and logical operations. By doing so, the processor optimizes
+                        performance by minimizing direct memory access during calculations.</li>
+                </ul>
+
+            </div>
+            <div class="in">
+                <h3>Instruction Register</h3>
+                <ul>
+                    <li>Stores instructions that need to be executed.</li>
+                </ul>
+                <img src="../../images/opcode.svg" alt="" class="wb">
+                <p>Instructions basically consist of three parts:</p>
+                <ol>
+                    <li><b>I</b> &rarr; It is the MSB
+                        <ul>
+                            <li>Could be 0 or 1.</li>
+                            <li>If I = 0, it means direct addressing.</li>
+                            <li>If I = 1, it indicates indirect addressing.</li>
+                            <li>If the value is 0, then it directly goes to that location to fetch data and gives it to
+                                the accumulator.</li>
+                            <li>If the value is 1, it indicates indirect addressing. In this case, the system follows a
+                                sequence where it moves to the 1st location, which then directs it to the 2nd location,
+                                and from there, to the 3rd location where the data is located.</li>
+                        </ul>
+                    </li>
+                    <li><b>Op code</b> &rarr; The operation to be performed, like addition, subtraction, multiplication,
+                        or division.</li>
+                    <li><b>Operands</b> &rarr; Data on which the operation has to be performed.
+                        <ul>
+                            <li>The operand part has the address of the data on which we have to perform the operation.
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+                <ul>
+                    <li>The Instruction Register is typically 16 bits long, with 12 bits for operands, 3 bits for the OP
+                        code, and 1 bit for I.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Program Counter</h3>
+                <ul>
+                    <li>Definition: The Program Counter (PC) register is a special-purpose processor register that holds
+                        the memory address of the next instruction to be fetched and executed.</li>
+                </ul>
+            </div>
+        </div>
+        <div id="t3" class="wh">
+            <h2>Designation of a Register</h2>
+            <ul>
+                <li>Means how we can demonstrate that it is a :
+                    <ul>
+                        <li>Register</li>
+                        <li>Portion of register</li>
+                        <li>A bit of a register</li>
+                    </ul>
+                </li>
+            </ul>
+            <img src="../../images/register2.svg" alt="" class="wb">
+        </div>
+        <div id="t4" class="wh">
+            <h2>Register Transfer A.K.A Inter Register Transfer</h2>
+            <ul>
+                <li>Register Transfer refers to the movement of data between registers within a computer's central
+                    processing unit (CPU) as part of executing instructions. It involves the controlled transfer of
+                    binary data from one register to another, often through arithmetic or logic operations, forming
+                    the fundamental basis for instruction execution and data manipulation in a computer's
+                    microarchitecture.</li>
+                <li>Basically it is copying contents of one register to another.</li>
+                <li>A register transfer is indicated as &darr;<br>
+                    R2 &larr; R1
+                    <ul>
+                        <li>R1 is source register and R2 is destination register</li>
+                        <li>In this case the contents of register R1 are copied (loaded into) register R2.</li>
+                        <li>A simultaneous transfer of all bit from the source R1 to the destination register R2, during
+                            one clock pulse.</li>
+                        <li>Note that this is non-destructive, i.e. the contents of R1 are not altered by copying
+                            (loading) them to R2.</li>
+                        <li>The data is tranfered parallelly.</li>
+                        <li>Any microoperation that is performed on the register will always be controlled by the
+                            control function.</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="in">
+                <h3>Control functions</h3>
+                <ul>
+                    <li>Often actions need to only occur if a certain condition is true.</li>
+                    <li>This is similar to an "if" statement in a programming language. In digital systems this is often
+                        done via control signal called a <b>control function.</b></li>
+                    <li>If the signal is 1, then the action takes place. </li>
+                    <li>This is represented as:
+                        <br>P: R2 &larr; R1
+                        <br>Which means "If p = 1, then load the content of register R1 into register R2" i.e. if (P =
+                        1) the (R2 &larr; R1)
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Basic Symbols used for Register Transfer</h3>
+                <img src="../../images/resgister3.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>Examples:</h3>
+                <ul>
+                    <li>If(P = 1) then (R2 &larr; R1)
+                        <br>Symbol - P : R2 &larr; R1
+                    </li>
+                    <li>Q&rArr; The data of register R5 & R9 is transfered to R3 & R10 respectively only when T = 1
+                        <br> A&rArr; T : R3 &larr; R5, R10 &larr; R9
+                    </li>
+                    <li>Q&rArr; The content of register R1 & R6 are added & result is transfered into register MDR only
+                        when
+                        P + Q = 1
+                        <br>A&rArr; P + Q : MDR &larr; R1 + R6
+                    </li>
+                    <li>Q&rArr; The difference of two register R2 & R4 is to be stored in register IR when either P or Q
+                        is 1
+                        <br>A&rArr; P &oplus; Q : IR &larr; (R2 - R4)
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Hardware implementation of controlled transfers</h3>
+                <img src="../../images/transfer1.svg" alt="" class="wb">
+                <p>1- Content of register R1 and R6 are added & result is transfered into register MDR only when P + Q =
+                    1. &darr;</p>
+                <img src="../../images/transfer2.svg" alt="" class="wb">
+                <p>2- The difference of two register R2 and R4 is to be stored in register IR wen either P or Q is 1.
+                    &darr;</p>
+                <img src="../../images/transfer3.svg" alt="" class="wb">
+            </div>
+            <ul>
+                <li>The same clock controls the circuits that generate the control function and the designated register.
+                </li>
+                <li>Registers are assumed to use positive edge triggered flip-flops.</li>
+            </ul>
+        </div>
+        <div id="t5" class="wh">
+            <h2>Bus and memory transfer</h2>
+            <p><b>Q-</b> Why there is a need to have a bus.
+            <ul>
+                <li>In a digital system with multiple registers, it's not feasible to create direct connections for data
+                    and control lines between each pair of registers to allow them to directly load content from any
+                    other register. This is why computer systems use a bus—a shared communication pathway—allowing
+                    efficient data transfer among various components.</li>
+                <li>A bus structure consists of set of common lines, one for each bit of a register through which binary
+                    information is transfered one at a time. It have a control circuits to select which register is the
+                    source, and which is the destination.</li>
+                <li>This is how we are designing the bus systems from register to bus. Bus &larr; R
+                    <br><img src="../../images/busline.svg" alt="" class="wb">
+                </li>
+            </ul>
+            </p>
+            <ul>
+                <li>Bus Transfer is the most efficient way to transfer data. The transfer of data from the Bus lines to
+                    the outside environment and vice versa is known as Bus transfer. Similarly, the transfer of data
+                    from the memory unit to the outside environment and vice versa is known as memory transfer.</li>
+            </ul>
+            <div class="in">
+                <h3>Bus Transfer</h3>
+                <ul>
+                    <li>In a digital system of registers, a path must be provided to move information.</li>
+                    <li>A bus is made up of a collection of common lines, one for each bit of a register, that are used
+                        to transfer binary data.</li>
+                    <li>There are two methods in bus transfer:
+                        <ul>
+                            <li>Bus transfer using Multiplexer</li>
+                            <li>Bus transfer using Three states bus buffer</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Bus transfer using multiplexer</h3>
+                <ul>
+                    <li>Multiplexer selects the source register whose binary information is kept on the bus.</li>
+                    <li>Key terms to understand before desinging a bus system using multiplexer.</li>
+                    <li>There would always be a scenerio given.</li>
+                    <li>Example question scenerio : Construct a bus system of 8 register with 16 bits.</li>
+                    <img src="../../images/busline2.svg" alt="" class="wb">
+                    <li>Now according to the scenerio.
+                        <ol>
+                            <li>How many multiplexer are required.</li>
+                            <li>What would be the size of each multiplexer.</li>
+                            <li>How many selection lines?</li>
+                        </ol>
+                    </li>
+                    <img src="../../images/busline3.svg" alt="" class="wb">
+                    <ul>
+                        <li>In the above scenerio of 8 registers with 16 bits
+                            <ul>
+                                <li>Number of multiplexer = 16</li>
+                                <li>Size of each multiplexer = k x 1 = 8 x 1</li>
+                                <li>And we know that for 8 x 1 multiplexer there are 3 selection lines.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </ul>
+            </div>
+            <div class="in">
+                <p><b>Construct a bus system for 4 register and each bit = 4</b></p>
+                <img src="../../images/busline4.svg" alt="" class="wb">
+                <p><b>Construct a bus system for eight 4 bit register</b></p>
+                <p><b>Design a bus system for four 8 bit register</b></p>
+            </div>
+            <div class="in">
+                <h3>Bus System Using Three-State Buffer</h3>
+                <ul>
+                    <li>A three-state gate is a digital circuit that exhibits three states, two of which are signals
+                        equivalent to logic 0 and 1, similar to a conventional gate. The third state is the
+                        high-impedance state, which restricts the flow of input towards the output.</li>
+                    <li>The high-impedance state behaves like an open circuit, which means that the output is
+                        disconnected and does not have logical significance.</li>
+                    <li>A three-state bus buffer has a control input that determines the output state. When the control
+                        input is equal to 1, the output is enabled, and the gate behaves like a conventional buffer with
+                        the output equal to the normal input. When the control input is 0, the output is disabled, and
+                        the data goes into the high-impedance state, regardless of the value of the normal input.</li>
+                </ul>
+                <img src="../../images/busline5.svg" alt="" class="wb">
+                <ul>
+                    <li>Normally, in a buffer, the input delivered equals the output generated. However, in a
+                        three-state buffer, the second input is the control input.</li>
+                    <li>When C = 1, only in that case, A will be transferred as the circuit is closed. If C = 0, the
+                        state is high-impedance as it is an open circuit.</li>
+                </ul>
+
+                <img src="../../images/busline6.svg" alt="" class="wb">
+            </div>
+        </div>
+        <div id="t6" class="wh">
+            <h2>Memory Transfer</h2>
+            <ul>
+                <li>A memory unit is a collection of storage cells. The memory stores binary information in groups of
+                    bits called words. A memory word is a group of l’s and 0’s. A group of eight bits is called a byte.
+                    Thus a 16-bit word contains two bytes, and a 32-bit word is made up of four bytes. </li>
+                <li>Memory transfer means reading data from memory or writing data into memory.</li>
+                <li>The transfer of information from a memory unit to the user end is called a <b>Read</b> operation.
+                </li>
+                <li>The transfer of new information to be stored in the memory is called a <b>Write</b> operation.</li>
+                <li>A memory word is designated by the letter M.</li>
+                <li>We must specify the address of memory word while writing the memory transfer operations.</li>
+                <li>The address register is designated by AR and the data register by DR.</li>
+                <li>Thus, a read operation can be stated as:
+                    <br>Read: DR &larr; M [AR]
+                </li>
+                <li>The Read statement causes a transfer of information into the data register (DR) from the memory
+                    word (M) selected by the address register (AR).</li>
+            </ul>
+            <img src="../../images/mar.svg" alt="" class="wb">
+        </div>
+        <div id="t7" class="wh">
+            <h2>Micro-Operations</h2>
+            <ul>
+                <li>A micro-operation is a simple operation performed on the data stored in one or more registers. These
+                    operations involve the transfer of data between registers. There are four types of micro-operations:
+                    <ol>
+                        <li><b>Register Transfer Micro-operations:</b> Transfer binary information from one register to
+                            another.</li>
+                        <li><b>Arithmetic Micro-operations:</b> Perform arithmetic operations on numeric data stored in
+                            registers.</li>
+                        <li><b>Logic Micro-operations:</b> Perform bit manipulation operations on non-numeric data
+                            stored in registers.</li>
+                        <li><b>Shift Micro-operations:</b> Perform shift operations on data stored in registers.</li>
+                    </ol>
+                </li>
+            </ul>
+
+            <h2>Types of microoperation</h2>
+            <div class="in">
+                <h3>Arithmetic Microoperations</h3>
+                <ul>
+                    <li>The basic arithmetic operations include addition, subtraction, complement, increment, and
+                        decrement.</li>
+                    <li>Some symbolic representations of arithmetic microoperations are &darr; (down arrow).</li>
+                </ul>
+                <img src="../../images/register4.svg" alt="" class="wb">
+                <ul>
+                    <li>Multiplication and division are valid operations, but they are not considered basic
+                        microoperations.</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Logic Microoperations</h3>
+                <ul>
+                    <li>Logic micro-operations consider each bit of the register separately and treat them as binary
+                        variables.</li>
+                    <li>Example &darr;</li>
+                </ul>
+                <img src="../../images/logic1.svg" alt="" class="wb">
+                <p><b>Selective Set:</b> The selective-set operation sets bits to 1 in register A where there are
+                    corresponding 1s in register B.</p>
+                <img src="../../images/selectiveset1.svg" alt="" class="wb">
+                <ul>
+                    <li>The two leftmost bits of B are 1's, so the corresponding bits of A are set to 1. The OR
+                        micro-operation can be used to selectively set bits of a register.</li>
+                </ul>
+                <p><b>Selective Complement:</b> The selective-complement operation complements bits in A where there are
+                    corresponding 1s in B. It does not affect bit positions that have 0s in B. For example:</p>
+                <img src="../../images/selectiveset2.svg" alt="" class="wb">
+                <ul>
+                    <li>Again, the two leftmost bits of B are 1s, so the corresponding bits of A are complemented. The
+                        exclusive-OR micro-operation can be used to selectively complement.</li>
+                </ul>
+                <p><b>Selective Clear:</b> The selective clear operation clears to 0 the bits in A only where there are
+                    corresponding 1s in B. For example &darr;</p>
+                <img src="../../images/selectiveset3.svg" alt="" class="wb">
+                <ul>
+                    <li>Again, the two leftmost bits of B are 1s, so the corresponding bits of A are cleared to 0.</li>
+                </ul>
+                <p><b>Mask Operation:</b> The mask operation is similar to the selective-clear operation except that the
+                    bits of A are cleared only where there are corresponding 0s in B. The mask operation is an AND
+                    micro-operation as seen from the following numerical example:</p>
+                <img src="../../images/mask1.svg" alt="" class="wb">
+                <ul>
+                    <li>The two rightmost bits of A are cleared because the corresponding bits of B are 0s. The two
+                        leftmost bits are left unchanged because the corresponding bits of B are 1s.</li>
+                </ul>
+                <p><b>Insertion Operation:</b> The insert operation inserts a new value into a group of bits. This is
+                    done by first masking the bits and then ORing them with the required value. For example, suppose
+                    that an A register contains eight bits, 0110 1010. To replace the four leftmost bits by the value
+                    1001, we first mask the four unwanted bits:</p>
+                <img src="../../images/mask2.svg" alt="" class="wb">
+                <ul>
+                    <li>The mask operation is an AND micro-operation, and the insert operation is an OR micro-operation.
+                    </li>
+                </ul>
+                <p><b>Clear Operation:</b> The clear operation compares the words in A and B and produces an all-0's
+                    result if the two numbers are equal. This operation is achieved by an exclusive-OR micro-operation,
+                    as shown by the following example:</p>
+                <img src="../../images/mask3.svg" alt="" class="wb">
+                <ul>
+                    <li>When A and B are equal, the two corresponding bits are either both 0 or both 1. In either case,
+                        the exclusive-OR operation produces a 0. The all-0's result is then checked to determine if the
+                        two numbers were equal.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Shift Micro-Operations</h3>
+                <ul>
+                    <li>Shift micro-operations are used for the serial transfer of data. The contents of a register can
+                        be shifted to the left or the right. There are three types of shifts: logical, circular, and
+                        arithmetic.</li>
+                    <li><b>A logical shift</b> is one that transfers 0 through the serial input. The symbols <b>shl</b>
+                        and <b>shr</b> are used to show logical shift-left and shift-right micro-operations. For example
+                        &darr;</li>
+                    <img src="../../images/shl.svg" alt="" class="wb">
+                    <li><b>The circular shift</b> (also known as a rotate operation) circulates the bits of the register
+                        around the two ends without loss of information. This is accomplished by connecting the serial
+                        output of the shift register to its serial input. We will use the symbols <b>cil</b> and
+                        <b>cir</b> for the circular shift left and right, respectively.
+                    </li>
+                    <img src="../../images/circularshift.svg" alt="" class="wb">
+                    <li><b>An arithmetic shift</b> shifts a signed binary number to the left or right. An arithmetic
+                        shift-left multiplies a signed binary number by 2. An arithmetic shift-right divides the number
+                        by 2. Arithmetic shifts must leave the sign bit unchanged because the sign of the number remains
+                        the same when it is multiplied or divided by 2.
+                        <ul>
+                            <li>The arithmetic shift-right leaves the sign bit unchanged and shifts the number to the
+                                right. Thus, Rn-1 remains the same, Rn-2 receives the bit from Rn-1. The bit in R0 is
+                                lost. The arithmetic shift-left inserts a 0 into R0 and shifts all other bits to the
+                                left. The initial bit of Rn-1 is lost and replaced by the bit from Rn-2.</li>
+                        </ul>
+                    </li>
+                    <img src="../../images/asr.svg" alt="" class="wb">
+                    <ul>
+                        <li>The symbolic notation for the shift micro-operations is shown in the table below:</li>
+                    </ul>
+                    <img src="../../images/arithtable.svg" alt="" class="wb">
+                </ul>
+            </div>
+        </div>
+        <div id="t8" class="wh">
+            <h2>Computer Instructions</h2>
+            <div class="in">
+                <h3>Basic FUNDA</h3>
+                <ul>
+                    <li><a href="https://www.youtube.com/watch?v=oADINwRQbAQ" target="_blank">Video lecture
+                            &nearr;</a></li>
+                </ul>
+                <ul>
+                    <li>First we should know the basic modules out of which our computer is made out of &darr;</li>
+                </ul>
+                <img src="../../images/module1.svg" alt="" class="wb">
+                <ul>
+                    <li><b>Processor &rarr; </b> It is a module where all instructions of program are executed.
+                        <ul>
+                            <li>Here all calculation occurs.</li>
+                        </ul>
+                    </li>
+                    <li><b>Memory &rarr; </b> Module where data is stored.</li>
+                    <li><b>I/O</b> &rarr; Module by which data is brought into the machine and result is given out.</li>
+                </ul>
+                <p>Using these basic 3 modules a computer is build.</p>
+                <ul>
+                    <li>We have learned about the operations that are performed by ALU (Arithmetic Logical Unit) module
+                        of processor like
+                        shift operation, arithmetic, logic, etc.</li>
+                    <li>ALU basically perform operation when data and instructions (add, sub) are given to it and then it
+                        generates result.</li>
+                    <li>The ALU by itself can't finish the job, as it needs the right instructions for calculating
+                        results in a specific time. This is why another part inside the processor, called the control
+                        unit, is necessary. The control unit makes sure the timing and control signals are all set.</li>
+                </ul>
+                <p><b>Why CU is important?</b></p>
+                <ul>
+                    <li>The Control Unit (CU) plays a vital role in the computer's operation.</li>
+                    <li>When data arrives for processing, it can't directly enter the Arithmetic Logic Unit (ALU) as the
+                        ALU doesn't have the ability to understand what to do with the data without instructions.</li>
+                    <li>This is how it functions: Initially, the data is stored in registers, which act as temporary
+                        holding areas. Following that, the Control Unit (CU) becomes active.</li>
+                    <li>The Control Unit generates instructions that guide the ALU's actions:</li>
+                    <ul>
+                        <li>Retrieving data from the registers</li>
+                        <li>Activating specific circuits within the ALU for precise time intervals, facilitating
+                            calculations</li>
+                        <li>Providing the final calculated result once the computations are finished.</li>
+                    </ul>
+                    </li>
+                    <li>Basically CU is that module of a processor which controls all the operations happening inside
+                        the processor.</li>
+                </ul>
+                <p><b>Exploring the core components of a computer highlights a vital fact: INSTRUCTIONS are the backbone
+                        of its functioning. Without instructions, the Arithmetic Logic Unit (ALU) is directionless,
+                        unable to perform tasks.</b></p>
+            </div>
+            <ul>
+                <li>Instructions are the part of the program. Basically a program is a group of instructions. </li>
+            </ul>
+            <div class="in">
+                <h3>Instruction format</h3>
+                <img src="../../images/instruction1.svg" alt="" class="wb">
+                <ul>
+                    <li>This format is stored inside memory, these are brought to processor from memory.</li>
+                    <li>This format provides a consistent way for the processor to understand and execute a wide range
+                        of instructions.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Types of instructions format</h3>
+                <ul>
+                    <li><a href="https://youtu.be/706aFmWa9ME?si=SiaH5kZD_3C200tF" target="_blank">Video
+                            lecture &neArr;</a>
+                    </li>
+                </ul>
+                <img src="../../images/instruction2.svg" alt="" class="wb">
+                <ul>
+                    <li><b>Memory Reference Instructions:</b> These instructions involve operations that require data to
+                        be fetched from or stored into memory. They often include fields specifying memory addresses or
+                        offsets to locate the desired data. Memory reference instructions are essential for tasks like
+                        loading data into registers, storing results back to memory, and data manipulation.</li>
+                    <li><b>Register Reference Instructions:</b> In these instructions, the operations are performed
+                        directly using data stored within the CPU's registers. These instructions typically include
+                        fields indicating the registers involved and the operation to be executed. Register reference
+                        instructions are commonly used for arithmetic, logic, and data manipulation tasks.</li>
+                    <li>
+                        <b>Input/Output (I/O) Reference Instructions:</b> I/O reference instructions manage
+                        communication between the computer and external devices. These instructions facilitate input
+                        (receiving data from external sources) and output (sending data to external devices) operations.
+                        They often include fields specifying the device or port to interact with and the data to be
+                        transferred.
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="wh" id="t81">
+            <h2>Instruction Formats</h2>
+            <p>A computer program is a collection of instructions. Each instruction is represented using an instruction
+                format, which helps the computer understand how to execute the instruction.</p>
+            <p>Instruction formats are primarily classified into three fields:</p>
+            <ol>
+                <li><strong>Address Field:</strong> This field specifies the address of the operand. Operand data can
+                    reside either in memory or registers, so the address field indicates the memory location or register
+                    where the operand can be found.</li>
+                <li><strong>Opcode Field:</strong> The opcode field specifies the operation to be performed. Different
+                    instructions have different opcodes that define their specific operations. These operations can
+                    include data transfer, data manipulation, program control, and more.</li>
+                <li><strong>Mode Field:</strong> The mode field specifies how an effective address is determined for the
+                    operand. In computer operations, we often need to work with data located at specific addresses, and
+                    the mode field helps determine how to calculate or locate that address.</li>
+            </ol>
+
+            <p>Our main focus here is on the Address Field, which plays a crucial role in specifying where data resides
+                or how to calculate an effective address.</p>
+
+            <h3>Address Field Organizations</h3>
+            <p>Based on the number of addresses required by an instruction, there are three primary types of
+                organizations:</p>
+            <ol>
+                <li><strong>Single Accumulator Organization:</strong> In this organization, the accumulator is implicit,
+                    meaning it doesn't need to be explicitly specified in the instruction. The choice of accumulator
+                    usage depends on the specific instruction being executed. For example:
+                    <ul>
+                        <li><strong>CLA</strong> (Clear Accumulator): This instruction doesn't contain any operands, and
+                            when executed, it automatically clears the content of the accumulator.</li>
+                        <li><strong>CMA</strong> (Complement Accumulator): Similarly, the accumulator is implicit here, and
+                            executing this instruction complements the content of the accumulator.</li>
+                        <li><strong>ADD X</strong>: While we perform addition on two operands, in this case, <strong>X</strong>
+                            represents a memory location, and the accumulator is the implicit second operand. So,
+                            executing this instruction adds the content of the accumulator to the memory word at address
+                            <strong>X</strong> (i.e., <strong>AC + M[X]</strong>).
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>General-Purpose Register Organization:</strong> In this organization, instructions can
+                    contain multiple addresses, which can refer to registers or memory operands. This allows for a wide
+                    range of combinations. For example:
+                    <ul>
+                        <li><strong>ADD R1, R2, R3</strong>: This instruction adds the contents of registers <strong>R2</strong>
+                            and <strong>R3</strong> and stores the result in <strong>R1</strong>.</li>
+                        <li><strong>ADD R1, R2</strong>: Here, <strong>R1</strong> serves as both the source and destination
+                            registers.</li>
+                        <li><strong>MOV R1, R2</strong>: This instruction copies the content of <strong>R2</strong> into
+                            <strong>R1</strong>.
+                        </li>
+                        <li><strong>ADD R1, X</strong>: In this case, <strong>X</strong> represents a memory location, and the
+                            operation adds the content of register <strong>R1</strong> to the memory word at address
+                            <strong>X</strong> (i.e., <strong>R1 + M[X]</strong>).
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Stack Organization:</strong> Stack organization involves instructions like <code>PUSH</code>
+                    and <strong>POP</strong>, which we will discuss further in the context of zero-address instructions.
+                </li>
+            </ol>
+            <p>Instructions can be classified into five types based on the number of operands they use:
+            <ol>
+                <li>Three-Address Instruction</li>
+                <li>Two-Address Instruction</li>
+                <li>One-Address Instruction</li>
+                <li>Zero-Address Instruction</li>
+                <li>RISC-Address Instruction</li>
+            </ol>
+            </p>
+            <div class="in">
+                <h3>Three-Address Instruction</h3>
+                <p>Consider the expression: X = (A + B) * (C + D)</p>
+                <p>We can represent this expression using three-address instructions, which means each instruction
+                    contains three addresses, which can be either registers or memory addresses.</p>
+                <pre>
+                    <code>
+ADD R1, A, B      ; R1 <- M[A] + M[B]
+ADD R2, C, D      ; R2 <- M[C] + M[D]
+MUL X, R1, R2     ; M[X] <- R1 * R2
+                    </code>
+                </pre>
+                <h3>Two-Address Instruction</h3>
+                <p>Now, let's represent the same computation using two-address instructions:</p>
+                <pre>
+                    <code>
+MOV R1, A        ; R1 <- M[A]
+ADD R1, B        ; R1 <- R1 + M[B]
+MOV R2, C        ; R2 <- M[C]
+ADD R2, D        ; R2 <- R2 + M[D]
+MUL R1, R2       ; R1 <- R1 * R2 
+MOV X, R1        ; M[X] <- R1
+                    </code>
+                </pre>
+                <h3>One-Address Instruction</h3>
+                <p>In the one-address instruction format, we use instructions like "LOAD" (load a memory word into the
+                    accumulator) and "STORE" (store the accumulator into memory):</p>
+                <pre>
+                    <code>
+LOAD A          ; AC <- M[A]
+ADD B           ; AC <- AC + M[B]
+STORE T         ; M[T] <- AC 
+LOAD C          ; AC <- M[C]
+ADD D           ; AC <- AC + M[D]
+MUL T           ; AC <- AC * M[T]
+STORE X         ; M[X] <- AC
+                    </code>
+                </pre>
+                <h3>Zero-Address Instruction</h3>
+                <p>In zero-address instructions, we utilize a stack for computation. This type of instruction set
+                    includes operations like "PUSH" and "POP" for stack manipulation, as well as arithmetic operations
+                    such as addition, subtraction, and multiplication. To represent the given expression using
+                    zero-address instructions, we need to convert the expression into postfix notation.</p>
+                <p>Here are some rules for postfix notation:</p>
+                <ul>
+                    <li>If it's an operand, push it onto the stack.</li>
+                    <li>If it's an operator, pop the last two operands from the stack, perform the operation, and push
+                        the result back onto the stack.</li>
+                    <li>Postfix notation eliminates the need for parentheses because the order of operations is
+                        unambiguous. Operators are always applied to the last two operands on the stack.</li>
+                    <li>When evaluating postfix expressions, operators are processed from left to right.</li>
+                    <li>The stack is used to hold both operands and intermediate results during the computation.</li>
+                </ul>
+                <pre>
+                    <code>
+Postfix Expression: AB+CD+*
+
+PUSH A          ; Push operand A onto the stack
+PUSH B          ; Push operand B onto the stack
+ADD             ; Pop the last two operands (A and B), add them, and push the result onto the stack
+PUSH C          ; Push operand C onto the stack
+PUSH D          ; Push operand D onto the stack
+ADD             ; Pop the last two operands (C and D), add them, and push the result onto the stack
+MUL             ; Pop the last two operands (result of C+D and result of A+B), multiply them, and push the result onto the stack
+POP X           ; Pop the final result from the stack and store it in memory location X
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <div id="t9" class="wh">
+            <h2>Instruction Cycle</h2>
+            <ul>
+                <li><a href="https://youtu.be/5jIg-D5gKtY?si=k93tkZYGS8JLTp3R" target="_blank">Video Lecture
+                        &neArr;</a></li>
+                <li><a href="https://youtu.be/SFsnysyVhzA?si=--dyYaPZtNrmBBTH" target="_blank">Video Lecture
+                        &neArr;</a></li>
+            </ul>
+            <ul>
+                <li>We know that every program is a collection of instructions, where each instruction is executed with
+                    the help of instruction cycle.</li>
+                <ul>
+                    <li>Instruction cycle is divided into 4 phases.
+                        <ol>
+                            <li>Fetch the instruction from the memory.</li>
+                            <li>Decode the instruction</li>
+                            <li>Read effective address</li>
+                            <li>Execute the instruction.</li>
+                        </ol>
+                    </li>
+                </ul>
+            </ul>
+            <p>After going through each phases for the first instruction, the CPU again start from the phase 1 for
+                the second instruction and so on. This way all the program are to be executed. The last instruction
+                of any program is HALT (program execution is over).</p>
+            <ul>
+                <li>What is program counter (PC)?
+                    <ul>
+                        <li>PC is a register which always contains instruction of next instruction to be executed.</li>
+                    </ul>
+                </li>
+                <li>What is Sequence Counter (SC)?
+                    <ul>
+                        <li>If we apply the clock pulse in sequence counter for the first time we will get timing signal
+                            called T<sub>0</sub>. If we apply another clock pulse we will another timing signal
+                            (T<sub>1</sub>) and so on.</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="in">
+                <h3>Phase 1 - Fetch </h3>
+                <ul>
+                    <li>We will see the register transfer state for fetch.</li>
+                    <li>During T<sub>0</sub> AR &larr; PC. Initially PC contains address of next instruction to be
+                        executed, that address will loaded into Address Register during first clock pulse.
+                        <br>During T<sub>1</sub> IR &larr; M[AR], PC &larr; PC + 1. Here we have to read instruction
+                        from the memory and that instruction should be loaded into instruction register (IR stores the
+                        instruction), now for the next instruction to be executed we have to increment the PC.
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Phase 2 - Decode</h3>
+                <ul>
+                    <li>T<sub>2</sub> AR &larr; IR[0-11], D<sub>7</sub> D<sub>6</sub> ... D<sub>0</sub> IR[12, 14], I
+                        &larr; IR[15].
+                        <ul>
+                            <li>I is the direct or indirect address bit.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>FLow chart</h3>
+                <img src="../../images/flowchartcycle1.svg" alt="" class="wb">
+            </div>
+        </div>
+        <div id="t10" class="wh">
+            <h2>Memory-Reference Instruction</h2>
+            <ul>
+                <li><a href="https://youtu.be/gJwINX2wgFA?si=G_gNMOyQE-x0IrBe" target="_blank">Video Lecture
+                        &neArr;</a>
+                </li>
+                <li><a href="https://youtu.be/3GVIyBt-50w?si=buXqMBbe2ksfaqit" target="_blank">Video Lecture
+                        &neArr;</a>
+                </li>
+            </ul>
+            <ul>
+                <li>There are seven memory-reference instructions and it depend on the value of D (op code).</li>
+                <li>D<sub>7</sub> is for register reference and D<sub>0</sub> to D<sub>6</sub> are memory reference
+                    instructions.</li>
+                <li>Now if The I (direct or indirect bit) is = 0 then less time is consumed and is I = 1 then it will
+                    take more time.</li>
+            </ul>
+            <img src="../../images/memoryinstructiontable.svg" alt="" class="wb">
+            <div class="in">
+                <h3>AND</h3>
+                <ul>
+                    <li>It performs the AND logic operation between AC and the data stored at address given by AR. The
+                        result transferred into AC. The microoperations that execute this instruction are: <br>
+                        DR &larr; M[AR]
+                        <br>
+                        AC &larr; AC &and; DR
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>ADD to AC</h3>
+                <ul>
+                    <li>It performs the addition of AC and the data which is stored at address given by AR. The sum is
+                        transferred into AC and the output carry C<sub>out</sub> is transferred to the E flip-flop. The
+                        microoperations needed to execute this instruction are: <br>
+                        DR &larr; M[AR] <br>
+                        AC &larr; AC + DR, E &larr; C<sub>out</sub>
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>LDA: Load to AC</h3>
+                <ul>
+                    <li>This instruction transfers the data which is stored at address given by AR into AC. The
+                        microoperations needed to execute this instruction are: <br>
+                        DR &larr; M[AR] <br>
+                        AC &larr; DR
+
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>STA: Store AC</h3>
+                <ul>
+                    <li>This instruction stores the content of AC at the address given by AR. We can execute this
+                        instruction with one microoperation: <br>
+                        M[AR] &larr; AC
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>BUN: Branch Unconditionally</h3>
+                <ul>
+                    <li>It is used when a program has a branch instruction. In this control of a program goes to the
+                        address given by AR (without checking any condition) and execute the instructions. <br>
+                        PC &larr; AR
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>BSA: Branch and Save Return Address</h3>
+                <ul>
+                    <li>It is also used when a program has a branch instruction but when it moves to another program, it
+                        stores the address of current instruction. When it come back, it starts from the stored address.
+                        <br>
+                        M[AR] &larr; PC, PC &larr; AR + 1
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>ISZ: Increment and Skip if Zero</h3>
+                <ul>
+                    <li>This instruction increments the word stored in AR, and if the incremented value is equal to 0,
+                        PC is incremented by 1. </li>
+                </ul>
+            </div>
+        </div>
+        <div id="t11" class="wh">
+            <h2>Input/Output and Interrupts</h2>
+            <ul>
+                <li><a href="https://youtu.be/k2Z7EsUe7o0?si=FgD7hFQDILO7v4IS" target="_blank">Video lecture
+                        &neArr;</a>
+                </li>
+            </ul>
+            <ul>
+                <li>Instruction and data stored in memory must come from some input device.</li>
+                <li>Computational results must be transmitted to the user through some output devices.</li>
+            </ul>
+            <div class="in">
+                <h3>I/O configuration</h3>
+                <ul>
+                    <li>The terminal sends and receives serial information. Each quantity of information has eight bits
+                        of an alphanumeric code.</li>
+                    <li>The serial information for the input device is shifted into the input register INPR.</li>
+                    <li>The serial information for the output device is stored in the output register OUTR.</li>
+                    <li>There two register communitcate with a communication interface serially and with the AC in
+                        parallel.</li>
+                </ul>
+                <img src="../../images/ioconfig.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <ul>
+                    <li><b>INPR &rarr;</b> Input Register - consists eight bits and holds an alphanumeric I/P
+                        information.</li>
+                    <li><b>FGI &rarr;</b> 1-bit I/P flag is a control flip-flop.
+                        <ul>
+                            <li>1 when new information is available in the I/P device.</li>
+                            <li>0 when the information is accepted by the computer.</li>
+                        </ul>
+                    </li>
+                    <li>Initially FGI is cleared to 0.</li>
+                    <li>WHen a key is struct in the keyboard, an 8-bit alphanumeric code is shifted into INPR and the
+                        input flag FGI is set to 1.</li>
+                    <li>As long as the flag is set, the information in INPR cannot be changed by striking another key.
+                    </li>
+                    <li>The computer checks the flag bit, if it is 1, the information from INPR is tranferred in
+                        parallel into AC and FGI is cleared to 0.</li>
+                    <li>Once the flag is cleared, new information can be shifted into INPR by striking another key.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <ul>
+                    <li><b>OUTR &rarr; </b> Output Register - consists eight bits.</li>
+                    <li><b>FGO &rarr; </b> 1-bit o/p flag is a control flip-flop.
+                        <ul>
+                            <li>0 do not load new thing.</li>
+                            <li>1 information from AC is transferred in parallel to OUTR.</li>
+                        </ul>
+                    </li>
+                    <li>Initially FGO = 1, information from AC is transferred in parallel to OUTR and FGO is cleared to
+                        0.</li>
+                    <li>O/p device accepts the coded information, prints the corresponding character and when the
+                        operation is completed, it set FGO = 1.</li>
+                    <li>The computer does not load a new character into OUTR when FGO = 0, it indicates the output
+                        device is busy.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Interrupts</h3>
+                <ul>
+                    <li><a href="https://youtu.be/L5XDJPAlz9s?si=xWQwIk8TFU3Yu7Lq" target="_blank">Video
+                            lecture
+                            &neArr;</a></li>
+                </ul>
+                <ul>
+                    <li><b>Definition &rarr; </b> It is a mechanism by which modules like I/O or memory may interrupt
+                        the normal processing of CPU.</li>
+                    <li>Interrupt is required to improve the processing efficiency of CPU.</li>
+                    <li>How does it happen?
+                        <ul>
+                            <li>CPUs are designed to execute instructions at a very high speed, often measured in
+                                gigahertz (GHz), which means they can perform a large number of operations per second.
+                                On the other hand, many external devices, such as keyboards, hard drives, or network
+                                interfaces, operate at significantly slower speeds. For instance, hard drives might
+                                transfer data at rates of megabytes per second, which is much slower compared to the
+                                billions of instructions the CPU can execute in the same amount of time.</li>
+                            <li>Without Interrupts: Imagine a scenario where the CPU is executing a program and needs to
+                                read data from a slow external device. If interrupts were not used, the CPU would need
+                                to continuously poll (check) the external device to see if it has data ready for
+                                processing. This polling would involve the CPU repeatedly asking the device, "Are you
+                                ready yet?" and waiting for a response.</li>
+                            <li>Wasted CPU Time: During this waiting period, the CPU would not be doing anything
+                                productive. It would spend a significant portion of its time repeatedly checking the
+                                device's status instead of executing useful instructions from the program it's supposed
+                                to run. This results in a wastage of CPU processing power and efficiency.</li>
+                            <li>Interrupt Solution: Here's where interrupts come into play. When an external device has
+                                data ready for processing or an event occurs that requires CPU attention, the device
+                                sends an interrupt signal to the CPU. The CPU then temporarily suspends its current
+                                activities, saves its current state, and switches to the appropriate interrupt handler
+                                routine to deal with the event.
+
+                                This allows the CPU to efficiently manage its time. It doesn't need to constantly poll
+                                devices. Instead, it can continue executing other tasks or programs until an interrupt
+                                occurs. When an interrupt happens, the CPU switches to handling that interrupt,
+                                processes the required data or event, and then resumes its previous activities.</li>
+                        </ul>
+                    </li>
+                    <li>In essence, interrupts allow the CPU to be more productive by not wasting time waiting for
+                        slower devices. Instead, it can work on multiple tasks in parallel, efficiently responding to
+                        external events and data availability as needed.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Interrupt Request & Interrupt Handler</h3>
+                <ul>
+                    <li><a href="https://youtu.be/IrSQWHgscfY?si=wNApvyWgYpqWsNLl" target="_blank">Video
+                            Lecture
+                            &neArr;</a></li>
+                </ul>
+                <img src="../../images/interrupt1.svg" alt="" class="wb">
+                <ul>
+                    <li>CPU is executing some task.</li>
+                    <li>User uses the keyboard to issue a high-priority command.</li>
+                    <li>This issues an interrupt request to the CPU.</li>
+                    <li>CPU suspends the current execution of the task.</li>
+                    <li>CPU executes the code written to handle / implement this command.</li>
+                    <li>CPU resumes its previous execution.</li>
+                    <li><b>Advantage &rarr; </b> Efficiency of CPU improves.</li>
+                    <li><b>Disadvantage &rarr; </b> Overhead required to serice the interrupt request.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Types of interrupts</h3>
+                <ol>
+                    <li>Program interrupt:
+                        <ul>
+                            <li>It occurs when some instruction within the program creates a condition that leads to an
+                                interrupt.</li>
+                            <li>Eg &rarr; divide by 0, arithmetic overflow (memory size is 8 bits but after addition 9
+                                bits memory size is required.).</li>
+                        </ul>
+                    </li>
+                    <li>Timer interrupt:
+                        <ul>
+                            <li>It is generated by the timer present with in the processor.</li>
+                            <li>OS sets the time to perform certain operation on regular basis.</li>
+                        </ul>
+                    </li>
+                    <li>Input-output interrupt:
+                        <ul>
+                            <li>Generated by I/O devices.</li>
+                            <li>Signal successful task completion or error.</li>
+                        </ul>
+                    </li>
+                    <li>Hardware interrupt:
+                        <ul>
+                            <li>cause &rarr; failures related to hardware.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+            <div class="in">
+                <h3>How to handle single interrupt?</h3>
+                <ul>
+                    <li><a href="https://youtu.be/GvoNH4NLWw0?si=yzsGS2iVVYLfk7KC" target="_blank">Video
+                            lecture &neArr;</a></li>
+                </ul>
+                <ul>
+                    <li>Add interrupt cycle to instruction cycle.</li>
+                    <li>If interrupt occurs:
+                        <ol>
+                            <li>Suspend the execution of program</li>
+                            <li>Saving the context i.e. current contents of PC, register values, stack contents.</li>
+                            <li>Determine the interrupt handler.</li>
+                            <li>Set PC to the starting address of the handler.</li>
+                            <li>Fetch & execute the instruction handler completion, resume processing of the interrpted
+                                code.</li>
+                        </ol>
+                    </li>
+                    <li>If no interrupt
+                        <ul>
+                            <li>CPU proceeds to fetch - execute cycle.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <img src="../../images/interrupt2.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>How to handle multiple interrupts</h3>
+                <ul>
+                    <li><a href="https://youtu.be/NMQG-cRPpmg?si=zx1WhVcefdvxVVEZ" target="_blank">Video
+                            lecture &neArr;</a></li>
+                </ul>
+                <p><b>Method 1 : Disable multiple interrupts</b></p>
+                <ul>
+                    <li>is a technique used in interrupt handling to temporarily prevent the CPU from responding to
+                        additional interrupts while it is already processing an interrupt. This approach ensures that
+                        the CPU completes the current interrupt handling routine without being interrupted by other
+                        interrupt requests. Once the current interrupt is fully handled, the CPU re-enables interrupts,
+                        allowing it to respond to new interrupt requests.</li>
+                    <li>Here sequential execution of interrupt occurs &darr;</li>
+                </ul>
+                <img src="../../images/interrupt3.svg" alt="" class="wb">
+                <ul>
+                    <li><b>Advantages : </b>
+                        <ul>
+                            <li>Predictable Handling: Disabling multiple interrupts ensures that the CPU completes the
+                                current interrupt handling routine without being interrupted by other interrupts. This
+                                can lead to more predictable and deterministic behavior in critical tasks.</li>
+                            <li>Simplicity: This approach can simplify the interrupt handling process, making it easier
+                                to manage and debug interrupt-related code.</li>
+                            <li>Avoids Race Conditions: By preventing multiple interrupts from occurring simultaneously,
+                                the CPU avoids potential race conditions where multiple interrupts might interact in
+                                unexpected ways.</li>
+                        </ul>
+                    </li>
+                    <li><b>Disadvantages : </b>
+                        <ul>
+                            <li>Interrupt Latency: While the CPU is handling an interrupt with interrupts disabled, it
+                                cannot respond to other interrupts, potentially causing a delay in handling
+                                time-sensitive events.</li>
+                            <li>Unresponsiveness: If an interrupt with high priority occurs while interrupts are
+                                disabled, the system might not be able to promptly respond, leading to reduced system
+                                responsiveness.</li>
+                            <li>Interrupt Priority: Disabling multiple interrupts can prevent lower-priority interrupts
+                                from being serviced during the execution of a higher-priority interrupt, potentially
+                                affecting the overall system performance.</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p><b>Method 2 : Give priority to interrupt</b></p>
+                <ul>
+                    <li>The "give priority to interrupt" technique is an interrupt handling strategy in computer systems
+                        where different interrupts are assigned different priority levels. When multiple interrupts
+                        occur simultaneously or in quick succession, the system responds to the interrupt with the
+                        highest priority first. This approach ensures that critical or time-sensitive events are
+                        addressed promptly, even if other interrupts are pending.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="content-box" id="tpyq">
+        <h2>Previous Year Questions</h2>
+        <div class="in">
+            <h3>Q&rArr; The 8-bit register AR, BR, CR and DR initially have the value:
+                <br>AR = 11110010, BR = 11111111, CR = 10111001, DR = 11101010
+                <br>Determine the 8-bit values in each register after the execution of the following sequence of
+                mircooperations:
+                <br>(i) AR &larr; AR + BR
+                <br>(ii) CR &lrarr; CR &or; DR
+                <br>(iii) BR &lrarr; BR + 1
+                <br>(iv) DR &lrarr; AR &and; DR
+            </h3>
+        </div>
+        <div class="in">
+            <h3>The 8-bit registers A, B, C and D initially have the following values:
+                <br>X = 11110010, Y = 11111111, Z = 10111001, A = 11101011
+                <br>Determine the 8-bit values in each register after the execution of the following sequence of
+                micro-operations:
+                <br>X &larr; X + Y
+                <br>Y &larr; Y - Z
+                <br>Z &larr; Z + X
+                <br>Z &larr; Z + Y
+            </h3>
+        </div>
+        <div class="in">
+            <h3>Design and explain Shift microoperations with the help of its hardware implementation. (&star;)</h3>
+        </div>
+        <div class="in">
+            <h3>A digital computer constructred with multiplexers has common bus system for 8 registers of 16 bits each:
+                <br>(i) What is the size of multiplexers?
+                <br>(ii) How many multiplexers are there in the bus?
+                <br>(iii) How many selection inputs are there in each multiplexer?
+            </h3>
+        </div>
+        <div class="in">
+            <h3>Design and explain Bus and Memory transfer circuit using three gate buffer device.</h3>
+        </div>
+        <div class="in">
+            <h3>Define Input, Output and Interrupt with a suitable example.</h3>
+        </div>
+        <div class="in">
+            <h3>Draw neat and clean diagram of instruction cycle and explain its functioning.</h3>
+        </div>
+        <div class="in">
+            <h3>With the help of suitable diagram, explain various CPU registers with their working.</h3>
+        </div>
+        <div class="in">
+            <h3>Explain different basic computer instruction format with different with different modes.</h3>
+        </div>
+        <div class="in">
+            <h3>What is one address, two address and three address instruction formats?</h3>
+        </div>
+        <div class="in">
+            <h3>Fill in the blanks:
+                <br>(a) For 16 input lines decoder has _________ output lines.
+                <br>(b) I refer ________ and _________ instructions in control unit.
+                <br>(c) Program Counter register is used to store _______.
+                <br>(d) IR (Instruction Register) is used to hold ________.
+                <br>(e) In binary number system, multiplication is generally carried out by _________.
+            </h3>
+        </div>
+        <div class="in">
+            <h3>Define control function in RTL. Represent the following conditional control statements by two registered
+                transfer statements with control functions:
+                <br>If(P = 1), then R2 &larr; R1 + R2 else if (Q = 1) R2 &larr; R1
+            </h3>
+        </div>
+        <div class="in">
+            <h3>Write a short note on bus and memory transfer.</h3>
+        </div>
+        <div class="in">
+            <h3>Design Arithmetic Logic Shift unit that will perform different arithmetic, logic and shift operation in
+                short.</h3>
+        </div>
+        <div class="in">
+            <h3>Draw a diagram of bus system for four registers of 4 bits each. The bus is to be constructed with
+                multiplexers. A digital computer has a common bus system for 16 registers of 32-bits each. The bus is
+                constructed with multiplexers.
+                <br>(i) How many selection inputs are there in each multiplexer?
+                <br>(ii) What size of multiplexers is needed?
+                <br>(iii) How many multiplexers are there in the bus?
+            </h3>
+        </div>
+        <div class="in">
+            <h3>Define Computer Organization. What is RTL? Define RTL with a suitable example.</h3>
+        </div>
+        <div class="in">
+            <h3>Write a program to evaluate the arithmetic expression using Three, Two, One and Zero address
+                Instructions format: X = (A + B * C) / (D + E * F / G + H)</h3>
+        </div>
+        <div class="in">
+            <h3>Starting from initial value of R = 110010101, determine the sequence of binary values in R after a
+                logical shift left, followed by a circular shift right, followed by an arithmetic shift right and
+                circular shift right.</h3>
+        </div>
+        <div class="in">
+            <h3>Define logical micro-operations. Design and explain with the help of function table.</h3>
+        </div>
+        <div class="in">
+            <h3>What do you means by inter-register transfer? Discuss Bus transfer?</h3>
+        </div>
+    </div>
+    <div class="content-box">
+        <p>Resources &darr;</p>
+        <ul>
+            <li><a href="https://youtu.be/aIqd4rK0SX4" target="_blank">RTL intro &neArr;</a></li>
+            <li><a href="https://youtu.be/8YwYycuGIys" target="_blank">Bus and Memory Transfer &neArr;</a></li>
+            <li><a href="https://www.youtube.com/playlist?list=PLXj4XH7LcRfDXDRzSLv1FfZ-SSA38SiC0"
+                    target="_blank">Playlist &neArr;</a></li>
+            <li><a href="https://www.youtube.com/watch?v=mNNywW00eEc" target="_blank">1.1 Register Transfer Language and
+                    Microoperations || Explained in Hindi Morris Mano Computer Organi &neArr;</a></li>
+            <li><a href="https://youtu.be/oADINwRQbAQ" target="_blank">Control unit: Instruction format &neArr;</a></li>
+            <li><a href="https://youtu.be/uoFr0f7lh4M" target="_blank">Types of Instructions in Computer Architecture
+
+                    &neArr;</a></li>
+        </ul>
+    </div>
+    <script src="../../../../public/main.js"></script>
+</body>
+
+</html>

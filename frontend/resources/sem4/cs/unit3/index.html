@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time and Work</title>
+    <link rel="stylesheet" href="../../../../public/style.css">
+    <link rel="icon" href="../../../../public/logo/favicon_io/favicon.ico">
+</head>
+
+<body class="bg-c">
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">back</a>
+        <div class="fix-column-links">
+            <a href="#" class="link"></a>
+            <div class="botbut">
+                <a href="../unit7/index.html" class="link">Next Topic &rarr;</a>
+                <a href="../unit4/index.html" class="link">&larr; Previous Topic</a>
+            </div>
+        </div>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Time and Work</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Time and Work</h1>
+        <div class="wh">
+            <h2>Command over LCM Method</h2>
+            <div class="in">
+                <p>Basic Question</p>
+                <p>Q: A can do a piece of work in 20 days, and B alone can do it in 30 days. In how many days can A and
+                    B
+                    complete the work together?</p>
+                <pre>
+        Time       Total work    Efficiency 
+A ->  20 Days     60 Units      60/20 = 3 units 
+B ->  30 Days                   60/30 = 2 units
+            </pre>
+                <p>
+                    LCM of days = 60 <br>
+                    Assume total work = 60 Units<br>
+                    Next, we find efficiency. Efficiency is the work completed in a given time (days, minutes, hours)
+                    according to the question.<br>
+                    Now, we get to know that A takes 20 days to complete 60 units of work.<br>
+                    <b>Work done in one day by A = 60/20 = 3 units</b><br>
+                    Work done in one day by B = 60/30 = 2 units<br>
+                    Now, if both A and B work together, then 3 + 2 = 5 units of work will be completed in a day.<br>
+                    Therefore, 60 units of work at the rate of 5 units per day will take 60/5 = 12 days.<br>
+                    So, when A and B work together, the work will be done in 12 days.<br>
+                    <b>Formula:</b><br>
+                    Time = Work / Efficiency <br>
+                    In this case, Work = 60 units, and the combined efficiency of both A and B is 5 units/day.<br>
+                    Therefore, Time = 60 / 5 = 12 days.
+                </p>
+            </div>
+            <div class="in">
+                <p>Example 2</p>
+                <p>Q: A and B together can do a piece of work in 7(1/2) days, and B alone can
+                    do it in 25 days. In how many days can A alone finish the work?</p>
+                <pre>
+          Time        Total Work     Efficiency 
+A + B =  15/2 days      75 units   (75 * 2) / 15  = 10 
+    B =  25 days                    75 / 25        = 3
+</pre>
+                <p>
+                    While taking the LCM ignore the denominator part. <br>
+                    Combined efficiency of A and B = 10 units/day<br>
+                    Efficiency of B alone = 3 units/day<br>
+                    Therefore, efficiency of A alone = 10 - 3 = 7 units/day<br>
+                    <b>Formula:</b><br>
+                    Time = Work / Efficiency<br>
+                    Time taken by A alone = 75 / 7 = 10<sup>5</sup>&frasl;<sub>7</sub> days
+                </p>
+            </div>
+            <div class="in">
+                <p>Q: A, B, and C can do a piece of work in 8 days. If B alone can do the same work in 18 days and C
+                    alone can do the same work in 24 days, in how many days can A alone finish the same work?</p>
+                <pre>
+             Time        Total Work    Efficiency
+A + B + C    8 days                        9
+    B       18 days        72 units        4
+    C       24 days                        3
+                </pre>
+                <p>
+                    Combined efficiency of A, B, and C = 9 units/day<br>
+                    Efficiency of B alone = 4 units/day<br>
+                    Efficiency of C alone = 3 units/day<br>
+                    Therefore, efficiency of A alone = 9 - 4 - 3 = 2 units/day<br>
+                    <b>Formula:</b><br>
+                    Time = Work / Efficiency<br>
+                    Time taken by A alone = 72 / 2 = 36 days<br>
+                    Hence, A can complete the work in 36 days alone.
+                </p>
+            </div>
+            <div class="in">
+                <p>Q: A can do 1/2 of a piece of work in 5 days, B can do 3/5 of the same work in 9 days, and C can do
+                    2/3 of the work in 8 days. In how many days can all three of them together do the work?</p>
+                <pre>
+A takes to do 1/2 of the work in 5 days
+    for 1 unit it takes 5 * 2 = 10 days 
+B takes to do 3/5 of the work in 9 days 
+    for 1 unit it takes (9 / (3/5)) = 15 days 
+C takes to do 2/3 of the work in 8 days 
+    for 1 unit it takes (8 / (2/3)) = 12 days 
+
+      Time        Total Work     Efficiency
+A     10 days      60 units        6
+B     15 days                      4
+C     12 days                      5
+                </pre>
+                <p>
+                    Total efficiency (sum of A, B, and C) = 6 + 4 + 5 = 15 units/day<br>
+                    Therefore, if all work together, it will take 60 / 15 = 4 days to complete the work.
+                </p>
+            </div>
+            <div class="in">
+                <p>Q: A and B can do a piece of work in 8 days, B and C can do it in 24 days, and C and A can do it in
+                    8(4/7) days. In how many days can C alone do the whole work?</p>
+                <pre>
+      Time              Total Work     Efficiency
+A + B    8 days                           15
+B + C   24 days          120 units         5
+C + A   8(4/7) days                       14
+        (60/7 days)     
+</pre>
+                <p>
+                    Efficiency of A + B = 15 units/day<br>
+                    Efficiency of B + C = 5 units/day<br>
+                    Efficiency of C + A = 14 units/day<br>
+                    <br>
+                    Let's find A, B and C's efficiencies
+                    <br>A + B = 15 --(1)
+                    <br>B + C = 5 --(2)
+                    <br>upon addition of (1) and (2) equation we will get 2B + A + C = 20 --(3)
+                    <br>we know A + C = 14, replace A + C with 14 in equation (3)
+                    <br>2B + 14 = 20
+                    <br>B = 3
+                    <br>C = 2
+                    <br>
+                    Efficiency of C alone = 2 units/day<br>
+                    Total work = 120 units<br>
+                    Time taken by C alone = Work / Efficiency<br>
+                    Time = 120 / 2 = 60 days<br>
+                    Hence, C alone can complete the work in 60 days.<br>
+                </p>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Man Leaving and Joining Problems (Here also LCM Method will be used)</h2>
+            <div class="in">
+                <p>Q: A can complete a piece of work in 20 days and B can complete the same work in 25 days. If they
+                    start the work together but after 5 days B left the work. In how many days will the total work be
+                    finished?</p>
+                <pre>
+     Time     Total Work   Efficiency
+A   20 days    100 units    5 units/day
+B   25 days                 4 units/day
+                </pre>
+                <p>
+                    If A and B work together, they will complete 9 units of work in a day<br>
+                    In 5 days, both worked together, so:<br>
+                    5 * 9 = 45 units of work completed in 5 days<br>
+                    Remaining work which A has to do = 100 - 45 = 55 units<br>
+
+                    Using the formula T = W / E:<br>
+                    T = 55 / 5 (efficiency of A)<br>
+                    T = 11 days<br>
+
+                    Therefore, the total time to finish the work is:<br>
+                    5 days (when both worked together) + 11 days (when only A worked) = 16 days<br>
+                </p>
+            </div>
+            <div class="in">
+                <p>Q: A and B can do a piece of work in 45 days and 40 days respectively. They began to do the work
+                    together but A leaves after some days and then B completed the remaining work in 23 days. Then after
+                    how many days did A leave the work?</p>
+                <pre>
+    Time        Total Work    Efficiency
+A   45 days      360 units     8 units/day
+B   40 days                    9 units/day
+                </pre>
+                <p>
+                    In 23 days, B completed 23 * 9 = 207 units of work<br>
+                    That means 360 - 207 = 153 units of work they might have worked together<br>
+                    Combined efficiency of A and B = 17 units/day<br>
+                    So, A + B combined can complete 153 units of work in 153 / 17 = 9 days<br>
+                    Therefore, after 9 days, A left the work.
+                </p>
+            </div>
+            <div class="in">
+                <p>Q: A and B can do a piece of work in 30 days, while B and C can do the same work in 24 days and C and
+                    A in 20 days. They all work together for 10 days when B and C leave. How many days more will A take
+                    to finish the work?</p>
+                <pre>
+          Time     Total Work       Efficiency
+A + B    30 days                    4 units/day
+B + C    24 days    120 units       5 units/day
+C + A    20 days                    6 units/day
+</pre>
+                <p>
+                    Total sum of efficiencies:
+                    <br>2(A + B + C) = 15 units/day
+                    <br>A + B + C = 15/2 = 7.5 units/day
+                    <br><br>
+                    If they worked together for 10 days, they completed:
+                    <br>10 * 7.5 = 75 units of work together
+                    <br>The remaining work left = 120 - 75 = 45 units
+                    <br><br>
+                    Now we need to find the efficiency of A:
+                    <br>A + B + C efficiency = 7.5 units/day
+                    <br>B + C efficiency = 5 units/day
+                    <br>A + 5 = 7.5
+                    <br>A = 7.5 - 5
+                    <br>A = 2.5 units/day
+                    <br><br>
+                    So, 45 units of work would take:
+                    <br>45 / 2.5 = 18 days to complete
+                    <br>Hence, A will take 18 more days to finish the work.
+                </p>
+            </div>
+            <div class="in">
+                <p>Q: A can do a work in 16 days, B can do it in 36 days and C can do it in 48 days. A, B and C start
+                    working together. After working 4 days, A left. Then after 5 days, B also left. In how many days can
+                    C complete the remaining work?</p>
+                <pre>
+    Time     Total Work    Efficiency
+A   16 days               9 units/day
+B   36 days   144 units   4 units/day
+C   48 days               3 units/day
+</pre>
+                <p>
+                    A, B, and C's combined efficiency = 16 units/day
+                    <br>
+                    They all work together for 4 days, completing:
+                    <br>4 * 16 = 64 units of work
+                    <br>Remaining work left = 144 - 64 = 80 units
+                    <br><br>
+                    Now A left, which means B and C are working together.
+                    <br>B and C's combined efficiency = 7 units/day
+                    <br>They worked together for 5 days, completing:
+                    <br>5 * 7 = 35 units of work
+                    <br>Remaining work left = 80 - 35 = 45 units
+                    <br><br>
+                    Now, 45 units of work have to be completed by C alone.
+                    <br>C's efficiency = 3 units/day
+                    <br>It will take:
+                    <br>45 / 3 = 15 days for C to complete the remaining work.
+                </p>
+            </div>
+            <div class="in">
+                <p>Q: A, B, and C can do a work in 10 days, 12 days, and 15 days respectively. They start the work
+                    together, but A left after working 3 days and C left 4 days before completion of the work. In how
+                    much time was the whole work completed?</p>
+                <pre>
+      Time     Total Work  Efficiency    Work Done
+A   10 days     60 units   6 units/day   6 * 3 = 18 units (worked for 3 days)
+B   12 days     60 units   5 units/day   5 * x = 5x units (worked for all days)
+C   15 days     60 units   4 units/day   4 * (x - 4) = 4x - 16 units (left 4 days before completion)
+</pre>
+                <p>
+                    A worked for only 3 days, completing 18 units of work.
+                    <br>Assuming the total work took 'x' days:
+                    <br>B worked for all 'x' days, completing 5x units of work.
+                    <br>C worked for (x - 4) days, completing 4(x - 4) = 4x - 16 units of work.
+                    <br>Total work = 60 units.
+                    <br>
+                    Adding up the work done by A, B, and C:
+                    <br>18 + 5x + 4x - 16 = 60
+                    <br>2 + 9x = 60
+                    <br>9x = 58
+                    <br>x = 6(4/9)
+                    <br>
+                    Hence, the whole work was completed in 6(4/9) days.
+                </p>
+            </div>
+            <div class="in">
+                <p>Q: P takes 10 days to complete 40% of a task while Q takes 18 days to complete 75% of the same work.
+                    P and Q start a work together but P leaves the work after a few days, and Q continued to work alone
+                    for 3 days. If 63% of work has still left, how many days did P leave the work?</p>
+                <pre>
+P   10 days 
+    so in 10 days 40% = 2/5 of the work is done, which means
+    2 units of work in 10 days 
+    1 unit of work in 5 days, so 5 units of work in 25 days 
+Q   18 days 
+    so in 18 days 75% = 3/4 of the work is done, which means
+    3 units of work in 18 days 
+    1 unit of work in 6 days, so 4 units of work in 24 days 
+
+        Time        Total Work  Efficiency
+P     25 days          600         24    
+Q     24 days                      25    
+                </pre>
+                <p>
+                    63% of 600 = 378 <br>
+                    This means 600 - 378 = 222 units of work were done.
+
+                    <br>
+                    Q worked alone for 3 days = 25 * 3 = 75 units
+                    <br>Now, 222 - 75 = 147 units of work were done by both
+                    <br>147 / 49 (efficiencies of both) = 3
+                    <br>Hence, after 3 days, P left the work.
+                </p>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Alternate Days Working Concept and Problem</h2>
+            <div class="in">
+                <p>Q: A can complete a piece of work in 6 days and B in 7 days respectively. If they work for a day
+                    alternately, in how many days will the work be finished if A begins the work?</p>
+                <p>Concept:</p>
+                <ul>
+                    <li>If on the first day A is working, then on the next day B will work, and on the following day A
+                        will work. This will continue until the work is done.</li>
+                </ul>
+                <pre>
+    Time      T.W       Efficiency
+A  6 days   42 units  7 units/day
+B  7 days             6 units/day 
+
+day-1  day-2  day-3  day-4  day-5  day-6 ...
+  A      B      A      B      A      B ...
+  7      6      7      6      7      6
+   \    /        \    /        \    /
+     13            13            13
+In two consecutive days from the beginning, 13 units of work are done.
+            </pre>
+                <p>
+                    13 units -> 2 days <br>
+                    Total work = 42 units; we don't have to exceed it. <br>
+                    The multiple of 13 which is under 42 is 13 * 3 = 39. <br>
+                    39 units -> 6 days <br>
+                    But our work is not completed. <br>
+                    42 - 39 = 3 units of work are left. <br>
+                    An important point: This remaining work will be assigned to the person who started the work, in this
+                    case, A. <br>
+                    Shortcut: 6 whole days + remaining work / A's efficiency <br>
+                    = 6 (3/7) days <br>
+                    Now, how did this 3/7 come from? <br>
+                    A can do 7 units in one day. <br>
+                    So, for 1 unit, he will take 1/7 day. <br>
+                    Now, for 3 units, he will take 3 * 1/7 = 3/7 days. <br>
+                    So, the answer will be 6(3/7) days.
+                </p>
+            </div>
+            <div class="in">
+                <p>Q: A, B, and C do a work in 20 days, 25 days, and 30 days respectively. In how many days will the
+                    work be finished if they do it alternately, starting with A?</p>
+                <pre>
+    Time        T.W        Efficiency
+A  20 days   300 units     15 units/day
+B  25 days                 12 units/day 
+C  30 days                 10 units/day
+                </pre>
+                <p>
+                    In three consecutive days, the total work done = 15 + 12 + 10 = 37 units.
+                    <br>The largest multiple of 37 that is less than 300 is 296.
+                    <br>This means 296 units of work will be completed in 8 cycles of 3 days each, which is 8 * 3 = 24
+                    days in total.
+                    <br>Now, the remaining work = 300 - 296 = 4 units.
+                    <br>This remaining 4 units of work will be assigned to A.
+                    <br>A will take 4/15 = 4/15 day to complete it.
+                    <br>Hence, the work will be finished in 24 + 4/15 days.
+                </p>
+            </div>
+            <div class="in">
+                <p>Q: A, B, and C can do a piece of work in 11 days, 20 days, and 55 days respectively. If A works
+                    continuously and B and C work alternatively with A, in how many days will the total work be
+                    finished?</p>
+                <pre>
+    Time        T.W         Efficiency
+A  11 days   220 units      20 units/day
+B  20 days                  11 units/day 
+C  55 days                   4 units/day
+                </pre>
+                <p>
+                    As it is not mentioned which out of B and C starts first, we take the one given first, which is B.
+                </p>
+                <pre>
+day-1   day-2   day-3   day-4  ...
+ A+B     A+C     A+B     A+C   ...
+20+11    20+4   20+11    20+4   ...
+  31      24      31      24
+    \    /          \    /     
+      55              55
+In two consecutive days from the beginning, 55 units of work are done.
+                </pre>
+                <p>
+                    So in two consecutive days from the beginning, 55 units of work are done.
+                    <br>Now, to find the total time, we look for the largest multiple of 55 that is less than or equal
+                    to 220.
+                    <br>The largest multiple of 55 that is less than or equal to 220 is 220, which means 4 complete
+                    cycles of A+B and A+C.
+                    <br>Each cycle takes 2 days, so the total time taken is 2 * 4 = 8 days.
+                    <br>Hence, the work will be finished in 8 days.
+                </p>
+            </div>
+            <div class="in">
+                <p>Q: A can do a piece of work in 30 days, B can do it in 45 days, and C can do the same work in 60
+                    days. If on the first day A worked alone, on the second day A and B worked together, and on the
+                    third day A and C worked together, repeating this cycle, then in how many days can the total work be
+                    completed?</p>
+                <pre>
+    Time        T.W        Efficiency
+A  30 days   180 units      6 units/day
+B  45 days                  4 units/day 
+C  60 days                  3 units/day
+
+day-1  day-2  day-3  day-4  day-5  day-6
+  A     A+B    A+C     A     A+B    A+C 
+  6     10      9      6      10     9
+  \            /        \           /
+        25                    25
+                </pre>
+                <p>In one cycle of 3 days, 25 units of work are completed.<br>The largest multiple of 25 that is less
+                    than 180 is 175.<br>This means 25 units in 3 days will be completed 7 times in 21 days.<br>Now, the
+                    remaining work is 180 - 175 = 5 units, which will be done by A.<br>So, it will take 5/6 days for A
+                    to complete this remaining work.<br>Therefore, the total time to complete the work is 21 days + 5/6
+                    days, which is approximately 21(5/6) days.</p>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Efficiency Based Problems</h2>
+            <ul>
+                <li>Don't try to use the LCM approach here.</li>
+            </ul>
+            <div class="in">
+                <p>Q: If the working efficiency of A is 50% more than B. If B alone can do a piece of work in 36 days,
+                    in how many days can A alone finish the same work?</p>
+                <p>Method 1: Work and time ratio</p>
+                <p>
+                    We should know that Efficiency ∝ <math>
+                        <mfrac>
+                            <mn>1</mn>
+                            <mn>time</mn>
+                        </mfrac>
+                    </math> (since work is constant).<br>
+                    According to the question, if A's efficiency is 150 and B's efficiency is 100 (as A's efficiency is
+                    50% more than B), the ratio of their efficiencies will be 150:100.<br>
+                    Simplifying the ratio of efficiencies, we get 3:2.<br>
+                    Since efficiency is inversely proportional to time, the ratio of time taken will be the inverse of
+                    the efficiency ratio, which is 2:3.<br>
+                    If B takes 36 days to complete the work (3 units of time), then:<br>
+                    1 unit of time = 36 days / 3 = 12 days<br>
+                    So, 2 units of time = 2 * 12 days = 24 days<br>
+                    Therefore, A will take 24 days to complete the work.
+                </p>
+                <p>Method 2: Common Sense Approach</p>
+                <pre>
+       A       B
+E ->  150  :  100
+E ->   3   :   2
+                </pre>
+                <p>
+                    Now, B alone can complete the work in 36 days, and his efficiency is 2 units per day. So, in 36
+                    days, he will complete:<br>
+                    2 units/day * 36 days = 72 units of work (total work).<br>
+                    Since A's efficiency is 3 units per day, the total work (72 units) will be completed by A in:<br>
+                    72 units / 3 units/day = 24 days.<br>
+                    Therefore, A will take 24 days to complete the work.
+                </p>
+            </div>
+            <div class="in">
+                <p>Q: A is thrice as good as B in work. A is able to finish a work in 24 days less than B. In how many
+                    days will they finish the whole work together?</p>
+                <ul>
+                    <li>Note: Use the work and time ratio method when fixed days are not given, instead more than or
+                        less than days are given.</li>
+                </ul>
+                <pre>
+      A     B 
+E ->  3  :  1
+T ->  1  :  3
+                </pre>
+                <p>
+                    It's given that A works 24 days less, so the difference between A's work and B's work is 24
+                    days.<br>
+                    Now, according to the ratio of time, the difference between them is 2 units.<br>
+                    This means 2 units of time = 24 days.<br>
+                    So, 1 unit of time = 12 days.<br>
+                    Now, we calculate the total work = A's efficiency (3) * Time taken to complete the work (12 days) =
+                    36 units.<br>
+                    Combined efficiency = 4 units/day, so 36 / 4 = 9 days.<br>
+                    It will take 9 days to complete the work when they both work together.
+                </p>
+            </div>
+            <div class="in">
+                <p>Q: Sam and Ravi together can paint a house in 5 days. If Ravi is 20% less efficient than Sam and
+                    Saran who is 20% more efficient than Sam, then find the number of days taken by Ravi and Saran
+                    together to paint the house.</p>
+                <pre>
+      Ravi  Sam  Saran
+E ->   80   100   120
+E ->    4     5     6
+                </pre>
+                <p>
+                    Sam and Ravi together can work in 5 days.<br>
+                    So, the combined efficiency of Sam and Ravi = 9 units/day.<br>
+                    Total work = 9 * 5 = 45 units.<br>
+                    Now we have to find how many days Ravi and Saran together can finish the work.<br>
+                    Combined efficiency of Ravi and Saran = 10 units/day.<br>
+                    45 / 10 = 4.5 days.<br>
+                    So, it will take 4.5 days for Ravi and Saran to paint the house together.
+                </p>
+            </div>
+            <div class="in">
+                <p>Q: A and B can complete a work in 18 days. Whereas B and C together can complete the same work in 15
+                    days. If C is 50% more efficient than A, then find the time taken by A alone to complete the whole
+                    work?</p>
+                <pre>
+         Time     T Ratio   E
+A + B   18 days      6      5
+B + C   15 days      5      6
+
+  A  :  C
+  1  :  2
+                </pre>
+                <p>
+                    A + B = 5 units/day<br>
+                    B + C = 6 units/day<br>
+                    Subtraction gives us:<br>
+                    A - C = 1 unit<br>
+                    Now, the difference between A's efficiency and C's efficiency is 50%.<br>
+                    So, 50% = 1 unit<br>
+                    100% = 2 units<br>
+                    So, A's efficiency = 2 units and C's efficiency = 3 units.<br>
+                    Therefore, B's efficiency will be 2 + B = 5 units/day<br>
+                    B = 3 units/day<br>
+                    Now, total work = 18 * 5 = 90 units<br>
+                    90 / 2 = 45 days will be taken by A alone.
+                </p>
+            </div>
+            <div class="in">
+                <p>Q: The efficiency of A is 200% more than the efficiency of C and the efficiency of D is 25% less than
+                    the efficiency of C. If A and B together can complete the work in 14 days and C and D together can
+                    complete the work in 36 days, in how many days can B alone complete the work?</p>
+                <pre>
+          T        T Ratio    E  
+A + B    14 days      7      18  
+C + D    36 days      18      7
+
+  A   :   C   :   D
+ 300  :  100  :  75
+  12  :   4   :  3
+                </pre>
+                <p>
+                    A + B = 18 units/day<br>
+                    And we know A's efficiency = 12 units/day<br>
+                    12 + B = 18<br>
+                    B = 6 units/day<br>
+                    Now, total work = 18 * 14 = 252 units<br>
+                    B alone will do it in 252 / 6 = 42 days
+                </p>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>MAN-DAYS (MEN-WOMEN-BOYS) Problems</h2>
+            <div class="in">
+                <p>Q: 15 men working 8 hours/day make a dam in 10 days. In how many days will 12 men working 10
+                    hours/day make it?</p>
+
+                <p>
+                    Concept:
+                <ul>
+                    <li>Work = Man * Days * Time (hours)</li>
+                    <li>Now, how do we get this?</li>
+                    <li>Suppose 1 man in 1 hour works 1 unit/day of work.</li>
+                    <li>In 8 hours, he will work 8 units/day.</li>
+                    <li>Now, 15 men working 8 hours/day will do 15 * 8 units/day of work.</li>
+                    <li>If these 15 men work for 10 days, they will complete 15 * 8 * 10 units of work, which is the
+                        total
+                        work.</li>
+                    <li>So it becomes M1 * D1 * T1 = M2 * D2 * T2.</li>
+                    <li>Since they have to do the same work, we can compare and set them equal to each other.</li>
+                </ul>
+                </p>
+                <p>
+                    M1 * D1 * T1 = M2 * D2 * T2<br>
+                    15 * 10 * 8 = 12 * D2 * 10<br>
+                    15 * 80 = 12 * 10 * D2<br>
+                    1200 = 120 * D2<br>
+                    D2 = 10<br>
+                    So, it will take 10 days to complete the same work with 12 men working 10 hours a day.
+                </p>
+            </div>
+            <div class="in">
+                <p>Q: 24 laborers working 8 hours/day make a road in 15 days. 48 laborers working 6 hours/day in how
+                    many days will make the triple long road?</p>
+                <p>
+                    Concept:
+                    <br>3(M1 * D1 * H1) = M2 * D2 * H2
+                    <br>3(24 * 15 * 8) = 48 * D2 * 6
+                    <br>Calculate the total work:
+                    <br>3 * (24 * 15 * 8) = 3 * 2880 = 8640
+                    <br>Set up the equation:
+                    <br>8640 = 48 * D2 * 6
+                    <br>Solve for D2:
+                    <br>8640 = 288 * D2
+                    <br>D2 = 8640 / 288
+                    <br>D2 = 30
+                    <br>So, in 30 days, 48 laborers working 6 hours a day will finish the triple long road.
+                </p>
+            </div>
+            <div class="in">
+                <p>Q: 18 Women complete a work in 16 days, they started the work together & after x days, 6 women left
+                    the work. Remaining work is completed by 12 women in 12 days. Find the value of x.</p>
+            </div>
+            <div class="in">
+                <p>Q: A contractor contracted to finish a work in 62 days. He employed 32 men to work. But 1/3rd of the
+                    work was done in 30 days. How many additional men would be employed so that the remaining work is
+                    finished on time?</p>
+                <p>
+                    32 (men) * 30 (days) = 960 units of work done by them
+                    <br>Total work = 960 * 3 (since 1/3 of the work is 960 units)
+                    <br>Total work = 2880 units
+                    <br>Remaining work = 2880 - 960 = 1920 units
+                    <br>Remaining days = 62 - 30 = 32 days
+                    <br>We need to find the additional men required to finish the remaining work in the remaining days
+                    <br>(32 + x) * 32 (days) = 1920 units
+                    <br>(32 + x) = 1920 / 32
+                    <br>(32 + x) = 60
+                    <br>x = 60 - 32
+                    <br>x = 28
+                    <br>So, 28 additional men will be required to finish the remaining work on time.
+                </p>
+            </div>
+            <div class="in">
+                <p>Q: 1 Man or 2 Boys or 3 Girls can do a piece of work in 88 days. In how many days can 1 man, 1 boy,
+                    and 1 girl together do the same work?</p>
+                <p>We got to know that the efficiencies of 1 man = 2 boys = 3 girls.</p>
+                <pre>
+    M  :  B  : G  
+E -> ( 1/1 : 1/2 : 1/3 ) * 6
+        6  :  3  :  2
+</pre>
+                <p>
+                    The reciprocal becomes the ratio here.
+                    <br>To remove the denominator, we multiply the ratio by the LCM (6).
+                    <br>Total work = 6 (units/day) * 88 (days) = 528 units
+                    <br>Now, this work has to be done by 1 man, 1 boy, and 1 girl.
+                    <br>Combined efficiency of all = 6 (man) + 3 (boy) + 2 (girl) = 11 units/day
+                    <br>So, it will take (528 units) / (11 units/day) = 48 days.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="content-box">
+        <p>Reference</p>
+        <ul>
+            <li><a href="https://www.youtube.com/watch?v=NnHawIe7bXc" target="_blank">Video Lecture &neArr;</a></li>
+        </ul>
+    </div>
+    <script src="../../../../public/main.js"></script>
+</body>
+
+</html>

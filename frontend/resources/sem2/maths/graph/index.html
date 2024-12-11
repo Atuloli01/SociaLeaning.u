@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Graph theory</title>
+    <link rel="stylesheet" href="../../../../public/style.css">
+    <link rel="icon" href="../../../../public/logo/favicon_io/favicon.ico">
+</head>
+
+<body class="bg-c">
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">back</a>
+        <a href="#t14" class="link">Konigsberg bridge problem</a>
+        <a href="#t1" class="link">Graph definition</a>
+        <a href="#t2" class="link">Finite and Infinite graph</a>
+        <a href="#t3" class="link">Adjacent node (vertices)</a>
+        <a href="#t4" class="link">Isolated nodes</a>
+        <a href="#t5" class="link">Incident</a>
+        <a href="#t6" class="link">Simple graph</a>
+        <a href="#t7" class="link">Loop</a>
+        <a href="#t8" class="link">Parallel edges</a>
+        <a href="#t9" class="link">Multigraph</a>
+        <a href="#t10" class="link">Pseudo graph</a>
+        <a href="#t11" class="link">Directed and Undirected graph</a>
+        <a href="#t12" class="link">Degree of vertex</a>
+        <a href="#t13" class="link">In degree and out degree</a>
+        <div class="botbut">
+            <a href="../graph2/index.html" class="link">Next Topic &rarr;</a>
+            <a href="../boolean/index.html" class="link">&larr; Previous Topic</a>
+        </div>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Graph theory</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Graph theory</h1>
+        <div id="t14" class="wh">
+            <h2>Konigsberg Seven Bridge Problem:</h2>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=zA_ructyvIc&pp=ygUbYnJpZGdlIHByb2JsZW0gZ3JhcGggdGhlb3J5"
+                        target="_blank" class="ba">Video lecture &neArr;</a></li>
+                <li>Graph theory was originated by this problem.</li>
+                <li>Konigsberg was a city in Russia, and this problem happen in Pregel river.</li>
+                <li>The problem involves determining whether it is possible to walk through the city, crossing each of
+                    the seven bridges exactly once and returning to the starting point.</li>
+            </ul>
+            <img src="../../images/bridge.svg" alt="" class="wb">
+            <ul>
+                <li>If we start from any regional part, & we have to cover one bridge only once so that every bridge
+                    should be crossed as well as all regional part should also be covered.</li>
+                <li>Euler was the mathematician that worked on it.</li>
+            </ul>
+            <img src="../../images/bridge2.svg" alt="" class="wb">
+            <ul>
+                <li>If every region will have even number of bridges then only bridges can be crossed once.
+                </li>
+                <li>Degree of a vertex = number of edges connected to a vertex.</li>
+                <li>deg (1) = 3, deg (2) = 3, deg (3) = 5, deg (4) = 3</li>
+                <li>As every vertex have odd degree that's why we can't cross all bridges at once.</li>
+                <li>Main conclusion: In order to return to the starting vertex after visiting every vertex, it is
+                    necessary for every vertex to have an even degree.
+                    <br> Therefore, it is not feasible to traverse each bridge exactly once while covering all bridges
+                    and regions.
+                </li>
+            </ul>
+        </div>
+        <div id="t1" class="wh">
+            <h2>Graph</h2>
+            <ul>
+                <li>A graph G = (V, E) consists of two sets:
+                    <ol>
+                        <li>A non-empty set V = {v1, v2, v3, ...} whose elements are called vertices, nodes or points of
+                            G.</li>
+                        <li>A set E = {e1, e2, e3, ...} whose elements are called edges of G such that each edge e
+                            &isin; E associated with ordered or unordered pair of elements of V.</li>
+                    </ol>
+                </li>
+            </ul>
+            <img src="../../images/graph1.svg" alt="" class="wb">
+        </div>
+        <div id="t2" class="wh">
+            <h2>Finite graph and Infinite graph</h2>
+            <ul>
+                <li>A graph G(V, E) is said to be finite if it has a finite number of vertices and finite number of
+                    edges, otherwise it is a infinite graph.</li>
+                <li>If <b>G</b> is finite, |V(G)| denotes the number of vertices in G and is called the order of G.</li>
+                <li>If <b>G</b> is finite, |E(G)| denotes the number of edges in G and is called the size of G.</li>
+            </ul>
+            <img src="../../images/graph2.svg" alt="" class="wb">
+        </div>
+        <div id="t3" class="wh">
+            <h2>Adjacent node (vertices)</h2>
+            <ul>
+                <li>Two vertices are said to be adjacent if they are connected by an edge in a graph.</li>
+                <li>Or any pair of nodes that is connected by an edge in a graph is called adjacent nodes.</li>
+            </ul>
+        </div>
+        <div id="t4" class="wh">
+            <h2>Isolated nodes</h2>
+            <ul>
+                <li>In a graph a node that is not adjacent to another node is called an isolated node.</li>
+            </ul>
+        </div>
+        <div id="t5" class="wh">
+            <h2>Incident</h2>
+            <ul>
+                <li>Let G(V, E) be a graph and edge e<sub>k</sub> &isin; E which joins the vertices v<sub>i</sub> and
+                    v<sub>j</sub>, then the edge e<sub>k</sub> is said to be incident to the vertices v<sub>i</sub> and
+                    v<sub>j</sub></li>
+            </ul>
+        </div>
+        <div id="t6" class="wh">
+            <h2>Simple graph</h2>
+            <ul>
+                <li>A graph which has neither loops nor multiple edges is called a simple graph.</li>
+                <li>Or a simple graph is one for which there is no more then one edge between a pair of vertices.</li>
+            </ul>
+            <img src="../../images/graph3.svg" alt="" class="wb">
+        </div>
+        <div id="t7" class="wh">
+            <h2>Loop</h2>
+            <ul>
+                <li>A loop is the edge in a graph which join a vertx to itself (whose end points are same).</li>
+            </ul>
+        </div>
+        <div id="t8" class="wh">
+            <h2>Parallel edges</h2>
+            <ul>
+                <li>Two vertices may be connected with more than one edge, such edges are called parallel edges.</li>
+            </ul>
+        </div>
+        <div id="t9" class="wh">
+            <h2>Multigraph</h2>
+            <ul>
+                <li>Any graph which contains some parallel edges is called a multigraph.</li>
+            </ul>
+        </div>
+        <div id="t10" class="wh">
+            <h2>Pseudo graph</h2>
+            <ul>
+                <li>A graph in which loops and multiple edges are allowed is called a pseudo graph.</li>
+            </ul>
+        </div>
+        <div id="t11" class="wh">
+            <h2>Directed graph and Undirected graph</h2>
+            <ul>
+                <li>A directed graph (or digraph) G consists of a set V of vertices and a set E of edges such that e
+                    &isin; E is associated with an ordered pair of vertices.</li>
+            </ul>
+            <h2>Undirected graph</h2>
+            <ul>
+                <li>An undirected graph G consists of set V of vertices and a set E of edges such that each edge e
+                    &isin; E is associated with an unordered pair of vertices.</li>
+            </ul>
+            <img src="../../images/graph4.svg" alt="" class="wb">
+        </div>
+        <div id="t12" class="wh">
+            <h2>Degree of vertex</h2>
+            <ul>
+                <li>The degree of a vertex of an undirected graph is the number of edges incident with it, except that a
+                    loop at a vertex contributes twice to the degree of that vertex.</li>
+                <li>The degree of the vertex 'v' in a graph G is denoted by deg<sub>G</sub>(v).</li>
+            </ul>
+            <img src="../../images/graph5.svg" alt="" class="wb">
+        </div>
+        <div id="t13" class="wh">
+            <h2>In degree and out degree</h2>
+            <ul>
+                <li>In a directed graph G, the out degree of a vertex 'v', denoted by outdeg<sub>G</sub>(v) is the
+                    number of edges beginning at 'v'. </li>
+                <li>The in-degree of 'v', denoted by indeg<sub>G</sub>(v) is the
+                    number of edges ending at v.</li>
+                </li>
+                <li>The sum of the in degree and out degree of a vertex is called the total degree of the vertex.</li>
+            </ul>
+            <img src="../../images/graph6.svg" alt="" class="wb">
+        </div>
+        <div class="wh">
+            <h2>Types of graph</h2>
+            <div class="in">
+                <h3>Null Graph</h3>
+                <ul>
+                    <li>A graph which contains only isolated vertices is called a null graph.</li>
+                    <li>The set of edges in a null graph is empty.</li>
+                    <li>Null graph on 'n' vertices denoted by N<sub>n</sub>.</li>
+                </ul>
+                <img src="../../images/nullg.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>Connected graph</h3>
+                <ul>
+                    <li>If there exist at least one path between any two vertices of a graph G(V, E), then it is called
+                        a connected graph.</li>
+                    <li>If graph is not connect then it is called a disconnected graph.</li>
+                </ul>
+                <img src="../../images/connectedg.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>Complete graph</h3>
+                <ul>
+                    <li>A graph G(V, E) is said to be complete graph if every vertex in G is connected to all other
+                        vertices of G.</li>
+                    <li>A complete graph is usually denoted by K<sub>n</sub>.</li>
+                </ul>
+                <img src="../../images/completeg.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>Regular graph</h3>
+                <ul>
+                    <li>A graph in which all vertices are of equal degree is called a regular graph.</li>
+                    <li>If the degree of each vertex is 'r' then the graph is called a regular graph of degree 'r'.</li>
+                </ul>
+                <img src="../../images/regularg.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>Cycle graph</h3>
+                <ul>
+                    <li>A connected graph whose edges form a cycle of length 'n' is called a cycle graph of order n.
+                    </li>
+                    <li>Cycle graphs of length 'n' is denoted by C<sub>n</sub>.</li>
+                    <li>For a cycle graph n >= 3;</li>
+                </ul>
+                <img src="../../images/cycleg.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>Wheel graph</h3>
+                <ul>
+                    <li>The wheel graph is denoted by W<sub>n</sub> (n > 3) is obtained from C<sub>n</sub> by adding a
+                        vertex 'v' inside C<sub>n</sub> and connecting it to every vertex in C<sub>n</sub>.</li>
+                </ul>
+                <img src="../../images/wheelg.svg" alt="" class="wb">
+                <p>W<sub>n</sub> is a regular graph for n = 3. It has n + 1 vertices & 2n edges.</p>
+            </div>
+            <div class="in">
+                <h3>Path graph</h3>
+                <ul>
+                    <li>If we remove an edge from a C<sub>n</sub> graph then such graph is called a path graph of order
+                        'n'. It is denoted by P<sub>n</sub>.</li>
+                </ul>
+                <img src="../../images/pathg.svg" alt="" class="wb">
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Adjacency Matrix</h2>
+            <div class="in">
+                <h3>Representation of undirected graph using adjacency matrix</h3>
+                <img class="wb" src="../../images/graph7.svg" alt="">
+                <ul>
+                    <li>Since adjacency matrix representation is based on ordering of vertices in a graph, therefore,
+                        for a graph with n vertices, we may construct as many as n! different adjacency matrices.</li>
+                </ul>
+                <p>Some important result about the adjacency matrix</p>
+                <ol type="i">
+                    <li>The adjacency matrix A is symmetric i.e., a<sub>ij</sub> = a<sub>ji</sub> &forall; i & j.</li>
+                    <li>The number of non-zero elements in the matric is equal to the sum of degree of all vertices of
+                        the graph.</li>
+                    <li>The adjacency matrix has n<sup>2</sup> elements.</li>
+                    <li>The entries along the principal diagonal of A are all 0's if and only if the graph has no self
+                        loops.</li>
+                </ol>
+            </div>
+            <div class="in">
+                <h3>Adjacency matrix (for a directed graph)</h3>
+                <img src="../../images/graph8.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <p>Use adjacency matrix to represent the graph.</p>
+                <img src="../../images/graph9.svg" alt="" class="wb">
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Incidence Matrix</h2>
+            <div class="in">
+                <h3>Representation of undirected graph</h3>
+                <img src="../../images/graph10.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>Representation of directed graph</h3>
+                <img src="../../images/graph11.svg" alt="" class="wb">
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Spanning subgrap</h2>
+            <ul>
+                <li>Let G = (V, E) be a graphh and H = (V', E') be a subgraph of G. Subgraph 'H' of G is called a
+                    spanning subgraph of G if and only if V(H) = V(G).
+                    <br>i.e. H contains all the vertices of G.
+                </li>
+            </ul>
+        </div>
+        <div class="wh">
+            <h2>Isomorphic Graphs</h2>
+            <ul>
+                <li>Two graphs G1 = (V1, E1) and G2 = (V2, E2) are said to be isomorphic if there exist a function f: V1
+                    &rarr; V2 such that
+                    <ol type="i">
+                        <li>f is one-one onto or bijective</li>
+                        <li>{a, b} is an edge in E1, iff {f(a), f(b)} is an edge in E2 for any two elements a, b &isin;
+                            V1.</li>
+                    </ol>
+                </li>
+            </ul>
+            <img src="../../images/graph12.svg" alt="" class="wb">
+        </div>
+        <div class="wh">
+            <h2>Bi-partite graph</h2>
+            <ul>
+                <li>A graph G(V, E) is called Bi-partite if its vertex set V(G) can be partitioned into two non-empty
+                    disjoint subsets v1(G) and v2(G) in a such a way that each edge e &isin; E(G) has its one end point
+                    in v1(G) and other end point in v2(G), the partition V = v1 &Union; v2 called bi-partition of G.
+                </li>
+            </ul>
+            <img src="../../images/bipartite.svg" alt="" class="wb">
+        </div>
+        <div class="wh">
+            <h2>Handshaking theorem</h2>
+            <ul>
+                <li>The sum of the degrees of all vertices of a graph G is twice the number of edges in G.
+                    <br><img class="wb" src="../../images/graph13.svg" alt="">
+                </li>
+            </ul>
+            <p>Proof &rarr; Consider a graph G(V, E) with m edges and n vertices i.e.,
+                <br>V = {v1, v2, v3, ..., vn}
+                <br>E = {e1, e2, e3, ..., em}
+                <br>Since degree of vertex is defined as the number of edge connected with it. And every edge is
+                connected with exactly two vertices so each edge is counted twice at each of its end. This implies that
+                the sum of the degrees of all vertices in G is twice the number of edges in G.
+                <br><img src="../../images/graph14.svg" alt="" class="wb">
+            </p>
+            <div class="in">
+                <h3>Theorem &rarr; The number of vertices of odd degree in a graph G is always even.</h3>
+                <img src="../../images/graph15.svg" alt="" class="wb">
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Sub graphs </h2>
+            <ul>
+                <li>Consider a graph G = (V, E). A graph g = (v, e) is said to be a subgraph of G if e &subset; E & v
+                    &subset; V (e is a subset of E and v is a subset of V) such that edges in 'e' are incident only with
+                    the vertices in V.</li>
+            </ul>
+            <img src="../../images/graph16.svg" alt="" class="wb">
+            <p>Note &darr;</p>
+            <ol type="1">
+                <li>A graph G is a subgraph of itself. A null graph is also a subgraph of G.</li>
+                <li>A subgraph of a subgraph of G is a subgraph of G.</li>
+                <li>A single vertex in a graph G is a subgraph of G.</li>
+            </ol>
+            <div class="in">
+                <p><b>Q-</b> Find the different subgraphs of this graph.</p>
+                <img src="../../images/graph17.svg" alt="" class="wb">
+                <br>
+                <img src="../../images/graph18.svg" alt="" class="wb">
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Operations of graphs</h2>
+            <div class="in">
+                <h3>Union of graphs</h3>
+                <ul>
+                    <li>Let G1(V, E) and G2(V, E) are two graphs then their union will be a graph such that <br>V(G1
+                        &Union; G2) = V(G1) &Union; V(G2)
+                        <br>E(G1 &Union; G2) = E(G1) &Union; E(G2)
+                    </li>
+                </ul>
+                <img src="../../images/graph19.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>Intersection of graph</h3>
+                <ul>
+                    <li>Let G1(V, E) & G2(V, E) are two graphs with at least one vertex in common then their
+                        intersection will be a graph such that <br>V(G1 &Intersection; G2) = V(G1) &Intersection; V(G2)
+                        <br>E(G1 &Intersection; G2) = E(G1) &Intersection; E(G2)
+                    </li>
+                </ul>
+                <img src="../../images/graph20.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>Sum of two graphs</h3>
+                <ul>
+                    <li>Let G1(V,E) & G2(V, E) are two graphs such that V(G1) &Intersection; V(G2) = &varnothing;
+                        <br>then the sum G1 + G2 is defined as the graph whose vertex set is V(G1) + V(G2) and the edge
+                        set is consisting those edges, which are in G1 and in G2 and the edges obtained, by joining each
+                        vertex of G1 to each vertex G2.
+                    </li>
+                </ul>
+                <img src="../../images/graph21.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>Ring sum of graphs</h3>
+                <ul>
+                    <li>Let G1(V, E) and G2(V, E) be two graphs then the ring sum of G1 and G2 denoted by G1 &xoplus;
+                        G2, is defined as the graph G such that <br>(i) V(G) = V(G1) &Intersection; V(G2)
+                        <br>(ii) E(G) = E(G1) U E(G2) - E(G1) &Intersection; E(G2)
+                    </li>
+                </ul>
+                <img src="../../images/graph22.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>Complement of a graph</h3>
+                <ul>
+                    <li>The complement G' of simple graph G(V, E) is the simple graph with vertex set V(G) such that
+                        edge vi vj &isin; E(G) iff vi vj &notin; E(G')</li>
+                </ul>
+                <img src="../../images/graph23.svg" alt="" class="wb">
+            </div>
+        </div>
+    </div>
+    <div class="content-box">
+        <p>Lectures &darr;</p>
+        <ul>
+            <li><a href="https://www.youtube.com/watch?v=gFrh7V3Y6eI">Subgraph of graph &neArr;</a></li>
+            <li><a href="https://www.youtube.com/watch?v=F9TJ0GdTr2k" target="_blank">Ring sum &neArr;</a></li>
+            <li><a href="https://www.youtube.com/watch?v=zA_ructyvIc" target="_blank">Konisberg seven bridge problem
+                    &neArr;</a></li>
+        </ul>
+    </div>
+    <script src="../../../../public/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C Programming basics</title>
+    <link rel="stylesheet" href="../../../../public/style.css">
+    <link rel="icon" href="../../../../public/logo/favicon_io/favicon.ico">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <style>
+        .part2Half>div {
+            grid-template-columns: 1fr 1fr;
+        }
+    </style>
+</head>
+
+<body class="bg-c">
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../../programming concepts using C language/index.html" class="home">Back</a>
+        <a href="#t1" class="link">Design Methods</a>
+        <a href="#t2" class="link">What is programming language?</a>
+        <a href="#t3" class="link">Procedural and OOP</a>
+        <a href="#t4" class="link">Introduction to C language</a>
+        <a href="#t5" class="link">Elements of C</a>
+        <a href="#t6" class="link">Structure of C programs</a>
+        <a href="#t7" class="link">C programs</a>
+        <div class="botbut">
+            <a href="../operators&expressions/index.html" class="link">Next Topic &rarr;</a>
+            <a href="../problem_solving/index.html" class="link">&larr; Previous Topic</a>
+        </div>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>C Programming basics</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>C Programming basics</h1>
+        <div class="wh" id="t1">
+            <h2>Design Methods</h2>
+            <ul>
+                <li>Designing is the first step for obtaining solution of a given problem.</li>
+                <li>The purpose of designing is to represent solution for a system.</li>
+                <li>It is difficult to design a large system because the complexity of system cannot be represented
+                    easily.
+                <li>Thus various methods have been evolved for designing.</li>
+                </li>
+            </ul>
+            <div class="in">
+                <h3>Top-Down Design</h3>
+                <ul>
+                    <li>Top-Down design method starts from top-level component to lowest level (bottom) component.</li>
+                    <li>In this design method, the system is divided into some major components.</li>
+                    <li>Then each major component is divided into lower level components.</li>
+                    <li>Similarly other components are divided till the lowest level component.</li>
+                    <li>'C' uses top-down approach</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Bottom-Up Design</h3>
+                <ul>
+                    <li>Bottom-Up design method is the reverse of Top-Down approach. It starts from the lowest level
+                        component to the highest-level component.</li>
+                    <li>It first designs the basic components and from these basic components the higher level component
+                        is designed.</li>
+                    <li>Object-oriented language such as C++ or java uses a bottom-up approach where each object is
+                        identified first.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Modular Approach</h3>
+                <!-- taken from C in Depth book  -->
+                <ul>
+                    <li>It is better to divide a large system into modules.</li>
+                    <li>In terms of programming, module is logically a well-defined part of program.</li>
+                    <li>Each module is a separate part of the program.</li>
+                    <li>It is easy to modify a program written with modular approach because changes in one module don't
+                        affect other modules of program.</li>
+                    <li>It is also easy to check bugs in the program in module level programming.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="wh" id="t2">
+            <h2>What is programming language?</h2>
+            <ul>
+                <li>Programming languages are the tools we use to write instructions for computers to follow.</li>
+                <li>Programming languages allow us to translate the 1s and 0s into something that humans can understand
+                    and write.</li>
+                <li>Programming language is made up of series of symbols that serves as a bridge that allow humans to
+                    translate our thoughts into instructions computers can understand.</li>
+            </ul>
+            <div class="in">
+                <h3>The programming languages can be classified into two types -
+                    <br>1. Low level languages
+                    <br>2. High level languages
+                </h3>
+                <img src="../../images/programmingTypes.svg" alt="" class="wb">
+                <div class="wh">
+                    <p><b>Low level languages</b></p>
+                    <p>The languages in this category are the Machine level language and Assembly language.</p>
+                    <div class="in">
+                        <p>Machine Level Language</p>
+                        <ul>
+                            <li>Computers can understand only digits signals, which are in binary digits i.e. 0 and 1.
+                            </li>
+                            <li>So the instructions given to the computer can be only in binary codes.</li>
+                            <li>The machine language consists of instructions that are in binary 0 or 1.</li>
+                            <li>Computers can understand only machine level language.</li>
+                            <li>Writing a program in machine level language is a difficult task because it is not easy
+                                for
+                                programmers to write instructions in binary code.</li>
+                            <li>A machine level language program is error-prone and its maintenance is very difficult.
+                            </li>
+                            <li>Furthermore machine language programs are not portable.</li>
+                            <li>Every computer has its own machine instructions, so the programs written for one
+                                computer
+                                are not valid for other computers.</li>
+                        </ul>
+                    </div>
+                    <div class="in">
+                        <p>Assembly Language</p>
+                        <ul>
+                            <li>The difficulties faced in machine level language were reduced to some extent by using a
+                                modified form of machine level language called assembly language.</li>
+                            <li>In assembly language instructions are given in English like words, such as MOV, ADD, SUB
+                                etc. So it is easier-to write and understand assembly programs.
+                            </li>
+                            <li>Since a computer can
+                                understand
+                                only machine level language, assembly language program must be translated into machine
+                                language.</li>
+                            <li>The translator that is used for translating is called 'assembler'.</li>
+                            <li>Although writing programs in assembly language is a bit easier, the programmer has to
+                                know
+                                all the lower level details related with the hardware of a computer.</li>
+                            <li>In assembly language, data is stored in computer registers and each computer has
+                                diiferent
+                                set of registers. Thus the assembly language program is also not portable.</li>
+                            <li>Since the low level languages are related with the hardware, the execution of a
+                                low-level
+                                program is faster.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="wh">
+                    <p><b>High level language</b></p>
+                    <ul>
+                        <li>High level languages are designed keeping in mind the features of portability i.e. these
+                            languages are machine independent.</li>
+                        <li>These are English like languages, so it is easy to write and understand the programs of
+                            high-level language.</li>
+                        <li>While programming in a high level language, the programmer is not concerned with the low
+                            level details, and so the whole attention can be paid to the logic of the problem being
+                            solved.</li>
+                        <li>For translating a high-level language program into machine language, compiler or interpreter
+                            is used.</li>
+                        <li>Every language has its own compiler or interpreter.</li>
+                        <li>Some languages in this category are- C, FORTAN, COBOL, BASIC, Pascal etc.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Translators</h3>
+                <ul>
+                    <li>Translators are just computer programs, which accept a program written in high level or
+                        low-level language and produce an equivalent machine language program as output.</li>
+                    <li>The three types of translators used are-
+                        <br>-Assembler
+                        <br>-Compiler
+                        <br>-Interpreter
+                    </li>
+                </ul>
+                <div class="wh">
+                    <p><b>Assembler</b></p>
+                    <ul>
+                        <li>It is used for converting the code of low-level language (assembly language) into machine
+                            level language.</li>
+                    </ul>
+                </div>
+                <div class="wh">
+                    <p><b>Compiler and interpreters</b></p>
+                    <ul>
+                        <li>Both are used to convert the code of high-level language into machine language.</li>
+                        <li>The high level language is known as source program and the corresponding machine language
+                            program is known as object program.
+                        <li>Although both compilers and interpreters perform the same task, there is a difference in
+                            their working.</li>
+                        </li>
+                    </ul>
+                </div>
+                <div class="wh">
+                    <p><strong>Difference between compiler and interpreter</strong></p>
+                    <ul>
+                        <li>
+                            A <b>compiler</b> searches all the errors of a program and lists them, while an
+                            <b>interpreter</b> checks the errors of a program statement by statement.
+                        </li>
+                        <li>
+                            If the program is error-free, the <b>compiler</b> converts the entire code into machine
+                            code, which can then be executed by separate commands. In contrast, after checking one
+                            statement, the <b>interpreter</b> converts that statement into machine code and then
+                            executes it.
+                        </li>
+                        <li>
+                            This process continues for the <b>interpreter</b> until the last statement of the program or
+                            an erroneous statement occurs.
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+        <div class="wh" id="t3">
+            <h2>What is procedural and object oriented programming?</h2>
+            <ul>
+                <li>
+                    <b>Procedural Programming</b> deals with algorithms and divides programs into functions, while
+                    <b>Object-Oriented Programming (OOP)</b> deals with data and divides programs into objects.
+                </li>
+                <li>
+                    Procedural programming needs less memory and follows a top-down approach. In contrast, OOP requires
+                    more memory and follows a bottom-up approach.
+                </li>
+                <li>
+                    In procedural programming, overloading is not possible, making it less secure, and data hiding is
+                    not possible. On the other hand, OOP allows function and operator overloading, is highly secure, and
+                    enables data hiding.
+                </li>
+                <li>
+                    Procedural programming is derived from structured programming, based on the concept of calling
+                    procedures, which consist of a series of computational steps to be carried out. Any given procedure
+                    might be called at any point during a program's execution, including by other procedures or itself.
+                    Common languages used in procedural programming include FORTRAN, ALGOL, COBOL, BASIC, PASCAL, and C.
+                </li>
+                <li>
+                    OOP is based on the concept of objects, which contain data in the form of attributes and code in the
+                    form of methods. Programs are designed using objects that interact with the real world. Most popular
+                    OOP languages are class-based, meaning that objects are instances of classes, determining their
+                    types. Common OOP languages include Java, C++, C#, Python, PHP, JavaScript, Ruby, Perl, Objective-C,
+                    Dart, Swift, and Scala.
+                </li>
+            </ul>
+        </div>
+        <div class="wh" id="t4">
+            <h2>Introduction to C Language</h2>
+            <ul>
+                <li>C is a general-purpose high level language that was originally developed by Dennis Ritchie for the
+                    Unix operating system.</li>
+                <li>The Unix operating system and virtually all Unix appications are written in the C language.</li>
+                <li>C has now become a widely used professional language for various reasons
+                    <ul>
+                        <li>Easy to learn</li>
+                        <li>Structured language</li>
+                        <li>It produces efficient programs</li>
+                        <li>It can handle low-level activities.</li>
+                        <li>It can be complied on a variety of computer.</li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="in">
+                <p><b>Facts about C</b></p>
+                <ul>
+                    <li>C was invented to write an operating system called UNIX.</li>
+                    <li>C is a successor of B languange which was introducted around 1970.</li>
+                    <li>The language was formalized in 1988 by the American National Standard Institute (ANSI).</li>
+                    <li>By 1973 UNIX OS almost totally written in C.</li>
+                    <li>Today C is the most widely used System Programming Language.</li>
+                    <li>Most of the state of the art software have been implemented using C</li>
+                </ul>
+            </div>
+            <div class="in">
+                <p><b>Why to use C?</b></p>
+                <ul>
+                    <li>C was initially used for system development work, in particular the programs that make-up the
+                        operating system.</li>
+                    <li>C was adopted as a system development language because it produces code that runs nearly as fast
+                        as code written in assembly language.</li>
+                    <li>Some example of the use of C might be :
+                        <ul>
+                            <li>Operating System</li>
+                            <li>Language Compilers</li>
+                            <li>Assemblers</li>
+                            <li>Text Editors</li>
+                            <li>Network Drivers</li>
+                            <li>Modern Programs</li>
+                            <li>Data Bases</li>
+                            <li>Language Interpreters</li>
+                            <li>Utilities</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <p><b>Characteristics of 'C'</b></p>
+                <ul>
+                    <li>It has a very small size.</li>
+                    <li>The major use of function calls in it.</li>
+                    <li>It is a structured language.</li>
+                    <li>It has the ability to read low level (Bitwise) programming.</li>
+                    <li>The large use of pointers for memory, array, structures and functions.</li>
+                    <li>High-level constructs.</li>
+                    <li>The program written in C is efficient.</li>
+                    <li>C can be compiled on a variety of computers.</li>
+                    <li>The C programming language is used to write a variety of applications so that we can say that it
+                        is a general-purpose programming language. It is a "System programming language".</li>
+                    <li>C supports modular programming means a big program can divide into different modules or
+                        functions.</li>
+                    <li>It is also a standalone programming language. Due to these characteristics of C it is most
+                        popular.</li>
+                    <li>C has very fast compilation and execution in comparision to other programming languages.</li>
+                    <li>C is easy and free available, You just have to download its software, intall it on your system,
+                        and start coding.</li>
+                    <li>It has many in-built memory management functions malloc(), calloc(), and alloc() to utilize the
+                        memory efficiently.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <p><b>Properties of C language</b></p>
+                <ul>
+                    <li>Simple & efficient : The basic syntax style of implementing C language is very simple and easy
+                        to learn.
+                    </li>
+                    <li>Fast :
+                        statically typed programming language are faster than dynamic ones.
+                    </li>
+                    <li>Dynamic Memory Management :
+                        One of the most significant features of C language is its support for dynamic memory
+                        management (DMA).
+                    </li>
+                    <li>Function rich libraries :
+                        C comes with an extensive set of libraries with several builtin functions that make the life
+                        of a programmer easy.
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="content-box" id="t5">
+        <h2>Elements of C</h2>
+        <p>Every language has some basic elements and grammatical rules. Before programming in C, it is must to know the
+            basic elements of the language. These basic elements are character set, variables, datatypes, constants,
+            keywords, variable declaration, expressions, statements etc. All of these are used to construct a C program.
+        </p>
+        <div class="wh">
+            <h3>C Character Set</h3>
+            <ul>
+                <li>
+                    <b>Upper can Lowercase Letters</b>
+                    <br>A, B, C .......... Z
+                    <br>a, b, c .......... z
+                    <br><b>Digits</b>
+                    <br>0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+                    <br><b>Graphic Characters</b>
+                    <br>+, *, /, &lt;, >, (, {, [.......
+                </li>
+            </ul>
+        </div>
+        <div class="wh">
+            <h3>Escape Sequences/Execution Characters</h3>
+            <p>Characters like <b>newline, tab, backspace</b> can't be displayed like normal characters. To display them
+                we use '\'(backslash) and some character from the C character set.
+                <br><b>Some escape sequences &darr;</b>
+            </p>
+            <ul>
+                <li><b>\b</b> &rarr; backspace &rArr; Moves the cursor to the previous position of the current line</li>
+                <li><b>\a</b> &rarr; alert &rArr; Produces an audible or visible alert</li>
+                <li><b>\r</b> &rarr; carriage return &rArr; Moves the cursor to the beginning of the current line</li>
+                <li><b>\n</b> &rarr; newline &rArr; Moves the cursor to the beginning of the next line</li>
+                <li><b>\0</b> &rarr; null character &rArr; Used for termination of character string</li>
+                <li><b>\\</b> &rarr; backslash &rArr; Presents a character with backslash(\)</li>
+            </ul>
+        </div>
+        <div class="wh">
+            <h3>Reserved Words / Keywords</h3>
+            <ul>
+                <li>These are the words that are reserved for some specific tasks.</li>
+                <li>These are predefined and can't be changed by the user.</li>
+                <li>These words are known as keywords with standard and predefined meaning in C.</li>
+                <li>These are always written in lowercase and they are 32 available in C</li>
+                <li><b>auto, break, case, char, const, continue, default, do, double, else, enum, extern, float, form,
+                        goto, if, int,
+                        long, register, return, short, signed, sizeof, static, structure, switch, typedef, union,
+                        unsigned, void,
+                        volatile, while</b></li>
+            </ul>
+        </div>
+        <div class="wh">
+            <h3>Identifiers</h3>
+            <ul>
+                <li>All words used in our C programs will be either keywords or identifiers.</li>
+                <li>Identifiers are user defined words and are used to give names to entities like variables, arrays,
+                    functions, structures etc.</li>
+                <li>Rules for naming identifiers &darr;
+                    <ol>
+                        <li>It should consist &rarr; uppercase/lowercase letter, digits and underscore sign(_).</li>
+                        <li>First character should be an alphabet or underscore.</li>
+                        <li>The name should not be a keyword.</li>
+                        <li>As C is case sensitive so the uppercase and lowercase letters are considered different. For
+                            example num, NUM, and Num are three different identifiers.</li>
+                        <li>Should not have more than 31 characters.</li>
+                        <li>Examples &rarr; Value, a, num, rec1, _num, MARKS</li>
+                    </ol>
+                </li>
+            </ul>
+        </div>
+        <div class="wh">
+            <h3>Data Types</h3>
+            <ul>
+                <li>Data types represents which type of data we can store inside a variable.</li>
+                <li>There are 4 fundamental datatypes in C which are int, char, float and double.</li>
+                <li><i>char</i> stores single character.</li>
+                <li><i>int</i> stores integer values.</li>
+                <li><i>float</i> stores floating point number.</li>
+                <li><i>double</i> stores double precision floating point number.</li>
+            </ul>
+        </div>
+        <div class="wh">
+            <h3>Constants</h3>
+            <p>Constant is a value that cannot be changed during execution of the program.</p>
+            <img src="../../images/constants.svg" alt="" class="wb">
+        </div>
+        <div class="wh">
+            <h3>Variables</h3>
+            <ul>
+                <li>Variable is a name that can be used to store values, it can take different values but one at a time.
+                </li>
+                <li>These values can be changed during execution of the program.</li>
+                <li>A data type is associated with each variable and it decides what values the variable can take.</li>
+                <li>The rules for naming variables are same as that for naming identifiers.</li>
+            </ul>
+            <div class="in">
+                <p><b>Declaration of Variables</b></p>
+                <ul>
+                    <li>Variables must be declared before they are used in program.</li>
+                    <li>Declaration of a variable specifies its name and datatype.</li>
+                </ul>
+                <p>Syntax &darr;</p>
+                <pre>
+                            <code>
+int x;
+float salary;
+char grade;
+int max;
+                            </code>
+                        </pre>
+            </div>
+            <div class="in">
+                <p><b>Initialization of variables</b></p>
+                <ul>
+                    <li>When a variable is declared it contains undefined value commonly known as garbage value.</li>
+                    <li>Assigning value to a variable is known as initialization of the variable.</li>
+                </ul>
+                <p>For example &darr;</p>
+                <pre>
+                        <code>
+int a = 5;
+float x = 8.9, y = 10.5;
+                        </code>
+                    </pre>
+            </div>
+        </div>
+    </div>
+    <div class="content-box" id="t6">
+        <h2>Structure of C program</h2>
+        <pre>
+                <code>
+Header file 
+
+int main()
+{
+    // statements
+}
+                </code>
+            </pre>
+        <ul>
+            <li><b>Header files &rarr; </b> these are the collections of predefined functions.
+                <ul>
+                    <li>Whenever we use any predefined function in our program, we have to include respective header
+                        files.</li>
+                </ul>
+            </li>
+            <li><b>Main function &rarr; </b> The compiler starts the execution of program from main function.
+                <ul>
+                    <li>Entry point of any program.</li>
+                </ul>
+            </li>
+        </ul>
+        <pre>
+                <code>
+#include &lt;stdio.h> 
+
+int main()
+{
+    // code
+}
+                </code>
+            </pre>
+        <ul>
+            <li>Why stdio header file? &rarr; If we want to display or take input from the user we use 'printf' and
+                'scanf' respectively.
+                <ul>
+                    <li>And these predefined function are inside 'stdio' header files.</li>
+                </ul>
+            </li>
+        </ul>
+        <div class="wh">
+            <p><b>Some more header files and their functions</b></p>
+            <ul>
+                <li><b>&lt;math.h> &rarr; </b> predefined functions like 'sqrt', 'pow' are defined inside this header
+                    file.</li>
+                <li><b>&lt;string.h> &rarr; </b> predefined functions like 'strlen', 'upper' are defined inside this
+                    header file.</li>
+                <li><b>&lt;conio.h> &rarr; </b> 'clrscr' function is defined inside conio header file which clears the
+                    output screen.</li>
+            </ul>
+        </div>
+        <div class="wh">
+            <p><b>Program to print 'hello' on the screen</b></p>
+            <div class="code">
+                <div class="dotc"></div>
+                <pre>
+                        <code>
+#include &lt;stdio.h> 
+
+int main()
+{
+    printf("hello\n"); // here '\n' is a escape sequence which gives a newline
+    printf("how are you?")
+}
+                        </code>
+                    </pre>
+            </div>
+            <p>output &darr;</p>
+            <pre>
+                    <code>
+hello 
+how are you?
+                    </code>
+                </pre>
+        </div>
+        <div class="wh">
+            <p><b>Program to calculate sum of two numbers</b></p>
+            <div class="code">
+                <div class="dotc"></div>
+                <pre>
+                    <code>
+#include &lt;stdio.h>
+
+int main()
+{
+    int a, b, sum;
+
+    printf("Enter first number : ");
+    scanf("%d", &a);
+
+    printf("Enter second number : ");
+    scanf("%d", &b);
+
+    sum = a + b;
+    
+    printf("The sum is : %d", sum);
+    
+    return 0;
+}
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <div class="wh">
+            <p><b>Program to calculate area of a rectangle</b></p>
+            <div class="code">
+                <div class="dotc"></div>
+                <pre>
+                    <code>                    
+#include &lt;stdio.h>
+
+int main()
+{
+    int l, b, area;
+    printf("Enter length :");
+    scanf("%d", &l);
+
+    printf("Enter breadth :");
+    scanf("%d", &b);
+
+    area = l * b;
+    
+    printf("The area is : %d", area);
+
+    return 0;
+}
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <div class="wh">
+            <p><b>Program to calculate area of a circle</b></p>
+            <div class="code">
+                <div class="dotc"></div>
+                <pre>
+                    <code>                   
+#include &lt;stdio.h>
+
+int main()
+{
+    int r;
+    float area;
+    printf("Enter radius :");
+    scanf("%d", &r);
+
+    area = 3.14 * r * r;
+    
+    printf("The area is : %f", area);
+
+    return 0;
+}
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <div class="wh">
+            <p><b>Types of Errors</b></p>
+            <p>There are two types of error logical and syntax error</p>
+            <ul>
+                <li><b>Syntax error &rarr; </b> When programming language is written using a wrong syntax.
+                    <ul>
+                        <li>
+                            These type of error occurs at the time of compilation.
+                        </li>
+                        <li>The program will not compile until the syntax error is fixed.</li>
+                        <li>Example &rarr; misspelled keywords or identifiers, missing semicolon, etc.</li>
+                        <li>It is easier to identify a syntax error.</li>
+                    </ul>
+                </li>
+                <li><b>Logical error &rarr; </b> The errors which occur due to an algorithm fault is known as logical
+                    error.
+                    <ul>
+                        <li>These type of error occurs at the run time.</li>
+                        <li>The program will compile but we will not get the desired output.</li>
+                        <li>Example &rarr; use of wrong operator.</li>
+                        <li>It is comparatively difficult to identify a logical error.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="wh">
+            <p><strong>Warning vs Error</strong></p>
+                <ul>
+                    <li>
+                        If the program gets executed despite the issue, it is called a <b>warning</b>, while if the program does not get executed due to the issue, it is called an <b>error</b>.
+                    </li>
+                    <li>
+                        If the program can continue to work, the message is labeled as a <b>warning</b>. In contrast, if the compiler doesn't know how to correct a problem, it is labeled as an <b>error</b>.
+                    </li>
+                </ul>
+        </div>
+        <div class="wh">
+            <p><b>Return type</b></p>
+            <ul>
+                <li>Every function have a return type which tells what data type it is going to return.</li>
+            </ul>
+            <ul>
+                <li>The default return type for main function is int.</li>
+            </ul>
+        </div>
+    </div>
+    <div class="content-box" id="t7">
+        <h2>Programs</h2>
+        <div class="wh">
+            <h3>Write a C program to swap 2 number using 3rd variable.</h3>
+            <div class="code">
+                <div class="dotc"></div>
+                <pre>
+                    <code>
+#include &lt;stdio.h>
+int main()
+{
+    int a, b, c;
+
+    printf("Enter the value of 'a' before swap : ");
+    scanf("%d",&a);
+    printf("Enter the value of 'b' before swap : ");
+    scanf("%d",&b);
+
+    c = a;
+    a = b;
+    b = c;
+
+    printf("The value of 'a' and 'b' after swap are : %d \t %d",a,b);
+    
+    return 0;
+}
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <div class="wh">
+            <h3>Write a C program to swap two numbers without using 3rd variable</h3>
+            <div class="code">
+                <div class="dotc"></div>
+                <pre>
+                    <code>
+#include &lt;stdio.h>
+
+int main()
+{
+    int a, b;
+
+    printf("Enter the value of 'a' and 'b' before swap : ");
+    scanf("%d %d", &a, &b);
+    // above we are only using single statement to input two values
+
+    a = a + b;
+    b = a - b;
+    a = a - b;
+
+    printf("The value of 'a' and 'b' after swap are : %d \t %d", a, b);
+
+    return 0;
+}
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <div class="wh">
+            <h3>Write a program to input basic salary of an employee and then calculate net salary on the basis of hra,
+                da, ta, tax.
+                <br>hra = 5% of basic salary
+                <br>da = 6% of basic salary
+                <br>ta = 3% of basic salary
+                and tax = 2% of basic salary
+                <br> net salary = (basic salary + hra + da + ta) - tax;
+            </h3>
+            <div class="code">
+                <div class="dotc"></div>
+                <pre>
+                    <code>
+#include &lt;stdio.h>
+
+int main()
+{
+
+    float bs, hra, da, ta, tax, netS;
+    printf("Enter employee's basic salary : ");
+    scanf("%f", &bs);
+
+    hra = 0.05 * bs;
+    da = 0.06 * bs;
+    ta = 0.03 * bs;
+    tax = 0.02 * bs;
+
+    netS = (bs + hra + da + ta) - tax;
+
+    printf("Net salary of employee is : %f", netS);
+
+    return 0;
+}                            
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <div class="wh">
+            <h3>Write a C program to convert temperature from Fahrenheit to celsius.</h3>
+            <div class="code">
+                <div class="dotc"></div>
+                <pre>
+                    <code>
+#include &lt;stdio.h>
+
+int main()
+{
+
+    float fahren, celsius;
+    printf("Enter the temperature in Fahrenheit : ");
+    scanf("%f", &fahren);
+
+    celsius = (fahren - 32) * 1.8;
+
+    printf("Temperature in celsius is : %f", celsius);
+
+    return 0;
+}                            
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <div class="wh">
+            <h3>Write a C program to calculate simple interest and compound interest</h3>
+            <div class="code">
+                <div class="dotc"></div>
+                <pre>
+                    <code>
+#include &lt;stdio.h>
+#include &lt;math.h>
+
+int main()
+{
+    float P, R, T, SI, CI;
+    printf("Enter the value of Principle Amount : ");
+    scanf("%f", &P);
+    printf("Rate of Ineterest : ");
+    scanf("%f", &R);
+    printf("Time (in years) : ");
+    scanf("%f", &T);
+
+    SI = (P * R * T) / 100;
+    CI = pow(P * (1 + (R / 100)), T);
+    printf("The Simple Interest is : %f\n", SI);
+    printf("The Compound Interest is : %f\n", CI);
+
+    return 0;
+}
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <div class="wh">
+            <h3>Write a program to check whether any number is positive, negative or zero</h3>
+            <div class="code">
+                <div class="dotc"></div>
+                <pre>
+                    <code>
+#include &lt;stdio.h>
+
+int main()
+{
+    int num;
+    printf("Enter a number : ");
+    scanf("%d", &num);
+    if (num &lt; 0)
+        printf("The entered number is negative");
+    else if (num > 0)
+        printf("The entered number is positive");
+    else
+        printf("The entered number is zero");
+
+    return 0;
+}
+                    </code>
+                </pre>
+            </div>
+        </div>
+        <div class="wh">
+            <h3>
+                Input 4 marks of subject and calculate percentage
+                <br>and make result according to following
+                <br>percentage >= 70 → 1st division with honours
+                <br>60 <= percentage <=70 → 1st division <br>50 <= percentage <=60 → second division <br>40 <=
+                            percentage <=50 → third division <br>percentage < 40 → failed </h3>
+                                <div class="code">
+                                    <div class="dotc"></div>
+                                    <pre>
+                                        <code>
+#include &lt;stdio.h>
+
+int main()
+{
+    int m1, m2, m3, m4;
+    float per;
+    printf("Enter m1, m2, m3 and m4 : ");
+    scanf("%d%d%d%d", &m1, &m2, &m3, &m4);
+    per = (m1 + m2 + m3 + m4) / 4;
+    if (per >= 70)
+        printf(" 1st division with honours");
+    else if (per >= 60)
+        printf(" 1st division");
+    else if (per >= 50)
+        printf(" 2nd division");
+    else if (per >= 40)
+        printf(" 3rd division ");
+    else
+        printf("failed\n");
+    return 0;
+}
+                                        </code>
+                                    </pre>
+                                </div>
+        </div>
+        <div class="wh">
+            <p><b>Note</b></p>
+            <p>We cannot use ';' in main function, conditional statement and looping statement.</p>
+        </div>
+    </div>
+    <div class="content-box">
+        <h3>References</h3>
+        <ul>
+            <li><a href="https://microtek.ac.in/adminassets/pdf/C_programming_notes_.pdf">C programming notes</a></li>
+            <li><a href="https://tutorialworld.in/c-program/characteristics-of-c-language/">Characteristics of 'C'</a>
+            </li>
+            <li><a href="https://www.geeksforgeeks.org/differences-between-procedural-and-object-oriented-programming/">Procedural
+                    and Oject-Oriented Programming language -- Geeks For Geeks</a></li>
+            <li><a href="https://www.codecademy.com/resources/blog/programming-languages/">What is programming language
+                    -- codecademy</a></li>
+            <li>Elements of C -- C in depth book</li>
+        </ul>
+    </div>
+    <link id="highlightStylesheet" rel="stylesheet"
+        href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/tomorrow-night-blue.min.css">
+    <script src="../../../../public/main.js"></script>
+</body>
+
+</html>

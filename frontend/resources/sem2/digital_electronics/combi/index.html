@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Combinational logic</title>
+    <link rel="stylesheet" href="../../../../public/style.css">
+    <link rel="icon" href="../../../../public/logo/favicon_io/favicon.ico">
+</head>
+
+<body class="bg-c">
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">back</a>
+        <a href="#t1" class="link">Combinational circuit</a>
+        <a href="#t2" class="link">Adder</a>
+        <a href="#t3" class="link">4 bit parallel adder using Full Adders</a>
+        <a href="#t4" class="link">Serial Adder</a>
+        <a href="#t5" class="link">Half subtractor</a>
+        <a href="#t6" class="link">Full subtractor</a>
+        <a href="#t7" class="link">Parallel subtractor</a>
+        <a href="#t8" class="link">Multiplexers</a>
+        <a href="#t9" class="link">Implementing boolean function using multiplexer</a>
+        <a href="#t10" class="link">Demultiplexer</a>
+        <a href="#t11" class="link">Encoder</a>
+        <a href="#t12" class="link">Decoder</a>
+        <div class="botbut">
+            <a href="../sequential/index.html" class="link">Next Topic &rarr;</a>
+            <a href="../logic_gates/index.html" class="link">&larr; Previous Topic</a>
+        </div>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Combinational logic</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Combinational logic</h1>
+        <p>Logic circuits are of two types: 1. Combinational 2. Sequential. </p>
+        <div id="t1" class="wh">
+            <h2>Combinational circuit</h2>
+            <ul>
+                <li>When logic gate are connected together to produce a specified output on certain specified
+                    combination of input variables, <i><b>with no memory </b></i>&nbsp; involved, then it is
+                    Combinational circuit.</li>
+                <li>Output depends only on present inputs.</li>
+                <li>It may have m-binary inputs and n-binary outputs.</li>
+            </ul>
+                <pre>
+                   <code>
+              ____________________
+     ------> |                    | ------>
+ I/P ------> |   Combinational    | ------>  O/P
+     . m     |      Circuit       |     n . 
+     .       |                    |       .
+     ------> |                    | ------>
+              --------------------
+                   </code>
+               </pre>
+            <p>Application:</p>
+            <ul>
+                <li>Used in ALU (Arithmetic and logical unit ), data transmission, code converter etc.</li>
+                <li>Combinational circuit
+                    <ol>
+                        <li>Arithmetic & logical function
+                            <ul>
+                                <li>Adders</li>
+                                <li>Subtractors</li>
+                                <li>Comparitions</li>
+                            </ul>
+                        </li>
+                        <li>Data transmission
+                            <ul>
+                                <li>MUX & DeMUX</li>
+                                <li>Encident Decoder</li>
+                            </ul>
+                        </li>
+                        <li>Code converters
+                            <ul>
+                                <li>Binary</li>
+                                <li>BCD</li>
+                                <li>Gray</li>
+                            </ul>
+                        </li>
+                    </ol>
+                </li>
+            </ul>
+        </div>
+        <div id="t2" class="wh">
+            <h2>Adder</h2>
+            <ul>
+                <li>Adder is a combinational circuit which perform addition of number (binary numbers, BCD, Excess-3).
+                </li>
+                <li>Usage: Most importantly used in ALU, calculate address, table indices, increment and decrement
+                    operator etc.</li>
+            </ul>
+            <div class="in">
+                <h3>Half Adder</h3>
+                <ul>
+                    <li>A digital logical combinational circuit, which perform arithmetic addition of two, one-bit
+                        numbers.</li>
+                    <li>Simplest form of addition of two binary digits, consists of four possible combinations.</li>
+                    <li>Inputs are two single binary bits A and B, and two outputs sum (S) and carry (C).
+                    </li>
+                    <li>No provision to add a carry, coming from the lower order bits.</li>
+                </ul>
+                    <pre>
+                                <code>
+          ____________________
+A -----> |                    | ------> Sum
+         |       Half         |          
+  I/P    |       Adder        |   O/P
+         |                    |
+B -----> |                    | ------> Carry
+          --------------------
+
+ Truth Table 
+
+     Input    |    Output 
+    -------------------------
+    A     B   |  Sum    Carry 
+    0     0   |   0       0
+    0     1   |   1       0
+    1     0   |   1       0  
+    1     1   |   0       1  
+                                </code>
+                            </pre>
+                <img src="../../images/halfadder.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>Full adder</h3>
+                <ul>
+                    <li>A full adder is used to add only 3 binary bits. It has three inputs A, B and C<sub>in</sub> and
+                        two outputs S
+                        and Co produced by addition of three inputs bits.</li>
+                    <li>A<sub> (First operand)</sub>, B<sub> (second operand)</sub></li>
+                    <li>C in<sub> (Carry from the previous lower signigicant position)</sub></li>
+                </ul>
+                    <pre>
+                       <code>
+                                     ____________________
+                           A -----> |                    | ------> Sum
+                                    |       Full         |          
+                           B -----> |       Adder        |  
+                                    |                    |
+                        C in -----> |                    | ------> C out
+                                     --------------------
+
+                            Truth Table 
+
+                              Input       |    Output 
+                          --------------------------------
+                           A     B   C in |  Sum     C out 
+                           0     0     0  |   0       0
+                           0     0     1  |   1       0
+                           0     1     0  |   1       0  
+                           0     1     1  |   0       1  
+                           1     0     0  |   1       0
+                           1     0     1  |   0       1
+                           1     1     0  |   0       1
+                           1     1     1  |   1       1
+                       </code>
+                   </pre>
+                <img src="../../images/fulladder.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>Full Adder using Half Adders</h3>
+                <img src="../../images/fulladder2.svg" alt="" class="wb">
+            </div>
+        </div>
+        <div id="t3" class="wh">
+            <h2>4 bit Parallel Adder using Full Adders</h2>
+            <img src="../../images/fulladder3.svg" alt="" class="wb">
+        </div>
+        <div id="t4" class="wh">
+            <h2>Serial Adder</h2>
+            <ul>
+                <li>Parallel adder performs the addition at higher speed but disadvantage is that it requires a large
+                    amount of logic circuitary.</li>
+                <li>Serial adder performs bit by bit addition so it requires simple circuitary then parallel adder but
+                    results in low speed of operation.</li>
+            </ul>
+            <img src="../../images/serialadder.svg" alt="" class="wb">
+        </div>
+        <div id="t5" class="wh">
+            <h2>Half Subtractor</h2>
+                <pre>
+                    <code>
+                                   ____________________
+                          A -----> |                    | ------> Difference (D)
+                                   |       Half         |          
+                            I/P    |    Subtractor      |   O/P
+                                   |                    |
+                          B -----> |                    | ------> Borrow (B0)
+                                    --------------------
+
+                        Truth Table 
+
+                          Input    |    Output 
+                        ---------------------------
+                         A     B   |   D      B0 
+                         0     0   |   0       0
+                         0     1   |   1       1
+                         1     0   |   1       0  
+                         1     1   |   0       0
+
+                         D = A'B + AB'
+                           = AB' + A'B
+                           = A ^ B
+                         B0 = A'B
+                    </code>
+                </pre>
+            <img src="../../images/halfsub.svg" alt="" class="wb">
+        </div>
+        <div id="t6" class="wh">
+            <h2>Full Subtractor</h2>
+                <pre>
+                    <code>
+                                 ____________________
+                        A -----> |                    | ------> D
+                                 |       Full         |          
+                        B -----> |    Subtractor      |  
+                                 |                    |
+                     b in -----> |                    | ------> b out
+                                  --------------------
+
+                         Truth Table 
+
+                           Input       |    Output 
+                       --------------------------------
+                        A     B   b in |   D     b out 
+                        0     0     0  |   0       0
+                        0     0     1  |   1       1
+                        0     1     0  |   1       1  
+                        0     1     1  |   0       1  
+                        1     0     0  |   1       0
+                        1     0     1  |   0       0
+                        1     1     0  |   0       0
+                        1     1     1  |   1       1
+                    </code>
+                </pre>
+            <img src="../../images/fullsub.svg" alt="" class="wb">
+        </div>
+        <div id="t7" class="wh">
+            <h2>Parallel subtractor</h2>
+            <img src="../../images/serialsub.svg" alt="" class="wb">
+            <ul>
+                <li>Now the A (A<sub>3</sub>A<sub>2</sub>A<sub>1</sub>A<sub>0</sub>) will be added to the 2's complement
+                    of B (B<sub>3</sub>B<sub>2</sub>B<sub>1</sub>B<sub>0</sub>) to produce the sum, i.e., the difference
+                    between the A and B, and C<sub>out</sub> (output carry), i.e. the borrow output of the 4-bit
+                    subtractor.</li>
+                <li>When the control input 'C' is kept low, the controlled inverter allows B
+                    (B<sub>3</sub>B<sub>2</sub>B<sub>1</sub>B<sub>0</sub>) without any change to the input of full
+                    adder,
+                    and the input carry C<sub>in</sub> of LSB of full adder, becomes zero, Now A
+                    (A<sub>3</sub>A<sub>2</sub>A<sub>1</sub>A<sub>0</sub>) and B
+                    (B<sub>3</sub>B<sub>2</sub>B<sub>1</sub>B<sub>0</sub>) are added with C<sub>in</sub> = 0.</li>
+                <li>Hence, the circuit functions as 4-bit adder/subtractor resulting in sum S
+                    (S<sub>3</sub>S<sub>2</sub>S <sub>1</sub>S<sub>0</sub>) and carry output C<sub>out</sub>.</li>
+            </ul>
+        </div>
+        <div id="t8" class="wh">
+            <h2>Multiplexers</h2>
+            <ul>
+                <li>It is a combinational circuit that selects binary information from one of many input lines and
+                    directs it to output line.</li>
+                <li>It is simply a <b>Data Selector</b>.</li>
+                <li>Remember in multiplexer number of input can be many but output will always be one. Out of many input
+                    one is selected using <b>select line / selector value.</b></li>
+            </ul>
+            <p>Advantages:
+            <ul>
+                <li>Reduces no. of wires.</li>
+                <li>Reduces circuit complexity & cost.</li>
+                <li>Implementation of various circuit using MUX like adder (half/full), subtractor (half/full).</li>
+            </ul>
+            </p>
+            <p>There are following type of MUX:
+            <ol>
+                <li>2x1 MUX</li>
+                <li>4x1 MUX</li>
+                <li>8x1 MUX</li>
+                <li>16x1 MUX</li>
+            </ol>
+            </p>
+            <p><b>Note:</b>
+            <ul>
+                <li>In 2x1 MUX &rarr; input = 2, Selection lines = 1 (as 2 = 2<sup>1</sup>) and O/Ps = One</li>
+                <li>In 4x1 MUX &rarr; input = 4, Selection lines = 2 (as 4 = 2<sup>2</sup>) and O/Ps = One</li>
+                <li>In 8x1 MUX &rarr; input = 8, Selection lines = 3 (as 8 = 2<sup>3</sup>) and O/Ps = One</li>
+                <li>In 16x1 MUX &rarr; input = 16, Selection lines = 4 (as 16 = 2<sup>4</sup>) and O/Ps = One</li>
+                <li>In 32x1 MUX &rarr; input = 32, Selection lines = 5 (as 32 = 2<sup>5</sup>) and O/Ps = One</li>
+            </ul>
+            </p>
+            <div class="in">
+                <h3>2x1 MUX</h3>
+                <ul>
+                    <li>A 2x1 multiplier has 2 inputs, one control line and on O/P. Its circuit diagram and truth table
+                        is shown below:</li>
+                </ul>
+                <img src="../../images/MUX21.svg" alt="" class="wb">
+                <p>Working:
+                <ul>
+                    <li>Case1: When S0 = 0 then upper AND gate has I/Ps I0 and 1. AND gate multiplies them and give O/P
+                        I0. The lower AND gate I/Ps I0 and 0 so lower AND gate gives O/P 0. The OR gate add these I/Ps
+                        I0 and 0, so the final O/P is I0.</li>
+                    <li>Case 2: When S0 = 1 then upper AND gate has I/Ps I1 and 0 AND gate multiplies then and gives O/P
+                        0. The lower AND gate has I/Ps I1 and 1 so lower AND gate gives O/P I1. The OR gate add these
+                        I/Ps and 0 and I1, so the final O/P is I1.</li>
+                </ul>
+                </p>
+            </div>
+            <div class="in">
+                <h3>4x1 MUX</h3>
+                <ul>
+                    <li>A 4x1 multiplexer has 4 inputs (I0, I1, I2, I3), two selection line (S0 and S1) and one O/P. Its
+                        block diagram, circuit diagram and truth table is shown below:</li>
+                </ul>
+                <img src="../../images/MUX41.svg" alt="" class="wb">
+                <p>Working:
+                <ul>
+                    <li>Case 1: When S0 = 0 and S1 = 0 then upper AND gate has I/Ps 1, 1, I0. AND gate multiplies them
+                        and gives O/P I0 and all other AND gate give O/P 0.</li>
+                    <li>Case 2: When S0 = 0 and S1 = 1 then second AND gate has I/Ps 1, 1, I1. AND gate multiplies them
+                        and gives O/P I1 and All other AND gate give O/P 0.</li>
+                    <li>Case 3: When S0 = 1 and S1 = 0 then third AND gate has I/Ps 1, 1 ,I3. AND gate multiplies them
+                        and gives O/P I2. All other AND gate give O/P 0.</li>
+                    <li>Case 4: When S0 = 1 and S1 = 1 then last AND gate give O/P 1, 1, I3. AND gate multiplies them
+                        and gives O/P I3. All other AND gate give O/P 0.</li>
+                </ul>
+                </p>
+            </div>
+            <div class="in">
+                <h3>8x1 MUX</h3>
+                <ul>
+                    <li>A 8x1 multiplexer has 8 inputs (I0, I1, I2, I3, I4, I5, I6, I7), three selection line (S0, S1
+                        and S2) and one O/P. Its
+                        block diagram, circuit diagram and truth table is shown below:</li>
+                </ul>
+                <img src="../../images/MUX81.svg" alt="" class="wb">
+            </div>
+        </div>
+        <div id="t9" class="wh">
+            <h2>Implementing boolean function using multiplexer</h2>
+            <div class="in">
+                <p>F(A, B, C) = &sum;(1, 3, 5, 6)</p>
+                <ul>
+                    <li><a  href="https://www.youtube.com/watch?v=ziekMXwaJVI">Video lecture</a></li>
+                </ul>
+                <img src="../../images/MUXques1.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <p>F(A, B, C, D) = &sum;(1, 2, 5, 7, 9, 14, 15)</p>
+                <img src="../../images/MUXques2.svg" alt="" class="wb">
+            </div>
+        </div>
+        <div id="t10" class="wh">
+            <h2>Demultiplexer</h2>
+            <ul>
+                <li>A De-multiplexer (DMUX) is opposite of multiplexer.</li>
+                <li>It has single input, n selection lines and 2<sup>n</sup> output lines.</li>
+                <li>It passes the I/P in one O/P line among 2<sup>n</sup> O/P lines. It is also called as "Data
+                    Distributor"</li>
+                <li>There are following types of D-MUX:
+                    <ol type="i">
+                        <li>1x2 D-MUX</li>
+                        <li>1x4 D-MUX</li>
+                        <li>1x8 D-MUX</li>
+                        <li>1x16 D-MUX</li>
+                    </ol>
+                </li>
+            </ul>
+            <div class="in">
+                <h3>1x2 D-MUX</h3>
+                <ul>
+                    <li>A 1x2 D-MUX has only one input, one selection line and 2 O/Ps. Its circuit diagram and truth
+                        table is shown below:</li>
+                </ul>
+                <img src="../../images/dmux12.svg" alt="" class="wb">
+                <p><b>Working</b></p>
+                <ul>
+                    <li>Case 1: When S<sub>0</sub> = 0 then upper AND gate has I/Ps I0 and 1. AND gate multiplies them
+                        and gives O/P I0 from O/P line O<sub>0</sub>, hence O<sub>0</sub> = I<sub>0</sub>. The lower AND
+                        gate has I/Ps I<sub>0</sub> and 0 so lower AND gate gives O/P 0.</li>
+                    <li>Case 2: When S<sub>0</sub> = 1 then upper AND gate has I/Ps I<sub>0</sub> and 0. AND gate
+                        multiples them and gives O/P 0. The lower AND gate has I/Ps I<sub>0</sub> and 1 so lower AND
+                        gate gives O/P I<sub>0</sub> from O/P line O<sub>1</sub>, hence O<sub>1</sub> = I<sub>0</sub>.
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>1x4 D-MUX</h3>
+                <ul>
+                    <li>A 1x4 D-MUX has only one input, 2 selection line (S0 and S1) and four O/Ps (O<sub>0</sub>,
+                        O<sub>1</sub>, O<sub>2</sub> and O<sub>3</sub>). Its block diagram, circuit diagram and truth
+                        table is shown below:</li>
+                </ul>
+                <img src="../../images/dmux14.svg" alt="" class="wb">
+                <p><b>Working</b></p>
+                <ul>
+                    <li>Case 1: When S0 = 0 and S1 = 0 then upper AND gate has I/Ps 1, 1, A. AND gate multiplies them
+                        and gives O/P A. So we get O/P from line O<sub>0</sub>. All other AND gate give O/P 0.</li>
+                    <li>Case 2: When S0 = 1 and S1 = 1 then second AND gate has I/Ps 1, 1, A. AND gate multiplies them
+                        and gives O/P A. So we get O/P from line O<sub>1</sub>. All other AND gate give O/P 0.</li>
+                    <li>Case 4: When S0=1 and S1=1 then last AND gate has I/Ps 1, 1, A. AND gate multiples them and
+                        gives O/P A. So we get O/P from line O<sub>3</sub>. All other AND gate give O/P 0.</li>
+                </ul>
+            </div>
+        </div>
+        <div id="t11" class="wh">
+            <h2>Encoder</h2>
+            <ul>
+                <li>An encoder is a digital circuit that performs the inverse operation of a decoder.</li>
+                <li>It converts information into Binary number system.</li>
+                <li>An encoder has 2<sup>n</sup> (or fewer) input lines and <i>n</i> output lines.</li>
+                <li>Example of an encoder is the octal-to-binary encoder whose truth table and circuit diagram are given
+                    below. It has 8 I/Ps and 3 O/Ps.</li>
+            </ul>
+                <pre>
+                    <code>
+            Inputs                     Outputs
+A0  A1  A2  A3  A4  A5  A6  A7       B2   B1   B0
+1   0   0   0   0   0   0   0        0    0    0
+0   1   0   0   0   0   0   0        0    0    1
+0   0   1   0   0   0   0   0        0    1    0
+0   0   0   1   0   0   0   0        0    1    1
+0   0   0   0   1   0   0   0        1    0    0
+0   0   0   0   0   1   0   0        1    0    1
+0   0   0   0   0   0   1   0        1    1    0
+0   0   0   0   0   0   0   1        1    1    1
+
+                    </code>
+                </pre>
+            <img src="../../images/encoder1.svg" alt="" class="wb">
+            <p>The 8 to 3 or octal to binary encoder consists of 8 inputs: A7 to A0 and 3 outputs: B2 , B1 and B0. Each
+                input line corresponds to each octal digit and three outputs generate corresponding binary code.</p>
+            <div class="in">
+                <h3>Decimal to Binary Encoder</h3>
+                <ul>
+                    <li>A Decimal to Binary Encoder converts decimal I/P into Binary O/P. It has 10 I/Ps and 4 O/Ps. It
+                        circuit diagram and truth table is given below:</li>
+                </ul>
+                <img src="../../images/encoder2.svg" alt="" class="wb">
+                <p>Truth table &darr;</p>
+                    <pre>
+                        <code>
+              INPUTS                            OUTPUTS
+A0  A1  A2  A3  A4  A5  A6  A7  A8  A9      B3  B2  B1  B0
+1   0   0   0   0   0   0   0   0   0       0   0   0   0
+0   1   0   0   0   0   0   0   0   0       0   0   0   1
+0   0   1   0   0   0   0   0   0   0       0   0   1   0
+0   0   0   1   0   0   0   0   0   0       0   0   1   1
+0   0   0   0   1   0   0   0   0   0       0   1   0   0
+0   0   0   0   0   1   0   0   0   0       0   1   0   1
+0   0   0   0   0   0   1   0   0   0       0   1   1   0
+0   0   0   0   0   0   0   1   0   0       0   1   1   1
+0   0   0   0   0   0   0   0   1   0       1   0   0   0
+0   0   0   0   0   0   0   0   0   1       1   0   0   1
+                        </code>
+                    </pre>
+            </div>
+        </div>
+        <div id="t12" class="wh">
+            <h2>Decoder</h2>
+            <ul>
+                <li>A decoder is a combinational circuit. It converts (or decode) binary number into another number
+                    systems. It has n inputs and 2<sup>n</sup> outputs.</li>
+                <li>Types of decoder:
+                    <ol type="i">
+                        <li>2x4 line decoder</li>
+                        <li>3x8 line decoder (binary to octal decoder)</li>
+                        <li>4x16 line decoder</li>
+                    </ol>
+                </li>
+            </ul>
+            <div class="in">
+                <h3>2x4 Decoder</h3>
+                <ul>
+                    <li>A 2x4 Decoder has 2 inputs (A and B) and 4 O/Ps (D0, D1, D2, D3). Its circuit diagram and truth
+                        table is shown below:</li>
+                </ul>
+                <img src="../../images/decoder1.svg" alt="" class="wb">
+                <p>Truth table</p>
+                    <pre>
+                        <code>
+  I/P   |    O/P
+A   B   |  D0  D1  D2  D3
+0   0   |  1   0   0   0
+0   1   |  0   1   0   0
+1   0   |  0   0   1   0
+1   1   |  0   0   0   1
+                        </code>
+                    </pre>
+                <p>Working &Darr;</p>
+                <ul>
+                    <li>Case 1: When A = 0 and B = 0 then upper AND gate has I/Ps 1, 1. AND gate multiplies them and
+                        gives O/P 1. So we get O/P from line D0. All other gate give O/P 0.</li>
+                    <li>Case 2: When A = 0 and B = 1 then second AND gate has I/Ps 1, 1. AND gate multiplies them and
+                        gives O/P 1. So we get O/P from line D1. All other AND gate give O/P 0.</li>
+                    <li>Case 4: When A=1 and B=1 then last AND gate has I/Ps 1, 1. AND gate multiples them and gives O/P
+                        1. So we get O/P from line D3. All other AND gate give O/P 0.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Binary to Octal Decoder (3x8 Decoder)</h3>
+                <ul>
+                    <li>It has 3 inputs (A, B and C) and has 8 O/Ps (D0, D1, ..., D7). It takes binary input and gives
+                        Octal O/P. Its circuit diagram and truth table is shown below.</li>
+                </ul>
+                <img src="../../images/decoder2.svg" alt="" class="wb">
+                <p>Truth table</p>
+                    <pre>
+                        <code>
+   I/P      |       O/P
+A   B   C   |   D0  D1  D2  D3  D4  D5  D6  D7
+0   0   0   |   1   0   0   0   0   0   0   0
+0   0   1   |   0   1   0   0   0   0   0   0
+0   1   0   |   1   0   1   0   0   0   0   0
+0   1   1   |   1   0   0   1   0   0   0   0
+1   0   0   |   1   0   0   0   1   0   0   0
+1   0   1   |   1   0   0   0   0   1   0   0
+1   1   0   |   1   0   0   0   0   0   1   0
+1   1   1   |   1   0   0   0   0   0   0   1
+                        </code>
+                    </pre>
+                <p>Working &darr;</p>
+                <ul>
+                    <li>Case 1: When A = 0, B = 0 and C = 0 then upper AND gate has I/Ps 1, 1, 1. This AND gate
+                        multiplies them and gives O/P 1. So we get O/P from line D0. All other gate give O/P 0.
+                        <br>It shows that when we apply 000 (Binary 0) then we get O/P from D0 (0 in octal).
+                    </li>
+                    <li>Case 2: When A = 0, B = 0 and C = 1 then second AND gate has I/Ps 1,1,1. This AND gate
+                        multiplies them and gives O/P 1. So we get O/P from line D1. All other gate give O/P 0.
+                        <br>It shows that when we apply 001 (Binary 1) then we get O/P form D1 (1 in octal).
+                    </li>
+                    <li>Case 3: When A = 0, B = 1 and C = 0 then third AND gate has I/Ps 1, 1, 1. This AND gate
+                        multiplies them and gives O/P 1. So we get O/P from line D2. All other AND gate give O/P 0.
+                        <br>It shows that when we apply 010 then we get O/P from D2 (2 in octal).
+                    </li>
+                    <li>Case 7: When A = 1, B = 1 and C = 1 then last AND gate has I/Ps 1, 1, 1. This AND gate
+                        multiplies them and gives O/P 1. So we get O/P from line D7. All other AND gate give O/P 0.
+                        <br>It shows that when we apply 111 then we get O/P from D7 (7 in octal).
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Binary to Decimal Decoder (4x10 line Decoder)</h3>
+                <ul>
+                    <li>It has 4 inputs (A, B, C and D) and has 10 O/Ps (D0, D1, ..., D9). It takes binary input and
+                        gives Decimal O/P. Its circuit diagram and truth table is shown below:</li>
+                </ul>
+                <img src="../../images/decoder3.svg" alt="" class="wb">
+                <p>Truth table</p>
+                    <pre>
+                        <code>
+   I/P         |            O/P
+A   B   C  D   |   D0  D1  D2  D3  D4  D5  D6  D7  D8  D9
+0   0   0  0   |   1   0   0   0   0   0   0   0   0   0
+0   0   0  1   |   0   1   0   0   0   0   0   0   0   0
+0   0   1  0   |   1   0   1   0   0   0   0   0   0   0
+0   0   1  1   |   1   0   0   1   0   0   0   0   0   0
+0   1   0  0   |   1   0   0   0   1   0   0   0   0   0
+0   1   0  1   |   1   0   0   0   0   1   0   0   0   0
+0   1   1  0   |   1   0   0   0   0   0   1   0   0   0
+0   1   1  1   |   1   0   0   0   0   0   0   1   0   0
+1   0   0  0   |   1   0   0   0   0   0   0   0   1   0
+1   0   0  1   |   1   0   0   0   0   0   0   0   0   1
+                        </code>
+                    </pre>
+                <p>Working &Darr;</p>
+                <ul>
+                    <li>Case 1: When A = 0, B = 0, C = 0 and D = 0 then upper AND gate has I/Ps 1, 1, 1, 1. This AND
+                        gate multiplies them and gives O/P 1. So we get O/P from line D0. All other AND gate give O/P 0.
+                        <br>It shows that when we apply 0000 (Binary 0) then we get D0 (0 in Decimal).
+                    </li>
+                    <li>Case 2: When A=0, B=0, C=0 and D=1 then second AND gate has I/Ps 1, 1, 1, 1. This AND gate
+                        multiplies them and gives O/P 1. So we get O/P from line D1. All other AND gate give O/P 0. <br>
+                        It shows that when we apply 0001 then we get O/P from D1 (1 in Decimal).</li>
+                    <li>
+                        Case 8: When A=1, B=0, C=0, D=0 then second last AND gate has I/Ps 1,1,1,1. This AND gate
+                        multiplies them and gives O/P 1. So we get O/P from line D8. All other AND gate give O/P 0. <br>
+                        It shows that when we apply 1000 then we get O/P from D8 (8 in Decimal)</li>
+                    <li>Case 9: When A=1, B=0, C=0, D=1 then last AND gate has I/Ps 1,1,1,1. This AND gate multiples
+                        them and gives O/P 1. So we get O/P from line D9. All other AND gate give O/P 0. <br> It shows
+                        that when we apply 1001 then we get O/P from D9 (9 in Decimal)</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="content-box">
+        <h2>Previous Year Questions</h2>
+        <div class="wh">
+            <p>Design and explain 8x1 MUX using 2x1 MUX.</p>
+        </div>
+        <div class="wh">
+            <p>Design 3x8 Decoder and explain its working.</p>
+        </div>
+        <div class="wh">
+            <p>Design 4 bit binary adder/subtractor and explain its working.</p>
+        </div>
+        <div class="wh">
+            <p>What do you mean by half adder combinational circuit? Draw and explain full adder circuit using two half
+                adders.</p>
+        </div>
+        <div class="wh">
+            <p>Draw and explain working of 4 bit parallel binary adder subtractor circuit.</p>
+        </div>
+        <div class="wh">
+            <p>Implement the following function using 8:1 multiplexer:
+                <br>F(A, B, C, D) = &sum;(0, 1, 3, 4, 8, 9, 15)
+            </p>
+        </div>
+        <div class="wh">
+            <p>Explain a 3x8 decoder with the help of AND gate and NOT gate. Implement a 4x16 decoder with two 3x8
+                decoders.
+                <ul>
+                    <li><a href="https://www.youtube.com/watch?v=SgSI3VV3daY" >4x16 decoder using 3x8 decoder
+                            video lecture &neArr;</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=nhO1vobeqBo" >3x8 decoder using 2x4 decoder
+                            video lecture &neArr;</a></li>
+                </ul>
+            </p>
+        </div>
+        <div class="wh">
+            <p>What is a demultiplexer? Explain the difference between DEMUX and MUX?</p>
+        </div>
+    </div>
+    <div class="content-box">
+        <p>Reference &darr;</p>
+        <ul>
+            <li><a href="https://www.youtube.com/playlist?list=PLBlnK6fEyqRjMH3mWf6kwqiTbT798eAOm">Full Playlist ( Neso
+                    Academy )</a></li>
+            <li><a href="https://youtube.com/playlist?list=PLmXKhU9FNesSfX1PVt4VGm-wbIKfemUWK">Full Playlist ( Knowledge
+                    Gate )</a></li>
+            <li><a href="https://www.youtube.com/watch?v=caU4Gfa90uU">Full Subtractor video</a></li>
+            <li><a href="https://www.youtube.com/watch?v=H073mLyvoUI">Serial adder video</a></li>
+            <li><a href="https://youtu.be/Y4i6ksW3rLM">Parallel adder/subtractor</a></li>
+            <li><a href="https://www.javatpoint.com/de-multiplexer-digital-electronics">www.javatpoint.com (D-MUX)</a>
+            </li>
+        </ul>
+    </div>
+    <script src="../../../../public/main.js"></script>
+    <script src="../../../../public/codeSpace.js"></script>
+</body>
+
+</html>

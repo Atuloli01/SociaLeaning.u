@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Stack</title>
+   <link rel="stylesheet" href="../../../../public/style.css">
+   <link rel="stylesheet" id="highlightStylesheet"
+      href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/tomorrow-night-blue.min.css">
+      <link rel="icon" href="../../../../public/logo/favicon_io/favicon.ico">
+</head>
+
+<body class="bg-c">
+   <div id="mySidepanel" class="sidepanel">
+      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+      <a href="../index.html" class="home">back</a>
+      <a href="#t1" class="link">Stack definition</a>
+      <a href="#t2" class="link">Stack implementation using array</a>
+      <a href="#t3" class="link">Application of stack</a>
+      <a href="#t4" class="link">Infix to postfix</a>
+      <a href="#t5" class="link">Infix to prefix</a>
+      <a href="#t6" class="link">Stack implementation using linked list</a>
+      <div class="botbut">
+         <a href="./queue.html" class="link">Next Topic &rarr;</a>
+         <a href="../unit1/array.html" class="link">&larr; Previous Topic</a>
+      </div>
+   </div>
+   <div id="navbar" class="grad">
+      <div>
+         <div class="openbtn" onclick="openNav()">
+            <div id="nav-icon1" for="nav-menu1">
+               <span></span>
+               <span></span>
+               <span></span>
+            </div>
+         </div>
+      </div>
+      <div>
+         <h2>Stack</h2>
+      </div>
+   </div>
+   <div class="content-box">
+      <h1 id="t1">Stack</h1>
+      <ul>
+         <li>Stack is a linear data structure that follows the LIFO (Last In First Out) principle.</li>
+         <li>It performs insertion and deletion operations on the stack from only one end and that is from the top of
+            the stack.
+         </li>
+         <li>Stack and queue are ADTs
+            <ul>
+               <li>Abstract data types (ADTs) are high-level programming concepts that define a set of operations on a
+                  particular data structure without specifying the implementation details. In other words, they are a
+                  way of defining a data type in terms of its behavior, rather than its implementation.</li>
+            </ul>
+         </li>
+         <li>Inserting a new element on the top of the stack is known as <i>push operation.</i></li>
+         <li>Deleting a data element from the top of the stack is known as <i>pop operation.</i></li>
+         <li>You can perform the implementation of the stack in memory using two data structures: stack implementation
+            using array and stack implementation using linked-list.</li>
+         <li>Real life examples of stack:
+            <ul>
+               <li>Stack of plates.</li>
+               <li>Stack of balls.</li>
+            </ul>
+         </li>
+      </ul>
+      <div id="t2" class="wh">
+         <h2>Stack Implementation using Array</h2>
+         <ul>
+            <li>In stack implementation using arrays, it forms the stack using the arrays. All the operations regarding
+               the stack implementation using arrays are done at the end of the array.</li>
+         </ul>
+         <img src="../../images/stack1.svg" alt="" class="wb">
+         <div class="in">
+            <h3>Procedure of stack implementation using array</h3>
+            <div class="wh">
+               <p><b>Push operation</b></p>
+               <ul>
+                  <li>Adding an element on the top of the stack is termed as push operation.</li>
+                  <li>Push operation has the following two steps:
+                     <ol>
+                        <li>Increment the top variable of the stack so that it can refer to the next memory location.
+                        </li>
+                        <li>Add a data element at the increment top position.</li>
+                     </ol>
+                  </li>
+                  <li>Stack data structure states an overflow condition when you try to insert an element into the stack
+                     when complete.</li>
+               </ul>
+               <img src="../../images/stack2.svg" alt="" class="wb">
+               <p>Algorithm &darr;</p>
+               <pre>
+                     <code>
+PUSH(stack[], top, value)
+
+   1. if (top == MAX -1)
+         print Overflow
+         Exit
+      End of if
+   2. increment top by 1
+   3. stack[top] = value 
+   4. End of else 
+   5. End of PUSH
+                     </code>
+                  </pre>
+               <p>Program code &darr;</p>
+               <div class="code">
+                  <div class="dotc"></div>
+                  <pre>
+                           <code>                      
+// implementatin of push operation:
+
+void push(int data, int n)
+{
+   if(top == n-1)
+   {
+      printf("overflow");
+      return;
+   }
+   top++;
+   stack[top] = data;
+}
+                           </code>
+                       </pre>
+               </div>
+            </div>
+            <div class="wh">
+               <p><b>Pop operation</b></p>
+               <ul>
+                  <li>Removing a data element from the stack data structure is called a pop operation.</li>
+                  <li>The pop operation has two following steps:
+                     <ol>
+                        <li>The value of the top variable will decrement by one whenever you delete an item from the
+                           stack.</li>
+                        <li>The topmost variable of the stack is stored in another variable, and then the value of the
+                           top variable will be decremented by one.</li>
+                        <li>The pop operation returns the deleted element that was stored in another variable as a
+                           result.</li>
+                     </ol>
+                  </li>
+                  <li>Stack data structure states an underflow condition when you try to delete a data element when the
+                     stack is already empty.</li>
+               </ul>
+               <img src="../../images/stack3.svg" alt="" class="wb">
+               <p>Algorithm &darr;</p>
+               <pre>
+                      <code>           
+   POP(STACK[], top)
+1. if (top == -1)
+      print Underflow
+      Exit 
+   End of if
+2. val = STACK[top]
+3. top = top - 1
+4. print val is deleted 
+5. End of POP
+                      </code>
+                  </pre>
+               <p>Program code &darr;</p>
+               <div class="code">
+                  <div class="dotc"></div>
+                  <pre>
+                           <code>                       
+// implementation of pop operation 
+
+void POP()
+{
+   int val;
+   if(top == -1)
+   {
+      printf("Underflow condition");
+      return;
+   }
+      val = stack[top];
+      top--;
+      printf("%d is deleted ", val);
+}
+                           </code>
+                       </pre>
+               </div>
+            </div>
+            <div class="in">
+               <h3>Display</h3>
+               <p>Algorithm &darr;</p>
+               <pre>
+                      <code>             
+DISPLAY(STACK[], top)
+1. if top == -1 
+      print Underflow 
+      Exit
+   End of if
+2. i = top 
+3. repeat step 4, while i >= 0
+4. print STACK[i]
+   i = i + i 
+5. End of DISPLAY
+                      </code>
+                  </pre>
+               <p>Program code &darr;</p>
+               <div class="code">
+                  <div class="dotc"></div>
+                  <pre>
+                      <code>                    
+void display()
+{
+   int i;
+   if(top == -1)
+   {
+      printf("Underflow");
+      return;
+   }
+   for(i = top; i >= 0; i--)
+   {
+      printf("%d", stack[i]);
+   }
+}
+                      </code>
+                  </pre>
+               </div>
+            </div>
+         </div>
+         <div class="in">
+            <h3>Programs</h3>
+            <div class='code'>
+               <div class='dotc'></div>
+               <button class="ac">Array Stack implementation using global variables</button>
+               <div class="panel">
+                  <pre>
+                        <code>
+#include &lt;stdio.h>
+#include &lt;stdlib.h>
+void push();
+void pop();
+void display();
+// stack declaration
+#define MAX 5
+int stack[MAX];
+int top = -1;
+
+int main()
+{
+   int choice;
+   while (1)
+   {
+      printf("\n\n**** MENU *****");
+      printf("\n1. PUSH");
+      printf("\n2. POP");
+      printf("\n3. DISPLAY");
+      printf("\n4. EXIT");
+      printf("\nEnter your choice : ");
+      scanf("%d", &choice);
+
+      switch (choice)
+      {
+      case 1:
+         push();
+         break;
+      case 2:
+         pop();
+         break;
+      case 3:
+         display();
+         break;
+      case 4:
+         exit(0);
+      default:
+         printf("\nEnter a correct choice");
+      }
+   }
+   return 0;
+}
+void push()
+{
+   if (top >= MAX -1)
+   {
+      printf("\n\nStack overflow\n\n");
+      return;
+   }
+   top++;
+   printf("\nEnter a value : ");
+   scanf("%d", &stack[top]);
+   printf("\n\n%d is pushed\n\n", stack[top]);
+}
+
+void pop()
+{
+   int val;
+   if (top <= -1)
+   {
+      printf("\n\nStack underflow\n\n");
+      return;
+   }
+   val = stack[top];
+   top--;
+   printf("\n\n%d is popped\n\n", val);
+}
+
+void display()
+{
+   int i;
+   if (top <= -1)
+   {
+      printf("\n\nStack underflow\n\n");
+      return;
+   }
+   for (i = top; i >= 0; i--)
+   {
+      printf("\n%d", stack[i]);
+   }
+}
+                        </code>
+                    </pre>
+               </div>
+            </div>
+            <div class='code'>
+               <div class='dotc'></div>
+               <button class="ac">Array Stack implementation using local variables</button>
+               <div class="panel">
+                  <pre>
+                        <code>
+#include &lt;stdio.h>
+#include &lt;stdlib.h>
+int push(int[], int, int);
+int pop(int[], int);
+void display(int[], int);
+int main()
+{
+   const int MAX = 5;
+   int stack[MAX], top = -1, choice;
+   while (1)
+   {
+      printf("\n\n**** MENU *****");
+      printf("\n1. PUSH");
+      printf("\n2. POP");
+      printf("\n3. DISPLAY");
+      printf("\n4. EXIT");
+      printf("\nEnter your choice : ");
+      scanf("%d", &choice);
+
+      switch (choice)
+      {
+      case 1:
+         top = push(stack, top, MAX);
+         break;
+      case 2:
+         top = pop(stack, top);
+         break;
+      case 3:
+         display(stack, top);
+         break;
+      case 4:
+         exit(0);
+      default:
+         printf("\nEnter a correct choice");
+      }
+   }
+   return 0;
+}
+int push(int stack[], int top, int MAX)
+{
+   if (top >= MAX - 1)
+   {
+      printf("\n\nStack overflow\n\n");
+      
+   }
+   else
+   {
+      top++;
+      printf("\nEnter a value : ");
+      scanf("%d", &stack[top]);
+      printf("\n\n%d is pushed\n\n", stack[top]);
+   }
+   return top;
+}
+int pop(int stack[], int top)
+{
+   int val;
+   if (top <= -1)
+      printf("\n\nStack underflow\n\n");
+   else
+   {
+      val = stack[top];
+      top--;
+      printf("\n\n%d is popped\n\n", val);
+   }
+   return top;
+}
+void display(int stack[], int top)
+{
+   int i;
+   if (top <= -1)
+   {
+      printf("\n\nStack underflow\n\n");
+      return;
+   }
+   for (i = top; i >= 0; i--)
+   {
+      printf("\n%d", stack[i]);
+   }
+}
+                        </code>
+                    </pre>
+               </div>
+            </div>
+            <div class='code'>
+               <div class='dotc'></div>
+               <button class="ac">Array Stack implementation using pointers</button>
+               <div class="panel">
+                  <pre>
+                        <code>
+#include &lt;stdio.h>
+#include &lt;stdlib.h>
+void push(int[], int*, int);
+void pop(int[], int*);
+void display(int[], int);
+int main()
+{
+   const int MAX = 5;
+   int stack[MAX], top = -1, choice;
+   while (1)
+   {
+      printf("\n\n**** MENU *****");
+      printf("\n1. PUSH");
+      printf("\n2. POP");
+      printf("\n3. DISPLAY");
+      printf("\n4. EXIT");
+      printf("\nEnter your choice : ");
+      scanf("%d", &choice);
+
+      switch (choice)
+      {
+      case 1:
+         push(stack, &top, MAX);
+         break;
+      case 2:
+         pop(stack, &top);
+         break;
+      case 3:
+         display(stack, top);
+         break;
+      case 4:
+         exit(0);
+      default:
+         printf("\nEnter a correct choice");
+      }
+   }
+   return 0;
+}
+void push(int stack[], int *top, int MAX)
+{
+   if (*top >= MAX - 1)
+   {
+      printf("\n\nStack overflow\n\n");
+      return;
+   }
+   (*top)++;
+   printf("\nEnter a value : ");
+   scanf("%d", &stack[*top]);
+   printf("\n\n%d is pushed\n\n", stack[*top]);
+}
+
+void pop(int stack[], int *top)
+{
+   int val;
+   if (*top <= -1)
+   {
+      printf("\n\nStack underflow\n\n");
+      return;
+   }
+   val = stack[*top];
+   (*top)--;
+   printf("\n\n%d is popped\n\n", val);
+}
+
+void display(int stack[], int top)
+{
+   int i;
+   if (*top <= -1)
+   {
+      printf("\n\nStack underflow\n\n");
+      return;
+   }
+   for (i = top; i >= 0; i--)
+   {
+      printf("\n%d", stack[i]);
+   }
+}
+                        </code>
+                    </pre>
+               </div>
+            </div>
+         </div>
+      </div>
+      <div id="t3" class="wh">
+         <h2>Application of stack</h2>
+         <ul>
+            <li>Function calling</li>
+            <li>Browser history: Web browsers use stacks to maintain the user's browsing history. Each time a user
+               visits a new web page, the page is pushed onto the stack, and the user can go back to the previous page
+               by popping it off the stack</li>
+            <li>Undo and redo functionality: In many software applications, such as text editors or graphics design
+               software, the undo and redo operations rely on a stack data structure. Each time the user performs an
+               action, the application pushes it onto the stack, allowing the user to undo the action by popping it off
+               the stack.</li>
+            <li>Recursion</li>
+            <li>Expression evaluation</li>
+         </ul>
+         <div class="in">
+            <h3>Notations</h3>
+            <ul>
+               <li>Infix &rarr; a + b</li>
+               <li>Prefix &rarr; + a b
+                  <ul>
+                     <li>Known as <b>polish notation</b></li>
+                  </ul>
+               </li>
+               <li>Postfix &rarr; a b +
+                  <ul>
+                     <li>Known as <b>reverse polish notation</b></li>
+                  </ul>
+               </li>
+            </ul>
+            <p>Remember in pre/post fix expression there is no brackets.</p>
+            <pre>
+               <code>
+Operation Priority &darr;
+_________________________________
+   ^ (power) 
+
+   *, / , %
+
+   +, -
+_________________________________
+( decreases from top to bottom )
+               </code>
+            </pre>
+            <ul>
+               <li>Processor have to convert infix expressions to postfix or prefix because computer doesn't understand
+                  infix expression.</li>
+            </ul>
+         </div>
+         <div id="t4" class="in">
+            <h3>Infix to postfix notation</h3>
+            <ul>
+               <li><a class="ba" href="https://www.youtube.com/watch?v=TB7qzDgX-pI" target="_blank">Jenny's lecture
+                     &neArr;</a>
+               </li>
+            </ul>
+            <p>Steps &darr;</p>
+            <ol>
+               <li>Bound the whole expression with brackets if there are no brackets.
+                  <ul>
+                     <li>(a + b) / e * f - h &rarr; ((a + b) / e * f - h)</li>
+                  </ul>
+               </li>
+               <li>Make a table.
+                  <ul>
+                     <li>Column 1 = symbols (all the symbols of the infix expression)</li>
+                     <li>Column 2 = stack (this only contains brackets and operator)</li>
+                     <li>Column 3 = Postfix expression</li>
+                  </ul>
+               </li>
+               <li>Rules &darr;
+                  <ol>
+                     <li>Print operands as they arrive.</li>
+                     <li>If stack is empty or contains a left paranthesis on top, push the incoming operator onto the
+                        stack.</li>
+                     <li>If incoming symbol is "(", push it onto stack.</li>
+                     <li>If incoming symbol is ")", pop the stack & print the operators until left parenthesis is found.
+                     </li>
+                     <li>If incoming symbol has higher precedence then the top of the stack, push it on the stack.</li>
+                     <li>If incoming symbol has lower precedence then the top of the stack, pop & print the top. Then
+                        test the incoming operator against the new top of the stack.</li>
+                     <li>If incoming operator has equal precedene with the top of the stack, use associativity rule.
+                        <ul>
+                           <li>associativity <b>L to R</b> then pop & print the top of the stack & then push the
+                              incoming operator</li>
+                           <li><b>R to L</b> then push the incoming operator.</li>
+                        </ul>
+                     </li>
+                     <li>At the end of the expression, pop & print all operators of stack.</li>
+                  </ol>
+               </li>
+
+            </ol>
+            <img src="../../images/postfix.svg" alt="" class="wb"> <br>
+            <img src="../../images/postfix2.svg" alt="" class="wb"><br>
+            <img src="../../images/postfix3.svg" alt="" class="wb"><br>
+            <img src="../../images/postfix4.svg" alt="" class="wb"><br>
+            <img src="../../images/postfix5.svg" alt="" class="wb"><br>
+            <img src="../../images/postfix6.svg" alt="" class="wb"><br>
+            <img src="../../images/postfix7.svg" alt="" class="wb"><br>
+            <img src="../../images/postfix8.svg" alt="" class="wb"><br>
+            <div class="wh">
+               <p>Convert the following infix expressions into postfix expressions and then evaluate:</p>
+               <img src="../../images/ans1.svg" alt="" class="wb"><br>
+               <img src="../../images/ans2.svg" alt="" class="wb"><br>
+               <img src="../../images/ans3.svg" alt="" class="wb"><br>
+               <img src="../../images/ans4.svg" alt="" class="wb"><br>
+               <img src="../../images/evaluationques.svg" alt="" class="wb">
+            </div>
+            <div class="wh">
+               <h3>Program to convert infix expression to postfix expression:</h3>
+               <p>We know the algorithm &darr;</p>
+               <p>Scan the symbols of the expression from left to right and for each symbol, do the following:
+               <ol>
+                  <li>If symbol is an operand
+                     <ul>
+                        <li>Store the symbol in the postfix array</li>
+                     </ul>
+                  </li>
+                  <li>If the symbol if left parenthesis
+                     <ul>
+                        <li>Push it on the stack</li>
+                     </ul>
+                  </li>
+                  <li>If symbol is a right parenthesis
+                     <ul>
+                        <li>Pop all the operators from the stack upto the first left parenthesis and store the operators
+                           in the postfix array.</li>
+                        <li>Discard the left and right parenthesis.</li>
+                     </ul>
+                  </li>
+                  <li>If the symbol is an operator
+                     <ul>
+                        <li>If the precedence of the operators in the stack are greater than or equal to the current
+                           operator, then pop the operators out of the stack and print them onto the screen, and push
+                           the current operator onto the stack.</li>
+                        <li>else <br>
+                           push the current operator onto the stack.</li>
+                     </ul>
+                  </li>
+               </ol>
+               </p>
+               <div class='code'>
+                  <div class='dotc'></div>
+                  <button class="ac">code</button>
+                  <div class="panel">
+                     <pre>
+                        <code>
+#include &lt;stdio.h>
+#include &lt;stdlib.h>
+#include &lt;string.h>
+#define MAX 100
+char stack[MAX];
+char infix[MAX], postfix[MAX];
+int top = -1;
+
+void push(char);
+char pop();
+int isEmpty();
+void inToPost();
+int precedence(char);
+void print();
+int main()
+{
+   printf("Enter the infix expression : ");
+   gets(infix);
+   inToPost(); // function that convert infix to postfix expression
+   print();
+   return 0;
+}
+void push(char c)
+{
+   if (top == MAX - 1)
+   {
+      printf("Stack overflow");
+      return;
+   }
+   top++;
+   stack[top] = c;
+}
+char pop()
+{
+   char c;
+   if (top == -1)
+   {
+      printf("Stack underflow");
+      exit(0);
+   }
+   c = stack[top];
+   top=top-1;
+   return c;
+}
+int isEmpty()
+{
+   if (top == -1)
+      return 1;
+   else
+      return 0;
+}
+int space(char c)
+{
+   // If symbol is a blank space or a tab
+   if (c == ' ' || c == '\t')
+      return -1;
+   else
+      return 1;
+}
+void inToPost()
+{
+   int i, j = 0;
+   char symbol, next;
+   // for(i=0;i!='\0';i++)
+   for (i = 0; i < strlen(infix); i++)
+   {
+      symbol = infix[i];
+      switch (symbol)
+      {
+      case '(':
+         push(symbol);
+         break;
+      case ')':
+         while ((next = pop()) != '(')
+            postfix[j++] = next;
+      case '+':
+      case '-':
+      case '*':
+      case '/':
+      case '^':
+         while (!isEmpty() && precedence(stack[top]) >= precedence(symbol))
+            postfix[j++] = pop();
+         push(symbol);
+         break;
+      default:
+         postfix[j++] = symbol;
+      }
+   }
+   while (!isEmpty())
+      postfix[j++] = pop();
+   postfix[j] = '\0';
+}
+int precedence(char symbol)
+{
+   switch (symbol)
+   {
+   // higher value means greater precedence
+   case '^':
+      return 3;
+   case '/':
+   case '*':
+      return 2;
+   case '+':
+   case '-':
+      return 1;
+   default:
+      return 0;
+   }
+}
+
+void print()
+{
+   int i = 0;
+   printf("The equivalent post fix expression is : ");
+   while (postfix[i])
+   {
+      printf("%c", postfix[i++]);
+   }
+   printf("\n");
+}
+                        </code>
+                    </pre>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div id="t5" class="in">
+            <h3>Infix to prefix notation</h3>
+            <ul>
+               <li>First reverse the expression.</li>
+               <li>Find the postfix of that expression.</li>
+               <li>Then reverse the postfix expression.</li>
+            </ul>
+            <img src="../../images/prefix1.svg" alt="" class="wb"><br>
+            <img src="../../images/prefix2.svg" alt="" class="wb"><br>
+            <img src="../../images/prefix3.svg" alt="" class="wb"><br>
+            <img src="../../images/prefix4.svg" alt="" class="wb"><br>
+            <img src="../../images/prefix5.svg" alt="" class="wb"><br>
+         </div>
+      </div>
+      <div id="t6" class="wh">
+         <h2>Stack Implementation using linked-list</h2>
+         <ul>
+            <li>For creating linked-list we should have knowlegde of structure and pointer to structure.</li>
+         </ul>
+         <div class="in">
+            <h2>Structure Recap</h2>
+            <img src="../../images/arrowop.svg" alt="" class="wb">
+         </div>
+         <div class="in">
+            <h3>Problem with array</h3>
+            <img src="../../images/probarray.svg" alt="" class="wb">
+            <p>So, we need a datatype that is linear but it can be stored in fragmented memories.</p>
+            <img src="../../images/probarray2.svg" alt="" class="wb">
+            <p>Linked list can work in this situation easily.</p>
+         </div>
+         <div class="in">
+            <h3>Introduction to Linked List</h3>
+            <ul>
+               <li>Linked lists are stored in non-contiguous memory location.</li>
+               <li>To add new element, we just have to create a node somewhere in the memory and get it pointed by the
+                  previous element and deleting an element is done by not pointing to that particular node.</li>
+            </ul>
+         </div>
+         <div class="in">
+            <h3>Structure of a Linked list</h3>
+            <ul>
+               <li>Every element in a linked list is called a node and it consists of two parts, the data part, and
+                  the pointer part.</li>
+               <li>The data part stores the value, while the pointer part stores the pointer pointing to the address
+                  of the next node.</li>
+               <li>Both of these structures (arrays and linked lists) are linear data structures.</li>
+            </ul>
+            <img src="../../images/link1.svg" alt="" class="wb">
+         </div>
+         <div class="in">
+            <h3>Why linked lists?</h3>
+            <ul>
+               <li>Memory and the capacity of an array remain fixed, while in linked lists, we can keep adding and
+                  removing elements without any capacity constraint.</li>
+               <li><b>For accessing elements arrays are better and for insertion and deletion linked lists are
+                     better.</b></li>
+            </ul>
+         </div>
+         <div class="in">
+            <h3>Drawbacks of linked lists</h3>
+            <ul>
+               <li>Extra memory space for pointers is required (for ever node, extra space for a pointer is needed).
+               </li>
+               <li>Random access is not allowed as elements are stored in non-contiguous memory locations.</li>
+            </ul>
+         </div>
+         <div class="in">
+            <h3>Implementation</h3>
+            <ul>
+               <li>Linked lists are implemented is C language using a structure.</li>
+               <li>We know that a node contains data part and pointer so it will be implemented like this &darr;</li>
+            </ul>
+            <pre>
+                    <code>                 
+struct Node
+{
+      int data;
+      struct Node *next; // self referencial structure.
+}
+                    </code>
+                </pre>
+            <ul>
+               <li>Now we will create 3 node and try to connect it with each other.</li>
+            </ul>
+            <div class="code">
+               <div class="dotc"></div>
+               <pre>
+                   <code>
+#include &lt;stdio.h>
+struct node
+{
+   int data;
+   struct node *next;
+};
+int main()
+{
+   /* Initialize nodes */
+   struct node *head;
+   struct node *one = NULL;
+   struct node *two = NULL;
+   struct node *three = NULL;
+
+   /* Allocate memory */
+   one = (struct node *) malloc(sizeof(struct node));
+   two = (struct node *) malloc(sizeof(struct node));
+   three = (struct node *) malloc(sizeof(struct node));
+
+   /* Assign data values */
+   one->data = 1;
+   two->data = 2;
+   three->data = 3;
+
+   /* Connect nodes */
+   one->next = two;
+   two->next = three;
+   three->next = NULL;
+
+   /* Save address of first node in head */
+   head = one;
+   return 0;
+}
+                   </code>
+               </pre>
+            </div>
+            <ul>
+               <li>Now we have created a linear data structure like this &darr;</li>
+            </ul>
+            <img src="../../images/link2.svg" alt="Linear data structure using linked list" class="wb">
+         </div>
+         <div class="in">
+            <h3>Finally stack implementation using linked-list</h3>
+            <ul>
+               <li>Here also a node will have a data part and pointer part.</li>
+               <li>As in stack all operation occurs from top, so we will create a top pointer which will always point to
+                  the topmost element.</li>
+            </ul>
+            <div class='code'>
+               <div class='dotc'></div>
+               <button class="ac">Stack implementation using linked-list code</button>
+               <div class="panel">
+                  <pre>
+                     <code>
+#include &lt;stdio.h>
+#include &lt;stdlib.h>
+typedef struct node
+{
+      int data;
+      struct node *next;
+} node;
+node *top = NULL;
+void push();
+void pop();
+void display();
+
+int main()
+{
+      int choice;
+      while (1)
+      {
+         printf("\n\n-!-!-!-!-!- MENU -!-!-!-!-!-");
+         printf("\n1. PUSH");
+         printf("\n2. POP");
+         printf("\n3. DISPLAY");
+         printf("\n4. EXIT");
+         printf("\n Enter your choice : ");
+         scanf("%d", &choice);
+         switch (choice)
+         {
+         case 1:
+            push();
+            break;
+         case 2:
+            pop();
+            break;
+         case 3:
+            display();
+            break;
+         case 4:
+            exit(0);
+         default:
+            printf("\nEnter a correct choice : ");
+         } 
+      }
+      return 0;
+}
+
+void push()
+{
+      node *temp = (node *)malloc(sizeof(node));
+      if (temp == NULL)
+      {
+         printf("\nOverflow");
+         return;
+      }
+      printf("\nEnter a digit : ");
+      scanf("%d", &temp->data);
+      temp->next = top;
+      top = temp;
+}
+
+void pop()
+{
+      if (top == NULL)
+      {
+         printf("\nUnderflow");
+         return;
+      }
+      node *temp = top;
+      top = top->next;
+      printf("\n%d is deleted", temp->data);
+      free(temp);
+}
+
+void display()
+{
+      if (top == NULL)
+      {
+         printf("\nUnderflow");
+         return;
+      }
+      node *temp = top;
+      while (temp != NULL)
+      {
+         printf("%d ", temp->data);
+         temp = temp->next;
+      }
+}      
+                     </code>
+                  </pre>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="content-box">
+      <p>References &darr;</p>
+      <ul>
+         <li><a href="https://www.simplilearn.com/tutorials/data-structure-tutorial/stack-implementation-using-array">www.simplilearn.com
+               (stack implementatin using array)</a></li>
+         <li><a href="https://www.programiz.com/dsa/linked-list">www.programiz.com (linked-list)</a></li>
+      </ul>
+   </div>
+   <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+   <script src="../../../../public/main.js"></script>
+</body>
+
+</html>

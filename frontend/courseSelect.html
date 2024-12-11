@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Selection</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #760404;
+            --secondary-color: #e48e8e;
+            --text-color: #333;
+            --bg-color: #fff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            flex-direction: column;
+        }
+
+        .logo {
+            width: 150px;
+            height: 150px;
+            margin-bottom: 30px;
+        }
+
+        .course-selector {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 20px;
+        }
+
+        .select-btn {
+            width: 100%;
+            padding: 15px 20px;
+            background: var(--bg-color);
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            color: var(--text-color);
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .select-btn i {
+            transition: transform 0.3s ease;
+        }
+
+        .select-btn.active i {
+            transform: rotate(180deg);
+        }
+
+        .course-dropdown {
+            position: absolute;
+            top: 110%;
+            left: 0;
+            width: 100%;
+            background: var(--bg-color);
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            display: none;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+
+        .course-dropdown.active {
+            display: block;
+        }
+
+        .course-option {
+            padding: 12px 20px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .course-option:hover {
+            background: var(--secondary-color);
+            color: white;
+        }
+
+        .course-name {
+            font-weight: 500;
+            margin-bottom: 4px;
+        }
+
+        .course-code {
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+
+        .open-btn {
+            padding: 12px 30px;
+            background: var(--bg-color);
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            color: var(--text-color);
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+            display: none;
+        }
+
+        .open-btn:hover {
+            background: var(--secondary-color);
+            color: white;
+        }
+
+        .open-btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+    </style>
+</head>
+<body>
+    <img src="hill-black.png" alt="GEHU Logo" class="logo" style="width: 300px; height: auto;">
+    
+    <div class="course-selector">
+        <button class="select-btn">
+            <span>Select Course</span>
+            <i class="fas fa-chevron-down"></i>
+        </button>
+        <div class="course-dropdown">
+            <div class="course-option" data-page="selection.html">
+                <div class="course-name">Bachelor of Computer Applications</div>    
+            </div>
+            <div class="course-option" data-page="mca.html">
+                <div class="course-name">Master of Computer Applications</div>
+            </div>
+            <div class="course-option" data-page="btech-cse.html">
+                <div class="course-name">B.Tech CSE</div>
+            </div>
+            <div class="course-option" data-page="btech-ece.html">
+                <div class="course-name">B.Tech Electronics & Communication Engineering </div>
+            </div>
+            <div class="course-option" data-page="bcom.html">
+                <div class="course-name">B.Com</div>
+            </div>
+            <div class="course-option" data-page="btech-civil.html">
+                <div class="course-name">B.Tech Civil Engineering</div>
+            </div>
+            <div class="course-option" data-page="bba.html">
+                <div class="course-name">BBA</div>
+            </div>
+            <div class="course-option" data-page="mba.html">
+                <div class="course-name">MBA</div>
+            </div>
+        </div>
+    </div>
+
+    <button class="open-btn">Open Course</button>
+
+    <script>
+        const selectBtn = document.querySelector('.select-btn');
+        const courseDropdown = document.querySelector('.course-dropdown');
+        const courseOptions = document.querySelectorAll('.course-option');
+        const openBtn = document.querySelector('.open-btn');
+        let selectedPage = '';
+
+        selectBtn.addEventListener('click', () => {
+            selectBtn.classList.toggle('active');
+            courseDropdown.classList.toggle('active');
+        });
+
+        courseOptions.forEach(option => {
+            option.addEventListener('click', () => {
+                const courseName = option.querySelector('.course-name').textContent;
+                selectedPage = option.dataset.page;
+                selectBtn.querySelector('span').textContent = courseName;
+                courseDropdown.classList.remove('active');
+                selectBtn.classList.remove('active');
+                openBtn.style.display = 'block'; // Show open button after selection
+            });
+        });
+
+        openBtn.addEventListener('click', () => {
+            if (selectedPage) {
+                window.location.href = selectedPage;
+            }
+        });
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!selectBtn.contains(e.target)) {
+                courseDropdown.classList.remove('active');
+                selectBtn.classList.remove('active');
+            }
+        });
+    </script>
+</body>
+</html>

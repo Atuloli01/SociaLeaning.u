@@ -1,0 +1,663 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit 1</title>
+    <link rel="stylesheet" href="../../../../public/style.css">
+    <link rel="icon" href="../../../../public/logo/favicon_io/favicon.ico">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        .ms {
+            display: inline-block;
+            font-size: 20px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+
+<body class="bg-c">
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">back</a>
+        <div class="fix-column-links">
+            <a href="#" class="link"></a>
+            <div class="botbut">
+                <a href="../unit2/index.html" class="link">Next Topic &rarr;</a>
+            </div>
+        </div>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Unit 1</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <ul>
+            <li>CBNST, or Constraint-Based Network Structure, is a methodology employed to optimize performance and
+                minimize errors in problem-solving applications. This approach is particularly valuable in various
+                domains, including data science, machine learning, and artificial intelligence. By leveraging the
+                principles of CBNST, practitioners aim to enhance the efficiency and accuracy of their solutions,
+                contributing to more robust and reliable outcomes in complex computational tasks.</li>
+        </ul>
+        <div class="wh">
+            <h2>Floating Point Arithmetic</h2>
+            <ul>
+                <li>Floating point arithmetic is a fundamental concept in computer science and mathematics, used for
+                    representing and handling real numbers in binary form.</li>
+                <li>It is essential for converting real values like 9.2 * 10<sup>-5</sup> into binary form, as many real
+                    numbers cannot be precisely represented in the binary system due to its finite precision.</li>
+                <li>Floating point arithmetic provides a way to approximate and handle real numbers with a wide range of
+                    magnitudes, allowing computers to perform complex calculations involving decimal fractions and large
+                    or small numbers efficiently.</li>
+                <li>One of the key components of floating point arithmetic is the representation of numbers using a sign
+                    bit, exponent, and mantissa, which allows for expressing numbers in scientific notation.</li>
+                <li>However, it's important to note that floating point arithmetic can introduce rounding errors and
+                    precision issues, especially when dealing with extremely small or large numbers or performing
+                    extensive calculations.</li>
+                <li>Modern computer systems typically implement standards like IEEE 754 to define the format and
+                    operations for floating point arithmetic, ensuring consistency and accuracy across different
+                    platforms.</li>
+            </ul>
+            <div class="in">
+                <h3>Applications of Floating Point Arithmetic</h3>
+                <ol>
+                    <li>Representation of Real Numbers: Floating point arithmetic is used to represent real numbers in
+                        computer systems, allowing for the handling of decimal fractions and large or small numbers.
+                    </li>
+                    <li>Standardization: Floating point arithmetic follows standardized formats and operations, such as
+                        IEEE 754, ensuring consistency and compatibility across different computing platforms and
+                        programming languages.</li>
+                    <li>Efficiency and Speed: Floating point arithmetic enables efficient and speedy computation of
+                        complex mathematical operations, making it essential for scientific computing, simulations, and
+                        graphics processing.</li>
+                    <li>Numerical Stability: It provides numerical stability by minimizing rounding errors and
+                        maintaining accuracy in calculations, crucial for scientific and engineering applications where
+                        precision is critical.</li>
+                    <li>Handling a Large Range of Magnitude: Floating point arithmetic supports computations involving a
+                        wide range of magnitudes, from very small numbers (e.g., subatomic particles) to extremely large
+                        numbers (e.g., astronomical distances), facilitating versatile and accurate numerical
+                        processing.</li>
+                </ol>
+            </div>
+            <div class="in">
+                <h3>Significant Digits</h3>
+                <p>In a real or decimal number, the digits used to express the number are called significant digits.
+                    Here are the criteria for determining significant digits:</p>
+                <ol>
+                    <li>Digits from 1 to 9 are significant. For example, in 123, all three digits are significant.</li>
+                    <li>Zero (0) is a significant digit in many cases, but there are specific times when it is not
+                        significant:
+                        <ul>
+                            <li>When zero is used just to show the position of the decimal point. For example, in 0.001,
+                                only the digit 1 is significant because the zeros are just placeholders.
+                                <ul>
+                                    <li>Example: In 0.001, only the digit 1 is significant.</li>
+                                </ul>
+                            </li>
+                            <li>When zero is used to fill in places in large numbers without adding precision. For
+                                example, in 100, the zeros are not significant because they only indicate that the
+                                number is in the hundreds.
+                            </li>
+                        </ul>
+                        However, there are cases where zeros are significant:
+                        <ul>
+                            <li>If a zero appears between other significant digits, it is also significant.
+                                <ul>
+                                    <li>Example: In 105, all digits (1, 0, 5) are significant.</li>
+                                </ul>
+                            </li>
+                            <li>If a zero comes after a decimal point and after another significant digit, it is also
+                                significant.
+                                <ul>
+                                    <li>Example: In 2.50, all digits (2, 5, 0) are significant.</li>
+                                    <li>Example: In 2.500000, all digits are significant.</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                </ol>
+                <p><strong>Criteria for Significant Digits:</strong></p>
+                <ol>
+                    <li>All non-zero digits are significant. For example:
+                        <ul>
+                            <li>In 456, all three digits are significant.</li>
+                            <li>In 0.00478, all digits except zeros after the decimal point are significant.</li>
+                        </ul>
+                    </li>
+                    <li>Zero digits are significant when:
+                        <ul>
+                            <li>They lie between significant digits. For example, in 102, both zeros are significant
+                                because they are between 1 and 2.</li>
+                            <li>They are to the right of the decimal point and to the right of a non-zero digit. In
+                                10.20, both zeros are significant.</li>
+                        </ul>
+                        <img src="../../images/cbnst3.svg" alt="" class="wb">
+                    </li>
+
+                    <br><img src="../../images/cbnst2.svg" alt="" class="wb">
+                    </li>
+                </ol>
+                <p><strong>Q- Find out the number of significant digit and write the significant digits for the
+                        following
+                        numbers:</strong> <br> 3696, 3060, 3900, 39.69, 39.00, 0.00390, 3.9, 6*10<sup>2</sup>, 3.0069.
+                </p>
+                <img src="../../images/cbnst4.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>Concept of MSD and LSD</h3>
+                <img src="../../images/cbnst5.svg" alt="" class="wb">
+                <p>
+                    <strong>Most Significant Digit (MSD)</strong>
+                </p>
+                <ul>
+                    <li>The Most Significant Digit (MSD) is the digit in a number that represents the largest value and
+                        contributes the most to the overall magnitude of the number.</li>
+                    <li>It is the leftmost digit in a number and holds the highest place value.</li>
+                    <li>For example, in the number 54321, the MSD is 5, as it represents the thousands place.</li>
+                </ul>
+                <p><strong>Least Significant Digit (LSD)</strong></p>
+                <ul>
+                    <li>The Least Significant Digit (LSD) is the digit in a number that contributes the least to the
+                        overall magnitude and has the smallest place value.</li>
+                    <li>It is the rightmost digit in a number and changes the value of the number minimally when
+                        altered.</li>
+                    <li>For example, in the number 54321, the LSD is 1, as it represents the units place.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Understanding Scientific Notation</h3>
+                <p>Scientific notation is a way to express numbers that are very large or very small in a concise and
+                    standardized format using powers of 10.</p>
+                <ul>
+                    <li><strong>Format:</strong> The scientific notation format is represented as M * 10<sup>n</sup>,
+                        where:
+                        <ul>
+                            <li>M is a decimal number between 1 and 10 (inclusive), known as the mantissa or
+                                coefficient.</li>
+                            <li>10 is the base or radix of the notation.</li>
+                            <li><i>n</i> is an integer representing the exponent, indicating the number of places the
+                                decimal point needs to be moved.</li>
+                        </ul>
+                    </li>
+                    <li><strong>Example:</strong>
+                        <ul>
+                            <li>Large Number: 300,000,000 can be written in scientific notation as 3*10<sup>8</sup>.
+                                Here,
+                                M=3 and n=8.</li>
+                            <li>Small Number: 0.000000005 can be written as 5*10<sup>-9</sup>. Here, M=5 and n=−9.
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Normalization</h3>
+                <p>Normalization in floating point arithmetic refers to the process of representing a floating point
+                    number in a standardized form, typically in scientific notation, to ensure efficient storage and
+                    computation while preserving accuracy. It involves adjusting the significand (mantissa) and exponent
+                    to a normalized format.</p>
+                <img src="../../images/cbnst6.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>Operations</h3>
+                <ol>
+                    <li>Addition</li>
+                    <li>Subtraction</li>
+                    <li>Multiplication</li>
+                    <li>Division</li>
+                </ol>
+                <div class="wh">
+                    <p><strong>Addition</strong></p>
+                    <ul>
+                        <li>Ensure that the exponents of all the numbers are equal. If not, adjust them by shifting the
+                            decimal point (normalization).</li>
+                        <li>Add the two numbers together. If the result has a number before the decimal greater than 0
+                            (e.g., 1.8834), shift the decimal point to make it 0.18834.</li>
+                    </ul>
+                    <img src="../../images/cbnst7.svg" alt="" class="wb">
+                </div>
+                <div class="wh">
+                    <p><strong>Subtraction</strong></p>
+                    <ul>
+                        <li>Ensure that the exponents of all the numbers are equal. If not, adjust them by shifting the
+                            decimal point (normalization).</li>
+                        <li>Subtract the two numbers. If the result has a number after the decimal of zero (e.g.,
+                            0.001883), and there is no significant digit before the decimal, shift the decimal point to
+                            make it equal to 0 (0.1883).</li>
+                    </ul>
+                    <p>Example:
+                        <br>1:
+                        <br>0.6546 * 10<sup>5</sup> - 0.5433 * 10<sup>5</sup> = 0.1113 * 10<sup>5</sup> (as the exponent
+                        are same so there is no change required)
+                        <br><br>2:
+                        <br>0.6546 * 10<sup>5</sup> - 0.5433 * 10<sup>7</sup>
+                        <br>First we will make the exponent same:
+                        <br>0.6546 * 10<sup>5</sup> = 0.006546 * 10<sup>7</sup>
+                        <br>now perform 0.0065 * 10<sup>7</sup> - 0.5433 * 10<sup>7</sup> = - 5368 * 10<sup>7</sup>
+                        (answer)
+                    </p>
+                </div>
+                <div class="wh">
+                    <p><strong>Multiplication</strong></p>
+                    <ul>
+                        <li>Here the exponents of two numbers get added together.</li>
+                        <li>If the result is having number greater than 0 before the decimal point (e.g. 1.898) so shift
+                            the decimal point accordingly.</li>
+                    </ul>
+                    <img src="../../images/cbnst9.svg" alt="" class="wb">
+                </div>
+                <div class="wh">
+                    <p><strong>Division</strong></p>
+                    <ul>
+                        <li>Here the exponents of two numbers get subtracted.</li>
+                        <li>If the result of the division of the mantissa part has a number greater than 0 before the
+                            decimal (e.g., 1.898), then shift the decimal point accordingly.</li>
+                    </ul>
+                    <pre>
+  0.6546 * 10^5
+/ 0.5433 * 10^8
+----------------- 
+  1.205 * 10^-3 = 0.1205 * 10^-2
+                    </pre>
+                </div>
+            </div>
+            <div class="in">
+                <h3>Overflow and Underflow Conditions</h3>
+                <ul>
+                    <li>Overflow is a condition where the exponent becomes greater than 99, and it can occur in both
+                        addition and multiplication.</li>
+                    <li>Underflow condition is a condition when the exponent becomes smaller than -99, and it can occur
+                        in subtraction.</li>
+                </ul>
+                <img src="../../images/cbnst11.svg" alt="" class="wb">
+                <br><img src="../../images/cbnst12.svg" alt="" class="wb">
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Errors in Numerical Computation</h2>
+            <ul>
+                <li>Errors in numerical computation refer to disparities between the actual value of a quantity and
+                    its approximate value obtained through measurement or calculation. These errors are inherent in the
+                    process of representing real-world values with finite precision in numerical systems.</li>
+                <li>There are several ways to describe errors in measurements and calculations. One common definition of
+                    error is the difference between the actual value x and the approximate value x<sup>a</sup>.
+                    Mathematically, the error E is calculated as: E = x - x<sup>a</sup></li>
+                <li>
+                    Errors occur due to the following two reasons:
+                    <br>
+                    I. Errors in the data: These errors stem from inaccuracies or inconsistencies in the data itself,
+                    such as measurement errors, data entry mistakes, or incomplete data.
+                    <br>
+                    II. Errors of calculation: These errors arise during the process of mathematical calculations or
+                    computations, such as rounding errors, truncation errors, or algorithmic inaccuracies.
+                    <br>
+                    Error in the data is often inherent and challenging to rectify, as it depends on the quality and
+                    reliability of the data sources. On the other hand, errors of calculation can usually be minimized
+                    to a very small magnitude with careful attention to mathematical precision and techniques.
+                    <br>
+                    For example, the use of the mathematical constant Pi (π) can vary slightly in different contexts,
+                    leading to potential errors. However, by using more accurate approximations of Pi, such as 3.1416
+                    instead of 3.14, the error in calculations involving Pi can be reduced significantly.
+                </li>
+                <li>Various types of errors occur in numerical computation are as under:
+                    <ol>
+                        <li>Data Errors: These errors occur due to inaccuracies or inconsistencies in the data itself,
+                            such as missing values, incorrect measurements, or data entry mistakes. For example, if a
+                            dataset contains a value of 9999 instead of 999, it introduces a significant data error.
+                        </li>
+                        <li>Truncation Errors: Truncation errors arise when a calculation or measurement is approximated
+                            by discarding digits beyond a certain point. For instance, if a calculation involving Pi (π)
+                            is truncated to 3.14 instead of using more decimal places like 3.14159, it introduces a
+                            truncation error.</li>
+                        <li>Round-off Errors: Round-off errors occur when a calculation involves rounding numbers to a
+                            specified number of decimal places. For example, rounding 1.235 to two decimal places
+                            results in 1.24, introducing a round-off error from the original value.</li>
+                        <li>Absolute Errors: Absolute errors represent the magnitude of the difference between the
+                            actual value and the measured or calculated value. For instance, if a measurement of 15.3 cm
+                            is recorded as 15.5 cm, the absolute error is |15.5 - 15.3| = 0.2 cm.</li>
+                        <li>Relative Errors: Relative errors express the error as a ratio or percentage of the actual
+                            value. It is calculated as the absolute error divided by the actual value. For example, if
+                            the actual length is 10 cm and the measured length is 9.5 cm, the relative error is (10 -
+                            9.5) / 10 = 0.05 or 5%.</li>
+                        <li>Percentage Errors: Percentage errors are a specific form of relative errors expressed as a
+                            percentage of the actual value. Using the previous example, the percentage error would be 5%
+                            if the actual length is 10 cm and the measured length is 9.5 cm.</li>
+                    </ol>
+                </li>
+            </ul>
+
+        </div>
+        <div class="wh">
+            <h2>Understanding Rules for Rounding-off a Number to n Significant Figures:</h2>
+            <ul>
+                <li>Identify the digit at the nth significant figure.</li>
+                <li>If the digit following the nth significant figure is 5 or greater, round up the nth significant
+                    figure by increasing it by 1.</li>
+                <li>If the digit following the nth significant figure is less than 5, leave the nth significant
+                    figure unchanged.</li>
+                <li>If the digit following the nth significant figure is exactly 5 and there are non-zero digits
+                    after it, round up the nth significant figure by increasing it by 1.</li>
+                <li>If the digit following the nth significant figure is exactly 5 and there are only zero digits
+                    after it, round the nth significant figure to the nearest even number.</li>
+            </ul>
+            <p><strong>Rounding to Three Significant Figures:</strong></p>
+            <ol>
+                <li>If the digit after the third significant figure is 5 or greater, round up the third significant
+                    figure by 1.</li>
+                <ul>
+                    <li>Example: 12.3567 rounds to 12.4 (since 3 is followed by 5 or greater)</li>
+                </ul>
+                <li>If the digit after the third significant figure is less than 5, the third significant figure remains
+                    unchanged.</li>
+                <ul>
+                    <li>Example: 78.432 remains as 78.4 (since 4 is followed by less than 5)</li>
+                </ul>
+                <li>If the digit after the third significant figure is exactly 5 with non-zero digits after it, round up
+                    the third significant figure by 1.</li>
+                <ul>
+                    <li>Example: 67.3512 rounds to 67.4 (since 5 is followed by non-zero digits)</li>
+                </ul>
+                <li>If the digit after the third significant figure is exactly 5 with only zero digits after it, the
+                    third significant figure remains unchanged.</li>
+                <ul>
+                    <li>Example: 89.650 remains as 89.6 (since 5 is followed by only zeros)</li>
+                </ul>
+            </ol>
+        </div>
+        <div class="wh">
+            <h2>Algebraic and transcendental equations Using Iterative Methods</h2>
+            <p><strong>We should know What Algebraic and Transcendental Equations Are</strong></p>
+            <ul>
+                <li>Algebraic equations are mathematical expressions composed of variables and constants, combined using
+                    addition, subtraction, multiplication, and division operations. There are several types of algebraic
+                    equations, including:
+                    <ol>
+                        <li>Linear equations - General form ax + b = 0; where a, b are constants and x is the
+                            variable.</li>
+                        <li>Quadratic equations - General form ax^2 + bx + c = 0; where a, b, c are constants and x is
+                            the variable.</li>
+                        <li>Polynomial equations - General form P(x) = a<sub>n</sub> x<sup>n</sup> +
+                            a<sub>n-1</sub>x<sup>n-1</sup> + ... + a<sub>1</sub>x<sup>1</sup> +
+                            a<sub>0</sub>x<sup>0</sup>; where a<sub>n</sub>,
+                            a<sub>n-1</sub>, a<sub>1</sub>, a<sub>0</sub> are constants and x is the variable.</li>
+                        <li>Rational equations - The general form of a rational equation is P(x) / Q(x) = 0, where P(x)
+                            and Q(x) are polynomials.</li>
+                    </ol>
+                </li>
+                <li>Transcendental equations are mathematical expressions that involve functions which cannot be
+                    expressed algebraically. These functions may include exponential, logarithmic, or trigonometric
+                    functions.</li>
+                <li>Transcendental equations play a crucial role in modeling a wide range of real-world phenomena. Some
+                    notable applications include:
+                    <ol>
+                        <li>Radioactive decay</li>
+                        <li>Heat transfer</li>
+                        <li>Electromagnetic waves</li>
+                    </ol>
+                    These equations often defy direct algebraic solutions, necessitating the use of numerical or
+                    iterative techniques for finding accurate solutions. The understanding and analysis of
+                    transcendental equations are essential in addressing complex scenarios in fields such as physics,
+                    engineering, and various scientific disciplines.
+                </li>
+            </ul>
+            <div class="in">
+                <h3>What is the Root of an Equation?</h3>
+                <p>The root of an equation is a value that, when substituted into the equation, makes the equation equal
+                    to zero. In other words, it is a solution or solutions that satisfy the equation by reducing it to
+                    zero.</p>
+
+                <p>For example, consider the quadratic equation:</p>
+
+                <strong>ax^2 + bx + c = 0</strong>
+
+                <p>The roots of this equation can be found using the quadratic formula:</p>
+
+                <pre>
+x = (-b ± √(b^2 - 4ac)) / 2a
+</pre>
+
+                <p>In this formula, the values of <strong>a</strong>, <strong>b</strong>, and <strong>c</strong> are
+                    coefficients of
+                    the quadratic equation. The ± symbol indicates that there are usually two roots: one with the
+                    positive square root and one with the negative square root.</p>
+
+                <p>So, the roots of the quadratic equation are the values of <strong>x</strong> that, when substituted
+                    into
+                    the equation, make it equal to zero.</p>
+            </div>
+            <div class="in">
+                <h3>Root finding algorithms:</h3>
+                <ol>
+                    <li>Root Bracketing Algorithm:
+                        <ol>
+                            <li>Bisection Method</li>
+                            <li>False Positioning or Regula Falsi</li>
+                        </ol>
+                    </li>
+                    <li>Root Polishing Algorithm:
+                        <ol>
+                            <li>Secant Method</li>
+                            <li>Newton's Rapshon Method</li>
+                            <li>Iteration Method</li>
+                        </ol>
+                    </li>
+                </ol>
+                <ul>
+                    <li>Root finding methods are broadly categorized into root bracketing and root polishing methods.
+                    </li>
+                    <li>Root Bracketing: In these methods, a new interval is obtained from the previous interval, and
+                        the root for every interval is determined. In contrast, root polishing methods only find the new
+                        root without determining the bracket, making them much faster.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Arrangement of the root finding methods in terms of speed, from slowest to fastest:</h3>
+                <ol>
+                    <li>Bisection Method: This method is relatively slower because it involves narrowing down the
+                        interval by halving it repeatedly until the root is found. It guarantees convergence but can be
+                        slower compared to other methods.</li>
+                    <li>Regula Falsi Method: Also known as the false position method, this approach is generally slower
+                        than some other methods because it combines aspects of both bisection and secant methods, which
+                        can lead to slower convergence.</li>
+                    <li>Iterative Methods: These methods, such as fixed-point iteration or the method of successive
+                        approximations, can be faster than bisection and regula falsi but may still require several
+                        iterations to converge, especially for complex functions or poorly chosen initial guesses.</li>
+                    <li>Secant Method: The secant method is faster than bisection and regula falsi because it uses
+                        secant lines to approximate the root, leading to quicker convergence compared to linear methods
+                        like bisection.</li>
+                    <li>Newton-Raphson Method: This method is often the fastest among these options because it utilizes
+                        both the function and its derivative to iteratively refine the root approximation. It converges
+                        quadratically, which means it can converge much faster than linear methods like bisection and
+                        even secant.</li>
+                </ol>
+                <img src="../../images/cbnst1.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>Bisection Method</h3>
+                <ul>
+                    <li>The bisection method in mathematics is a root-finding technique that involves iteratively
+                        bisecting an interval and selecting a subinterval in which a root must lie for further
+                        processing. This method is also commonly known as the interval halving method.</li>
+                </ul>
+                <p><strong>Steps involved in Bisection Method</strong></p>
+                <ol>
+                    <li>Finding the initial guess (assumptions)</li>
+                    <li>Find the mid value of the root
+                        <br>x<sub>mid</sub> = (x<sub>l</sub> + x<sub>r</sub>) / 2
+                    </li>
+                    <li>Finding next bracket: New interval is found out by the following condition.
+                        <ul>
+                            <li>if (f(x<sub>mid</sub>) * f(x<sub>l</sub>) &lt; 0) <br>Then x<sub>r</sub> =
+                                x<sub>mid</sub> ;
+                                x<sub>l</sub> is same
+                                <br>else x<sub>l</sub> = x<sub>mid</sub>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Note: Iterations are continued until the absolute value of the root is greater than epsilon
+                        (0.003) or until the specified number of iterations is reached.</li>
+                </ol>
+                <p><strong>Example: 1</strong></p>
+                <img src="../../images/xmid1.svg" alt="" class="wb"> <br>
+                <img src="../../images/xmid2.svg" alt="" class="wb"> <br>
+                <img src="../../images/xmid3.svg" alt="" class="wb">
+                <p><strong>Example: 2</strong></p>
+                <img src="../../images/xmid4.svg" alt="" class="wb"> <br>
+                <img src="../../images/xmid5.svg" alt="" class="wb"> <br>
+                <img src="../../images/xmid6.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>Regula Falsi or False Position</h3>
+                <ul>
+                    <li>It is used when root finding through bisection method takes a longer time. It uses slope concept
+                        for reducing the number of iteration.</li>
+                </ul>
+                <img src="../../images/regulafalsi.svg" alt="" class="wb">
+                <p><strong>Example 1:</strong></p>
+                <img src="../../images/cbnst13.svg" alt="" class="wb">
+            </div>
+            <div class="in">
+                <h3>Secant method</h3>
+                <ul>
+                    <li>The secant method bears similarities to the regula falsi method, and it is known for its faster
+                        convergence compared to the regula falsi method.</li>
+                    <li>However, it's important to note that convergence is not guaranteed in the case of the secant
+                        method. The secant method is also referred to as the chord method.</li>
+                    <li>The generation of a new point in the secant method is determined using the formula: <br>
+                        <span class="ms">\(x_{i+1} = x_{i-1} - \frac{x_{i} - x_{i-1}}{f(x_{i-1}) - f(x_{i})} *
+                            f(x_{i-1})\)</span>
+                    </li>
+                    <li>As this method is not a root bracket method so we don't have to check that condition (f(xnext) *
+                        f(xl)
+                        &lt; 0).</li>
+                </ul>
+                <p><strong>Steps in Secant method:</strong>
+                <ol>
+                    <li>Start with initial guess <span class="ms">\(x_{i-1}\)</span> and <span
+                            class="ms">\(x_{i}\)</span>.</li>
+                    <li>Find next approximated root as <span class="ms">\(x_{i+1} = x_{i-1} - \frac{x_{i} -
+                            x_{i-1}}{f(x_{i-1}) - f(x_{i})} *
+                            f(x_{i-1})\)</span></li>
+                    <li>Verify if convergence is obtained i.e. |<span class="ms">\(x_{i+1}\)</span> - <span
+                            class="ms">\(x_{i}\)</span>| <= epsilon if yes then <span class="ms">\(x_{i+1}\)</span> is
+                            the required root</li>
+                </ol>
+                </p>
+                <p><strong>Example:</strong></p>
+                <p>f(x) = x<sup>3</sup> - 5x + 1
+                    <br>Finding initial guess:
+                    <br>f(0) = 1
+                    <br>f(1) = -3
+                    <br>hence <span class="ms">\(x_0\)</span> = 0 and <span class="ms">\(x_1\)</span> = 1
+                    <br>and f(<span class="ms">\(x_0\)</span>) = 1, f(<span class="ms">\(x_1\)</span>) = -3
+                <ul>
+                    <li>Iteration 1:
+                        <br><span class="ms">\(x_2\)</span> = <span class="ms">\(x_{0} - \frac{x_{1} -
+                            x_{0}}{f(x_{0}) - f(x_{1})} *
+                            f(x_{0})\)</span>
+                        <br><span class="ms">\(x_2\)</span> = <span class="ms">\(0 - \frac{1 -
+                            0}{f(0) - f(1)} *
+                            f(0)\)</span>
+                        <br><span class="ms">\(x_2\)</span> = 0.25
+                    </li>
+                    <li>Iteration 2:
+                        <br><span class="ms">\(x_3\)</span> = <span class="ms">\(x_{1} - \frac{x_{2} -
+                            x_{1}}{f(x_{2}) - f(x_{1})} *
+                            f(x_{1})\)</span>
+                        <br><span class="ms">\(x_3\)</span> = 0.1864
+                        <br>f(<span class="ms">\(x_3\)</span>) = 0.0744
+                    </li>
+                    <li>Iteration 3:
+                        <br><span class="ms">\(x_4\)</span> = <span class="ms">\(x_{2} - \frac{x_{3} -
+                            x_{2}}{f(x_{3}) - f(x_{2})} *
+                            f(x_{2})\)</span>
+                        <br><span class="ms">\(x_4\)</span> = 0.2017
+                        <br>f(<span class="ms">\(x_4\)</span>) = -0.000294
+                    </li>
+                    <li>Iteration 4:
+                        <br><span class="ms">\(x_5\)</span> = <span class="ms">\(x_{3} - \frac{x_{4} -
+                            x_{3}}{f(x_{4}) - f(x_{3})} *
+                            f(x_{3})\)</span>
+                        <br><span class="ms">\(x_5\)</span> = 0.2016
+                        <br>checking convergence; 0.2017 - 0.2016 = 0.0001 which is less than 0.003 hence we can say the
+                        root is 0.2016
+                    </li>
+                </ul>
+                </p>
+            </div>
+            <div class="in">
+                <h3>Newton-Raphson Method</h3>
+                <ul>
+                    <li>The Newton-Raphson method takes only a single guess to find the next root. It is the most
+                        preferred method for finding the root of an equation and is also known as the method of
+                        tangents. Selection of the initial guess ensures that this algorithm converges faster than other
+                        algorithms. The next guess is found using the formula. <br>
+                        <span class="ms">\(x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}\)</span>
+                        <br>For inital guess take the \(x_0\) which is closer to 0 out of initial bracket.
+                        <br>We keep finding next term until the terms are repeated.
+                    </li>
+                    <li>Derivation or differentiation is a mathematical concept that measures how a quantity changes
+                        when another related quantity undergoes a change. In simpler terms, it provides a way to
+                        understand the rate at which one variable changes concerning another. For example, if we have a
+                        function describing the position of an object over time, the derivative of that function with
+                        respect to time gives us the object's velocity.</li>
+                </ul>
+                <p><strong>Q-</strong> Find the real root of \(x^4 - x - 10 = 0\) by Newton Raphson Method.
+                <ul>
+                    <li>Sol:
+                        <br>f(x) = \(x^4 - x - 10 = 0\)
+                        <br>finding inital guess \((x_0)\)
+                        <br>f(0) = -10
+                        <br>f(1) = -10
+                        <br>f(2) = 4
+                        <br>1 and 2 are the bracket
+                        <br>at f(2), the function value is closer to 0, so we will take \(x_0 = 2\)
+                        <br><strong>iteration 1:</strong>
+                        <br>\(x_1\) = \(x_0\) - <span class="ms">\(\frac{f(x_0)}{f'(x_0)}\)</span>
+                        <br>\(f'(x_0)\) = <span class="ms">\(\frac{d\ (x^4 - x - 10)}{dx}\) = \(4x^3 - 1\) = 33</span>
+                        <br>\(x_1\) = 2 - <span class="ms">\(\frac{4}{33}\)</span>
+                        <br>\(x_1\) = 1.8788 and f(\(x_1\)) = 0.5813
+                        <br><strong>iteration 2:</strong>
+                        <br>\(x_2\) = \(x_1\) - <span class="ms">\(\frac{f(x_1)}{f'(x_1)}\)</span>
+                        <br>\(f'(x_1)\) = 27.53
+                        <br>\(x_2\) = 1.8788 - <span class="ms">\(\frac{0.5813}{27.53}\)</span>
+                        <br>\(x_2\) = 1.8577 and f(\(x_2\)) = 0.0520
+                        <br><strong>iteration 3:</strong>
+                        <br>\(x_3\) = \(x_2\) - <span class="ms">\(\frac{f(x_2)}{f'(x_2)}\)</span>
+                        <br>\(f'(x_2)\) = 26.6441
+                        <br>\(x_3\) = 1.8577 - <span class="ms">\(\frac{0.0520}{26.6441}\)</span>
+                        <br>\(x_3\) = 1.8557 and f(\(x_3\)) = 0.0028
+                        <br><strong>iteration 4:</strong>
+                        <br>\(x_4\) = \(x_3\) - <span class="ms">\(\frac{f(x_3)}{f'(x_3)}\)</span>
+                        <br>\(f'(x_3)\) = 26.5613
+                        <br>\(x_4\) = 1.8557 - <span class="ms">\(\frac{0.0028}{26.5613}\)</span>
+                        <br>\(x_4\) = 1.8556 and f(\(x_4\)) = 0.0003
+                        <br><strong>iteration 5:</strong>
+                        <br>\(x_5\) = \(x_4\) - <span class="ms">\(\frac{f(x_4)}{f'(x_4)}\)</span>
+                        <br>\(f'(x_4)\) = 26.5572
+                        <br>\(x_5\) = 1.8556 - <span class="ms">\(\frac{0.0003}{26.5572}\)</span>
+                        <br>\(x_5\) = 1.8556
+                        <br>as \(x_5\) and \(x_4\) are same hence 1.8556 is the required root.
+                    </li>
+                </ul>
+                </p>
+            </div>
+        </div>
+    </div>
+    <script src="../../../../public/main.js"></script>
+</body>
+
+</html>

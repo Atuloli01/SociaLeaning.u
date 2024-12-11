@@ -1,0 +1,1365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistical Concepts</title>
+    <link rel="stylesheet" href="../../../../public/style.css">
+    <link rel="icon" href="../../../../public/logo/favicon_io/favicon.ico">
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body class="bg-c">
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../index.html" class="home">back</a>
+        <div class="fix-column-links">
+            <a href="#" class="link"></a>
+            <div class="botbut">
+                <a href="../unit3/index.html" class="link">Next Topic &rarr;</a>
+                <a href="../unit1/index.html" class="link">&larr; Previous Topic</a>
+            </div>
+        </div>
+    </div>
+    <div id="navbar" class="grad">
+        <div>
+            <div class="openbtn" onclick="openNav()">
+                <div id="nav-icon1" for="nav-menu1">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+        <div>
+            <h2>Statistical Concepts</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Statistical Concepts</h1>
+        <div class="wh">
+            <h2>Basics of Statistics</h2>
+            <ul>
+                <li>Statistics is the study of data, where data can be any information collected for analysis. For
+                    example, in Delhi, data on daily crimes is collected and analyzed to draw conclusions and make
+                    informed decisions.</li>
+            </ul>
+            <div class="in">
+                <h3>Range</h3>
+                <ul>
+                    <li>The range is the difference between the largest and smallest numbers in a set of data.</li>
+                    <li>Example: Find the range of the following data set: 3, 3, 5, 5, 8, 9, 9, 9, 13, 15.
+                        <br>Range = Largest number - Smallest number
+                        <br>Range = 15 - 3 = 12
+                        <br>So, the range of this data set is 12.
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Mean (Average)</h3>
+                <ul>
+                    <li>The mean is the average of all numbers in a given data set.</li>
+                    <li>The arithmetic mean is calculated by adding up all the numbers and dividing the sum by the total
+                        number of numbers in the list.</li>
+                    <li>Mean of observations = Sum of observations / Total number of observations
+                        <br>Mathematically, Mean = \(\frac{Sum\ of\ observations}{Total\ number\ of observations}\)
+                    </li>
+                    <li>Find mean of: 3, 4, 5, 5, 8, 9, 9, 9, 13, 15
+                        <br>sum of all data = 80
+                        <br>total number of data = 10
+                        <br>mean = \(\frac{80}{10}\)  = 8
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Median</h3>
+                <ul>
+                    <li>Median is the middle number when data is arranged in ascending order.</li>
+                    <li>If number of observation is even:
+                        <br>Median = <math>
+                            <mfrac>
+                                <mn>(<math>
+                                        <mfrac>
+                                            <mn>n</mn>
+                                            <mn>2</mn>
+                                        </mfrac>
+                                    </math>)th term + (
+                                    <math>
+                                        <mfrac>
+                                            <mn>n</mn>
+                                            <mn>2</mn>
+                                        </mfrac>
+                                    </math> + 1) th term
+                                </mn>
+                                <mn>2</mn>
+                            </mfrac>
+                        </math>
+                        <br>Example: Find the median of the data set: 3, 4, 5, 5, <u>8</u>, <u>9</u>, 9, 9, 13, 15
+                        <br>Here, the number of observations is 10, so the average of the underlined numbers will be the
+                        median.
+                        <br>Median = <math>
+                            <mfrac>
+                                <mn>8 + 9</mn>
+                                <mn>2</mn>
+                            </mfrac>
+                        </math>
+                        <br>Median = 8.5
+                    </li>
+                    <li>If number of observation is odd:
+                        Median = (<math>
+                            <mfrac>
+                                <mn>n + 1</mn>
+                                <mn>2</mn>
+                            </mfrac>
+                        </math>)th term
+                        <br>Example: Find the median of the data set: 3, 4, 5, 5, 8, <u>9</u>, 9, 9, 13, 15, 16
+                        <br>Here, the number of observations is 11, so the underlined number will be the median.
+                        <br>Median = 9
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Mode</h3>
+                <ul>
+                    <li>Mode is the most common number in the dataset or the value that appears most frequently.</li>
+                    <li>Example: Find the mode of the data set: 3, 4, 5, 5, 8, <u>9</u>, <u>9</u>, <u>9</u>, 13, 15, 16
+                        <br>Here, 9 occurs more frequently than any other number, so it is the mode.
+                        <br>Mode = 9
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Variance</h3>
+                <ul>
+                    <li>Variance is the expected value of the squared variation of a random variable from its mean value
+                        or variance is the measure of how data points differ from the mean.</li>
+                    <li>How to find variance?
+                        <ol>
+                            <li>Find the mean of the given data.</li>
+                            <li>Now subtract the average (mean) from each value and square them.</li>
+                            <li>Find the average of these squared values.</li>
+                        </ol>
+                    </li>
+                    <li><img src="../../images/py5.svg" alt="" class="wb">
+                        <br>Where (mean) <u style="text-decoration: overline;">x</u> = <math>
+                            <mfrac>
+                                <mn>x1 + x2 + x3 + x4 + x5 +
+                                    ....... + xn</mn>
+                                <mn>n</mn>
+                            </mfrac>
+                        </math>
+                        and n = number of observatons.
+                    </li>
+                    <li>Example: Find variance for the following data:
+                        <br>3, 4, 5, 5, 8, 9, 9, 9, 13, 15
+                        <br>mean = 8
+                        <pre>
++-----------------------------+
+|  x    |mean-x|   (mean-x)^2 |   
+|------------------------------
+|  3        5           25    |
+|  4        4           16    |
+|  5        3           9     |
+|  5        3           9     |
+|  8        0           0     |
+|  9        1           1     |
+|  9        1           1     |          
+|  9        1           1     |
+|  13       5           25    |
+|  15       7           49    |
++-----------------------------+
+                        136
+                        </pre>
+                        sum of all (mean-x)<sup>2</sup> = 136
+                        <br>n (number of observations) = 10
+                        <br>variance = <math>
+                            <mfrac>
+                                <mn>136</mn>
+                                <mn>10</mn>
+                            </mfrac>
+                        </math> = 13.6
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Standard deviation</h3>
+                <ul>
+                    <li>Standard deviation is the positive square root of the variance. It is abbreviated as SD and
+                        denoted by &sigma;.
+                        <br>It tells about the value that how much it has deviated from the mean value.
+                    </li>
+                    <li>Steps to find standard deviation:
+                        <ol>
+                            <li>Find the mean of the observations.
+                            </li>
+                            <li>Find the squared differences from the mean.
+                                <br>(the dae value - mean)<sup>2</sup>
+                            </li>
+                            <li>Find the average of the squared difference.
+                                <br>Variance = <math>
+                                    <mfrac>
+                                        <mn>the sum of squared difference</mn>
+                                        <mn>the number of observations</mn>
+                                    </mfrac>
+                                </math>
+                            </li>
+                            <li>Find the square root of the variances.
+                                <br>standard deviation = &Sqrt;(Variance)
+                            </li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Sampling</h2>
+            <ul>
+                <li>Sampling means selecting a group (a sample) from a population from which we will collect data for
+                    our research.</li>
+                <li>It is a crucial aspect of research because the results of the study heavily depend on the sampling
+                    technique used. Therefore, choosing the right sampling method is essential to obtain accurate
+                    results that can estimate the population well.</li>
+                <li>For example, suppose there is a male population in a city, and the unemployment rate among this
+                    population is 8%. By sampling a representative group of males, researchers can estimate the overall
+                    unemployment rate in the city more accurately.</li>
+            </ul>
+            <h3>Population</h3>
+            <ul>
+                <li>Population is a collection of elements or individuals from which we draw a statistical sample for a
+                    study. It is the entire group about which we want to draw a conclusion. The number of elements or
+                    individuals in a population is called the population size.</li>
+                <li><strong>Sample</strong>, on the other hand, is a subset of the population. It is the specific group
+                    from which you collect data. The number of elements or individuals in a sample is called the sample
+                    size. The process of selecting a sample is called <strong>sampling</strong>.
+                    <ul>
+                        <li>For example, suppose we are studying the average height of all students in a school. The
+                            population would
+                            be all the students in the school, and the sample would be a smaller group of students
+                            selected for
+                            measurement. The size of the population is the total number of students in the school, while
+                            the sample
+                            size is the number of students actually measured.</li>
+                        <li>Note: The size of the sample is always less than the size of the population.</li>
+                    </ul>
+                </li>
+            </ul>
+
+            <div class="in">
+                <h3>Why do we need a sample?</h3>
+                <ul>
+                    <li>As it is nearly impossible to collect data from each and every individual of the population,
+                        sampling helps us attain information about the entire population.</li>
+                    <li>While the results from a sample may not be completely accurate, they provide a close
+                        approximation
+                        of the population. It is crucial that the selected sample is representative of the population
+                        and
+                        not biased in any manner.</li>
+                    <li>For example, consider a study aiming to understand the preferences of coffee drinkers in a city
+                        with
+                        a large population. Instead of surveying every coffee drinker, which would be impractical,
+                        researchers can select a sample of coffee drinkers representing different demographics, such as
+                        age,
+                        gender, and location. By analyzing this representative sample, researchers can make informed
+                        conclusions about the preferences of the entire coffee-drinking population in the city.</li>
+                </ul>
+                <h3>Sampling techniques</h3>
+                <ol>
+                    <li>Simple Random Sampling (SRS):
+                        <ul>
+                            <li>In Simple Random Sampling, everyone in the population has an equal chance of being
+                                picked.
+                                It's like picking names out of a hat without looking.</li>
+                            <li>Example: If you want to know what students think about a new school rule, you put all
+                                their
+                                names in a box and randomly pick some names. Each student has the same chance of being
+                                chosen for the survey.</li>
+                        </ul>
+                    </li>
+                    <li>Stratified Sampling:
+                        <ul>
+                            <li>In Stratified Sampling, you divide the population into groups (like by age or gender),
+                                then
+                                randomly pick from each group. This ensures you get opinions from all types of people.
+                            </li>
+                            <li>Example: If you're studying favorite colors among kids, you group them by age (e.g.,
+                                5-7,
+                                8-10, 11-13) and randomly choose kids from each group to get a balanced view.</li>
+                        </ul>
+                    </li>
+                    <li>Cluster Sampling:
+                        <ul>
+                            <li>In Cluster Sampling, the population is divided into clusters or groups, and then
+                                clusters
+                                are randomly selected. All individuals within the selected clusters are included in the
+                                sample.</li>
+                            <li>Cluster sampling can be done in two ways:
+                                <ol>
+                                    <li>Single-stage Cluster Sampling: In this method, all elements within the selected
+                                        clusters are included in the sample.</li>
+                                    <li>Two-stage Cluster Sampling: Here, a random sample of clusters is selected, and
+                                        then
+                                        a random sample of individuals is taken from each selected cluster.</li>
+                                </ol>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>Systematic Sampling:
+                        <ul>
+                            <li>In Systematic Sampling, you pick every nth person from a list after a random start. It's
+                                like selecting every 5th person from a line.</li>
+                            <li>Example: If you want to survey shoppers in a mall, you start by randomly choosing a
+                                shopper
+                                and then survey every 10th shopper after that.</li>
+                        </ul>
+                    </li>
+                    <li>Convenience Sampling:
+                        <ul>
+                            <li>Convenience Sampling is picking whoever is easiest to reach. It's quick but may not
+                                represent everyone well.</li>
+                            <li>Example: If you ask people in a shopping mall about their favorite TV show, you're using
+                                convenience sampling because you're only surveying those who happen to be there at that
+                                time.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <ul>
+                    <li>Note: The sampling techniques — simple, cluster, stratified, and systematic — are all
+                        probability
+                        sampling techniques and involve randomization. However, convenience sampling is a
+                        non-probability (or non-random) sampling technique because it relies on the researcher’s ability
+                        to select the sample. Non-probability sampling techniques can lead to biased samples and
+                        results.
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Resampling Techniques and Statistical Inference</h2>
+
+            <div class="in">
+                <h3>Resampling Techniques</h3>
+                <p>Resampling is a technique used in statistics and machine learning to manipulate the composition
+                    of a dataset by adjusting the distribution of its instances. The primary goal of resampling is
+                    to address specific issues within the dataset, such as imbalances, outliers, or to improve the
+                    generalization performance of a model. There are several common methods of resampling:</p>
+                <ol>
+                    <li>
+                        <strong>Oversampling:</strong>
+                        <ul>
+                            <li><strong>Definition:</strong> Oversampling involves increasing the number of
+                                instances in the minority class to balance the class distribution.</li>
+                            <li><strong>Purpose:</strong> It is used to address imbalances in the dataset,
+                                especially when one class is underrepresented.</li>
+                            <li><strong>Methods:</strong> Techniques include random oversampling, Synthetic Minority
+                                Over-sampling Technique (SMOTE), and Adaptive Synthetic Sampling (ADASYN).</li>
+                            <li><strong>Example:</strong> Suppose you have a dataset with 90% positive cases and 10%
+                                negative cases. By oversampling the negative cases, you can create a more balanced
+                                dataset for training a classification model.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Undersampling:</strong>
+                        <ul>
+                            <li><strong>Definition:</strong> Undersampling involves reducing the number of instances
+                                in the majority class to balance the class distribution.</li>
+                            <li><strong>Purpose:</strong> It is employed to mitigate imbalances where one class is
+                                overrepresented, which can lead to biased models.</li>
+                            <li><strong>Methods:</strong> Common approaches include random undersampling, Cluster
+                                Centroids, Tomek Links, and Edited Nearest Neighbors.</li>
+                            <li><strong>Example:</strong> In a dataset with 80% positive cases and 20% negative
+                                cases, undersampling the positive cases can help balance the class distribution for
+                                better model training.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Bootstrapping:</strong>
+                        <ul>
+                            <li><strong>Definition:</strong> Bootstrapping entails creating multiple subsets of the
+                                dataset by sampling with replacement.</li>
+                            <li><strong>Purpose:</strong> It is often used in model training and validation to
+                                improve model robustness and assess variability in performance.</li>
+                            <li><strong>Methods:</strong> Techniques include random bootstrapping and Bagging
+                                (Bootstrap Aggregating) in ensemble methods.</li>
+                            <li><strong>Example:</strong> When training a machine learning model, bootstrapping can
+                                help create diverse subsets of the data to train different parts of the model,
+                                enhancing overall performance.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Cross-Validation:</strong>
+                        <ul>
+                            <li><strong>Definition:</strong> Cross-validation involves dividing the dataset into
+                                multiple subsets for training and testing to assess model performance.</li>
+                            <li><strong>Purpose:</strong> It helps evaluate a model's ability to generalize by
+                                testing it on different subsets of the data.</li>
+                            <li><strong>Methods:</strong> Common types include k-fold cross-validation, stratified
+                                cross-validation, Leave-One-Out Cross-Validation (LOOCV), and Time Series
+                                Cross-Validation.</li>
+                            <li><strong>Example:</strong> In machine learning, cross-validation is used to estimate
+                                a model's performance on unseen data by training and testing it on different subsets
+                                of the dataset.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="in">
+                <h3>Statistical Inference</h3>
+                <p>Statistical inference is a process in statistics that involves drawing conclusions or making
+                    predictions about a population based on a sample of data taken from that population. It encompasses
+                    the use of statistical methods to make inferences about the characteristics of a larger group using
+                    the information obtained from a subset of that group.</p>
+                <p>There are two main branches of statistical inference:</p>
+                <ol>
+                    <li>
+                        <strong>Descriptive Statistics:</strong>
+                        <ul>
+                            <li><strong>Definition:</strong> Descriptive statistics involve summarizing and describing
+                                the main features of a dataset.</li>
+                            <li><strong>Inferential Statistics:</strong> Inferential statistics involve making
+                                inferences or predictions about a population based on a sample of data.</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong>Key Concepts in Statistical Inference:</strong>
+                        <ul>
+                            <li><strong>Population and Sample:</strong> Population refers to the entire group under
+                                consideration, while a sample is a subset used to make inferences.</li>
+                            <li><strong>Parameter and Statistic:</strong> A parameter is a numerical summary of a
+                                population characteristic, while a statistic is a numerical summary of a sample
+                                characteristic.</li>
+                            <li><strong>Hypothesis Testing:</strong> A formal procedure for comparing observed data with
+                                a hypothesis to test a population parameter.</li>
+                            <li><strong>Confidence Intervals:</strong> An interval estimate for a population parameter
+                                providing a range of likely values.</li>
+                            <li><strong>Regression Analysis:</strong> A method to examine the relationship between
+                                variables in a dataset.</li>
+                            <li><strong>Bayesian Inference:</strong> An approach that incorporates prior knowledge and
+                                beliefs about parameters.</li>
+                        </ul>
+                    </li>
+                </ol>
+            </div>
+
+        </div>
+        <div class="wh">
+            <h2>Sampling Distribution & Standard Error</h2>
+            <ul>
+                <li>If we are given a population and we select a sample from it, it's crucial that each element has an
+                    equal chance of being selected, which signifies random sampling. Based on sample statistics, we make
+                    decisions or estimates about the population.</li>
+                <li>Since studying the entire population is often impractical, we use sample statistics to estimate
+                    population parameters such as means and standard deviations. These estimations are fundamental in
+                    estimation theory, and we also utilize the concept of sampling distribution.</li>
+                <li>Before delving into sampling distribution, it's important to understand two key concepts: simple
+                    random sampling with replacement (SRSWR) and simple random sampling without replacement (SRSWOR).
+                </li>
+            </ul>
+            <div class="in">
+                <h3>SRSWR and SRSWOR</h3>
+                <ul>
+                    <li>If we have a population with a finite size (N), then the sample will also have a finite number
+                        of elements. Sampling from the population can be done in two ways:</li>
+                    <ol>
+                        <li><strong>SRSWR (Simple Random Sampling with Replacement):</strong> In this method, after an
+                            element is selected, it is placed back into the population before the next selection.</li>
+                        <li><strong>SRSWOR (Simple Random Sampling without Replacement):</strong> Here, once an element
+                            is selected, it is not placed back into the population for subsequent selections.</li>
+                    </ol>
+                    <li>Suppose the population size is denoted as N, the sample size as n, and we want to select K
+                        samples:</li>
+                    <ul>
+                        <li>If using SRSWR, the formula for determining K is K = N<sup>n</sup>. This means there are N
+                            raised to the power of n possible combinations, considering that elements can be selected
+                            more than once.</li>
+                        <li>For SRSWOR, the formula for K is K = <sup>N</sup>C<sub>n</sub>, representing the
+                            combinations of selecting n elements from N without replacement.</li>
+                    </ul>
+                    <li>Example: Let's consider a scenario where N = 4 (population size) and the sample size (K) = 2:
+
+                        <ul>
+                            <li>For SRSWR: K = 4<sup>2</sup> = 16. This means we can select 16 samples when using SRSWR
+                                because elements can be chosen more than once.</li>
+                            <li>For SRSWOR: K = <math>
+                                    <mfrac>
+                                        <mn>4!</mn>
+                                        <mn>(4-2)! * 2!</mn>
+                                    </mfrac>
+                                </math> = 6. Without replacement, we can select only 6 samples from
+                                the population.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Sampling Distribution</h3>
+                <ul>
+                    <li>Sampling distribution is essentially a theoretical distribution that represents the possible
+                        values of a sample statistic, such as the mean or standard deviation, that would be obtained
+                        from different samples of the same size taken from a population.</li>
+                    <li>We can analyze various types of sampling distributions, including the sampling distribution of
+                        the mean, sampling distribution of the standard deviation, and so on, depending on the specific
+                        statistic of interest.</li>
+                    <li>Let's consider a scenario where we have a population with a size of N, a sample size of n, and
+                        we take k samples from this population. In each sample, there will be its own set of statistics
+                        parameters like mean, median, standard deviation, and so on. For instance, the mean for sample 1
+                        might be denoted as x1, sample 2 as x2, and so forth, similarly for standard deviation.
+                        Therefore, the sampling distribution of the mean will comprise a dataset containing each mean
+                        value and its associated probability. <br>
+                        <img src="../../images/py6.svg" alt="" class="wb">
+                    </li>
+                </ul>
+                <h3>Standard Error</h3>
+                <ul>
+                    <li>When we calculate the standard deviation of the sampling distribution of the mean, it is
+                        referred to as the standard error of the mean, denoted as S. E(<u
+                            style="text-decoration: overline;">x</u>).</li>
+                    <li>Similarly, we can determine the standard error of the standard deviation and the standard error
+                        of variance, indicating that each statistical measure has its own specific standard error.</li>
+                </ul>
+
+                <h3>Mean of Sampling Distribution of Mean</h3>
+                <ul>
+                    <li>The mean of the sampling distribution of the mean, denoted as &mu;<u
+                            style="text-decoration: overline;">x</u>, is equal to the population mean (&mu;)
+                        irrespective of whether we use simple random sampling with replacement (SRSWR) or without
+                        replacement (SRSWOR).</li>
+                </ul>
+
+                <h3>Standard Deviation of Sampling Distribution of Mean</h3>
+                <ul>
+                    <li>The standard deviation of the sampling distribution of the mean, also known as the standard
+                        error of the mean, is calculated as &sigma;<u style="text-decoration: overline;">x</u> = &sigma;
+                        / &Sqrt;n, where &sigma; represents the population standard deviation and n is the sample size.
+                    </li>
+                    <li>It's important to note that as we increase the sample size, the standard error of the mean
+                        decreases. This is because larger sample sizes lead to less variability in sample means and
+                        therefore a more precise estimate of the population mean.</li>
+                </ul>
+                <h3>Use of Standard Error:</h3>
+                <ol>
+                    <li><strong>Setting Confidence Intervals:</strong> Standard error plays a crucial role in
+                        establishing confidence intervals. Confidence intervals provide a range of values within which
+                        we are confident that the true population parameter lies. The width of the confidence interval
+                        is influenced by the standard error, with narrower intervals indicating greater precision in
+                        estimation.</li>
+                    <li><strong>Testing of Hypotheses:</strong> Standard error is integral to hypothesis testing,
+                        particularly in calculating test statistics such as t-tests and z-tests. These tests compare
+                        sample statistics to population parameters and help determine whether observed differences are
+                        statistically significant. The standard error is used in the computation of test statistics,
+                        aiding in the assessment of hypothesis validity.</li>
+                </ol>
+            </div>
+            <div class="in">
+                <h3>Sampling Distribution and Standard Error of Mean Numerical</h3>
+                <p><strong>A population consists of the four members: 3, 7, 11, 15
+                        <br>Case 1: Consider all possible sample size <u>two</u>
+                        which can be drawn with replacement from population
+                        <br>Find the population mean, population standard deviation, the mean of the sampling
+                        distribution of mean and standard deviation of sampling distribution of mean. </strong></p>
+                <p>Sol:
+                    <br>Members: 3, 7, 11, 15
+                    <br>size of population (N) = 4
+                    <br>According to case 1 (SRSWR)
+                    <br>Total sample (k) = N<sup>n</sup>
+                    <br>where n = sample size (2) and N = 4
+                    <br>So, k = 4<sup>2</sup> = 16
+                <pre>
++---------------------------------------------+
+|  S.No   |  Sample Variable  |  Sample mean  |
++---------------------------------------------+
+|    1    |        3, 7       |    10/2 = 5   |
+|    2    |        3, 11      |          7    |
+|    3    |        3, 15      |          9    |
+|    4    |        3, 3       |          3    |
+|    5    |        7, 7       |          7    |
+|    6    |        7, 3       |          5    |
+|    7    |        7, 11      |          9    |
+|    8    |        7, 15      |          11   |
+|    9    |        11, 11     |          11   |
+|    10   |        11, 3      |          7    |
+|    11   |        11, 7      |          9    |
+|    12   |        11, 15     |          13   |
+|    13   |        15, 15     |          15   |
+|    14   |        15, 3      |          9    |
+|    15   |        15, 7      |          11   |
+|    16   |        15, 11     |          13   |
++---------------------------------------------+
+                     </pre>
+                Sampling distribution of mean with replacement will be
+                <pre>
++---------------------------------------------------------------------------------------------+
+|  Sample mean <u style="text-decoration: overline;">x</u> |   3    |   5    |   7    |   9    |  11    |  13    |  15    | Total       |
++---------------------------------------------------------------------------------------------+
+|  Probability   |  1/16  |  2/16  |  3/16  |  4/16  |  3/16  |  2/16  |  1/16  |  16/16 = 1  |
++---------------------------------------------------------------------------------------------+
+</pre>
+                We calculate probability by the number of occurrences in the sample mean. For example, if the occurrence
+                of 9 is 4 times out of a total of 16 occurrences, then the probability is 4/16.
+                <br>
+                Next, we will find the mean of the sampling distribution of the mean and the standard error of the
+                sampling distribution of the mean. Additionally, we know that the mean of the sample distribution of the
+                mean is equal to the population mean (μ), so we will first find μ.
+                <br>Population:
+                <pre>
++-------------------------+
+|  x  |  x-&mu;    |  (x-&mu;)<sup>2</sup> |
++-------------------------+
+|  3  |    6    |    36   |
+|  7  |    2    |    4    |
+|  11 |    2    |    4    |
+|  15 |    6    |    36   |
++-------------------------+
+                </pre>
+                &mu; = ( 3 + 7 + 11 + 15 ) / 4 = 9
+                <br>&sum;(x-&mu;)<sup>2</sup> = 80
+                <br>variance &sigma;<sup>2</sup> = (&sum;(x-&mu;)<sup>2</sup>)N
+                <br>&sigma;<sup>2</sup> = 80/4 = 20
+                <br>SD, &sigma; = <math>
+                    <msqrt>
+                        <mn>20</mn>
+                    </msqrt>
+                </math>
+                <br>Now we found statistic parameter of population, so we'll work on sample.
+                <br>mean of sampling distribution of mean:
+                <br>For this multiply each element of sample mean <u style="text-decoration: overline;">x</u> to its
+                probability and add it up.
+                <br>E(<u style="text-decoration: overline;">x</u>) = 3*1/16 + 5*2/16 + 7*3/16 + 9*4/16 + 11*3/16 +
+                13*2/16 + 15*1/16
+                <br>144/16 = 9
+                <br>E(<u style="text-decoration: overline;">x</u>) = 9
+                <br>and it is equal to &mu;
+                <br>Now variance, Var(<u style="text-decoration: overline;">x</u>) = E(<u
+                    style="text-decoration: overline;">x</u>)<sup>2</sup> - [E(<u
+                    style="text-decoration: overline;">x</u>)]<sup>2</sup>
+                <br>To find E(<u style="text-decoration: overline;">x</u>)<sup>2</sup> we just have to square the sample
+                mean <u style="text-decoration: overline;">x</u> element and multiply to its probability and add it up.
+                <br>E(<u style="text-decoration: overline;">x</u>)<sup>2</sup> = 9*1/16 + 25*2/16 + 49*3/16 + 81*4/16 +
+                121*3/16 +
+                169*2/16 + 255*1/16
+                <br>E(<u style="text-decoration: overline;">x</u>)<sup>2</sup> = 91
+                <br>Now Var(<u style="text-decoration: overline;">x</u>) = 91 - 81
+                <br>Var(<u style="text-decoration: overline;">x</u>) = 10
+                <br>SD (<u style="text-decoration: overline;">x</u>) =<math>
+                    <msqrt>
+                        <mn>10</mn>
+                    </msqrt>
+                </math>
+                <br>Now find standard error of sampling distribution of mean S.E(<u
+                    style="text-decoration: overline;">x</u>) = &sigma;<u style="text-decoration: overline;">x</u> =
+                <math>
+                    <mfrac>
+                        <mn>&sigma;</mn>
+                        <mn><math>
+                                <msqrt>
+                                    <mn>n</mn>
+                                </msqrt>
+                            </math></mn>
+                    </mfrac>
+                </math> = <math>
+                    <mfrac>
+                        <mn><math>
+                                <msqrt>
+                                    <mn>20</mn>
+                                </msqrt>
+                            </math></mn>
+                        <mn><math>
+                                <msqrt>
+                                    <mn>2</mn>
+                                </msqrt>
+                            </math></mn>
+                    </mfrac>
+                </math> =
+                <math>
+                    <msqrt>
+                        <mn><math>
+                                <mfrac>
+                                    <mn>20</mn>
+                                    <mn>2</mn>
+                                </mfrac>
+                            </math></mn>
+                    </msqrt>
+                </math>
+                = <math>
+                    <msqrt>
+                        <mn>10</mn>
+                    </msqrt>
+                </math>
+                <br><br>
+                <strong>Case 2: SRSWOR</strong>
+                <br>
+                here k = <sup>N</sup>C<sub>n</sub>
+                <br>
+                k = <sup>4</sup>C<sub>2</sub>
+                <br>
+                k = <math>
+                    <mfrac>
+                        <mn>4!</mn>
+                        <mn>2! * 2!</mn>
+                    </mfrac>
+                </math>
+                <br>
+                k = <math>
+                    <mfrac>
+                        <mn>4 * 3 * 2</mn>
+                        <mn>2 * 2</mn>
+                    </mfrac>
+                </math>
+                <br>
+                k = 6
+                <pre>
++---------------------------------------------+
+|  S.No   |  Sample Variable  |  Sample mean  |
++---------------------------------------------+
+|    1    |        3, 7       |    10/2 = 5   |
+|    2    |        3, 11      |          7    |
+|    3    |        3, 15      |          9    |
+|    4    |        7, 11      |          9    |
+|    5    |        7, 15      |         11    |
+|    6    |        11, 15     |         13    |
++---------------------------------------------+
+                     </pre>
+                Sampling distribution of mean without replacement will be
+                <pre>
++--------------------------------------------------------------------------+
+|  Sample mean <u style="text-decoration: overline;">x</u> |   5    |   7    |   9    |   11    |  13    | Total     |
++--------------------------------------------------------------------------+
+|  Probability   |  1/6   |  1/6   |  2/6   |  1/6    |  1/6   |  6/6 = 1  |
++--------------------------------------------------------------------------+
+</pre>
+                <br>E(<u style="text-decoration: overline;">x</u>) = 5*1/6 + 7*1/6 + 9*2/6 + 11*1/6 + 13*1/6
+                <br>54/6 = 9
+                <br>E(<u style="text-decoration: overline;">x</u>) = 9
+
+                <br>Now variance, Var(<u style="text-decoration: overline;">x</u>) = E(<u
+                    style="text-decoration: overline;">x</u>)<sup>2</sup> - [E(<u
+                    style="text-decoration: overline;">x</u>)]<sup>2</sup>
+                <br>E(<u style="text-decoration: overline;">x</u>)<sup>2</sup> = 25*1/6 + 49*1/6 + 81*2/6 + 121*1/6 +
+                169*1/6
+                <br>E(<u style="text-decoration: overline;">x</u>)<sup>2</sup> = <math>
+                    <mfrac>
+                        <mn>263</mn>
+                        <mn>6</mn>
+                    </mfrac>
+                </math>
+                <br>Now Var(<u style="text-decoration: overline;">x</u>) = <math>
+                    <mfrac>
+                        <mn>263</mn>
+                        <mn>6</mn>
+                    </mfrac>
+                </math> - 91 = <math>
+                    <mfrac>
+                        <mn>20</mn>
+                        <mn>3</mn>
+                    </mfrac>
+                </math>
+                <br>Var(<u style="text-decoration: overline;">x</u>) = <math>
+                    <mfrac>
+                        <mn>20</mn>
+                        <mn>3</mn>
+                    </mfrac>
+                </math>
+                <br>SD (<u style="text-decoration: overline;">x</u>) = <math>
+                    <msqrt>
+                        <mn><math>
+                                <mfrac>
+                                    <mn>20</mn>
+                                    <mn>3</mn>
+                                </mfrac>
+                            </math></mn>
+                    </msqrt>
+                </math>
+                <br>Now find standard error of sampling distribution of mean S.E(<u
+                    style="text-decoration: overline;">x</u>) = &sigma;<u style="text-decoration: overline;">x</u>
+                remember here, <math>
+                    <mfrac>
+                        <mn>&sigma;</mn>
+                        <mn><math>
+                                <msqrt>
+                                    <mn>n</mn>
+                                </msqrt>
+                            </math></mn>
+                    </mfrac>
+                </math> formula will not work because there is a thing called population correction factor, and we use
+                population correction factor when <math>
+                    <mfrac>
+                        <mn>n</mn>
+                        <mn>N</mn>
+                    </mfrac>
+                </math> &gt; 0.05, then in this case we will we use finite correction factor whose formula is <math>
+                    <msqrt>
+                        <mn><math>
+                                <mfrac>
+                                    <mn>N - n</mn>
+                                    <mn>N - 1</mn>
+                                </mfrac>
+                            </math></mn>
+                    </msqrt>
+                </math>
+                <br>In our case <math>
+                    <mfrac>
+                        <mn>n</mn>
+                        <mn>N</mn>
+                    </mfrac>
+                </math> = 2 / 5 = 0.5 which is greater than 0.05 then the formula of S.E(<u
+                    style="text-decoration: overline;">x</u>) = &sigma;<u style="text-decoration: overline;">x</u> =
+                <math>
+                    <mfrac>
+                        <mn>&sigma;</mn>
+                        <mn><math>
+                                <msqrt>
+                                    <mn>n</mn>
+                                </msqrt>
+                            </math></mn>
+                    </mfrac>
+                </math> *
+                <msqrt>
+                    <mn><math>
+                            <mfrac>
+                                <mn>N - n</mn>
+                                <mn>N - 1</mn>
+                            </mfrac>
+                        </math></mn>
+                </msqrt>
+                </math>
+                = <math>
+                    <msqrt>
+                        <mn><math>
+                                <mfrac>
+                                    <mn>20</mn>
+                                    <mn>2</mn>
+                                </mfrac>
+                            </math></mn>
+                    </msqrt>
+                </math> * <math>
+                    <mfrac>
+                        <mn>4 - 2</mn>
+                        <mn>4 - 1</mn>
+                    </mfrac>
+                </math></mn>
+                </msqrt>
+                </math> = <math>
+                    <msqrt>
+                        <mn><math>
+                                <mfrac>
+                                    <mn>20</mn>
+                                    <mn>3</mn>
+                                </mfrac>
+                            </math></mn>
+                    </msqrt>
+                </math> = SD (<u style="text-decoration: overline;">x</u>)
+                </p>
+            </div>
+            <div class="in">
+                <h3>Central Limit Theorem</h3>
+                <ul>
+                    <li>The Central Limit Theorem (CLT) states that if the population is normally distributed with a
+                        mean (&mu;) and standard deviation (&sigma;), then regardless of the sample size, the sampling
+                        distribution of the sample mean (x̅) is also normally distributed. The mean of the sampling
+                        distribution of the sample mean is equal to the population mean (&mu;<u
+                            style="text-decoration: overline;">x</u> = &mu;), and the standard deviation of the sampling
+                        distribution of the sample mean is given by the formula:
+                        <math>
+                            <mfrac>
+                                <mn>&sigma;</mn>
+                                <msqrt>
+                                    <mn>n</mn>
+                                </msqrt>
+                            </mfrac>
+                        </math>
+                        where &sigma; is the population standard deviation and n is the sample size.
+                    </li>
+                    <li>When we say the population is normal, it means that the data follows a bell-shaped curve with a
+                        symmetrical distribution around the mean.</li>
+                    <li>When the sample size (n) is greater than or equal to 30, the sample is considered a large
+                        sample. Conversely, when n is less than 30, it is considered a small sample.</li>
+                    <li>However, what happens when the population distribution is non-normal, such as skewed or
+                        multimodal distributions? In such cases, the Central Limit Theorem still holds true. Even if the
+                        population is not normally distributed, as long as the sample size is large (n &ge; 30), the
+                        sampling distribution of the sample mean (x̅) will approximate a normal distribution. This is a
+                        key property of the Central Limit Theorem, making it a powerful tool in statistical inference.
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Statistical Inference</h2>
+            <ul>
+                <li>Statistics is a branch of mathematics that deals with the collection, analysis, interpretation, and
+                    presentation of numerical data. In simpler terms, it involves gathering quantitative data and using
+                    it to draw meaningful conclusions. The main purpose of statistics is to make accurate conclusions
+                    about a larger population based on a limited sample.</li>
+            </ul>
+            <div class="in">
+                <h3>Types of Statistics</h3>
+                <p>Statistics can be classified into two main categories:</p>
+                <ol>
+                    <li><strong>Descriptive Statistics:</strong> Descriptive statistics involve summarizing and
+                        describing the main features of a dataset. This includes measures of central tendency (such as
+                        mean, median, and mode), measures of variability (like range, variance, and standard deviation),
+                        and graphical representations (such as histograms and box plots). Descriptive statistics help us
+                        understand the characteristics of the data without making inferences about a larger population.
+                    </li>
+                    <li><strong>Inferential Statistics:</strong> Inferential statistics go beyond describing the data
+                        and involve making inferences or predictions about a population based on a sample of data. It
+                        allows researchers to draw conclusions about population parameters (such as means or
+                        proportions) using statistical methods. Inferential statistics are used in hypothesis testing,
+                        estimating population parameters, and making predictions.</li>
+                </ol>
+                <p>For example, suppose we have collected data on the heights of students in a school. Descriptive
+                    statistics would help us summarize this data, such as calculating the average height of students or
+                    determining the range of heights. Inferential statistics, on the other hand, would allow us to make
+                    predictions about the average height of all students in the school based on our sample data.</p>
+            </div>
+            <div class="in">
+                <h3>Statistical Inference</h3>
+                <ul>
+                    <li>Statistical inference is the process of analyzing data and drawing conclusions from it,
+                        considering random variations in the data. It's a branch of statistics called inferential
+                        statistics.</li>
+                    <li>Hypothesis testing and confidence intervals are practical applications of statistical inference,
+                        helping us make decisions based on data.</li>
+                    <li>Statistical inference is a method used to make decisions about the characteristics of a
+                        population by analyzing a sample from that population. It helps assess relationships between
+                        variables and estimate uncertainty or variation between samples. The main purpose is to provide
+                        a likely range of values for population parameters. Key components for making statistical
+                        inference include:
+                        <ol>
+                            <li>Sample Size: The number of observations in the sample, influencing the precision of
+                                estimates.</li>
+                            <li>Variability in the Sample: The degree of diversity or spread among data points in the
+                                sample, affecting the reliability of conclusions.</li>
+                            <li>Size of Observed Differences: The magnitude of differences between groups or variables,
+                                which indicates the strength of relationships or effects.</li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Types of Statistical Inference</h3>
+                <p>Statistical inference encompasses various methods used to draw conclusions from data. Some common
+                    types of statistical inference include:</p>
+                <ol>
+                    <li><strong>One Sample Hypothesis Testing:</strong> This involves testing a hypothesis about the
+                        population mean, proportion, or variance using data from a single sample.</li>
+                    <li><strong>Confidence Interval:</strong> Confidence intervals provide a range of values within
+                        which we are confident that the true population parameter lies, based on sample data.</li>
+                    <li><strong>Pearson Correlation:</strong> Pearson correlation measures the strength and direction of
+                        the linear relationship between two continuous variables.</li>
+                    <li><strong>Bivariate Regression:</strong> Bivariate regression analyzes the relationship between
+                        two variables, typically a predictor (independent) variable and an outcome (dependent) variable.
+                    </li>
+                    <li><strong>Multivariate Regression:</strong> Multivariate regression extends bivariate regression
+                        to analyze the relationship between multiple predictor variables and an outcome variable.</li>
+                    <li><strong>Chi-Square Statistics and Contingency Table:</strong> Chi-square tests assess the
+                        independence or association between categorical variables using contingency tables.</li>
+                    <li><strong>ANOVA or T-Test:</strong> Analysis of Variance (ANOVA) and T-tests are used to compare
+                        means of two or more groups to determine if there are significant differences between them.</li>
+                </ol>
+            </div>
+            <div class="in">
+                <h3>Statistical Inference Procedure</h3>
+                <p>The procedure involved in inferential statistics includes several steps:</p>
+                <ol>
+                    <li><strong>Begin with a Theory:</strong> Start with a theoretical framework or concept that you
+                        want to investigate.</li>
+                    <li><strong>Create a Research Hypothesis:</strong> Formulate a specific statement or prediction
+                        about the relationship between variables based on the theory.</li>
+                    <li><strong>Operationalize the Variable:</strong> Define how you will measure or manipulate the
+                        variables in your study to test the hypothesis.</li>
+                    <li><strong>Recognize the Target Population:</strong> Identify the population to which you intend to
+                        generalize your study results.</li>
+                    <li><strong>Formulate a Null Hypothesis:</strong> Develop a null hypothesis that represents the
+                        absence of an effect or relationship in the population.</li>
+                    <li><strong>Collect a Sample:</strong> Gather a representative sample from the target population to
+                        conduct your study.</li>
+                    <li><strong>Conduct Statistical Tests:</strong> Use statistical tests to analyze the sample data and
+                        determine if the observed differences or effects are significant enough to reject the null
+                        hypothesis and support the research hypothesis.
+                        <ul>
+                            <li><strong>Hypothesis Mean:</strong> This refers to the mean or average value predicted by
+                                the research hypothesis based on theory and previous research.</li>
+                            <li><strong>Null Hypothesis Mean:</strong> The null hypothesis predicts that there is no
+                                significant difference or effect, so the null hypothesis mean represents what would be
+                                expected if there were no effect.</li>
+                        </ul>
+                    </li>
+                </ol>
+                <p>For example, suppose we want to study the effect of a new teaching method on student performance. We
+                    start with the theory that the new method will improve learning outcomes (theory). Our research
+                    hypothesis states that students exposed to the new method will have higher test scores than those
+                    taught using traditional methods. We operationalize variables by defining test scores as the measure
+                    of performance. We recognize all high school students as our target population. The null hypothesis
+                    states that there is no difference in test scores between the two teaching methods. We collect a
+                    sample of students from different schools and conduct statistical tests (such as t-tests or ANOVA)
+                    to compare test scores between the two groups and determine if the observed differences are
+                    statistically significant.</p>
+            </div>
+            <div class="in">
+                <h3>Statistical Inference Solution</h3>
+                <p>Statistical inference solutions involve the efficient utilization of statistical data pertaining to
+                    groups of individuals or trials. This process encompasses data collection, investigation, analysis,
+                    and organization. Through statistical inference solutions, individuals can gain valuable insights
+                    across various fields. Here are some key facts about statistical inference solutions:</p>
+                <ul>
+                    <li><strong>Assumption of Independence:</strong> A common approach is to assume that the observed
+                        sample consists of independent observations from a specific population type, such as Poisson or
+                        normal distributions.</li>
+                    <li><strong>Evaluation of Parameters:</strong> Statistical inference solutions are used to assess
+                        the parameters of an expected model, such as the normal mean or binomial proportion. This
+                        involves estimating and interpreting key numerical characteristics of the data.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Importance of Statistical Inference</h3>
+                <p>Statistical inference plays a crucial role in examining data and deriving meaningful conclusions.
+                    Proper data analysis is essential for making accurate interpretations of research results. It is
+                    particularly vital for predicting future observations across various fields, enabling us to draw
+                    inferences about the data. The significance of statistical inference extends to a wide range of
+                    applications in different sectors, including:</p>
+                <ul>
+                    <li><strong>Business Analysis:</strong> Utilized for analyzing market trends, customer behavior, and
+                        making data-driven decisions for business growth.</li>
+                    <li><strong>Artificial Intelligence:</strong> Integral in developing and training AI models by
+                        extracting insights from data and improving model performance.</li>
+                    <li><strong>Financial Analysis:</strong> Essential for assessing financial trends, risk analysis,
+                        portfolio management, and investment decision-making.</li>
+                    <li><strong>Fraud Detection:</strong> Used to identify irregular patterns or anomalies in data that
+                        may indicate fraudulent activities.</li>
+                    <li><strong>Machine Learning:</strong> Forms the foundation for building predictive models,
+                        classification algorithms, and regression analysis in ML applications.</li>
+                    <li><strong>Share Market:</strong> Employed for analyzing stock trends, predicting market movements,
+                        and making informed investment strategies.</li>
+                    <li><strong>Pharmaceutical Sector:</strong> Utilized in clinical trials, drug efficacy studies, and
+                        medical research for drawing conclusions about treatment outcomes and drug effects.</li>
+                </ul>
+                </p>
+            </div>
+            <div class="in">
+                <h3>Statistical Inference Examples</h3>
+                <img src="../../images/py7.svg" alt="" class="wb">
+                <p><strong>Question:</strong> From the shuffled pack of cards, a card is drawn. This trail is repeated
+                    for 400 times, and the suits are given below:</p>
+                <pre>
++-----------------------------------------------------------+
+|    Suit       |  Spade  |  Clubs  |  Hearts  |  Diamonds  |
++-----------------------------------------------------------+
+| No. of times  |   90    |  100    |    120   |     90     |    
+| drawn         |         |         |          |            |
++-----------------------------------------------------------+
+                </pre>
+                <p>While a card is tried at random, then what is the probability of getting a:
+                <ol>
+                    <li>Diamond cards</li>
+                    <li>Black cards</li>
+                    <li>Except for spade</li>
+                </ol>
+                </p>
+                <p><strong>Solution:</strong>
+                    <br>By statistical inference solution,
+                    <br>Total number of events = 400
+                    <br>i.e., 90 + 100 + 120 + 90 = 400
+                <ol>
+                    <li>The probability of getting diamond cards:
+                        <br>Number of trials in which diamond card is drwan = 90
+                        <br>Therefore, p(diamond card) = 90/100 = 0.225
+                    </li>
+                    <li>The probability of getting black cards:
+                        <br>Number of trials in which black card showed up = 90 (Spades are black cards) + 100 (clubs
+                        are also black cards) = 190
+                        <br>Therefore, P(black card) = 190 / 400 = 0.475
+                    </li>
+                    <li>Except for spade:
+                        <br>Number of trials other than spade showed up = 90 + 100 + 120 = 310
+                        <br>Therefore, P(except spade) = 310 / 400 = 0.775
+                    </li>
+                </ol>
+                </p>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Univariate, Bivariate, and Multivariate Data and Its Analysis</h2>
+
+            <ul>
+                <li><strong>Univariate Data:</strong> Univariate data refers to a type of data that involves a single
+                    variable or characteristic. In other words, it focuses on analyzing one variable at a time. Common
+                    statistical analyses used for univariate data include measures of central tendency (such as mean,
+                    median, mode) and measures of dispersion (such as variance, standard deviation).
+                    <ul>
+                        <li><strong>Example:</strong> Suppose you have a dataset containing the heights of students in a
+                            classroom. Analyzing the heights of students individually without considering other factors
+                            is
+                            an example of univariate data analysis.</li>
+                    </ul>
+                </li>
+                <li><strong>Bivariate Data:</strong> Bivariate data involves the analysis of two variables
+                    simultaneously to determine if there is a relationship or association between them. This type of
+                    analysis explores how changes in one variable relate to changes in another variable. Common
+                    techniques used for bivariate data analysis include correlation analysis and scatter plots.
+                    <ul>
+                        <li><strong>Example:</strong> Consider a dataset that includes both the amount of time spent
+                            studying (variable A) and the exam scores obtained (variable B) by students. Analyzing
+                            whether
+                            there is a correlation between study time and exam scores represents bivariate data
+                            analysis.
+                        </li>
+                    </ul>
+                </li>
+                <li><strong>Multivariate Data:</strong> Multivariate data involves the analysis of three or more
+                    variables simultaneously. It aims to understand complex relationships among multiple variables and
+                    often requires advanced statistical techniques such as multivariate regression analysis, factor
+                    analysis, or cluster analysis.
+                    <ul>
+                        <li><strong>Example:</strong> Suppose you have a dataset containing information about students'
+                            academic performance (exam scores), study habits (time spent studying), and extracurricular
+                            activities (participation in sports or clubs). Analyzing how these variables collectively
+                            impact
+                            academic success constitutes multivariate data analysis.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="wh">
+            <h2>Multivariate Analysis</h2>
+            <p><strong>Definition:</strong> Multivariate analysis is a statistical method used to analyze and understand
+                relationships among multiple variables simultaneously. It involves examining how changes in one variable
+                are associated with changes in others.</p>
+            <p><strong>Concepts:</strong> Multivariate analysis encompasses various techniques such as multivariate
+                regression, factor analysis, principal component analysis, and cluster analysis to uncover patterns,
+                trends, and associations within complex datasets.</p>
+            <p><strong>Example:</strong> Suppose you have a dataset containing information about customer demographics
+                (age, income, education), buying behavior (purchase frequency, amount spent), and product preferences
+                (product categories, brand loyalty). Using multivariate analysis, you can identify key factors
+                influencing customer behavior and segment customers based on their characteristics and preferences.</p>
+            <div class="in">
+                <h3>Objectives of Multivariate Data Analysis:</h3>
+                <ul>
+                    <li><strong>Identify Relationships:</strong> Explore and identify relationships, correlations, and
+                        dependencies among multiple variables in a dataset.</li>
+                    <li><strong>Reduce Dimensionality:</strong> Reduce the dimensionality of data by extracting
+                        meaningful
+                        patterns and underlying factors to simplify analysis.</li>
+                    <li><strong>Make Predictions:</strong> Build predictive models to forecast outcomes and make
+                        informed
+                        decisions based on multivariate data patterns.</li>
+                    <li><strong>Segmentation:</strong> Segment data into meaningful groups or clusters based on
+                        similarities
+                        and differences among variables.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Advantages of Multivariate Data Analysis:</h3>
+                <ul>
+                    <li><strong>Comprehensive Insights:</strong> Provides comprehensive insights into complex
+                        relationships
+                        among multiple variables.</li>
+                    <li><strong>Improved Decision Making:</strong> Helps in making data-driven decisions by uncovering
+                        hidden patterns and trends.</li>
+                    <li><strong>Predictive Capabilities:</strong> Enables predictive modeling to forecast future trends
+                        and
+                        outcomes.</li>
+                    <li><strong>Effective Communication:</strong> Facilitates effective communication of results and
+                        findings to stakeholders.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Disadvantages of Multivariate Data Analysis:</h3>
+                <ul>
+                    <li><strong>Data Complexity:</strong> Dealing with large datasets and complex relationships can be
+                        challenging and require specialized expertise.</li>
+                    <li><strong>Assumption Violation:</strong> Some multivariate techniques may assume specific data
+                        distribution or relationships that may not always hold true.</li>
+                    <li><strong>Interpretation Challenges:</strong> Interpreting results from multivariate analysis can
+                        be
+                        complex, requiring careful consideration of multiple variables and their interactions.</li>
+                    <li><strong>Computational Resources:</strong> Certain multivariate techniques may require
+                        significant
+                        computational resources and processing time.</li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>Multivariate Analysis Techniques: Dependence vs. Interdependence</h3>
+                <p>When performing multivariate analysis, various techniques are employed to understand the
+                    relationships between variables. These techniques can be broadly categorized into two groups based
+                    on the nature of relationships:</p>
+
+                <ul>
+                    <li><strong>Dependence Methods:</strong> Dependence methods focus on identifying and analyzing the
+                        extent of dependency or correlation between variables within a dataset. These methods are useful
+                        for exploring how changes in one variable affect another and assessing the strength and
+                        direction of these relationships. Examples of dependence methods include correlation analysis,
+                        regression analysis, and covariance analysis.</li>
+
+                    <li><strong>Interdependence Methods:</strong> Interdependence methods go beyond simple dependency
+                        and aim to uncover complex interrelationships among multiple variables. These methods explore
+                        how variables interact and influence each other in a more intricate manner. They are valuable
+                        for detecting patterns, clusters, and structural relationships within the data. Examples of
+                        interdependence methods include factor analysis, cluster analysis, and structural equation
+                        modeling (SEM).</li>
+                </ul>
+
+                <p>Multiple techniques comes under dependence and interdependence like:</p>
+                <ul>
+                    <li>Dependence methods:
+                        <ol>
+                            <li>Multiple linear regression</li>
+                            <li>Multiple logistic regression</li>
+                            <li>Multivariate analysis of variance (MANOvA)</li>
+                        </ol>
+                    </li>
+                    <li>Interdependence methods:
+                        <ol>
+                            <li>Factor analysis</li>
+                            <li>Cluster analysis.</li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+            <div class="in">
+                <h3>1- Multiple Linear Regression</h3>
+                <ul>
+                    <li><strong>Definition:</strong> Multiple linear regression is a statistical method used to analyze
+                        the linear relationship between multiple independent variables and a single dependent variable.
+                        It estimates the impact of each independent variable on the dependent variable while holding
+                        other variables constant.</li>
+                    <li><strong>Example:</strong> Suppose you want to predict a student's final exam score based on
+                        variables like study hours, previous exam scores, and attendance. Multiple linear regression can
+                        help model this relationship and predict the final exam score using the given predictors.</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>2- Multiple Logistic Regression</h3>
+                <ul>
+                    <li><strong>Definition:</strong> Multiple logistic regression is a statistical technique used when
+                        the dependent variable is binary (e.g., yes/no, success/failure). It models the relationship
+                        between multiple independent variables and the probability of the binary outcome. It's commonly
+                        used in classification problems.</li>
+                    <li><strong>Example:</strong> Predicting whether a customer will purchase a product (yes/no) based
+                        on factors like age, income, and previous purchase history using multiple logistic regression.
+                    </li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>3- Multivariate Analysis of Variance (MANOVA)</h3>
+                <ul>
+                    <li><strong>Definition:</strong> MANOVA is a statistical technique used to compare the means of
+                        multiple dependent variables across two or more groups to determine if there are significant
+                        differences between the groups. It's an extension of ANOVA to multiple dependent variables
+                        simultaneously.</li>
+                    <li><strong>Example:</strong> Analyzing the effect of different teaching methods (grouped as
+                        independent variables) on students' performance scores in math, science, and literature
+                        (dependent variables) using MANOVA.</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>4- Factor Analysis</h3>
+                <ul>
+                    <li><strong>Definition:</strong> Factor analysis is a statistical method used to identify underlying
+                        latent factors or dimensions that explain the correlations among a set of observed variables. It
+                        reduces the dimensionality of the data by grouping related variables into factors.</li>
+                    <li><strong>Example:</strong> Identifying the underlying factors influencing customer satisfaction
+                        by analyzing survey responses related to product quality, customer service, pricing, and brand
+                        reputation using factor analysis.</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>5- Cluster Analysis</h3>
+                <ul>
+                    <li><strong>Definition:</strong> Cluster analysis is a method used to group similar observations or
+                        variables into clusters based on their characteristics or patterns. It helps in identifying
+                        natural groupings within the data.</li>
+                    <li><strong>Example:</strong> Segmenting customers into different market segments based on their
+                        purchasing behavior, demographics, and preferences using cluster analysis to tailor marketing
+                        strategies for each segment.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="wh">
+            <h2>Linear Regression vs Logistic Regression</h2>
+            <p>Linear Regression and Logistic Regression are the two famous Machine Learning Algorithms which
+                come under supervised learning technique. Since both the algorithms are of supervised in nature
+                hence these algorithms use labeled dataset to make the predictions. But the main difference
+                between them is how they are being used. The Linear Regression is used for solving Regression
+                problems whereas Logistic Regression is used for solving the Classification problems.</p>
+            <div class="in">
+                <h3>Linear Regression</h3>
+                <ul>
+                    <li><strong>Definition:</strong> Linear regression is a statistical method used to model the
+                        relationship between a dependent variable (usually continuous) and one or more independent
+                        variables by fitting a linear equation to the observed data.</li>
+                    <li><strong>Example:</strong> Predicting house prices based on features like square footage, number
+                        of bedrooms, and location using linear regression.</li>
+                </ul>
+            </div>
+
+            <div class="in">
+                <h3>Logistic Regression</h3>
+                <ul>
+                    <li><strong>Definition:</strong> Logistic regression is a statistical technique used when the
+                        dependent variable is binary (e.g., yes/no, 0/1). It models the probability of the binary
+                        outcome using one or more independent variables.</li>
+                    <li><strong>Example:</strong> Predicting whether a patient has a disease (yes/no) based on factors
+                        like age, gender, and medical history using logistic regression.</li>
+                </ul>
+            </div>
+            <img src="../../images/py8.svg" alt="" class="wb">
+        </div>
+        <div class="wh">
+            <h2>Prediction Error</h2>
+            <p>Prediction error, also known as residual error or simply error, refers to the difference between the
+                predicted or estimated value from a model and the actual observed value in a dataset. In the context of
+                statistical modeling, prediction error is a crucial concept used to evaluate the
+                performance of a model.</p>
+
+            <h3>Types of Prediction Errors</h3>
+            <p>There are different types of prediction errors, each measured using various metrics:</p>
+            <ul>
+                <li><strong>Mean Squared Error (MSE):</strong> MSE is a common metric that calculates the average of the
+                    squared differences between predicted and actual values. For example, if a model predicts the
+                    housing prices for different houses, the MSE would be the average of the squared differences between
+                    the predicted prices and the actual prices across all houses.</li>
+                <li><strong>Mean Absolute Error (MAE):</strong> MAE measures the average absolute differences between
+                    predicted and actual values and is less sensitive to outliers compared to MSE. For instance, in a
+                    weather forecasting model, MAE would represent the average absolute difference between predicted
+                    temperatures and actual temperatures for a set of days.</li>
+                <li><strong>Root Mean Squared Error (RMSE):</strong> RMSE is the square root of the mean squared error
+                    and provides a measure of the average magnitude of errors in the same units as the predicted and
+                    observed values. In a sales forecasting model, RMSE would quantify the average magnitude of
+                    differences between predicted sales figures and actual sales figures.</li>
+                <li><strong>Residuals:</strong> Residuals are differences between actual and predicted values for each
+                    data point. Positive residuals indicate underprediction, while negative residuals indicate
+                    overprediction. For example, in a student performance prediction model, residuals would show the
+                    differences between predicted and actual exam scores for individual students.</li>
+            </ul>
+
+            <h3>Importance of Understanding Prediction Errors</h3>
+            <p>Understanding and analyzing prediction errors is crucial for model evaluation and improvement. Large
+                prediction errors may indicate that the model is not capturing important patterns in the data, requiring
+                adjustments to the model or dataset.</p>
+
+            <p>It's important to note that achieving zero error is often not possible, and the goal is to minimize
+                errors and create a model that generalizes well to new data. Choosing the appropriate metric for
+                measuring prediction error depends on the problem's characteristics and desired properties of the model.
+            </p>
+        </div>
+    </div>
+    <div class="content-box">
+        <p>References</p>
+        <ul>
+            <li><a href="https://www.youtube.com/watch?v=Q-pX21LtnJI" target="_blank">Statistics concepts &neArr;</a>
+            </li>
+            <li><a href="https://www.youtube.com/watch?v=uqyHOE-CzLc&list=PLRNL7AjA6rjy_OuyGPC5rmqOUUgGfq_fw&index=29"
+                    target="_blank">Sampling distribution and standard error concepts</a></li>
+        </ul>
+    </div>
+    <script src="../../../../public/main.js"></script>
+</body>
+
+</html>

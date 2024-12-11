@@ -1,0 +1,1106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming in 'C' lab</title>
+    <link rel="stylesheet" href="../../../public/style.css">
+    <link rel="stylesheet" id="highlightStylesheet"
+        href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/styles/tomorrow-night-blue.min.css">
+        <link rel="icon" href="../../../public/logo/favicon_io/favicon.ico">
+</head>
+
+<body>
+    <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+        <a href="../../../index.html" class="home">Home</a>
+    </div>
+    <div id="navbar" class="grad">
+        <div class="back">
+            <a href="../../../index.html"><img src="../../../public/back.svg" alt=""></a>
+        </div>
+        <div>
+            <h2>Programming in 'C' lab</h2>
+        </div>
+    </div>
+    <div class="content-box">
+        <h1>Programming in 'C' lab</h1>
+
+        <div class="wh">
+            <p><b>1.</b> Develop a program for calculating the Net Salary of an Employee. <br>
+                Net Salary = (Basic + DA + HRA + CCA) - IT - PF - Transport <br>
+                (Assume the following data: DA=30% of Basic, HRA=15% of Basic, CCA=500, IT=20% of Basic,
+                PF=5% of Basic, Transport=300).
+            </p>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Click to Show Program code</button>
+                <div class="panel">
+                    <pre>
+                        <code>
+#include&lt;stdio.h>
+
+int main()
+{
+    int basic;
+    
+    printf("Enter your Basic Salary : ");
+    scanf("%d", &basic);
+
+    float DA = 0.3 * basic;
+    float HRA = 0.15 * basic;
+    float IT = 0.2 * basic;
+    float PF = 0.05 * basic;
+    int CCA = 500;
+    int transport = 300;
+
+    float netSalary = (basic + DA + HRA + (float)(CCA)) - IT - PF - (float) (transport);
+    printf("Your net salary is %f", netSalary);
+    return 0;
+}
+                        </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <p>
+                <b>2.</b> Develop a program to check which of the 3 numbers entered is the highest.
+            </p>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Click to Show Program code</button>
+                <div class="panel">
+                    <pre>
+                            <code>
+#include &lt;stdio.h>
+
+int main()
+{
+    int num1, num2, num3;
+    printf("Enter the first number : ");
+    scanf("%d", &num1);
+    printf("Enter the second number : ");
+    scanf("%d", &num2);
+    printf("Enter the third number : ");
+    scanf("%d", &num3);
+    if (num1 >= num2 && num1 >= num3)
+        printf("%d is the highest number entered.", num1);
+    if (num2 >= num1 && num2 >= num3)
+        printf("%d is the highest number entered.", num2);
+    if (num3 >= num1 && num3 >= num2)
+        printf("%d is the highest number entered.", num3);
+    return 0;
+}
+                            </code>
+                        </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <p><b>3.</b> Develop a program to accept a number and display the sum of its digits.
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Click to Show Program code</button>
+                <div class="panel">
+                    <pre>
+                            <code>
+#include &lt;stdio.h>
+
+int main()
+{
+    int num;
+    printf("Enter a digit : ");
+    scanf("%d", &num);
+    int sum = 0;
+    while (num > 0)
+    {
+        sum += num % 10;
+        num /= 10;
+    }
+    printf("The sum of digits is : %d",sum);
+
+    return 0;
+}
+                            </code>
+                        </pre>
+                </div>
+            </div>
+
+        </div>
+        <div class="wh">
+            <p><b>4.</b> Develop a program to find the factorial of a given number.
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Click to Show Program code</button>
+                <div class="panel">
+                    <pre>
+                            <code>
+#include &lt;stdio.h>
+
+int main()
+{
+    int num;
+    printf("Enter a number for factorial calculation : ");
+    scanf("%d", &num);
+    int factorial = 1;
+
+    int temp = num;
+    while (temp > 1)
+    {
+        factorial *= temp;
+        temp--;
+    }
+    printf("Factorial of %d is %d \n", num, factorial);
+
+    return 0;
+}
+                            </code>
+                        </pre>
+                </div>
+            </div>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Using Recursion</button>
+                <div class="panel">
+                    <pre>
+                            <code>
+#include &lt;stdio.h>
+
+int factorialR(int num)
+{
+    if (num == 0)
+        return 1;
+    return num * factorialR(num - 1);
+}
+
+int main()
+{
+    int num;
+    printf("Enter a number for factorial calculation : ");
+    scanf("%d", &num);
+
+    printf("Factorial of %d is %d \n", num, factorialR(num));
+
+    return 0;
+}
+                            </code>
+                        </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <p><b>5.</b> Develop a program to print the fibonacci series.</p>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Click to Show Program code</button>
+                <div class="panel">
+                    <pre>
+                            <code>
+#include &lt;stdio.h>
+
+int main()
+{
+    int num;
+    printf("Enter a digits till you want fibonnaci series : ");
+    scanf("%d", &num);
+    int a = 0;
+    int b = 1;
+    printf("%d %d", a, b);
+    for (int i = 0; i &lt; num - 2; i++)
+    {
+        printf(" %d ", a + b);
+        int temp = a + b;
+        a = b;
+        b = temp;
+    }
+
+    return 0;
+}
+                            </code>
+                        </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <p><b>6.</b> Develop a program to reverse a number accepted as an input.</p>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Click to Show Program code</button>
+                <div class="panel">
+                    <pre>
+                            <code>
+#include &lt;stdio.h>
+
+int main()
+{
+    int num;
+    printf("Enter a number to reverse it : ");
+    scanf("%d", &num);
+
+    int reversedNum = 0;
+    while (num != 0)
+    {
+        reversedNum *= 10;
+        reversedNum += num % 10;
+        num /= 10;
+    }
+
+    printf("Reversed number is %d", reversedNum);
+    return 0;
+}
+                            </code>
+                        </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <p><b>7.</b> Develop a program to check whether the number entered is a Palindrome.</p>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Click to Show Program code</button>
+                <div class="panel">
+                    <pre>
+                            <code>
+#include &lt;stdio.h>
+
+int main()
+{
+    int num;
+    printf("Enter a number to check : ");
+    scanf("%d", &num);
+
+    // working with edge cases like : if it is a single digit then still it will be plaindrome
+    if (num >= 0 && num &lt;= 9)
+    {
+        printf("The entered number is palindrome \n");
+        return 0;
+    }
+
+    // here we are reversing the number
+    int reversedNum = 0;
+    int temp = num;
+    while (temp != 0)
+    {
+        reversedNum *= 10;
+        reversedNum += temp % 10;
+        temp /= 10;
+    }
+
+    // here we are checking if the reversed number is equal to the original number or not.
+    if (reversedNum == num)
+        printf("The entered number is a palindrome \n");
+    else
+        printf("The entered number is not a palindrome \n");
+
+    return 0;
+}
+                            </code>
+                        </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <p><b>8.</b> Develop a program to check whether the number entered is a prime number.</p>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Click to Show Program code</button>
+                <div class="panel">
+                    <pre>
+                            <code>
+#include &lt;stdio.h>
+#include &lt;math.h>
+int find_prime(int n);
+int main()
+{
+int n;
+printf("Enter a number : ");
+scanf("%d", &n);
+printf("%d", find_prime(n));
+}
+int find_prime(int n)
+{
+for (int i = 2; i &lt; sqrt(n); i++)
+{
+    if (n % i == 0)
+        return 0;
+}
+return 1;
+}
+                            </code>
+                        </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <p><b>9.</b> Develop a program to check whether the number entered is an armstrong number.</p>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Click to Show Program code</button>
+                <div class="panel">
+                    <pre>
+                            <code>
+#include &lt;stdio.h>
+#include &lt;math.h>
+int main()
+{
+    int num = 1634;
+    // finding the number of digits as that will be the power for each
+    int temp = num;
+    int power = 0;
+    while (temp > 0)
+    {
+        power++; // as the number of digits will increase so does the power
+        temp /= 10;
+    }
+
+    // now finding the sum with power as number of digits.
+    temp = num;
+    int totalSum = 0;
+    while (temp > 0)
+    {
+        int singleDigit = temp % 10;
+        totalSum += pow(singleDigit, power);
+        temp /= 10;
+    }
+    // checking if the given number is equal to the total sum.
+    if (totalSum == num)
+        printf("This number is Armstrong number \n");
+    else
+        printf("This number is not Armstrong number \n");
+    return 0;
+}
+                            </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <p><b>10.</b> Develop a program to find the sum upto 25 terms. <br>1 + 1/4 + 1/9 + 1/16 ........</p>
+
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Click to Show Program code</button>
+                <div class="panel">
+                    <pre>
+                            <code>
+#include &lt;stdio.h>
+#include &lt;math.h>
+int main()
+{
+    float sum = 0;
+    for (int i = 0; i < 25; i++)
+    {
+        sum += 1 / pow(2, i);
+        printf("Sum each time = %f \n",sum);
+    }
+    printf("The sum is = %f", sum);
+    return 0;
+}
+                            </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <p><b>11.</b> Develop a program to find the biggest element in an array of N elements.</p>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Click to Show Program code</button>
+                <div class="panel">
+                    <pre>
+                            <code>
+#include &lt;stdio.h>
+int main()
+{
+    int arr[] = {33,44,55,66,66,44,336,66,98};
+    int max = arr[0];
+    for (int i = 0; i < sizeof(arr)/4; i++)
+    {
+        if(arr[i]>max){
+            max = arr[i];
+        }
+    }
+    printf("The largest number in the array is = %d",max);
+    
+    return 0;
+}
+                            </code>
+                        </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <p><b>12.</b> Develop a program to find least element in an array of N elements.</p>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Click to Show Program code</button>
+                <div class="panel">
+                    <pre>
+                            <code>
+#include &lt;stdio.h>
+int main()
+{
+    int arr[] = {33, 44, 55, 33, 8, 100};
+    int min = arr[0];
+    for (int i = 0; i &lt; sizeof(arr) / sizeof(int); i++)
+    {
+        if(arr[i]&lt;min){
+            min = arr[i];
+        }
+    }
+    printf("The smallest number in the array is = %d", min);
+
+    return 0;
+}
+                            </code>
+                        </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <p><b>13.</b> Develop a program to print the given array in reverse order.</p>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Click to Show Program code</button>
+                <div class="panel">
+                    <pre>
+                            <code>
+#include &lt;stdio.h>
+int main()
+{
+    int arr[] = {1, 2, 3, 4, 5, 6};
+
+    // just starting from last index and printing from there
+    for (int i = sizeof(arr) / sizeof(int) - 1; i > 0; i--)
+    {
+        printf(" %d ", i);
+    }
+    return 0;
+}
+                            </code>
+                        </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <p><b>14.</b> Develop a program to insert an element into a list of elements in the array.</p>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Click to Show Program code</button>
+                <div class="panel">
+                    <pre>
+                            <code>
+#include &lt;stdio.h>
+
+int main()
+{
+    int arr[10] = {1, 2, 3, 4, 5, 6, 7};
+    int num, index;
+    printf("Enter the element which you want to insert in the array : ");
+    scanf("%d", &num);
+    printf("Enter the index where you want to insert : ");
+    scanf("%d", &index);
+
+    // shifting the array
+    for (int i = sizeof(arr) / sizeof(int) - 1; i >= index; i--)
+    {
+        arr[i] = arr[i - 1];
+    }
+
+    // inserting in the index
+    arr[index] = num;
+
+    // printing the array
+    for (int i = 0; i &lt; sizeof(arr) / sizeof(int); i++)
+    {
+        printf(" %d ", arr[i]);
+    }
+
+    return 0;
+}
+                            </code>
+                        </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <p><b>15.</b> Develop a program to delete an element from a list of elements in the array.</p>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Click to Show Program code</button>
+                <div class="panel">
+                    <pre>
+                            <code>
+#include &lt;stdio.h>
+
+int main()
+{
+    int arr[10] = {1, 2, 3, 4, 5, 6, 7};
+    int num;
+    printf("Enter a number which you want to delete : ");
+    scanf("%d", &num);
+
+    // checking if the number is present in the array only then we will be able to delete it.
+    // also finding its index
+    int isAvail = 0, index = -1;
+    for (int i = 0; i &lt; sizeof(arr) / sizeof(int) - 1; i++)
+    {
+        index++;
+        if (num == arr[i])
+        {
+            isAvail = 1;
+            break;
+        }
+    }
+    if (isAvail)
+    {
+        printf("Deleteing in process....\n");
+        printf("Index of the element is : %d\n", index);
+    }
+    else
+        printf("Number not present \n");
+
+    // deletion logic
+    // here we just shift all the element to left from the index of the deleting element
+    for (int i = index; i &lt; sizeof(arr) / sizeof(int) - 1; i++)
+    {
+        arr[i]=arr[i+1];
+    }
+
+    // printing the array
+    for (int i = 0; i &lt; sizeof(arr) / sizeof(int) - 1; i++)
+    {
+        printf(" %d ", arr[i]);
+    }
+    printf("\n");
+    return 0;
+}
+                            </code>
+                        </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <p><b>16.</b> Develop a program to find the sum of two matrices.</p>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=aAFP5wsmH2k">Explanation 1</a></li>
+                <li><a href="https://www.youtube.com/watch?v=jzdQqoG1tZs">Explanation 2</a></li>
+            </ul>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Click to Show Program code</button>
+                <div class="panel">
+                    <pre>
+                            <code>
+#include &lt;stdio.h>
+
+int main()
+{
+    int aRows, aColumns, bRows, bColumns;
+    printf("Enter no. of rows and columns of first matrix : ");
+    scanf("%d %d", &aRows, &aColumns);
+    int a[aRows][aColumns];
+    printf("Enter the elements of the first matrix a : ");
+    for (int i = 0; i &lt; aRows; i++)
+    {
+        for (int j = 0; j &lt; aColumns; j++)
+        {
+            scanf("%d", &a[i][j]);
+        }
+    }
+
+    printf("Enter no. of rows and columns of matrix b : ");
+    scanf("%d %d", &bRows, &bColumns);
+    int b[aRows][aColumns];
+
+    // for martix multiplication the no. of columns of first matrix should be equal to the rows of second matrix.
+    if (aColumns != bRows)
+        printf("Cannot multiply matrix");
+    else
+    {
+        printf("Enter the elements of the matrix b : ");
+        for (int i = 0; i &lt; bRows; i++)
+        {
+            for (int j = 0; j &lt; bColumns; j++)
+            {
+                scanf("%d", &b[i][j]);
+            }
+        }
+    }
+
+    // multiplication of matrices
+    int product[aRows][bColumns];
+    int sum = 0;
+    for (int i = 0; i &lt; aRows; i++)
+    {
+        for (int j = 0; j <&lt;bRows; j++)
+        {
+            for (int k = 0; k &lt; bRows; k++)
+            {
+                sum += a[i][k] * b[k][j];
+            }
+            product[i][j] = sum;
+            sum = 0;
+        }
+    }
+
+    // printing the resultant matrix
+    printf("Resultant Matrix : \n");
+    for (int i = 0; i &lt; aRows; i++)
+    {
+        for (int j = 0; j &lt; bColumns; j++)
+        {
+            printf(" %d ", product[i][j]);
+        }
+        printf("\n");
+    }
+    return 0;
+}
+                            </code>
+                        </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <p><b>17.</b> Develop a program to print transpose of a given matrix.</p>
+            <ul>
+                <li><a href="https://www.youtube.com/watch?v=-arIesoWEoI">Explanation</a></li>
+            </ul>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Click to Show Program code</button>
+                <div class="panel">
+                    <pre>
+                            <code>
+#include &lt;stdio.h>
+
+int main()
+{
+    int arr[2][3] = {{1, 2, 3}, {4, 5, 6}};
+    int transArr[3][2]; // as rows elements becomes column element so we change it
+    for (int i = 0; i &lt; 2; i++)
+    {
+        for (int j = 0; j &lt; 3; j++)
+        {
+            transArr[j][i] = arr[i][j];
+        }
+    }
+    // priting the transpose
+    for(int i = 0 ; i &lt; 3; i++){
+        for(int j = 0; j &lt; 2; j++){
+            printf(" %d ", transArr[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+                            </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <p><b>18.</b> Develop a program to find the sum of diagonal elements of a given matrix.</p>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Click to Show Program code</button>
+                <div class="panel">
+                    <pre>
+                            <code>
+#include &lt;stdio.h>
+
+int main()
+{
+    // inputing square matrix from user
+    int n;
+    printf("Enter no. of rows of a matrix : ");
+    scanf("%d", &n);
+    int arr[n][n];
+    printf("Enter elements of the square matrix : ");
+    for (int i = 0; i &lt; n; i++)
+    {
+        for (int j = 0; j &lt; n; j++)
+        {
+            scanf("%d", &arr[i][j]);
+        }
+    }
+
+    // diagonal is where i = j
+    int sum = 0;
+    for (int i = 0; i &lt; n; i++)
+    {
+        for (int j = 0; j &lt; n; j++)
+        {
+            if (i == j)
+                sum += arr[i][j];
+        }
+    }
+
+    printf("The diagonal sum is : %d", sum);
+    return 0;
+}
+                            </code>
+                        </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <p><b>19.</b> Develop a program to count the number of characters in a string (string length).</p>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Click to Show Program code</button>
+                <div class="panel">
+                    <pre>
+                            <code>
+#include &lt;stdio.h>
+
+int main()
+{
+    char str[20];
+    printf("Enter a string : ");
+    scanf("%s", str);
+    
+    int i = 0;
+    while (str[i] != '\0')
+        i++;
+
+    printf("The string you entered has %d characters", i);
+    return 0;
+}
+                            </code>
+                        </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <p><b>20.</b> Develop a program to copy a string to another without using strcpy function.</p>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Click to Show Program code</button>
+                <div class="panel">
+                    <pre>
+                            <code>
+#include &lt;stdio.h>
+
+int main()
+{
+    char str1[20];
+    printf("Enter a string : ");
+    scanf("%s", str1);
+
+
+    char copyOfStr1[sizeof(str1)/sizeof(char)]; // making another string with same size as the first one.
+    int i = 0;
+    while(str1[i]!='\0'){
+    copyOfStr1[i]=str1[i]; // looping through first string and storing each index value in corresponding index without using strcpy function.
+    i++;
+    }
+    printf(" str2 is %s",copyOfStr1);
+    return 0;
+}
+                            </code>
+                        </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <p><b>21.</b> Develop a program to check whether given string is palindrome or not.</p>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Click to Show Program code</button>
+                <div class="panel">
+                    <pre>
+                            <code>
+#include &lt;stdio.h>
+#include &lt;string.h>
+
+int main()
+{
+    char str[30];
+    printf("Enter a string : ");
+    scanf("%s", str);
+
+    // using two pointer method
+    // finding the null character
+    int j = 0;
+    while (str[j] != '\0')
+        j++; // j will points to the last +1
+    j--;
+    // here we could use strlen function for finding the length of string
+    // printf("The strlen = %lu", strlen(str));
+
+    int i = 0;       // 'i' pointing to first index and 'j' is pointing to last index
+    int isPalin = 1; // assuming that it is palindrome
+    while (i != j)
+    {
+        if (str[i] != str[j])
+        {
+            isPalin = 0; // correcting
+            break;
+        }
+        i++;
+        j--;
+    }
+    if (isPalin)
+        printf("The entered string is palindrome");
+    else
+        printf("The entered string is not palindrome");
+    return 0;
+}
+                            </code>
+                        </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <p><b>22.</b> Develop a program to count the number of vowels, special characters, consonants in a
+                given string.</p>
+
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Click to Show Program code</button>
+                <div class="panel">
+                    <pre>
+                            <code>
+#include &lt;stdio.h>
+#include &lt;string.h>
+
+int main()
+{
+    int vowel = 0, consotant = 0, character = 0;
+    // edge case to work 1- capital letter .
+    char str[] = "this constant stuff aeiou {}";
+    for (int i = 0; i &lt; strlen(str); i++)
+    {
+        if (str[i] >= 97 && str[i] &lt;= 122)
+        {
+            switch (str[i])
+            {
+            case 'a':
+                vowel++;
+                break;
+            case 'e':
+                vowel++;
+                break;
+            case 'i':
+                vowel++;
+                break;
+            case 'o':
+                vowel++;
+                break;
+            case 'u':
+                vowel++;
+                break;
+            default:
+                consotant++;
+                break;
+            }
+        }
+        else
+        {
+            printf(" -%c \n", str[i]);
+            character++;
+        }
+    }
+    printf("The number of vowels are : %d\n", vowel);
+    printf("The number of consotant are : %d\n", consotant);
+    printf("The number of characters are : %d\n", character);
+    return 0;
+}
+                            </code>
+                        </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <p><b>23.</b> Develop a program with recursive function for - <br>a) factorial of a given number. <br>
+                b) generation of fibonacci series. <a href="https://www.youtube.com/watch?v=PODvbWRuZ6s">Explanation
+                    1</a> <br>
+                c) G.C.D of a given two numbers (greatest common divisor) <a
+                    href="https://www.youtube.com/watch?v=h_N5fydLSS4">explanation</a></p>
+
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">recursive factorial</button>
+                <div class="panel">
+                    <pre>
+                            <code>
+#include &lt;stdio.h>
+
+int factorial(int num){
+    if(num == 0)
+    return 1;
+    else 
+    return num * factorial(num -1);
+}
+
+int main()
+{
+    int num;
+    printf("Enter a number for factorial calculations : ");
+    scanf("%d", &num);
+    
+    printf("Factorial = %d",factorial(num));
+    return 0;
+}
+                            </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">recrusive fibonacci</button>
+                <div class="panel">
+                    <pre>
+                            <code>
+#include &lt;stdio.h>
+
+int fib(int num)
+{
+    if (num == 1 || num == 2)
+        return 1;
+    return (fib(num - 1) + fib(num - 2));
+}
+
+int main()
+{
+    int num;
+    printf("Enter number of digits you want to see of fibonacci series ");
+    scanf("%d", &num);
+
+    for (int i = 1; i &lt;= num; i++)
+        printf(" %d ", fib(i));
+
+    return 0;
+}
+                            </code>
+                    </pre>
+                </div>
+            </div>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">GCD recursive</button>
+                <div class="panel">
+                    <pre>
+                            <code>
+#include &lt;stdio.h>
+
+int GCD(int a, int b)
+{
+    if (a == b)
+        return a;
+    if (a % b == 0)
+        return b;
+    if (b % a == 0)
+        return a;
+
+    if (a > b)
+        return GCD(a % b, b);
+    else
+        return GCD(a, b % a);
+}
+
+int main()
+{
+    printf("GCD is %d \n", GCD(105, 91));
+
+    return 0;
+}
+                            </code>
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <p>Develop a program to perform aritmatic operations</p>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Click to Show Program code</button>
+                <div class="panel">
+                    <pre>
+                    <code>
+#include &lt;stdio.h>
+
+int main()
+{
+    int a, b, c;
+    char op;
+
+    printf("Enter the value of 'a' and 'b' : ");
+    scanf("%d%d", &a, &b);
+
+    printf("Enter the operator from '+', '-', '/', '*', '%%' : ");
+    scanf(" %c", &op);
+
+    if (op == '+')
+    {
+        c = a + b;
+        printf("Addtion of %d and %d is = %d", a, b, c);
+    }
+    else if (op == '-')
+    {
+        c = a - b;
+        printf("Subtraction of %d and %d is = %d", a, b, c);
+    }
+    else if (op == '*')
+    {
+        c = a * b;
+        printf("Multiplication of %d and %d is = %d", a, b, c);
+    }
+    else if (op == '/')
+    {
+        c = a / b;
+        printf("Division of %d and %d is = %d", a, b, c);
+    }
+    else if (op == '%')
+    {
+        c = a % b;
+        printf("Modulus of %d and %d is = %d", a, b, c);
+    }
+    else
+    {
+        printf("You entered wrong operator");
+    }
+    return 0;
+}
+                    </code>
+                </pre>
+                </div>
+            </div>
+        </div>
+        <div class="wh">
+            <p><b>24.</b> Check whether a year is leap year or not. <a href="https://www.youtube.com/watch?v=lROrjh8sBLQ">Solution &neArr;</a></p>
+            <div class="code">
+                <div class="dotc"></div>
+                <button class="ac">Click to Show Program code</button>
+                <div class="panel">
+                    <pre>
+                            <code>
+#include &lt;stdio.h>
+int main()
+{
+    int y;
+    printf("Enter the year : ");
+    scanf("%d", &y);
+    if ((y % 400 == 0) || (y % 4 == 0 && y % 100 != 0))
+
+        printf("leap year");
+    else
+        printf("not leap year");
+    return 0;
+}
+                            </code>
+                        </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/11.7.0/highlight.min.js"></script>
+    <script src="../../../public/main.js"></script>
+</body>
+
+</html>
