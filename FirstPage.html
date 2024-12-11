@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Learning Portal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #760404;
+            --secondary-color: #e48e8e;
+            --text-color: #333;
+            --bg-color: #fff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+            min-height: 100vh;
+            transition: background 0.3s ease;
+            overflow-x: hidden;
+        }
+
+        body.dark-mode {
+            background: linear-gradient(to right, #1a1a1a, #333333);
+        }
+
+        body.dark-mode .course-card {
+            background: #2d2d2d;
+            color: #fff;
+        }
+
+        body.dark-mode .course-card h3,
+        body.dark-mode .course-card p {
+            color: #fff;
+        }
+
+        body.dark-mode .header {
+            background: #2d2d2d;
+        }
+
+        body.dark-mode .nav h1 {
+            color: #fff;
+        }
+
+        .theme-switch {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .switch {
+            background: #333;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 10px;
+            border-radius: 20px;
+            cursor: pointer;
+            width: 60px;
+            position: relative;
+        }
+
+        .switch i {
+            color: #fff;
+            font-size: 14px;
+        }
+
+        #theme-toggle {
+            display: none;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .header {
+            background: var(--bg-color);
+            padding: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .nav h1 {
+            text-align: center;
+            margin: 0 auto;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            font-size: clamp(1.5rem, 4vw, 2rem);
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .logout-btn, .course-btn {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            white-space: nowrap;
+        }
+
+        .logout-btn:hover, .course-btn:hover {
+            background: #8b0505;
+        }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+            padding: 0 0.5rem;
+        }
+
+        .course-card {
+            background: var(--bg-color);
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+
+        .course-card h3 {
+            color: var(--text-color);
+            margin-bottom: 1rem;
+            text-align: center;
+            font-size: clamp(1.1rem, 3vw, 1.3rem);
+        }
+
+        .course-card p {
+            color: #666;
+            margin-bottom: 1rem;
+            text-align: center;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+        }
+
+        .view-btn {
+            background: var(--primary-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 1rem;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            font-size: clamp(0.9rem, 2vw, 1rem);
+        }
+
+        .view-btn:hover {
+            background: #8b0505;
+        }
+
+        h2 {
+            color: white;
+            margin-top: 2rem;
+            text-align: center;
+            font-size: clamp(1.3rem, 3.5vw, 1.8rem);
+        }
+
+        @media screen and (max-width: 768px) {
+            .container {
+                padding: 0 0.8rem;
+            }
+            
+            .nav {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .theme-switch {
+                top: 10px;
+                right: 10px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            .course-card {
+                padding: 1rem;
+            }
+
+            .container {
+                margin: 1rem auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="theme-switch">
+        <input type="checkbox" id="theme-toggle">
+        <label for="theme-toggle" class="switch">
+            <i class="fas fa-sun"></i>
+            <i class="fas fa-moon"></i>
+        </label>
+    </div>
+
+    <header class="header">
+        <nav class="container nav">
+            <h1>GEHU E-Learning Portal</h1>
+            <div class="nav-buttons">
+                <a href="courseSelect.html" class="course-btn">Courses</a>
+                <a href="GehuLoginPage.html" class="logout-btn">Logout</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section id="bca">
+                <div class="course-card">
+                    <h3>Programming Fundamentals</h3>
+                    <p>Master basic programming concepts and languages</p>
+                    <a href="https://www.geeksforgeeks.org/basics-of-computer-programming-for-beginners/" class="view-btn">View Source</a>
+                </div>
+                <div class="course-card">
+                    <h3>Database Management</h3>
+                    <p>Learn database design and SQL</p>
+                    <a href="https://www.geeksforgeeks.org/dbms/?ref=shm" class="view-btn">View Source</a>
+                </div>
+                <div class="course-card">
+                    <h3>Web Development</h3>
+                    <p>Create modern web applications and websites</p>
+                    <a href="https://www.geeksforgeeks.org/web-technology/?ref=shm" class="view-btn">View Source</a>
+                </div>
+            </div>
+        </section>
+
+        <section id="btech">
+            <div class="course-grid">
+                <div class="course-card">
+                    <h3>Data Structures and Algorithms</h3>
+                    <p>Learn Data Structures and Algorithms</p>
+                    <a href="https://www.geeksforgeeks.org/dsa-tutorial-learn-data-structures-and-algorithms/" class="view-btn">View Source</a>
+                </div>
+                <div class="course-card">
+                    <h3>Mechanical Engineering</h3>
+                    <p>Study mechanics, thermodynamics, and machine design</p>
+                    <a href="https://www.britannica.com/technology/mechanical-engineering" class="view-btn">View Source</a>
+                </div>
+                <div class="course-card">
+                    <h3>Computer Science Engineering</h3>
+                    <p>Learn programming, algorithms, and software development</p>
+                    <a href="https://en.wikipedia.org/wiki/Computer_science_and_engineering" class="view-btn">View Source</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        const darkModeToggle = document.getElementById('theme-toggle');
+        
+        // Check localStorage for saved theme preference
+        if(localStorage.getItem('darkMode') === 'true') {
+            document.body.classList.add('dark-mode');
+            darkModeToggle.checked = true;
+        }
+        
+        darkModeToggle.addEventListener('change', () => {
+            document.body.classList.toggle('dark-mode');
+            // Save theme preference to localStorage
+            localStorage.setItem('darkMode', document.body.classList.contains('dark-mode'));
+        });
+    </script>
+</body>
+</html>
